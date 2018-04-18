@@ -2,17 +2,127 @@
 <head>
 	<title></title>
 	<style>
-		.psiScore {display:none;}
+
+	* {
+		box-sizing: border-box;
+	}
+	body {
+		width: 391px;
+		color: cornflowerblue;
+	}
+	img {
+		max-width: 100%;
+		height: auto;
+	}
+
+	.psiScore {
+		display:none;
+		text-align: center;
+	}
+
+	.column_2 {
+		float: left;
+		width: 50%;
+	}
+
+	.row:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+
+	.grades {
+		font-size: 33px;
+		padding: 16px;
+	}
+
+	.score {
+		font-size: 40px;
+		display: block;
+	}
+
+	a#hsDebug {
+		width: 35%;
+	}
+
+	a#hsMoveJQueryToFooter {
+		width: 64%;
+	}
+
+	.debugButton {
+		height: 44px;
+		display: inline-block;
+		border: 3px solid #e43;
+		font-size: 14px;
+		text-align: center;
+		text-decoration: none;
+		overflow: hidden;
+		cursor: pointer;
+	}
+
+	.debugButton.graded {
+		overflow: initial;
+		height: initial;
+	}
+
+	#psiScoreRequest {
+		width: 100%
+	}
+
+	#psiScoreRequest.graded {
+		background-image: url(https://cdn2.hubspot.net/hubfs/2359872/Dev_Extension/pagespeed-logo.png);
+		background-size: contain;
+		background-position: center bottom;
+		background-repeat: no-repeat;
+		background-size: 150px;
+		height: 200px;
+	}
+
+	#psiScoreRequest.graded .face-secondary{
+		display: none;
+	}
+
+	.debugButton .face-primary,
+	.debugButton .face-secondary {
+		display: block;
+		padding: 0 22px;
+		line-height: 39px;
+		transition: margin .4s;
+	}
+	.debugButton .face-primary {
+		background-color: #e43;
+		color: #fff;
+	}
+	.debugButton:not(.graded):hover .face-primary {
+		margin-top: -39px;
+	}
+
 	</style>
 </head>
 <body>
-	<div class="debugButtons hidden">
-		<button class="debugButton" id="hsDebug">Debug Mode</button>
-		<button class="debugButton" id="hsMoveJQueryToFooter">jQuery Footer Mode</button>
+	<div class="debugButtons reloadButtons hidden">
+		<a class="debugButton face-button" id="hsDebug">
+			<div class="face-primary">Debug Mode</div>
+			<div class="face-secondary">hsDebug=True</div>
+		</a>
+		<a class="debugButton face-button" id="hsMoveJQueryToFooter">
+			<div class="face-primary">Footer jQuery</div>
+			<div class="face-secondary">hsMoveJQueryToFooter=True</div>
+		</a>
 	</div>
-	<button id="psiScoreRequest">Grade my page</button>
-	<div class="psiScore" id="desktop_psi_placeholder">grading desktop...</div>
-	<div class="psiScore" id="mobile_psi_placeholder">grading mobile...</div>
+	<a class="debugButton face-button" id="psiScoreRequest">
+		<div class="face-primary">Google Page Speed Insights Scores</div>
+		<div class="face-secondary"><img style="height: 39px;" src="https://cdn2.hubspot.net/hubfs/2359872/Dev_Extension/pagespeed.png"></div>
+		<div class="row grades">
+			<div class="psiScore column_2" id="desktop_psi_placeholder">grading desktop...</div>
+			<div class="psiScore column_2" id="mobile_psi_placeholder">grading mobile...</div>
+		</div>
+	</a>
+<!-- 	<button id="psiScoreRequest" class="debugButton">Grade my page</button>
+ -->
+
+	
+
 	<script src="jquery-3.2.1.min.js"></script>
 	<script src="popup.js"></script>
 </body>

@@ -20,14 +20,14 @@ var developerTools = {
 		    var gradeUrl = pageUrl.origin.replace("://", "%3A%2F%2F") + pageUrl.pathname;
 			$.getJSON('https://www.googleapis.com/pagespeedonline/v4/runPagespeed?url=' + gradeUrl + '&fields=id%2CruleGroups', function(data){
 				if (data.id) {
-					$("#desktop_psi_placeholder").html('Desktop PSI Score: ' + data.ruleGroups.SPEED.score);
+					$("#desktop_psi_placeholder").html('Desktop PSI Score<span class="score">' + data.ruleGroups.SPEED.score + '</span>');
 				} else {
 					console.log('hmmmmm, Googles APIs are really painful, they did not grade for some reason');
 				}
 			});
 			$.getJSON('https://www.googleapis.com/pagespeedonline/v4/runPagespeed?url=' + gradeUrl + '&fields=id%2CruleGroups&strategy=mobile', function(data){
 				if (data.id) {
-					$("#mobile_psi_placeholder").html('Mobile PSI Score: ' + data.ruleGroups.SPEED.score);
+					$("#mobile_psi_placeholder").html('Mobile PSI Score<span class="score">' + data.ruleGroups.SPEED.score + '</span>');
 				} else {
 					console.log('hmmmmm, Googles APIs are really painful, they did not grade for some reason');
 				}
@@ -36,15 +36,16 @@ var developerTools = {
 	},
 	onLoad: function() {
 
-		$('button.debugButton').click(function () {
+		$('a.debugButton').click(function () {
 			developerTools.debugReload($(this).attr('id'));
 		});
 
 		$('#psiScoreRequest').click(function () {
 			$(".psiScore").css("display", "block");
-			$("#psiScoreRequest").attr("disabled", "disabled"); 
 			developerTools.getPsiData();
+			$("#psiScoreRequest").addClass("graded"); 
 		});
+
 	}
 
 };
