@@ -34,11 +34,13 @@
 	.grades {
 		font-size: 33px;
 		padding: 16px;
+		color: #e43;
 	}
 
 	.score {
 		font-size: 40px;
 		display: block;
+		font-weight: bold;
 	}
 
 	a#hsDebug {
@@ -75,7 +77,6 @@
 		background-position: center bottom;
 		background-repeat: no-repeat;
 		background-size: 150px;
-		height: 200px;
 	}
 
 	#psiScoreRequest.graded .face-secondary{
@@ -100,7 +101,7 @@
 	</style>
 </head>
 <body>
-	<div class="debugButtons reloadButtons hidden">
+	<div class="debugButtons reloadButtons ">
 		<a class="debugButton face-button" id="hsDebug">
 			<div class="face-primary">Debug Mode</div>
 			<div class="face-secondary">hsDebug=True</div>
@@ -114,8 +115,8 @@
 		<div class="face-primary">Google Page Speed Insights Scores</div>
 		<div class="face-secondary"><img style="height: 39px;" src="https://cdn2.hubspot.net/hubfs/2359872/Dev_Extension/pagespeed.png"></div>
 		<div class="row grades">
-			<div class="psiScore column_2" id="desktop_psi_placeholder">grading desktop...</div>
-			<div class="psiScore column_2" id="mobile_psi_placeholder">grading mobile...</div>
+			<div class="psiScore column_2" id="desktop_psi_placeholder">grading desktop...<img src="https://cdn2.hubspot.net/hubfs/2359872/Dev_Extension/NewCorgiDance.gif"></div>
+			<div class="psiScore column_2" id="mobile_psi_placeholder">grading mobile...<img src="https://cdn2.hubspot.net/hubfs/2359872/Dev_Extension/NewCorgiDance.gif"></div>
 		</div>
 	</a>
 <!-- 	<button id="psiScoreRequest" class="debugButton">Grade my page</button>
