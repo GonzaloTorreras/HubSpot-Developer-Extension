@@ -14,6 +14,23 @@ var developerTools = {
 		});
 
 	},
+	bustCache: function(cacheBuster) {
+
+		chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+			var tabUrl = new URL(tabs[0].url);
+			var params = new URLSearchParams(tabUrl.search);
+			if (params.has("cacheBuster")) {
+				params.delete("cacheBuster");
+			}
+
+			var randomNum= Math.floor(Math.random() * 9999) + 1;
+				params.append("cacheBuster",randomNum);
+				
+			
+			chrome.tabs.update(tabs[0].id, {url: tabUrl.origin + tabUrl.pathname + '?' + params.toString()});
+		});
+
+	},
 	getPsiData: function() {
 		chrome.tabs.query({'active': true, 'lastFocusedWindow': true}, function (tabs) {
 		    var pageUrl = new URL(tabs[0].url);
@@ -34,10 +51,14 @@ var developerTools = {
 			});
 		});
 	},
+
 	onLoad: function() {
 
-		$('a.debugButton').click(function () {
+		$('#hsDebug,#hsMoveJQueryToFooter').click(function () {
 			developerTools.debugReload($(this).attr('id'));
+		});
+		$('#bustCache').click(function(){
+			developerTools.bustCache();
 		});
 
 		$('#psiScoreRequest').click(function () {
@@ -45,6 +66,7 @@ var developerTools = {
 			developerTools.getPsiData();
 			$("#psiScoreRequest").addClass("graded"); 
 		});
+		
 
 	}
 
