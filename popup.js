@@ -6,20 +6,13 @@ var developerTools = {
 			var tabUrl = new URL(tabs[0].url);
 			var params = new URLSearchParams(tabUrl.search);
 
-			if (params.has(debugParam)) {
+			if (debugParam == "cacheBuster") {
+				var randomNum = Math.floor(Math.random() * 9999) + 1;
+				params.set("cacheBuster",randomNum);
+			} else if (params.has(debugParam)) {
 				params.delete(debugParam);
-				if(debugParam =="cacheBuster"){
-					var randomNum= Math.floor(Math.random() * 9999) + 1;
-					params.append("cacheBuster",randomNum);
-				}
-
 			} else {
-				if(debugParam =="cacheBuster"){
-					var randomNum= Math.floor(Math.random() * 9999) + 1;
-					params.append("cacheBuster",randomNum);
-				} else{
-					params.append(debugParam, "True");
-				}
+				params.append(debugParam, "True");
 			}
 			
 			chrome.tabs.update(tabs[0].id, {url: tabUrl.origin + tabUrl.pathname + '?' + params.toString()});
