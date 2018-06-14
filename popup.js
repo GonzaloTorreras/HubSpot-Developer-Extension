@@ -37,14 +37,14 @@ var developerTools = {
 		    var gradeUrl = pageUrl.origin.replace("://", "%3A%2F%2F") + pageUrl.pathname;
 			$.getJSON('https://www.googleapis.com/pagespeedonline/v4/runPagespeed?url=' + gradeUrl + '&fields=id%2CruleGroups', function(data){
 				if (data.id) {
-					$("#desktop_psi_placeholder").html('Desktop PSI Score<span class="score">' + data.ruleGroups.SPEED.score + '</span>');
+					$("#desktop_psi_placeholder").html('Desktop PSI Score<span class="c-btn__score">' + data.ruleGroups.SPEED.score + '</span>');
 				} else {
 					console.log('hmmmmm, Googles APIs are really painful, they did not grade for some reason');
 				}
 			});
 			$.getJSON('https://www.googleapis.com/pagespeedonline/v4/runPagespeed?url=' + gradeUrl + '&fields=id%2CruleGroups&strategy=mobile', function(data){
 				if (data.id) {
-					$("#mobile_psi_placeholder").html('Mobile PSI Score<span class="score">' + data.ruleGroups.SPEED.score + '</span>');
+					$("#mobile_psi_placeholder").html('Mobile PSI Score<span class="c-btn__score">' + data.ruleGroups.SPEED.score + '</span>');
 				} else {
 					console.log('hmmmmm, Googles APIs are really painful, they did not grade for some reason');
 				}
@@ -54,17 +54,17 @@ var developerTools = {
 
 	onLoad: function() {
 
-		$('#hsDebug,#hsMoveJQueryToFooter').click(function () {
+		$('.js-click--debug,.js-click--move-jquery-to-footer').click(function () {
 			developerTools.debugReload($(this).attr('id'));
 		});
-		$('#bustCache').click(function(){
+		$('.js-click--bust-cache').click(function(){
 			developerTools.bustCache();
 		});
 
-		$('#psiScoreRequest').click(function () {
-			$(".psiScore").css("display", "block");
+		$('.js-click--psi-score-request').click(function () {
+			$(".c-btn__psiScore").css("display", "block");/*move to css?*/
 			developerTools.getPsiData();
-			$("#psiScoreRequest").addClass("graded"); 
+			$(".js-click--psi-score-request").addClass("c-btn--graded"); 
 		});
 		
 
