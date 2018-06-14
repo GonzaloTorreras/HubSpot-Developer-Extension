@@ -2,13 +2,15 @@
 <head>
 	<title></title>
 	<style>
-/*to keep CSS organized and easy to understand this css is following this method https://css-tricks.com/combining-the-powers-of-sem-and-bio-for-improving-css/
+/*To keep CSS organized and easy to understand this css is following this method https://css-tricks.com/combining-the-powers-of-sem-and-bio-for-improving-css/
 Do not let fear of learning a new technique prevent you from contributing, others can help convert your css to fit this flow. so pull request even if it doesn't fit this way of doing things. The important thing is that it works, keeping organized and understandable is second. If everyone finds they hate writing CSS this way we can work out another way to do it.
 */
 /*Settings - variables that do not generate visual styles on their own*/
 :root{
   --buttonColor:#ff7a59;
 }
+:focus{outline:none;}
+
 /*Objects - (namespace: o-) are used for design patterns, such as layouts, where items are being arranged rather than decorated. */
 
 .o-menu-grid {
@@ -21,6 +23,7 @@ Do not let fear of learning a new technique prevent you from contributing, other
     "movejquery movejquery"
     "psrequest psrequest";
 }
+
 #hsDebug {
   grid-area: debug;
 }
@@ -91,7 +94,7 @@ img {
   background-color: var(--buttonColor);
   color: #fff;
 }
-.c-btn:not(.c-btn--graded):hover .c-btn__face-primary {
+.c-btn:not(.c-btn--graded):hover .c-btn__face-primary,.c-btn:not(.c-btn--graded):focus .c-btn__face-primary {
   margin-top: -39px;
 }
 
