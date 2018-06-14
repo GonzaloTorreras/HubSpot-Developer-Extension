@@ -13,5 +13,15 @@
 		"activeTab",
 		"cookies",
 		"storage"
-	]
+	],
+	"content_scripts": [{
+	    "css": [ "hs-dark-ide.css" ],
+	    "document_idle": "document_start",
+	    "matches": [ "\u003Call_urls>" ]
+    }],
+    "options_page": "options.html",
+		"background": {
+			"persistent": false,
+			"scripts": [ "hot-reload.js" ]
+		}
 }
