@@ -2,13 +2,17 @@
 <head>
 	<title></title>
 	<style>
-
-	* {
+* {
   box-sizing: border-box;
+}
+:root{
+  --buttonColor:#ff7a59;
 }
 body {
   width: 391px;
   color: cornflowerblue;
+    background-color: #33475b;
+    background: linear-gradient(45deg,#33475b,#2d3e50);
 }
 img {
   max-width: 100%;
@@ -65,25 +69,21 @@ img {
 #psiScoreRequest {
   grid-area: psrequest;
 }
-/*
-	a#hsDebug {
-		width: 35%;
-	}
 
-	a#hsMoveJQueryToFooter {
-		width: 64%;
-	}*/
 
 .debugButton {
+  padding:0;
   height: 44px;
   display: block;
   width: 100%;
-  border: 3px solid #e43;
+  border: 3px solid var(--buttonColor);
   font-size: 14px;
   text-align: center;
   text-decoration: none;
   overflow: hidden;
   cursor: pointer;
+  -webkit-appearance:none;
+
 }
 
 .debugButton.graded {
@@ -91,9 +91,7 @@ img {
   height: initial;
 }
 
-#psiScoreRequest {
-  //width: 100%
-}
+
 
 #psiScoreRequest.graded {
   background-image: url(https://cdn2.hubspot.net/hubfs/2359872/Dev_Extension/pagespeed-logo.png);
@@ -115,42 +113,43 @@ img {
   transition: margin 0.4s;
 }
 .debugButton .face-primary {
-  background-color: #e43;
+  background-color: var(--buttonColor);
   color: #fff;
 }
 .debugButton:not(.graded):hover .face-primary {
   margin-top: -39px;
 }
 
+
 	</style>
 </head>
 <body>
 	<div class="menu-grid">
-	  
-	    <a class="debugButton face-button" id="hsDebug">
-	      <div class="face-primary">Debug Mode</div>
-	      <div class="face-secondary">hsDebug=True</div>
-	    </a>
-	    <a class="debugButton face-button" id="bustCache">
-	      <div class="face-primary">Bust Cache</div>
-	      <div class="face-secondary">bustCache=[random Number]</div>
-	    </a>
-	    <a class="debugButton face-button" id="hsMoveJQueryToFooter">
-	      <div class="face-primary">Footer jQuery</div>
-	      <div class="face-secondary">hsMoveJQueryToFooter=True</div>
-	    </a>
-	  
+  
+      <button class="debugButton face-button" id="hsDebug">
+        <div class="face-primary">Debug Mode</div>
+        <div class="face-secondary">hsDebug=True</div>
+      </button>
+      <button class="debugButton face-button" id="bustCache">
+        <div class="face-primary">Bust Cache</div>
+        <div class="face-secondary">bustCache=[random Number]</div>
+      </button>
+      <button class="debugButton face-button" id="hsMoveJQueryToFooter">
+        <div class="face-primary">Footer jQuery</div>
+        <div class="face-secondary">hsMoveJQueryToFooter=True</div>
+      </button>
+    
 
 
-	  <a class="debugButton face-button" id="psiScoreRequest">
-	    <div class="face-primary">Google Page Speed Insights Scores</div>
-	    <div class="face-secondary"><img style="height: 39px;" src="https://cdn2.hubspot.net/hubfs/2359872/Dev_Extension/pagespeed.png"></div>
-	    <div class="row grades">
-	      <div class="psiScore column_2" id="desktop_psi_placeholder">grading desktop...<img src="https://cdn2.hubspot.net/hubfs/2359872/Dev_Extension/NewCorgiDance.gif"></div>
-	      <div class="psiScore column_2" id="mobile_psi_placeholder">grading mobile...<img src="https://cdn2.hubspot.net/hubfs/2359872/Dev_Extension/NewCorgiDance.gif"></div>
-	    </div>
-	  </a>
-	</div>
+    <button class="debugButton face-button" id="psiScoreRequest">
+      <div class="face-primary">Google Page Speed Insights Scores</div>
+      <div class="face-secondary"><img style="height: 39px;" src="https://cdn2.hubspot.net/hubfs/2359872/Dev_Extension/pagespeed.png"></div>
+      <div class="row grades">
+        <div class="psiScore column_2" id="desktop_psi_placeholder">grading desktop...<img src="https://cdn2.hubspot.net/hubfs/2359872/Dev_Extension/NewCorgiDance.gif"></div>
+        <div class="psiScore column_2" id="mobile_psi_placeholder">grading mobile...<img src="https://cdn2.hubspot.net/hubfs/2359872/Dev_Extension/NewCorgiDance.gif"></div>
+      </div>
+    </button>
+  </div>
 	
 <!-- 	<button id="psiScoreRequest" class="debugButton">Grade my page</button>
  -->
