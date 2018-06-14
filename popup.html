@@ -4,125 +4,153 @@
 	<style>
 
 	* {
-		box-sizing: border-box;
-	}
-	body {
-		width: 391px;
-		color: cornflowerblue;
-	}
-	img {
-		max-width: 100%;
-		height: auto;
-	}
+  box-sizing: border-box;
+}
+body {
+  width: 391px;
+  color: cornflowerblue;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
 
-	.psiScore {
-		display:none;
-		text-align: center;
-	}
+.psiScore {
+  display: none;
+  text-align: center;
+}
 
-	.column_2 {
-		float: left;
-		width: 50%;
-	}
+.column_2 {
+  float: left;
+  width: 50%;
+}
 
-	.row:after {
-		content: "";
-		display: table;
-		clear: both;
-	}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
 
-	.grades {
-		font-size: 33px;
-		padding: 16px;
-		color: #e43;
-	}
+.grades {
+  font-size: 33px;
+  padding: 16px;
+  color: #e43;
+}
 
-	.score {
-		font-size: 40px;
-		display: block;
-		font-weight: bold;
-	}
+.score {
+  font-size: 40px;
+  display: block;
+  font-weight: bold;
+}
 
+.menu-grid {
+  display: grid;
+  grid-gap: 5px;
+
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "debug bustcache"
+    "movejquery movejquery"
+    "psrequest psrequest";
+}
+#hsDebug {
+  grid-area: debug;
+}
+#hsMoveJQueryToFooter {
+  grid-area: movejquery;
+}
+#bustCache {
+  grid-area: bustcache;
+}
+#psiScoreRequest {
+  grid-area: psrequest;
+}
+/*
 	a#hsDebug {
 		width: 35%;
 	}
 
 	a#hsMoveJQueryToFooter {
 		width: 64%;
-	}
+	}*/
 
-	.debugButton {
-		height: 44px;
-		display: inline-block;
-		border: 3px solid #e43;
-		font-size: 14px;
-		text-align: center;
-		text-decoration: none;
-		overflow: hidden;
-		cursor: pointer;
-	}
+.debugButton {
+  height: 44px;
+  display: block;
+  width: 100%;
+  border: 3px solid #e43;
+  font-size: 14px;
+  text-align: center;
+  text-decoration: none;
+  overflow: hidden;
+  cursor: pointer;
+}
 
-	.debugButton.graded {
-		overflow: initial;
-		height: initial;
-	}
+.debugButton.graded {
+  overflow: initial;
+  height: initial;
+}
 
-	#psiScoreRequest {
-		width: 100%
-	}
+#psiScoreRequest {
+  //width: 100%
+}
 
-	#psiScoreRequest.graded {
-		background-image: url(https://cdn2.hubspot.net/hubfs/2359872/Dev_Extension/pagespeed-logo.png);
-		background-size: contain;
-		background-position: center bottom;
-		background-repeat: no-repeat;
-		background-size: 150px;
-	}
+#psiScoreRequest.graded {
+  background-image: url(https://cdn2.hubspot.net/hubfs/2359872/Dev_Extension/pagespeed-logo.png);
+  background-size: contain;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-size: 150px;
+}
 
-	#psiScoreRequest.graded .face-secondary{
-		display: none;
-	}
+#psiScoreRequest.graded .face-secondary {
+  display: none;
+}
 
-	.debugButton .face-primary,
-	.debugButton .face-secondary {
-		display: block;
-		padding: 0 22px;
-		line-height: 39px;
-		transition: margin .4s;
-	}
-	.debugButton .face-primary {
-		background-color: #e43;
-		color: #fff;
-	}
-	.debugButton:not(.graded):hover .face-primary {
-		margin-top: -39px;
-	}
+.debugButton .face-primary,
+.debugButton .face-secondary {
+  display: block;
+  padding: 0 22px;
+  line-height: 39px;
+  transition: margin 0.4s;
+}
+.debugButton .face-primary {
+  background-color: #e43;
+  color: #fff;
+}
+.debugButton:not(.graded):hover .face-primary {
+  margin-top: -39px;
+}
 
 	</style>
 </head>
 <body>
-	<div class="debugButtons reloadButtons ">
-		<a class="debugButton face-button" id="hsDebug">
-			<div class="face-primary">Debug Mode</div>
-			<div class="face-secondary">hsDebug=True</div>
-		</a>
-		<a class="debugButton face-button" id="hsMoveJQueryToFooter">
-			<div class="face-primary">Footer jQuery</div>
-			<div class="face-secondary">hsMoveJQueryToFooter=True</div>
-		</a>
-		<a class="debugButton face-button" id="bustCache">
-			<div class="face-primary">Bust Cache</div>
-			<div class="face-secondary">bustCache=[random Number]</div>
-		</a>
+	<div class="menu-grid">
+	  
+	    <a class="debugButton face-button" id="hsDebug">
+	      <div class="face-primary">Debug Mode</div>
+	      <div class="face-secondary">hsDebug=True</div>
+	    </a>
+	    <a class="debugButton face-button" id="bustCache">
+	      <div class="face-primary">Bust Cache</div>
+	      <div class="face-secondary">bustCache=[random Number]</div>
+	    </a>
+	    <a class="debugButton face-button" id="hsMoveJQueryToFooter">
+	      <div class="face-primary">Footer jQuery</div>
+	      <div class="face-secondary">hsMoveJQueryToFooter=True</div>
+	    </a>
+	  
+
+
+	  <a class="debugButton face-button" id="psiScoreRequest">
+	    <div class="face-primary">Google Page Speed Insights Scores</div>
+	    <div class="face-secondary"><img style="height: 39px;" src="https://cdn2.hubspot.net/hubfs/2359872/Dev_Extension/pagespeed.png"></div>
+	    <div class="row grades">
+	      <div class="psiScore column_2" id="desktop_psi_placeholder">grading desktop...<img src="https://cdn2.hubspot.net/hubfs/2359872/Dev_Extension/NewCorgiDance.gif"></div>
+	      <div class="psiScore column_2" id="mobile_psi_placeholder">grading mobile...<img src="https://cdn2.hubspot.net/hubfs/2359872/Dev_Extension/NewCorgiDance.gif"></div>
+	    </div>
+	  </a>
 	</div>
-	<a class="debugButton face-button" id="psiScoreRequest">
-		<div class="face-primary">Google Page Speed Insights Scores</div>
-		<div class="face-secondary"><img style="height: 39px;" src="https://cdn2.hubspot.net/hubfs/2359872/Dev_Extension/pagespeed.png"></div>
-		<div class="row grades">
-			<div class="psiScore column_2" id="desktop_psi_placeholder">grading desktop...<img src="https://cdn2.hubspot.net/hubfs/2359872/Dev_Extension/NewCorgiDance.gif"></div>
-			<div class="psiScore column_2" id="mobile_psi_placeholder">grading mobile...<img src="https://cdn2.hubspot.net/hubfs/2359872/Dev_Extension/NewCorgiDance.gif"></div>
-		</div>
-	</a>
 	
 <!-- 	<button id="psiScoreRequest" class="debugButton">Grade my page</button>
  -->
