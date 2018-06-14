@@ -6,7 +6,7 @@ If you find a bug or want to request a feature please report it in our GitHub Is
 If you'd like to contribute let us know!
 
 
-##Common courtesy for contributions:
+## Common courtesy for contributions:
 
 For all feature additions and major changes create a feature branch(don't work directly on the master branch)
 Then when you're ready to merge into the master branch submit a pull request.
