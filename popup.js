@@ -5,27 +5,22 @@ var developerTools = {
 		chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
 			var tabUrl = new URL(tabs[0].url);
 			var params = new URLSearchParams(tabUrl.search);
+
 			if (params.has(debugParam)) {
 				params.delete(debugParam);
+				if(debugParam =="cacheBuster"){
+					var randomNum= Math.floor(Math.random() * 9999) + 1;
+					params.append("cacheBuster",randomNum);
+				}
+
 			} else {
-				params.append(debugParam, "True");
+				if(debugParam =="cacheBuster"){
+					var randomNum= Math.floor(Math.random() * 9999) + 1;
+					params.append("cacheBuster",randomNum);
+				} else{
+					params.append(debugParam, "True");
+				}
 			}
-			chrome.tabs.update(tabs[0].id, {url: tabUrl.origin + tabUrl.pathname + '?' + params.toString()});
-		});
-
-	},
-	bustCache: function(cacheBuster) {
-
-		chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-			var tabUrl = new URL(tabs[0].url);
-			var params = new URLSearchParams(tabUrl.search);
-			if (params.has("cacheBuster")) {
-				params.delete("cacheBuster");
-			}
-
-			var randomNum= Math.floor(Math.random() * 9999) + 1;
-				params.append("cacheBuster",randomNum);
-				
 			
 			chrome.tabs.update(tabs[0].id, {url: tabUrl.origin + tabUrl.pathname + '?' + params.toString()});
 		});
@@ -54,12 +49,10 @@ var developerTools = {
 
 	onLoad: function() {
 
-		$('.js-click--debug,.js-click--move-jquery-to-footer').click(function () {
+		$('.js-click--debug,.js-click--move-jquery-to-footer,.js-click--bust-cache').click(function () {
 			developerTools.debugReload($(this).attr('id'));
 		});
-		$('.js-click--bust-cache').click(function(){
-			developerTools.bustCache();
-		});
+		
 
 		$('.js-click--psi-score-request').click(function () {
 			$(".c-btn__psiScore").css("display", "block");/*move to css?*/
