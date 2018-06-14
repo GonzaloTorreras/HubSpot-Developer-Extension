@@ -5,11 +5,16 @@ var developerTools = {
 		chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
 			var tabUrl = new URL(tabs[0].url);
 			var params = new URLSearchParams(tabUrl.search);
-			if (params.has(debugParam)) {
+
+			if (debugParam == "cacheBuster") {
+				var randomNum = Math.floor(Math.random() * 9999) + 1;
+				params.set("cacheBuster",randomNum);
+			} else if (params.has(debugParam)) {
 				params.delete(debugParam);
 			} else {
 				params.append(debugParam, "True");
 			}
+			
 			chrome.tabs.update(tabs[0].id, {url: tabUrl.origin + tabUrl.pathname + '?' + params.toString()});
 		});
 
@@ -20,31 +25,34 @@ var developerTools = {
 		    var gradeUrl = pageUrl.origin.replace("://", "%3A%2F%2F") + pageUrl.pathname;
 			$.getJSON('https://www.googleapis.com/pagespeedonline/v4/runPagespeed?url=' + gradeUrl + '&fields=id%2CruleGroups', function(data){
 				if (data.id) {
-					$("#desktop_psi_placeholder").html('Desktop PSI Score<span class="score">' + data.ruleGroups.SPEED.score + '</span>');
+					$("#desktop_psi_placeholder").html('Desktop PSI Score<span class="c-btn__score">' + data.ruleGroups.SPEED.score + '</span>');
 				} else {
 					console.log('hmmmmm, Googles APIs are really painful, they did not grade for some reason');
 				}
 			});
 			$.getJSON('https://www.googleapis.com/pagespeedonline/v4/runPagespeed?url=' + gradeUrl + '&fields=id%2CruleGroups&strategy=mobile', function(data){
 				if (data.id) {
-					$("#mobile_psi_placeholder").html('Mobile PSI Score<span class="score">' + data.ruleGroups.SPEED.score + '</span>');
+					$("#mobile_psi_placeholder").html('Mobile PSI Score<span class="c-btn__score">' + data.ruleGroups.SPEED.score + '</span>');
 				} else {
 					console.log('hmmmmm, Googles APIs are really painful, they did not grade for some reason');
 				}
 			});
 		});
 	},
+
 	onLoad: function() {
 
-		$('a.debugButton').click(function () {
+		$('.js-click--debug,.js-click--move-jquery-to-footer,.js-click--bust-cache').click(function () {
 			developerTools.debugReload($(this).attr('id'));
 		});
+		
 
-		$('#psiScoreRequest').click(function () {
-			$(".psiScore").css("display", "block");
+		$('.js-click--psi-score-request').click(function () {
+			$(".c-btn__psiScore").css("display", "block");/*move to css?*/
 			developerTools.getPsiData();
-			$("#psiScoreRequest").addClass("graded"); 
+			$(".js-click--psi-score-request").addClass("c-btn--graded"); 
 		});
+		
 
 	}
 
