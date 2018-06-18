@@ -15,9 +15,11 @@
 		"storage"
 	],
 	"content_scripts": [{
-	    "css": [ "hs-dark-ide.css" ],
+		"run_at" :"document_end", //"run_at" tells when to load the javascript,
+		"js": ["jquery-3.2.1.min.js","design-manager.js"], //"js" tells all .js files to inject,
+	    "css": [ "hs-dark-ide.css" ], //"CSS" tells about all included CSS files for injection.
 	    "document_idle": "document_start",
-	    "matches": [ "\u003Call_urls>" ]
+	    "matches": [ "\u003Call_urls>" ] //"matches" tells the URL to match to inject the code which I'm using Gmail here,
     }],
     "options_page": "options.html",
 		"background": {
