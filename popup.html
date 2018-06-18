@@ -21,7 +21,8 @@ Do not let fear of learning a new technique prevent you from contributing, other
   grid-template-areas:
     "debug bustcache"
     "movejquery movejquery"
-    "psrequest psrequest";
+    "psrequest psrequest"
+    "docs docs";
 }
 
 #hsDebug {
@@ -36,6 +37,7 @@ Do not let fear of learning a new technique prevent you from contributing, other
 #psiScoreRequest {
   grid-area: psrequest;
 }
+#docs{grid-area:docs;}
 
 
 .column_2 {
@@ -80,9 +82,10 @@ img {
   overflow: hidden;
   cursor: pointer;
   -webkit-appearance:none;
-
+  background-color:#fff;
 }
 
+.c-btn--docs{}
 .c-btn__face-primary,
 .c-btn__face-secondary {
   display: block;
@@ -170,6 +173,15 @@ img {
       </div>
     </button>
   </div>
+<div class="c-btn c-btn--docs face-button" id="docs">
+  <div class="c-btn__face-primary">Documentation</div>
+  <div class="c-btn__face-secondary">
+    <a target="blank" href="https://designers.hubspot.com/en/docs/hubl/hubl-supported-functions">Functions<!--add opens in new window icon--></a> 
+    <a target="blank" href="https://designers.hubspot.com/docs/hubl/hubl-supported-variables">Variables<!--add opens in new window icon--></a> <a target="blank" href="https://designers.hubspot.com/docs/hubl/hubl-supported-filters">Filters<!--add opens in new window icon--></a>
+    <a target="blank" href=" https://designers.hubspot.com/docs/tools/hubdb">HubDB<!--add opens in new window icon--></a>
+   
+  </div>
+</div>
 
 	
 <!-- 	<button id="psiScoreRequest" class="debugButton">Grade my page</button>
