@@ -240,7 +240,9 @@ body.design-manager.ext-dark-theme .private-modal--default,
 body.design-manager.ext-dark-theme .private-modal__footer{
  background: linear-gradient(45deg, rgb(51, 71, 91), rgb(45, 62, 80));
 }
-
+.status-bar {
+    background: #2e2e2e;
+}
 /* 
 #33475b
 #2d3e50
