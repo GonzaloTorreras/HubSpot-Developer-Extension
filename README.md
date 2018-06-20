@@ -5,7 +5,7 @@ If you find a bug or want to request a feature please report it in our GitHub Is
 
 If you'd like to contribute let us know!
 
-[We're in the Chrome Store!](https://chrome.google.com/webstore/detail/hubspot-developer-extensi/gebemkdecnlgbcanplbgdpcffpdnfdfo?hl=en-US&gl=US)
+[We're in the Chrome Store!](https://chrome.google.com/webstore/detail/hubspot-developer-extensi/gebemkdecnlgbcanplbgdpcffpdnfdfo)
 The Chrome store version is the stable build, and will get updates over time.
 
 If you prefer to fly by the seat of your pants with wreckless abandon, test one of the experimental/beta builds:
