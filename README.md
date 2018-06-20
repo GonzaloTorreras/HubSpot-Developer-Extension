@@ -5,9 +5,10 @@ If you find a bug or want to request a feature please report it in our GitHub Is
 
 If you'd like to contribute let us know!
 
-Once published in the Chrome web store we'll have a link here to it. That will be the stable build.
+[We're in the Chrome Store!](https://chrome.google.com/webstore/detail/hubspot-developer-extensi/gebemkdecnlgbcanplbgdpcffpdnfdfo)
+The Chrome store version is the stable build, and will get updates over time.
 
-If you'd like to test one of the experimental/beta builds:
+If you prefer to fly by the seat of your pants with wreckless abandon, test one of the experimental/beta builds:
 
 1. just view a different branch
 2. hit download as zip(if you just plan to use it and not contribute).
@@ -16,6 +17,7 @@ If you'd like to test one of the experimental/beta builds:
 4. enable developer mode,
 5. load unpacked and choose the folder you just downloaded.
 
+Let us know in issues if you run into any bugs, also please note which branch you're using!
 
 Note: if you are not using git to keep that folder up to date(you chose zip instead) understand that the extension will not get updates, you need to manually update it. If you are using the web store version you will get updates.
 
