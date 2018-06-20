@@ -1,7 +1,7 @@
 {
 	"manifest_version": 2,
 	"name": "HubSpot Developer Extension ",
-	"version": "0.1",
+	"version": "1.0",
 	"description": "A HubSpot Developers Sidekick Extension",
 	"permissions": ["declarativeContent", "storage"],
 	"browser_action": {
