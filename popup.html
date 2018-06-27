@@ -86,7 +86,9 @@ img {
   background-color:#fff;
 }
 
-.c-btn--docs{}
+
+
+
 .c-btn__face-primary,
 .c-btn__face-secondary {
   display: block;
@@ -138,6 +140,19 @@ img {
   display: none;
 }
 
+.c-btn--docs{cursor:unset;}
+.c-btn--docs .c-btn__face-secondary{ 
+  display:flex;
+  align-items:center;
+  justify-content: space-around;
+}
+.c-btn--docs a{
+  padding:0 10px;
+}
+.c-btn--docs a:hover,.c-btn--docs a:focus{
+  color:var(--buttonColor); 
+  
+}
 
 /*Utility - Sometimes you may want to make changes only for a certain style in a specific place. In that case, utility (namespace: u-) classes can help us update it without changing the whole CSS structure.*/
 
