@@ -50,6 +50,11 @@ var developerTools = {
 				if(~tabUrl.indexOf("/design-manager/")){
 					console.log("Old Design Manager is active");
 				}
+				if(~tabUrl.indexOf("/beta-design-manager/")){
+					/*note this string detection will likely break once rolled out to everyone as they likely wont leave beta in the name*/
+					console.log("Design Manager V2 is active");
+				}
+				
 			}
 			
 
