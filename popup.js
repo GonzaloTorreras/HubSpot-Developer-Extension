@@ -39,8 +39,26 @@ var developerTools = {
 			});
 		});
 	},
+	setMenuContext:function(){
+		console.log("Set Menu Context run");
+		
+		chrome.tabs.getSelected(null, function(tab) {
+			var tabUrl = tab.url;
+			console.log("Current URL: ",tabUrl);
+			if(~tabUrl.indexOf("app.hubspot.com")){
+				console.log("This is the hubspot backend.");
+				if(~tabUrl.indexOf("/design-manager/")){
+					console.log("Old Design Manager is active");
+				}
+			}
+			
 
+		});
+		
+		
+	},
 	onLoad: function() {
+		developerTools.setMenuContext();
 
 		$('.js-click--debug,.js-click--move-jquery-to-footer,.js-click--bust-cache').click(function () {
 			developerTools.debugReload($(this).attr('id'));
