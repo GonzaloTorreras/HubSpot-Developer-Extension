@@ -43,6 +43,7 @@ var developerTools = {
 		console.log("Set Menu Context run");
 		
 		chrome.tabs.getSelected(null, function(tab) {
+			/*getSelected might be deprecated need to review*/
 			var tabUrl = tab.url;
 			console.log("Current URL: ",tabUrl);
 			if(~tabUrl.indexOf("app.hubspot.com")){
