@@ -157,30 +157,52 @@ img {
 /*Utility - Sometimes you may want to make changes only for a certain style in a specific place. In that case, utility (namespace: u-) classes can help us update it without changing the whole CSS structure.*/
 
 /*state and JS namespaces
-* is-: this indicates the state of the block or element. Most commonly used class is .is-active, like the active link in navigation.
+* is-: this indicates the state of the block or element. Most commonly used class is .is-active, like the active link in navigation. */
 
-*js-: this indicates that the specific element is bound to JavaScript events. For example, js-menu-click indicates that the element is bound to the click event. generally JS classes are only added to the html, as they are for targeting with JS not affecting actual styles.*/
+/*hide Debug mode button, bust cache button, footer jquery, google page speed, when viewing site backend*/
+body.is-backend .u-hidden-backend{
+  display:none;
+}
+
+body.is-dm1 .u-hidden-dm1{
+  display:none;
+}
+
+body.is-dm2 .u-hidden-dm2{
+  display:none;
+}
+body.is-hs-docs .u-hidden-hs-docs{
+  display:none;
+}
+body.is-backend .o-menu-grid {
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "docs docs";
+}
+
+
+/*js-: this indicates that the specific element is bound to JavaScript events. For example, js-menu-click indicates that the element is bound to the click event. generally JS classes are only added to the html, as they are for targeting with JS not affecting actual styles.*/
 	</style>
 </head>
 <body>
 	<div class="o-menu-grid">
   
-      <button class="c-btn face-button js-click--debug" id="hsDebug">
+      <button class="c-btn face-button js-click--debug u-hidden-backend" id="hsDebug">
         <div class="c-btn__face-primary">Debug Mode</div>
         <div class="c-btn__face-secondary">hsDebug=True</div>
       </button>
-      <button class="c-btn face-button js-click--bust-cache" id="cacheBuster">
+      <button class="c-btn face-button js-click--bust-cache u-hidden-backend" id="cacheBuster">
         <div class="c-btn__face-primary">Bust Cache</div>
         <div class="c-btn__face-secondary">bustCache=[random Number]</div>
       </button>
-      <button class="c-btn face-button js-click--move-jquery-to-footer" id="hsMoveJQueryToFooter">
+      <button class="c-btn face-button js-click--move-jquery-to-footer u-hidden-backend" id="hsMoveJQueryToFooter">
         <div class="c-btn__face-primary">Footer jQuery</div>
         <div class="c-btn__face-secondary">hsMoveJQueryToFooter=True</div>
       </button>
     
 
 
-    <button class="c-btn face-button js-click--psi-score-request" id="psiScoreRequest">
+    <button class="c-btn face-button js-click--psi-score-request u-hidden-backend" id="psiScoreRequest">
       <div class="c-btn__face-primary">Google Page Speed Insights Scores</div>
       <div class="c-btn__face-secondary">Score Me!<!--<img style="height: 39px;" src="https://cdn2.hubspot.net/hubfs/2359872/Dev_Extension/pagespeed.png">--></div>
       <div class="row c-btn__grades">
