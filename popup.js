@@ -1,3 +1,4 @@
+
 var developerTools = {
 
 	debugReload: function(debugParam) {
@@ -48,14 +49,25 @@ var developerTools = {
 			console.log("Current URL: ",tabUrl);
 			if(~tabUrl.indexOf("app.hubspot.com")){
 				console.log("This is the hubspot backend.");
+				$('body').addClass("is-backend"); //indicates user is seeing HS backend
 				if(~tabUrl.indexOf("/design-manager/")){
 					console.log("Old Design Manager is active");
+					$('body').addClass("is-dm1");//indicates user is seeing design manager v1
 				}
 				if(~tabUrl.indexOf("/beta-design-manager/")){
 					/*note this string detection will likely break once rolled out to everyone as they likely wont leave beta in the name*/
 					console.log("Design Manager V2 is active");
+					$('body').addClass("is-dm2");//indicates user is seeing design manager v2
 				}
 				
+			}
+			else if(~tabUrl.indexOf("designers.hubspot.com/docs/")){
+				console.log("Viewing HubSpot Documentation");
+				$('body').addClass("is-hs-docs");
+			}
+			else{
+				console.log("This is not in the HubSpot Backend");
+
 			}
 			
 
