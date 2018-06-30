@@ -42,7 +42,7 @@ var developerTools = {
 
 	onLoad: function() {
 
-		$('.js-click--debug,.js-click--move-jquery-to-footer,.js-click--bust-cache').click(function () {
+		$('.js-click--debug,.js-click--move-jquery-to-footer,.js-click--bust-cache,.js-click--amp').click(function () {
 			developerTools.debugReload($(this).attr('id'));
 		});
 		

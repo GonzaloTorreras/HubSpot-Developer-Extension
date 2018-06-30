@@ -20,7 +20,7 @@ Do not let fear of learning a new technique prevent you from contributing, other
   grid-template-columns: 1fr 1fr;
   grid-template-areas:
     "debug bustcache"
-    "movejquery movejquery"
+    "movejquery amp"
     "psrequest psrequest"
     "docs docs";
 }
@@ -30,6 +30,9 @@ Do not let fear of learning a new technique prevent you from contributing, other
 }
 #hsMoveJQueryToFooter {
   grid-area: movejquery;
+}
+#hs_amp{
+  grid-area:amp;
 }
 #bustCache {
   grid-area: bustcache;
@@ -95,6 +98,10 @@ img {
   padding: 0 22px;
   line-height: 39px;
   transition: margin 0.4s;
+}
+.c-btn__face-secondary {
+    font-size: 13px;
+    padding: 0 0;
 }
 .c-btn__face-primary {
   background-color: var(--buttonColor);
@@ -176,6 +183,10 @@ img {
       <button class="c-btn face-button js-click--move-jquery-to-footer" id="hsMoveJQueryToFooter">
         <div class="c-btn__face-primary">Footer jQuery</div>
         <div class="c-btn__face-secondary">hsMoveJQueryToFooter=True</div>
+      </button>
+      <button class="c-btn face-button js-click--amp" id="hs_amp">
+        <div class="c-btn__face-primary">Amp</div>
+        <div class="c-btn__face-secondary">hs_amp=true</div>
       </button>
     
 
