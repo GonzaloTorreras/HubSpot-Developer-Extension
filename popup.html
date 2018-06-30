@@ -21,8 +21,16 @@ Do not let fear of learning a new technique prevent you from contributing, other
         display: grid;
         grid-gap: 5px;
         width: 100%;
+        width: calc(100vw - 10px);
         grid-template-columns: 1fr 1fr;
-        grid-template-areas: "debug bustcache" "movejquery amp" "psrequest psrequest" "docs docs";
+        grid-template-areas: "debug bustcache" "movejquery amp" "psrequest psrequest";
+        /*margin-right: 5px;*/
+    }
+    .o-menu-grid--debug{
+        grid-template-areas: "debug bustcache" "movejquery amp" "psrequest psrequest";
+    }
+    .o-menu-grid--design-manager{
+        grid-template-areas: "docs docs";
     }
 
     #hsDebug {
@@ -71,8 +79,8 @@ Do not let fear of learning a new technique prevent you from contributing, other
         color: cornflowerblue;
         background-color: #33475b;
         background: linear-gradient(45deg, #33475b, #2d3e50);
-        margin: 5px;
-        /*evens context menu spacing to match grid gap*/
+        margin:0;
+        
     }
 
     img {
@@ -80,6 +88,29 @@ Do not let fear of learning a new technique prevent you from contributing, other
         height: auto;
     }
     /*Components - (namespace: c-) is a small feature that makes up a part of the website/extension. Think buttons, accordions, sliders, modal dialogs, etc. Each component is fully functional by itself and does not rely on any other components. This fact should be considered when you name the component.*/
+
+    .c-tab-slider {
+        width: 100vw;
+    }
+
+    .c-tab-slider__tab {
+        display: block;
+        width: 100vw;
+        padding:5px;
+
+    }
+
+    .c-tab-slider__track {
+        display: flex;
+        flex-flow: row;
+        position:relative;
+    }
+    .c-tab-slider--state-design-manager{
+        left:-100vw;
+    }
+    .c-tab-slider--state-debug{
+        left:0;
+    }
 
     .c-btn {
         padding: 0;
@@ -144,10 +175,6 @@ Do not let fear of learning a new technique prevent you from contributing, other
 
 */
 
-    .c-tab-slider {
-        width: 100vw;
-    }
-
     .c-btn--graded {
         /*update js to update the class it adds*/
         overflow: initial;
@@ -207,10 +234,10 @@ Do not let fear of learning a new technique prevent you from contributing, other
 
 <body>
     <div class="c-tab-slider">
-        <div class="c-tab-slider__track">
+        <div class="c-tab-slider__track c-tab-slider--state-debug">
             <div class="c-tab-slider__tab" id="debug-tools">
                 <!--This tab will be focused when the user is not in the design manager -->
-                <div class="o-menu-grid">
+                <div class="o-menu-grid o-menu-grid--debug">
                     <button class="c-btn face-button js-click--debug" id="hsDebug">
                         <div class="c-btn__face-primary">Debug Mode</div>
                         <div class="c-btn__face-secondary">hsDebug=True</div>
