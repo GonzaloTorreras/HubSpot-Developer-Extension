@@ -1,268 +1,260 @@
-<style>
-/*To keep CSS organized and easy to understand this css is following this method https://css-tricks.com/combining-the-powers-of-sem-and-bio-for-improving-css/
+<html>
+
+<head>
+    <title></title>
+    <style>
+    /*To keep CSS organized and easy to understand this css is following this method https://css-tricks.com/combining-the-powers-of-sem-and-bio-for-improving-css/
 Do not let fear of learning a new technique prevent you from contributing, others can help convert your css to fit this flow. so pull request even if it doesn't fit this way of doing things. The important thing is that it works, keeping organized and understandable is second. If everyone finds they hate writing CSS this way we can work out another way to do it.
 */
+    /*Settings - variables that do not generate visual styles on their own*/
+
+     :root {
+        --buttonColor: #ff7a59;
+    }
+
+     :focus {
+        outline: none;
+    }
+    /*Objects - (namespace: o-) are used for design patterns, such as layouts, where items are being arranged rather than decorated. */
+
+    .o-menu-grid {
+        display: grid;
+        grid-gap: 5px;
+        width: 100%;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "debug bustcache" "movejquery amp" "psrequest psrequest" "docs docs";
+    }
+
+    #hsDebug {
+        grid-area: debug;
+    }
+
+    #hsMoveJQueryToFooter {
+        grid-area: movejquery;
+    }
+
+    #hs_amp {
+        grid-area: amp;
+    }
+
+    #bustCache {
+        grid-area: bustcache;
+    }
+
+    #psiScoreRequest {
+        grid-area: psrequest;
+    }
+
+    #docs {
+        grid-area: docs;
+    }
 
 
-/*Settings - variables that do not generate visual styles on their own*/
+    .column_2 {
+        float: left;
+        width: 50%;
+    }
 
- :root {
-    --buttonColor: #ff7a59;
-}
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+    /*Elements - HTML native elements default styles without classes*/
 
- :focus {
-    outline: none;
-}
+    * {
+        box-sizing: border-box;
+    }
 
+    body {
+        width: 391px;
+        color: cornflowerblue;
+        background-color: #33475b;
+        background: linear-gradient(45deg, #33475b, #2d3e50);
+        margin: 5px;
+        /*evens context menu spacing to match grid gap*/
+    }
 
-/*Objects - (namespace: o-) are used for design patterns, such as layouts, where items are being arranged rather than decorated. */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+    /*Components - (namespace: c-) is a small feature that makes up a part of the website/extension. Think buttons, accordions, sliders, modal dialogs, etc. Each component is fully functional by itself and does not rely on any other components. This fact should be considered when you name the component.*/
 
-.o-menu-grid {
-    display: grid;
-    grid-gap: 5px;
-    width: 100%;
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas: "debug bustcache" "movejquery amp" "psrequest psrequest" "docs docs";
-}
-
-#hsDebug {
-    grid-area: debug;
-}
-
-#hsMoveJQueryToFooter {
-    grid-area: movejquery;
-}
-
-#hs_amp {
-    grid-area: amp;
-}
-
-#bustCache {
-    grid-area: bustcache;
-}
-
-#psiScoreRequest {
-    grid-area: psrequest;
-}
-
-#docs {
-    grid-area: docs;
-}
-
-
-.column_2 {
-    float: left;
-    width: 50%;
-}
-
-.row:after {
-    content: "";
-    display: table;
-    clear: both;
-}
-
-
-/*Elements - HTML native elements default styles without classes*/
-
-* {
-    box-sizing: border-box;
-}
-
-body {
-    width: 391px;
-    color: cornflowerblue;
-    background-color: #33475b;
-    background: linear-gradient(45deg, #33475b, #2d3e50);
-    margin: 5px;
-    /*evens context menu spacing to match grid gap*/
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-}
-
-
-/*Components - (namespace: c-) is a small feature that makes up a part of the website/extension. Think buttons, accordions, sliders, modal dialogs, etc. Each component is fully functional by itself and does not rely on any other components. This fact should be considered when you name the component.*/
-
-.c-btn {
-    padding: 0;
-    height: 44px;
-    display: block;
-    width: 100%;
-    border: 3px solid var(--buttonColor);
-    font-size: 14px;
-    text-align: center;
-    text-decoration: none;
-    overflow: hidden;
-    cursor: pointer;
-    -webkit-appearance: none;
-    background-color: #fff;
-}
+    .c-btn {
+        padding: 0;
+        height: 44px;
+        display: block;
+        width: 100%;
+        border: 3px solid var(--buttonColor);
+        font-size: 14px;
+        text-align: center;
+        text-decoration: none;
+        overflow: hidden;
+        cursor: pointer;
+        -webkit-appearance: none;
+        background-color: #fff;
+    }
 
 
 
 
-.c-btn__face-primary,
-.c-btn__face-secondary {
-    display: block;
-    padding: 0 22px;
-    line-height: 39px;
-    transition: margin 0.4s;
-}
+    .c-btn__face-primary,
+    .c-btn__face-secondary {
+        display: block;
+        padding: 0 22px;
+        line-height: 39px;
+        transition: margin 0.4s;
+    }
 
-.c-btn__face-primary {
-    background-color: var(--buttonColor);
-    color: #fff;
-}
+    .c-btn__face-primary {
+        background-color: var(--buttonColor);
+        color: #fff;
+    }
 
-.c-btn__face-secondary {
-    font-size: 13px;
-    padding: 0 0;
-}
+    .c-btn__face-secondary {
+        font-size: 13px;
+        padding: 0 0;
+    }
 
-.c-btn:not(.c-btn--graded):hover .c-btn__face-primary,
-.c-btn:not(.c-btn--graded):focus .c-btn__face-primary {
-    margin-top: -39px;
-}
-
-
-.c-btn__psiScore {
-    display: none;
-    text-align: center;
-}
-
-.c-btn__grades {
-    font-size: 33px;
-    padding: 16px;
-    color: #e43;
-}
-
-.c-btn__score {
-    /*update js*/
-    font-size: 40px;
-    display: block;
-    font-weight: bold;
-}
+    .c-btn:not(.c-btn--graded):hover .c-btn__face-primary,
+    .c-btn:not(.c-btn--graded):focus .c-btn__face-primary {
+        margin-top: -39px;
+    }
 
 
-/*Scopes - The purpose of the scope (namespace: s-) is to give us the highest specificity so we can overwrite any styles for a specific purpose.
+    .c-btn__psiScore {
+        display: none;
+        text-align: center;
+    }
+
+    .c-btn__grades {
+        font-size: 33px;
+        padding: 16px;
+        color: #e43;
+    }
+
+    .c-btn__score {
+        /*update js*/
+        font-size: 40px;
+        display: block;
+        font-weight: bold;
+    }
+    /*Scopes - The purpose of the scope (namespace: s-) is to give us the highest specificity so we can overwrite any styles for a specific purpose.
 
 */
 
-.c-tab-slider {
-    width: 100vw;
-}
+    .c-tab-slider {
+        width: 100vw;
+    }
 
-.c-btn--graded {
-    /*update js to update the class it adds*/
-    overflow: initial;
-    height: initial;
-    /*background-image: url(https://cdn2.hubspot.net/hubfs/2359872/Dev_Extension/pagespeed-logo.png);*/
-    background-size: contain;
-    background-position: center bottom;
-    background-repeat: no-repeat;
-    background-size: 150px;
-}
+    .c-btn--graded {
+        /*update js to update the class it adds*/
+        overflow: initial;
+        height: initial;
+        /*background-image: url(https://cdn2.hubspot.net/hubfs/2359872/Dev_Extension/pagespeed-logo.png);*/
+        background-size: contain;
+        background-position: center bottom;
+        background-repeat: no-repeat;
+        background-size: 150px;
+    }
 
-.c-btn--graded .c-btn__face-secondary {
-    display: none;
-}
+    .c-btn--graded .c-btn__face-secondary {
+        display: none;
+    }
 
-.c-btn--docs {
-    cursor: unset;
-}
+    .c-btn--docs {
+        cursor: unset;
+    }
 
-.c-btn--docs .c-btn__face-secondary {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-}
+    .c-btn--docs .c-btn__face-secondary {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
 
-.c-btn--docs a {
-    padding: 0 10px;
-}
+    .c-btn--docs a {
+        padding: 0 10px;
+    }
 
-.c-btn--docs a:hover,
-.c-btn--docs a:focus {
-    color: var(--buttonColor);
-}
-
-
-/*Utility - Sometimes you may want to make changes only for a certain style in a specific place. In that case, utility (namespace: u-) classes can help us update it without changing the whole CSS structure.*/
-
-
-/*state and JS namespaces
+    .c-btn--docs a:hover,
+    .c-btn--docs a:focus {
+        color: var(--buttonColor);
+    }
+    /*Utility - Sometimes you may want to make changes only for a certain style in a specific place. In that case, utility (namespace: u-) classes can help us update it without changing the whole CSS structure.*/
+    /*state and JS namespaces
 * is-: this indicates the state of the block or element. Most commonly used class is .is-active, like the active link in navigation. */
+    /*hide Debug mode button, bust cache button, footer jquery, google page speed, when viewing site backend*/
 
+    body.is-backend .u-hidden-backend {
+        display: none;
+    }
 
-/*hide Debug mode button, bust cache button, footer jquery, google page speed, when viewing site backend*/
+    body.is-dm1 .u-hidden-dm1 {
+        display: none;
+    }
 
-body.is-backend .u-hidden-backend {
-    display: none;
-}
+    body.is-dm2 .u-hidden-dm2 {
+        display: none;
+    }
 
-body.is-dm1 .u-hidden-dm1 {
-    display: none;
-}
+    body.is-hs-docs .u-hidden-hs-docs {
+        display: none;
+    }
+    /*js-: this indicates that the specific element is bound to JavaScript events. For example, js-menu-click indicates that the element is bound to the click event. generally JS classes are only added to the html, as they are for targeting with JS not affecting actual styles.*/
+    </style>
+</head>
 
-body.is-dm2 .u-hidden-dm2 {
-    display: none;
-}
-
-body.is-hs-docs .u-hidden-hs-docs {
-    display: none;
-}
-
-
-/*js-: this indicates that the specific element is bound to JavaScript events. For example, js-menu-click indicates that the element is bound to the click event. generally JS classes are only added to the html, as they are for targeting with JS not affecting actual styles.*/
-</style>
-<div class="c-tab-slider">
-    <div class="c-tab-slider__tab" id="debug-tools">
-        <!--This tab will be focused when the user is not in the design manager -->
-        <div class="o-menu-grid">
-            <button class="c-btn face-button js-click--debug" id="hsDebug">
-                <div class="c-btn__face-primary">Debug Mode</div>
-                <div class="c-btn__face-secondary">hsDebug=True</div>
-            </button>
-            <button class="c-btn face-button js-click--bust-cache" id="cacheBuster">
-                <div class="c-btn__face-primary">Bust Cache</div>
-                <div class="c-btn__face-secondary">bustCache=[random Number]</div>
-            </button>
-            <button class="c-btn face-button js-click--move-jquery-to-footer" id="hsMoveJQueryToFooter">
-                <div class="c-btn__face-primary">Footer jQuery</div>
-                <div class="c-btn__face-secondary">hsMoveJQueryToFooter=True</div>
-            </button>
-            <button class="c-btn face-button js-click--amp" id="hs_amp">
-                <div class="c-btn__face-primary">Amp</div>
-                <div class="c-btn__face-secondary">hs_amp=true</div>
-            </button>
-            <button class="c-btn face-button js-click--psi-score-request" id="psiScoreRequest">
-                <div class="c-btn__face-primary">Google Page Speed Insights Scores</div>
-                <div class="c-btn__face-secondary">Score Me!
-                    <!--<img style="height: 39px;" src="https://cdn2.hubspot.net/hubfs/2359872/Dev_Extension/pagespeed.png">--></div>
-                <div class="row c-btn__grades">
-                    <div class="c-btn__psiScore column_2" id="desktop_psi_placeholder">grading desktop...
-                        <!--<img src="https://cdn2.hubspot.net/hubfs/2359872/Dev_Extension/NewCorgiDance.gif">--></div>
-                    <div class="c-btn__psiScore column_2" id="mobile_psi_placeholder">grading mobile...
-                        <!--<img src="https://cdn2.hubspot.net/hubfs/2359872/Dev_Extension/NewCorgiDance.gif">--></div>
-                </div>
-            </button>
+<body>
+    <div class="c-tab-slider">
+        <div class="c-tab-slider__tab" id="debug-tools">
+            <!--This tab will be focused when the user is not in the design manager -->
+            <div class="o-menu-grid">
+                <button class="c-btn face-button js-click--debug" id="hsDebug">
+                    <div class="c-btn__face-primary">Debug Mode</div>
+                    <div class="c-btn__face-secondary">hsDebug=True</div>
+                </button>
+                <button class="c-btn face-button js-click--bust-cache" id="cacheBuster">
+                    <div class="c-btn__face-primary">Bust Cache</div>
+                    <div class="c-btn__face-secondary">bustCache=[random Number]</div>
+                </button>
+                <button class="c-btn face-button js-click--move-jquery-to-footer" id="hsMoveJQueryToFooter">
+                    <div class="c-btn__face-primary">Footer jQuery</div>
+                    <div class="c-btn__face-secondary">hsMoveJQueryToFooter=True</div>
+                </button>
+                <button class="c-btn face-button js-click--amp" id="hs_amp">
+                    <div class="c-btn__face-primary">Amp</div>
+                    <div class="c-btn__face-secondary">hs_amp=true</div>
+                </button>
+                <button class="c-btn face-button js-click--psi-score-request" id="psiScoreRequest">
+                    <div class="c-btn__face-primary">Google Page Speed Insights Scores</div>
+                    <div class="c-btn__face-secondary">Score Me!
+                        <!--<img style="height: 39px;" src="https://cdn2.hubspot.net/hubfs/2359872/Dev_Extension/pagespeed.png">--></div>
+                    <div class="row c-btn__grades">
+                        <div class="c-btn__psiScore column_2" id="desktop_psi_placeholder">grading desktop...
+                            <!--<img src="https://cdn2.hubspot.net/hubfs/2359872/Dev_Extension/NewCorgiDance.gif">--></div>
+                        <div class="c-btn__psiScore column_2" id="mobile_psi_placeholder">grading mobile...
+                            <!--<img src="https://cdn2.hubspot.net/hubfs/2359872/Dev_Extension/NewCorgiDance.gif">--></div>
+                    </div>
+                </button>
+            </div>
         </div>
-    </div>
-    <div class="c-tab-slider__tab" id="design-manager">
-        <!-- this tab will be focused while the user is in the design manager any features intended only for DM1 or DM2 should get disabled if they do not work in the current version of the design manager -->
-        <div class="c-btn c-btn--docs face-button" id="docs">
-            <div class="c-btn__face-primary">Documentation</div>
-            <div class="c-btn__face-secondary">
-                <a target="blank" href="https://designers.hubspot.com/en/docs/hubl/hubl-supported-functions">Functions<!--add opens in new window icon--></a>
-                <a target="blank" href="https://designers.hubspot.com/docs/hubl/hubl-supported-variables">Variables<!--add opens in new window icon--></a> <a target="blank" href="https://designers.hubspot.com/docs/hubl/hubl-supported-filters">Filters<!--add opens in new window icon--></a>
-                <a target="blank" href=" https://designers.hubspot.com/docs/tools/hubdb">HubDB<!--add opens in new window icon--></a>
+        <div class="c-tab-slider__tab" id="design-manager">
+            <!-- this tab will be focused while the user is in the design manager any features intended only for DM1 or DM2 should get disabled if they do not work in the current version of the design manager -->
+            <div class="c-btn c-btn--docs face-button" id="docs">
+                <div class="c-btn__face-primary">Documentation</div>
+                <div class="c-btn__face-secondary">
+                    <a target="blank" href="https://designers.hubspot.com/en/docs/hubl/hubl-supported-functions">Functions<!--add opens in new window icon--></a>
+                    <a target="blank" href="https://designers.hubspot.com/docs/hubl/hubl-supported-variables">Variables<!--add opens in new window icon--></a> <a target="blank" href="https://designers.hubspot.com/docs/hubl/hubl-supported-filters">Filters<!--add opens in new window icon--></a>
+                    <a target="blank" href=" https://designers.hubspot.com/docs/tools/hubdb">HubDB<!--add opens in new window icon--></a>
+                </div>
             </div>
         </div>
     </div>
-</div>
-<!--  <button id="psiScoreRequest" class="debugButton">Grade my page</button>
+    <!--  <button id="psiScoreRequest" class="debugButton">Grade my page</button>
  -->
-<script src="jquery-3.2.1.min.js"></script>
-<script src="popup.js"></script>
+    <script src="jquery-3.2.1.min.js"></script>
+    <script src="popup.js"></script>
+</body>
+
+</html>
