@@ -93,6 +93,20 @@ Do not let fear of learning a new technique prevent you from contributing, other
         width: 100vw;
     }
 
+
+    .c-tab-slider__tab-selector {
+        -webkit-appearance: none;
+        border: 0;
+        display: block;
+        width: 50%;
+        font-size: 13px;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+
+    .c-tab-slider__controls {
+        display: flex;
+    }
     .c-tab-slider__tab {
         display: block;
         width: 100vw;
@@ -105,10 +119,10 @@ Do not let fear of learning a new technique prevent you from contributing, other
         flex-flow: row;
         position:relative;
     }
-    .c-tab-slider--state-design-manager{
+    .c-tab-slider--state-design-manager .c-tab-slider__track{
         left:-100vw;
     }
-    .c-tab-slider--state-debug{
+    .c-tab-slider--state-debug  .c-tab-slider__track{
         left:0;
     }
 
@@ -234,6 +248,10 @@ Do not let fear of learning a new technique prevent you from contributing, other
 
 <body>
     <div class="c-tab-slider">
+      <div class="c-tab-slider__controls">
+        <button class="c-tab-slider__tab-selector js-click--tab-debug">Debug</button>
+        <button class="c-tab-slider__tab-selector js-click--tab-develop">Develop</button>
+      </div>
         <div class="c-tab-slider__track c-tab-slider--state-debug">
             <div class="c-tab-slider__tab" id="debug-tools">
                 <!--This tab will be focused when the user is not in the design manager -->

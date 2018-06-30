@@ -50,6 +50,7 @@ var developerTools = {
 			if(~tabUrl.indexOf("app.hubspot.com")){
 				console.log("This is the hubspot backend.");
 				$('body').addClass("is-backend"); //indicates user is seeing HS backend
+				$('.c-tab-slider').addClass('c-tab-slider--state-design-manager');
 				if(~tabUrl.indexOf("/design-manager/")){
 					console.log("Old Design Manager is active");
 					$('body').addClass("is-dm1");//indicates user is seeing design manager v1
@@ -64,9 +65,11 @@ var developerTools = {
 			else if(~tabUrl.indexOf("designers.hubspot.com/docs/")){
 				console.log("Viewing HubSpot Documentation");
 				$('body').addClass("is-hs-docs");
+				$('.c-tab-slider').addClass('c-tab-slider--state-debug');
 			}
 			else{
 				console.log("This is not in the HubSpot Backend");
+				$('.c-tab-slider').addClass('c-tab-slider--state-debug');
 
 			}
 			
@@ -89,6 +92,16 @@ var developerTools = {
 			$(".js-click--psi-score-request").addClass("c-btn--graded"); 
 		});
 		
+		$('.js-click--tab-debug').click(function(){
+			console.log("debug");
+			$('.c-tab-slider').removeClass("c-tab-slider--state-design-manager");
+			$('.c-tab-slider').addClass('c-tab-slider--state-debug');
+		});
+		$('.js-click--tab-develop').click(function(){
+			console.log("develop");
+			$('.c-tab-slider').removeClass("c-tab-slider--state-debug");
+			$('.c-tab-slider').addClass('c-tab-slider--state-design-manager');
+		});
 
 	}
 
