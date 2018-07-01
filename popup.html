@@ -203,7 +203,8 @@ Do not let fear of learning a new technique prevent you from contributing, other
     }
 
     .o-menu-grid--design-manager {
-        grid-template-areas: "docs docs";
+        grid-template-areas: "docs docs"
+                             "darktoggle darktoggle";
     }
 
     #hsDebug {
@@ -228,6 +229,9 @@ Do not let fear of learning a new technique prevent you from contributing, other
 
     #docs {
         grid-area: docs;
+    }
+    #dark-toggle{
+      grid-area:darktoggle;
     }
 
 
@@ -481,14 +485,11 @@ Do not let fear of learning a new technique prevent you from contributing, other
                             <a target="blank" href=" https://designers.hubspot.com/docs/tools/hubdb">HubDB<!--add opens in new window icon--></a>
                         </div>
                     </div>
-                    <div class="setting-wrapper">
-                      <label>
-                        <input type="checkbox" id="darktheme">
-                        Activate dark theme in the new IDE
-                      </label>
+                    <div class="c-toggle-field" id="dark-toggle">
+                     
 
-                      <div id="status"></div>
-                      <button id="save">Save</button>
+                    
+                     
 
 
                       <div class="dark-theme-toggle">
@@ -518,6 +519,7 @@ Do not let fear of learning a new technique prevent you from contributing, other
                         </label>
                         
                       </div>
+                        <div id="status"></div>
                     </div>
 
                 </div>
