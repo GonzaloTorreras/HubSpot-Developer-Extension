@@ -81,8 +81,9 @@ var developerTools = {
 	saveSettings:function(){
 		// Saves settings to chrome.storage
 
-
-		  var darkthemeVal = document.getElementById('darktheme').checked;
+		  console.log("settings saved");
+		  var darkthemeVal = $('#darktheme').prop('checked');
+		  console.log("dark theme is ",darkthemeVal);
 		  chrome.storage.sync.set({
 		    darktheme: darkthemeVal,
 		  }, function() {
@@ -106,14 +107,19 @@ var developerTools = {
 			// Restores select box and checkbox state using the preferences
 // stored in chrome.storage.
     		document.getElementById('darktheme').checked = items.darktheme;
+    		console.log("dark theme:",items.darktheme);
+    		if(items.darktheme){
+    			$('.dark-theme-toggle .uiToggleSwitch').addClass("uiToggleSwitchOn private-form__toggle-switch--on");
+    		}
   		});
 
 	},
 	onLoad: function() {
 		developerTools.setMenuContext();
-		document.addEventListener('DOMContentLoaded', developerTools.getSettings);
+		developerTools.getSettings();
+		/*document.addEventListener('DOMContentLoaded', developerTools.getSettings());
 		document.getElementById('save').addEventListener('click',
-    developerTools.saveSettings);
+    developerTools.saveSettings());*/
 
 		$('.js-click--debug,.js-click--move-jquery-to-footer,.js-click--bust-cache,.js-click--amp').click(function () {
 			developerTools.debugReload($(this).attr('id'));
@@ -136,6 +142,12 @@ var developerTools = {
 			$('.c-tab-slider').removeClass("c-tab-slider--state-debug");
 			$('.c-tab-slider').addClass('c-tab-slider--state-design-manager');
 		});
+		$('.dark-theme-toggle input').change(function(){
+
+			developerTools.saveSettings();
+			$('.dark-theme-toggle .uiToggleSwitch').toggleClass("uiToggleSwitchOn private-form__toggle-switch--on");
+		});
+
 
 	}
 
