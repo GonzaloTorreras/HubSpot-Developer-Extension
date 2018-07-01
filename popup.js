@@ -78,8 +78,42 @@ var developerTools = {
 		
 		
 	},
+	saveSettings:function(){
+		// Saves settings to chrome.storage
+
+
+		  var darkthemeVal = document.getElementById('darktheme').checked;
+		  chrome.storage.sync.set({
+		    darktheme: darkthemeVal,
+		  }, function() {
+		    // Update status to let user know options were saved.
+		    var status = document.getElementById('status');
+		    status.textContent = 'Options saved. If you have the Design manager open, you will need to refresh to see the theme.';
+		    setTimeout(function() {
+		      status.textContent = '';
+		    }, 4000);
+		  });
+
+
+
+
+  
+
+
+	},
+	getSettings:function(){
+		chrome.storage.sync.get(['darktheme'], function(items) {
+			// Restores select box and checkbox state using the preferences
+// stored in chrome.storage.
+    		document.getElementById('darktheme').checked = items.darktheme;
+  		});
+
+	},
 	onLoad: function() {
 		developerTools.setMenuContext();
+		document.addEventListener('DOMContentLoaded', developerTools.getSettings);
+		document.getElementById('save').addEventListener('click',
+    developerTools.saveSettings);
 
 		$('.js-click--debug,.js-click--move-jquery-to-footer,.js-click--bust-cache,.js-click--amp').click(function () {
 			developerTools.debugReload($(this).attr('id'));
