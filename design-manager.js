@@ -35,14 +35,26 @@ $(document).ready(function() {
 
     }
     /*detect HS nav bar version*/
+    var navVersion;
     if($("#hs-nav-v3").length){
     	console.log("Nav V3 detected.");
+    	navVersion=3;
     }
     else if($("#hs-nav-v4").length){
     	console.log("Nav V4 detected.");
+    	navVersion=4;
     }
 
+	/*get current HubSpot ID*/
+	var hubId;
+    if(navVersion == 3){
+    	var hubId = $(".nav-hubid").text().replace("Hub ID: ","");
 
+    }else if(navVersion == 4){
+    	var hubId = $(".navAccount-portalId").text();
+    }
+
+    console.log("Hub ID:",hubId);
 
 
 
