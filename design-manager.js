@@ -34,6 +34,13 @@ $(document).ready(function() {
 
 
     }
+    /*detect HS nav bar version*/
+    if($("#hs-nav-v3").length){
+    	console.log("Nav V3 detected.");
+    }
+    else if($("#hs-nav-v4").length){
+    	console.log("Nav V4 detected.");
+    }
 
 
 
