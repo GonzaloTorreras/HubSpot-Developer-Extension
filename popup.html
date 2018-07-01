@@ -3,184 +3,221 @@
 <head>
     <title></title>
     <style>
-
-
     /*checkbox input stolen from HS, we really should switch this to be a normal css checkbox, the html and css is over the top*/
+
     .private-form__label--small {
-    font-size: 12px;
-    font-size: .75rem;
-}
-.private-form__label {
-    padding: .5rem .75rem .25rem 0;
-    font-family: Avenir Next W02,Helvetica,Arial,sans-serif;
-    font-weight: 500;
-    font-size: 14px;
-    font-size: .875rem;
-    display: inline-block;
-    vertical-align: middle;
-    color:#fff;
-}
-.private-form__toggle-switch {
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    cursor: pointer;
-    display: inline-block;
-    vertical-align: middle;
-}
-.sr-only {
-    position: absolute!important;
-    width: 1px!important;
-    height: 1px!important;
-    margin: -1px!important;
-    padding: 0!important;
-    overflow: hidden!important;
-    clip: rect(0,0,0,0)!important;
-    border: 0!important;
-}
-.private-form__toggle-switch--sm .private-form__toggle-switch__inner:not(.private-form__toggle-switch--on), .private-form__toggle-switch--xs .private-form__toggle-switch__inner:not(.private-form__toggle-switch--on) {
-    background-color: #f5f8fa;
-}
-.private-form__toggle-switch--xs .private-form__toggle-switch__handle, .private-form__toggle-switch--xs .private-form__toggle-switch__inner {
-    height: 26px;
-}
-.private-form__toggle-switch--xs .private-form__toggle-switch__inner {
-    width: 52px;
-}
-.private-form__toggle-switch--sm .private-form__toggle-switch__inner, .private-form__toggle-switch--xs .private-form__toggle-switch__inner {
-    min-width: 0;
-}
-.private-form__toggle-switch__inner {
-    border-radius: .1875rem;
-    background-color: #eaf0f6;
-    box-shadow: inset 0 0 0 1px #cbd6e2;
-    display: inline-block;
-    height: 2.5rem;
-    min-width: 80px;
-    position: relative;
-    vertical-align: middle;
-    width: auto;
-}
-*, :after, :before {
-    box-sizing: border-box;
-}
+        font-size: 12px;
+        font-size: .75rem;
+    }
 
-.private-checkbox--unlabeled .private-checkbox__text, .private-form__toggle-switch--sm .private-form__toggle-switch__label, .private-form__toggle-switch--xs .private-form__toggle-switch__label, .private-typeahead.hide-search>.private-search-control__wrapper {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    padding: 0;
-    overflow: hidden;
-    clip: rect(0,0,0,0);
-    border: 0;
-}
-.private-form__toggle-switch__label--checked {
-    padding-left: 1rem;
-    padding-right: 3.5rem;
-}
-.private-form__toggle-switch__label {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    font-smoothing: antialiased;
-    text-shadow: 0 0 1px transparent;
-    font-family: Avenir Next W02,Helvetica,Arial,sans-serif;
-    font-weight: 600;
-    text-align: center;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    display: block;
-    line-height: 2.5625rem;
-    text-transform: uppercase;
-    visibility: hidden;
-    white-space: nowrap;
-    width: 100%;
-}
-.private-form__toggle-switch--xs .private-form__toggle-switch__handle {
-    width: 26px;
-}
-.private-form__toggle-switch--xs .private-form__toggle-switch__handle, .private-form__toggle-switch--xs .private-form__toggle-switch__inner {
-    height: 26px;
-}
-.private-form__toggle-switch__handle {
-    border-radius: .1875rem;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    transition: all .15s ease-out;
-    background-color: #fff;
-    box-shadow: 0 0 0 0.0625rem #cbd6e2, 0 5px 5px 0 rgba(0,0,0,.08);
-    height: 2.5rem;
-    left: 0;
-    overflow: hidden;
-    padding: .4375rem;
-    position: absolute;
-    top: 0;
-    width: 2.5rem;
-    z-index: 1;
-}
-svg:not(:root) {
-    overflow: hidden;
-}
+    .private-form__label {
+        padding: .5rem .75rem .25rem 0;
+        font-family: Avenir Next W02, Helvetica, Arial, sans-serif;
+        font-weight: 500;
+        font-size: 14px;
+        font-size: .875rem;
+        display: inline-block;
+        vertical-align: middle;
+        color: #fff;
+    }
 
+    .private-form__toggle-switch {
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        cursor: pointer;
+        display: inline-block;
+        vertical-align: middle;
+    }
 
-.private-checkbox--unlabeled .private-checkbox__text, .private-form__toggle-switch--sm .private-form__toggle-switch__label, .private-form__toggle-switch--xs .private-form__toggle-switch__label, .private-typeahead.hide-search>.private-search-control__wrapper {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    padding: 0;
-    overflow: hidden;
-    clip: rect(0,0,0,0);
-    border: 0;
-}
-.private-form__toggle-switch__label--unchecked {
-    padding-left: 3.5rem;
-    padding-right: 1rem;
-    position: relative;
-    top: -40px;
-    visibility: visible;
-}
-.private-form__toggle-switch--on .private-form__toggle-switch__label--checked,input:checked ~ .private-form__toggle-switch__label--checked
-{
-    color: #fff;
-    visibility: visible;
-}
-.private-form__toggle-switch__label--checked {
-    padding-left: 1rem;
-    padding-right: 3.5rem;
-}
-.private-form__toggle-switch--xs .private-form__toggle-switch--on .private-form__toggle-switch__handle {
-    padding: .3125rem;
-}
+    .sr-only {
+        position: absolute!important;
+        width: 1px!important;
+        height: 1px!important;
+        margin: -1px!important;
+        padding: 0!important;
+        overflow: hidden!important;
+        clip: rect(0, 0, 0, 0)!important;
+        border: 0!important;
+    }
 
-.private-form__toggle-switch__icon {
-    opacity: 0;
-}
-.private-form__toggle-switch--on .private-form__toggle-switch__icon,
-input:checked ~ .private-form__toggle-switch__icon,{
-    opacity: 1;
-}
-.private-form__toggle-switch--on.private-form__toggle-switch__inner {
-    background-color: #00a4bd;
-    box-shadow: none;
-}
-.private-form__toggle-switch--on .private-form__toggle-switch__handle,input:checked ~ .private-form__toggle-switch__handle  {
-    box-shadow: 0 0 0 0.0625rem #00a4bd, 0 5px 5px 0 rgba(0,0,0,.08);
-    left: 100%;
-    transform: translateX(-100%);
-}
-.private-form__toggle-switch--on .private-form__toggle-switch__icon {
-    opacity: 1;
-}
+    .private-form__toggle-switch--sm .private-form__toggle-switch__inner:not(.private-form__toggle-switch--on),
+    .private-form__toggle-switch--xs .private-form__toggle-switch__inner:not(.private-form__toggle-switch--on) {
+        background-color: #f5f8fa;
+    }
+
+    .private-form__toggle-switch--xs .private-form__toggle-switch__handle,
+    .private-form__toggle-switch--xs .private-form__toggle-switch__inner {
+        height: 26px;
+    }
+
+    .private-form__toggle-switch--xs .private-form__toggle-switch__inner {
+        width: 52px;
+    }
+
+    .private-form__toggle-switch--sm .private-form__toggle-switch__inner,
+    .private-form__toggle-switch--xs .private-form__toggle-switch__inner {
+        min-width: 0;
+    }
+
+    .private-form__toggle-switch__inner {
+        border-radius: .1875rem;
+        background-color: #eaf0f6;
+        box-shadow: inset 0 0 0 1px #cbd6e2;
+        display: inline-block;
+        height: 2.5rem;
+        min-width: 80px;
+        position: relative;
+        vertical-align: middle;
+        width: auto;
+    }
+
+    *,
+     :after,
+     :before {
+        box-sizing: border-box;
+    }
+
+    .private-checkbox--unlabeled .private-checkbox__text,
+    .private-form__toggle-switch--sm .private-form__toggle-switch__label,
+    .private-form__toggle-switch--xs .private-form__toggle-switch__label,
+    .private-typeahead.hide-search>.private-search-control__wrapper {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        padding: 0;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        border: 0;
+    }
+
+    .private-form__toggle-switch__label--checked {
+        padding-left: 1rem;
+        padding-right: 3.5rem;
+    }
+
+    .private-form__toggle-switch__label {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        font-smoothing: antialiased;
+        text-shadow: 0 0 1px transparent;
+        font-family: Avenir Next W02, Helvetica, Arial, sans-serif;
+        font-weight: 600;
+        text-align: center;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        display: block;
+        line-height: 2.5625rem;
+        text-transform: uppercase;
+        visibility: hidden;
+        white-space: nowrap;
+        width: 100%;
+    }
+
+    .private-form__toggle-switch--xs .private-form__toggle-switch__handle {
+        width: 26px;
+    }
+
+    .private-form__toggle-switch--xs .private-form__toggle-switch__handle,
+    .private-form__toggle-switch--xs .private-form__toggle-switch__inner {
+        height: 26px;
+    }
+
+    .private-form__toggle-switch__handle {
+        border-radius: .1875rem;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        transition: all .15s ease-out;
+        background-color: #fff;
+        box-shadow: 0 0 0 0.0625rem #cbd6e2, 0 5px 5px 0 rgba(0, 0, 0, .08);
+        height: 2.5rem;
+        left: 0;
+        overflow: hidden;
+        padding: .4375rem;
+        position: absolute;
+        top: 0;
+        width: 2.5rem;
+        z-index: 1;
+    }
+
+    svg:not(:root) {
+        overflow: hidden;
+    }
 
 
-#status{color:#fff;}
+    .private-checkbox--unlabeled .private-checkbox__text,
+    .private-form__toggle-switch--sm .private-form__toggle-switch__label,
+    .private-form__toggle-switch--xs .private-form__toggle-switch__label,
+    .private-typeahead.hide-search>.private-search-control__wrapper {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        padding: 0;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        border: 0;
+    }
 
+    .private-form__toggle-switch__label--unchecked {
+        padding-left: 3.5rem;
+        padding-right: 1rem;
+        position: relative;
+        top: -40px;
+        visibility: visible;
+    }
+
+    .private-form__toggle-switch--on .private-form__toggle-switch__label--checked,
+    input:checked~.private-form__toggle-switch__label--checked {
+        color: #fff;
+        visibility: visible;
+    }
+
+    .private-form__toggle-switch__label--checked {
+        padding-left: 1rem;
+        padding-right: 3.5rem;
+    }
+
+    .private-form__toggle-switch--xs .private-form__toggle-switch--on .private-form__toggle-switch__handle {
+        padding: .3125rem;
+    }
+
+    .private-form__toggle-switch__icon {
+        opacity: 0;
+    }
+
+    .private-form__toggle-switch--on .private-form__toggle-switch__icon,
+    input:checked~.private-form__toggle-switch__icon,
+    {
+        opacity: 1;
+    }
+
+    .private-form__toggle-switch--on.private-form__toggle-switch__inner {
+        background-color: #00a4bd;
+        box-shadow: none;
+    }
+
+    .private-form__toggle-switch--on .private-form__toggle-switch__handle,
+    input:checked~.private-form__toggle-switch__handle {
+        box-shadow: 0 0 0 0.0625rem #00a4bd, 0 5px 5px 0 rgba(0, 0, 0, .08);
+        left: 100%;
+        transform: translateX(-100%);
+    }
+
+    .private-form__toggle-switch--on .private-form__toggle-switch__icon {
+        opacity: 1;
+    }
+
+
+    #status {
+        color: #fff;
+    }
     /*To keep CSS organized and easy to understand this css is following this method https://css-tricks.com/combining-the-powers-of-sem-and-bio-for-improving-css/
 Do not let fear of learning a new technique prevent you from contributing, others can help convert your css to fit this flow. so pull request even if it doesn't fit this way of doing things. The important thing is that it works, keeping organized and understandable is second. If everyone finds they hate writing CSS this way we can work out another way to do it.
 */
@@ -210,8 +247,7 @@ Do not let fear of learning a new technique prevent you from contributing, other
     }
 
     .o-menu-grid--design-manager {
-        grid-template-areas: "docs docs"
-                             "darktoggle darktoggle";
+        grid-template-areas: "docs docs" "darktoggle darktoggle";
     }
 
     #hsDebug {
@@ -237,8 +273,9 @@ Do not let fear of learning a new technique prevent you from contributing, other
     #docs {
         grid-area: docs;
     }
-    #dark-toggle{
-      grid-area:darktoggle;
+
+    #dark-toggle {
+        grid-area: darktoggle;
     }
 
 
@@ -419,8 +456,9 @@ Do not let fear of learning a new technique prevent you from contributing, other
     /*state and JS namespaces
 * is-: this indicates the state of the block or element. Most commonly used class is .is-active, like the active link in navigation. */
     /*hide Debug mode button, bust cache button, footer jquery, google page speed, when viewing site backend*/
-    .u-text-orange{
-        color:var(--buttonColor)!important;
+
+    .u-text-orange {
+        color: var(--buttonColor)!important;
     }
 
     body.is-backend .u-hidden-backend {
@@ -439,9 +477,6 @@ Do not let fear of learning a new technique prevent you from contributing, other
         display: none;
     }
     /*js-: this indicates that the specific element is bound to JavaScript events. For example, js-menu-click indicates that the element is bound to the click event. generally JS classes are only added to the html, as they are for targeting with JS not affecting actual styles.*/
-
-
-
     </style>
 </head>
 
@@ -496,42 +531,31 @@ Do not let fear of learning a new technique prevent you from contributing, other
                         </div>
                     </div>
                     <div class="c-toggle-field" id="dark-toggle">
-                     
-
-                    
-                     
-
-
-                      <div class="dark-theme-toggle">
-                        <label class="private-form__label private-form__label--small">
-                          <i18n-string data-locale-at-render="en" data-key="DesignEditorsUI.customWidgetEditor.sidebar.fieldEdit.editorOptions.requiredLabel">
-                            <span class="u-text-orange">DM2</span> - Dark Theme
-                          </i18n-string>
-                          
-                        </label>
-                        <label class="uiToggle private-form__toggle-switch private-form__toggle-switch--xs ">
-                          <input type="checkbox" id="darktheme" class="private-form__toggle-input sr-only">
-                          <span class="uiToggleSwitch private-form__toggle-switch__inner" role="presentation">
+                        <div class="dark-theme-toggle">
+                            <label class="private-form__label private-form__label--small">
+                                <i18n-string data-locale-at-render="en" data-key="DesignEditorsUI.customWidgetEditor.sidebar.fieldEdit.editorOptions.requiredLabel">
+                                    <span class="u-text-orange">DM2</span> - Dark Theme
+                                </i18n-string>
+                            </label>
+                            <label class="uiToggle private-form__toggle-switch private-form__toggle-switch--xs ">
+                                <input type="checkbox" id="darktheme" class="private-form__toggle-input sr-only">
+                                <span class="uiToggleSwitch private-form__toggle-switch__inner" role="presentation">
                             
                             <span class="uiToggleSwitchLabel private-form__toggle-switch__label private-form__toggle-switch__label--checked">
                               on
                             </span>
-                            <span class="private-form__toggle-switch__handle">
+                                <span class="private-form__toggle-switch__handle">
                               <svg role="presentation" viewBox="0 0 15 15.343" xmlns="http://www.w3.org/2000/svg"><title>checkmark</title><path fill="#00a4bd" stroke="#ffffff" stroke-width="2" class="private-form__toggle-switch__icon" d="M1.013 8.11c0-.223.078-.412.234-.568l1.14-1.14c.155-.155.345-.233.568-.233s.413.077.57.233l2.46 2.47 5.492-5.5c.156-.156.346-.234.568-.234.224 0 .413.077.57.233l1.138 1.14c.156.155.234.345.234.568 0 .224-.078.414-.234.57l-6.06 6.06-1.14 1.14c-.155.155-.345.233-.568.233s-.413-.078-.57-.234l-1.138-1.14-3.03-3.03c-.156-.156-.234-.346-.234-.57z"></path></svg>
                               
                             </span>
-                            <span class="uiToggleSwitchLabel private-form__toggle-switch__label private-form__toggle-switch__label--unchecked">
+                                <span class="uiToggleSwitchLabel private-form__toggle-switch__label private-form__toggle-switch__label--unchecked">
                               off
                             </span>
-                            
-                          </span>
-                          
-                        </label>
-                        
-                      </div>
+                                </span>
+                            </label>
+                        </div>
                         <div id="status"></div>
                     </div>
-
                 </div>
             </div>
         </div>
