@@ -17,7 +17,15 @@
   },
   "debugButton": {
   	"message": "Debug Mode",
-  	"description": "HSDebug button text"
+  	"description": "HSDebug button label"
+  },
+  "cacheBustButton": {
+  	"message": "Bust Cache",
+  	"description": "cachebuster Button label "
+  },
+  "footerJqueryButton": {
+  	"message": "Footer jQuery",
+  	"description": "footer jQuery Button label "
   }
  
 }
