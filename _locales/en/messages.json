@@ -21,11 +21,27 @@
   },
   "cacheBustButton": {
   	"message": "Bust Cache",
-  	"description": "cachebuster Button label "
+  	"description": "cachebuster Button label"
   },
   "footerJqueryButton": {
   	"message": "Footer jQuery",
-  	"description": "footer jQuery Button label "
+  	"description": "footer jQuery Button label"
+  },
+  "documentationButton": {
+  	"message": "Documentation",
+  	"description": "Documentation Button label"
+  },
+  "docLinkFunctions": {
+  	"message": "Functions",
+  	"description": "Documentation Button link for Functions"
+  },
+  "docLinkVariables": {
+  	"message": "Variables",
+  	"description": "Documentation Button link for Variables"
+  },
+  "docLinkFilters": {
+  	"message": "Filters",
+  	"description": "Documentation Button link for Filters"
   }
  
 }
