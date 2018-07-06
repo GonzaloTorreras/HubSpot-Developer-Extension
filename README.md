@@ -27,3 +27,4 @@ Then when you're ready to merge into the master branch submit a pull request. Th
 
 If you're fixing a bug in master that isn't a major change, feel free to commit to master directly.
 
+If you have any questions you can find @TheWebTech @williamspiro and @GonzaloTorreras in our channel in the HubSpot Design & Developer Slack https://hubspotdev.slack.com/messages/CBBAW6Z3R
