@@ -1,66 +1,66 @@
 {
   "extName": {
-    "message": "HubSpot Developer Extension",
+    "message": "HubSpot Entwicklererweiterung",
     "description": "The Extension's name"
   },
   "extDesc": {
-    "message": "Must have for HubSpot Developers, bringing quick access to commonly used query parameters, and adding convenience features to HubSpot",
+    "message": "Muss für HubSpot-Entwickler verfügbar sein, indem schnell auf häufig verwendete Abfrageparameter zugegriffen wird und Convenience-Funktionen zu HubSpot hinzugefügt werden",
     "description": "Description for extension, displays in chrome extensions listing"
   },
   "debugTab": {
-  	"message": "Debug",
+  	"message": "Debuggen",
   	"description": "Debug Tab Label"
   },
   "developTab": {
-  	"message": "Develop",
+  	"message": "Entwickeln",
   	"description": "Develop Tab Label"
   },
   "debugButton": {
-  	"message": "Debug Mode",
+  	"message": "Debug-Modus",
   	"description": "HSDebug button label"
   },
   "cacheBustButton": {
-  	"message": "Bust Cache",
+  	"message": "Büste Cache",
   	"description": "cachebuster Button label"
   },
   "footerJqueryButton": {
-  	"message": "Footer jQuery",
+  	"message": "Fußzeile jQuery",
   	"description": "footer jQuery Button label"
   },
   "gpsiHover":{
-    "message": "Score me!",
+    "message": "Schlage mich!",
     "description": "'score me!' text that appears in hover of google page speed button"
   },
   "gpsiTestingDesktop":{
-    "message": "grading desktop...",
+    "message": "Desktop testen...",
     "description": "'grading desktop' text that appears after click of google page speed button"
   },
   "gpsiTestingMobile":{
-    "message": "grading mobile...",
+    "message": "Handy testen...",
     "description": "'grading mobile' text that appears after click of google page speed button"
   },
   "documentationButton": {
-  	"message": "Documentation",
+  	"message": "Dokumentation",
   	"description": "Documentation Button label"
   },
   "docLinkFunctions": {
-  	"message": "Functions",
+  	"message": "Funktionen",
   	"description": "Documentation Button link for Functions"
   },
   "docLinkVariables": {
-  	"message": "Variables",
+  	"message": "Variablen",
   	"description": "Documentation Button link for Variables"
   },
   "docLinkFilters": {
-  	"message": "Filters",
+  	"message": "Filter",
   	"description": "Documentation Button link for Filters"
   },
     "darkTheme":{
-    "message": "Dark Theme",
+    "message": "Dunkles Thema",
     "description": "Dark theme toggle label"
   },
   "helpTranslate": {
-  	"message": "Do you know English and another language? We need your help to translate the extension, please go to our GitHub.",
+  	"message": "Kennen Sie Englisch und eine andere Sprache? Wir benötigen Ihre Hilfe, um die Erweiterung zu übersetzen. Bitte besuchen Sie unseren GitHub.",
   	"description": "options page request for help translating."
   }
  
