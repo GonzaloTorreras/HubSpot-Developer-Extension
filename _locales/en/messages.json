@@ -6,6 +6,18 @@
   "extDesc": {
     "message": "Must have for HubSpot Developers, bringing quick access to commonly used query parameters, and adding convenience features to HubSpot",
     "description": "Description for extension, displays in chrome extensions listing"
+  },
+  "debugTab": {
+  	"message": "Debug",
+  	"description": "Debug Tab Label"
+  },
+  "developTab": {
+  	"message": "Develop",
+  	"description": "Develop Tab Label"
+  },
+  "debugButton": {
+  	"message": "Debug Mode",
+  	"description": "HSDebug button text"
   }
  
 }

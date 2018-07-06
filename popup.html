@@ -486,15 +486,15 @@ Do not let fear of learning a new technique prevent you from contributing, other
 
     <div class="c-tab-slider">
         <div class="c-tab-slider__controls">
-            <button class="c-tab-slider__tab-selector js-click--tab-debug c-tab-slider__tab-selector--debug">Debug</button>
-            <button class="c-tab-slider__tab-selector c-tab-slider__tab-selector--develop js-click--tab-develop">Develop</button>
+            <button class="c-tab-slider__tab-selector js-click--tab-debug c-tab-slider__tab-selector--debug" data-i18n="debugTab"><!--Debug--></button>
+            <button class="c-tab-slider__tab-selector c-tab-slider__tab-selector--develop js-click--tab-develop" data-i18n="developTab"><!--Develop--></button>
         </div>
         <div class="c-tab-slider__track c-tab-slider--state-debug">
             <div class="c-tab-slider__tab" id="debug-tools">
                 <!--This tab will be focused when the user is not in the design manager -->
                 <div class="o-menu-grid o-menu-grid--debug">
                     <button class="c-btn face-button js-click--debug" id="hsDebug">
-                        <div class="c-btn__face-primary">Debug Mode</div>
+                        <div class="c-btn__face-primary" data-i18n="debugButton"><!--Debug Mode--></div>
                         <div class="c-btn__face-secondary">hsDebug=True</div>
                     </button>
                     <button class="c-btn face-button js-click--bust-cache" id="cacheBuster">
@@ -566,6 +566,8 @@ Do not let fear of learning a new technique prevent you from contributing, other
 
     <script src="jquery-3.2.1.min.js"></script>
     <script src="popup.js"></script>
+    <script src="easy-translate.js"></script>
+
 </body>
 
 </html>
