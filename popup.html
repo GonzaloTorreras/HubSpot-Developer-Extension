@@ -248,7 +248,7 @@ Do not let fear of learning a new technique prevent you from contributing, other
     }
 
     .o-menu-grid--design-manager {
-        grid-template-areas: "docs docs" "darktoggle darktoggle";
+        grid-template-areas: "docs docs" "community community" "darktoggle darktoggle";
     }
 
     #hsDebug {
@@ -273,6 +273,9 @@ Do not let fear of learning a new technique prevent you from contributing, other
 
     #docs {
         grid-area: docs;
+    }
+    #community{
+        grid-area:community;
     }
 
     #dark-toggle {
@@ -436,22 +439,22 @@ Do not let fear of learning a new technique prevent you from contributing, other
         display: none;
     }
 
-    .c-btn--docs {
+    .c-btn--link-list {
         cursor: unset;
     }
 
-    .c-btn--docs .c-btn__face-secondary {
+    .c-btn--link-list .c-btn__face-secondary {
         display: flex;
         align-items: center;
         justify-content: space-around;
     }
 
-    .c-btn--docs a {
+    .c-btn--link-list a {
         padding: 0 10px;
     }
 
-    .c-btn--docs a:hover,
-    .c-btn--docs a:focus {
+    .c-btn--link-list a:hover,
+    .c-btn--link-list a:focus {
         color: var(--buttonColor);
     }
     /*Utility - Sometimes you may want to make changes only for a certain style in a specific place. In that case, utility (namespace: u-) classes can help us update it without changing the whole CSS structure.*/
@@ -525,13 +528,20 @@ Do not let fear of learning a new technique prevent you from contributing, other
             <div class="c-tab-slider__tab" id="design-manager">
                 <!-- this tab will be focused while the user is in the design manager any features intended only for DM1 or DM2 should get disabled if they do not work in the current version of the design manager -->
                 <div class="o-menu-grid o-menu-grid--design-manager">
-                    <div class="c-btn c-btn--docs face-button" id="docs">
+                    <div class="c-btn c-btn--link-list face-button" id="docs">
                         <div class="c-btn__face-primary" data-i18n="documentationButton"><!--Documentation--></div>
                         <div class="c-btn__face-secondary">
                             <a target="blank" href="https://designers.hubspot.com/en/docs/hubl/hubl-supported-functions" data-i18n="docLinkFunctions">
                                 <!--Functions add opens in new window icon--></a>
                             <a target="blank" href="https://designers.hubspot.com/docs/hubl/hubl-supported-variables" data-i18n="docLinkVariables"><!--Variables add opens in new window icon--></a> <a target="blank" href="https://designers.hubspot.com/docs/hubl/hubl-supported-filters" data-i18n="docLinkFilters"><!--Filters add opens in new window icon--></a>
                             <a target="blank" href=" https://designers.hubspot.com/docs/tools/hubdb">HubDB<!--add opens in new window icon--></a>
+                        </div>
+                    </div>
+                    <div class="c-btn c-btn--link-list face-button" id="community">
+                        <div class="c-btn__face-primary">Community</div>
+                        <div class="c-btn__face-secondary">
+                            <a target="_blank" href="https://community.hubspot.com/t5/Design/ct-p/designers">Design Forum<!--add opens in new window icon--></a>
+                            <a target="_blank" href="https://integrate.hubspot.com/">Developer Forum<!--add opens in new window icon--></a> <a target="blank" href="https://community.hubspot.com/t5/custom/page/page-id/ideaslandingpage">Ideas<!--add opens in new window icon--></a>
                         </div>
                     </div>
                     <div class="c-toggle-field" id="dark-toggle">
