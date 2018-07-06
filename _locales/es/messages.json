@@ -56,7 +56,7 @@
   	"description": "Documentation Button link for Filters"
   },
   "darkTheme":{
-    "message": "Tema oscuro",
+    "message": "Tema Dark",
     "description": "Dark theme toggle label"
   },
   "helpTranslate": {
