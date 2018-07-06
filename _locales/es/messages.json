@@ -1,26 +1,26 @@
 {
   "extName": {
-    "message": "HubSpot Developer Extension",
+    "message": "Extensión para desarrolladores HubSpot",
     "description": "The Extension's name"
   },
   "extDesc": {
-    "message": "Must have for HubSpot Developers, bringing quick access to commonly used query parameters, and adding convenience features to HubSpot",
+    "message": "Es esencial para desarrolladores de Hubspot porque brinda acceso rápido a parámetros de URL útiles además de añadir funcionalidades extra",
     "description": "Description for extension, displays in chrome extensions listing"
   },
   "debugTab": {
-  	"message": "Debug",
+  	"message": "Depurar",
   	"description": "Debug Tab Label"
   },
   "developTab": {
-  	"message": "Develop",
+  	"message": "Desarrollar",
   	"description": "Develop Tab Label"
   },
   "debugButton": {
-  	"message": "Debug Mode",
+  	"message": "Modo de depuración",
   	"description": "HSDebug button label"
   },
   "cacheBustButton": {
-  	"message": "Bust Cache",
+  	"message": "Ignorar caché",
   	"description": "cachebuster Button label"
   },
   "footerJqueryButton": {
@@ -28,11 +28,11 @@
   	"description": "footer jQuery Button label"
   },
   "documentationButton": {
-  	"message": "Documentation",
+  	"message": "Documentación",
   	"description": "Documentation Button label"
   },
   "docLinkFunctions": {
-  	"message": "Functions",
+  	"message": "funciones",
   	"description": "Documentation Button link for Functions"
   },
   "docLinkVariables": {
@@ -40,11 +40,11 @@
   	"description": "Documentation Button link for Variables"
   },
   "docLinkFilters": {
-  	"message": "Filters",
+  	"message": "Filtros",
   	"description": "Documentation Button link for Filters"
   },
   "helpTranslate": {
-  	"message": "Do you know English and another language? We need your help to translate the extension, please go to our GitHub.",
+  	"message": "¿Sabes inglés y otro idioma? Necesitamos su ayuda para traducir la extensión, vaya a nuestro GitHub.",
   	"description": "options page request for help translating."
   }
  
