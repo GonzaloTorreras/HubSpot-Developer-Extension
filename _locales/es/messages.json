@@ -43,6 +43,10 @@
   	"message": "Filtros",
   	"description": "Documentation Button link for Filters"
   },
+  "darkTheme":{
+    "message": "Tema oscuro",
+    "description": "Dark theme toggle label"
+  },
   "helpTranslate": {
   	"message": "¿Sabes inglés y otro idioma? Necesitamos su ayuda para traducir la extensión, vaya a nuestro GitHub.",
   	"description": "options page request for help translating."
