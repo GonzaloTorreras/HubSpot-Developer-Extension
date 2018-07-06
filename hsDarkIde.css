@@ -168,9 +168,6 @@ body.design-manager.ext-dark-theme span.private-icon.private-icon__high {
 }
 
 
-
-
-
 /** blue stuff **/
 
 body.design-manager.ext-dark-theme .file-tabs.private-tabs .file-tab.is--active {
@@ -204,6 +201,7 @@ body.design-manager.ext-dark-theme .private-folder-nav .private-nav .nav-item-li
 body.design-manager.ext-dark-theme .private-button__link:hover,
 body.design-manager.ext-dark-theme .private-link:hover,
 body.design-manager.ext-dark-theme .private-link .private-icon:not(.private-icon-circle__inner),
+
 body.design-manager.ext-dark-theme .is--text--help,
 body.design-manager.ext-dark-theme .private-button--secondary {
     color: rgba(63, 180, 249, 1);
@@ -264,6 +262,7 @@ body.design-manager.ext-dark-theme .private-form__control {
 body.design-manager.ext-dark-theme .private-modal--default,
 body.design- manager.ext-dark-theme .private-modal__footer {
     background: linear- gradient(45deg, rgb(51, 71, 91), rgb(45, 62, 80));
+
 }
 
 body.design-manager.ext-dark-theme .status-bar {
