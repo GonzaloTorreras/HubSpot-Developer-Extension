@@ -27,6 +27,18 @@
   	"message": "Footer jQuery",
   	"description": "footer jQuery Button label"
   },
+  "gpsiHover":{
+    "message": "Puntuaciónme!",
+    "description": "'score me!' text that appears in hover of google page speed button"
+  },
+   "gpsiTestingDesktop":{
+    "message": "prueba de escritorio",
+    "description": "'grading desktop' text that appears after click of google page speed button"
+  },
+  "gpsiTestingMobile":{
+    "message": "prueba móvil",
+    "description": "'grading mobile' text that appears after click of google page speed button"
+  },
   "documentationButton": {
   	"message": "Documentación",
   	"description": "Documentation Button label"
