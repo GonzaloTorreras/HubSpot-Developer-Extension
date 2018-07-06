@@ -1,0 +1,11 @@
+{
+  "extName": {
+    "message": "HubSpot Developer Extension",
+    "description": "The Extension's name"
+  },
+  "extDesc": {
+    "message": "Must have for HubSpot Developers, bringing quick access to commonly used query parameters, and adding convenience features to HubSpot",
+    "description": "Description for extension, displays in chrome extensions listing"
+  }
+ 
+}

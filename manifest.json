@@ -1,9 +1,10 @@
 {
 	"manifest_version": 2,
-	"name": "HubSpot Developer Extension ",
+	"name": "__MSG_extName__",
 	"version": "1.02",
-	"description": "Must have for HubSpot Developers, bringing quick access to commonly used query parameters, and adding convenience features to HubSpot",
+	"description": "__MSG_extDesc__",
 	"permissions": ["declarativeContent", "storage"],
+	"default_locale":"en",
 	"browser_action": {
 		"default_popup": "popup.html",
 		"default_icon": "icon.png"
