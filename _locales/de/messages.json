@@ -56,19 +56,19 @@
   	"description": "Documentation Button link for Filters"
   },
   "communityButton": {
-    "message": "Community",
+    "message": "Gemeinschaft",
     "description": "Community Button label"
   },
   "comLinkDesign": {
-    "message": "Design Forum",
+    "message": "Designforum",
     "description": "Community Button link for Design Forum"
   },
   "comLinkDeveloper": {
-    "message": "Developer Forum",
+    "message": "Entwicklerforum",
     "description": "Community Button link for Developer/api Forum"
   },
   "comLinkIdeas": {
-    "message": "Ideas",
+    "message": "Ideen",
     "description": "Community Button link for Ideas"
   },
     "darkTheme":{
