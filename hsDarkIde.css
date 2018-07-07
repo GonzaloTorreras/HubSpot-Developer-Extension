@@ -1,3 +1,9 @@
+html.mac .CodeMirror-lines{
+  /*cursor:e-resize;*/
+  /*cursor:url("/mac-text-cursor.svg")!important;*/
+  cursor:url("chrome-extension://__MSG_@@extension_id__/image.png");
+}
+
 body.design-manager.ext-dark-theme .CodeMirror.CodeMirror-overlayscroll{
   font-size: 15px !important;
 }
