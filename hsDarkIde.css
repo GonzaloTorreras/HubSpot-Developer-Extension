@@ -1,7 +1,7 @@
-html.mac .CodeMirror-lines{
-  /*cursor:e-resize;*/
-  /*cursor:url("/mac-text-cursor.svg")!important;*/
-  cursor:url("chrome-extension://__MSG_@@extension_id__/image.png");
+
+/*Fixing Mac text cursor issue in the code editor by inverting the cursor for dark code editor themes.*/
+html.mac .cm-s-hubspot-canvas-dark .CodeMirror-lines, html.mac .cm-s-solarized .CodeMirror-lines{
+  cursor:url("chrome-extension://__MSG_@@extension_id__/mac-text-cursor.svg"),text;
 }
 
 body.design-manager.ext-dark-theme .CodeMirror.CodeMirror-overlayscroll{
