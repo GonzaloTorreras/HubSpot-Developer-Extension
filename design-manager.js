@@ -56,6 +56,63 @@ $(document).ready(function() {
 
     console.log("Hub ID:",hubId);
 
+    if(navVersion == 3){
+        console.log("should be inserted");
+        
+        var html = '';
+        html += '<li class="nav-main-item nav-dropdown-container"><a href="">Developer</a>';
+        html +=     '<ul class="nav-dropdown-menu">';
+
+        html +=         '<li id="nav-dropdown-item-leads" data-mainitemid="contacts" class="nav-dropdown-item">';
+        html +=             '<a data-appkey="contacts" href="https://app.hubspot.com/design-manager/'+hubId+'">';
+        html +=                 '<span class="child-link-text link-text-after-parent-item-contacts">';
+        html +=                     'Design Manager';
+        html +=                 '</span>';
+        html +=             '</a>';
+        html +=         '</li>';
+
+        html +=         '<li id="nav-dropdown-item-leads" data-mainitemid="contacts" class="nav-dropdown-item">';
+        html +=             '<a data-appkey="contacts" href="https://app.hubspot.com/hubdb/'+hubId+'">';
+        html +=                 '<span class="child-link-text link-text-after-parent-item-contacts">';
+        html +=                     'HubDB';
+        html +=                 '</span>';
+        html +=             '</a>';
+        html +=         '</li>';
+
+        html +=         '<li id="nav-dropdown-item-leads" data-mainitemid="contacts" class="nav-dropdown-item">';
+        html +=             '<a data-appkey="contacts" href="https://app.hubspot.com/content/'+hubId+'/staging/">';
+        html +=                 '<span class="child-link-text link-text-after-parent-item-contacts">';
+        html +=                     'Content Staging';
+        html +=                 '</span>';
+        html +=             '</a>';
+        html +=         '</li>';
+
+        html +=         '<li id="nav-dropdown-item-leads" data-mainitemid="contacts" class="nav-dropdown-item">';
+        html +=             '<a data-appkey="contacts" href="https://app.hubspot.com/settings/'+hubId+'/website/pages/all-domains/page-templates">';
+        html +=                 '<span class="child-link-text link-text-after-parent-item-contacts">';
+        html +=                     'Content Settings';
+        html +=                 '</span>';
+        html +=             '</a>';
+        html +=         '</li>';
+
+        html +=         '<li id="nav-dropdown-item-leads" data-mainitemid="contacts" class="nav-dropdown-item">';
+        html +=             '<a data-appkey="contacts" href="https://app.hubspot.com/settings/'+hubId+'/website/pages/all-domains/navigation">';
+        html +=                 '<span class="child-link-text link-text-after-parent-item-contacts">';
+        html +=                     'Advanced Menus';
+        html +=                 '</span>';
+        html +=             '</a>';
+        html +=         '</li>';
+
+        html +=     '</ul>';
+        html += '</li>';
+      
+        
+        $("#nav-main-item-product-selector").after(html);
+
+
+
+
+    }
 
 
 
