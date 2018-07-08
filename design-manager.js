@@ -60,8 +60,8 @@ $(document).ready(function() {
         console.log("should be inserted");
         
         var html = '';
-        html += '<li class="nav-main-item nav-dropdown-container"><a href="">Developer</a>';
-        html +=     '<ul class="nav-dropdown-menu">';
+        html += '<li id="ext-dev-menu" class="nav-main-item nav-dropdown-container" style="background-color: #555;"><a href="">Developer</a>';
+        html +=     '<ul class="nav-dropdown-menu" style="min-width: 102px;">';
 
         html +=         '<li id="nav-dropdown-item-leads" data-mainitemid="contacts" class="nav-dropdown-item">';
         html +=             '<a data-appkey="contacts" href="https://app.hubspot.com/design-manager/'+hubId+'">';
@@ -108,6 +108,15 @@ $(document).ready(function() {
       
         
         $("#nav-main-item-product-selector").after(html);
+
+        $("#ext-dev-menu > a").click(function(e){
+             e.preventDefault();
+            console.log("dev menu clicked!");
+            $("#ext-dev-menu").toggleClass("current-dropdown");
+            
+            $(".nav-dropdown-menu","#ext-dev-menu").toggle();
+            $(this).toggleClass("current-dropdown-item");
+        });
 
 
 
