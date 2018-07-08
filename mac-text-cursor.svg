@@ -1,0 +1,14 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 13 22">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <title>mac text cursor</title>
+  <g>
+    <image width="13" height="22" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAWCAYAAAAb+hYkAAAACXBIWXMAAAsSAAALEgHS3X78AAACXElEQVQ4T22UQW8aSRSEq7p7ekjYWdgMkrUKQqzsG0f7//+C+Mg5SMGKrMVZCB4Yhn5dOazxgtd1aan1Su+9T11NSQAAksSZJOm9OwAIJ8NsNitWq1VxBWBXVYmk3dzc+I/bbXgEMBqNjiSPkkRJuONd0Y4fq32MI2/mafazkdo+2ZP3v5v39qHrVr3l1faLvhwDSU6nU++6+FvO+U/A90Phtj2zHbz/aJlVzrnZ59g206cdyeQkqV7UFnlovNkTYXuT6uz9XybVhO292VPkoakXtUmSA4B73Cc/HG7N+6W8f5DUUaokdfL+wbxf+uFwe4/79ArihdQRwPP19XUkucsAHLkTuV4sFs8A7ETPvcGZD4dDytklAsrZpcPhkADkk+G101tJIgC+nP+Tw6VYlmUgWQIoSZZlWQYAF+YL0wwzn1LqO+gTxZGDPqWU+jPM/LsmktyMNx5AT8BQwB8ChgB6m/HGnz+pCxCD5cAAtATWBP4hsAbQDpYDOwdxMd4ccwshNBn8IWqVwR8hhGaOuZ3XvQWhtm1NUgepk9S1bWsAXrtcmF5mdjHGQDKCjCRjjDEAcOc7XURju932zawu5GoBAyrXyXI9mUy6qqqaUzQcANziNth6XRUqPhfOTUAOABDkoHBuUqj4bOt1dYvbAABn0Sj7zlsNMmbygcrfROccEeGt7qz82U6fGpIpSNId76wdPz7vXfzuUvpb3jeW0TmnCLN+DiF9cN1zb3FlX/X13+SedvKrVWE58zAYHMfjsS2XS19uNoV3TjYaHefz+X9xP6P3qpe4vPux/AJ0t3EItFt4qwAAAABJRU5ErkJggg=="/>
+    <polygon class="cls-1" points="3 2 5 2 5 3 6 3 6 4 7 4 7 3 8 3 8 2 10 2 10 3 8 3 8 4 7 4 7 10 8 10 8 11 7 11 7 16 8 16 8 17 10 17 10 18 8 18 8 17 7 17 7 16 6 16 6 17 5 17 5 18 3 18 3 17 5 17 5 16 6 16 6 11 5 11 5 10 6 10 6 4 5 4 5 3 3 3 3 2"/>
+  </g>
+</svg>

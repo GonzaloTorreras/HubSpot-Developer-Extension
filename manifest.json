@@ -14,6 +14,11 @@
 		"activeTab",
 		"cookies",
 		"storage"
+
+	],
+	"web_accessible_resources": [
+		"mac-text-cursor.svg",
+		"mac-text-cursor.png"
 	],
 	"content_scripts": [{
 		"run_at" :"document_end", 
