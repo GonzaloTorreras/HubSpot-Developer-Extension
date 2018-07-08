@@ -88,6 +88,15 @@ $(document).ready(function() {
         html +=         '</li>';
 
         html +=         '<li id="nav-dropdown-item-leads" data-mainitemid="contacts" class="nav-dropdown-item">';
+        html +=             '<a data-appkey="contacts" href="https://app.hubspot.com/settings/'+hubId+'/website/pages/all-domains/navigation">';
+        html +=                 '<span class="child-link-text link-text-after-parent-item-contacts">';
+        html +=                     'Advanced Menus';
+        html +=                 '</span>';
+        html +=             '</a>';
+        html +=         '</li>';
+
+
+        html +=         '<li id="nav-dropdown-item-leads" data-mainitemid="contacts" class="nav-dropdown-item">';
         html +=             '<a data-appkey="contacts" href="https://app.hubspot.com/settings/'+hubId+'/website/pages/all-domains/page-templates">';
         html +=                 '<span class="child-link-text link-text-after-parent-item-contacts">';
         html +=                     'Content Settings';
@@ -95,13 +104,6 @@ $(document).ready(function() {
         html +=             '</a>';
         html +=         '</li>';
 
-        html +=         '<li id="nav-dropdown-item-leads" data-mainitemid="contacts" class="nav-dropdown-item">';
-        html +=             '<a data-appkey="contacts" href="https://app.hubspot.com/settings/'+hubId+'/website/pages/all-domains/navigation">';
-        html +=                 '<span class="child-link-text link-text-after-parent-item-contacts">';
-        html +=                     'Advanced Menus';
-        html +=                 '</span>';
-        html +=             '</a>';
-        html +=         '</li>';
 
         html +=     '</ul>';
         html += '</li>';
