@@ -394,13 +394,19 @@ body.design-manager.ext-dark-theme .result-item:hover [class*=private-icon__]{
 
 /* Modals */
 body.design-manager.ext-dark-theme .private-modal,
-body.design-manager.ext-dark-theme .private-wizard__footer.private-modal__footer{
+body.design-manager.ext-dark-theme .private-modal .private-modal__footer{
 	background: var(--body-background);
 	color: #fff;
 }
 body.design-manager.ext-dark-theme .private-modal.private-table thead th{
 	color: rgb( var(--rgb-details-color) );
 }
+
+/* new file modal */
+body.design-manager.ext-dark-theme .private-selectable-box{
+	background: var(--body-background);
+}
+
 
 /**
 /* 
