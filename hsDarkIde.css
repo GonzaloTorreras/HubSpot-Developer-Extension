@@ -2,9 +2,11 @@
 
 
 /*
- the "!important" are used carefully,
+ Use "!important" carefully,
  probably if it's there is because
  some HS default CSS is using it too.
+ (If you notice that thats not necesary
+ then please, remove :) ).
  */
 
 /*Code not related to a theme */
@@ -149,7 +151,8 @@ body.design-manager.ext-dark-theme .private-dropdown--list .private-list__item>a
 body.design-manager.ext-dark-theme .private-dropdown--list .private-list__item>button:hover,
 body.design-manager.ext-dark-theme .private-typeahead-results .private-typeahead-result--highlighted,
 body.design-manager.ext-dark-theme .private-typeahead-results .private-typeahead-result--disabled .private-typeahead-result-label,
-body.design-manager.ext-dark-theme .result-item.result-item--is--active{
+body.design-manager.ext-dark-theme .result-item.result-item--is--active,
+body.design-manager.ext-dark-theme .result-item:hover{
     background: rgba(255, 255, 255, .1)!important;
     color: #d6cbcb!important;
 }
@@ -341,6 +344,10 @@ body.design-manager.ext-dark-theme .UIExpandableSection__ExpandableHeader-gJHpqS
   background-color:transparent !important;
 }
 
+/* scroll bar in the head (to navigate through the different opened elements */
+body.design-manager.ext-dark-theme .iWgPZI{
+	background-color: rgb( var(--rgb-details-color) ) !important;
+}
 
 /* success notification */
 body.design-manager.ext-dark-theme .private-alert--success{
@@ -351,6 +358,51 @@ body.design-manager.ext-dark-theme .private-alert__close{
 	color:#fff;
 }
 
+/** settings page **/
+body.design-manager.ext-dark-theme .settings-editor-app,
+body.design-manager.ext-dark-theme .private-card,
+body.design-manager.ext-dark-theme .private-panel{
+	background: var(--body-background);
+}
+body.design-manager.ext-dark-theme .settings-column .private-side-nav__item a{
+	color:#fff;
+}
+body.design-manager.ext-dark-theme .settings-column .private-side-nav__item{
+	background: transparent;
+}
+body.design-manager.ext-dark-theme .settings-column .private-side-nav__item--active a,
+body.design-manager.ext-dark-theme .settings-column .private-side-nav__item a:hover{
+	color: rgb( var(--rgb-details-color) );
+}
+
+/** remove background from fields in groups (right sidebar CM) */
+body.design-manager.ext-dark-theme .custom-widget-editor-sidebar .custom-widget-fields-table .custom-widget-fields-table-row .field-row-and-children-container.is--child-field{
+	background: transparent !important;
+}
+
+/** left sidebar > search results */
+body.design-manager.ext-dark-theme .result-item a,
+body.design-manager.ext-dark-theme .result-item .result-item-help .is--text--help{
+	color: #fff !important;
+}
+
+body.design-manager.ext-dark-theme .result-item.result-item--is--active .result-item-title a,
+body.design-manager.ext-dark-theme .result-item:hover .result-item-title a,
+body.design-manager.ext-dark-theme .result-item:hover [class*=private-icon__]{
+	color: rgb( var(--rgb-details-color) ) !important;
+}
+
+/* Modals */
+body.design-manager.ext-dark-theme .private-modal,
+body.design-manager.ext-dark-theme .private-wizard__footer.private-modal__footer{
+	background: var(--body-background);
+	color: #fff;
+}
+body.design-manager.ext-dark-theme .private-modal.private-table thead th{
+	color: rgb( var(--rgb-details-color) );
+}
+
+/**
 /* 
 #33475b
 #2d3e50
