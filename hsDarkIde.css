@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 /*
  the "!important" are used carefully,
  probably if it's there is because
@@ -34,7 +34,7 @@ body.design-manager.ext-dark-theme{
 
 body.design-manager.ext-dark-theme .CodeMirror.CodeMirror-overlayscroll {
     font-size: var(--body-font-size) !important;
-=======
+
 }
 /*Fixing Mac text cursor issue in the code editor by inverting the cursor for dark code editor themes.*/
 html.mac .cm-s-hubspot-canvas-dark .CodeMirror-lines, html.mac .cm-s-solarized .CodeMirror-lines{
