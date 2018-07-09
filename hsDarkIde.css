@@ -130,7 +130,7 @@ body.design-manager.ext-dark-theme .private-form__control {
     background-color: rgba(255, 255, 255, .1);
 }
 
-body.design-manager.ext-dark-theme .private-popover.private-popover--default,
+
 body.design-manager.ext-dark-theme .private-search-control__wrapper,
 body.design-manager.ext-dark-theme .private-button.private-form__control,
 body.design-manager.ext-dark-theme .private-button.private-form__control:focus,
@@ -334,7 +334,11 @@ body.design-manager.ext-dark-theme .layout-tree .ui-grid-item-widget-wrapper{
 }
 
 /*right click context menu.*/
-body.design-manager.ext-dark-theme .private-dropdown--list .private-list__item>.private-file-button .private-button,body.design-manager.ext-dark-theme .private-dropdown--list .private-list__item>a,body.design-manager.ext-dark-theme .private-dropdown--list .private-list__item>button,body.design-manager.ext-dark-theme ul.uiList.private-list--unstyled.private-dropdown--list{
+body.design-manager.ext-dark-theme .private-popover.private-popover--default,
+body.design-manager.ext-dark-theme .private-dropdown--list .private-list__item>.private-file-button .private-button,
+body.design-manager.ext-dark-theme .private-dropdown--list .private-list__item>a,
+body.design-manager.ext-dark-theme .private-dropdown--list .private-list__item>button,
+body.design-manager.ext-dark-theme ul.uiList.private-list--unstyled.private-dropdown--list{
   background:rgb(36, 50, 64) !important;
 
 
