@@ -29,7 +29,7 @@
     }],
     "options_page": "options.html",
 		"background": {
-			"persistent": false,
+			"persistent": true,
 			"scripts": [ "hot-reload.js" ]
 		}
 }
