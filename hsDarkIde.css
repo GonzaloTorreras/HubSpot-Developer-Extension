@@ -1,9 +1,17 @@
 
+
+
 /*
  the "!important" are used carefully,
  probably if it's there is because
  some HS default CSS is using it too.
  */
+
+/*Code not related to a theme */
+/*Fixing Mac text cursor issue in the code editor by inverting the cursor for dark code editor themes.*/
+html.mac .cm-s-hubspot-canvas-dark .CodeMirror-lines, html.mac .cm-s-solarized .CodeMirror-lines{
+  cursor:url("chrome-extension://__MSG_@@extension_id__/mac-text-cursor.svg"),url("chrome-extension://__MSG_@@extension_id__/mac-text-cursor.png"),text!important;
+}
 
 
 
@@ -36,10 +44,7 @@ body.design-manager.ext-dark-theme .CodeMirror.CodeMirror-overlayscroll {
     font-size: var(--body-font-size) !important;
 
 }
-/*Fixing Mac text cursor issue in the code editor by inverting the cursor for dark code editor themes.*/
-html.mac .cm-s-hubspot-canvas-dark .CodeMirror-lines, html.mac .cm-s-solarized .CodeMirror-lines{
-  cursor:url("chrome-extension://__MSG_@@extension_id__/mac-text-cursor.svg"),url("chrome-extension://__MSG_@@extension_id__/mac-text-cursor.png"),text!important;
-}
+
 
 
 
