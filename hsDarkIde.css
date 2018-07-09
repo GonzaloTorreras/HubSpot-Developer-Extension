@@ -138,7 +138,8 @@ body.design-manager.ext-dark-theme .layout-tree .widget-icon {
 body.design-manager.ext-dark-theme .private-dropdown--list .private-list__item>a:hover,
 body.design-manager.ext-dark-theme .private-dropdown--list .private-list__item>button:hover,
 body.design-manager.ext-dark-theme .private-typeahead-results .private-typeahead-result--highlighted,
-body.design-manager.ext-dark-theme .private-typeahead-results .private-typeahead-result--disabled .private-typeahead-result-label{
+body.design-manager.ext-dark-theme .private-typeahead-results .private-typeahead-result--disabled .private-typeahead-result-label,
+body.design-manager.ext-dark-theme .result-item.result-item--is--active{
     background: rgba(255, 255, 255, .1)!important;
     color: #d6cbcb!important;
 }
@@ -331,6 +332,14 @@ body.design-manager.ext-dark-theme .UIExpandableSection__ExpandableHeader-gJHpqS
 }
 
 
+/* success notification */
+body.design-manager.ext-dark-theme .private-alert--success{
+	background-color: rgba( var(--rgb-details-color), 0.9) !important;
+	border-color:transparent;
+}
+body.design-manager.ext-dark-theme .private-alert__close{
+	color:#fff;
+}
 
 /* 
 #33475b
