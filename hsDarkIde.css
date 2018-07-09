@@ -376,7 +376,7 @@ body.design-manager.ext-dark-theme .settings-column .private-side-nav__item a:ho
 }
 
 /** remove background from fields in groups (right sidebar CM) */
-.custom-widget-editor-sidebar .custom-widget-fields-table .custom-widget-fields-table-row .field-row-and-children-container.is--child-field{
+body.design-manager.ext-dark-theme .custom-widget-editor-sidebar .custom-widget-fields-table .custom-widget-fields-table-row .field-row-and-children-container.is--child-field{
 	background: transparent !important;
 }
 
@@ -390,6 +390,16 @@ body.design-manager.ext-dark-theme .result-item.result-item--is--active .result-
 body.design-manager.ext-dark-theme .result-item:hover .result-item-title a,
 body.design-manager.ext-dark-theme .result-item:hover [class*=private-icon__]{
 	color: rgb( var(--rgb-details-color) ) !important;
+}
+
+/* Modals */
+body.design-manager.ext-dark-theme .private-modal,
+body.design-manager.ext-dark-theme .private-wizard__footer.private-modal__footer{
+	background: var(--body-background);
+	color: #fff;
+}
+body.design-manager.ext-dark-theme .private-modal.private-table thead th{
+	color: rgb( var(--rgb-details-color) );
 }
 
 /**
