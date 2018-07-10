@@ -26,34 +26,42 @@ $(document).ready(function() {
             });
 
         }
-
-    } else if (~tabUrl.indexOf("designers.hubspot.com/docs/")) {
-        //console.log("Viewing HubSpot Documentation");
-
-
-    } else {
-        //console.log("This is not in the HubSpot Backend");
-
-
-    }
-    /*detect HS nav bar version*/
+           /*detect HS nav bar version*/
     var navVersion;
     if($("#hs-nav-v3").length){
-    	console.log("Nav V3 detected.");
-    	navVersion=3;
+        console.log("Nav V3 detected.");
+        navVersion=3;
     }
     else if($("#hs-nav-v4").length){
-    	console.log("Nav V4 detected.");
-    	navVersion=4;
+        console.log("Nav V4 detected.");
+        navVersion=4;
     }
 
-	/*get current HubSpot ID*/
-	var hubId;
+    /*get current HubSpot ID*/
+    var hubId;
     if(navVersion == 3){
-    	var hubId = $(".nav-hubid").text().replace("Hub ID: ","");
+        var hubId = $(".nav-hubid").text().replace("Hub ID: ","");
 
-    }else if(navVersion == 4){
-    	var hubId = $(".navAccount-portalId").text();
+    } else if(navVersion == 4){
+/*
+            var checkExist = setInterval(function() {
+               if ($('#nav-primary-home').length) {
+                  console.log("Exists!");
+                  var hubId = $("#nav-primary-home").attr("href").replace("https://app.hubspot.com/reports-dashboard/","");
+                  clearInterval(checkExist);
+
+               }
+               else{
+                    console.log("#nav-primary-home does not exist");
+
+               }
+            }, 100); // check every 100ms
+            
+            
+
+        */
+       
+            
     }
 
     console.log("Hub ID:",hubId);
@@ -145,8 +153,22 @@ $(document).ready(function() {
 
 
 
-    }
+    } else if(navVersion == 4){
 
+    };
+
+
+
+    } else if (~tabUrl.indexOf("designers.hubspot.com/docs/")) {
+        //console.log("Viewing HubSpot Documentation");
+
+
+    } else {
+        //console.log("This is not in the HubSpot Backend");
+
+
+    }
+ 
 
 
 
