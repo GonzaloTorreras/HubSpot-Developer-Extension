@@ -24,7 +24,7 @@
 		"js": ["jquery-3.2.1.min.js","design-manager.js"], 
 	    "css": [ "hsDarkIde.css" ],  
 	    "document_idle": "document_start",
-	    "matches": [ "\u003Call_urls>" ] 
+	    "matches": [ "https://app.hubspot.com/*" ] 
     }],
     "options_page": "options.html",
 		"background": {
