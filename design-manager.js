@@ -2,7 +2,7 @@ $(document).ready(function() {
     /*This script runs once the design manager page loads.*/
     var tabUrl = window.location.protocol + "//" + window.location.host + "/" + window.location.pathname;
     /*getSelected might be deprecated need to review*/
-
+    var currentScreen='';
     //console.log("Current URL: ",tabUrl);
     if (~tabUrl.indexOf("app.hubspot.com")) {
         //console.log("This is the hubspot backend.");
@@ -10,11 +10,13 @@ $(document).ready(function() {
 
         if (~tabUrl.indexOf("/design-manager/")) {
             //console.log("Old Design Manager is active");
+            currentScreen='design-manager';
 
         }
         if (~tabUrl.indexOf("/beta-design-manager/")) {
             /*note this string detection will likely break once rolled out to everyone as they likely wont leave beta in the name*/
             //console.log("Design Manager V2 is active");
+            currentScreen='design-manager';
             chrome.storage.sync.get([
                 'darktheme'
             ], function(items) {
@@ -57,7 +59,7 @@ $(document).ready(function() {
     console.log("Hub ID:",hubId);
 
     if(navVersion == 3){
-        console.log("should be inserted");
+        
         
         var html = '';
         html += '<li id="ext-dev-menu" class="nav-main-item nav-dropdown-container" style="background-color: #555;"><a href="">Developer</a>';
@@ -108,8 +110,28 @@ $(document).ready(function() {
         html +=     '</ul>';
         html += '</li>';
       
+        if($("#nav-main-item-product-selector").length){
+            $("#nav-main-item-product-selector").after(html);
+
+
+        } else{
+            var doesntExist = true;
+            var attempts = 10;
+            while(doesntExist && attempts>0){
+                setTimeout(function(){
+                    if(document.getElementById("#nav-main-item-product-selector")!= null){
+                        doesntExist =false;
+                    }
+                    console.log("delay");
+                }, 10);
+                attempts-=1;
+
+            }
+            console.log("selector found!")
+            $("#nav-main-item-product-selector").after(html);
+            console.log("should be inserted now");
+        };
         
-        $("#nav-main-item-product-selector").after(html);
 
         $("#ext-dev-menu > a").click(function(e){
              e.preventDefault();
