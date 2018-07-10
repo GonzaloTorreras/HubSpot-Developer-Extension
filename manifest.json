@@ -9,11 +9,8 @@
 		"default_icon": "icon.png"
 	},
 	"permissions": [
-		"tabs",
-		
-		"cookies",
-		"storage"
-
+		"storage",
+		"https://app.hubspot.com/"
 	],
 	"web_accessible_resources": [
 		"mac-text-cursor.svg",
