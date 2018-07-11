@@ -13,7 +13,7 @@
 	},
 	"permissions": [
 		"storage",
-		"tabs",
+		"activeTab",
 		"https://app.hubspot.com/*"
 	],
 	"web_accessible_resources": [

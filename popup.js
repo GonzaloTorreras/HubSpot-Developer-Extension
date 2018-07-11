@@ -17,6 +17,7 @@ var developerTools = {
 			}
 			
 			chrome.tabs.update(tabs[0].id, {url: tabUrl.origin + tabUrl.pathname + '?' + params.toString()});
+			window.close();
 		});
 
 	},
