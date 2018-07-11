@@ -1,34 +1,35 @@
 {
 	"manifest_version": 2,
 	"name": "HubSpot Developer Extension ",
-	"version": "1.02",
-	"description": "Must have for HubSpot Developers, bringing quick access to commonly used query parameters, and adding convenience features to HubSpot",
-	"permissions": ["declarativeContent", "storage"],
+	"version": "1.03",
+	"description": "__MSG_extDesc__",
 	"browser_action": {
 		"default_popup": "popup.html",
+		"default_title": "HubSpot Dev Tools",
 		"default_icon": "icon.png"
 	},
 	"permissions": [
-		"tabs",
-		"activeTab",
-		"cookies",
-		"storage"
-
+		"storage",
+		"activeTab"
+		
+	],
+	"optional_permissions": [
+	 "https://app.hubspot.com/*" 
 	],
 	"web_accessible_resources": [
 		"mac-text-cursor.svg",
 		"mac-text-cursor.png"
 	],
 	"content_scripts": [{
-		"run_at" :"document_end", 
+		"run_at" :"document_idle", 
 		"js": ["jquery-3.2.1.min.js","design-manager.js"], 
 	    "css": [ "hsDarkIde.css" ],  
 	    "document_idle": "document_start",
 	    "matches": [ "https://app.hubspot.com/*" ] 
     }],
     "options_page": "options.html",
-		"background": {
-			"persistent": true,
-			"scripts": [ "hot-reload.js" ]
-		}
+	"background": {
+		"persistent": true,
+		"scripts": [ "hot-reload.js" ]
+	}
 }
