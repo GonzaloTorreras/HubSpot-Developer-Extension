@@ -3,8 +3,6 @@
 	"name": "HubSpot Developer Extension ",
 	"version": "1.03",
 	"description": "__MSG_extDesc__",
-	
-	
 	"default_locale":"en",
 	"browser_action": {
 		"default_popup": "popup.html",
@@ -14,15 +12,13 @@
 	"permissions": [
 		"storage",
 		"activeTab"
-		
 	],
-	
 	"web_accessible_resources": [
 		"mac-text-cursor.svg",
 		"mac-text-cursor.png"
 	],
 	"content_scripts": [{
-		"run_at" :"document_end", 
+		"run_at" :"document_idle", 
 		"js": ["jquery-3.2.1.min.js","design-manager.js"], 
 	    "css": [ "hsDarkIde.css" ],  
 	    "document_idle": "document_start",
