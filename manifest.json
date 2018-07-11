@@ -2,7 +2,7 @@
 	"manifest_version": 2,
 	"name": "HubSpot Developer Extension ",
 	"version": "1.02.1",
-	"description": "Must have for HubSpot Developers, bringing quick access to commonly used query parameters, and adding convenience features to HubSpot",
+	"description": "Must have for HubSpot Developers, adding convenience features to HubSpot",
 	"permissions": ["declarativeContent", "storage"],
 	"browser_action": {
 		"default_popup": "popup.html",
