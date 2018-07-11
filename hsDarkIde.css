@@ -457,6 +457,12 @@ body.design-manager.ext-dark-theme .private-selectable-box{
 	background: var(--body-background);
 }
 
+/* left sidebar: dependent & revision submenu */
+body.design-manager.ext-dark-theme .finder-container .file-dependents-container,
+body.design-manager.ext-dark-theme .finder-container .file-revisions-container{
+    background: var(--body-background);
+}
+
 
 /**
 /* 
