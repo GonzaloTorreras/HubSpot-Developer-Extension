@@ -82,17 +82,7 @@ var developerTools = {
         console.log("settings saved");
         var darkthemeVal = $('#darktheme').prop('checked');
         console.log("dark theme is ", darkthemeVal);
-        chrome.permissions.request({
-            permissions: ['tabs'],
-            origins: ['http://www.google.com/']
-        }, function(granted) {
-            // The callback argument will be true if the user granted the permissions.
-            if (granted) {
-                doSomething();
-            } else {
-                doSomethingElse();
-            }
-        });
+       
         chrome.storage.sync.set({
             darktheme: darkthemeVal,
         }, function() {
