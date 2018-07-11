@@ -13,9 +13,10 @@
 	},
 	"permissions": [
 		"storage",
-		"activeTab",
-		"https://app.hubspot.com/*"
+		"activeTab"
+		
 	],
+	
 	"web_accessible_resources": [
 		"mac-text-cursor.svg",
 		"mac-text-cursor.png"
