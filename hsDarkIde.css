@@ -25,7 +25,7 @@ html.mac .cm-s-hubspot-canvas-dark .CodeMirror-lines, html.mac .cm-s-solarized .
     right: 38px!important;
     border-radius:0!important;
 }
-div#help-widget {
+#chat-widget div#help-widget {
     bottom: 0px;
     right: 0;
     height: 25px;
