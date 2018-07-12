@@ -492,6 +492,10 @@ body.design-manager.ext-dark-theme .finder-container .result-item:hover{
 	background:none !important;
 }
 
+/* remove white background in the new file -> folder selector popup */
+body.design-manager.ext-dark-theme .bqQvdP .private-tile {
+    background: transparent;
+}
 /**
 /* 
 #33475b
