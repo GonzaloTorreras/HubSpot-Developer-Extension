@@ -413,6 +413,26 @@ body.design-manager.ext-dark-theme .private-alert__close{
 	color:#fff;
 }
 
+/* error notification */
+body.design-manager.ext-dark-theme .private-alert--danger{
+  background-color: rgba(242,84,91,.7) !important;
+  color: #fff;
+}
+
+
+/* empty initial page */
+body.design-manager.ext-dark-theme .empty-state-view{
+	background: var(--body-background);
+}
+
+body.design-manager.ext-dark-theme .empty-state-view,
+body.design-manager.ext-dark-theme .empty-state-view .is--text--help,
+body.design-manager.ext-dark-theme .empty-state-view .private-table thead th{
+	color: var(--body-color);
+}
+
+
+
 /** settings page **/
 body.design-manager.ext-dark-theme .settings-editor-app,
 body.design-manager.ext-dark-theme .private-card,
