@@ -17,6 +17,9 @@ Let us know in issues if you run into any bugs, also please note which branch yo
 
 Note: if you are not using git to keep that folder up to date(you chose zip instead) understand that the extension will not get updates, you need to manually update it. If you are using the web store version you will get updates.
 
+## An update to the published version was released, how long will it take to get to me?
+Google Chrome updates extensions only under certain situations when running. The easiest way to get the freshest version of the extension is to close google chrome completely and re-open it. You can tell if you're running the latest version by checking the version number on the manage extensions screen and comparing with our releases page: https://github.com/williamspiro/HubSpot-Developer-Extension/releases
+
 ## How to Contribute:
 
  [We denote easy/small issues that are good for beginners. but feel free to tackle any you see in issues or add a feature you want](https://github.com/williamspiro/HubSpot-Developer-Extension/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22)
