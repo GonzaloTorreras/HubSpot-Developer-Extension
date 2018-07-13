@@ -1,5 +1,5 @@
 # HubSpot-Developer-Extension
-A Chrome/Chromium extension for HubSpot Developers that adds useful shortcuts to commonly used HubSpot Query Parameters, and tools for making HubSpot Development easier and more enjoyable.
+A Chrome/Chromium extension for HubSpot Developers that adds useful shortcuts to commonly used HubSpot Query Parameters, and tools for making HubSpot Development easier and more enjoyable. For details on the many features we have a wiki page detailing them:https://github.com/williamspiro/HubSpot-Developer-Extension/wiki/Feature-Breakdown
 
 [We're in the Chrome Store!](https://chrome.google.com/webstore/detail/hubspot-developer-extensi/gebemkdecnlgbcanplbgdpcffpdnfdfo)
 The Chrome store version is the stable build, and will get updates over time.
