@@ -15,7 +15,33 @@ html.mac .cm-s-hubspot-canvas-dark .CodeMirror-lines, html.mac .cm-s-solarized .
   cursor:url("chrome-extension://__MSG_@@extension_id__/mac-text-cursor.svg"),url("chrome-extension://__MSG_@@extension_id__/mac-text-cursor.png"),text!important;
 }
 
+/*Move revert to Design Manager 1 button and Help Button*/
 
+.ide-opt-out button.uiButton {
+    bottom: 0px!important;
+    width: 21px!important;
+    padding: 0;
+    height: 25px;
+    right: 38px!important;
+    border-radius:0!important;
+}
+#chat-widget div#help-widget {
+    bottom: 0px;
+    right: 0;
+    height: 25px;
+    width: 37px;
+    /* border-radius: 0!important; */
+}
+a#help-widget-toggle {
+    padding: 4px 0 0!important;
+    border-radius: 0!important;
+    text-align: center;
+    height: 100%;
+    /* display: inline-flex; */
+    /* align-items: center; */
+    /* justify-content: center; */
+   
+}
 
 /* VARIABLES */
 /*
