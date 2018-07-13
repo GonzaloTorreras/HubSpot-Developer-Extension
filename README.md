@@ -1,5 +1,5 @@
 # HubSpot-Developer-Extension
-A Chrome/Chromium extension for HubSpot Developers that adds useful shortcuts to commonly used HubSpot Query Parameters, and tools for making HubSpot Development easier and more enjoyable. For details on the many features we have a wiki page detailing them:https://github.com/williamspiro/HubSpot-Developer-Extension/wiki/Feature-Breakdown
+A Chrome/Chromium extension for HubSpot Developers that adds useful shortcuts to commonly used HubSpot Query Parameters, and tools for making HubSpot Development easier and more enjoyable. For details on the many features we have a wiki page detailing them:[Feature Breakdown](https://github.com/williamspiro/HubSpot-Developer-Extension/wiki/Feature-Breakdown)
 
 [We're in the Chrome Store!](https://chrome.google.com/webstore/detail/hubspot-developer-extensi/gebemkdecnlgbcanplbgdpcffpdnfdfo)
 The Chrome store version is the stable build, and will get updates over time.
@@ -18,7 +18,7 @@ Let us know in issues if you run into any bugs, also please note which branch yo
 Note: if you are not using git to keep that folder up to date(you chose zip instead) understand that the extension will not get updates, you need to manually update it. If you are using the web store version you will get updates.
 
 ## An update to the published version was released, how long will it take to get to me?
-Google Chrome updates extensions only under certain situations when running. The easiest way to get the freshest version of the extension is to close google chrome completely and re-open it. You can tell if you're running the latest version by checking the version number on the manage extensions screen and comparing with our releases page: https://github.com/williamspiro/HubSpot-Developer-Extension/releases
+Google Chrome updates extensions only under certain situations when running. The easiest way to get the freshest version of the extension is to close google chrome completely and re-open it. You can tell if you're running the latest version by checking the version number on the manage extensions screen and comparing with our [releases page.](https://github.com/williamspiro/HubSpot-Developer-Extension/releases)
 
 ## How to Contribute:
 
@@ -31,3 +31,5 @@ Then when you're ready to merge into the master branch submit a pull request. Th
 If you're fixing a bug in master that isn't a major change, feel free to commit to master directly.
 
 If you have any questions you can find @TheWebTech @williamspiro and @GonzaloTorreras in our channel in the HubSpot Design & Developer Slack https://hubspotdev.slack.com/messages/CBBAW6Z3R
+
+[Privacy Policy](https://github.com/williamspiro/HubSpot-Developer-Extension/wiki/Privacy-Policy)
