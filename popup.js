@@ -83,9 +83,23 @@ var developerTools = {
 
 		  console.log("settings saved");
 		  var darkthemeVal = $('#darktheme').prop('checked');
+		  var uiTweaksVal = $('#uiTweaks').prop('checked');
+
 		  console.log("dark theme is ",darkthemeVal);
+		  console.log("UI Tweaks is ",uiTweaksVal);
 		  chrome.storage.sync.set({
 		    darktheme: darkthemeVal,
+		  }, function() {
+		    // Update status to let user know options were saved.
+		    var status = document.getElementById('status');
+		    status.textContent = 'Options saved. If you have the Design manager open, you will need to refresh to see the theme.';
+		    setTimeout(function() {
+		      status.textContent = '';
+		    }, 4000);
+		  });
+
+		  chrome.storage.sync.set({
+		    uitweaks: uiTweaksVal,
 		  }, function() {
 		    // Update status to let user know options were saved.
 		    var status = document.getElementById('status');
@@ -109,6 +123,15 @@ var developerTools = {
     		document.getElementById('darktheme').checked = items.darktheme;
     		console.log("dark theme:",items.darktheme);
     		if(items.darktheme){
+    			$('.dark-theme-toggle .uiToggleSwitch').addClass("uiToggleSwitchOn private-form__toggle-switch--on");
+    		}
+  		});
+  		chrome.storage.sync.get(['uitweaks'], function(items) {
+			// Restores select box and checkbox state using the preferences
+// stored in chrome.storage.
+    		document.getElementById('uiTweaks').checked = items.uitweaks;
+    		console.log("dark theme:",items.uitweaks);
+    		if(items.uitweaks){
     			$('.dark-theme-toggle .uiToggleSwitch').addClass("uiToggleSwitchOn private-form__toggle-switch--on");
     		}
   		});
