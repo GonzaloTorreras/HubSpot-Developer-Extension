@@ -489,37 +489,37 @@ Do not let fear of learning a new technique prevent you from contributing, other
 
     <div class="c-tab-slider">
         <div class="c-tab-slider__controls">
-            <button class="c-tab-slider__tab-selector js-click--tab-debug c-tab-slider__tab-selector--debug">Debug</button>
-            <button class="c-tab-slider__tab-selector c-tab-slider__tab-selector--develop js-click--tab-develop">Develop</button>
+            <button class="c-tab-slider__tab-selector js-click--tab-debug c-tab-slider__tab-selector--debug" data-i18n="debugTab"><!--Debug--></button>
+            <button class="c-tab-slider__tab-selector c-tab-slider__tab-selector--develop js-click--tab-develop" data-i18n="developTab"><!--Develop--></button>
         </div>
         <div class="c-tab-slider__track c-tab-slider--state-debug">
             <div class="c-tab-slider__tab" id="debug-tools">
                 <!--This tab will be focused when the user is not in the design manager -->
                 <div class="o-menu-grid o-menu-grid--debug">
                     <button class="c-btn face-button js-click--debug" id="hsDebug">
-                        <div class="c-btn__face-primary">Debug Mode</div>
+                        <div class="c-btn__face-primary" data-i18n="debugButton"><!--Debug Mode--></div>
                         <div class="c-btn__face-secondary">hsDebug=True</div>
                     </button>
                     <button class="c-btn face-button js-click--bust-cache" id="cacheBuster">
-                        <div class="c-btn__face-primary">Bust Cache</div>
+                        <div class="c-btn__face-primary" data-i18n="cacheBustButton"><!--Bust Cache--></div>
                         <div class="c-btn__face-secondary">bustCache=[random Number]</div>
                     </button>
                     <button class="c-btn face-button js-click--move-jquery-to-footer" id="hsMoveJQueryToFooter">
-                        <div class="c-btn__face-primary">Footer jQuery</div>
+                        <div class="c-btn__face-primary" data-i18n="footerJqueryButton"><!--Footer jQuery--></div>
                         <div class="c-btn__face-secondary">hsMoveJQueryToFooter=True</div>
                     </button>
                     <button class="c-btn face-button js-click--amp" id="hs_amp">
-                        <div class="c-btn__face-primary">Amp</div>
+                        <div class="c-btn__face-primary">AMP</div>
                         <div class="c-btn__face-secondary">hs_amp=true</div>
                     </button>
                     <button class="c-btn face-button js-click--psi-score-request" id="psiScoreRequest">
-                        <div class="c-btn__face-primary">Google Page Speed Insights Scores</div>
-                        <div class="c-btn__face-secondary">Score Me!
+                        <div class="c-btn__face-primary">Google Page Speed Insights</div>
+                        <div class="c-btn__face-secondary" data-i18n="gpsiHover"><!--Score Me!-->
                             <!--<img style="height: 39px;" src="https://cdn2.hubspot.net/hubfs/2359872/Dev_Extension/pagespeed.png">--></div>
                         <div class="row c-btn__grades">
-                            <div class="c-btn__psiScore column_2" id="desktop_psi_placeholder">grading desktop...
+                            <div class="c-btn__psiScore column_2" id="desktop_psi_placeholder" data-i18n="gpsiTestingDesktop"><!--grading desktop...-->
                                 <!--<img src="https://cdn2.hubspot.net/hubfs/2359872/Dev_Extension/NewCorgiDance.gif">--></div>
-                            <div class="c-btn__psiScore column_2" id="mobile_psi_placeholder">grading mobile...
+                            <div class="c-btn__psiScore column_2" id="mobile_psi_placeholder" data-i18n="gpsiTestingMobile"><!--grading mobile...-->
                                 <!--<img src="https://cdn2.hubspot.net/hubfs/2359872/Dev_Extension/NewCorgiDance.gif">--></div>
                         </div>
                     </button>
@@ -529,25 +529,52 @@ Do not let fear of learning a new technique prevent you from contributing, other
                 <!-- this tab will be focused while the user is in the design manager any features intended only for DM1 or DM2 should get disabled if they do not work in the current version of the design manager -->
                 <div class="o-menu-grid o-menu-grid--design-manager">
                     <div class="c-btn c-btn--link-list face-button" id="docs">
-                        <div class="c-btn__face-primary">Documentation</div>
+                        <div class="c-btn__face-primary" data-i18n="documentationButton"><!--Documentation--></div>
                         <div class="c-btn__face-secondary">
-                            <a target="blank" href="https://designers.hubspot.com/en/docs/hubl/hubl-supported-functions">Functions<!--add opens in new window icon--></a>
-                            <a target="blank" href="https://designers.hubspot.com/docs/hubl/hubl-supported-variables">Variables<!--add opens in new window icon--></a> <a target="blank" href="https://designers.hubspot.com/docs/hubl/hubl-supported-filters">Filters<!--add opens in new window icon--></a>
+                            <a target="blank" href="https://designers.hubspot.com/en/docs/hubl/hubl-supported-functions" data-i18n="docLinkFunctions">
+                                <!--Functions add opens in new window icon--></a>
+                            <a target="blank" href="https://designers.hubspot.com/docs/hubl/hubl-supported-variables" data-i18n="docLinkVariables"><!--Variables add opens in new window icon--></a> <a target="blank" href="https://designers.hubspot.com/docs/hubl/hubl-supported-filters" data-i18n="docLinkFilters"><!--Filters add opens in new window icon--></a>
                             <a target="blank" href=" https://designers.hubspot.com/docs/tools/hubdb">HubDB<!--add opens in new window icon--></a>
                         </div>
                     </div>
                     <div class="c-btn c-btn--link-list face-button" id="community">
-                        <div class="c-btn__face-primary">Community</div>
+                        <div class="c-btn__face-primary" data-i18n="communityButton"><!--Community--></div>
                         <div class="c-btn__face-secondary">
-                            <a target="_blank" href="https://community.hubspot.com/t5/Design/ct-p/designers">Design Forum<!--add opens in new window icon--></a>
-                            <a target="_blank" href="https://integrate.hubspot.com/">Developer Forum<!--add opens in new window icon--></a> <a target="blank" href="https://community.hubspot.com/t5/custom/page/page-id/ideaslandingpage">Ideas<!--add opens in new window icon--></a>
+                            <a target="_blank" href="https://community.hubspot.com/t5/Design/ct-p/designers" data-i18n="comLinkDesign"><!--Design Forum--><!--add opens in new window icon--></a>
+                            <a target="_blank" href="https://integrate.hubspot.com/" data-i18n="comLinkDeveloper"><!--Developer Forum--><!--add opens in new window icon--></a> <a target="blank" href="https://community.hubspot.com/t5/custom/page/page-id/ideaslandingpage" data-i18n="comLinkIdeas"><!--Ideas--><!--add opens in new window icon--></a>
                         </div>
                     </div>
                     <div class="c-toggle-field" id="dark-toggle">
                         <div class="dark-theme-toggle">
                             <label class="private-form__label private-form__label--small">
                                 <i18n-string data-locale-at-render="en" data-key="DesignEditorsUI.customWidgetEditor.sidebar.fieldEdit.editorOptions.requiredLabel">
-                                    <span class="u-text-orange">DM2</span> - Dark Theme
+                                    <span class="u-text-orange">DM2</span> - <span data-i18n="darkTheme"> <!--Dark Theme--></span>
+                                </i18n-string>
+                            </label>
+                            <label class="uiToggle private-form__toggle-switch private-form__toggle-switch--xs ">
+                                <input type="checkbox" id="darktheme" class="private-form__toggle-input sr-only">
+                                <span class="uiToggleSwitch private-form__toggle-switch__inner" role="presentation">
+                            
+                            <span class="uiToggleSwitchLabel private-form__toggle-switch__label private-form__toggle-switch__label--checked">
+                              on
+                            </span>
+                                <span class="private-form__toggle-switch__handle">
+                              <svg role="presentation" viewBox="0 0 15 15.343" xmlns="http://www.w3.org/2000/svg"><title>checkmark</title><path fill="#00a4bd" stroke="#ffffff" stroke-width="2" class="private-form__toggle-switch__icon" d="M1.013 8.11c0-.223.078-.412.234-.568l1.14-1.14c.155-.155.345-.233.568-.233s.413.077.57.233l2.46 2.47 5.492-5.5c.156-.156.346-.234.568-.234.224 0 .413.077.57.233l1.138 1.14c.156.155.234.345.234.568 0 .224-.078.414-.234.57l-6.06 6.06-1.14 1.14c-.155.155-.345.233-.568.233s-.413-.078-.57-.234l-1.138-1.14-3.03-3.03c-.156-.156-.234-.346-.234-.57z"></path></svg>
+                              
+                            </span>
+                                <span class="uiToggleSwitchLabel private-form__toggle-switch__label private-form__toggle-switch__label--unchecked">
+                              off
+                            </span>
+                                </span>
+                            </label>
+                        </div>
+                        <div id="status"></div>
+                    </div>
+                    <div class="c-toggle-field" id="ui-tweaks-toggle">
+                        <div class="ui-tweaks-toggle">
+                            <label class="private-form__label private-form__label--small">
+                                <i18n-string data-locale-at-render="en" data-key="DesignEditorsUI.customWidgetEditor.sidebar.fieldEdit.editorOptions.requiredLabel">
+                                    <span data-i18n="uiTweaksToggleLabel">UI Tweaks/Dev Menu</span>
                                 </i18n-string>
                             </label>
                             <label class="uiToggle private-form__toggle-switch private-form__toggle-switch--xs ">
@@ -576,6 +603,8 @@ Do not let fear of learning a new technique prevent you from contributing, other
 
     <script src="jquery-3.2.1.min.js"></script>
     <script src="popup.js"></script>
+    <script src="easy-translate.js"></script>
+
 </body>
 
 </html>
