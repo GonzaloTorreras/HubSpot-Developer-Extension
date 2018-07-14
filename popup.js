@@ -165,10 +165,16 @@ var developerTools = {
 			$('.c-tab-slider').removeClass("c-tab-slider--state-debug");
 			$('.c-tab-slider').addClass('c-tab-slider--state-design-manager');
 		});
+		/*these settings could be combined into one function.*/
 		$('.dark-theme-toggle input').change(function(){
 
 			developerTools.saveSettings();
 			$('.dark-theme-toggle .uiToggleSwitch').toggleClass("uiToggleSwitchOn private-form__toggle-switch--on");
+		});
+		$('.ui-tweaks-toggle input').change(function(){
+
+			developerTools.saveSettings();
+			$('.ui-tweaks-toggle .uiToggleSwitch').toggleClass("uiToggleSwitchOn private-form__toggle-switch--on");
 		});
 
 
