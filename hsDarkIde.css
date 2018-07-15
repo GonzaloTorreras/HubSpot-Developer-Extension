@@ -76,6 +76,16 @@ body.design-manager.ext-dark-theme{
 
 }
 
+/*blog content module buttons*/
+body.design-manager.ext-dark-theme button.uiButton.private-button.private-button--xs.private-button--tertiary-light.private-button-select-group__option {
+    color: rgba(255, 255, 255, 0.5) !important;
+}
+body.design-manager.ext-dark-theme button.uiButton.private-button.private-button--xs.private-button--tertiary-light.private-button-select-group__option.private-button--active {
+    
+    color: rgb( var(--rgb-details-color) ) !important;
+    border-color:rgb( var(--rgb-details-color) ) !important;
+}
+
 /*vertical scrollbars*/
 body.design-manager.ext-dark-theme .Section__ScrollWrapper-jajphQ::-webkit-scrollbar,body.design-manager.ext-dark-theme .layout-tree-container::-webkit-scrollbar {
     width:9px;
