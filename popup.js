@@ -132,7 +132,7 @@ var developerTools = {
     		document.getElementById('uiTweaks').checked = items.uitweaks;
     		console.log("dark theme:",items.uitweaks);
     		if(items.uitweaks){
-    			$('.dark-theme-toggle .uiToggleSwitch').addClass("uiToggleSwitchOn private-form__toggle-switch--on");
+    			$('.ui-tweaks-toggle .uiToggleSwitch').addClass("uiToggleSwitchOn private-form__toggle-switch--on");
     		}
   		});
 
