@@ -28,6 +28,7 @@
 	    "document_idle": "document_start",
 	    "matches": [ "https://app.hubspot.com/*" ] 
     }],
+    "content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'",
     "options_page": "options.html",
 	"background": {
 		"persistent": true,
