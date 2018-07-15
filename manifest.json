@@ -2,6 +2,7 @@
 	"manifest_version": 2,
 	"name": "HubSpot Developer Extension ",
 	"version": "1.03",
+	"default_locale":"en",
 	"description": "__MSG_extDesc__",
 	"default_locale":"en",
 	"browser_action": {
@@ -12,7 +13,6 @@
 	"permissions": [
 		"storage",
 		"activeTab"
-		
 	],
 	"optional_permissions": [
 	 "https://app.hubspot.com/*" 
