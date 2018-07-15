@@ -11,7 +11,7 @@ $(document).ready(function() {
             'uitweaks'
         ], function(items) {
             if (items.uitweaks) {
-                $("body").addClass("ext-ui-tweaks");
+                $("html").addClass("ext-ui-tweaks");
               
 
 
