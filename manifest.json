@@ -15,7 +15,8 @@
 		"activeTab"
 	],
 	"optional_permissions": [
-	 "https://app.hubspot.com/*" 
+	 "https://app.hubspot.com/*",
+	 "tabs" 
 	],
 	"web_accessible_resources": [
 		"mac-text-cursor.svg",

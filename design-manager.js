@@ -4,6 +4,15 @@ $(document).ready(function() {
     /*getSelected might be deprecated need to review*/
     var currentScreen = '';
     var devMenu = false;
+    
+    chrome.windows.getAll({populate:true},function(windows){
+      windows.forEach(function(window){
+        window.tabs.forEach(function(tab){
+          //collect all of the urls here, I will just log them instead
+          console.log(tab.url);
+        });
+      });
+    });
     //console.log("Current URL: ",tabUrl);
     if (~tabUrl.indexOf("app.hubspot.com")) {
         //console.log("This is the hubspot backend.");

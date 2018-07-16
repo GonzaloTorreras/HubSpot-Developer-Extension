@@ -248,7 +248,7 @@ Do not let fear of learning a new technique prevent you from contributing, other
     }
 
     .o-menu-grid--design-manager {
-        grid-template-areas: "docs docs" "community community" "darktoggle darktoggle" "uitweakstoggle uitweakstoggle";
+        grid-template-areas: "docs docs" "community community" "darktoggle darktoggle" "uitweakstoggle uitweakstoggle" "overwritetoggle overwritetoggle";
     }
 
     #hsDebug {
@@ -283,6 +283,9 @@ Do not let fear of learning a new technique prevent you from contributing, other
     }
     #ui-tweaks-toggle{
         grid-area: uitweakstoggle;
+    }
+    #overwrite-toggle{
+        grid-area:overwritetoggle;
     }
 
 
@@ -578,6 +581,32 @@ Do not let fear of learning a new technique prevent you from contributing, other
                             <label class="private-form__label private-form__label--small">
                                 <i18n-string data-locale-at-render="en" data-key="DesignEditorsUI.customWidgetEditor.sidebar.fieldEdit.editorOptions.requiredLabel">
                                     <span data-i18n="uiTweaksToggleLabel">UI Tweaks/Dev Menu</span>
+                                </i18n-string>
+                            </label>
+                            <label class="uiToggle private-form__toggle-switch private-form__toggle-switch--xs ">
+                                <input type="checkbox" id="uiTweaks" class="private-form__toggle-input sr-only">
+                                <span class="uiToggleSwitch private-form__toggle-switch__inner" role="presentation">
+                            
+                            <span class="uiToggleSwitchLabel private-form__toggle-switch__label private-form__toggle-switch__label--checked">
+                              on
+                            </span>
+                                <span class="private-form__toggle-switch__handle">
+                              <svg role="presentation" viewBox="0 0 15 15.343" xmlns="http://www.w3.org/2000/svg"><title>checkmark</title><path fill="#00a4bd" stroke="#ffffff" stroke-width="2" class="private-form__toggle-switch__icon" d="M1.013 8.11c0-.223.078-.412.234-.568l1.14-1.14c.155-.155.345-.233.568-.233s.413.077.57.233l2.46 2.47 5.492-5.5c.156-.156.346-.234.568-.234.224 0 .413.077.57.233l1.138 1.14c.156.155.234.345.234.568 0 .224-.078.414-.234.57l-6.06 6.06-1.14 1.14c-.155.155-.345.233-.568.233s-.413-.078-.57-.234l-1.138-1.14-3.03-3.03c-.156-.156-.234-.346-.234-.57z"></path></svg>
+                              
+                            </span>
+                                <span class="uiToggleSwitchLabel private-form__toggle-switch__label private-form__toggle-switch__label--unchecked">
+                              off
+                            </span>
+                                </span>
+                            </label>
+                        </div>
+                        <div id="status"></div>
+                    </div>
+                    <div class="c-toggle-field" id="overwrite-toggle">
+                        <div class="overwrite-toggle">
+                            <label class="private-form__label private-form__label--small">
+                                <i18n-string data-locale-at-render="en" data-key="DesignEditorsUI.customWidgetEditor.sidebar.fieldEdit.editorOptions.requiredLabel">
+                                    <span data-i18n="overwriteToggleLabel">Warn About Overwriting</span>
                                 </i18n-string>
                             </label>
                             <label class="uiToggle private-form__toggle-switch private-form__toggle-switch--xs ">

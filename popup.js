@@ -98,9 +98,12 @@ var developerTools = {
 		  console.log("settings saved");
 		  var darkthemeVal = $('#darktheme').prop('checked');
 		  var uiTweaksVal = $('#uiTweaks').prop('checked');
+		  var uiTweaksVal = $('#overwrite').prop('checked');
+		  
 
 		  console.log("dark theme is ",darkthemeVal);
 		  console.log("UI Tweaks is ",uiTweaksVal);
+		  console.log("overwritetoggle",overwriteVal)
 		  chrome.storage.sync.set({
 		    darktheme: darkthemeVal,
 		  }, function() {
@@ -114,6 +117,16 @@ var developerTools = {
 
 		  chrome.storage.sync.set({
 		    uitweaks: uiTweaksVal,
+		  }, function() {
+		    // Update status to let user know options were saved.
+		    var status = document.getElementById('status');
+		    status.textContent = 'Options saved. If you have the Design manager open, you will need to refresh to see the theme.';
+		    setTimeout(function() {
+		      status.textContent = '';
+		    }, 4000);
+		  });
+		  chrome.storage.sync.set({
+		    overwrite: overwriteVal, //stores whether or not to warn about having multiple design managers open
 		  }, function() {
 		    // Update status to let user know options were saved.
 		    var status = document.getElementById('status');
