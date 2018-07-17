@@ -20,33 +20,7 @@ html.ext-ui-tweaks .HorizontalScrollContainer__ScrollBar-cSRRR{
     z-index:500;
 }
 
-/*Move revert to Design Manager 1 button and Help Button*/
 
-html.ext-ui-tweaks .ide-opt-out button.uiButton {
-    bottom: 0px!important;
-    width: 21px!important;
-    padding: 0;
-    height: 25px;
-    right: 38px!important;
-    border-radius:0!important;
-}
-html.ext-ui-tweaks #chat-widget div#help-widget {
-    bottom: 0px;
-    right: 0;
-    height: 25px;
-    width: 37px;
-    /* border-radius: 0!important; */
-}
-html.ext-ui-tweaks a#help-widget-toggle {
-    padding: 4px 0 0!important;
-    border-radius: 0!important;
-    text-align: center;
-    height: 100%;
-    /* display: inline-flex; */
-    /* align-items: center; */
-    /* justify-content: center; */
-   
-}
 
 /* End UI Tweaks */
 
