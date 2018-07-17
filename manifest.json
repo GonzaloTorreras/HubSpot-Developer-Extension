@@ -1,7 +1,7 @@
 {
 	"manifest_version": 2,
 	"name": "HubSpot Developer Extension ",
-	"version": "1.02.4",
+	"version": "1.02.5",
 	"description": "Must have for HubSpot Developers, adding convenience features to HubSpot",
 	"permissions": ["declarativeContent", "storage"],
 	"browser_action": {
