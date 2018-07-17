@@ -15,33 +15,7 @@ html.mac .cm-s-hubspot-canvas-dark .CodeMirror-lines, html.mac .cm-s-solarized .
   cursor: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAACaUlEQVRYR+1WPW8TQRCd3bVPIRcLsA0oeO37jIAcUEEZEAVVKir+AfwN/w34B1RUqSgQpIQKuADK7X3EZyLABJBzITp7d9FGGJRISCnunMZTrvZm3r15M28RnHCgSX3P87TBYFC9AAB7tdo4CALuui6ZHw4rnwGg2WyOfN/Pi8b7DwCl9Xe93jdV4FK7TTMp93WE5j72eqk6u9puN/w03SkNgH3R7ghNWFhincVszTWMG0GSvHZMZ1UgkeEcR+GncKs0AJdbrcYI40XA+BwgdDqIoqeuZd0DKX+CEF+rQmx/6PcPGCoyDmkgy7J5jPF54NxlcbzmmOYqEBIIIb7our5XqgYAQIEhjuPUEefLm1H0fMmy7khCNhhjqvccAGSRf69y/WXgT2JMKT2jYW2ZJWzdMZyVXOQbaZr+AABRdPH/AqiiqhduhS/tjn1rJEf+NAGoFjTkSF5nCXvmGM5dVEVvGGNKfKoFhcehFnjgabvGbiuO43BSyTRNeyFZ6PtQ/BI62gJEKZ0jhJgViVeCJHzkGvbDMRLrnPM4TdP90kU4YaAq8c3NJHyyZNj3R0i8mhYDipGT1QAA4FardVbDmpqCF3bHvp2L3O/3+9+nMYYHi8iyrAbi6NpkCiSRb6MomkxBeYtI2fFwONQBYDFJEr/b7T7udrsPDMPwAGC7Vqtlpa5iZUbv03SghKDUL7GsI4F21DSosyuUNks1I2XHWBOWckIhEEfAhQSCMZZEOaIo2449Suu/NK2Jx+MKJyQTQuQYY41wrotKZXwqzwelPkgK37HHTHjUDY/5WXHXZgBmDMwYmDEwY+A3VAEpMBUlNjAAAAAASUVORK5CYII=) 6 10,url("chrome-extension://__MSG_@@extension_id__/mac-text-cursor.svg"),url("chrome-extension://__MSG_@@extension_id__/mac-text-cursor.png"),text!important;
 }
 
-/*Move revert to Design Manager 1 button and Help Button*/
 
-.ide-opt-out button.uiButton {
-    bottom: 0px!important;
-    width: 21px!important;
-    padding: 0;
-    height: 25px;
-    right: 38px!important;
-    border-radius:0!important;
-}
-#chat-widget div#help-widget {
-    bottom: 0px;
-    right: 0;
-    height: 25px;
-    width: 37px;
-    /* border-radius: 0!important; */
-}
-a#help-widget-toggle {
-    padding: 4px 0 0!important;
-    border-radius: 0!important;
-    text-align: center;
-    height: 100%;
-    /* display: inline-flex; */
-    /* align-items: center; */
-    /* justify-content: center; */
-   
-}
 
 /* VARIABLES */
 /*
