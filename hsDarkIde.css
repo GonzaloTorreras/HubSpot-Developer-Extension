@@ -164,6 +164,11 @@ body.design-manager.ext-dark-theme .private-moveable-object:hover .private-icon:
 body.design-manager.ext-dark-theme .layout-tree .widget-icon {
     color: #d6cbcb!important;
 }
+body.design-manager.ext-dark-theme .private-moveable-object.widget-object.is--draggable{background:transparent;}
+body.design-manager.ext-dark-theme .private-moveable-object.widget-object.is--disabled {
+    background: rgba(255,255,255,.30);
+    border-color: transparent;
+}
 
 /*body.design-manager.ext-dark-theme .private-link:hover*/
 
