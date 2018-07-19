@@ -2,7 +2,7 @@ $(document).ready(function() {
     /*This script runs once the design manager page loads.*/
     var tabUrl = window.location.protocol + "//" + window.location.host + "/" + window.location.pathname;
     /*getSelected might be deprecated need to review*/
-    var currentScreen = '';
+    var currentScreen = "";
     var devMenu = false;
     //console.log("Current URL: ",tabUrl);
     if (~tabUrl.indexOf("app.hubspot.com")) {
@@ -28,7 +28,7 @@ $(document).ready(function() {
             //console.log("Design Manager V2 is active");
             currentScreen = 'design-manager';
             chrome.storage.sync.get([
-                'darktheme'
+                "darktheme"
             ], function(items) {
                 if (items.darktheme) {
                     $("body").addClass("ext-dark-theme");
@@ -58,23 +58,23 @@ $(document).ready(function() {
                     /*expects version to be integer, button label string, hubId string, url string.*/
                     var link = url.replace("_HUB_ID_", hubId);
                     if (version === 3) {
-                        var html = '';
-                        html += '<li id="nav-dropdown-item-leads" data-mainitemid="' + buttonLabel + '" class="nav-dropdown-item">';
-                        html += '<a data-appkey="' + buttonLabel + '" href="' + link + '">';
-                        html += '<span class="child-link-text link-text-after-parent-item-contacts">';
+                        var html = "";
+                        html += "<li id='nav-dropdown-item-leads' data-mainitemid='" + buttonLabel + "' class='nav-dropdown-item'>";
+                        html += "<a data-appkey='" + buttonLabel + "' href='" + link + "'>";
+                        html += "<span class='child-link-text link-text-after-parent-item-contacts'>";
                         html += buttonLabel;
-                        html += '</span>';
-                        html += '</a>';
-                        html += '</li>';
+                        html += "</span>";
+                        html += "</a>";
+                        html += "</li>";
                         return html;
 
                     } else if (version === 4) {
-                        var html = '';
-                        html += '<li role="none">';
-                        html += '<a role="menuitem" data-tracking="click hover" id="nav-secondary-design-tools-beta" class="navSecondaryLink" href="' + link + '" >';
+                        var html = "";
+                        html += "<li role="none">";
+                        html += "<a role='menuitem' data-tracking='click hover' id='nav-secondary-design-tools-beta' class='navSecondaryLink' href='" + link + "' >";
                         html += buttonLabel;
-                        html += '</a>';
-                        html += '</li>';
+                        html += "</a>";
+                        html += "</li>";
                         return html;
 
 
