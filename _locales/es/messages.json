@@ -4,7 +4,7 @@
     "description": "The Extension's name"
   },
   "extDesc": {
-    "message": "Es esencial para desarrolladores de Hubspot porque brinda acceso rápido a parámetros de URL útiles además de añadir funcionalidades extra",
+    "message": "Debe tener para desarrolladores de HubSpot, agregando características de conveniencia a HubSpot",
     "description": "Description for extension, displays in chrome extensions listing"
   },
   "debugTab": {

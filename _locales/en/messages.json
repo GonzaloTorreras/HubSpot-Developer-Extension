@@ -4,7 +4,7 @@
     "description": "The Extension's name"
   },
   "extDesc": {
-    "message": "Must have for HubSpot Developers, bringing quick access to commonly used query parameters, and adding convenience features to HubSpot",
+    "message": "Must have for HubSpot Developers, adding convenience features to HubSpot",
     "description": "Description for extension, displays in chrome extensions listing"
   },
   "debugTab": {
