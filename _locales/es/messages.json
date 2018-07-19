@@ -75,6 +75,10 @@
     "message": "Tema oscuro",
     "description": "Dark theme toggle label"
   },
+  "uiTweaksToggleLabel":{
+    "message": "Ajustes de UI / Nuevo menú",
+    "description": "Toggle Label for UI Tweaks and Dev Menu toggle label"
+  },
   "helpTranslate": {
   	"message": "¿Sabes inglés y otro idioma? Necesitamos tu ayuda para traducir la extensión, mira nuestro GitHub.",
   	"description": "options page request for help translating."
