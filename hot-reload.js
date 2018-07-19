@@ -1,19 +1,19 @@
-const filesInDirectory = dir => new Promise (resolve =>
+const filesInDirectory = (dir) => new Promise (resolve =>
 
-    dir.createReader ().readEntries (entries =>
+    dir.createReader ().readEntries ((entries) =>
 
         Promise.all (entries.filter (e => e.name[0] !== '.').map (e =>
 
             e.isDirectory
                 ? filesInDirectory (e)
-                : new Promise (resolve => e.file (resolve))
+                : new Promise ((resolve) => e.file (resolve))
         ))
-        .then (files => [].concat (...files))
+        .then ((files) => [].concat (...files))
         .then (resolve)
     )
-)
+);
 
-const timestampForFilesInDirectory = dir =>
+const timestampForFilesInDirectory = (dir) =>
         filesInDirectory (dir).then (files =>
             files.map (f => f.name + f.lastModifiedDate).join ())
 

@@ -4,7 +4,7 @@
     "description": "The Extension's name"
   },
   "extDesc": {
-    "message": "Es esencial para desarrolladores de Hubspot porque brinda acceso rápido a parámetros de URL útiles además de añadir funcionalidades extra",
+    "message": "Debe tener para desarrolladores de HubSpot, agregando características de conveniencia a HubSpot",
     "description": "Description for extension, displays in chrome extensions listing"
   },
   "debugTab": {
@@ -28,7 +28,7 @@
   	"description": "footer jQuery Button label"
   },
   "gpsiHover":{
-    "message": "Puntuaciónme!",
+    "message": "Puntúame!",
     "description": "'score me!' text that appears in hover of google page speed button"
   },
    "gpsiTestingDesktop":{
@@ -56,15 +56,15 @@
   	"description": "Documentation Button link for Filters"
   },
   "communityButton": {
-    "message": "Community",
+    "message": "Comunidad",
     "description": "Community Button label"
   },
   "comLinkDesign": {
-    "message": "Design Forum",
+    "message": "Foro de diseño",
     "description": "Community Button link for Design Forum"
   },
   "comLinkDeveloper": {
-    "message": "Developer Forum",
+    "message": "Foro de desarrolladores",
     "description": "Community Button link for Developer/api Forum"
   },
   "comLinkIdeas": {
@@ -72,11 +72,27 @@
     "description": "Community Button link for Ideas"
   },
   "darkTheme":{
-    "message": "Tema Dark",
+    "message": "Tema oscuro",
     "description": "Dark theme toggle label"
   },
+  "uiTweaksToggleLabel":{
+    "message": "Ajustes de UI / Nuevo menú",
+    "description": "Toggle Label for UI Tweaks and Dev Menu toggle label"
+  },
+  "toggleOn":{
+    "message": "encendido",
+    "description": "accessibility text for on state of toggle switches"
+  },
+  "toggleOff":{
+    "message": "apagado",
+    "description": "accessibility text for off state of toggle switches"
+  },
+   "toggleCheckmark":{
+    "message": "marca de verificación",
+    "description": "accessibility text for checkmark of toggle switches"
+  },
   "helpTranslate": {
-  	"message": "¿Sabes inglés y otro idioma? Necesitamos su ayuda para traducir la extensión, vaya a nuestro GitHub.",
+  	"message": "¿Sabes inglés y otro idioma? Necesitamos tu ayuda para traducir la extensión, mira nuestro GitHub.",
   	"description": "options page request for help translating."
   }
  
