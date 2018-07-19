@@ -83,6 +83,10 @@
     "message": "encendido",
     "description": "accessibility text for on state of toggle switches"
   },
+  "toggleOff":{
+    "message": "apagado",
+    "description": "accessibility text for off state of toggle switches"
+  },
   "helpTranslate": {
   	"message": "¿Sabes inglés y otro idioma? Necesitamos tu ayuda para traducir la extensión, mira nuestro GitHub.",
   	"description": "options page request for help translating."
