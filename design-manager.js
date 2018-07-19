@@ -56,7 +56,7 @@ $(document).ready(function() {
             function generateDevMenuItem(version, buttonLabel, hubId, url) {
                 /*expects version to be integer, button label string, hubId string, url string.*/
                 var link = url.replace("_HUB_ID_", hubId);
-                if (version == 3) {
+                if (version === 3) {
                     var html = '';
                     html += '<li id="nav-dropdown-item-leads" data-mainitemid="' + buttonLabel + '" class="nav-dropdown-item">';
                     html += '<a data-appkey="' + buttonLabel + '" href="' + link + '">';
@@ -67,7 +67,7 @@ $(document).ready(function() {
                     html += '</li>';
                     return html;
 
-                } else if (version == 4) {
+                } else if (version === 4) {
                     var html = '';
                     html += '<li role="none">';
                     html += '<a role="menuitem" data-tracking="click hover" id="nav-secondary-design-tools-beta" class="navSecondaryLink" href="' + link + '" >';
@@ -87,7 +87,7 @@ $(document).ready(function() {
 
 
 
-                if (version == 3) {
+                if (version === 3) {
                     var html = '';
                     html += '<li id="ext-dev-menu" class="nav-main-item nav-dropdown-container" style="background-color: #555;"><a href="">Developer</a>';
                     html += '<ul class="nav-dropdown-menu" style="min-width: 102px;">';
@@ -115,7 +115,7 @@ $(document).ready(function() {
                     });
 
 
-                } else if (version == 4) {
+                } else if (version === 4) {
                     var html = '';
                     html += '<li id="ext-dev-menu-wrapper" role="none" class="expandable ">';
                     html += '<a href="#" id="nav-primary-dev-branch" aria-haspopup="true" aria-expanded="false" class="primary-link" data-tracking="click hover" role-menu="menuitem">';
@@ -164,7 +164,7 @@ $(document).ready(function() {
             };
 
             /*get current HubSpot ID*/
-            
+
             var hubId;
             if (navVersion === 3) {
                 hubId = $(".nav-hubid").text().replace("Hub ID: ", "");
