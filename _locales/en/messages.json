@@ -79,6 +79,10 @@
     "message": "UI Tweaks/Dev Menu",
     "description": "Toggle Label for UI Tweaks and Dev Menu toggle label"
   },
+  "toggleOn":{
+    "message": "on",
+    "description": "accessibility text for on state of toggle switches"
+  },
   "helpTranslate": {
   	"message": "Do you know English and another language? We need your help to translate the extension, please go to our GitHub.",
   	"description": "options page request for help translating."
