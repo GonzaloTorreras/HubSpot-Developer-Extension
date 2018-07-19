@@ -1,34 +1,36 @@
 {
 	"manifest_version": 2,
-	"name": "HubSpot Developer Extension ",
-	"version": "1.02.5",
-	"description": "Must have for HubSpot Developers, adding convenience features to HubSpot",
-	"permissions": ["declarativeContent", "storage"],
+	"name": "__MSG_extName__",
+	"version": "1.03",
+	"default_locale":"en",
+	"description": "__MSG_extDesc__",
 	"browser_action": {
 		"default_popup": "popup.html",
+		"default_title": "HubSpot Dev Tools",
 		"default_icon": "icon.png"
 	},
 	"permissions": [
-		"tabs",
-		"activeTab",
-		"cookies",
-		"storage"
-
+		"storage",
+		"activeTab"
+	],
+	"optional_permissions": [
+	 "https://app.hubspot.com/*" 
 	],
 	"web_accessible_resources": [
 		"mac-text-cursor.svg",
 		"mac-text-cursor.png"
 	],
 	"content_scripts": [{
-		"run_at" :"document_end", 
+		"run_at" :"document_idle", 
 		"js": ["jquery-3.2.1.min.js","design-manager.js"], 
 	    "css": [ "hsDarkIde.css" ],  
 	    "document_idle": "document_start",
-	    "matches": [ "\u003Call_urls>" ] 
+	    "matches": [ "https://app.hubspot.com/*" ] 
     }],
+    "content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'",
     "options_page": "options.html",
-		"background": {
-			"persistent": true,
-			"scripts": [ "hot-reload.js" ]
-		}
+	"background": {
+		"persistent": true,
+		"scripts": [ "hot-reload.js" ]
+	}
 }

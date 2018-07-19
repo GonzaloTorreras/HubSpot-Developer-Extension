@@ -1,11 +1,24 @@
+/*Google Analytics*/
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-122315369-1']);
+_gaq.push(['_trackPageview']);
 
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = 'https://ssl.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+/*end google analytics*/
 var developerTools = {
+
 
 	debugReload: function(debugParam) {
 
 		chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
 			var tabUrl = new URL(tabs[0].url);
 			var params = new URLSearchParams(tabUrl.search);
+
+			 _gaq.push(['_trackEvent', debugParam, 'clicked']);
 
 			if (debugParam == "cacheBuster") {
 				var randomNum = Math.floor(Math.random() * 9999) + 1;
@@ -17,6 +30,8 @@ var developerTools = {
 			}
 			
 			chrome.tabs.update(tabs[0].id, {url: tabUrl.origin + tabUrl.pathname + '?' + params.toString()});
+			window.close();
+
 		});
 
 	},
@@ -24,6 +39,7 @@ var developerTools = {
 		chrome.tabs.query({'active': true, 'lastFocusedWindow': true}, function (tabs) {
 		    var pageUrl = new URL(tabs[0].url);
 		    var gradeUrl = pageUrl.origin.replace("://", "%3A%2F%2F") + pageUrl.pathname;
+		    _gaq.push(['_trackEvent', 'googlePageSpeed', 'clicked']);
 			$.getJSON('https://www.googleapis.com/pagespeedonline/v4/runPagespeed?url=' + gradeUrl + '&fields=id%2CruleGroups', function(data){
 				if (data.id) {
 					$("#desktop_psi_placeholder").html('Desktop PSI Score<span class="c-btn__score">' + data.ruleGroups.SPEED.score + '</span>');
@@ -83,9 +99,23 @@ var developerTools = {
 
 		  console.log("settings saved");
 		  var darkthemeVal = $('#darktheme').prop('checked');
+		  var uiTweaksVal = $('#uiTweaks').prop('checked');
+
 		  console.log("dark theme is ",darkthemeVal);
+		  console.log("UI Tweaks is ",uiTweaksVal);
 		  chrome.storage.sync.set({
 		    darktheme: darkthemeVal,
+		  }, function() {
+		    // Update status to let user know options were saved.
+		    var status = document.getElementById('status');
+		    status.textContent = 'Options saved. If you have the Design manager open, you will need to refresh to see the theme.';
+		    setTimeout(function() {
+		      status.textContent = '';
+		    }, 4000);
+		  });
+
+		  chrome.storage.sync.set({
+		    uitweaks: uiTweaksVal,
 		  }, function() {
 		    // Update status to let user know options were saved.
 		    var status = document.getElementById('status');
@@ -112,9 +142,26 @@ var developerTools = {
     			$('.dark-theme-toggle .uiToggleSwitch').addClass("uiToggleSwitchOn private-form__toggle-switch--on");
     		}
   		});
+  		chrome.storage.sync.get(['uitweaks'], function(items) {
+			// Restores select box and checkbox state using the preferences
+// stored in chrome.storage.
+    		document.getElementById('uiTweaks').checked = items.uitweaks;
+    		console.log("dark theme:",items.uitweaks);
+    		if(items.uitweaks){
+    			$('.ui-tweaks-toggle .uiToggleSwitch').addClass("uiToggleSwitchOn private-form__toggle-switch--on");
+    		}
+  		});
 
 	},
 	onLoad: function() {
+		/* Temporary fix to the height bug in the popup. This should get removed soon. */
+		window.setTimeout(() => {
+			$('html, body').css({
+			height: $('.c-tab-slider').outerHeight()
+			});
+		}, 100);
+		/* end temporary bug fix */
+
 		developerTools.setMenuContext();
 		developerTools.getSettings();
 		/*document.addEventListener('DOMContentLoaded', developerTools.getSettings());
@@ -142,10 +189,16 @@ var developerTools = {
 			$('.c-tab-slider').removeClass("c-tab-slider--state-debug");
 			$('.c-tab-slider').addClass('c-tab-slider--state-design-manager');
 		});
+		/*these settings could be combined into one function.*/
 		$('.dark-theme-toggle input').change(function(){
 
 			developerTools.saveSettings();
 			$('.dark-theme-toggle .uiToggleSwitch').toggleClass("uiToggleSwitchOn private-form__toggle-switch--on");
+		});
+		$('.ui-tweaks-toggle input').change(function(){
+
+			developerTools.saveSettings();
+			$('.ui-tweaks-toggle .uiToggleSwitch').toggleClass("uiToggleSwitchOn private-form__toggle-switch--on");
 		});
 
 
