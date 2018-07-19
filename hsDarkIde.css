@@ -21,6 +21,10 @@ html.ext-ui-tweaks .HorizontalScrollContainer__ScrollBar-cSRRR{
 }
 
 
+/*fix for menu labels in setting pages */
+body.hubspot .simple-menus-menu-tree .simple-menus-menu-item-label{
+    width:100%;
+}
 
 /* End UI Tweaks */
 
@@ -296,6 +300,7 @@ body.design-manager.ext-dark-theme .file-tabs.private-tabs .file-tab.is--active 
 
 body.design-manager.ext-dark-theme .widget-icon__mask[style*="background-color: rgb(81, 111, 144)"],
 body.design-manager.ext-dark-theme .widget-icon__mask[style*="background-color: rgb(51, 71, 91)"],
+
 body.design-manager.ext-dark-theme .layout-tree .widget.section_delimiter,
 body.design-manager.ext-dark-theme .private-button--primary {
     background-color: rgba( var(--rgb-details-color), .8) !important;
@@ -516,6 +521,22 @@ body.design-manager.ext-dark-theme .finder-container .result-item:hover{
 body.design-manager.ext-dark-theme .bqQvdP .private-tile {
     background: transparent;
 }
+
+/* right sidebar: add widget tab */
+body.design-manager.ext-dark-theme .widget-toolbox-list-item .widget-object.is--disabled {
+    background: transparent;
+}
+body.design-manager.ext-dark-theme .widget-catalog-list-item .private-moveable-object:not(.is--disabled),
+body.design-manager.ext-dark-theme .widget-catalog-list-item .private-moveable-object:not(.is--disabled):hover{
+	color: rgb(var(--rgb-details-color)) !important;
+	background: transparent;
+}
+body.design-manager.ext-dark-theme .widget-catalog-list-item .private-moveable-object:not(.is--disabled) .private-icon:not(.private-icon-circle__inner),
+body.design-manager.ext-dark-theme .widget-catalog-list-item .private-moveable-object:not(.is--disabled):hover .private-icon:not(.private-icon-circle__inner){
+	color: rgb(var(--rgb-details-color)) !important;
+}
+
+
 /**
 /* 
 #33475b
