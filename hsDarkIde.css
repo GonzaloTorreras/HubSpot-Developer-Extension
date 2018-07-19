@@ -44,6 +44,10 @@ a#help-widget-toggle {
 }
 
 
+/*fix for menu labels in setting pages */
+body.hubspot .simple-menus-menu-tree .simple-menus-menu-item-label{
+    width:100%;
+}
 
 
 /* VARIABLES */
