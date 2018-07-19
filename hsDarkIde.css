@@ -168,11 +168,7 @@ body.design-manager.ext-dark-theme .private-moveable-object:hover .private-icon:
 body.design-manager.ext-dark-theme .layout-tree .widget-icon {
     color: #d6cbcb!important;
 }
-body.design-manager.ext-dark-theme .private-moveable-object.widget-object.is--draggable{background:transparent;}
-body.design-manager.ext-dark-theme .private-moveable-object.widget-object.is--disabled {
-    background: rgba(255,255,255,.30);
-    border-color: transparent;
-}
+
 
 /*body.design-manager.ext-dark-theme .private-link:hover*/
 
@@ -524,7 +520,9 @@ body.design-manager.ext-dark-theme .bqQvdP .private-tile {
 
 /* right sidebar: add widget tab */
 body.design-manager.ext-dark-theme .widget-toolbox-list-item .widget-object.is--disabled {
-    background: transparent;
+    /*background: transparent;*/
+    background: rgba(255,255,255,.10);
+    border-color: transparent;
 }
 body.design-manager.ext-dark-theme .widget-catalog-list-item .private-moveable-object:not(.is--disabled),
 body.design-manager.ext-dark-theme .widget-catalog-list-item .private-moveable-object:not(.is--disabled):hover{
@@ -535,6 +533,7 @@ body.design-manager.ext-dark-theme .widget-catalog-list-item .private-moveable-o
 body.design-manager.ext-dark-theme .widget-catalog-list-item .private-moveable-object:not(.is--disabled):hover .private-icon:not(.private-icon-circle__inner){
 	color: rgb(var(--rgb-details-color)) !important;
 }
+
 
 
 /**
