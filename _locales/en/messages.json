@@ -87,6 +87,10 @@
     "message": "off",
     "description": "accessibility text for off state of toggle switches"
   },
+  "toggleCheckmark":{
+    "message": "checkmark",
+    "description": "accessibility text for checkmark of toggle switches"
+  },
   "helpTranslate": {
   	"message": "Do you know English and another language? We need your help to translate the extension, please go to our GitHub.",
   	"description": "options page request for help translating."

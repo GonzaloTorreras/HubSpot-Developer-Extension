@@ -87,6 +87,10 @@
     "message": "apagado",
     "description": "accessibility text for off state of toggle switches"
   },
+   "toggleCheckmark":{
+    "message": "marca de verificación",
+    "description": "accessibility text for checkmark of toggle switches"
+  },
   "helpTranslate": {
   	"message": "¿Sabes inglés y otro idioma? Necesitamos tu ayuda para traducir la extensión, mira nuestro GitHub.",
   	"description": "options page request for help translating."
