@@ -1,4 +1,5 @@
 # HubSpot-Developer-Extension
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/d6a1c1d220ea4ca79299b432ca44a9d8)](https://www.codacy.com/app/jonmclaren1/HubSpot-Developer-Extension?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=williamspiro/HubSpot-Developer-Extension&amp;utm_campaign=Badge_Grade)
 A Chrome/Chromium extension for HubSpot Developers that adds useful shortcuts to commonly used HubSpot Query Parameters, and tools for making HubSpot Development easier and more enjoyable. For details on the many features we have a wiki page detailing them:[Feature Breakdown](https://github.com/williamspiro/HubSpot-Developer-Extension/wiki/Feature-Breakdown)
 
 If you like the extension, please [rate and review it](https://chrome.google.com/webstore/detail/hubspot-developer-extensi/gebemkdecnlgbcanplbgdpcffpdnfdfo/reviews) to help it get visibility in the chrome store. The more eyes on it, the more likely more contributors, and more high quality updates!
