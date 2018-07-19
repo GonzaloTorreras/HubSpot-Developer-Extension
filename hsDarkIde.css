@@ -12,43 +12,23 @@
 
 /* UI Tweaks */
 /*Fixing Mac text cursor issue in the code editor by inverting the cursor for dark code editor themes.*/
+
 html.mac.ext-ui-tweaks .cm-s-hubspot-canvas-dark .CodeMirror-lines, html.mac .cm-s-solarized .CodeMirror-lines{
-  cursor:url("chrome-extension://__MSG_@@extension_id__/mac-text-cursor.svg"),url("chrome-extension://__MSG_@@extension_id__/mac-text-cursor.png"),text!important;
+  cursor: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAACaUlEQVRYR+1WPW8TQRCd3bVPIRcLsA0oeO37jIAcUEEZEAVVKir+AfwN/w34B1RUqSgQpIQKuADK7X3EZyLABJBzITp7d9FGGJRISCnunMZTrvZm3r15M28RnHCgSX3P87TBYFC9AAB7tdo4CALuui6ZHw4rnwGg2WyOfN/Pi8b7DwCl9Xe93jdV4FK7TTMp93WE5j72eqk6u9puN/w03SkNgH3R7ghNWFhincVszTWMG0GSvHZMZ1UgkeEcR+GncKs0AJdbrcYI40XA+BwgdDqIoqeuZd0DKX+CEF+rQmx/6PcPGCoyDmkgy7J5jPF54NxlcbzmmOYqEBIIIb7our5XqgYAQIEhjuPUEefLm1H0fMmy7khCNhhjqvccAGSRf69y/WXgT2JMKT2jYW2ZJWzdMZyVXOQbaZr+AABRdPH/AqiiqhduhS/tjn1rJEf+NAGoFjTkSF5nCXvmGM5dVEVvGGNKfKoFhcehFnjgabvGbiuO43BSyTRNeyFZ6PtQ/BI62gJEKZ0jhJgViVeCJHzkGvbDMRLrnPM4TdP90kU4YaAq8c3NJHyyZNj3R0i8mhYDipGT1QAA4FardVbDmpqCF3bHvp2L3O/3+9+nMYYHi8iyrAbi6NpkCiSRb6MomkxBeYtI2fFwONQBYDFJEr/b7T7udrsPDMPwAGC7Vqtlpa5iZUbv03SghKDUL7GsI4F21DSosyuUNks1I2XHWBOWckIhEEfAhQSCMZZEOaIo2449Suu/NK2Jx+MKJyQTQuQYY41wrotKZXwqzwelPkgK37HHTHjUDY/5WXHXZgBmDMwYmDEwY+A3VAEpMBUlNjAAAAAASUVORK5CYII=) 6 10,url("chrome-extension://__MSG_@@extension_id__/mac-text-cursor.svg"),url("chrome-extension://__MSG_@@extension_id__/mac-text-cursor.png"),text!important;
 }
 /* HubSpot's got an issue with the horizontal tab scrollbar appearing over the navigation menu the tweak below fixes that. */
 html.ext-ui-tweaks .HorizontalScrollContainer__ScrollBar-cSRRR{
     z-index:500;
 }
 
-/*Move revert to Design Manager 1 button and Help Button*/
 
-.ide-opt-out button.uiButton {
-    bottom: 0px!important;
-    width: 21px!important;
-    padding: 0;
-    height: 25px;
-    right: 38px!important;
-    border-radius:0!important;
-}
-#chat-widget div#help-widget {
-    bottom: 0px;
-    right: 0;
-    height: 25px;
-    width: 37px;
-    /* border-radius: 0!important; */
-}
-a#help-widget-toggle {
-    padding: 4px 0 0!important;
-    border-radius: 0!important;
-    text-align: center;
-    height: 100%;
-    /* display: inline-flex; */
-    /* align-items: center; */
-    /* justify-content: center; */
-   
+/*fix for menu labels in setting pages */
+body.hubspot .simple-menus-menu-tree .simple-menus-menu-item-label{
+    width:100%;
 }
 
 /* End UI Tweaks */
+
 
 
 /* VARIABLES */
@@ -191,6 +171,7 @@ body.design-manager.ext-dark-theme .layout-tree .widget-icon {
     color: #d6cbcb!important;
 }
 
+
 /*body.design-manager.ext-dark-theme .private-link:hover*/
 
 
@@ -317,6 +298,7 @@ body.design-manager.ext-dark-theme .file-tabs.private-tabs .file-tab.is--active 
 
 body.design-manager.ext-dark-theme .widget-icon__mask[style*="background-color: rgb(81, 111, 144)"],
 body.design-manager.ext-dark-theme .widget-icon__mask[style*="background-color: rgb(51, 71, 91)"],
+
 body.design-manager.ext-dark-theme .layout-tree .widget.section_delimiter,
 body.design-manager.ext-dark-theme .private-button--primary {
     background-color: rgba( var(--rgb-details-color), .8) !important;
@@ -537,6 +519,25 @@ body.design-manager.ext-dark-theme .finder-container .result-item:hover{
 body.design-manager.ext-dark-theme .bqQvdP .private-tile {
     background: transparent;
 }
+
+/* right sidebar: add widget tab */
+body.design-manager.ext-dark-theme .widget-toolbox-list-item .widget-object.is--disabled {
+    /*background: transparent;*/
+    background: rgba(255,255,255,.10);
+    border-color: transparent;
+}
+body.design-manager.ext-dark-theme .widget-catalog-list-item .private-moveable-object:not(.is--disabled),
+body.design-manager.ext-dark-theme .widget-catalog-list-item .private-moveable-object:not(.is--disabled):hover{
+	color: rgb(var(--rgb-details-color)) !important;
+	background: transparent;
+}
+body.design-manager.ext-dark-theme .widget-catalog-list-item .private-moveable-object:not(.is--disabled) .private-icon:not(.private-icon-circle__inner),
+body.design-manager.ext-dark-theme .widget-catalog-list-item .private-moveable-object:not(.is--disabled):hover .private-icon:not(.private-icon-circle__inner){
+	color: rgb(var(--rgb-details-color)) !important;
+}
+
+
+
 /**
 /* 
 #33475b

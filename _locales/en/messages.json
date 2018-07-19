@@ -4,7 +4,7 @@
     "description": "The Extension's name"
   },
   "extDesc": {
-    "message": "Must have for HubSpot Developers, bringing quick access to commonly used query parameters, and adding convenience features to HubSpot",
+    "message": "Must have for HubSpot Developers, adding convenience features to HubSpot",
     "description": "Description for extension, displays in chrome extensions listing"
   },
   "debugTab": {
@@ -28,7 +28,7 @@
   	"description": "footer jQuery Button label"
   },
   "gpsiHover":{
-    "message": "Puntuaciónme!",
+    "message": "Score me!",
     "description": "'score me!' text that appears in hover of google page speed button"
   },
   "gpsiTestingDesktop":{
@@ -74,6 +74,22 @@
     "darkTheme":{
     "message": "Dark Theme",
     "description": "Dark theme toggle label"
+  },
+    "uiTweaksToggleLabel":{
+    "message": "UI Tweaks/Dev Menu",
+    "description": "Toggle Label for UI Tweaks and Dev Menu toggle label"
+  },
+  "toggleOn":{
+    "message": "on",
+    "description": "accessibility text for on state of toggle switches"
+  },
+   "toggleOff":{
+    "message": "off",
+    "description": "accessibility text for off state of toggle switches"
+  },
+  "toggleCheckmark":{
+    "message": "checkmark",
+    "description": "accessibility text for checkmark of toggle switches"
   },
   "helpTranslate": {
   	"message": "Do you know English and another language? We need your help to translate the extension, please go to our GitHub.",

@@ -30,6 +30,8 @@ var developerTools = {
 			}
 			
 			chrome.tabs.update(tabs[0].id, {url: tabUrl.origin + tabUrl.pathname + '?' + params.toString()});
+			window.close();
+
 		});
 
 	},
@@ -165,6 +167,14 @@ var developerTools = {
 
 	},
 	onLoad: function() {
+		/* Temporary fix to the height bug in the popup. This should get removed soon. */
+		window.setTimeout(() => {
+			$('html, body').css({
+			height: $('.c-tab-slider').outerHeight()
+			});
+		}, 100);
+		/* end temporary bug fix */
+
 		developerTools.setMenuContext();
 		developerTools.getSettings();
 		/*document.addEventListener('DOMContentLoaded', developerTools.getSettings());
