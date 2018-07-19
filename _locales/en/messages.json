@@ -28,7 +28,7 @@
   	"description": "footer jQuery Button label"
   },
   "gpsiHover":{
-    "message": "Puntuaciónme!",
+    "message": "Score me!",
     "description": "'score me!' text that appears in hover of google page speed button"
   },
   "gpsiTestingDesktop":{
