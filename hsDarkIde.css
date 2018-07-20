@@ -83,9 +83,15 @@ body.design-manager.ext-dark-theme .CodeMirror.CodeMirror-overlayscroll {
     font-size: var(--body-font-size) !important;
 
 }
-.CodeMirror-overlayscroll-vertical>div {
+body.design-manager.ext-dark-theme .CodeMirror-overlayscroll-vertical div,
+body.design-manager.ext-dark-theme .CodeMirror-overlayscroll-horizontal div {
     background:rgba(63, 180, 249, 0.8)!important;
-    opacity:1!important;
+    opacity:.5 !important;
+}
+
+body.design-manager.ext-dark-theme .CodeMirror-overlayscroll-vertical:hover div,
+body.design-manager.ext-dark-theme .CodeMirror-overlayscroll-horizontal:hover div {
+	opacity:1 !important;
 }
 
 
