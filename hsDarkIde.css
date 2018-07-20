@@ -514,6 +514,15 @@ body.design-manager.ext-dark-theme .widget-toolbox-list-item .widget-object:not(
 body.design-manager.ext-dark-theme .widget-toolbox-list-item .widget-object.is--disabled{
 	background: var(--body-background);
 }
+
+body.design-manager.ext-dark-theme .form-card-container {
+    background: var(--body-background);
+}
+
+/* fix for most of the generated selectors/menus */
+body.design-manager.ext-dark-theme .Select-menu-outer {
+    background: var(--body-background);
+}
 /**
 /* 
 #33475b
