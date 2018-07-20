@@ -264,8 +264,8 @@ body.design-manager.ext-dark-theme .cm-s-hubspot-canvas-light .CodeMirror-gutter
 	transition: .3s;
 }
 
-body.design-manager.ext-dark-theme .private-button--tertiary-light.private-button--active,
-body.design-manager.ext-dark-theme .private-button--tertiary-light:hover{
+body.design-manager.ext-dark-theme .private-button--tertiary-light:not(.disabled).private-button--active,
+body.design-manager.ext-dark-theme .private-button--tertiary-light:not(.disabled):hover{
 	background: rgb(var(--rgb-details-color)) !important;
 	color: #fff !important;
 }
