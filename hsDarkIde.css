@@ -543,6 +543,26 @@ body.design-manager.ext-dark-theme .cm-s-hubspot-canvas-light .cm-variable.cm-hu
 	color: #ffc7ac;
 }
 
+
+/* right sidebar: rich text overlay */
+body.design-manager.ext-dark-theme .rich-text-preview{
+	transition: .3s;
+}
+body.design-manager.ext-dark-theme .rich-text-preview:hover{
+	background:#fff;
+}
+body.design-manager.ext-dark-theme .rich-text-preview.private-hoverlay .private-hoverlay__overlay+.private-hoverlay__children,
+body.design-manager.ext-dark-theme .rich-text-preview.private-hoverlay.private-hovered .private-hoverlay__overlay {
+    background: transparent;
+	filter:blur(0);
+}
+body.design-manager.ext-dark-theme .rich-text-preview.private-hoverlay .private-hoverlay__overlay .private-flex>.private-flex {
+    align-items: flex-end;
+    justify-content: flex-end;
+	max-height: 87%; /* I think this will work always */
+}
+body.design-manager.ext-dark-theme span.private-icon.private-icon__high 
+
 /**
 /* 
 #33475b
