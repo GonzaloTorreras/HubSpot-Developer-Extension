@@ -478,7 +478,7 @@ body.design-manager.ext-dark-theme .folder-item.is--over.can--drop>.nav-item-lin
     background-color: rgba(255,255,255,.2);
 }
 
-/** right sidebar: swap widget for another popup **/
+/** right sidebar: swapping widget for another popup **/
 body.design-manager.ext-dark-theme .widget-catalog-list-item>a,
 body.design-manager.ext-dark-theme .widget-catalog-list-item>button {
     background-color: var(--body-background);
