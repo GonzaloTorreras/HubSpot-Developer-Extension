@@ -261,6 +261,13 @@ body.design-manager.ext-dark-theme .cm-s-hubspot-canvas-light,
 body.design-manager.ext-dark-theme .cm-s-hubspot-canvas-light .CodeMirror-gutters {
     background: rgba(255, 255, 255, .1) !important;
     color: #d6cbcb !important;
+	transition: .3s;
+}
+
+body.design-manager.ext-dark-theme .private-button--tertiary-light.private-button--active,
+body.design-manager.ext-dark-theme .private-button--tertiary-light:hover{
+	background: rgb(var(--rgb-details-color)) !important;
+	color: #fff !important;
 }
 
 body.design-manager.ext-dark-theme .cm-s-hubspot-canvas-light {
