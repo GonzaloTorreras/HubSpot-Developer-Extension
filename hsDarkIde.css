@@ -472,6 +472,22 @@ body.design-manager.ext-dark-theme .finder-container .result-item:hover{
 	background:none !important;
 }
 
+/* left sidebar: dragging element hover floders **/
+body.design-manager.ext-dark-theme .folder-item.is--over.can--drop>.asset-context-menu-wrapper>.nav-item-link,
+body.design-manager.ext-dark-theme .folder-item.is--over.can--drop>.nav-item-link {
+    background-color: rgba(255,255,255,.2);
+}
+
+/** right sidebar: swap widget for another popup **/
+body.design-manager.ext-dark-theme .widget-catalog-list-item>a,
+body.design-manager.ext-dark-theme .widget-catalog-list-item>button {
+    background-color: var(--body-background);
+}
+body.design-manager.ext-dark-theme .widget-catalog-list-item>a:hover,
+body.design-manager.ext-dark-theme .widget-catalog-list-item>button:hover{
+	background-color: rgba(255,255,255,.1);
+}
+
 /**
 /* 
 #33475b
