@@ -523,6 +523,26 @@ body.design-manager.ext-dark-theme .form-card-container {
 body.design-manager.ext-dark-theme .Select-menu-outer {
     background: var(--body-background);
 }
+
+/* CODE MIRROR */
+/* change color for code strings like in <head> */
+body.design-manager.ext-dark-theme .cm-s-hubspot-canvas-light .cm-string{
+	color: #fff;
+}
+
+/* change color for matching tag */
+body.design-manager.ext-dark-theme .cm-s-hubspot-canvas-light .CodeMirror-matchingbracket,
+body.design-manager.ext-dark-theme .cm-s-hubspot-canvas-light .cm-tag.cm-hubl-statement {
+	color: rgb(var(--rgb-details-color)) !important;
+}
+/* HubL variable */
+body.design-manager.ext-dark-theme .cm-s-hubspot-canvas-light .cm-variable{
+	color: #fff;
+}
+body.design-manager.ext-dark-theme .cm-s-hubspot-canvas-light .cm-variable.cm-hubl-statement{
+	color: #ffc7ac;
+}
+
 /**
 /* 
 #33475b
