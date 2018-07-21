@@ -11,7 +11,8 @@
 	},
 	"permissions": [
 		"storage",
-		"activeTab"
+		"activeTab",
+		"contextMenus"
 	],
 	"optional_permissions": [
 	 "https://app.hubspot.com/*"
@@ -30,7 +31,7 @@
 		},
 		{
 			"run_at" :"document_idle", 
-			"js": ["jquery-3.2.1.min.js","clipboard.min.js","json-formatter.js"], 
+			"js": ["jquery-3.2.1.min.js","clipboard.min.js"], 
 			"css": [ "json-formatter.css" ],  
 			"document_idle": "document_start",
 			"matches": [ "https://*/*" ]
@@ -40,6 +41,6 @@
     "options_page": "options.html",
 	"background": {
 		"persistent": false,
-		"scripts": [ "hot-reload.js" ]
+		"scripts": [ "hot-reload.js","jquery-3.2.1.min.js","json-formatter.js" ]
 	}
 }
