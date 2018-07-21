@@ -57,14 +57,17 @@ body.design-manager.ext-dark-theme{
 }
 
 /*blog content module buttons*/
+/*
 body.design-manager.ext-dark-theme button.uiButton.private-button.private-button--xs.private-button--tertiary-light.private-button-select-group__option {
     color: rgba(255, 255, 255, 0.5) !important;
 }
 body.design-manager.ext-dark-theme button.uiButton.private-button.private-button--xs.private-button--tertiary-light.private-button-select-group__option.private-button--active {
     
-    color: rgb( var(--rgb-details-color) ) !important;
+    color: #fff !important;
     border-color:rgb( var(--rgb-details-color) ) !important;
 }
+
+*/
 
 /*vertical scrollbars*/
 body.design-manager.ext-dark-theme .Section__ScrollWrapper-jajphQ::-webkit-scrollbar,
@@ -253,8 +256,9 @@ body.design-manager.ext-dark-theme .layout-tree .widget-icon__mask{
 
 body.design-manager.ext-dark-theme .widget-toolbox-list-item span.private-icon.private-icon__low,
 body.design-manager.ext-dark-theme .private-button--primary {
-    color: #d6cbcb!important;
+    color: #fff!important;
 }
+
 
 body.design-manager.ext-dark-theme .widget-toolbox-list-item .widget-object:not(.is--disabled) span.widget-icon__mask[style*="background-color: rgb(51, 71, 91)"]{
 	background-color: rgb(var(--rgb-details-color)) !important;
