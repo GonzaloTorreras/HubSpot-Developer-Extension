@@ -1,6 +1,6 @@
 function formatJSON(){
 	console.log("okay formatting now");
-
+	console.log( $("body") );
 	if($("body > pre").length > 0){
 		
 		// test if content is json
