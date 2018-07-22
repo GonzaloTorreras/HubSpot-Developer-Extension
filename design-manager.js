@@ -79,7 +79,7 @@ $(document).ready(function() {
 
                     } else if (version === 4) {
                         var html = "";
-                        html += "<li role="none">";
+                        html += "<li role='none'>";
                         html += "<a role='menuitem' data-tracking='click hover' id='nav-secondary-design-tools-beta' class='navSecondaryLink' href='" + link + "' >";
                         html += buttonLabel;
                         html += "</a>";

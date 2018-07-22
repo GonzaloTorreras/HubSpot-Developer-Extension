@@ -101,6 +101,7 @@ var developerTools = {
         console.log("settings saved");
         var darkthemeVal = $("#darktheme").prop("checked");
         var uiTweaksVal = $("#uiTweaks").prop("checked");
+        var overwriteVal = $("#overwriteTweaks").prop("checked");
 
         console.log("dark theme is ", darkthemeVal);
         console.log("UI Tweaks is ", uiTweaksVal);
@@ -125,12 +126,16 @@ var developerTools = {
                 status.textContent = "";
             }, 4000);
         });
-
-
-
-
-
-
+        chrome.storage.sync.set({
+            overwriteWarn: overwriteVal,
+        }, function() {
+            // Update status to let user know options were saved.
+            var status = document.getElementById("status");
+            status.textContent = "Options saved. If you have the Design manager open, you will need to refresh to see the theme.";
+            setTimeout(function() {
+                status.textContent = "";
+            }, 4000);
+        });
 
     },
     getSettings: function() {
@@ -152,6 +157,16 @@ var developerTools = {
                 $(".ui-tweaks-toggle .uiToggleSwitch").addClass("uiToggleSwitchOn private-form__toggle-switch--on");
             }
         });
+        chrome.storage.sync.get(["overwriteWarn"], function(items) {
+            // Restores select box and checkbox state using the preferences
+            // stored in chrome.storage.
+            document.getElementById("overwrite").checked = items.overwriteWarn;
+            console.log("dark theme:", items.overwriteWarn);
+            if (items.overwriteWarn) {
+                $(".overwrite-toggle .uiToggleSwitch").addClass("uiToggleSwitchOn private-form__toggle-switch--on");
+            }
+        });
+        
 
     },
     onLoad: function() {
@@ -200,6 +215,11 @@ var developerTools = {
 
             developerTools.saveSettings();
             $(".ui-tweaks-toggle .uiToggleSwitch").toggleClass("uiToggleSwitchOn private-form__toggle-switch--on");
+        });
+         $(".overwrite-toggle input").change(function() {
+
+            developerTools.saveSettings();
+            $(".overwrite-toggle .uiToggleSwitch").toggleClass("uiToggleSwitchOn private-form__toggle-switch--on");
         });
 
 
