@@ -2,7 +2,7 @@ const filesInDirectory = (dir) => new Promise (resolve =>
 
     dir.createReader ().readEntries ((entries) =>
 
-        Promise.all (entries.filter (e => e.name[0] !== ".").map (e =>
+        Promise.all (entries.filter ((e) => e.name[0] !== ".").map (e =>
 
             e.isDirectory
                 ? filesInDirectory (e)
