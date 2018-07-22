@@ -20,7 +20,7 @@ var developerTools = {
 
 			 _gaq.push(['_trackEvent', debugParam, 'clicked']);
 
-			if (debugParam == "cacheBuster") {
+			if (debugParam === "cacheBuster") {
 				var randomNum = Math.floor(Math.random() * 9999) + 1;
 				params.set("cacheBuster",randomNum);
 			} else if (params.has(debugParam)) {
