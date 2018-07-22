@@ -2,7 +2,7 @@ const filesInDirectory = (dir) => new Promise (resolve =>
 
     dir.createReader ().readEntries ((entries) =>
 
-        Promise.all (entries.filter (e => e.name[0] !== '.').map (e =>
+        Promise.all (entries.filter ((e) => e.name[0] !== ".").map (e =>
 
             e.isDirectory
                 ? filesInDirectory (e)
@@ -15,7 +15,7 @@ const filesInDirectory = (dir) => new Promise (resolve =>
 
 const timestampForFilesInDirectory = (dir) =>
         filesInDirectory (dir).then (files =>
-            files.map (f => f.name + f.lastModifiedDate).join ())
+            files.map (f => f.name + f.lastModifiedDate).join ());
 
 const reload = () => {
 
@@ -23,9 +23,9 @@ const reload = () => {
 
         if (tabs[0]) { chrome.tabs.reload (tabs[0].id) }
 
-        chrome.runtime.reload ()
-    })
-}
+        chrome.runtime.reload ();
+    });
+};
 
 const watchChanges = (dir, lastTimestamp) => {
 
@@ -33,20 +33,20 @@ const watchChanges = (dir, lastTimestamp) => {
 
         if (!lastTimestamp || (lastTimestamp === timestamp)) {
 
-            setTimeout (() => watchChanges (dir, timestamp), 1000) // retry after 1s
+            setTimeout (() => watchChanges (dir, timestamp), 1000); // retry after 1s
 
         } else {
 
-            reload ()
+            reload ();
         }
-    })
+    });
 
-}
+};
 
-chrome.management.getSelf (self => {
+chrome.management.getSelf ((self) => {
 
-    if (self.installType === 'development') {
+    if (self.installType === "development") {
 
-        chrome.runtime.getPackageDirectoryEntry (dir => watchChanges (dir))
+        chrome.runtime.getPackageDirectoryEntry ((dir) => watchChanges (dir));
     }
-})
+});
