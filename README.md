@@ -23,6 +23,15 @@ Note: if you are not using git to keep that folder up to date(you chose zip inst
 ## An update to the published version was released, how long will it take to get to me?
 Google Chrome updates extensions only under certain situations when running. The easiest way to get the freshest version of the extension is to close google chrome completely and re-open it. You can tell if you're running the latest version by checking the version number on the manage extensions screen and comparing with our [releases page.](https://github.com/williamspiro/HubSpot-Developer-Extension/releases)
 
+## Is this an official HubSpot chrome extension?
+Not officially, but officially we do have a contributor who works for HubSpot.
+
+The extension was built by a group of developers who build sites, custom modules, landing pages, etc. on HubSpot. We built it for people like us and hope that you get some good use out of it.
+
+While this is not an official HubSpot brand product, HubSpot's developers are aware of it's existence and generally seem to approve of it.
+
+We claim no legal rights to the HubSpot name/brand. We have posed the question of if it was okay to have the name HubSpot in the extension's name. It appears atleast for now HubSpot is okay with us using the name. We have no intention of misrepresenting the affiliation to HubSpot, but we also do appreciate being able to use the name, as without it - it would be harder for people to find.
+
 ## How to Contribute:
 
  [We denote easy/small issues that are good for beginners. but feel free to tackle any you see in issues or add a feature you want](https://github.com/williamspiro/HubSpot-Developer-Extension/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22)
