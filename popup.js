@@ -42,16 +42,16 @@ var developerTools = {
 		    _gaq.push(['_trackEvent', 'googlePageSpeed', 'clicked']);
 			$.getJSON('https://www.googleapis.com/pagespeedonline/v4/runPagespeed?url=' + gradeUrl + '&fields=id%2CruleGroups', function(data){
 				if (data.id) {
-					$("#desktop_psi_placeholder").html('Desktop PSI Score<span class="c-btn__score">' + data.ruleGroups.SPEED.score + '</span>');
+					$("#desktop_psi_placeholder").html("Desktop PSI Score<span class='c-btn__score'>" + data.ruleGroups.SPEED.score + "</span>");
 				} else {
 					console.log('hmmmmm, Googles APIs are really painful, they did not grade for some reason');
 				}
 			});
-			$.getJSON('https://www.googleapis.com/pagespeedonline/v4/runPagespeed?url=' + gradeUrl + '&fields=id%2CruleGroups&strategy=mobile', function(data){
+			$.getJSON("https://www.googleapis.com/pagespeedonline/v4/runPagespeed?url=" + gradeUrl + "&fields=id%2CruleGroups&strategy=mobile", function(data){
 				if (data.id) {
-					$("#mobile_psi_placeholder").html('Mobile PSI Score<span class="c-btn__score">' + data.ruleGroups.SPEED.score + '</span>');
+					$("#mobile_psi_placeholder").html("Mobile PSI Score<span class='c-btn__score'>" + data.ruleGroups.SPEED.score + "</span>");
 				} else {
-					console.log('hmmmmm, Googles APIs are really painful, they did not grade for some reason');
+					console.log("hmmmmm, Googles APIs are really painful, they did not grade for some reason");
 				}
 			});
 		});
@@ -65,27 +65,27 @@ var developerTools = {
 			console.log("Current URL: ",tabUrl);
 			if(~tabUrl.indexOf("app.hubspot.com")){
 				console.log("This is the hubspot backend.");
-				$('body').addClass("is-backend"); //indicates user is seeing HS backend
-				$('.c-tab-slider').addClass('c-tab-slider--state-design-manager');
+				$("body").addClass("is-backend"); //indicates user is seeing HS backend
+				$(".c-tab-slider").addClass('c-tab-slider--state-design-manager');
 				if(~tabUrl.indexOf("/design-manager/")){
 					console.log("Old Design Manager is active");
-					$('body').addClass("is-dm1");//indicates user is seeing design manager v1
+					$("body").addClass("is-dm1");//indicates user is seeing design manager v1
 				}
 				if(~tabUrl.indexOf("/beta-design-manager/")){
 					/*note this string detection will likely break once rolled out to everyone as they likely wont leave beta in the name*/
 					console.log("Design Manager V2 is active");
-					$('body').addClass("is-dm2");//indicates user is seeing design manager v2
+					$("body").addClass("is-dm2");//indicates user is seeing design manager v2
 				}
 				
 			}
 			else if(~tabUrl.indexOf("designers.hubspot.com/docs/")){
 				console.log("Viewing HubSpot Documentation");
-				$('body').addClass("is-hs-docs");
-				$('.c-tab-slider').addClass('c-tab-slider--state-debug');
+				$("body").addClass("is-hs-docs");
+				$(".c-tab-slider").addClass("c-tab-slider--state-debug");
 			}
 			else{
 				console.log("This is not in the HubSpot Backend");
-				$('.c-tab-slider').addClass('c-tab-slider--state-debug');
+				$(".c-tab-slider").addClass("c-tab-slider--state-debug");
 
 			}
 			
