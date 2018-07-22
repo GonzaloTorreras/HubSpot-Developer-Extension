@@ -98,8 +98,8 @@ var developerTools = {
 		// Saves settings to chrome.storage
 
 		  console.log("settings saved");
-		  var darkthemeVal = $('#darktheme').prop('checked');
-		  var uiTweaksVal = $('#uiTweaks').prop('checked');
+		  var darkthemeVal = $("#darktheme").prop("checked");
+		  var uiTweaksVal = $("#uiTweaks").prop("checked");
 
 		  console.log("dark theme is ",darkthemeVal);
 		  console.log("UI Tweaks is ",uiTweaksVal);
