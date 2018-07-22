@@ -1,10 +1,23 @@
-$(document).ready(function() {
-    /*This script runs once the design manager page loads.*/
-    var tabUrl = window.location.protocol + "//" + window.location.host + "/" + window.location.pathname;
-    /*getSelected might be deprecated need to review*/
-    var currentScreen = "";
-    var devMenu = false;
-    
+  chrome.permissions.contains({
+        permissions: ['tabs'],
+        origins: ['https://app.hubspot.com/*']
+      }, function(hasPermission) {
+        if (hasPermission) {
+          // The extension has the permissions.
+          console.log("Extension has the tabs permission");
+            chrome.windows.getAll({populate:true},function(windows){
+                windows.forEach(function(window){
+                    window.tabs.forEach(function(tab){
+                        //collect all of the urls here, I will just log them instead
+                        console.log(tab.url);
+                    });
+                });
+            });
+        } else {
+          // The extension doesn't have the permissions.
+          console.log("no permission to check tabs");
+        }
+      });
     chrome.windows.getAll({populate:true},function(windows){
       windows.forEach(function(window){
         window.tabs.forEach(function(tab){
@@ -13,6 +26,18 @@ $(document).ready(function() {
         });
       });
     });
+
+
+$(document).ready(function() {
+    /*This script runs once the design manager page loads.*/
+    var tabUrl = window.location.protocol + "//" + window.location.host + "/" + window.location.pathname;
+    /*getSelected might be deprecated need to review*/
+    var currentScreen = "";
+    var devMenu = false;
+    
+
+
+
     //console.log("Current URL: ",tabUrl);
     if (~tabUrl.indexOf("app.hubspot.com")) {
         //console.log("This is the hubspot backend.");
@@ -21,9 +46,6 @@ $(document).ready(function() {
         ], function(items) {
             if (items.uitweaks) {
                 $("html").addClass("ext-ui-tweaks");
-                
-
-
             }
         });
         console.log("DevMenu:", devMenu);
