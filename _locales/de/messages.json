@@ -75,6 +75,22 @@
     "message": "Dunkles Thema",
     "description": "Dark theme toggle label"
   },
+    "uiTweaksToggleLabel":{
+    "message": "Benutzeroberflächeneinstellungen/Dev-Menü",
+    "description": "Toggle Label for UI Tweaks and Dev Menu toggle label"
+  },
+  "toggleOn":{
+    "message": "einschalten",
+    "description": "accessibility text for on state of toggle switches"
+  },
+   "toggleOff":{
+    "message": "ausschalten",
+    "description": "accessibility text for off state of toggle switches"
+  },
+  "toggleCheckmark":{
+    "message": "Häkchen",
+    "description": "accessibility text for checkmark of toggle switches"
+  },
   "helpTranslate": {
   	"message": "Kennen Sie Englisch und eine andere Sprache? Wir benötigen Ihre Hilfe, um die Erweiterung zu übersetzen. Bitte besuchen Sie unseren GitHub.",
   	"description": "options page request for help translating."
