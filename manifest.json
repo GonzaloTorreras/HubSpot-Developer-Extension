@@ -14,7 +14,8 @@
 		"activeTab"
 	],
 	"optional_permissions": [
-	 "https://app.hubspot.com/*" 
+	 "https://app.hubspot.com/*",
+	 "https://app.hubspotqa.com/*"
 	],
 	"web_accessible_resources": [
 		"mac-text-cursor.svg",
@@ -25,7 +26,7 @@
 		"js": ["jquery-3.2.1.min.js","design-manager.js"], 
 	    "css": [ "hsDarkIde.css" ],  
 	    "document_idle": "document_start",
-	    "matches": [ "https://app.hubspot.com/*" ] 
+	    "matches": [ "https://app.hubspot.com/*", "https://app.hubspotqa.com/*" ] 
     }],
     "content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'",
     "options_page": "options.html",

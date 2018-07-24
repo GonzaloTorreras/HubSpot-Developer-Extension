@@ -5,7 +5,8 @@ $(document).ready(function() {
     var currentScreen = "";
     var devMenu = false;
     //console.log("Current URL: ",tabUrl);
-    if (~tabUrl.indexOf("app.hubspot.com")) {
+    const appUrl = ~tabUrl.indexOf("app.hubspotqa.com") ? "app.hubspotqa.com" : "app.hubspot.com";
+    if (~tabUrl.indexOf(appUrl)) {
         //console.log("This is the hubspot backend.");
         chrome.storage.sync.get([
             'uitweaks'
@@ -83,6 +84,10 @@ $(document).ready(function() {
 
                 }
 
+                function generateAppUrl(path) {
+                    return 'https://' + appUrl + path;
+                }
+
 
                 function generateDevMenu(version, hubId) {
 
@@ -93,11 +98,11 @@ $(document).ready(function() {
                         html += '<li id="ext-dev-menu" class="nav-main-item nav-dropdown-container" style="background-color: #555;"><a href="">Developer</a>';
                         html += '<ul class="nav-dropdown-menu" style="min-width: 102px;">';
 
-                        html += generateDevMenuItem(3, 'Design Manager', hubId, 'https://app.hubspot.com/design-manager/_HUB_ID_');
-                        html += generateDevMenuItem(3, 'HubDB', hubId, 'https://app.hubspot.com/hubdb/_HUB_ID_');
-                        html += generateDevMenuItem(3, 'Content Staging', hubId, 'https://app.hubspot.com/content/_HUB_ID_/staging/');
-                        html += generateDevMenuItem(3, 'Advanced Menus', hubId, 'https://app.hubspot.com/settings/_HUB_ID_/website/pages/all-domains/navigation');
-                        html += generateDevMenuItem(3, 'Content Settings', hubId, 'https://app.hubspot.com/settings/_HUB_ID_/website/pages/all-domains/page-templates');
+                        html += generateDevMenuItem(3, 'Design Manager', hubId, generateAppUrl('/design-manager/_HUB_ID_'));
+                        html += generateDevMenuItem(3, 'HubDB', hubId, generateAppUrl('/hubdb/_HUB_ID_'));
+                        html += generateDevMenuItem(3, 'Content Staging', hubId, generateAppUrl('/content/_HUB_ID_/staging/'));
+                        html += generateDevMenuItem(3, 'Advanced Menus', hubId, generateAppUrl('/settings/_HUB_ID_/website/pages/all-domains/navigation'));
+                        html += generateDevMenuItem(3, 'Content Settings', hubId, generateAppUrl('/settings/_HUB_ID_/website/pages/all-domains/page-templates'));
 
 
                         html += '</ul>';
@@ -126,11 +131,11 @@ $(document).ready(function() {
                         html += '<div id="ext-dev-menu" aria-label="Developer" role="menu" class="secondary-nav expansion" style="min-height: 0px">';
                         html += '<ul role="none">';
 
-                        html += generateDevMenuItem(4, 'Design Manager', hubId, 'https://app.hubspot.com/design-manager/_HUB_ID_');
-                        html += generateDevMenuItem(4, 'HubDB', hubId, 'https://app.hubspot.com/hubdb/_HUB_ID_');
-                        html += generateDevMenuItem(4, 'Content Staging', hubId, 'https://app.hubspot.com/content/_HUB_ID_/staging/');
-                        html += generateDevMenuItem(4, 'Advanced Menus', hubId, 'https://app.hubspot.com/settings/_HUB_ID_/website/pages/all-domains/navigation');
-                        html += generateDevMenuItem(4, 'Content Settings', hubId, 'https://app.hubspot.com/settings/_HUB_ID_/website/pages/all-domains/page-templates');
+                        html += generateDevMenuItem(4, 'Design Manager', hubId, generateAppUrl('/design-manager/_HUB_ID_'));
+                        html += generateDevMenuItem(4, 'HubDB', hubId, generateAppUrl('/hubdb/_HUB_ID_'));
+                        html += generateDevMenuItem(4, 'Content Staging', hubId, generateAppUrl('/content/_HUB_ID_/staging/'));
+                        html += generateDevMenuItem(4, 'Advanced Menus', hubId, generateAppUrl('/settings/_HUB_ID_/website/pages/all-domains/navigation'));
+                        html += generateDevMenuItem(4, 'Content Settings', hubId, generateAppUrl('/settings/_HUB_ID_/website/pages/all-domains/page-templates'));
 
                         /*
                                     html +=             '<li role="none">';
@@ -202,7 +207,7 @@ $(document).ready(function() {
                         if ($("#hs-nav-v4 .logo > a").attr("href").length) {
                             console.log("Exists!");
 
-                            hubId = $("#hs-nav-v4 .logo > a").attr("href").replace("https://app.hubspot.com/reports-dashboard/", "").replace("/home", "");
+                            hubId = $("#hs-nav-v4 .logo > a").attr("href").replace(generateAppUrl("/reports-dashboard/"), "").replace("/home", "");
                             if (hubId) {
                                 clearInterval(checkExist);
                                 generateDevMenu(4, hubId);
