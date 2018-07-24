@@ -47,10 +47,10 @@ $(document).ready(function() {
                 /*detect HS nav bar version*/
                 var navVersion;
                 if ($("#hs-nav-v3").length) {
-                    console.log("Nav V3 detected.");
+                    //console.log("Nav V3 detected.");
                     navVersion = 3;
                 } else if ($("#hs-nav-v4").length) {
-                    console.log("Nav V4 detected.");
+                    //console.log("Nav V4 detected.");
                     navVersion = 4;
                 }
 
@@ -79,16 +79,20 @@ $(document).ready(function() {
 
 
                     }
-                    console.log("Nav Item Generated: ", buttonLabel);
+                    //console.log("Nav Item Generated: ", buttonLabel);
 
                 }
                 function generateAllMenuItems(version, hubId){
                     var html = '';
                     html += generateDevMenuItem(version, 'Design Manager', hubId, 'https://app.hubspot.com/design-manager/_HUB_ID_');
                     html += generateDevMenuItem(version, 'HubDB', hubId, 'https://app.hubspot.com/hubdb/_HUB_ID_');
+                    html += generateDevMenuItem(version, 'File Manager', hubId, 'https://app.hubspot.com/file-manager-beta/_HUB_ID_');
                     html += generateDevMenuItem(version, 'Content Staging', hubId, 'https://app.hubspot.com/content/_HUB_ID_/staging/');
                     html += generateDevMenuItem(version, 'Advanced Menus', hubId, 'https://app.hubspot.com/settings/_HUB_ID_/website/pages/all-domains/navigation');
                     html += generateDevMenuItem(version, 'Content Settings', hubId, 'https://app.hubspot.com/settings/_HUB_ID_/website/pages/all-domains/page-templates');
+                    html += generateDevMenuItem(version, 'URL Mappings', hubId, 'https://app.hubspot.com/content/_HUB_ID_/settings/url-mappings');
+                    html += generateDevMenuItem(version, 'Marketplace', hubId, 'https://app.hubspot.com/marketplace/_HUB_ID_/products');
+                    
                     return html;
 
                 }
@@ -114,16 +118,14 @@ $(document).ready(function() {
                     }
 
                     html += generateAllMenuItems(version, hubId);
+
                     if (version === 3) {    
                         html += '</ul>';
                         html += '</li>';
-
                         $("#nav-main-item-product-selector").after(html);
-
-
                         $("#ext-dev-menu > a").click(function(e) {
                             e.preventDefault();
-                            console.log("dev menu clicked!");
+                            //console.log("dev menu clicked!");
                             $("#ext-dev-menu").toggleClass("current-dropdown");
 
                             $(".nav-dropdown-menu", "#ext-dev-menu").toggle();
@@ -140,7 +142,7 @@ $(document).ready(function() {
 
                         $("#ext-dev-menu-wrapper > a").click(function(e) {
                             e.preventDefault();
-                            console.log("dev menu clicked!");
+                            //console.log("dev menu clicked!");
                             /*$("#ext-dev-menu").toggleClass("expansion");*/
 
                             //$("#ext-dev-menu").toggle();
@@ -176,16 +178,16 @@ $(document).ready(function() {
                                 if (document.getElementById("#nav-main-item-product-selector") != null) {
                                     doesntExist = false;
                                 }
-                                console.log("delay");
+                                //console.log("delay");
                             }, 10);
                             attempts -= 1;
 
                         }
-                        console.log("selector found!");
+                        //console.log("selector found!");
 
                         generateDevMenu(3, hubId);
 
-                        console.log("should be inserted now");
+                        //console.log("should be inserted now");
                     };
 
 
@@ -193,18 +195,18 @@ $(document).ready(function() {
 
                     var checkExist = setInterval(function() {
                         if ($("#hs-nav-v4 .logo > a").attr("href").length) {
-                            console.log("Exists!");
+                            //console.log("Exists!");
 
                             hubId = $("#hs-nav-v4 .logo > a").attr("href").replace("https://app.hubspot.com/reports-dashboard/", "").replace("/home", "");
                             if (hubId) {
                                 clearInterval(checkExist);
                                 generateDevMenu(4, hubId);
                             } else {
-                                console.log("Hub ID not defined yet");
+                                //console.log("Hub ID not defined yet");
                             }
-                            console.log("Hub ID:", hubId);
+                            //console.log("Hub ID:", hubId);
                         } else {
-                            console.log("#nav-primary-home does not exist");
+                            //console.log("#nav-primary-home does not exist");
 
                         }
                     }, 300); // check every 100ms
