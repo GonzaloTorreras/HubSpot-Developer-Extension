@@ -82,24 +82,39 @@ $(document).ready(function() {
                     console.log("Nav Item Generated: ", buttonLabel);
 
                 }
+                function generateAllMenuItems(version, hubId){
+                    var html = '';
+                    html += generateDevMenuItem(version, 'Design Manager', hubId, 'https://app.hubspot.com/design-manager/_HUB_ID_');
+                    html += generateDevMenuItem(version, 'HubDB', hubId, 'https://app.hubspot.com/hubdb/_HUB_ID_');
+                    html += generateDevMenuItem(version, 'Content Staging', hubId, 'https://app.hubspot.com/content/_HUB_ID_/staging/');
+                    html += generateDevMenuItem(version, 'Advanced Menus', hubId, 'https://app.hubspot.com/settings/_HUB_ID_/website/pages/all-domains/navigation');
+                    html += generateDevMenuItem(version, 'Content Settings', hubId, 'https://app.hubspot.com/settings/_HUB_ID_/website/pages/all-domains/page-templates');
+                    return html;
+
+                }
 
 
                 function generateDevMenu(version, hubId) {
 
 
-
+                    var html = '';
                     if (version === 3) {
-                        var html = '';
+
                         html += '<li id="ext-dev-menu" class="nav-main-item nav-dropdown-container" style="background-color: #555;"><a href="">Developer</a>';
                         html += '<ul class="nav-dropdown-menu" style="min-width: 102px;">';
+                    }
+                    else if(version === 4){
+                        html += '<li id="ext-dev-menu-wrapper" role="none" class="expandable ">';
+                        html += '<a href="#" id="nav-primary-dev-branch" aria-haspopup="true" aria-expanded="false" class="primary-link" data-tracking="click hover" role-menu="menuitem">';
+                        html += 'Developer ';
+                        html += '<svg style="max-height:4px;max-width:10px;" class="nav-icon arrow-down-icon" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 13"><g><g><path d="M21.47,0.41L12,9.43l-9.47-9A1.5,1.5,0,1,0,.47,2.59l10.5,10,0,0a1.51,1.51,0,0,0,.44.28h0a1.43,1.43,0,0,0,1,0h0A1.52,1.52,0,0,0,13,12.61l0,0,10.5-10A1.5,1.5,0,1,0,21.47.41" transform="translate(0 0)"></path></g></g></svg>';
+                        html += '</a>';
+                        html += '<div id="ext-dev-menu" aria-label="Developer" role="menu" class="secondary-nav expansion" style="min-height: 0px">';
+                        html += '<ul role="none">';
+                    }
 
-                        html += generateDevMenuItem(3, 'Design Manager', hubId, 'https://app.hubspot.com/design-manager/_HUB_ID_');
-                        html += generateDevMenuItem(3, 'HubDB', hubId, 'https://app.hubspot.com/hubdb/_HUB_ID_');
-                        html += generateDevMenuItem(3, 'Content Staging', hubId, 'https://app.hubspot.com/content/_HUB_ID_/staging/');
-                        html += generateDevMenuItem(3, 'Advanced Menus', hubId, 'https://app.hubspot.com/settings/_HUB_ID_/website/pages/all-domains/navigation');
-                        html += generateDevMenuItem(3, 'Content Settings', hubId, 'https://app.hubspot.com/settings/_HUB_ID_/website/pages/all-domains/page-templates');
-
-
+                    html += generateAllMenuItems(version, hubId);
+                    if (version === 3) {    
                         html += '</ul>';
                         html += '</li>';
 
@@ -114,31 +129,9 @@ $(document).ready(function() {
                             $(".nav-dropdown-menu", "#ext-dev-menu").toggle();
                             $(this).toggleClass("current-dropdown-item");
                         });
-
-
-                    } else if (version === 4) {
-                        var html = '';
-                        html += '<li id="ext-dev-menu-wrapper" role="none" class="expandable ">';
-                        html += '<a href="#" id="nav-primary-dev-branch" aria-haspopup="true" aria-expanded="false" class="primary-link" data-tracking="click hover" role-menu="menuitem">';
-                        html += 'Developer ';
-                        html += '<svg style="max-height:4px;max-width:10px;" class="nav-icon arrow-down-icon" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 13"><g><g><path d="M21.47,0.41L12,9.43l-9.47-9A1.5,1.5,0,1,0,.47,2.59l10.5,10,0,0a1.51,1.51,0,0,0,.44.28h0a1.43,1.43,0,0,0,1,0h0A1.52,1.52,0,0,0,13,12.61l0,0,10.5-10A1.5,1.5,0,1,0,21.47.41" transform="translate(0 0)"></path></g></g></svg>';
-                        html += '</a>';
-                        html += '<div id="ext-dev-menu" aria-label="Developer" role="menu" class="secondary-nav expansion" style="min-height: 0px">';
-                        html += '<ul role="none">';
-
-                        html += generateDevMenuItem(4, 'Design Manager', hubId, 'https://app.hubspot.com/design-manager/_HUB_ID_');
-                        html += generateDevMenuItem(4, 'HubDB', hubId, 'https://app.hubspot.com/hubdb/_HUB_ID_');
-                        html += generateDevMenuItem(4, 'Content Staging', hubId, 'https://app.hubspot.com/content/_HUB_ID_/staging/');
-                        html += generateDevMenuItem(4, 'Advanced Menus', hubId, 'https://app.hubspot.com/settings/_HUB_ID_/website/pages/all-domains/navigation');
-                        html += generateDevMenuItem(4, 'Content Settings', hubId, 'https://app.hubspot.com/settings/_HUB_ID_/website/pages/all-domains/page-templates');
-
-                        /*
-                                    html +=             '<li role="none">';
-                                    html +=                 '<a role="menuitem" data-tracking="click hover" id="nav-secondary-design-tools-beta" class="navSecondaryLink" href="https://app.hubspot.com/design-manager/' + hubId + '" >';
-                                    html +=                     'Design Manager';
-                                    html +=                 '</a>';
-                                    html +=             '</li>';*/
-
+                    }
+                    else if (version === 4) {
+                        
                         html += '</ul>';
                         html += '</div>';
                         html += '</li>';
