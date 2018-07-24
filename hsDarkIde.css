@@ -654,6 +654,12 @@ body.design-manager.ext-dark-theme .rich-text-preview.private-hoverlay .private-
 }
 body.design-manager.ext-dark-theme span.private-icon.private-icon__high {}
 
+/* right sidebar: add group in CM */
+
+body.design-manager.ext-dark-theme .sidebar-group-controls{
+	background: var(--body-background);
+}
+
 /**
 /* 
 #33475b
