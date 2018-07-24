@@ -70,35 +70,35 @@ body.design-manager.ext-dark-theme button.uiButton.private-button.private-button
 */
 
 /*vertical scrollbars*/
-body.design-manager.ext-dark-theme .Section__ScrollWrapper-jajphQ::-webkit-scrollbar,
-body.design-manager.ext-dark-theme .layout-tree-container::-webkit-scrollbar {
+body.design-manager.ext-dark-theme ::-webkit-scrollbar,
+body.design-manager.ext-dark-theme ::-webkit-scrollbar {
     width:9px;
 }
 
-body.design-manager.ext-dark-theme .Section__ScrollWrapper-jajphQ::-webkit-scrollbar-track,
-body.design-manager.ext-dark-theme .layout-tree-container::-webkit-scrollbar-track {
+body.design-manager.ext-dark-theme ::-webkit-scrollbar-track,
+body.design-manager.ext-dark-theme ::-webkit-scrollbar-track {
     /*-webkit-border-radius:5px;*/
     /*border-radius:5px;*/
     background:rgba(var(--rgb-details-color), .1);
 }
-body.design-manager.ext-dark-theme .layout-tree-container::-webkit-scrollbar-track {
+body.design-manager.ext-dark-theme ::-webkit-scrollbar-track {
     background:#2d3e4e;
 }
 
-body.design-manager.ext-dark-theme .Section__ScrollWrapper-jajphQ::-webkit-scrollbar-thumb,
-body.design-manager.ext-dark-theme .layout-tree-container::-webkit-scrollbar-thumb {
+body.design-manager.ext-dark-theme ::-webkit-scrollbar-thumb,
+body.design-manager.ext-dark-theme ::-webkit-scrollbar-thumb {
     -webkit-border-radius:5px;
     border-radius:5px;
     background:rgba(var(--rgb-details-color), .4);
 }
 
-body.design-manager.ext-dark-theme .Section__ScrollWrapper-jajphQ::-webkit-scrollbar-thumb:hover,
-body.design-manager.ext-dark-theme .layout-tree-container::-webkit-scrollbar-thumb:hover {
+body.design-manager.ext-dark-theme ::-webkit-scrollbar-thumb:hover,
+body.design-manager.ext-dark-theme ::-webkit-scrollbar-thumb:hover {
     background:rgba(var(--rgb-details-color), .8);
 }
 
-body.design-manager.ext-dark-theme .Section__ScrollWrapper-jajphQ::-webkit-scrollbar-thumb:window-inactive,
-body.design-manager.ext-dark-theme .layout-tree-container::-webkit-scrollbar-thumb:window-inactive {
+body.design-manager.ext-dark-theme ::-webkit-scrollbar-thumb:window-inactive,
+body.design-manager.ext-dark-theme ::-webkit-scrollbar-thumb:window-inactive {
     background:rgba(var(--rgb-details-color), .2);
 }
 
