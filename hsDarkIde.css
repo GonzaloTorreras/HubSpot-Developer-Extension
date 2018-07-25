@@ -663,6 +663,10 @@ body.design-manager.ext-dark-theme .sidebar-group-controls{
 body.design-manager.ext-dark-theme .simple-menus-menu{
 	background: var(--body-background);
 }
+/** simple menu add submenu */
+body.design-manager.ext-dark-theme .simple-menus-menu .simple-menus-menu-node-divider-option-button:hover{
+	background: var(--body-background-hover);
+}
 
 /**
 /* 
