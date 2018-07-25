@@ -659,6 +659,10 @@ body.design-manager.ext-dark-theme span.private-icon.private-icon__high {}
 body.design-manager.ext-dark-theme .sidebar-group-controls{
 	background: var(--body-background);
 }
+/* simple menu */
+body.design-manager.ext-dark-theme .simple-menus-menu{
+	background: var(--body-background);
+}
 
 /**
 /* 
