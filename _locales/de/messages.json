@@ -4,7 +4,7 @@
     "description": "The Extension's name"
   },
   "extDesc": {
-    "message": "Muss für HubSpot-Entwickler verfügbar sein, indem schnell auf häufig verwendete Abfrageparameter zugegriffen wird und Convenience-Funktionen zu HubSpot hinzugefügt werden",
+    "message": "Ein Muss für HubSpot-Entwickler. Ein schneller Zugegriff zu häufig verwendete Abfrageparameter welche eine einfache Funktion zu HubSpot bringt.",
     "description": "Description for extension, displays in chrome extensions listing"
   },
   "debugTab": {
@@ -16,11 +16,11 @@
   	"description": "Develop Tab Label"
   },
   "debugButton": {
-  	"message": "Debug-Modus",
+  	"message": "Debugmodus",
   	"description": "HSDebug button label"
   },
   "cacheBustButton": {
-  	"message": "Büste Cache",
+  	"message": "Cache leeren",
   	"description": "cachebuster Button label"
   },
   "footerJqueryButton": {
@@ -28,15 +28,15 @@
   	"description": "footer jQuery Button label"
   },
   "gpsiHover":{
-    "message": "Schlage mich!",
+    "message": "Bewerte mich!",
     "description": "'score me!' text that appears in hover of google page speed button"
   },
   "gpsiTestingDesktop":{
-    "message": "Desktop testen...",
+    "message": "Desktop Version bewerten...",
     "description": "'grading desktop' text that appears after click of google page speed button"
   },
   "gpsiTestingMobile":{
-    "message": "Handy testen...",
+    "message": "Handy Version bewerten...",
     "description": "'grading mobile' text that appears after click of google page speed button"
   },
   "documentationButton": {
@@ -92,7 +92,7 @@
     "description": "accessibility text for checkmark of toggle switches"
   },
   "helpTranslate": {
-  	"message": "Kennen Sie Englisch und eine andere Sprache? Wir benötigen Ihre Hilfe, um die Erweiterung zu übersetzen. Bitte besuchen Sie unseren GitHub.",
+  	"message": "Sprichst du Englisch und eine andere Sprache? Wir benötigen deine Hilfe, unsere Erweiterung zu übersetzen. Bitte besuche unser GitHub.",
   	"description": "options page request for help translating."
   }
  
