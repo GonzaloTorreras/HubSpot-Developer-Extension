@@ -20,7 +20,7 @@ Not officially, but officially we do have a couple contributors who work for Hub
 
 The extension was built by a group of developers who build sites, custom modules, landing pages, etc. on HubSpot. We built it for people like us and hope that you get some good use out of it.
 
-While this is not an official HubSpot brand product, HubSpot's developers are aware of it's existence and generally seem to approve of it.
+While this is not an official HubSpot brand product, HubSpot's developers are aware of it's existence and generally seem to approve of it. In-fact we've been told many HubSpotters use the extension themselves.
 
 We claim no legal rights to the HubSpot name/brand. We have posed the question of if it was okay to have the name HubSpot in the extension's name. It appears atleast for now HubSpot is okay with us using the name. We have no intention of misrepresenting the affiliation to HubSpot, but we also do appreciate being able to use the name, as without it - it would be harder for people to find.
 
