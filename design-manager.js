@@ -5,7 +5,8 @@ $(document).ready(function() {
     var currentScreen = "";
     var devMenu = false;
     //console.log("Current URL: ",tabUrl);
-    if (~tabUrl.indexOf("app.hubspot.com")) {
+    const appUrl = ~tabUrl.indexOf("app.hubspotqa.com") ? "app.hubspotqa.com" : "app.hubspot.com";
+    if (~tabUrl.indexOf(appUrl)) {
         //console.log("This is the hubspot backend.");
         chrome.storage.sync.get([
             'uitweaks'
@@ -95,6 +96,10 @@ $(document).ready(function() {
                     
                     return html;
 
+                }
+
+                function generateAppUrl(path) {
+                    return 'https://' + appUrl + path;
                 }
 
 
@@ -197,7 +202,7 @@ $(document).ready(function() {
                         if ($("#hs-nav-v4 .logo > a").attr("href").length) {
                             //console.log("Exists!");
 
-                            hubId = $("#hs-nav-v4 .logo > a").attr("href").replace("https://app.hubspot.com/reports-dashboard/", "").replace("/home", "");
+                            hubId = $("#hs-nav-v4 .logo > a").attr("href").replace(generateAppUrl("/reports-dashboard/"), "").replace("/home", "");
                             if (hubId) {
                                 clearInterval(checkExist);
                                 generateDevMenu(4, hubId);

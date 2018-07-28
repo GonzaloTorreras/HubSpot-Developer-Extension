@@ -66,7 +66,8 @@ var developerTools = {
             /*getSelected might be deprecated need to review*/
             var tabUrl = tab.url;
             console.log("Current URL: ", tabUrl);
-            if (~tabUrl.indexOf("app.hubspot.com")) {
+            const appUrl = ~tabUrl.indexOf("app.hubspotqa.com") ? "app.hubspotqa.com" : "app.hubspot.com";
+            if (~tabUrl.indexOf(appUrl)) {
                 console.log("This is the hubspot backend.");
                 $("body").addClass("is-backend"); //indicates user is seeing HS backend
                 $(".c-tab-slider").addClass('c-tab-slider--state-design-manager');
