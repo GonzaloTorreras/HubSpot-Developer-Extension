@@ -31,7 +31,6 @@ var developerTools = {
             } else {
                 params.append(debugParam, "True");
             }
-
             chrome.tabs.update(tabs[0].id, { url: tabUrl.origin + tabUrl.pathname + '?' + params.toString() });
             window.close();
 
@@ -129,6 +128,7 @@ var developerTools = {
         chrome.storage.sync.set({
             overwriteWarn: overwriteVal,
         }, function() {
+
             // Update status to let user know options were saved.
             var status = document.getElementById("status");
             status.textContent = "Options saved. If you have the Design manager open, you will need to refresh to see the theme.";
@@ -216,10 +216,29 @@ var developerTools = {
             developerTools.saveSettings();
             $(".ui-tweaks-toggle .uiToggleSwitch").toggleClass("uiToggleSwitchOn private-form__toggle-switch--on");
         });
-         $(".overwrite-toggle input").change(function() {
-
-            developerTools.saveSettings();
-            $(".overwrite-toggle .uiToggleSwitch").toggleClass("uiToggleSwitchOn private-form__toggle-switch--on");
+        $(".overwrite-toggle input").change(function() {
+            if ($("#overwrite").val()){//if already enabled
+                $(".overwrite-toggle .uiToggleSwitch").toggleClass("uiToggleSwitchOn private-form__toggle-switch--on");
+                developerTools.saveSettings();
+                console.log("overwrite turned off permission not removed.");
+            }
+            else{
+                chrome.permissions.request({
+                    permissions: ['tabs']
+                    //origins: ['https://app.hubspot.com/*']
+                }, function(granted) {
+                    // The callback argument will be true if the user granted the permissions.
+                    if (granted) {
+                       developerTools.saveSettings();
+                       $(".overwrite-toggle .uiToggleSwitch").toggleClass("uiToggleSwitchOn private-form__toggle-switch--on");
+                       console.log("Permission granted.")
+                    } else {
+                        console.log("Permission not Granted.")
+                    }
+                });
+            }
+            
+            
         });
 
 
