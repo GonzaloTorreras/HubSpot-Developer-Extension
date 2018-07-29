@@ -610,7 +610,7 @@ Do not let fear of learning a new technique prevent you from contributing, other
                                 </i18n-string>
                             </label>
                             <label class="uiToggle private-form__toggle-switch private-form__toggle-switch--xs ">
-                                <input type="checkbox" id="uiTweaks" class="private-form__toggle-input sr-only">
+                                <input type="checkbox" id="overwrite" class="private-form__toggle-input sr-only">
                                 <span class="uiToggleSwitch private-form__toggle-switch__inner" role="presentation">
                             
                             <span class="uiToggleSwitchLabel private-form__toggle-switch__label private-form__toggle-switch__label--checked">
@@ -632,6 +632,9 @@ Do not let fear of learning a new technique prevent you from contributing, other
             </div>
         </div>
     </div>
+    <dialog open>
+        This feature requires checking the URL of your open tabs. This requires requesting the tabs permission, which if used maliciously someone could log the URLs you visit. We do not do that.
+    </dialog>
 
     <script src="jquery-3.2.1.min.js"></script>
     <script src="popup.js"></script>

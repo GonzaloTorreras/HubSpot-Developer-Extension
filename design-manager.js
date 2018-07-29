@@ -1,42 +1,20 @@
-  chrome.permissions.contains({
-        permissions: ['tabs'],
-        origins: ['https://app.hubspot.com/*']
-      }, function(hasPermission) {
-        if (hasPermission) {
-          // The extension has the permissions.
-          console.log("Extension has the tabs permission");
-            chrome.windows.getAll({populate:true},function(windows){
-                windows.forEach(function(window){
-                    window.tabs.forEach(function(tab){
-                        //collect all of the urls here, I will just log them instead
-                        console.log(tab.url);
-                    });
-                });
-            });
-        } else {
-          // The extension doesn't have the permissions.
-          console.log("no permission to check tabs");
-        }
-      });
-    chrome.windows.getAll({populate:true},function(windows){
-      windows.forEach(function(window){
-        window.tabs.forEach(function(tab){
-          //collect all of the urls here, I will just log them instead
-          console.log(tab.url);
-        });
-      });
-    });
+  
 
 
 $(document).ready(function() {
-    /*This script runs once the design manager page loads.*/
+    function notifyDMHasLoaded(){
+        //notifies background.js a design manager page has loaded so it can take action.
+        chrome.runtime.sendMessage({greeting: "hello"}, function(response) {
+          console.log(response.farewell);
+        });
+
+    }
+
+    
     var tabUrl = window.location.protocol + "//" + window.location.host + "/" + window.location.pathname;
     /*getSelected might be deprecated need to review*/
     var currentScreen = "";
     var devMenu = false;
-    
-
-
 
     //console.log("Current URL: ",tabUrl);
     if (~tabUrl.indexOf("app.hubspot.com")) {
@@ -52,12 +30,14 @@ $(document).ready(function() {
         if (~tabUrl.indexOf("/design-manager/")) {
             //console.log("Old Design Manager is active");
             currentScreen = 'design-manager';
+            notifyDMHasLoaded();
 
         }
         if (~tabUrl.indexOf("/beta-design-manager/")) {
             /*note this string detection will likely break once rolled out to everyone as they likely wont leave beta in the name*/
             //console.log("Design Manager V2 is active");
             currentScreen = 'design-manager';
+            notifyDMHasLoaded();
             chrome.storage.sync.get([
                 "darktheme"
             ], function(items) {
@@ -68,6 +48,7 @@ $(document).ready(function() {
 
 
         }
+
 
 
 
@@ -246,11 +227,8 @@ $(document).ready(function() {
 
                         }
                     }, 300); // check every 100ms
-
                 }
-
             }
-
         });
 
 
