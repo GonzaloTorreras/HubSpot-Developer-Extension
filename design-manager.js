@@ -8,13 +8,13 @@
               navVersion = 4;
 
           }
-           return (navVersion);
-      }
+          return (navVersion);
+      };
 
       function getHubID() {
 
           var hubId;
-          var navVersion = getNavVersion();
+
 
           if (navVersion === 3) {
               hubId = $(".nav-hubid").text().replace("Hub ID: ", "");
@@ -22,83 +22,72 @@
 
               var checkExist = setInterval(function() {
                   if ($("#hs-nav-v4 .logo > a").attr("href").length) {
-                      console.log("Exists!");
+                      //console.log("Exists!");
 
                       hubId = $("#hs-nav-v4 .logo > a").attr("href").replace("https://app.hubspot.com/reports-dashboard/", "").replace("/home", "");
                       if (hubId) {
                           clearInterval(checkExist);
                       } else {
-                          console.log("Hub ID not defined yet");
+                          //console.log("Hub ID not defined yet");
                       }
-                      console.log("Hub ID:", hubId);
+                      //console.log("Hub ID:", hubId);
                   } else {
-                      console.log("#nav-primary-home does not exist");
+                      //console.log("#nav-primary-home does not exist");
 
                   }
               }, 300); // check every 100ms
           }
+          console.log("hub ID:", hubId)
           return (hubId);
-      }
+      };
 
       function notifyDMHasLoaded() {
           //notifies background.js a design manager page has loaded so it can take action.
-          messageContents = "DMLoaded" + getHubID();
 
-          chrome.runtime.sendMessage({ message: "DMLoaded" }, function(response) {
-              console.log(response.returnMessage);
+          messageContents = "DMLoaded-" + hubId;
+          console.log("message sent:", messageContents);
+          chrome.runtime.sendMessage({ message: messageContents }, function(response) {
+              console.log("response from bg.js", response.returnMessage);
           });
 
-      }
+      };
 
-
-      var tabUrl = window.location.protocol + "//" + window.location.host + "/" + window.location.pathname;
-      /*getSelected might be deprecated need to review*/
-      var currentScreen = "";
-      var devMenu = false;
-
-      //console.log("Current URL: ",tabUrl);
-      if (~tabUrl.indexOf("app.hubspot.com")) {
-          //console.log("This is the hubspot backend.");
-          chrome.storage.sync.get([
-              'uitweaks'
-          ], function(items) {
-              if (items.uitweaks) {
-                  $("html").addClass("ext-ui-tweaks");
-              }
-          });
-          console.log("DevMenu:", devMenu);
-          if (~tabUrl.indexOf("/design-manager/")) {
-              //console.log("Old Design Manager is active");
-              currentScreen = 'design-manager';
-              notifyDMHasLoaded();
-
-          }
-          if (~tabUrl.indexOf("/beta-design-manager/")) {
-              /*note this string detection will likely break once rolled out to everyone as they likely wont leave beta in the name*/
-              //console.log("Design Manager V2 is active");
-              currentScreen = 'design-manager';
-              notifyDMHasLoaded();
-              chrome.storage.sync.get([
-                  "darktheme"
-              ], function(items) {
-                  if (items.darktheme) {
-                      $("body").addClass("ext-dark-theme");
+      function receiveDuplicateTabs() {
+          chrome.runtime.onMessage.addListener(
+              function(request, sender, sendResponse) {
+                  console.log(sender.tab ?
+                      "from a content script:" + sender.tab.url :
+                      "from the extension");
+                  if (request.duplicateTabs == true){
+                      sendResponse({ farewell: "goodbye" });
+                      alert("You have duplicate tabs open");
                   }
               });
+      }
 
+      function darkTheme() {
+          chrome.storage.sync.get([
+              "darktheme"
+          ], function(items) {
+              if (items.darktheme) {
+                  $("body").addClass("ext-dark-theme");
+              }
+          });
+      }
 
-          }
-
-
-
-
+      function uiTweaks() {
           chrome.storage.sync.get([
               'uitweaks'
           ], function(items) {
               if (items.uitweaks) {
+
+
+                  $("html").addClass("ext-ui-tweaks");
+
+
                   /*detect HS nav bar version*/
-                  var navVersion = getNavVersion();
-                  
+
+
 
                   function generateDevMenuItem(version, buttonLabel, hubId, url) {
                       /*expects version to be integer, button label string, hubId string, url string.*/
@@ -131,9 +120,6 @@
 
 
                   function generateDevMenu(version, hubId) {
-
-
-
                       if (version === 3) {
                           var html = '';
                           html += '<li id="ext-dev-menu" class="nav-main-item nav-dropdown-container" style="background-color: #555;"><a href="">Developer</a>';
@@ -161,7 +147,6 @@
                               $(this).toggleClass("current-dropdown-item");
                           });
 
-
                       } else if (version === 4) {
                           var html = '';
                           html += '<li id="ext-dev-menu-wrapper" role="none" class="expandable ">';
@@ -177,13 +162,6 @@
                           html += generateDevMenuItem(4, 'Content Staging', hubId, 'https://app.hubspot.com/content/_HUB_ID_/staging/');
                           html += generateDevMenuItem(4, 'Advanced Menus', hubId, 'https://app.hubspot.com/settings/_HUB_ID_/website/pages/all-domains/navigation');
                           html += generateDevMenuItem(4, 'Content Settings', hubId, 'https://app.hubspot.com/settings/_HUB_ID_/website/pages/all-domains/page-templates');
-
-                          /*
-                                      html +=             '<li role="none">';
-                                      html +=                 '<a role="menuitem" data-tracking="click hover" id="nav-secondary-design-tools-beta" class="navSecondaryLink" href="https://app.hubspot.com/design-manager/' + hubId + '" >';
-                                      html +=                     'Design Manager';
-                                      html +=                 '</a>';
-                                      html +=             '</li>';*/
 
                           html += '</ul>';
                           html += '</div>';
@@ -210,19 +188,11 @@
                       }
                   };
 
-                  /*get current HubSpot ID*/
-
-                  var hubId;
-
-
-
                   if (navVersion === 3) {
-                      hubId = $(".nav-hubid").text().replace("Hub ID: ", "");
-
 
                       if ($("#nav-main-item-product-selector").length) {
+                          //var hubId = getHubID();
                           generateDevMenu(3, hubId);
-
 
                       } else {
                           var doesntExist = true;
@@ -238,7 +208,7 @@
 
                           }
                           console.log("selector found!");
-
+                          //var hubId = getHubID();
                           generateDevMenu(3, hubId);
 
                           console.log("should be inserted now");
@@ -246,27 +216,49 @@
 
 
                   } else if (navVersion === 4) {
-
-                      var checkExist = setInterval(function() {
-                          if ($("#hs-nav-v4 .logo > a").attr("href").length) {
-                              console.log("Exists!");
-
-                              hubId = $("#hs-nav-v4 .logo > a").attr("href").replace("https://app.hubspot.com/reports-dashboard/", "").replace("/home", "");
-                              if (hubId) {
-                                  clearInterval(checkExist);
-                                  generateDevMenu(4, hubId);
-                              } else {
-                                  console.log("Hub ID not defined yet");
-                              }
-                              console.log("Hub ID:", hubId);
-                          } else {
-                              console.log("#nav-primary-home does not exist");
-
-                          }
-                      }, 300); // check every 100ms
+                      generateDevMenu(4, hubId);
                   }
               }
           });
+      };
+
+      var tabUrl = window.location.protocol + "//" + window.location.host + "/" + window.location.pathname;
+      /*getSelected might be deprecated need to review*/
+      var currentScreen = "";
+      var devMenu = false;
+
+
+      //console.log("Current URL: ",tabUrl);
+      if (~tabUrl.indexOf("app.hubspot.com")) {
+          //console.log("This is the hubspot backend.");
+          var navVersion = getNavVersion();
+          var hubId = getHubID();
+
+
+          console.log("DevMenu:", devMenu);
+          if (~tabUrl.indexOf("/design-manager/")) {
+              //console.log("Old Design Manager is active");
+              currentScreen = 'design-manager';
+
+              uiTweaks();
+              notifyDMHasLoaded();
+              receiveDuplicateTabs();
+
+          }
+          if (~tabUrl.indexOf("/beta-design-manager/")) {
+              /*note this string detection will likely break once rolled out to everyone as they likely wont leave beta in the name*/
+              //console.log("Design Manager V2 is active");
+              currentScreen = 'design-manager';
+              darkTheme();
+              uiTweaks();
+              notifyDMHasLoaded();
+              receiveDuplicateTabs();
+          }
+
+
+
+
+
 
 
 
