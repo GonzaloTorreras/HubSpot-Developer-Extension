@@ -4,6 +4,21 @@ $(document).ready(function() {
     /*getSelected might be deprecated need to review*/
     var currentScreen = "";
     var devMenu = false;
+    var waitForEl = function(selector, callback) {
+      if ($(selector).text().length) {
+        callback();
+      } else {
+        setTimeout(function() {
+          waitForEl(selector, callback);
+        }, 100);
+      }
+    };
+
+
+
+    function setTitle(siteName){
+        document.title = siteName+"|DM-HS";
+    }
     //console.log("Current URL: ",tabUrl);
     const appUrl = ~tabUrl.indexOf("app.hubspotqa.com") ? "app.hubspotqa.com" : "app.hubspot.com";
     if (~tabUrl.indexOf(appUrl)) {
@@ -39,7 +54,7 @@ $(document).ready(function() {
 
         }
 
-
+        
 
         chrome.storage.sync.get([
             'uitweaks'
@@ -49,11 +64,42 @@ $(document).ready(function() {
                 var navVersion;
                 if ($("#hs-nav-v3").length) {
                     console.log("Nav V3 detected.");
+                    var siteName = $(".nav-domain").text();
+                    setTitle($(".nav-domain").text());
                     navVersion = 3;
                 } else if ($("#hs-nav-v4").length) {
                     console.log("Nav V4 detected.");
+                    waitForEl(".account-name", function() {
+                      setTitle($(".account-name").text());
+                    });
+                    /*
+                    var siteName;
+                    var checkExist = setInterval(function() {
+                        if (document.getElementsByClassName("account-name").length>0) {
+                            console.log("Exists!");
+
+                            siteName = $(".account-name").text();
+                            if (siteName.length) {
+                                setTitle($(".account-name").text());
+                                console.log("site name found")
+                                clearInterval(checkExist);
+
+                               
+                            } else {
+                                console.log("site name not defined yet");
+                            }
+                            console.log("site name:", siteName);
+
+                        } else {
+                            console.log(".account-name does not exist yet");
+
+                        }
+                    }, 500); // check every 100ms
+                   */
                     navVersion = 4;
                 }
+
+                
 
                 function generateDevMenuItem(version, buttonLabel, hubId, url) {
                     /*expects version to be integer, button label string, hubId string, url string.*/
