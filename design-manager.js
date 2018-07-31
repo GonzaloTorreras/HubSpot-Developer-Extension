@@ -64,15 +64,19 @@ $(document).ready(function() {
                 var navVersion;
                 if ($("#hs-nav-v3").length) {
                     console.log("Nav V3 detected.");
-                    setTitle($(".nav-domain").text());
                     navVersion = 3;
                 } else if ($("#hs-nav-v4").length) {
                     console.log("Nav V4 detected.");
-                    waitForEl(".account-name", function() {
-                      setTitle($(".account-name").text());
-                    });
                   
                     navVersion = 4;
+                }
+                if(currentScreen == "design-manager" && navVersion === 3){
+                    setTitle($(".nav-domain").text());
+
+                }else if(currentScreen == "design-manager" && navVersion === 4){
+                     waitForEl(".account-name", function() {
+                      setTitle($(".account-name").text());
+                    });
                 }
 
                 function generateDevMenuItem(version, buttonLabel, hubId, url) {
