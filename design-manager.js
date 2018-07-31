@@ -4,6 +4,21 @@ $(document).ready(function() {
     /*getSelected might be deprecated need to review*/
     var currentScreen = "";
     var devMenu = false;
+    var waitForEl = function(selector, callback) {
+      if ($(selector).text().length) {
+        callback();
+      } else {
+        setTimeout(function() {
+          waitForEl(selector, callback);
+        }, 100);
+      }
+    };
+
+
+
+    function setTitle(siteName){
+        document.title = siteName+"|DM-HS";
+    }
     //console.log("Current URL: ",tabUrl);
     const appUrl = ~tabUrl.indexOf("app.hubspotqa.com") ? "app.hubspotqa.com" : "app.hubspot.com";
     if (~tabUrl.indexOf(appUrl)) {
@@ -48,10 +63,15 @@ $(document).ready(function() {
                 /*detect HS nav bar version*/
                 var navVersion;
                 if ($("#hs-nav-v3").length) {
-                    //console.log("Nav V3 detected.");
+                    console.log("Nav V3 detected.");
+                    setTitle($(".nav-domain").text());
                     navVersion = 3;
                 } else if ($("#hs-nav-v4").length) {
-                    //console.log("Nav V4 detected.");
+                    console.log("Nav V4 detected.");
+                    waitForEl(".account-name", function() {
+                      setTitle($(".account-name").text());
+                    });
+                  
                     navVersion = 4;
                 }
 
