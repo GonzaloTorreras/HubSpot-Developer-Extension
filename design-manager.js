@@ -71,11 +71,13 @@ $(document).ready(function() {
                     navVersion = 4;
                 }
                 if(currentScreen == "design-manager" && navVersion === 3){
-                    setTitle($(".nav-domain").text());
+                    waitForEl(".nav-domain", function() {
+                        setTitle($(".nav-domain").text());
+                    });
 
                 }else if(currentScreen == "design-manager" && navVersion === 4){
-                     waitForEl(".account-name", function() {
-                      setTitle($(".account-name").text());
+                    waitForEl(".account-name", function() {
+                        setTitle($(".account-name").text());
                     });
                 }
 
