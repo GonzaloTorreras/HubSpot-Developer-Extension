@@ -4,6 +4,7 @@ $(document).ready(function() {
     /*getSelected might be deprecated need to review*/
     var currentScreen = "";
     var devMenu = false;
+
     var waitForEl = function(selector, callback) {
       if ($(selector).text().length) {
         callback();
@@ -14,10 +15,8 @@ $(document).ready(function() {
       }
     };
 
-
-
     function setTitle(siteName){
-        document.title = siteName+"|DM-HS";
+        document.title = siteName.replace("www.","")+"|DM-HS";
     }
     //console.log("Current URL: ",tabUrl);
     const appUrl = ~tabUrl.indexOf("app.hubspotqa.com") ? "app.hubspotqa.com" : "app.hubspot.com";
