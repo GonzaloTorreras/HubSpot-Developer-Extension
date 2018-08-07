@@ -16,6 +16,7 @@ $(document).ready(function() {
     };
 
     function setTitle(siteName){
+        
         document.title = siteName.replace("www.","")+"|DM-HS";
     }
     //console.log("Current URL: ",tabUrl);
@@ -49,8 +50,9 @@ $(document).ready(function() {
                     $("body").addClass("ext-dark-theme");
                 }
             });
-
-
+        }
+        if (~tabUrl.indexOf("/staging/")) {
+            currentScreen = 'content-staging'
         }
 
 
