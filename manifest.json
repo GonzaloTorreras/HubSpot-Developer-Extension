@@ -32,7 +32,7 @@
     "options_page": "options.html",
 	"background": {
 		"persistent": true,
-		"scripts": [ "hot-reload.js" ]
+		"scripts": [ "hot-reload.js", "background.js" ]
 	},
 	"commands": {
           "bust-cache": {
@@ -40,7 +40,14 @@
               "default": "Ctrl+Shift+Y",
               "mac": "Command+Shift+Y"
             },
-            "description": "Run Cache Buster, this does the same as hitting the button in the popup"
+            "description": "Run Cache Buster"
+          },
+          "hs-debug": {
+            "suggested_key": {
+              "default": "Ctrl+Shift+X",
+              "mac": "Command+Shift+X"
+            },
+            "description": "toggle ?hsDebug=True in the URL"
           }
         }
 }
