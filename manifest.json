@@ -33,5 +33,14 @@
 	"background": {
 		"persistent": true,
 		"scripts": [ "hot-reload.js" ]
-	}
+	},
+	"commands": {
+          "bust-cache": {
+            "suggested_key": {
+              "default": "Ctrl+Shift+Y",
+              "mac": "Command+Shift+Y"
+            },
+            "description": "Run Cache Buster, this does the same as hitting the button in the popup"
+          }
+        }
 }
