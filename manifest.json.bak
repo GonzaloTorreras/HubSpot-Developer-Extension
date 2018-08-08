@@ -35,8 +35,7 @@
 		"css": [ "json-formatter.css" ],  
 		"document_idle": "document_start",
 		"matches": [ "*://*/__context__/*" ]
-	}
-	],
+	}],
     "content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'",
     "options_page": "options.html",
 	"background": {
