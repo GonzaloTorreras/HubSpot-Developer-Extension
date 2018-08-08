@@ -1,3 +1,10 @@
+$(document).ready(function(){
+	
+	formatJSON();
+	$.get(chrome.extension.getURL('/json-formatter.css'), function(data) {
+		$("body").prepend("<style id='json-formatter-css'>" + data + "</style>");
+	});
+});
 function formatJSON(){
 	console.log("okay formatting now");
 	console.log( $("body") );
@@ -120,61 +127,72 @@ function formatJSON(){
 	function syntaxHighlight(json) {
 		//if I get the val from the DOM need to replace spaces and line breaks too
 
-	    json = json.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-	    json = json.replace(/("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g, function (match) {
-	        var cls = 'number';
-	        if (/^"/.test(match)) {
-	            if (/:$/.test(match)) {
-	                cls = 'key';
-	            } else {
-	                cls = 'string';
-	            }
-	        } else if (/true|false/.test(match)) {
-	            cls = 'boolean';
-	        } else if (/null/.test(match)) {
-	            cls = 'null';
-	        }
-	        return '<span class="' + cls + '" data-clipboard-text="">' + match + '</span>';
-	    });
+		json = json.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+		json = json.replace(/("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g, function (match) {
+			var cls = 'number';
+			if (/^"/.test(match)) {
+				if (/:$/.test(match)) {
+					cls = 'key';
+				} else {
+					cls = 'string';
+				}
+			} else if (/true|false/.test(match)) {
+				cls = 'boolean';
+			} else if (/null/.test(match)) {
+				cls = 'null';
+			}
+			return '<span class="' + cls + '" data-clipboard-text="">' + match + '</span>';
+		});
 		
 		//add separator between each 8 spaces
 		json = json.replace( /        +/g, '    <span class="separator"></span>    ');
 		
 		//match new lines
-		json = json.replace( /\n+/g, '\n<li>');
+		json = json.replace( /(?<!}|\])\n+/g, '\n<li>');
 		
 		//match end lines
-		json = json.replace( /\r+/g, '</li>\r');
+		json = json.replace( /(?<!}|\])\r+/g, '</li>\r');
 		
 		//open & close container for each array
-		/*look for { not followed by } same for [ ] but scapped with \ */
+		/*look for { not followed by } same for [ ] but scapped with \ because its a special char. */
 		json = json
-				.replace( /{(?!})/g, '<ul class="array"><li class="minimize-me"></li>{')
-				.replace( /\[(?!])/g, '<ul class="list"><li class="minimize-me"></li>[');
-				/* the two first replaces close elements if they are not prev. by its opener,
-				so they ignore {}
-				
-				the next two look for }, or ], and close the ul after the comma.
-				
-				the last two, for special cases where there are two commas (end of array at the end of a list etc.)
-				
-				*/
-		json = json
-				.replace( /(?<!{)}(?!,)/g, '}</ul>')
-				.replace( /(?<!\[)\](?!,)/g, ']</ul>')
-				
-				.replace( /(?<!{)},/g, '},</ul>')
-				.replace( /(?<!\[)\],/g, '],</ul>')
+			//.replace( /{(?!})/g, '<ul class="array"><li class="minimize-me"><li class="open-bracket">{</li>')
+			//.replace( /\[(?!])/g, '<ul class="list"><li class="minimize-me"></li><li class="open-bracket">[</li>');
+			
+			//test with select open bracket only followed with new line \n
+			.replace( /{\n/g, '<ul class="array"><li class="minimize-me"><li class="open-bracket">{</li>')
+			.replace( /\[\n/g, '<ul class="list"><li class="minimize-me"></li><li class="open-bracket">[</li>')
+			
 
-				.replace( /(?<!{)},,/g, '},<br>,</ul>')
-				.replace( /(?<!\[)\],,/g, '],<br>,</ul>')
-		
-		return json;
+
+			//look for close elements if they are not prev. by its opener, so they ignore {}
+			//.replace( /(?<!{)}(?!,)/g, '<li class="close-bracket">}</li></ul>')
+			//.replace( /(?<!\[)\](?!,)/g, '<li class="close-bracket">]</li></ul>')
+			
+			//look for }, or ], and close the ul after the comma.
+			//.replace( /(?<!{)},/g, '<li class="close-bracket">},</li></ul>')
+			//.replace( /(?<!\[)\],/g, '<li class="close-bracket">],</li></ul>')
+			
+
+			
+			//for special cases where there are two commas (end of array at the end of a list etc.)
+			.replace( /(?<!{)},,/g, '<li class="close-bracket">},</li><br>,</ul>')
+			.replace( /(?<!\[)\],,/g, '<li class="close-bracket">],</li><br>,</ul>')
+			
+			//TEST selecting closing tags with and without comma followed by new line
+			.replace( /(?<!{)},\n/g, '<li class="close-bracket">},</li></ul>')
+			.replace( /(?<!\[)\],\n/g, '<li class="close-bracket">],</li></ul>')
+			.replace( /(?<!{)}\n/g, '<li class="close-bracket">}</li></ul>')
+			.replace( /(?<!\[)\]\n/g, '<li class="close-bracket">]</li></ul>')
+
+	
+	return json;
 	}
 }
 
 
 // Set up context menu at install time.
+/*
 chrome.runtime.onInstalled.addListener(function() {
   console.log("listener added.");
   var context = "page";
@@ -184,9 +202,9 @@ chrome.runtime.onInstalled.addListener(function() {
                                        "onclick": formatJSON()
                                      });  
 });
-
+*/
 // add click event
-console.log("adding click event listener");
+//console.log("adding click event listener");
 //chrome.contextMenus.onClicked.addListener(formatJSON());
 
 

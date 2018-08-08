@@ -20,7 +20,8 @@
 	],
 	"web_accessible_resources": [
 		"mac-text-cursor.svg",
-		"mac-text-cursor.png"
+		"mac-text-cursor.png",
+		"json-formatter.css"
 	],
 	"content_scripts": [{
 		"run_at" :"document_idle", 
@@ -31,8 +32,7 @@
 	},
 	{
 		"run_at" :"document_idle", 
-		"js": ["jquery-3.2.1.min.js","clipboard.min.js"], 
-		"css": [ "json-formatter.css" ],  
+		"js": ["jquery-3.2.1.min.js","clipboard.min.js","json-formatter.js"],
 		"document_idle": "document_start",
 		"matches": [ "*://*/__context__/*" ]
 	}
@@ -41,6 +41,6 @@
     "options_page": "options.html",
 	"background": {
 		"persistent": false,
-		"scripts": [ "hot-reload.js","jquery-3.2.1.min.js","json-formatter.js" ]
+		"scripts": [ "hot-reload.js","jquery-3.2.1.min.js" ]
 	}
 }
