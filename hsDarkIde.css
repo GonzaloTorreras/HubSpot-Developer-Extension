@@ -102,8 +102,8 @@ body.design-manager.ext-dark-theme ::-webkit-scrollbar-thumb:window-inactive {
     background:rgba(var(--rgb-details-color), .2);
 }
 
-
-body.design-manager.ext-dark-theme .CodeMirror.CodeMirror-overlayscroll {
+/** force font size only on default value of 12, if you change in the HS dev setting it won't apply */
+body.design-manager.ext-dark-theme .CodeMirror.CodeMirror-overlayscroll[style*="font-size: 12px"] {
     font-size: var(--body-font-size) !important;
 
 }
