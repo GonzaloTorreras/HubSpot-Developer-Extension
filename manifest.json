@@ -1,14 +1,25 @@
 {
 	"manifest_version": 2,
 	"name": "__MSG_extName__",
-	"version": "1.04.0.2",
+	"version": "1.04.0.3",
 	"default_locale":"en",
 	"description": "__MSG_extDesc__",
 	"browser_action": {
 		"default_popup": "popup.html",
 		"default_title": "HubSpot Dev Tools",
-		"default_icon": "icon.png"
+		"default_icon": {
+			"16": "icon-16.png",
+			"19": "icon-19.png",
+			"38": "icon-38.png",
+        	"48": "icon-48.png",
+        	"128": "icon-128.png" }
 	},
+	"icons": { 
+			"16": "icon-16.png",
+			"19": "icon-19.png",
+			"38": "icon-38.png",
+        	"48": "icon-48.png",
+        	"128": "icon-128.png" },
 	"permissions": [
 		"storage",
 		"activeTab"
