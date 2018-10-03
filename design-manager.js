@@ -50,8 +50,6 @@ $(document).ready(function() {
         else if(currentScreen =="url-mappings"){
             document.title = "🔀UM|"+portal+"|HS";   
         }
-        
-        
     }
     //console.log("Current URL: ",tabUrl);
     const appUrl = ~tabUrl.indexOf("app.hubspotqa.com") ? "app.hubspotqa.com" : "app.hubspot.com";
@@ -100,10 +98,10 @@ $(document).ready(function() {
             }
         }
         if (~tabUrl.indexOf("/file-manager-beta/")) {
-            currentScreen = 'file-manager';
+            currentScreen = "file-manager";
         }
         if (~tabUrl.indexOf("/hubdb/")) {
-            currentScreen = 'hubdb';
+            currentScreen = "hubdb";
         }
         if (~tabUrl.indexOf("/settings/")) {
             currentScreen = 'settings';
