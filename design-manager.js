@@ -16,8 +16,42 @@ $(document).ready(function() {
     };
 
     function setTitle(siteName){
+        var portal = siteName.replace("www.","");
+        if(currentScreen == "design-manager"){
+            document.title = "🎨DM|"+portal+"|HS";
+        }
+        else if(currentScreen == "content-staging"){
+            document.title = "🎭CS|"+portal+"|HS";
+        }
+        else if(currentScreen == "dashboard"){
+            document.title = "📊Da|"+portal+"|HS";
+        }
+        else if(currentScreen == "website-pages"){
+            document.title = "📑WP|"+portal+"|HS";
+        }
+        else if(currentScreen == "landing-pages"){
+            document.title = "📄LP|"+portal+"|HS";
+        }
+        else if(currentScreen == "file-manager"){
+            document.title = "📁FM|"+portal+"|HS";
+        }
+        else if(currentScreen == "hubdb"){
+            document.title = "📦DB|"+portal+"|HS";
+        }
+        else if(currentScreen == "settings"){
+            document.title = "⚙️Se|"+portal+"|HS";
+        }
+        else if(currentScreen == "navigation-settings"){
+            document.title = "🗺️Na|"+portal+"|HS";
+        }
+        else if(currentScreen == "blog"){
+            document.title = "📰Bl|"+portal+"|HS";
+        }
+        else if(currentScreen =="url-mappings"){
+            document.title = "🔀UM|"+portal+"|HS";   
+        }
         
-        document.title = siteName.replace("www.","")+"|DM-HS";
+        
     }
     //console.log("Current URL: ",tabUrl);
     const appUrl = ~tabUrl.indexOf("app.hubspotqa.com") ? "app.hubspotqa.com" : "app.hubspot.com";
@@ -52,8 +86,38 @@ $(document).ready(function() {
             });
         }
         if (~tabUrl.indexOf("/staging/")) {
-            currentScreen = 'content-staging'
+            currentScreen = 'content-staging';
         }
+        if (~tabUrl.indexOf("/reports-dashboard/")) {
+            currentScreen = 'dashboard';
+        }
+        if(~tabUrl.indexOf("/pages/")){
+            if(~tabUrl.indexOf("/site/")){
+                currentScreen = "website-pages";
+            }
+            else if(~tabUrl.indexOf("/landing/")){
+                currentScreen = "landing-pages";
+            }
+        }
+        if (~tabUrl.indexOf("/file-manager-beta/")) {
+            currentScreen = 'file-manager';
+        }
+        if (~tabUrl.indexOf("/hubdb/")) {
+            currentScreen = 'hubdb';
+        }
+        if (~tabUrl.indexOf("/settings/")) {
+            currentScreen = 'settings';
+            if (~tabUrl.indexOf("/navigation")) {
+                currentScreen = "navigation-settings";
+            }
+        }
+        if(~tabUrl.indexOf("/blog/")){
+           currentScreen = "blog"; 
+        }
+        if(~tabUrl.indexOf("/url-mappings")){
+           currentScreen = "url-mappings"; 
+        }
+        
 
 
 
@@ -71,12 +135,12 @@ $(document).ready(function() {
                   
                     navVersion = 4;
                 }
-                if(currentScreen == "design-manager" && navVersion === 3){
+                if(navVersion === 3){
                     waitForEl(".nav-domain", function() {
                         setTitle($(".nav-domain").text());
                     });
 
-                }else if(currentScreen == "design-manager" && navVersion === 4){
+                }else if(navVersion === 4){
                     waitForEl(".account-name", function() {
                         setTitle($(".account-name").text());
                     });
@@ -253,6 +317,7 @@ $(document).ready(function() {
 
     } else if (~tabUrl.indexOf("designers.hubspot.com/docs/")) {
         //console.log("Viewing HubSpot Documentation");
+        currentScreen="docs";
 
 
     } else {
