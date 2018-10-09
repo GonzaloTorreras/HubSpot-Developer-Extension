@@ -58,8 +58,8 @@
         {
             "suggested_key":
             {
-                "default": "Ctrl+Shift+Y",
-                "mac": "Command+Shift+Y"
+                "default": "Ctrl+Shift+1",
+                "mac": "Ctrl+Shift+1"
             },
             "description": "Run Cache Buster"
         },
@@ -67,8 +67,8 @@
         {
             "suggested_key":
             {
-                "default": "Ctrl+Shift+X",
-                "mac": "Command+Shift+X"
+                "default": "Ctrl+Shift+2",
+                "mac": "Ctrl+Shift+2"
             },
             "description": "toggle ?hsDebug=True in the URL"
         }
