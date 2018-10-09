@@ -6,6 +6,8 @@ $(document).ready(function() {
     var devMenu = false;
 
     var waitForEl = function(selector, callback) {
+    /*This needs to be modified to not run forever if item is never detected.*/
+    	
       if ($(selector).text().length) {
         callback();
       } else {
