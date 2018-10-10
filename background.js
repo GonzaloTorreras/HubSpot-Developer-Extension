@@ -1,3 +1,41 @@
+chrome.commands.onCommand.addListener(function(command) {
+    console.log('Command:', command);
+    if (command == "bust-cache") {
+        console.log("Cache bustato");
+
+
+
+
+        chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
+            var tabUrl = new URL(tabs[0].url);
+            var params = new URLSearchParams(tabUrl.search);
+            var randomNum = Math.floor(Math.random() * 9999) + 1;
+            params.set("cacheBuster", randomNum);
+
+
+            chrome.tabs.update(tabs[0].id, { url: tabUrl.origin + tabUrl.pathname + '?' + params.toString() });
+            //window.close();
+
+        });
+    } else if (command == "hs-debug") {
+        console.log("debug activated");
+        chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
+            var tabUrl = new URL(tabs[0].url);
+            var params = new URLSearchParams(tabUrl.search);
+
+
+            if (params.has("hsDebug")) {
+                params.delete("hsDebug");
+            } else {
+                params.append("hsDebug", "True");
+            }
+            chrome.tabs.update(tabs[0].id, { url: tabUrl.origin + tabUrl.pathname + '?' + params.toString() });
+
+
+        });
+
+    }
+});
 /*This file runs in the background managing the connection between the content scripts the popup and options pages.*/
 
 console.log("background found")
@@ -71,38 +109,38 @@ chrome.runtime.onMessage.addListener(
                                     console.log("duplicateTabs:", duplicateTabs);
                                     if (duplicateTabs) {
                                         console.log("should return true");
-                                       
-			                            console.log("duplicatetabs true value sent to dm.js")
-			                            chrome.runtime.sendMessage({ duplicateTabs: true }, function(response) {
-			                                console.log("response from dm.js", response.farewell);
-			                            });
-			                           
+
+                                        console.log("duplicatetabs true value sent to dm.js")
+                                        chrome.runtime.sendMessage({ duplicateTabs: true }, function(response) {
+                                            console.log("response from dm.js", response.farewell);
+                                        });
+
                                     } else {
                                         console.log("should return false");
                                         reply = false;
-                                        
+
                                     }
                                 } else {
                                     console.log("should return false");
                                     reply = false;
-                                    
+
                                 }
                             });
                         } else {
                             // The extension doesn't have the permissions.
                             console.log("no permission to check tabs");
-                            
+
                         }
                     });
 
                 } else {
                     console.log("user does not have tabs setting on.");
                     reply = "setting is disabled.";
-                    
+
 
                 };
                 reply = "this shouldn't be possible";
-                
+
             });
 
 
