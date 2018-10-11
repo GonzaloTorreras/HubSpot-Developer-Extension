@@ -1,20 +1,32 @@
 {
 	"manifest_version": 2,
 	"name": "__MSG_extName__",
-	"version": "1.03.1",
+	"version": "1.04.0.21",
 	"default_locale":"en",
 	"description": "__MSG_extDesc__",
 	"browser_action": {
 		"default_popup": "popup.html",
 		"default_title": "HubSpot Dev Tools",
-		"default_icon": "icon.png"
+		"default_icon": {
+			"16": "icon-16.png",
+			"19": "icon-19.png",
+			"38": "icon-38.png",
+        	"48": "icon-48.png",
+        	"128": "icon-128.png" }
 	},
+	"icons": { 
+			"16": "icon-16.png",
+			"19": "icon-19.png",
+			"38": "icon-38.png",
+        	"48": "icon-48.png",
+        	"128": "icon-128.png" },
 	"permissions": [
 		"storage",
 		"activeTab"
 	],
 	"optional_permissions": [
-	 "https://app.hubspot.com/*" 
+	 "https://app.hubspot.com/*",
+	 "https://app.hubspotqa.com/*"
 	],
 	"web_accessible_resources": [
 		"mac-text-cursor.svg",
@@ -25,7 +37,7 @@
 		"js": ["jquery-3.2.1.min.js","design-manager.js"], 
 	    "css": [ "hsDarkIde.css" ],  
 	    "document_idle": "document_start",
-	    "matches": [ "https://app.hubspot.com/*" ] 
+	    "matches": [ "https://app.hubspot.com/*", "https://app.hubspotqa.com/*" ] 
     }],
     "content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'",
     "options_page": "options.html",
