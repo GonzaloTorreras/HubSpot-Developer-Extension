@@ -494,6 +494,15 @@ body.design-manager.ext-dark-theme .empty-state-view .private-table thead th{
 }
 
 
+/*when upgrading a custom module, there is a modal that states the errors the module needs corrected*/
+body.design-manager.ext-dark-theme .private-modal ul.uiList.m-top-2{
+    background-color:rgb(102, 120, 138);
+}
+body.design-manager.ext-dark-theme .private-modal ul.uiList .hubl-error-list-item{
+    color:rgb(212, 61, 68);
+}
+
+
 
 /** settings page **/
 body.design-manager.ext-dark-theme .settings-editor-app,
