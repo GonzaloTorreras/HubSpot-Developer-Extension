@@ -689,7 +689,7 @@ body.design-manager.ext-dark-theme .simple-menus-menu .simple-menus-menu-node-di
 }
 
 /*footer bar*/
-.status-bar-header{
+body.design-manager.ext-dark-theme .status-bar-header{
     border-top: 1px solid #3b3333!important;
 }
 /*footer bar right */
@@ -697,7 +697,13 @@ body.design-manager.ext-dark-theme button.uiButton.private-button.private-button
     border-left: 1px solid #3b3333!important;
 }
 
-
+/*custom module code pen accordions*/
+/*.resizable-panes .code-panes-pane.resizable-pane .code-panes .code-panes-container .code-panes-accordion-items .resizer{
+    background-color:#3b3333!important;
+}*/
+body.design-manager.ext-dark-theme .resizeable-panes .resizer{
+    background-color:#717171!important;
+}
 /**
 /* 
 #33475b
