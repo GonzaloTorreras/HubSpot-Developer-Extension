@@ -688,6 +688,16 @@ body.design-manager.ext-dark-theme .simple-menus-menu .simple-menus-menu-node-di
 	background: var(--body-background-hover);
 }
 
+/*footer bar*/
+.status-bar-header{
+    border-top: 1px solid #3b3333!important;
+}
+/*footer bar right */
+body.design-manager.ext-dark-theme button.uiButton.private-button.private-button--transparent.status-bar-header-button.private-button--non-link {
+    border-left: 1px solid #3b3333!important;
+}
+
+
 /**
 /* 
 #33475b
