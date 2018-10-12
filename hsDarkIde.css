@@ -591,6 +591,12 @@ body.design-manager.ext-dark-theme .folder-item.is--over.can--drop>.nav-item-lin
     background-color: rgba(255,255,255,.2);
 }
 
+/*finder background gradients at top and bottom of element*/
+body.design-manager.ext-dark-theme .finder-container__files,body.design-manager.ext-dark-theme .UISection__ScrollWrapper-eQImbY {
+   
+    background-image: linear-gradient(to bottom,rgb(45, 62, 78),rgba(45,62,78,0)), linear-gradient(to top,rgb(45, 62, 78),rgba(45,62,78,0)), linear-gradient(to bottom,rgb(45,62,78),rgba(45,62,78,0)), linear-gradient(to top,rgb(45, 62, 78),rgba(45,62,78,0));
+}
+
 /** right sidebar: swapping widget for another popup **/
 body.design-manager.ext-dark-theme .widget-catalog-list-item>a,
 body.design-manager.ext-dark-theme .widget-catalog-list-item>button {
