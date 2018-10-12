@@ -68,6 +68,11 @@ body.design-manager.ext-dark-theme button.uiButton.private-button.private-button
 }
 
 */
+/*tab bar scrollbar*/
+body.design-manager.ext-dark-theme .HorizontalScrollContainer__ScrollBar-cSRRR{
+    height: .3rem;
+    bottom: 0.3rem;
+}
 
 /*vertical scrollbars*/
 body.design-manager.ext-dark-theme ::-webkit-scrollbar,
