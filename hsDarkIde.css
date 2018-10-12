@@ -21,6 +21,10 @@ html.ext-ui-tweaks .HorizontalScrollContainer__ScrollBar-cSRRR{
     z-index:500;
 }
 
+/*background color for developer menu is slightly different to indicate it's added by ext*/
+li#ext-dev-menu-wrapper {
+    background: rgba(255,255,255,.05);
+}
 
 /*fix for menu labels in setting pages */
 body.hubspot .simple-menus-menu-tree .simple-menus-menu-item-label{
