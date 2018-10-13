@@ -8,6 +8,7 @@ $(document).ready(function() {
     }
 
 
+
     var tabUrl = window.location.protocol + "//" + window.location.host + "/" + window.location.pathname;
     /*getSelected might be deprecated need to review*/
     var currentScreen = "";
@@ -266,6 +267,12 @@ $(document).ready(function() {
                                 $(this).attr('aria-expanded', 'true');
                             }
                             $(this).parent("li").toggleClass("active");
+                        });
+
+                        $("#ext-dev-menu .navSecondaryLink").click(function(){
+                            console.log("track click");
+                            
+                            //trackClick(eventName);
                         });
                     }
                 };
