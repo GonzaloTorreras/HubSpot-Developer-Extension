@@ -1,5 +1,13 @@
 $(document).ready(function() {
     /*This script runs once the design manager page loads.*/
+
+    function trackClick(eventName){/*Analytics*/
+        chrome.runtime.sendMessage({greeting: eventName}, function(response) {
+          console.log(response.farewell);
+        });
+    }
+
+
     var tabUrl = window.location.protocol + "//" + window.location.host + "/" + window.location.pathname;
     /*getSelected might be deprecated need to review*/
     var currentScreen = "";
