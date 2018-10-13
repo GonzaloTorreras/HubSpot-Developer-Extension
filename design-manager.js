@@ -3,7 +3,7 @@ $(document).ready(function() {
 
     function trackClick(eventName){/*Analytics*/
         chrome.runtime.sendMessage({greeting: eventName}, function(response) {
-          console.log(response.farewell);
+          //console.log(response.farewell);
         });
     }
 

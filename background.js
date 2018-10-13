@@ -21,19 +21,21 @@ function trackPageView(){
 /*listen for clicks*/
 chrome.runtime.onMessage.addListener(
   function(request, sender, sendResponse) {
-    console.log(sender.tab ?
+    /*console.log(sender.tab ?
                 "from a content script:" + sender.tab.url :
-                "from the extension");
-    console.log("track:"+request.greeting);
+                "from the extension");*/
+    //console.log("track:"+request.greeting);
     trackClick(request.greeting);
     sendResponse({farewell: "Tracked!"});
 });
+
 
 
 chrome.commands.onCommand.addListener(function(command) {
     console.log('Command:', command);
     if(command == "bust-cache"){
     	console.log("Cache bustato");
+        _gaq.push(['_trackEvent', "cacheBuster", 'kbShortcutUsed']);
 
 
     	
@@ -47,10 +49,12 @@ chrome.commands.onCommand.addListener(function(command) {
 
 		    chrome.tabs.update(tabs[0].id, { url: tabUrl.origin + tabUrl.pathname + '?' + params.toString() });
 		    //window.close();
+            
 
     	});
     }else if(command == "hs-debug"){
     	console.log("debug activated");
+        _gaq.push(['_trackEvent', "hsDebug", 'kbShortcutUsed']);
  		chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
             var tabUrl = new URL(tabs[0].url);
             var params = new URLSearchParams(tabUrl.search);
