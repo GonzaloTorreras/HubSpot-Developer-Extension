@@ -168,7 +168,7 @@ $(document).ready(function() {
                     if (version === 3) {
                         var html = "";
                         html += "<li id='nav-dropdown-item-leads' data-mainitemid='" + buttonLabel + "' class='nav-dropdown-item'>";
-                        html += "<a data-appkey='" + buttonLabel + "' href='" + link + "'>";
+                        html += "<a data-appkey='" + buttonLabel + "' href='" + link + "' data-ext-track='"+buttonLabel.trim()+"' class='devMenuLink'>";
                         html += "<span class='child-link-text link-text-after-parent-item-contacts'>";
                         html += buttonLabel;
                         html += "</span>";
@@ -179,7 +179,7 @@ $(document).ready(function() {
                     } else if (version === 4) {
                         var html = "";
                         html += "<li role='none'>";
-                        html += "<a role='menuitem' data-tracking='click hover' id='nav-secondary-design-tools-beta' class='navSecondaryLink' href='" + link + "' >";
+                        html += "<a role='menuitem' data-tracking='click hover' id='nav-secondary-design-tools-beta' data-ext-track='"+buttonLabel.trim()+"' class='navSecondaryLink' href='" + link + "' >";
                         html += buttonLabel;
                         html += "</a>";
                         html += "</li>";
@@ -263,16 +263,19 @@ $(document).ready(function() {
 
                             if (isExpanded === 'true') {
                                 $(this).attr('aria-expanded', 'false');
+                                trackClick("devMenu-Closed");
                             } else {
                                 $(this).attr('aria-expanded', 'true');
+                                trackClick("devMenu-Opened");
                             }
                             $(this).parent("li").toggleClass("active");
                         });
 
-                        $("#ext-dev-menu .navSecondaryLink").click(function(){
+                        $("#ext-dev-menu .navSecondaryLink, #ext-dev-menu .devMenuLink").click(function(){
                             console.log("track click");
-                            
-                            //trackClick(eventName);
+                            var linkName = "devMenu:"+$(this).data("ext-track");
+                            console.log(linkName);
+                            trackClick(linkName);
                         });
                     }
                 };
