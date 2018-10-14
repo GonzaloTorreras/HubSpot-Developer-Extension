@@ -1,21 +1,21 @@
 /*Google Analytics*/
 var _gaq = _gaq || [];
-_gaq.push(['_setAccount', 'UA-122315369-1']);
+_gaq.push(["_setAccount", "UA-122315369-1"]);
 
 (function() {
-    var ga = document.createElement('script');
-    ga.type = 'text/javascript';
+    var ga = document.createElement("script");
+    ga.type = "text/javascript";
     ga.async = true;
-    ga.src = 'https://ssl.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0];
+    ga.src = "https://ssl.google-analytics.com/ga.js";
+    var s = document.getElementsByTagName("script")[0];
     s.parentNode.insertBefore(ga, s);
 })();
 /*end google analytics*/
 function trackClick(eventName){
-    _gaq.push(['_trackEvent', eventName, 'clicked']);
+    _gaq.push(["_trackEvent", eventName, "clicked"]);
 };
 function trackPageView(){
-    _gaq.push(['_trackPageview']);
+    _gaq.push(["_trackPageview"]);
 };
 
 /*listen for clicks*/
@@ -32,10 +32,10 @@ chrome.runtime.onMessage.addListener(
 
 
 chrome.commands.onCommand.addListener(function(command) {
-    console.log('Command:', command);
-    if(command == "bust-cache"){
+    console.log("Command:", command);
+    if(command === "bust-cache"){
     	console.log("Cache bustato");
-        _gaq.push(['_trackEvent', "cacheBuster", 'kbShortcutUsed']);
+        _gaq.push(["_trackEvent", "cacheBuster", "kbShortcutUsed"]);
 
 
     	
@@ -52,7 +52,7 @@ chrome.commands.onCommand.addListener(function(command) {
             
 
     	});
-    }else if(command == "hs-debug"){
+    }else if(command === "hs-debug"){
     	console.log("debug activated");
         _gaq.push(['_trackEvent', "hsDebug", 'kbShortcutUsed']);
  		chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
