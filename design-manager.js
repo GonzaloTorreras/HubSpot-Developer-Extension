@@ -78,12 +78,7 @@ $(document).ready(function() {
                   
                     navVersion = 4;
                 }
-                if(currentScreen == "design-manager" && navVersion === 3){
-                    waitForEl(".nav-domain", function() {
-                        setTitle($(".nav-domain").text());
-                    });
-
-                }else if(currentScreen == "design-manager" && navVersion === 4){
+                if(currentScreen == "design-manager" && navVersion === 4){
                     waitForEl(".account-name", function() {
                         setTitle($(".account-name").text());
                     });
@@ -92,18 +87,7 @@ $(document).ready(function() {
                 function generateDevMenuItem(version, buttonLabel, hubId, url) {
                     /*expects version to be integer, button label string, hubId string, url string.*/
                     var link = url.replace("_HUB_ID_", hubId);
-                    if (version === 3) {
-                        var html = "";
-                        html += "<li id='nav-dropdown-item-leads' data-mainitemid='" + buttonLabel + "' class='nav-dropdown-item'>";
-                        html += "<a data-appkey='" + buttonLabel + "' href='" + link + "'>";
-                        html += "<span class='child-link-text link-text-after-parent-item-contacts'>";
-                        html += buttonLabel;
-                        html += "</span>";
-                        html += "</a>";
-                        html += "</li>";
-                        return html;
-
-                    } else if (version === 4) {
+                    if (version === 4) {
                         var html = "";
                         html += "<li role='none'>";
                         html += "<a role='menuitem' data-tracking='click hover' id='nav-secondary-design-tools-beta' class='navSecondaryLink' href='" + link + "' >";
@@ -111,7 +95,6 @@ $(document).ready(function() {
                         html += "</a>";
                         html += "</li>";
                         return html;
-
 
                     }
                     //console.log("Nav Item Generated: ", buttonLabel);
@@ -141,12 +124,7 @@ $(document).ready(function() {
 
 
                     var html = '';
-                    if (version === 3) {
-
-                        html += '<li id="ext-dev-menu" class="nav-main-item nav-dropdown-container" style="background-color: #555;"><a href="">Developer</a>';
-                        html += '<ul class="nav-dropdown-menu" style="min-width: 102px;">';
-                    }
-                    else if(version === 4){
+                    if(version === 4){
                         html += '<li id="ext-dev-menu-wrapper" role="none" class="expandable ">';
                         html += '<a href="#" id="nav-primary-dev-branch" aria-haspopup="true" aria-expanded="false" class="primary-link" data-tracking="click hover" role-menu="menuitem">';
                         html += 'Developer ';
@@ -158,20 +136,7 @@ $(document).ready(function() {
 
                     html += generateAllMenuItems(version, hubId);
 
-                    if (version === 3) {    
-                        html += '</ul>';
-                        html += '</li>';
-                        $("#nav-main-item-product-selector").after(html);
-                        $("#ext-dev-menu > a").click(function(e) {
-                            e.preventDefault();
-                            //console.log("dev menu clicked!");
-                            $("#ext-dev-menu").toggleClass("current-dropdown");
-
-                            $(".nav-dropdown-menu", "#ext-dev-menu").toggle();
-                            $(this).toggleClass("current-dropdown-item");
-                        });
-                    }
-                    else if (version === 4) {
+                    if (version === 4) {
                         
                         html += '</ul>';
                         html += '</div>';
@@ -201,36 +166,7 @@ $(document).ready(function() {
                 /*get current HubSpot ID*/
 
                 var hubId;
-                if (navVersion === 3) {
-                    hubId = $(".nav-hubid").text().replace("Hub ID: ", "");
-
-
-                    if ($("#nav-main-item-product-selector").length) {
-                        generateDevMenu(3, hubId);
-
-
-                    } else {
-                        var doesntExist = true;
-                        var attempts = 10;
-                        while (doesntExist && attempts > 0) {
-                            setTimeout(function() {
-                                if (document.getElementById("#nav-main-item-product-selector") != null) {
-                                    doesntExist = false;
-                                }
-                                //console.log("delay");
-                            }, 10);
-                            attempts -= 1;
-
-                        }
-                        //console.log("selector found!");
-
-                        generateDevMenu(3, hubId);
-
-                        //console.log("should be inserted now");
-                    };
-
-
-                } else if (navVersion === 4) {
+                if (navVersion === 4) {
 
                     var checkExist = setInterval(function() {
                         if ($("#hs-nav-v4 .logo > a").attr("href").length) {
