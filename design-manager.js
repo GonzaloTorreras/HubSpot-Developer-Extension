@@ -31,7 +31,7 @@ $(document).ready(function() {
           }
           /*Next steps - add error handling here when polling fails*/
         })();
-      };
+    };
 
     function setTitle(siteName){
         var portal = siteName.replace("www.","");
@@ -78,9 +78,6 @@ $(document).ready(function() {
         ], function(items) {
             if (items.uitweaks) {
                 $("html").addClass("ext-ui-tweaks");
-                
-
-
             }
         });
         console.log("DevMenu:", devMenu);
