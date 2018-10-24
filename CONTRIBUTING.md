@@ -2,6 +2,7 @@
 * If you would like to contribute through development, you can fork this repo, make your changes and submit a pull request. If you contribute regularly, you can request collaborator access from @wspiro
 * If you would like to contribute through testing - please install the beta version of the chrome extension.
 * If you would like to contribute through taking screenshots for the web store - make sure you're using the latest version of the stable version of the extension and post issues with your screenshots. You could also be pre-emptive and submit screenshots taken from the beta version, allowing us to have up-to-date screenshots by the time that goes live.
+* [Don't be a richard, no one likes a richard, sorry Richard.](https://github.com/williamspiro/HubSpot-Developer-Extension/blob/contributors-update/CODE_OF_CONDUCT.md)
 
 ## Making changes to the extension
 If you would like to make changes, I suggest reviewing the issues, and see if a discussion related to the feature or bug you want to work on exists. There may already be a discussion about the best way to implement something.
