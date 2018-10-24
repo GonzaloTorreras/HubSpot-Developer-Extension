@@ -9,14 +9,15 @@ If you don't know what you want to work on, see the issues, and pick one that lo
 
 
 ## New to Git/GitHub?
-GitHub has tons of great guides https://guides.github.com/
+[GitHub has tons of great guides](https://guides.github.com/)
 * [Learn how to use git by editing a file and pushing your changes](https://guides.github.com/activities/hello-world/)
-* GitHub flow Learn the best practice for working on a github project.
-* does the command line freak you out, or is it hard to visualize what's going on? There are GUI programs that can make it easier to understand. https://desktop.github.com/ and https://www.sourcetreeapp.com/ are good options.
+* [GitHub flow](https://guides.github.com/introduction/flow/) Learn the best practice for working on a github project.
+* does the command line freak you out, or is it hard to visualize what's going on? There are GUI programs that can make it easier to understand. [GitHub Desktop](https://desktop.github.com/) and [Source Tree](https://www.sourcetreeapp.com/) are good options.
 * When submitting a pull request or resolving an issue it's helpful to note the issue number, that way others have the full context of what you're doing.
+* If you don't know how to do something regarding git/github just ask we try our best to help.
 
 ### Branches
-We're working somewhat based on the ![Git flow](https://datasift.github.io/gitflow/IntroducingGitFlow.html). 
+We're working somewhat based on the [Git flow](https://datasift.github.io/gitflow/IntroducingGitFlow.html). 
 
 Feature Branches - this is what you will do most of your work on. This is where you work on a new feature. Keep submitting your commits here until the feature is complete, and you've tested it so you know there shouldn't be any bugs. When creating a feature branch I would suggest branching off of Master(unless you're dependent upon something in another branch). I suggest adding a suffix of `-feature` when working on a new feature or feature improvement to be clear to others yours is a feature branch. Example: `developer-quick-menu-feature`
 
@@ -30,7 +31,7 @@ Occasionally one of the primary contributors will submit this release branch to 
 
 Once a release branch is considered stable and all of the features from it's milestone are in there and tested, a pull request from release branch to master branch should be done. Again allowing others to review the branch, test and make sure the features are all there and working as intended. Once reviewed and approved it merges into the master branch.
 
-The Master Branch we try not to edit directly - only ever doing it if we need to remove functionality or hotfix something.
+The Master Branch we try not to edit directly - only ever doing it if we need to remove functionality or hotfix something(or are just editing a markdown file).
 
 The Master Branch gets taken by one of the primary contributors and submitted to the Google Chrome Web Store to push an update out to the live version of the extension.
 
