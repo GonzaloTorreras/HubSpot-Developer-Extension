@@ -1,0 +1,99 @@
+{
+  "extName": {
+    "message": "HubSpot デベロッパーエクステンション",
+    "description": "The Extension's name"
+  },
+  "extDesc": {
+    "message": "HubSpot開発者必携の、便利な機能をHubSpotに追加します。",
+    "description": "Description for extension, displays in chrome extensions listing"
+  },
+  "debugTab": {
+  	"message": "デバッグ",
+  	"description": "Debug Tab Label"
+  },
+  "developTab": {
+  	"message": "開発",
+  	"description": "Develop Tab Label"
+  },
+  "debugButton": {
+  	"message": "デバッグモード",
+  	"description": "HSDebug button label"
+  },
+  "cacheBustButton": {
+  	"message": "キャッシュ削除",
+  	"description": "cachebuster Button label"
+  },
+  "footerJqueryButton": {
+  	"message": "フッターjQuery",
+  	"description": "footer jQuery Button label"
+  },
+  "gpsiHover":{
+    "message": "測定する！",
+    "description": "'score me!' text that appears in hover of google page speed button"
+  },
+  "gpsiTestingDesktop":{
+    "message": "デスクトップのパフォーマンスを測定中...",
+    "description": "'grading desktop' text that appears after click of google page speed button"
+  },
+  "gpsiTestingMobile":{
+    "message": "モバイルのパフォーマンスを測定中...",
+    "description": "'grading mobile' text that appears after click of google page speed button"
+  },
+  "documentationButton": {
+  	"message": "ドキュメント",
+  	"description": "Documentation Button label"
+  },
+  "docLinkFunctions": {
+  	"message": "関数",
+  	"description": "Documentation Button link for Functions"
+  },
+  "docLinkVariables": {
+  	"message": "変数",
+  	"description": "Documentation Button link for Variables"
+  },
+  "docLinkFilters": {
+  	"message": "フィルタ",
+  	"description": "Documentation Button link for Filters"
+  },
+  "communityButton": {
+    "message": "コミュニティ",
+    "description": "Community Button label"
+  },
+  "comLinkDesign": {
+    "message": "デザインフォーラム",
+    "description": "Community Button link for Design Forum"
+  },
+  "comLinkDeveloper": {
+    "message": "開発者フォーラム",
+    "description": "Community Button link for Developer/api Forum"
+  },
+  "comLinkIdeas": {
+    "message": "アイデア",
+    "description": "Community Button link for Ideas"
+  },
+    "darkTheme":{
+    "message": "ダークテーマ",
+    "description": "Dark theme toggle label"
+  },
+    "uiTweaksToggleLabel":{
+    "message": "ユーザーインターフェイスの調整/開発者メニュー",
+    "description": "Toggle Label for UI Tweaks and Dev Menu toggle label"
+  },
+  "toggleOn":{
+    "message": "オン",
+    "description": "accessibility text for on state of toggle switches"
+  },
+   "toggleOff":{
+    "message": "オフ",
+    "description": "accessibility text for off state of toggle switches"
+  },
+  "toggleCheckmark":{
+    "message": "チェックマーク",
+    "description": "accessibility text for checkmark of toggle switches"
+  },
+  "helpTranslate": {
+  	"message": "英語と他の言語に堪能ですか？ この拡張機能の翻訳にあなたの助けが必要です。是非私たちのGitHubにお越しください。",
+  	"description": "options page request for help translating."
+  }
+ 
+}

@@ -21,6 +21,10 @@ html.ext-ui-tweaks .HorizontalScrollContainer__ScrollBar-cSRRR{
     z-index:500;
 }
 
+/*background color for developer menu is slightly different to indicate it's added by ext*/
+li#ext-dev-menu-wrapper {
+    background: rgba(255,255,255,.05);
+}
 
 /*fix for menu labels in setting pages */
 body.hubspot .simple-menus-menu-tree .simple-menus-menu-item-label{
@@ -68,7 +72,14 @@ body.design-manager.ext-dark-theme button.uiButton.private-button.private-button
 }
 
 */
-
+/*tab bar scrollbar*/
+body.design-manager.ext-dark-theme .HorizontalScrollContainer__ScrollBar-cSRRR{
+    height: .3rem;
+    bottom: 0.3rem;
+}
+body.design-manager.ext-dark-theme .welcome-container{
+    background-color: #202d3a;
+}
 /*vertical scrollbars*/
 body.design-manager.ext-dark-theme ::-webkit-scrollbar,
 body.design-manager.ext-dark-theme ::-webkit-scrollbar {
@@ -102,8 +113,8 @@ body.design-manager.ext-dark-theme ::-webkit-scrollbar-thumb:window-inactive {
     background:rgba(var(--rgb-details-color), .2);
 }
 
-
-body.design-manager.ext-dark-theme .CodeMirror.CodeMirror-overlayscroll {
+/** force font size only on default value of 12, if you change in the HS dev setting it won't apply */
+body.design-manager.ext-dark-theme .CodeMirror.CodeMirror-overlayscroll[style*="font-size: 12px"] {
     font-size: var(--body-font-size) !important;
 
 }
@@ -494,6 +505,15 @@ body.design-manager.ext-dark-theme .empty-state-view .private-table thead th{
 }
 
 
+/*when upgrading a custom module, there is a modal that states the errors the module needs corrected*/
+body.design-manager.ext-dark-theme .private-modal ul.uiList.m-top-2{
+    background-color:rgb(102, 120, 138);
+}
+body.design-manager.ext-dark-theme .private-modal ul.uiList .hubl-error-list-item{
+    color:rgb(212, 61, 68);
+}
+
+
 
 /** settings page **/
 body.design-manager.ext-dark-theme .settings-editor-app,
@@ -582,6 +602,12 @@ body.design-manager.ext-dark-theme .folder-item.is--over.can--drop>.nav-item-lin
     background-color: rgba(255,255,255,.2);
 }
 
+/*finder background gradients at top and bottom of element*/
+body.design-manager.ext-dark-theme .finder-container__files,body.design-manager.ext-dark-theme .UISection__ScrollWrapper-eQImbY {
+   
+    background-image: linear-gradient(to bottom,rgb(45, 62, 78),rgba(45,62,78,0)), linear-gradient(to top,rgb(45, 62, 78),rgba(45,62,78,0)), linear-gradient(to bottom,rgb(45,62,78),rgba(45,62,78,0)), linear-gradient(to top,rgb(45, 62, 78),rgba(45,62,78,0));
+}
+
 /** right sidebar: swapping widget for another popup **/
 body.design-manager.ext-dark-theme .widget-catalog-list-item>a,
 body.design-manager.ext-dark-theme .widget-catalog-list-item>button {
@@ -668,6 +694,22 @@ body.design-manager.ext-dark-theme .simple-menus-menu .simple-menus-menu-node-di
 	background: var(--body-background-hover);
 }
 
+/*footer bar*/
+body.design-manager.ext-dark-theme .status-bar-header{
+    border-top: 1px solid #3b3333!important;
+}
+/*footer bar right */
+body.design-manager.ext-dark-theme button.uiButton.private-button.private-button--transparent.status-bar-header-button.private-button--non-link {
+    border-left: 1px solid #3b3333!important;
+}
+
+/*custom module code pen accordions*/
+/*.resizable-panes .code-panes-pane.resizable-pane .code-panes .code-panes-container .code-panes-accordion-items .resizer{
+    background-color:#3b3333!important;
+}*/
+body.design-manager.ext-dark-theme .resizeable-panes .resizer{
+    background-color:#717171!important;
+}
 /**
 /* 
 #33475b
