@@ -4,7 +4,7 @@
     "description": "The Extension's name"
   },
   "extDesc": {
-    "message": "HubSpot開発者のために、HubSpotに便利な機能を追加する必要があります。",
+    "message": "HubSpot開発者必携の、便利な機能をHubSpotに追加します。",
     "description": "Description for extension, displays in chrome extensions listing"
   },
   "debugTab": {
@@ -12,7 +12,7 @@
   	"description": "Debug Tab Label"
   },
   "developTab": {
-  	"message": "開発する",
+  	"message": "開発",
   	"description": "Develop Tab Label"
   },
   "debugButton": {
@@ -20,7 +20,7 @@
   	"description": "HSDebug button label"
   },
   "cacheBustButton": {
-  	"message": "バストキャッシュ",
+  	"message": "キャッシュ削除",
   	"description": "cachebuster Button label"
   },
   "footerJqueryButton": {
@@ -28,19 +28,19 @@
   	"description": "footer jQuery Button label"
   },
   "gpsiHover":{
-    "message": "試して下さい！",
+    "message": "測定する！",
     "description": "'score me!' text that appears in hover of google page speed button"
   },
   "gpsiTestingDesktop":{
-    "message": "デスクトップのテスト...",
+    "message": "デスクトップのパフォーマンスを測定中...",
     "description": "'grading desktop' text that appears after click of google page speed button"
   },
   "gpsiTestingMobile":{
-    "message": "モバイルのテスト...",
+    "message": "モバイルのパフォーマンスを測定中...",
     "description": "'grading mobile' text that appears after click of google page speed button"
   },
   "documentationButton": {
-  	"message": "ドキュメンテーション",
+  	"message": "ドキュメント",
   	"description": "Documentation Button label"
   },
   "docLinkFunctions": {
@@ -72,7 +72,7 @@
     "description": "Community Button link for Ideas"
   },
     "darkTheme":{
-    "message": "暗いテーマ",
+    "message": "ダークテーマ",
     "description": "Dark theme toggle label"
   },
     "uiTweaksToggleLabel":{
@@ -80,7 +80,7 @@
     "description": "Toggle Label for UI Tweaks and Dev Menu toggle label"
   },
   "toggleOn":{
-    "message": "に",
+    "message": "オン",
     "description": "accessibility text for on state of toggle switches"
   },
    "toggleOff":{
@@ -92,7 +92,7 @@
     "description": "accessibility text for checkmark of toggle switches"
   },
   "helpTranslate": {
-  	"message": "あなたは英語と別の言語を知っていますか？ 拡張機能を翻訳するには、あなたの助けが必要です。私たちのGitHubに行ってください。",
+  	"message": "英語と他の言語に堪能ですか？ この拡張機能の翻訳にあなたの助けが必要です。是非私たちのGitHubにお越しください。",
   	"description": "options page request for help translating."
   }
  
