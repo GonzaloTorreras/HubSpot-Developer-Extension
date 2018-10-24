@@ -6,16 +6,23 @@ $(document).ready(function() {
     var devMenu = false;
 
     var waitForEl = function(selector, callback) {
-    /*This needs to be modified to not run forever if item is never detected.*/
-    	
-      if ($(selector).text().length) {
-        callback();
-      } else {
-        setTimeout(function() {
-          waitForEl(selector, callback);
-        }, 100);
-      }
-    };
+      /*Will poll for element only 10 times before stopping*/
+      var timesPolled = 0;
+        
+        (function waiting(){
+          if (timesPolled < 10){
+            if ($(selector).text().length) {
+              callback();
+            } else {
+              setTimeout(function() {
+                timesPolled++;
+                waiting(selector, callback);
+              }, 100);
+            }
+          }
+          /*Next steps - add error handling here when polling fails*/
+        })();
+      };
 
     function setTitle(siteName){
         var portal = siteName.replace("www.","");
