@@ -77,7 +77,9 @@ body.design-manager.ext-dark-theme .HorizontalScrollContainer__ScrollBar-cSRRR{
     height: .3rem;
     bottom: 0.3rem;
 }
-
+body.design-manager.ext-dark-theme .welcome-container{
+    background-color: #202d3a;
+}
 /*vertical scrollbars*/
 body.design-manager.ext-dark-theme ::-webkit-scrollbar,
 body.design-manager.ext-dark-theme ::-webkit-scrollbar {
