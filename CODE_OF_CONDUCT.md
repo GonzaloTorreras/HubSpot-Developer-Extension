@@ -1,4 +1,5 @@
 # Contributor Covenant Code of Conduct
+## TL;DR don't be a jerk.
 
 ## Our Pledge
 
