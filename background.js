@@ -1,3 +1,4 @@
+
 /*Google Analytics*/
 var _gaq = _gaq || [];
 _gaq.push(["_setAccount", "UA-122315369-1"]);
@@ -41,6 +42,7 @@ chrome.commands.onCommand.addListener(function(command) {
         _gaq.push(["_trackEvent", "cacheBuster", "kbShortcutUsed"]);
 
 
+
     	
     	
     	chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
@@ -52,12 +54,12 @@ chrome.commands.onCommand.addListener(function(command) {
 
 		    chrome.tabs.update(tabs[0].id, { url: tabUrl.origin + tabUrl.pathname + '?' + params.toString() });
 		    //window.close();
-            
 
     	});
     }else if(command === "hs-debug"){
     	console.log("debug activated");
         _gaq.push(['_trackEvent', "hsDebug", 'kbShortcutUsed']);
+
  		chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
             var tabUrl = new URL(tabs[0].url);
             var params = new URLSearchParams(tabUrl.search);
