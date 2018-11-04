@@ -2,7 +2,7 @@ $(document).ready(function() {
     /*This script runs once the design manager page loads.*/
 
     function trackClick(eventName){/*Analytics*/
-        chrome.runtime.sendMessage({greeting: eventName}, function(response) {
+        chrome.runtime.sendMessage({trackClick: eventName}, function(response) {
           //console.log(response.farewell);
         });
     }

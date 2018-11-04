@@ -12,6 +12,7 @@ _gaq.push(["_setAccount", "UA-122315369-1"]);
 })();
 /*end google analytics*/
 function trackClick(eventName){
+    console.log("track:"+eventName);
     _gaq.push(["_trackEvent", eventName, "clicked"]);
 };
 function trackPageView(){
@@ -24,9 +25,11 @@ chrome.runtime.onMessage.addListener(
     /*console.log(sender.tab ?
                 "from a content script:" + sender.tab.url :
                 "from the extension");*/
-    //console.log("track:"+request.greeting);
-    trackClick(request.greeting);
-    sendResponse({farewell: "Tracked!"});
+   
+    if(request.trackClick){
+        trackClick(request.trackClick);
+        sendResponse({farewell: "Tracked!"});
+    }
 });
 
 
