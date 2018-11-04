@@ -1,3 +1,4 @@
+
 /*Google Analytics*/
 var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-122315369-1']);
@@ -12,6 +13,12 @@ _gaq.push(['_trackPageview']);
     s.parentNode.insertBefore(ga, s);
 })();
 /*end google analytics*/
+function trackClick(eventName){
+    chrome.runtime.sendMessage({trackClick: eventName}, function(response) {
+      console.log(response.farewell);
+    });
+}
+
 var developerTools = {
 
 
@@ -21,7 +28,7 @@ var developerTools = {
             var tabUrl = new URL(tabs[0].url);
             var params = new URLSearchParams(tabUrl.search);
 
-            _gaq.push(['_trackEvent', debugParam, 'clicked']);
+            trackClick(debugParam);
 
             if (debugParam === "cacheBuster") {
                 var randomNum = Math.floor(Math.random() * 9999) + 1;
@@ -42,7 +49,8 @@ var developerTools = {
         chrome.tabs.query({ 'active': true, 'lastFocusedWindow': true }, function(tabs) {
             var pageUrl = new URL(tabs[0].url);
             var gradeUrl = pageUrl.origin.replace("://", "%3A%2F%2F") + pageUrl.pathname;
-            _gaq.push(['_trackEvent', 'googlePageSpeed', 'clicked']);
+            trackClick("googlePageSpeed");
+            
             $.getJSON('https://www.googleapis.com/pagespeedonline/v4/runPagespeed?url=' + gradeUrl + '&fields=id%2CruleGroups', function(data) {
                 if (data.id) {
                     $("#desktop_psi_placeholder").html("Desktop PSI Score<span class='c-btn__score'>" + data.ruleGroups.SPEED.score + "</span>");
