@@ -29,7 +29,13 @@ We claim no legal rights to the HubSpot name/brand. We have posed the question o
 1. [Read this first!](https://github.com/williamspiro/HubSpot-Developer-Extension/blob/master/CONTRIBUTING.md)
 2. [Don't be a richard, no one likes a richard. Sorry Richard.](https://github.com/williamspiro/HubSpot-Developer-Extension/blob/contributors-update/CODE_OF_CONDUCT.md)
 3. [We denote easy/small issues that are good for beginners. but feel free to tackle any you see in issues or add a feature you want](https://github.com/williamspiro/HubSpot-Developer-Extension/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22)
+4. Tell others about the Extension, Rate and review the extension, the more people know of it the more people who will want to get involved, the more and faster updates will come. If you blog about the extension let us know!
 
 If you have any questions you can find @JonMcLaren @williamspiro and @GonzaloTorreras in our channel in the HubSpot Design & Developer Slack https://hubspotdev.slack.com/messages/CBBAW6Z3R
+
+## In the News
+[AJ Laporte of WSOL wrote a great feature breakdown article](https://blog.wsol.com/the-unofficial-hubspot-developer-extension-for-google-chrome)
+
+[Jim of Spin Group wrote an article talking about what the extension is and why it exists.](https://www.spingroup.com/work/2018/6/20/hubspot-developer-extension-co-creation)
 
 [Privacy Policy](https://github.com/williamspiro/HubSpot-Developer-Extension/wiki/Privacy-Policy)
