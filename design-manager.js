@@ -1,5 +1,14 @@
 $(document).ready(function() {
     /*This script runs once the design manager page loads.*/
+
+    function trackClick(eventName){/*Analytics*/
+        chrome.runtime.sendMessage({trackClick: eventName}, function(response) {
+          //console.log(response.farewell);
+        });
+    }
+
+
+
     var tabUrl = window.location.protocol + "//" + window.location.host + "/" + window.location.pathname;
     /*getSelected might be deprecated need to review*/
     var currentScreen = "";
@@ -22,10 +31,55 @@ $(document).ready(function() {
           }
           /*Next steps - add error handling here when polling fails*/
         })();
-      };
+    };
 
     function setTitle(siteName){
-        document.title = siteName.replace("www.","")+"|DM-HS";
+        var portal = siteName.replace("www.","");
+
+        if(currentScreen == "design-manager"){
+            //document.title = "🎨DM|"+portal+"|HS";
+            document.title = "DM|"+portal+"|HS";
+        }
+        else if(currentScreen == "content-staging"){
+            //document.title = "🎭CS|"+portal+"|HS";
+            document.title = "CS|"+portal+"|HS";
+        }
+        else if(currentScreen == "dashboard"){
+            //document.title = "📊Da|"+portal+"|HS";
+            document.title = "Da|"+portal+"|HS";
+        }
+        else if(currentScreen == "website-pages"){
+            //document.title = "📑WP|"+portal+"|HS";
+            document.title = "WP|"+portal+"|HS";
+        }
+        else if(currentScreen == "landing-pages"){
+            //document.title = "📄LP|"+portal+"|HS";
+            document.title = "LP|"+portal+"|HS";
+        }
+        else if(currentScreen == "file-manager"){
+            //document.title = "📁FM|"+portal+"|HS";
+            document.title = "FM|"+portal+"|HS";
+        }
+        else if(currentScreen == "hubdb"){
+            //document.title = "📦DB|"+portal+"|HS";
+            document.title = "DB|"+portal+"|HS";
+        }
+        else if(currentScreen == "settings"){
+            //document.title = "⚙️Se|"+portal+"|HS";
+            document.title = "Se|"+portal+"|HS";
+        }
+        else if(currentScreen == "navigation-settings"){
+            //document.title = "🗺️Na|"+portal+"|HS";
+            document.title = "Na|"+portal+"|HS";
+        }
+        else if(currentScreen == "blog"){
+            //document.title = "📰Bl|"+portal+"|HS";
+            document.title = "Bl|"+portal+"|HS";
+        }
+        else if(currentScreen =="url-mappings"){
+            //document.title = "🔀UM|"+portal+"|HS";
+            document.title = "UM|"+portal+"|HS";   
+        }
     }
     //console.log("Current URL: ",tabUrl);
     const appUrl = ~tabUrl.indexOf("app.hubspotqa.com") ? "app.hubspotqa.com" : "app.hubspot.com";
@@ -36,9 +90,6 @@ $(document).ready(function() {
         ], function(items) {
             if (items.uitweaks) {
                 $("html").addClass("ext-ui-tweaks");
-                
-
-
             }
         });
         console.log("DevMenu:", devMenu);
@@ -58,9 +109,40 @@ $(document).ready(function() {
                     $("body").addClass("ext-dark-theme");
                 }
             });
-
-
         }
+        if (~tabUrl.indexOf("/staging/")) {
+            currentScreen = 'content-staging';
+        }
+        if (~tabUrl.indexOf("/reports-dashboard/")) {
+            currentScreen = 'dashboard';
+        }
+        if(~tabUrl.indexOf("/pages/")){
+            if(~tabUrl.indexOf("/site/")){
+                currentScreen = "website-pages";
+            }
+            else if(~tabUrl.indexOf("/landing/")){
+                currentScreen = "landing-pages";
+            }
+        }
+        if (~tabUrl.indexOf("/file-manager-beta/")) {
+            currentScreen = "file-manager";
+        }
+        if (~tabUrl.indexOf("/hubdb/")) {
+            currentScreen = "hubdb";
+        }
+        if (~tabUrl.indexOf("/settings/")) {
+            currentScreen = 'settings';
+            if (~tabUrl.indexOf("/navigation")) {
+                currentScreen = "navigation-settings";
+            }
+        }
+        if(~tabUrl.indexOf("/blog/")){
+           currentScreen = "blog"; 
+        }
+        if(~tabUrl.indexOf("/url-mappings")){
+           currentScreen = "url-mappings"; 
+        }
+        
 
 
 
@@ -68,8 +150,10 @@ $(document).ready(function() {
             'uitweaks'
         ], function(items) {
             if (items.uitweaks) {
+
                 
                 if(currentScreen == "design-manager"){
+
                     waitForEl(".account-name", function() {
                         setTitle($(".account-name").text());
                     });
@@ -78,6 +162,7 @@ $(document).ready(function() {
                 function generateDevMenuItem(buttonLabel, hubId, url) {
                     /*expects button label string, hubId string, url string.*/
                     var link = url.replace("_HUB_ID_", hubId);
+
                     
                     var html = "<li role='none'>";
                     html += "<a role='menuitem' data-tracking='click hover' id='nav-secondary-design-tools-beta' class='navSecondaryLink' href='" + link + "' >";
@@ -85,6 +170,7 @@ $(document).ready(function() {
                     html += "</a>";
                     html += "</li>";
                     return html;
+
 
                     //console.log("Nav Item Generated: ", buttonLabel);
 
@@ -109,7 +195,6 @@ $(document).ready(function() {
 
 
                 function generateDevMenu(hubId) {
-
                     
                     var html = '<li id="ext-dev-menu-wrapper" role="none" class="expandable ">';
                     html += '<a href="#" id="nav-primary-dev-branch" aria-haspopup="true" aria-expanded="false" class="primary-link" data-tracking="click hover" role-menu="menuitem">';
@@ -119,6 +204,44 @@ $(document).ready(function() {
                     html += '<div id="ext-dev-menu" aria-label="Developer" role="menu" class="secondary-nav expansion" style="min-height: 0px">';
                     html += '<ul role="none">';
                     
+
+                    html += generateAllMenuItems(version, hubId);
+
+                        
+                        html += '</ul>';
+                        html += '</div>';
+                        html += '</li>';
+
+                        $("#hs-nav-v4 .logo").after(html);
+
+                        $("#ext-dev-menu-wrapper > a").click(function(e) {
+                            e.preventDefault();
+                            //console.log("dev menu clicked!");
+                            /*$("#ext-dev-menu").toggleClass("expansion");*/
+
+                            //$("#ext-dev-menu").toggle();
+
+                            var isExpanded = $(this).attr('aria-expanded');
+
+                            if (isExpanded === 'true') {
+                                $(this).attr('aria-expanded', 'false');
+                                trackClick("devMenu-Closed");
+                            } else {
+                                $(this).attr('aria-expanded', 'true');
+                                trackClick("devMenu-Opened");
+                            }
+                            $(this).parent("li").toggleClass("active");
+                        });
+
+                        $("#ext-dev-menu .navSecondaryLink, #ext-dev-menu .devMenuLink").click(function(){
+                            console.log("track click");
+                            var linkName = "devMenu:"+$(this).data("ext-track");
+                            console.log(linkName);
+                            trackClick(linkName);
+                        });
+              
+                
+
 
                     html += generateAllMenuItems(hubId);
 
@@ -178,6 +301,7 @@ $(document).ready(function() {
 
     } else if (~tabUrl.indexOf("designers.hubspot.com/docs/")) {
         //console.log("Viewing HubSpot Documentation");
+        currentScreen="docs";
 
 
     } else {
@@ -191,4 +315,3 @@ $(document).ready(function() {
 
 
 });
-
