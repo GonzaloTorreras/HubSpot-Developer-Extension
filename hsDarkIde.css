@@ -76,6 +76,7 @@ body.design-manager.ext-dark-theme button.uiButton.private-button.private-button
 body.design-manager.ext-dark-theme .HorizontalScrollContainer__ScrollBar-cSRRR{
     height: .3rem;
     bottom: 0.3rem;
+    background-color: #3E8CBC;
 }
 body.design-manager.ext-dark-theme .welcome-container{
     background-color: #202d3a;
