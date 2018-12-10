@@ -2,11 +2,10 @@
 
 
 /*
- Use "!important" carefully,
- probably if it's there is because
+ Use "!important" if necessary this can
+ prevent HS from overriding it.
+ When you see it probably it's there is because
  some HS default CSS is using it too.
- (If you notice that thats not necesary
- then please, remove :) ).
  */
 
 
