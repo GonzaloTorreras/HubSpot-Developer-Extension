@@ -71,12 +71,29 @@ body.design-manager.ext-dark-theme button.uiButton.private-button.private-button
 }
 
 */
-/*tab bar scrollbar*/
-body.design-manager.ext-dark-theme .HorizontalScrollContainer__ScrollBar-cSRRR{
+/*tab bar scrollbar
+* Recommend replacing this with the universal height adjustment in pull-request : dm-horizontal-scroll-height-update
+*/
+/* body.design-manager.ext-dark-theme .HorizontalScrollContainer__ScrollBar-cSRRR{
     height: .3rem;
     bottom: 0.3rem;
     background-color: #3E8CBC;
+} */  
+
+/* Dark Theme Scroll Bar Coloring */
+body.design-manager.ext-dark-theme .HorizontalScrollContainer__ScrollBar-cSRRR {
+    height: 10px;
+    bottom: 10px;
+    background-color: #cbd6e2;
+    transition: 200ms all;
 }
+
+body.design-manager.ext-dark-theme .HorizontalScrollContainer__ScrollBar-cSRRR:hover, 
+body.design-manager.ext-dark-theme .HorizontalScrollContainer__ScrollBar-cSRRR:active {
+    background-color: rgb(250, 120, 88); /* hover for easier idendification of active state */
+}
+/* End of Dark Scroll Bar */
+
 body.design-manager.ext-dark-theme .welcome-container{
     background-color: #202d3a;
 }
