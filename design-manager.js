@@ -92,7 +92,7 @@ $(document).ready(function() {
                 $("html").addClass("ext-ui-tweaks");
             }
         });
-        console.log("DevMenu:", devMenu);
+        //console.log("DevMenu:", devMenu);
         if (~tabUrl.indexOf("/design-manager/")) {
             //console.log("Old Design Manager is active");
             currentScreen = 'design-manager';
@@ -205,14 +205,14 @@ $(document).ready(function() {
                     html += '<ul role="none">';
                     
 
-                    html += generateAllMenuItems(version, hubId);
+                    html += generateAllMenuItems(hubId);
 
                         
                         html += '</ul>';
                         html += '</div>';
                         html += '</li>';
 
-                        $("#hs-nav-v4 .logo").after(html);
+                        
 
                         $("#ext-dev-menu-wrapper > a").click(function(e) {
                             e.preventDefault();
@@ -243,11 +243,7 @@ $(document).ready(function() {
                 
 
 
-                    html += generateAllMenuItems(hubId);
-
-                    html += '</ul>';
-                    html += '</div>';
-                    html += '</li>';
+                   
 
                     $("#hs-nav-v4 .logo").after(html);
 
