@@ -30,6 +30,43 @@ body.hubspot .simple-menus-menu-tree .simple-menus-menu-item-label{
     width:100%;
 }
 
+
+/* ******* 
+* Horizontal Tab Scrollbar -- Height Modification 
+* Kind of a convoluted height modification to the base elements surrounding the scroll.
+* Also looks like some injected styles might be impacting this. 
+* Possibly will need to address this post-hoc.
+**********/
+html.ext-ui-tweaks .HorizontalScrollContainer__ScrollBar-cSRRR {
+    height: 10px; /* increased from something like 3px */
+    bottom: 10px;
+    border-radius: 7px;
+    cursor: move; /* cursor state for easier idendification of active state */
+    transition: 150ms all;
+}
+
+html.ext-ui-tweaks .HorizontalScrollContainer__ScrollBar-cSRRR:hover, 
+html.ext-ui-tweaks .HorizontalScrollContainer__ScrollBar-cSRRR:active {
+    background-color: #7e9ab5; /* hover for easier idendification of active state */
+}
+
+html.ext-ui-tweaks .tabs-container, html.ext-ui-tweaks .file-tabs > div {
+    height: 40px;
+}
+
+
+html.ext-ui-tweaks .file-tabs.private-tabs .file-tab {
+    height: auto;  /* removed defined height of 40px to allow for the scrollbar to live within the padding area of the tab*/
+    padding-bottom: 12px;
+}
+
+html.ext-ui-tweaks .private-button--transparent.private-button--default {
+    padding: 11px !important;
+}
+
+/* End of Horizontal Tab Scrollbar -- Height Modification */
+
+
 /* End UI Tweaks */
 
 
@@ -71,14 +108,7 @@ body.design-manager.ext-dark-theme button.uiButton.private-button.private-button
 }
 
 */
-/*tab bar scrollbar
-* Recommend replacing this with the universal height adjustment in pull-request : dm-horizontal-scroll-height-update
-*/
-/* body.design-manager.ext-dark-theme .HorizontalScrollContainer__ScrollBar-cSRRR{
-    height: .3rem;
-    bottom: 0.3rem;
-    background-color: #3E8CBC;
-} */  
+
 
 /* Dark Theme Scroll Bar Coloring */
 body.design-manager.ext-dark-theme .HorizontalScrollContainer__ScrollBar-cSRRR {
@@ -88,11 +118,13 @@ body.design-manager.ext-dark-theme .HorizontalScrollContainer__ScrollBar-cSRRR {
     transition: 200ms all;
 }
 
+
 body.design-manager.ext-dark-theme .HorizontalScrollContainer__ScrollBar-cSRRR:hover, 
 body.design-manager.ext-dark-theme .HorizontalScrollContainer__ScrollBar-cSRRR:active {
     background-color: rgb(250, 120, 88); /* hover for easier idendification of active state */
 }
 /* End of Dark Scroll Bar */
+
 
 body.design-manager.ext-dark-theme .welcome-container{
     background-color: #202d3a;

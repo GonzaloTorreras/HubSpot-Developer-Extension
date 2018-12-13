@@ -33,6 +33,8 @@ We claim no legal rights to the HubSpot name/brand. We have posed the question o
 
 If you have any questions you can find @JonMcLaren @williamspiro and @GonzaloTorreras in our channel in the HubSpot Design & Developer Slack https://hubspotdev.slack.com/messages/CBBAW6Z3R
 
+[Huge thanks to everyone who has contributed to this project!](https://github.com/williamspiro/HubSpot-Developer-Extension/graphs/contributors)
+
 ## In the News
 [AJ Laporte of WSOL wrote a great feature breakdown article](https://blog.wsol.com/the-unofficial-hubspot-developer-extension-for-google-chrome)
 
