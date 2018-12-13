@@ -84,7 +84,7 @@ body.design-manager.ext-dark-theme button.uiButton.private-button.private-button
 body.design-manager.ext-dark-theme .HorizontalScrollContainer__ScrollBar-cSRRR {
     height: 10px;
     bottom: 10px;
-    background-color: #cbd6e2;
+    background: rgba(var(--rgb-details-color), .8);
     transition: 200ms all;
 }
 
