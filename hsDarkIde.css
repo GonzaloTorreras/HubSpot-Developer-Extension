@@ -1,6 +1,3 @@
-
-
-
 /*
  Use "!important" if necessary this can
  prevent HS from overriding it.
@@ -10,24 +7,34 @@
 
 
 /* UI Tweaks */
+
+
 /*Fixing Mac text cursor issue in the code editor by inverting the cursor for dark code editor themes.*/
 
-html.mac.ext-ui-tweaks .cm-s-hubspot-canvas-dark .CodeMirror-lines, html.mac .cm-s-solarized .CodeMirror-lines{
-  cursor: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAACaUlEQVRYR+1WPW8TQRCd3bVPIRcLsA0oeO37jIAcUEEZEAVVKir+AfwN/w34B1RUqSgQpIQKuADK7X3EZyLABJBzITp7d9FGGJRISCnunMZTrvZm3r15M28RnHCgSX3P87TBYFC9AAB7tdo4CALuui6ZHw4rnwGg2WyOfN/Pi8b7DwCl9Xe93jdV4FK7TTMp93WE5j72eqk6u9puN/w03SkNgH3R7ghNWFhincVszTWMG0GSvHZMZ1UgkeEcR+GncKs0AJdbrcYI40XA+BwgdDqIoqeuZd0DKX+CEF+rQmx/6PcPGCoyDmkgy7J5jPF54NxlcbzmmOYqEBIIIb7our5XqgYAQIEhjuPUEefLm1H0fMmy7khCNhhjqvccAGSRf69y/WXgT2JMKT2jYW2ZJWzdMZyVXOQbaZr+AABRdPH/AqiiqhduhS/tjn1rJEf+NAGoFjTkSF5nCXvmGM5dVEVvGGNKfKoFhcehFnjgabvGbiuO43BSyTRNeyFZ6PtQ/BI62gJEKZ0jhJgViVeCJHzkGvbDMRLrnPM4TdP90kU4YaAq8c3NJHyyZNj3R0i8mhYDipGT1QAA4FardVbDmpqCF3bHvp2L3O/3+9+nMYYHi8iyrAbi6NpkCiSRb6MomkxBeYtI2fFwONQBYDFJEr/b7T7udrsPDMPwAGC7Vqtlpa5iZUbv03SghKDUL7GsI4F21DSosyuUNks1I2XHWBOWckIhEEfAhQSCMZZEOaIo2449Suu/NK2Jx+MKJyQTQuQYY41wrotKZXwqzwelPkgK37HHTHjUDY/5WXHXZgBmDMwYmDEwY+A3VAEpMBUlNjAAAAAASUVORK5CYII=) 6 10,url("chrome-extension://__MSG_@@extension_id__/mac-text-cursor.svg"),url("chrome-extension://__MSG_@@extension_id__/mac-text-cursor.png"),text!important;
+html.mac.ext-ui-tweaks .cm-s-hubspot-canvas-dark .CodeMirror-lines,
+html.mac .cm-s-solarized .CodeMirror-lines {
+    cursor: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAACaUlEQVRYR+1WPW8TQRCd3bVPIRcLsA0oeO37jIAcUEEZEAVVKir+AfwN/w34B1RUqSgQpIQKuADK7X3EZyLABJBzITp7d9FGGJRISCnunMZTrvZm3r15M28RnHCgSX3P87TBYFC9AAB7tdo4CALuui6ZHw4rnwGg2WyOfN/Pi8b7DwCl9Xe93jdV4FK7TTMp93WE5j72eqk6u9puN/w03SkNgH3R7ghNWFhincVszTWMG0GSvHZMZ1UgkeEcR+GncKs0AJdbrcYI40XA+BwgdDqIoqeuZd0DKX+CEF+rQmx/6PcPGCoyDmkgy7J5jPF54NxlcbzmmOYqEBIIIb7our5XqgYAQIEhjuPUEefLm1H0fMmy7khCNhhjqvccAGSRf69y/WXgT2JMKT2jYW2ZJWzdMZyVXOQbaZr+AABRdPH/AqiiqhduhS/tjn1rJEf+NAGoFjTkSF5nCXvmGM5dVEVvGGNKfKoFhcehFnjgabvGbiuO43BSyTRNeyFZ6PtQ/BI62gJEKZ0jhJgViVeCJHzkGvbDMRLrnPM4TdP90kU4YaAq8c3NJHyyZNj3R0i8mhYDipGT1QAA4FardVbDmpqCF3bHvp2L3O/3+9+nMYYHi8iyrAbi6NpkCiSRb6MomkxBeYtI2fFwONQBYDFJEr/b7T7udrsPDMPwAGC7Vqtlpa5iZUbv03SghKDUL7GsI4F21DSosyuUNks1I2XHWBOWckIhEEfAhQSCMZZEOaIo2449Suu/NK2Jx+MKJyQTQuQYY41wrotKZXwqzwelPkgK37HHTHjUDY/5WXHXZgBmDMwYmDEwY+A3VAEpMBUlNjAAAAAASUVORK5CYII=) 6 10, url("chrome-extension://__MSG_@@extension_id__/mac-text-cursor.svg"), url("chrome-extension://__MSG_@@extension_id__/mac-text-cursor.png"), text!important;
 }
+
+
 /* HubSpot's got an issue with the horizontal tab scrollbar appearing over the navigation menu the tweak below fixes that. */
-html.ext-ui-tweaks .HorizontalScrollContainer__ScrollBar-cSRRR{
-    z-index:500;
+
+html.ext-ui-tweaks .HorizontalScrollContainer__ScrollBar-cSRRR {
+    z-index: 500;
 }
+
 
 /*background color for developer menu is slightly different to indicate it's added by ext*/
+
 li#ext-dev-menu-wrapper {
-    background: rgba(255,255,255,.05);
+    background: rgba(255, 255, 255, .05);
 }
 
+
 /*fix for menu labels in setting pages */
-body.hubspot .simple-menus-menu-tree .simple-menus-menu-item-label{
-    width:100%;
+
+body.hubspot .simple-menus-menu-tree .simple-menus-menu-item-label {
+    width: 100%;
 }
 
 
@@ -37,26 +44,31 @@ body.hubspot .simple-menus-menu-tree .simple-menus-menu-item-label{
 * Also looks like some injected styles might be impacting this. 
 * Possibly will need to address this post-hoc.
 **********/
+
 html.ext-ui-tweaks .HorizontalScrollContainer__ScrollBar-cSRRR {
-    height: 10px; /* increased from something like 3px */
+    height: 10px;
+    /* increased from something like 3px */
     bottom: 10px;
     border-radius: 7px;
-    cursor: move; /* cursor state for easier idendification of active state */
+    cursor: move;
+    /* cursor state for easier idendification of active state */
     transition: 150ms all;
 }
 
-html.ext-ui-tweaks .HorizontalScrollContainer__ScrollBar-cSRRR:hover, 
+html.ext-ui-tweaks .HorizontalScrollContainer__ScrollBar-cSRRR:hover,
 html.ext-ui-tweaks .HorizontalScrollContainer__ScrollBar-cSRRR:active {
-    background-color: #7e9ab5; /* hover for easier idendification of active state */
+    background-color: #7e9ab5;
+    /* hover for easier idendification of active state */
 }
 
-html.ext-ui-tweaks .tabs-container, html.ext-ui-tweaks .file-tabs > div {
+html.ext-ui-tweaks .tabs-container,
+html.ext-ui-tweaks .file-tabs>div {
     height: 40px;
 }
 
-
 html.ext-ui-tweaks .file-tabs.private-tabs .file-tab {
-    height: auto;  /* removed defined height of 40px to allow for the scrollbar to live within the padding area of the tab*/
+    height: auto;
+    /* removed defined height of 40px to allow for the scrollbar to live within the padding area of the tab*/
     padding-bottom: 12px;
 }
 
@@ -64,14 +76,16 @@ html.ext-ui-tweaks .private-button--transparent.private-button--default {
     padding: 11px !important;
 }
 
+
 /* End of Horizontal Tab Scrollbar -- Height Modification */
 
 
 /* End UI Tweaks */
 
 
-
 /* VARIABLES */
+
+
 /*
  The idea behind is offer it as a base to be easily editable 
  -so anyone can do a new theme EZ. Or even do it 
@@ -82,21 +96,22 @@ html.ext-ui-tweaks .private-button--transparent.private-button--default {
  the cases
 */
 
-
-body.design-manager.ext-dark-theme{
-	--body-font-size: 15px; /** force bigger size for code */
-	--body-color: #eaf0f6;
-	--body-color-hover: rgba(255, 255, 255, 0.85); 
-	--body-background: linear-gradient(45deg, #33475b, #2d3e50);
-	--body-background-hover: rgba(203, 214, 226, 0.15);
-	
-	--border-color: transparent;
-	
-	--rgb-details-color: 63, 180, 249; /** used on icons, links and several details. Use only RGB format, RGBA is used on different classes. */
-
+body.design-manager.ext-dark-theme {
+    --body-font-size: 15px;
+    /** force bigger size for code */
+    --body-color: #eaf0f6;
+    --body-color-hover: rgba(255, 255, 255, 0.85);
+    --body-background: linear-gradient(45deg, #33475b, #2d3e50);
+    --body-background-hover: rgba(203, 214, 226, 0.15);
+    --border-color: transparent;
+    --rgb-details-color: 63, 180, 249;
+    /** used on icons, links and several details. Use only RGB format, RGBA is used on different classes. */
 }
 
+
 /*blog content module buttons*/
+
+
 /*
 body.design-manager.ext-dark-theme button.uiButton.private-button.private-button--xs.private-button--tertiary-light.private-button-select-group__option {
     color: rgba(255, 255, 255, 0.5) !important;
@@ -111,6 +126,7 @@ body.design-manager.ext-dark-theme button.uiButton.private-button.private-button
 
 
 /* Dark Theme Scroll Bar Coloring */
+
 body.design-manager.ext-dark-theme .HorizontalScrollContainer__ScrollBar-cSRRR {
     height: 10px;
     bottom: 10px;
@@ -118,69 +134,73 @@ body.design-manager.ext-dark-theme .HorizontalScrollContainer__ScrollBar-cSRRR {
     transition: 200ms all;
 }
 
-
-body.design-manager.ext-dark-theme .HorizontalScrollContainer__ScrollBar-cSRRR:hover, 
+body.design-manager.ext-dark-theme .HorizontalScrollContainer__ScrollBar-cSRRR:hover,
 body.design-manager.ext-dark-theme .HorizontalScrollContainer__ScrollBar-cSRRR:active {
-    background-color: rgb(250, 120, 88); /* hover for easier idendification of active state */
+    background-color: rgb(250, 120, 88);
+    /* hover for easier idendification of active state */
 }
+
+
 /* End of Dark Scroll Bar */
 
-
-body.design-manager.ext-dark-theme .welcome-container{
+body.design-manager.ext-dark-theme .welcome-container {
     background-color: #202d3a;
 }
+
+
 /*vertical scrollbars*/
+
 body.design-manager.ext-dark-theme ::-webkit-scrollbar,
 body.design-manager.ext-dark-theme ::-webkit-scrollbar {
-    width:9px;
+    width: 9px;
 }
 
 body.design-manager.ext-dark-theme ::-webkit-scrollbar-track,
 body.design-manager.ext-dark-theme ::-webkit-scrollbar-track {
     /*-webkit-border-radius:5px;*/
     /*border-radius:5px;*/
-    background:rgba(var(--rgb-details-color), .1);
+    background: rgba(var(--rgb-details-color), .1);
 }
+
 body.design-manager.ext-dark-theme ::-webkit-scrollbar-track {
-    background:#2d3e4e;
+    background: #2d3e4e;
 }
 
 body.design-manager.ext-dark-theme ::-webkit-scrollbar-thumb,
 body.design-manager.ext-dark-theme ::-webkit-scrollbar-thumb {
-    -webkit-border-radius:5px;
-    border-radius:5px;
-    background:rgba(var(--rgb-details-color), .4);
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    background: rgba(var(--rgb-details-color), .4);
 }
 
 body.design-manager.ext-dark-theme ::-webkit-scrollbar-thumb:hover,
 body.design-manager.ext-dark-theme ::-webkit-scrollbar-thumb:hover {
-    background:rgba(var(--rgb-details-color), .8);
+    background: rgba(var(--rgb-details-color), .8);
 }
 
 body.design-manager.ext-dark-theme ::-webkit-scrollbar-thumb:window-inactive,
 body.design-manager.ext-dark-theme ::-webkit-scrollbar-thumb:window-inactive {
-    background:rgba(var(--rgb-details-color), .2);
+    background: rgba(var(--rgb-details-color), .2);
 }
+
 
 /** force font size only on default value of 12, if you change in the HS dev setting it won't apply */
+
 body.design-manager.ext-dark-theme .CodeMirror.CodeMirror-overlayscroll[style*="font-size: 12px"] {
     font-size: var(--body-font-size) !important;
-
 }
+
 body.design-manager.ext-dark-theme .CodeMirror-overlayscroll-vertical div,
 body.design-manager.ext-dark-theme .CodeMirror-overlayscroll-horizontal div {
-    background:rgba(63, 180, 249, 0.8)!important;
-    opacity:.5 !important;
-	transition: opacity .5s;
+    background: rgba(63, 180, 249, 0.8)!important;
+    opacity: .5 !important;
+    transition: opacity .5s;
 }
 
 body.design-manager.ext-dark-theme .CodeMirror-overlayscroll-vertical:hover div,
 body.design-manager.ext-dark-theme .CodeMirror-overlayscroll-horizontal:hover div {
-	opacity:1 !important;
+    opacity: 1 !important;
 }
-
-
-
 
 body.hubspot.design-manager.ext-dark-theme,
 body.design-manager.ext-dark-theme .editor-toolbar,
@@ -219,11 +239,9 @@ body.design-manager.ext-dark-theme .HorizontalScrollContainer__ScrollBar-efpkTc 
     cursor: e-resize;
 }
 
-body.design-manager.ext-dark-theme .namespaced-hack-section--vertical{
+body.design-manager.ext-dark-theme .namespaced-hack-section--vertical {
     background-size: 100% .2em;
 }
-
-
 
 body.design-manager.ext-dark-theme .UIExpandableSection__ExpandableHeader-gjMdOM,
 body.design-manager.ext-dark-theme .cFBEqa {
@@ -249,7 +267,6 @@ body.design-manager.ext-dark-theme .layout-tree .widget-icon {
 
 /*body.design-manager.ext-dark-theme .private-link:hover*/
 
-
 body.design-manager.ext-dark-theme .private-expanding-text-input--inline.private-expanding-text-input--focused .private-expanding-text-input__input,
 body.design-manager.ext-dark-theme .private-expanding-text-input--inline.private-expanding-text-input--hovered .private-expanding-text-input__input,
 body.design-manager.ext-dark-theme .private-flex.dm-tool__breadcrumbs.field-edit-breadcrumbs,
@@ -265,7 +282,6 @@ body.design-manager.ext-dark-theme .private-form__control {
     background: rgba(255, 255, 255, .1);
     background-color: rgba(255, 255, 255, .1);
 }
-
 
 body.design-manager.ext-dark-theme .private-search-control__wrapper,
 body.design-manager.ext-dark-theme .private-button.private-form__control,
@@ -288,7 +304,7 @@ body.design-manager.ext-dark-theme .private-dropdown--list .private-list__item>b
 body.design-manager.ext-dark-theme .private-typeahead-results .private-typeahead-result--highlighted,
 body.design-manager.ext-dark-theme .private-typeahead-results .private-typeahead-result--disabled .private-typeahead-result-label,
 body.design-manager.ext-dark-theme .result-item.result-item--is--active,
-body.design-manager.ext-dark-theme .result-item:hover{
+body.design-manager.ext-dark-theme .result-item:hover {
     background: rgba(255, 255, 255, .1)!important;
     color: #d6cbcb!important;
 }
@@ -310,7 +326,7 @@ body.design-manager.ext-dark-theme .layout-tree .widget-width {
 }
 
 body.design-manager.ext-dark-theme .widget-toolbox-list-item .widget-icon__mask,
-body.design-manager.ext-dark-theme .layout-tree .widget-icon__mask{
+body.design-manager.ext-dark-theme .layout-tree .widget-icon__mask {
     background: #d6cbcb!important;
 }
 
@@ -319,22 +335,23 @@ body.design-manager.ext-dark-theme .private-button--primary {
     color: #fff!important;
 }
 
-
-body.design-manager.ext-dark-theme .widget-toolbox-list-item .widget-object:not(.is--disabled) span.widget-icon__mask[style*="background-color: rgb(51, 71, 91)"]{
-	background-color: rgb(var(--rgb-details-color)) !important;
+body.design-manager.ext-dark-theme .widget-toolbox-list-item .widget-object:not(.is--disabled) span.widget-icon__mask[style*="background-color: rgb(51, 71, 91)"] {
+    background-color: rgb(var(--rgb-details-color)) !important;
 }
 
-body.design-manager.ext-dark-theme .widget-toolbox-list-item .widget-object:not(.is--disabled) span.private-icon.private-icon__low{
-	color: rgb(var(--rgb-details-color)) !important;
+body.design-manager.ext-dark-theme .widget-toolbox-list-item .widget-object:not(.is--disabled) span.private-icon.private-icon__low {
+    color: rgb(var(--rgb-details-color)) !important;
 }
+
+
 /*publish button*/
+
 body.design-manager.ext-dark-theme .private-button--active.private-button--primary {
     color: #fff!important;
 }
 
-body.design-manager.ext-dark-theme .private-tabs .private-tab--active .private-tab__indicator{
-	color: rgb( var(--rgb-details-color) );
-	
+body.design-manager.ext-dark-theme .private-tabs .private-tab--active .private-tab__indicator {
+    color: rgb( var(--rgb-details-color));
 }
 
 
@@ -347,13 +364,13 @@ body.design-manager.ext-dark-theme .cm-s-hubspot-canvas-light,
 body.design-manager.ext-dark-theme .cm-s-hubspot-canvas-light .CodeMirror-gutters {
     background: rgba(255, 255, 255, .1) !important;
     color: #d6cbcb !important;
-	transition: .3s;
+    transition: .3s;
 }
 
 body.design-manager.ext-dark-theme .private-button--tertiary-light:not(.disabled).private-button--active,
-body.design-manager.ext-dark-theme .private-button--tertiary-light:not(.disabled):hover{
-	background: rgb(var(--rgb-details-color)) !important;
-	color: #fff !important;
+body.design-manager.ext-dark-theme .private-button--tertiary-light:not(.disabled):hover {
+    background: rgb(var(--rgb-details-color)) !important;
+    color: #fff !important;
 }
 
 body.design-manager.ext-dark-theme .cm-s-hubspot-canvas-light {
@@ -369,8 +386,6 @@ body.design-manager.ext-dark-theme .cm-s-hubspot-canvas-light .CodeMirror-cursor
     border-left-color: #d6cbcb !important;
 }
 
-
-
 body.design-manager.ext-dark-theme .widget-css-selector .is--text--help,
 body.design-manager.ext-dark-theme span.private-icon.private-icon__high {
     color: rgba( var(--rgb-details-color), .8) !important;
@@ -380,16 +395,20 @@ body.design-manager.ext-dark-theme span.private-icon.private-icon__high {
 /** blue stuff **/
 
 body.design-manager.ext-dark-theme .file-tabs.private-tabs .file-tab.is--active {
-    
-    color: rgb( var(--rgb-details-color) ) !important;
-    background:#2d3e50;
+    color: rgb( var(--rgb-details-color)) !important;
+    background: #2d3e50;
 }
-body.design-manager.ext-dark-theme .file-tabs.private-tabs .file-tab.is--active .tab-title-label{text-decoration:underline;}
-body.design-manager.ext-dark-theme .file-tabs.private-tabs .file-tab.is--active .has-buffered-changes:after{text-decoration:none;}
+
+body.design-manager.ext-dark-theme .file-tabs.private-tabs .file-tab.is--active .tab-title-label {
+    text-decoration: underline;
+}
+
+body.design-manager.ext-dark-theme .file-tabs.private-tabs .file-tab.is--active .has-buffered-changes:after {
+    text-decoration: none;
+}
 
 body.design-manager.ext-dark-theme .widget-icon__mask[style*="background-color: rgb(81, 111, 144)"],
 body.design-manager.ext-dark-theme .widget-icon__mask[style*="background-color: rgb(51, 71, 91)"],
-
 body.design-manager.ext-dark-theme .layout-tree .widget.section_delimiter,
 body.design-manager.ext-dark-theme .private-button--primary {
     background-color: rgba( var(--rgb-details-color), .8) !important;
@@ -414,13 +433,11 @@ body.design-manager.ext-dark-theme .private-folder-nav .private-nav .nav-item-li
 body.design-manager.ext-dark-theme .private-button__link:hover,
 body.design-manager.ext-dark-theme .private-link:hover,
 body.design-manager.ext-dark-theme .private-link .private-icon:not(.private-icon-circle__inner),
-
 body.design-manager.ext-dark-theme .is--text--help,
 body.design-manager.ext-dark-theme .private-button--secondary,
 body.design-manager.ext-dark-theme .layout-tree .widget-width {
     color: rgba( var(--rgb-details-color), 1) !important;
 }
-
 
 body.design-manager.ext-dark-theme .layout-tree .widget.is--widget-selected,
 body.design-manager.ext-dark-theme .layout-tree .widget.section_delimiter,
@@ -429,15 +446,9 @@ body.design-manager.ext-dark-theme .private-button--secondary {
     border-color: rgba( var(--rgb-details-color), 1) !important;
 }
 
-
-
-
-
 body.design-manager.ext-dark-theme .fjXxQD {
     background: transparent;
 }
-
-
 
 
 /** widget tree backgrounds **/
@@ -450,27 +461,27 @@ body.design-manager.ext-dark-theme .layout-tree .widget {
 
 /* flex col */
 
-body.design-manager.ext-dark-theme.layout-editor--is_active .layout-tree .widget.widget_container.is--responsive{	
-	
-	/* temporal SVG */
-	background-image: url("data:image/svg+xml,%3Csvg width='40' height='1' viewBox='0 0 40 1' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h20v1H0z' fill='%23ffffff' fill-opacity='0.02' fill-rule='evenodd'/%3E%3C/svg%3E");
-
+body.design-manager.ext-dark-theme.layout-editor--is_active .layout-tree .widget.widget_container.is--responsive {
+    /* temporal SVG */
+    background-image: url("data:image/svg+xml,%3Csvg width='40' height='1' viewBox='0 0 40 1' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h20v1H0z' fill='%23ffffff' fill-opacity='0.02' fill-rule='evenodd'/%3E%3C/svg%3E");
 }
+
 
 /* global group */
+
 body.design-manager.ext-dark-theme.layout-editor--is_active .layout-tree .widget.global_group,
-body.design-manager.ext-dark-theme.layout-editor--is_active .layout-tree .widget.global_group.is--widget-selected{
-	border-color: rgba(255,122,89, 1) !important;
+body.design-manager.ext-dark-theme.layout-editor--is_active .layout-tree .widget.global_group.is--widget-selected {
+    border-color: rgba(255, 122, 89, 1) !important;
 }
-body.design-manager.ext-dark-theme.layout-editor--is_active .layout-tree .widget.global_group.is--widget-selected{
-	box-shadow: inset 0 0 0 1px rgba(255,122,89, 1);
+
+body.design-manager.ext-dark-theme.layout-editor--is_active .layout-tree .widget.global_group.is--widget-selected {
+    box-shadow: inset 0 0 0 1px rgba(255, 122, 89, 1);
 }
 
 
-body.design-manager.ext-dark-theme .layout-tree .widget.is--widget-selected{
+/*body.design-manager.ext-dark-theme .layout-tree .widget.is--widget-selected{
 	
-}
-
+}*/
 
 body.design-manager.ext-dark-theme .cm-s-hubspot-canvas-light .CodeMirror-cursor {
     border-left-color: #fff !important;
@@ -487,7 +498,6 @@ body.design-manager.ext-dark-theme .private-form__control {
 body.design-manager.ext-dark-theme .private-modal--default,
 body.design- manager.ext-dark-theme .private-modal__footer {
     background: linear-gradient(45deg, rgb(51, 71, 91), rgb(45, 62, 80));
-
 }
 
 body.design-manager.ext-dark-theme .status-bar {
@@ -502,283 +512,372 @@ body.design-manager.ext-dark-theme .kcUwaw,
 body.design-manager.ext-dark-theme .status-bar__status {
     border-color: #3a3333 !important;
 }
-body.design-manager.ext-dark-theme .layout-tree .ui-grid-item-widget-wrapper{
-  border:0 !important;
+
+body.design-manager.ext-dark-theme .layout-tree .ui-grid-item-widget-wrapper {
+    border: 0 !important;
 }
 
+
 /*right click context menu.*/
+
 body.design-manager.ext-dark-theme .private-popover.private-popover--default,
 body.design-manager.ext-dark-theme .private-dropdown--list .private-list__item>.private-file-button .private-button,
 body.design-manager.ext-dark-theme .private-dropdown--list .private-list__item>a,
 body.design-manager.ext-dark-theme .private-dropdown--list .private-list__item>button,
-body.design-manager.ext-dark-theme ul.uiList.private-list--unstyled.private-dropdown--list{
-  background:rgb(36, 50, 64) !important;
-
-
+body.design-manager.ext-dark-theme ul.uiList.private-list--unstyled.private-dropdown--list {
+    background: rgb(36, 50, 64) !important;
 }
+
+
 /*accordions in sidebar.*/
-body.design-manager.ext-dark-theme .UIExpandableSection__ExpandableHeader-gJHpqS{
-  background-color:transparent !important;
+
+body.design-manager.ext-dark-theme .UIExpandableSection__ExpandableHeader-gJHpqS {
+    background-color: transparent !important;
 }
+
 
 /* scroll bar in the head (to navigate through the different opened elements */
-body.design-manager.ext-dark-theme .iWgPZI{
-	background-color: rgb( var(--rgb-details-color) ) !important;
+
+body.design-manager.ext-dark-theme .iWgPZI {
+    background-color: rgb( var(--rgb-details-color)) !important;
 }
+
 
 /* success notification */
-body.design-manager.ext-dark-theme .private-alert--success{
-	background-color: rgba( var(--rgb-details-color), 0.9) !important;
-	border-color:transparent;
-}
-body.design-manager.ext-dark-theme .private-alert__close{
-	color:#fff;
+
+body.design-manager.ext-dark-theme .private-alert--success {
+    background-color: rgba( var(--rgb-details-color), 0.9) !important;
+    border-color: transparent;
 }
 
+body.design-manager.ext-dark-theme .private-alert__close {
+    color: #fff;
+}
+
+
 /* error notification */
-body.design-manager.ext-dark-theme .private-alert--danger{
-  background-color: rgba(242,84,91,.7) !important;
-  color: #fff;
+
+body.design-manager.ext-dark-theme .private-alert--danger {
+    background-color: rgba(242, 84, 91, .7) !important;
+    color: #fff;
 }
 
 
 /* empty initial page */
-body.design-manager.ext-dark-theme .empty-state-view{
-	background: var(--body-background);
+
+body.design-manager.ext-dark-theme .empty-state-view {
+    background: var(--body-background);
 }
 
 body.design-manager.ext-dark-theme .empty-state-view,
 body.design-manager.ext-dark-theme .empty-state-view .is--text--help,
-body.design-manager.ext-dark-theme .empty-state-view .private-table thead th{
-	color: var(--body-color);
+body.design-manager.ext-dark-theme .empty-state-view .private-table thead th {
+    color: var(--body-color);
 }
 
 
 /*when upgrading a custom module, there is a modal that states the errors the module needs corrected*/
-body.design-manager.ext-dark-theme .private-modal ul.uiList.m-top-2{
-    background-color:rgb(102, 120, 138);
-}
-body.design-manager.ext-dark-theme .private-modal ul.uiList .hubl-error-list-item{
-    color:rgb(212, 61, 68);
+
+body.design-manager.ext-dark-theme .private-modal ul.uiList.m-top-2 {
+    background-color: rgb(102, 120, 138);
 }
 
+body.design-manager.ext-dark-theme .private-modal ul.uiList .hubl-error-list-item {
+    color: rgb(212, 61, 68);
+}
 
 
 /** settings page **/
+
 body.design-manager.ext-dark-theme .settings-editor-app,
 body.design-manager.ext-dark-theme .private-card,
-body.design-manager.ext-dark-theme .private-panel{
-	background: var(--body-background);
+body.design-manager.ext-dark-theme .private-panel {
+    background: var(--body-background);
 }
-body.design-manager.ext-dark-theme .settings-column .private-side-nav__item a{
-	color:#fff;
+
+body.design-manager.ext-dark-theme .settings-column .private-side-nav__item a {
+    color: #fff;
 }
-body.design-manager.ext-dark-theme .settings-column .private-side-nav__item{
-	background: transparent;
+
+body.design-manager.ext-dark-theme .settings-column .private-side-nav__item {
+    background: transparent;
 }
+
 body.design-manager.ext-dark-theme .settings-column .private-side-nav__item--active a,
-body.design-manager.ext-dark-theme .settings-column .private-side-nav__item a:hover{
-	color: rgb( var(--rgb-details-color) );
+body.design-manager.ext-dark-theme .settings-column .private-side-nav__item a:hover {
+    color: rgb( var(--rgb-details-color));
 }
+
 
 /** remove background from fields in groups (right sidebar CM) */
-body.design-manager.ext-dark-theme .custom-widget-editor-sidebar .custom-widget-fields-table .custom-widget-fields-table-row .field-row-and-children-container.is--child-field{
-	background: transparent !important;
+
+body.design-manager.ext-dark-theme .custom-widget-editor-sidebar .custom-widget-fields-table .custom-widget-fields-table-row .field-row-and-children-container.is--child-field {
+    background: transparent !important;
 }
 
+
 /** left sidebar > search results */
+
 body.design-manager.ext-dark-theme .result-item a,
-body.design-manager.ext-dark-theme .result-item .result-item-help .is--text--help{
-	color: #fff !important;
+body.design-manager.ext-dark-theme .result-item .result-item-help .is--text--help {
+    color: #fff !important;
 }
 
 body.design-manager.ext-dark-theme .result-item.result-item--is--active .result-item-title a,
 body.design-manager.ext-dark-theme .result-item:hover .result-item-title a,
-body.design-manager.ext-dark-theme .result-item:hover [class*=private-icon__]{
-	color: rgb( var(--rgb-details-color) ) !important;
+body.design-manager.ext-dark-theme .result-item:hover [class*=private-icon__] {
+    color: rgb( var(--rgb-details-color)) !important;
 }
+
 
 /* Modals */
+
 body.design-manager.ext-dark-theme .private-modal,
-body.design-manager.ext-dark-theme .private-modal .private-modal__footer{
-	background: var(--body-background);
-	color: #fff;
+body.design-manager.ext-dark-theme .private-modal .private-modal__footer {
+    background: var(--body-background);
+    color: #fff;
 }
-body.design-manager.ext-dark-theme .private-modal.private-table thead th{
-	color: rgb( var(--rgb-details-color) );
+
+body.design-manager.ext-dark-theme .private-modal.private-table thead th {
+    color: rgb( var(--rgb-details-color));
 }
+
 
 /* new file modal */
-body.design-manager.ext-dark-theme .private-selectable-box{
-	background: var(--body-background);
-}
 
-/* left sidebar: dependent & revision submenu */
-body.design-manager.ext-dark-theme .finder-container .file-dependents-container,
-body.design-manager.ext-dark-theme .finder-container .file-revisions-container{
+body.design-manager.ext-dark-theme .private-selectable-box {
     background: var(--body-background);
 }
-body.design-manager.ext-dark-theme .finder-container .result-item:hover,
-body.design-manager.ext-dark-theme .finder-container .result-item:hover{
-	background:none !important;
+
+
+/* left sidebar: dependent & revision submenu */
+
+body.design-manager.ext-dark-theme .finder-container .file-dependents-container,
+body.design-manager.ext-dark-theme .finder-container .file-revisions-container {
+    background: var(--body-background);
 }
 
+body.design-manager.ext-dark-theme .finder-container .result-item:hover,
+body.design-manager.ext-dark-theme .finder-container .result-item:hover {
+    background: none !important;
+}
+
+
 /* remove white background in the new file -> folder selector popup */
+
 body.design-manager.ext-dark-theme .bqQvdP .private-tile {
     background: transparent;
 }
 
+
 /* right sidebar: add widget tab */
+
 body.design-manager.ext-dark-theme .widget-toolbox-list-item .widget-object.is--disabled {
     /*background: transparent;*/
-    background: rgba(255,255,255,.10);
+    background: rgba(255, 255, 255, .10);
     border-color: transparent;
 }
+
 body.design-manager.ext-dark-theme .widget-catalog-list-item .private-moveable-object:not(.is--disabled),
-body.design-manager.ext-dark-theme .widget-catalog-list-item .private-moveable-object:not(.is--disabled):hover{
-	color: rgb(var(--rgb-details-color)) !important;
-	background: transparent;
+body.design-manager.ext-dark-theme .widget-catalog-list-item .private-moveable-object:not(.is--disabled):hover {
+    color: rgb(var(--rgb-details-color)) !important;
+    background: transparent;
 }
+
 body.design-manager.ext-dark-theme .widget-catalog-list-item .private-moveable-object:not(.is--disabled) .private-icon:not(.private-icon-circle__inner),
-body.design-manager.ext-dark-theme .widget-catalog-list-item .private-moveable-object:not(.is--disabled):hover .private-icon:not(.private-icon-circle__inner){
-	color: rgb(var(--rgb-details-color)) !important;
+body.design-manager.ext-dark-theme .widget-catalog-list-item .private-moveable-object:not(.is--disabled):hover .private-icon:not(.private-icon-circle__inner) {
+    color: rgb(var(--rgb-details-color)) !important;
 }
 
 
 /* left sidebar: dragging element hover floders **/
+
 body.design-manager.ext-dark-theme .folder-item.is--over.can--drop>.asset-context-menu-wrapper>.nav-item-link,
 body.design-manager.ext-dark-theme .folder-item.is--over.can--drop>.nav-item-link {
-    background-color: rgba(255,255,255,.2);
+    background-color: rgba(255, 255, 255, .2);
 }
+
 
 /*finder background gradients at top and bottom of element*/
-body.design-manager.ext-dark-theme .finder-container__files,body.design-manager.ext-dark-theme .UISection__ScrollWrapper-eQImbY {
-   
-    background-image: linear-gradient(to bottom,rgb(45, 62, 78),rgba(45,62,78,0)), linear-gradient(to top,rgb(45, 62, 78),rgba(45,62,78,0)), linear-gradient(to bottom,rgb(45,62,78),rgba(45,62,78,0)), linear-gradient(to top,rgb(45, 62, 78),rgba(45,62,78,0));
+
+body.design-manager.ext-dark-theme .finder-container__files,
+body.design-manager.ext-dark-theme .UISection__ScrollWrapper-eQImbY {
+    background-image: linear-gradient(to bottom, rgb(45, 62, 78), rgba(45, 62, 78, 0)), linear-gradient(to top, rgb(45, 62, 78), rgba(45, 62, 78, 0)), linear-gradient(to bottom, rgb(45, 62, 78), rgba(45, 62, 78, 0)), linear-gradient(to top, rgb(45, 62, 78), rgba(45, 62, 78, 0));
 }
 
+
 /** right sidebar: swapping widget for another popup **/
+
 body.design-manager.ext-dark-theme .widget-catalog-list-item>a,
 body.design-manager.ext-dark-theme .widget-catalog-list-item>button {
     background-color: var(--body-background);
 }
+
 body.design-manager.ext-dark-theme .widget-catalog-list-item>a:hover,
-body.design-manager.ext-dark-theme .widget-catalog-list-item>button:hover{
-	background-color: rgba(255,255,255,.1);
+body.design-manager.ext-dark-theme .widget-catalog-list-item>button:hover {
+    background-color: rgba(255, 255, 255, .1);
 }
 
+
 /* right sidebar add widget **/
+
 body.design-manager.ext-dark-theme .widget-toolbox-list-item .widget-object:not(.is--disabled),
-body.design-manager.ext-dark-theme .widget-toolbox-list-item .private-moveable-object.widget-object:not(.is--disabled){
-	background: var(--body-background);
-	color: rgb(var(--rgb-details-color)) !important;
-	
+body.design-manager.ext-dark-theme .widget-toolbox-list-item .private-moveable-object.widget-object:not(.is--disabled) {
+    background: var(--body-background);
+    color: rgb(var(--rgb-details-color)) !important;
 }
-body.design-manager.ext-dark-theme .widget-toolbox-list-item .widget-object:not(.is--disabled):hover{
-	background: var(--body-background-hover);
+
+body.design-manager.ext-dark-theme .widget-toolbox-list-item .widget-object:not(.is--disabled):hover {
+    background: var(--body-background-hover);
 }
-body.design-manager.ext-dark-theme .widget-toolbox-list-item .widget-object.is--disabled{
-	background: var(--body-background);
+
+body.design-manager.ext-dark-theme .widget-toolbox-list-item .widget-object.is--disabled {
+    background: var(--body-background);
 }
 
 body.design-manager.ext-dark-theme .form-card-container {
     background: var(--body-background);
 }
 
+
 /* fix for most of the generated selectors/menus */
+
 body.design-manager.ext-dark-theme .Select-menu-outer {
     background: var(--body-background);
 }
 
+
 /* CODE MIRROR */
+
+
 /* change color for code strings like in <head> */
-body.design-manager.ext-dark-theme .cm-s-hubspot-canvas-light .cm-string{
-	color: #fff;
+
+body.design-manager.ext-dark-theme .cm-s-hubspot-canvas-light .cm-string {
+    color: #fff;
 }
 
+
 /* change color for matching tag */
+
 body.design-manager.ext-dark-theme .cm-s-hubspot-canvas-light .CodeMirror-matchingbracket,
 body.design-manager.ext-dark-theme .cm-s-hubspot-canvas-light .cm-tag.cm-hubl-statement {
-	color: rgb(var(--rgb-details-color)) !important;
+    color: rgb(var(--rgb-details-color)) !important;
 }
+
+
 /* HubL variable */
-body.design-manager.ext-dark-theme .cm-s-hubspot-canvas-light .cm-variable{
-	color: #fff;
+
+body.design-manager.ext-dark-theme .cm-s-hubspot-canvas-light .cm-variable {
+    color: #fff;
 }
-body.design-manager.ext-dark-theme .cm-s-hubspot-canvas-light .cm-variable.cm-hubl-statement{
-	color: #ffc7ac;
+
+body.design-manager.ext-dark-theme .cm-s-hubspot-canvas-light .cm-variable.cm-hubl-statement {
+    color: #ffc7ac;
 }
 
 
 /* right sidebar: rich text overlay */
-body.design-manager.ext-dark-theme .rich-text-preview{
-	transition: .3s;
+
+body.design-manager.ext-dark-theme .rich-text-preview {
+    transition: .3s;
 }
-body.design-manager.ext-dark-theme .rich-text-preview:hover{
-	background:#fff;
+
+body.design-manager.ext-dark-theme .rich-text-preview:hover {
+    background: #fff;
 }
+
 body.design-manager.ext-dark-theme .rich-text-preview.private-hoverlay .private-hoverlay__overlay+.private-hoverlay__children,
 body.design-manager.ext-dark-theme .rich-text-preview.private-hoverlay.private-hovered .private-hoverlay__overlay {
     background: transparent;
-	filter:blur(0);
+    filter: blur(0);
 }
+
 body.design-manager.ext-dark-theme .rich-text-preview.private-hoverlay .private-hoverlay__overlay .private-flex>.private-flex {
     align-items: flex-end;
     justify-content: flex-end;
-	max-height: 87%; /* I think this will work always */
+    max-height: 87%;
+    /* I think this will work always */
 }
-body.design-manager.ext-dark-theme span.private-icon.private-icon__high {}
+
+
+/*body.design-manager.ext-dark-theme span.private-icon.private-icon__high {}*/
+
 
 /* right sidebar: add group in CM */
 
-body.design-manager.ext-dark-theme .sidebar-group-controls{
-	background: var(--body-background);
-}
-/* simple menu */
-body.design-manager.ext-dark-theme .simple-menus-menu{
-	background: var(--body-background);
-}
-/** simple menu add submenu */
-body.design-manager.ext-dark-theme .simple-menus-menu .simple-menus-menu-node-divider-option-button:hover{
-	background: var(--body-background-hover);
+body.design-manager.ext-dark-theme .sidebar-group-controls {
+    background: var(--body-background);
 }
 
+
+/* simple menu */
+
+body.design-manager.ext-dark-theme .simple-menus-menu {
+    background: var(--body-background);
+}
+
+
+/** simple menu add submenu */
+
+body.design-manager.ext-dark-theme .simple-menus-menu .simple-menus-menu-node-divider-option-button:hover {
+    background: var(--body-background-hover);
+}
+
+
 /*footer bar*/
-body.design-manager.ext-dark-theme .status-bar-header{
+
+body.design-manager.ext-dark-theme .status-bar-header {
     border-top: 1px solid #3b3333!important;
 }
+
+
 /*footer bar right */
+
 body.design-manager.ext-dark-theme button.uiButton.private-button.private-button--transparent.status-bar-header-button.private-button--non-link {
     border-left: 1px solid #3b3333!important;
 }
 
+
 /*image picker */
-body.design-manager.ext-dark-theme .ReactVirtualized__Collection__innerScrollContainer .file-detail{
-	background-color:transparent;
+
+body.design-manager.ext-dark-theme .ReactVirtualized__Collection__innerScrollContainer .file-detail {
+    background-color: transparent;
 }
-body.design-manager.ext-dark-theme .ReactVirtualized__Collection__innerScrollContainer .file-detail__wrapper,body.design-manager.ext-dark-theme .ReactVirtualized__Collection__innerScrollContainer .file-detail__arrow{
+
+body.design-manager.ext-dark-theme .ReactVirtualized__Collection__innerScrollContainer .file-detail__wrapper,
+body.design-manager.ext-dark-theme .ReactVirtualized__Collection__innerScrollContainer .file-detail__arrow {
     background: rgb(36, 50, 64) !important;
-        border-color: #1a242d;
+    border-color: #1a242d;
 }
 
 
 /* rename fields */
-body.design-manager.ext-dark-theme .private-editable--inline:hover .private-editable__input, .private-editable--inline:hover .private-editable__placeholder{
-	background-color:rgba(255, 255, 255, 0.1) !important;
+
+body.design-manager.ext-dark-theme .private-editable--inline:hover .private-editable__input,
+.private-editable--inline:hover .private-editable__placeholder {
+    background-color: rgba(255, 255, 255, 0.1) !important;
 }
+
 
 /*slide out panel header*/
-body.design-manager.ext-dark-theme .private-modal__header{
-	background: linear-gradient(-303deg, rgb(0, 78, 86) 0%,rgb(1, 95, 95) 56%,rgb(0, 121, 99) 100%);
+
+body.design-manager.ext-dark-theme .private-modal__header {
+    background: linear-gradient(-303deg, rgb(0, 78, 86) 0%, rgb(1, 95, 95) 56%, rgb(0, 121, 99) 100%);
 }
 
+
 /*custom module code pen accordions*/
+
+
 /*.resizable-panes .code-panes-pane.resizable-pane .code-panes .code-panes-container .code-panes-accordion-items .resizer{
     background-color:#3b3333!important;
 }*/
-body.design-manager.ext-dark-theme .resizeable-panes .resizer{
-    background-color:#717171!important;
+
+body.design-manager.ext-dark-theme .resizeable-panes .resizer {
+    background-color: #717171!important;
 }
+
+
 /**
 /* 
 #33475b
