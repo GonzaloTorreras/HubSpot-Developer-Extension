@@ -752,6 +752,21 @@ body.design-manager.ext-dark-theme button.uiButton.private-button.private-button
     border-left: 1px solid #3b3333!important;
 }
 
+/*image picker */
+body.design-manager.ext-dark-theme .ReactVirtualized__Collection__innerScrollContainer .file-detail{
+	background-color:transparent;
+}
+body.design-manager.ext-dark-theme .ReactVirtualized__Collection__innerScrollContainer .file-detail__wrapper,body.design-manager.ext-dark-theme .ReactVirtualized__Collection__innerScrollContainer .file-detail__arrow{
+    background: rgb(36, 50, 64) !important;
+        border-color: #1a242d;
+}
+
+
+/* rename fields */
+body.design-manager.ext-dark-theme .private-editable--inline:hover .private-editable__input, .private-editable--inline:hover .private-editable__placeholder{
+	background-color:rgba(255, 255, 255, 0.1) !important;
+}
+
 /*custom module code pen accordions*/
 /*.resizable-panes .code-panes-pane.resizable-pane .code-panes .code-panes-container .code-panes-accordion-items .resizer{
     background-color:#3b3333!important;
