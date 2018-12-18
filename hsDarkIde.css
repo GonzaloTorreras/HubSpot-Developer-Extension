@@ -767,6 +767,11 @@ body.design-manager.ext-dark-theme .private-editable--inline:hover .private-edit
 	background-color:rgba(255, 255, 255, 0.1) !important;
 }
 
+/*slide out panel header*/
+body.design-manager.ext-dark-theme .private-modal__header{
+	background: linear-gradient(-303deg, rgb(0, 78, 86) 0%,rgb(1, 95, 95) 56%,rgb(0, 121, 99) 100%);
+}
+
 /*custom module code pen accordions*/
 /*.resizable-panes .code-panes-pane.resizable-pane .code-panes .code-panes-container .code-panes-accordion-items .resizer{
     background-color:#3b3333!important;
