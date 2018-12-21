@@ -230,7 +230,6 @@ $(document).ready(function() {
                 waitForEl("#nav-primary-home", function() {
                     hubId = $("#nav-primary-home").attr("href").replace(generateAppUrl("/reports-dashboard/"), "").replace("/home", "");
                     /*inject dev menu*/
-
                     generateDevMenu(hubId);
                 });
             }
