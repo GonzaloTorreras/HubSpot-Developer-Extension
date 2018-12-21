@@ -891,7 +891,7 @@ body.design-manager.ext-dark-theme .private-editable--inline:hover .private-edit
 /*slide out panel header*/
 
 body.design-manager.ext-dark-theme .private-modal__header {
-    background: linear-gradient(-303deg, rgb(0, 78, 86) 0%, rgb(1, 95, 95) 56%, rgb(0, 121, 99) 100%);
+    background: linear-gradient(-303deg, rgba( var(--rgb-details-color), 0.8) 0%, rgb(83, 200, 269) 56%, rgba( var(--rgb-details-color), 0.8) 100%);
 }
 
 
