@@ -107,6 +107,7 @@ body.design-manager.ext-dark-theme {
     --rgb-details-color: 63, 180, 249;
     /** used on icons, links and several details. Use only RGB format, RGBA is used on different classes. */
     --scroll-indicator-color: #4ba5ffa8;
+    /*android like you can scroll up/down indicator*/
 }
 
 
