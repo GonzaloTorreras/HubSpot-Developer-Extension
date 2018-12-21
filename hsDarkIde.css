@@ -424,7 +424,7 @@ body.design-manager.ext-dark-theme span.private-icon.private-icon__high {
 
 body.design-manager.ext-dark-theme .file-tabs.private-tabs .file-tab.is--active {
     color: rgb( var(--rgb-details-color)) !important;
-    background: #2d3e50;
+    background: #54637578;
 }
 
 body.design-manager.ext-dark-theme .file-tabs.private-tabs .file-tab.is--active .tab-title-label {
