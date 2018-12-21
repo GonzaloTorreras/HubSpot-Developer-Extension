@@ -1,16 +1,14 @@
 {
     "manifest_version": 2,
     "name": "__MSG_extName__",
-    "version": "1.04.0.57",
+    "version": "1.04.0.58",
 
     "default_locale": "en",
     "description": "__MSG_extDesc__",
-    "browser_action":
-    {
+    "browser_action": {
         "default_popup": "popup.html",
         "default_title": "HubSpot Dev Tools",
-        "default_icon":
-        {
+        "default_icon": {
             "16": "icon-16.png",
             "19": "icon-19.png",
             "38": "icon-38.png",
@@ -18,8 +16,7 @@
             "128": "icon-128.png"
         }
     },
-    "icons":
-    {
+    "icons": {
         "16": "icon-16.png",
         "19": "icon-19.png",
         "38": "icon-38.png",
@@ -38,8 +35,7 @@
         "mac-text-cursor.svg",
         "mac-text-cursor.png"
     ],
-    "content_scripts": [
-    {
+    "content_scripts": [{
         "run_at": "document_idle",
         "js": ["jquery-3.2.1.min.js", "design-manager.js"],
         "css": ["hsDarkIde.css"],
@@ -48,26 +44,20 @@
     }],
     "content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'",
     "options_page": "options.html",
-    "background":
-    {
+    "background": {
         "persistent": true,
         "scripts": ["hot-reload.js", "background.js"]
     },
-    "commands":
-    {
-        "bust-cache":
-        {
-            "suggested_key":
-            {
+    "commands": {
+        "bust-cache": {
+            "suggested_key": {
                 "default": "Ctrl+Shift+1",
                 "mac": "Ctrl+Shift+1"
             },
             "description": "Run Cache Buster"
         },
-        "hs-debug":
-        {
-            "suggested_key":
-            {
+        "hs-debug": {
+            "suggested_key": {
                 "default": "Ctrl+Shift+2",
                 "mac": "Ctrl+Shift+2"
             },
