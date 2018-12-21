@@ -6,9 +6,6 @@ $(document).ready(function() {
             //console.log(response.farewell);
         });
     }
-
-
-
     var tabUrl = window.location.protocol + "//" + window.location.host + "/" + window.location.pathname;
     /*getSelected might be deprecated need to review*/
     var currentScreen = "";
@@ -17,7 +14,6 @@ $(document).ready(function() {
     var waitForEl = function(selector, callback) {
         /*Will poll for element only 10 times before stopping*/
         var timesPolled = 0;
-
         (function waiting() {
             if (timesPolled < 10) {
                 if ($(selector).text().length) {
@@ -35,7 +31,6 @@ $(document).ready(function() {
 
     function setTitle(siteName) {
         var portal = siteName.replace("www.", "");
-
         if (currentScreen == "design-manager") {
             //document.title = "🎨DM|"+portal+"|HS";
             document.title = "DM|" + portal + "|HS";
@@ -86,7 +81,6 @@ $(document).ready(function() {
         if (~tabUrl.indexOf("/design-manager/")) {
             //console.log("Old Design Manager is active");
             currentScreen = 'design-manager';
-
         }
         if (~tabUrl.indexOf("/beta-design-manager/")) {
             /*note this string detection will likely break once rolled out to everyone as they likely wont leave beta in the name*/
@@ -131,16 +125,10 @@ $(document).ready(function() {
         if (~tabUrl.indexOf("/url-mappings")) {
             currentScreen = "url-mappings";
         }
-
-
-
-
         chrome.storage.sync.get([
             'uitweaks'
         ], function(items) {
             if (items.uitweaks) {
-
-
                 if (currentScreen == "design-manager") {
 
                     waitForEl(".account-name", function() {
@@ -151,18 +139,13 @@ $(document).ready(function() {
                 function generateDevMenuItem(buttonLabel, hubId, url) {
                     /*expects button label string, hubId string, url string.*/
                     var link = url.replace("_HUB_ID_", hubId);
-
-
                     var html = "<li role='none'>";
                     html += "<a role='menuitem' data-tracking='click hover' id='nav-secondary-design-tools-beta' class='navSecondaryLink' href='" + link + "' >";
                     html += buttonLabel;
                     html += "</a>";
                     html += "</li>";
                     return html;
-
-
                     //console.log("Nav Item Generated: ", buttonLabel);
-
                 }
 
                 function generateAllMenuItems(hubId) {
@@ -183,9 +166,7 @@ $(document).ready(function() {
                     return 'https://' + appUrl + path;
                 }
 
-
                 function generateDevMenu(hubId) {
-
                     var html = '<li id="ext-dev-menu-wrapper" role="none" class="expandable ">';
                     html += '<a href="#" id="nav-primary-dev-branch" aria-haspopup="true" aria-expanded="false" class="primary-link" data-tracking="click hover" role-menu="menuitem">';
                     html += 'Developer ';
@@ -193,16 +174,10 @@ $(document).ready(function() {
                     html += '</a>';
                     html += '<div id="ext-dev-menu" aria-label="Developer" role="menu" class="secondary-nav expansion" style="min-height: 0px">';
                     html += '<ul role="none">';
-
-
                     html += generateAllMenuItems(hubId);
-
-
                     html += '</ul>';
                     html += '</div>';
                     html += '</li>';
-
-
 
                     $("#ext-dev-menu-wrapper > a").click(function(e) {
                         e.preventDefault();
@@ -230,11 +205,6 @@ $(document).ready(function() {
                         trackClick(linkName);
                     });
 
-
-
-
-
-
                     $(".nav-links ul.primary-links>li:first-child").after(html);
 
                     $("#ext-dev-menu-wrapper > a").click(function(e) {
@@ -256,53 +226,20 @@ $(document).ready(function() {
                 };
 
                 /*get current HubSpot ID*/
-
                 var hubId;
-
                 waitForEl("#nav-primary-home", function() {
-
                     hubId = $("#nav-primary-home").attr("href").replace(generateAppUrl("/reports-dashboard/"), "").replace("/home", "");
+                    /*inject dev menu*/
+                    * /
                     generateDevMenu(hubId);
                 });
-
-                // var checkExist = setInterval(function() {
-                //     if ($("#nav-primary-home").attr("href").length) {
-                //         //console.log("Exists!");
-
-                //         hubId = $("#nav-primary-home").attr("href").replace(generateAppUrl("/reports-dashboard/"), "").replace("/home", "");
-                //         if (hubId) {
-                //             clearInterval(checkExist);
-                //             generateDevMenu(hubId);
-                //         } else {
-                //             //console.log("Hub ID not defined yet");
-                //         }
-                //         //console.log("Hub ID:", hubId);
-                //     } else {
-                //         //console.log("#nav-primary-home does not exist");
-
-                //     }
-                // }, 300); // check every 100ms
-
-
             }
 
         });
-
-
-
     } else if (~tabUrl.indexOf("designers.hubspot.com/docs/")) {
         //console.log("Viewing HubSpot Documentation");
         currentScreen = "docs";
-
-
     } else {
         //console.log("This is not in the HubSpot Backend");
-
-
     }
-
-
-
-
-
 });
