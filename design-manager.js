@@ -1,9 +1,9 @@
 $(document).ready(function() {
     /*This script runs once the design manager page loads.*/
 
-    function trackClick(eventName){/*Analytics*/
-        chrome.runtime.sendMessage({trackClick: eventName}, function(response) {
-          //console.log(response.farewell);
+    function trackClick(eventName) { /*Analytics*/
+        chrome.runtime.sendMessage({ trackClick: eventName }, function(response) {
+            //console.log(response.farewell);
         });
     }
 
@@ -15,70 +15,60 @@ $(document).ready(function() {
     var devMenu = false;
 
     var waitForEl = function(selector, callback) {
-      /*Will poll for element only 10 times before stopping*/
-      var timesPolled = 0;
-        
-        (function waiting(){
-          if (timesPolled < 10){
-            if ($(selector).text().length) {
-              callback();
-            } else {
-              setTimeout(function() {
-                timesPolled++;
-                waiting(selector, callback);
-              }, 100);
+        /*Will poll for element only 10 times before stopping*/
+        var timesPolled = 0;
+
+        (function waiting() {
+            if (timesPolled < 10) {
+                if ($(selector).text().length) {
+                    callback();
+                } else {
+                    setTimeout(function() {
+                        timesPolled++;
+                        waiting(selector, callback);
+                    }, 100);
+                }
             }
-          }
-          /*Next steps - add error handling here when polling fails*/
+            /*Next steps - add error handling here when polling fails*/
         })();
     };
 
-    function setTitle(siteName){
-        var portal = siteName.replace("www.","");
+    function setTitle(siteName) {
+        var portal = siteName.replace("www.", "");
 
-        if(currentScreen == "design-manager"){
+        if (currentScreen == "design-manager") {
             //document.title = "🎨DM|"+portal+"|HS";
-            document.title = "DM|"+portal+"|HS";
-        }
-        else if(currentScreen == "content-staging"){
+            document.title = "DM|" + portal + "|HS";
+        } else if (currentScreen == "content-staging") {
             //document.title = "🎭CS|"+portal+"|HS";
-            document.title = "CS|"+portal+"|HS";
-        }
-        else if(currentScreen == "dashboard"){
+            document.title = "CS|" + portal + "|HS";
+        } else if (currentScreen == "dashboard") {
             //document.title = "📊Da|"+portal+"|HS";
-            document.title = "Da|"+portal+"|HS";
-        }
-        else if(currentScreen == "website-pages"){
+            document.title = "Da|" + portal + "|HS";
+        } else if (currentScreen == "website-pages") {
             //document.title = "📑WP|"+portal+"|HS";
-            document.title = "WP|"+portal+"|HS";
-        }
-        else if(currentScreen == "landing-pages"){
+            document.title = "WP|" + portal + "|HS";
+        } else if (currentScreen == "landing-pages") {
             //document.title = "📄LP|"+portal+"|HS";
-            document.title = "LP|"+portal+"|HS";
-        }
-        else if(currentScreen == "file-manager"){
+            document.title = "LP|" + portal + "|HS";
+        } else if (currentScreen == "file-manager") {
             //document.title = "📁FM|"+portal+"|HS";
-            document.title = "FM|"+portal+"|HS";
-        }
-        else if(currentScreen == "hubdb"){
+            document.title = "FM|" + portal + "|HS";
+        } else if (currentScreen == "hubdb") {
             //document.title = "📦DB|"+portal+"|HS";
-            document.title = "DB|"+portal+"|HS";
-        }
-        else if(currentScreen == "settings"){
+            document.title = "DB|" + portal + "|HS";
+        } else if (currentScreen == "settings") {
             //document.title = "⚙️Se|"+portal+"|HS";
-            document.title = "Se|"+portal+"|HS";
-        }
-        else if(currentScreen == "navigation-settings"){
+            document.title = "Se|" + portal + "|HS";
+        } else if (currentScreen == "navigation-settings") {
             //document.title = "🗺️Na|"+portal+"|HS";
-            document.title = "Na|"+portal+"|HS";
-        }
-        else if(currentScreen == "blog"){
+            document.title = "Na|" + portal + "|HS";
+        } else if (currentScreen == "blog") {
             //document.title = "📰Bl|"+portal+"|HS";
-            document.title = "Bl|"+portal+"|HS";
-        }
-        else if(currentScreen =="url-mappings"){
+            document.title = "Bl|" + portal + "|HS";
+        } else if (currentScreen == "url-mappings") {
             //document.title = "🔀UM|"+portal+"|HS";
-            document.title = "UM|"+portal+"|HS";   
+            document.title = "UM|" + portal + "|HS";
         }
     }
     //console.log("Current URL: ",tabUrl);
@@ -116,11 +106,10 @@ $(document).ready(function() {
         if (~tabUrl.indexOf("/reports-dashboard/")) {
             currentScreen = 'dashboard';
         }
-        if(~tabUrl.indexOf("/pages/")){
-            if(~tabUrl.indexOf("/site/")){
+        if (~tabUrl.indexOf("/pages/")) {
+            if (~tabUrl.indexOf("/site/")) {
                 currentScreen = "website-pages";
-            }
-            else if(~tabUrl.indexOf("/landing/")){
+            } else if (~tabUrl.indexOf("/landing/")) {
                 currentScreen = "landing-pages";
             }
         }
@@ -136,13 +125,13 @@ $(document).ready(function() {
                 currentScreen = "navigation-settings";
             }
         }
-        if(~tabUrl.indexOf("/blog/")){
-           currentScreen = "blog"; 
+        if (~tabUrl.indexOf("/blog/")) {
+            currentScreen = "blog";
         }
-        if(~tabUrl.indexOf("/url-mappings")){
-           currentScreen = "url-mappings"; 
+        if (~tabUrl.indexOf("/url-mappings")) {
+            currentScreen = "url-mappings";
         }
-        
+
 
 
 
@@ -151,8 +140,8 @@ $(document).ready(function() {
         ], function(items) {
             if (items.uitweaks) {
 
-                
-                if(currentScreen == "design-manager"){
+
+                if (currentScreen == "design-manager") {
 
                     waitForEl(".account-name", function() {
                         setTitle($(".account-name").text());
@@ -163,7 +152,7 @@ $(document).ready(function() {
                     /*expects button label string, hubId string, url string.*/
                     var link = url.replace("_HUB_ID_", hubId);
 
-                    
+
                     var html = "<li role='none'>";
                     html += "<a role='menuitem' data-tracking='click hover' id='nav-secondary-design-tools-beta' class='navSecondaryLink' href='" + link + "' >";
                     html += buttonLabel;
@@ -175,7 +164,8 @@ $(document).ready(function() {
                     //console.log("Nav Item Generated: ", buttonLabel);
 
                 }
-                function generateAllMenuItems(hubId){
+
+                function generateAllMenuItems(hubId) {
                     var html = generateDevMenuItem('Design Manager', hubId, 'https://app.hubspot.com/design-manager/_HUB_ID_');
                     html += generateDevMenuItem('HubDB', hubId, 'https://app.hubspot.com/hubdb/_HUB_ID_');
                     html += generateDevMenuItem('File Manager', hubId, 'https://app.hubspot.com/file-manager-beta/_HUB_ID_');
@@ -184,7 +174,7 @@ $(document).ready(function() {
                     html += generateDevMenuItem('Content Settings', hubId, 'https://app.hubspot.com/settings/_HUB_ID_/website/pages/all-domains/page-templates');
                     html += generateDevMenuItem('URL Mappings', hubId, 'https://app.hubspot.com/content/_HUB_ID_/settings/url-mappings');
                     html += generateDevMenuItem('Marketplace', hubId, 'https://app.hubspot.com/marketplace/_HUB_ID_/products');
-                    
+
                     return html;
 
                 }
@@ -195,7 +185,7 @@ $(document).ready(function() {
 
 
                 function generateDevMenu(hubId) {
-                    
+
                     var html = '<li id="ext-dev-menu-wrapper" role="none" class="expandable ">';
                     html += '<a href="#" id="nav-primary-dev-branch" aria-haspopup="true" aria-expanded="false" class="primary-link" data-tracking="click hover" role-menu="menuitem">';
                     html += 'Developer ';
@@ -203,49 +193,49 @@ $(document).ready(function() {
                     html += '</a>';
                     html += '<div id="ext-dev-menu" aria-label="Developer" role="menu" class="secondary-nav expansion" style="min-height: 0px">';
                     html += '<ul role="none">';
-                    
+
 
                     html += generateAllMenuItems(hubId);
 
-                        
-                        html += '</ul>';
-                        html += '</div>';
-                        html += '</li>';
 
-                        
-
-                        $("#ext-dev-menu-wrapper > a").click(function(e) {
-                            e.preventDefault();
-                            //console.log("dev menu clicked!");
-                            /*$("#ext-dev-menu").toggleClass("expansion");*/
-
-                            //$("#ext-dev-menu").toggle();
-
-                            var isExpanded = $(this).attr('aria-expanded');
-
-                            if (isExpanded === 'true') {
-                                $(this).attr('aria-expanded', 'false');
-                                trackClick("devMenu-Closed");
-                            } else {
-                                $(this).attr('aria-expanded', 'true');
-                                trackClick("devMenu-Opened");
-                            }
-                            $(this).parent("li").toggleClass("active");
-                        });
-
-                        $("#ext-dev-menu .navSecondaryLink, #ext-dev-menu .devMenuLink").click(function(){
-                            console.log("track click");
-                            var linkName = "devMenu:"+$(this).data("ext-track");
-                            console.log(linkName);
-                            trackClick(linkName);
-                        });
-              
-                
+                    html += '</ul>';
+                    html += '</div>';
+                    html += '</li>';
 
 
-                   
 
-                    $("#hs-nav-v4 .logo").after(html);
+                    $("#ext-dev-menu-wrapper > a").click(function(e) {
+                        e.preventDefault();
+                        //console.log("dev menu clicked!");
+                        /*$("#ext-dev-menu").toggleClass("expansion");*/
+
+                        //$("#ext-dev-menu").toggle();
+
+                        var isExpanded = $(this).attr('aria-expanded');
+
+                        if (isExpanded === 'true') {
+                            $(this).attr('aria-expanded', 'false');
+                            trackClick("devMenu-Closed");
+                        } else {
+                            $(this).attr('aria-expanded', 'true');
+                            trackClick("devMenu-Opened");
+                        }
+                        $(this).parent("li").toggleClass("active");
+                    });
+
+                    $("#ext-dev-menu .navSecondaryLink, #ext-dev-menu .devMenuLink").click(function() {
+                        console.log("track click");
+                        var linkName = "devMenu:" + $(this).data("ext-track");
+                        console.log(linkName);
+                        trackClick(linkName);
+                    });
+
+
+
+
+
+
+                    $(".nav-links ul.primary-links>li:first-child").after(html);
 
                     $("#ext-dev-menu-wrapper > a").click(function(e) {
                         e.preventDefault();
@@ -268,13 +258,13 @@ $(document).ready(function() {
                 /*get current HubSpot ID*/
 
                 var hubId;
-                
+
 
                 var checkExist = setInterval(function() {
-                    if ($("#hs-nav-v4 .logo > a").attr("href").length) {
+                    if ($("#nav-primary-home").attr("href").length) {
                         //console.log("Exists!");
 
-                        hubId = $("#hs-nav-v4 .logo > a").attr("href").replace(generateAppUrl("/reports-dashboard/"), "").replace("/home", "");
+                        hubId = $("#nav-primary-home").attr("href").replace(generateAppUrl("/reports-dashboard/"), "").replace("/home", "");
                         if (hubId) {
                             clearInterval(checkExist);
                             generateDevMenu(hubId);
@@ -297,7 +287,7 @@ $(document).ready(function() {
 
     } else if (~tabUrl.indexOf("designers.hubspot.com/docs/")) {
         //console.log("Viewing HubSpot Documentation");
-        currentScreen="docs";
+        currentScreen = "docs";
 
 
     } else {
