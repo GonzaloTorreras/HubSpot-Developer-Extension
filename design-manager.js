@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    /*This script runs once the design manager page loads.*/
+    /*This script runs once the HubSpot Back-end loads.*/
 
     function trackClick(eventName) { /*Analytics*/
         chrome.runtime.sendMessage({ trackClick: eventName }, function(response) {
@@ -230,7 +230,8 @@ $(document).ready(function() {
                 waitForEl("#nav-primary-home", function() {
                     hubId = $("#nav-primary-home").attr("href").replace(generateAppUrl("/reports-dashboard/"), "").replace("/home", "");
                     /*inject dev menu*/
-                    * /
+                    *
+                    /
                     generateDevMenu(hubId);
                 });
             }
