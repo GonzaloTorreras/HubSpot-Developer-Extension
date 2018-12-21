@@ -259,24 +259,29 @@ $(document).ready(function() {
 
                 var hubId;
 
+                waitForEl("#nav-primary-home", function() {
 
-                var checkExist = setInterval(function() {
-                    if ($("#nav-primary-home").attr("href").length) {
-                        //console.log("Exists!");
+                    hubId = $("#nav-primary-home").attr("href").replace(generateAppUrl("/reports-dashboard/"), "").replace("/home", "");
+                    generateDevMenu(hubId);
+                });
 
-                        hubId = $("#nav-primary-home").attr("href").replace(generateAppUrl("/reports-dashboard/"), "").replace("/home", "");
-                        if (hubId) {
-                            clearInterval(checkExist);
-                            generateDevMenu(hubId);
-                        } else {
-                            //console.log("Hub ID not defined yet");
-                        }
-                        //console.log("Hub ID:", hubId);
-                    } else {
-                        //console.log("#nav-primary-home does not exist");
+                // var checkExist = setInterval(function() {
+                //     if ($("#nav-primary-home").attr("href").length) {
+                //         //console.log("Exists!");
 
-                    }
-                }, 300); // check every 100ms
+                //         hubId = $("#nav-primary-home").attr("href").replace(generateAppUrl("/reports-dashboard/"), "").replace("/home", "");
+                //         if (hubId) {
+                //             clearInterval(checkExist);
+                //             generateDevMenu(hubId);
+                //         } else {
+                //             //console.log("Hub ID not defined yet");
+                //         }
+                //         //console.log("Hub ID:", hubId);
+                //     } else {
+                //         //console.log("#nav-primary-home does not exist");
+
+                //     }
+                // }, 300); // check every 100ms
 
 
             }
