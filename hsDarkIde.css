@@ -907,6 +907,13 @@ body.design-manager.ext-dark-theme .resizeable-panes .resizer {
 }
 
 
+/* Move file interface*/
+
+body.design-manager.ext-dark-theme .folder-navigator-tile {
+    background: transparent;
+}
+
+
 /**
 /* 
 #33475b
