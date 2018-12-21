@@ -914,7 +914,23 @@ body.design-manager.ext-dark-theme .folder-navigator-tile {
 }
 
 
-/**
+/*change toggle button color */
+
+body.design-manager.ext-dark-theme .private-form__toggle-switch--on.private-form__toggle-switch__inner {
+    background-color: rgba( var(--rgb-details-color), 0.8);
+}
+
+
+/*toggle button checkmark*/
+
+
+/*note this may not work if fill isset in the svg itself.*/
+
+body.design-manager.ext-dark-theme .private-form__toggle-switch--on.private-form__toggle-switch__inner path.private-form__toggle-switch__icon {
+    fill: rgba( var(--rgb-details-color), 0.8)!important;
+}
+
+
 /* 
 #33475b
 #2d3e50
