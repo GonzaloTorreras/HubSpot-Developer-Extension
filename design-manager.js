@@ -1,6 +1,9 @@
 $(document).ready(function() {
     /*This script runs once the HubSpot Back-end loads.*/
 
+    /*trackClick sends the click event to the background js which has google analytics set up, this prevents google analytics running on the page and means the extension can only track it's own events.*/
+    * /
+
     function trackClick(eventName) { /*Analytics*/
         chrome.runtime.sendMessage({ trackClick: eventName }, function(response) {
             //console.log(response.farewell);
