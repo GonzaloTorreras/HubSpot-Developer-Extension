@@ -132,13 +132,14 @@ body.design-manager.ext-dark-theme button.uiButton.private-button.private-button
 body.design-manager.ext-dark-theme .HorizontalScrollContainer__ScrollBar-cSRRR {
     height: 10px;
     bottom: 10px;
-    background: rgba(var(--rgb-details-color), .8);
+    /*background: rgba(var(--rgb-details-color), .8);*/
+    background: rgba(var(--rgb-details-color), .4);
     transition: 200ms all;
 }
 
 body.design-manager.ext-dark-theme .HorizontalScrollContainer__ScrollBar-cSRRR:hover,
 body.design-manager.ext-dark-theme .HorizontalScrollContainer__ScrollBar-cSRRR:active {
-    background-color: rgb(250, 120, 88);
+    background: rgba(var(--rgb-details-color), .8);
     /* hover for easier idendification of active state */
 }
 
