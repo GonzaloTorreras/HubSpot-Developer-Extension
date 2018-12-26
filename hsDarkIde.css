@@ -150,6 +150,14 @@ body.design-manager.ext-dark-theme .welcome-container {
 }
 
 
+/* blue border below main HS nav*/
+
+body.design-manager.ext-dark-theme div#hs-nav-v4 {
+    box-shadow: 0px 2px 4px 0px rgba( var(--rgb-details-color), .8);
+    z-index: 1;
+}
+
+
 /*vertical scrollbars*/
 
 body.design-manager.ext-dark-theme ::-webkit-scrollbar,
