@@ -939,6 +939,20 @@ body.design-manager.ext-dark-theme .private-form__toggle-switch--on.private-form
 }
 
 
+/*revert back to Design Manager 1 button */
+
+body.design-manager.ext-dark-theme .ide-opt-out .private-button--tertiary {
+    background: transparent;
+    border-left: 1px solid rgb(59, 51, 51) !important;
+    border: 0;
+    height: 26px;
+}
+
+body.design-manager.ext-dark-theme .ide-opt-out .private-button--tertiary:hover {
+    background: #425b76;
+}
+
+
 /*toggle button checkmark*/
 
 
