@@ -192,8 +192,8 @@ body.design-manager.ext-dark-theme .llXSEF,
 body.design-manager.ext-dark-theme .dSMuYW,
 body.design-manager.ext-dark-theme .eLZHvU,
 body.design-manager.ext-dark-theme .iffnbF,
-body.design-manager.ext-dark-theme .UIOverhang-iMLGZW:first-child {
-    background-image: linear-gradient(to top, rgba(0, 0, 0, 0), var(--scroll-indicator-color));
+body.design-manager.ext-dark-theme .UIOverhang-iMLGZW:nth-child(2) {
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0), var(--scroll-indicator-color))!important;
 }
 
 body.design-manager.ext-dark-theme .cFIGxN,
@@ -208,7 +208,7 @@ body.design-manager.ext-dark-theme .fWNmkQ,
 body.design-manager.ext-dark-theme .dKLfpC,
 body.design-manager.ext-dark-theme .jRqEiz,
 body.design-manager.ext-dark-theme .jfoLJB,
-body.design-manager.ext-dark-theme .UIOverhang-iMLGZW:last-child {
+body.design-manager.ext-dark-theme .UIOverhang-iMLGZW:nth-child(3) {
     background-image: linear-gradient(to bottom, rgba(234, 240, 246, 0), var(--scroll-indicator-color));
 }
 
