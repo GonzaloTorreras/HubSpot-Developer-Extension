@@ -939,7 +939,8 @@ body.design-manager.ext-dark-theme .private-form__toggle-switch--on.private-form
 }
 
 
-/*revert back to Design Manager 1 button */
+/* revert back to Design Manager 1 button
+*  this can be removed after January 30th as the button should be going away.*/
 
 body.design-manager.ext-dark-theme .ide-opt-out .private-button--tertiary {
     background: transparent;
@@ -953,10 +954,8 @@ body.design-manager.ext-dark-theme .ide-opt-out .private-button--tertiary:hover 
 }
 
 
-/*toggle button checkmark*/
-
-
-/*note this may not work if fill isset in the svg itself.*/
+/*toggle button checkmark
+* note this may not work if fill isset in the svg itself.*/
 
 body.design-manager.ext-dark-theme .private-form__toggle-switch--on.private-form__toggle-switch__inner path.private-form__toggle-switch__icon {
     fill: rgba( var(--rgb-details-color), 0.8)!important;
