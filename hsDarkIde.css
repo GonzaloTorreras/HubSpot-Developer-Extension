@@ -137,10 +137,13 @@ body.design-manager.ext-dark-theme .HorizontalScrollContainer__ScrollBar-cSRRR {
     transition: 200ms all;
 }
 
-body.design-manager.ext-dark-theme .HorizontalScrollContainer__ScrollBar-cSRRR:hover,
-body.design-manager.ext-dark-theme .HorizontalScrollContainer__ScrollBar-cSRRR:active {
+body.design-manager.ext-dark-theme .HorizontalScrollContainer__ScrollBar-cSRRR:hover {
     background: rgba(var(--rgb-details-color), .8);
     /* hover for easier idendification of active state */
+}
+
+body.design-manager.ext-dark-theme .HorizontalScrollContainer__ScrollBar-cSRRR:active {
+    background: rgba(var(--rgb-details-color), 1);
 }
 
 
@@ -188,6 +191,11 @@ body.design-manager.ext-dark-theme ::-webkit-scrollbar-thumb {
 body.design-manager.ext-dark-theme ::-webkit-scrollbar-thumb:hover,
 body.design-manager.ext-dark-theme ::-webkit-scrollbar-thumb:hover {
     background: rgba(var(--rgb-details-color), .8);
+}
+
+body.design-manager.ext-dark-theme ::-webkit-scrollbar-thumb:active,
+body.design-manager.ext-dark-theme ::-webkit-scrollbar-thumb:active {
+    background: rgba(var(--rgb-details-color), 1);
 }
 
 body.design-manager.ext-dark-theme ::-webkit-scrollbar-thumb:window-inactive,
