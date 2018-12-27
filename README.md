@@ -12,7 +12,7 @@ If you prefer to fly by the seat of your pants with wreckless abandon, [We have 
 
 Let us know in issues if you run into any bugs, please also let us know if you're seeing the issue in the beta version.
 
-## An update to the published version was released, how long will it take to get to me?
+## An update to the stable build was released, how long will it take to get to me?
 Google Chrome updates extensions only under certain situations when running. The easiest way to get the freshest version of the extension is to close google chrome completely and re-open it. You can tell if you're running the latest version by checking the version number on the manage extensions screen and comparing with our [releases page.](https://github.com/williamspiro/HubSpot-Developer-Extension/releases)
 
 ## Is this an official HubSpot chrome extension?
@@ -29,7 +29,18 @@ We claim no legal rights to the HubSpot name/brand. We have posed the question o
 1. [Read this first!](https://github.com/williamspiro/HubSpot-Developer-Extension/blob/master/CONTRIBUTING.md)
 2. [Don't be a richard, no one likes a richard. Sorry Richard.](https://github.com/williamspiro/HubSpot-Developer-Extension/blob/contributors-update/CODE_OF_CONDUCT.md)
 3. [We denote easy/small issues that are good for beginners. but feel free to tackle any you see in issues or add a feature you want](https://github.com/williamspiro/HubSpot-Developer-Extension/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22)
+4. Speak another language? [help add or improve translations for that language!](https://github.com/williamspiro/HubSpot-Developer-Extension/wiki/How-to-add-support-for-a-new-language-or-improve-existing-translations)
+5. Test your own branch or someone elses. [how to test](https://github.com/williamspiro/HubSpot-Developer-Extension/wiki/How-to-test-changes-you've-made-to-the-extension) 
+6. [Use the Beta Build of the Extension and report bugs and provide feedback](https://github.com/williamspiro/HubSpot-Developer-Extension/wiki/How-to-use-the-Beta-version-of-the-extension)
+7. Tell others about the Extension, Rate and review the extension, the more people know of it the more people who will want to get involved, the more and faster updates will come. If you blog about the extension let us know!
 
 If you have any questions you can find @JonMcLaren @williamspiro and @GonzaloTorreras in our channel in the HubSpot Design & Developer Slack https://hubspotdev.slack.com/messages/CBBAW6Z3R
+
+[Huge thanks to everyone who has contributed to this project!](https://github.com/williamspiro/HubSpot-Developer-Extension/graphs/contributors)
+
+## In the News
+[AJ Laporte of WSOL wrote a great feature breakdown article](https://blog.wsol.com/the-unofficial-hubspot-developer-extension-for-google-chrome)
+
+[Jim of Spin Group wrote an article talking about what the extension is and why it exists.](https://www.spingroup.com/work/2018/6/20/hubspot-developer-extension-co-creation)
 
 [Privacy Policy](https://github.com/williamspiro/HubSpot-Developer-Extension/wiki/Privacy-Policy)

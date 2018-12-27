@@ -1,0 +1,22 @@
+
+title: HubSpot Developer Chrome Extension
+description: >-
+  A Chrome/Chromium extension for HubSpot Developers that adds useful shortcuts to commonly used HubSpot query parameters, resources and tools for making HubSpot Development easier and more enjoyable.
+
+  *Buttons for activating commonly used HubSpot Query Parameters such as hsDebug, AMP, footer jQuery, and a cache buster
+  *Google Page Speed Insights Tester - great to see if moving jquery to the footer has a significant impact
+  *Quick access shortcuts to the most used areas of the HubSpot Dev Docs
+  *Optional Dark Theme for the Design Manager
+  *Optional Developer Menu injected into HubSpot Nav
+  *Mac users rejoice! we've solved the dark cursor on dark code editor problem!
+  *More features coming!
+
+  If you find a bug or want to request a feature please report it in our GitHub Issues. See our GitHub as well if you're interested in beta testing new versions.
+
+  Interested in helping translate the extension? We could use your help visit the GitHub!
+
+  https://github.com/williamspiro/HubSpot-Developer-Extension 
+  Core developers responsible: Jon McLaren(Spin Group), William Spiro(HubSpot), Gonzalo Torreras(Leadstreet UK)
+
+categories: Category 1
+demo_url: https://goo.gl/mDc1gT

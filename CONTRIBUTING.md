@@ -1,6 +1,6 @@
-# Basic contribution guidelines
+# Basic contribution guide
 * If you would like to contribute through development, you can fork this repo, make your changes and submit a pull request. If you contribute regularly, you can request collaborator access from @wspiro
-* If you would like to contribute through testing - please install the beta version of the chrome extension.
+* If you would like to contribute through testing - please [install the beta version of the chrome extension](https://github.com/williamspiro/HubSpot-Developer-Extension/wiki/How-to-use-the-Beta-version-of-the-extension). Then Join the slack channel and provide feedback, let us know if you find a bug or have an idea.
 * If you would like to contribute through taking screenshots for the web store - make sure you're using the latest version of the stable version of the extension and post issues with your screenshots. You could also be pre-emptive and submit screenshots taken from the beta version, allowing us to have up-to-date screenshots by the time that goes live.
 * [Don't be a richard, no one likes a richard, sorry Richard.](https://github.com/williamspiro/HubSpot-Developer-Extension/blob/contributors-update/CODE_OF_CONDUCT.md)
 
@@ -43,7 +43,7 @@ When in doubt assign Jon McLaren to Review.
 If you have Git related questions feel free to ask Jon McLaren.
 
 ## Versioning
-We follow the ![semantic versioning guidelines](https://semver.org/). Major.Minor.Patch
+We follow the [semantic versioning guidelines](https://semver.org/). Major.Minor.Patch
 Most contributors wont have to worry about this - mostly just the primary ones who will be submitting to the chrome web store. In order to submit to the chrome web store a version number must increment up from the previous submitted version.
 
 
