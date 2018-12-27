@@ -222,7 +222,7 @@ $(document).ready(function() {
                         }
                         $(this).parent("li").toggleClass("active");
                     });
-                };
+                }
 
                 /*get current HubSpot ID*/
                 var hubId;
