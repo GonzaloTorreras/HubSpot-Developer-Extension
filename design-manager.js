@@ -162,7 +162,7 @@ $(document).ready(function() {
                 }
 
                 function generateAppUrl(path) {
-                    return 'https://' + appUrl + path;
+                    return "https://" + appUrl + path;
                 }
 
                 function generateDevMenu(hubId) {
@@ -185,13 +185,13 @@ $(document).ready(function() {
 
                         //$("#ext-dev-menu").toggle();
 
-                        var isExpanded = $(this).attr('aria-expanded');
+                        var isExpanded = $(this).attr("aria-expanded");
 
-                        if (isExpanded === 'true') {
-                            $(this).attr('aria-expanded', 'false');
+                        if (isExpanded === "true") {
+                            $(this).attr("aria-expanded", "false");
                             trackClick("devMenu-Closed");
                         } else {
-                            $(this).attr('aria-expanded', 'true');
+                            $(this).attr("aria-expanded", "true");
                             trackClick("devMenu-Opened");
                         }
                         $(this).parent("li").toggleClass("active");
@@ -215,10 +215,10 @@ $(document).ready(function() {
 
                         var isExpanded = $(this).attr('aria-expanded');
 
-                        if (isExpanded === 'true') {
-                            $(this).attr('aria-expanded', 'false');
+                        if (isExpanded === "true") {
+                            $(this).attr("aria-expanded", "false");
                         } else {
-                            $(this).attr('aria-expanded', 'true');
+                            $(this).attr("aria-expanded", "true");
                         }
                         $(this).parent("li").toggleClass("active");
                     });
