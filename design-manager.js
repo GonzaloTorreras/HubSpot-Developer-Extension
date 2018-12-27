@@ -81,12 +81,12 @@ $(document).ready(function() {
         //console.log("DevMenu:", devMenu);
         if (~tabUrl.indexOf("/design-manager/")) {
             //console.log("Old Design Manager is active");
-            currentScreen = 'design-manager';
+            currentScreen = "design-manager";
         }
         if (~tabUrl.indexOf("/beta-design-manager/")) {
             /*note this string detection will likely break once rolled out to everyone as they likely wont leave beta in the name*/
             //console.log("Design Manager V2 is active");
-            currentScreen = 'design-manager';
+            currentScreen = "design-manager";
             chrome.storage.sync.get([
                 "darktheme"
             ], function(items) {
@@ -96,10 +96,10 @@ $(document).ready(function() {
             });
         }
         if (~tabUrl.indexOf("/staging/")) {
-            currentScreen = 'content-staging';
+            currentScreen = "content-staging";
         }
         if (~tabUrl.indexOf("/reports-dashboard/")) {
-            currentScreen = 'dashboard';
+            currentScreen = "dashboard";
         }
         if (~tabUrl.indexOf("/pages/")) {
             if (~tabUrl.indexOf("/site/")) {
@@ -115,7 +115,7 @@ $(document).ready(function() {
             currentScreen = "hubdb";
         }
         if (~tabUrl.indexOf("/settings/")) {
-            currentScreen = 'settings';
+            currentScreen = "settings";
             if (~tabUrl.indexOf("/navigation")) {
                 currentScreen = "navigation-settings";
             }
