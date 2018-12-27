@@ -32,37 +32,37 @@ $(document).ready(function() {
 
     function setTitle(siteName) {
         var portal = siteName.replace("www.", "");
-        if (currentScreen == "design-manager") {
+        if (currentScreen === "design-manager") {
             //document.title = "🎨DM|"+portal+"|HS";
             document.title = "DM|" + portal + "|HS";
-        } else if (currentScreen == "content-staging") {
+        } else if (currentScreen === "content-staging") {
             //document.title = "🎭CS|"+portal+"|HS";
             document.title = "CS|" + portal + "|HS";
-        } else if (currentScreen == "dashboard") {
+        } else if (currentScreen === "dashboard") {
             //document.title = "📊Da|"+portal+"|HS";
             document.title = "Da|" + portal + "|HS";
-        } else if (currentScreen == "website-pages") {
+        } else if (currentScreen === "website-pages") {
             //document.title = "📑WP|"+portal+"|HS";
             document.title = "WP|" + portal + "|HS";
-        } else if (currentScreen == "landing-pages") {
+        } else if (currentScreen === "landing-pages") {
             //document.title = "📄LP|"+portal+"|HS";
             document.title = "LP|" + portal + "|HS";
-        } else if (currentScreen == "file-manager") {
+        } else if (currentScreen === "file-manager") {
             //document.title = "📁FM|"+portal+"|HS";
             document.title = "FM|" + portal + "|HS";
-        } else if (currentScreen == "hubdb") {
+        } else if (currentScreen === "hubdb") {
             //document.title = "📦DB|"+portal+"|HS";
             document.title = "DB|" + portal + "|HS";
-        } else if (currentScreen == "settings") {
+        } else if (currentScreen === "settings") {
             //document.title = "⚙️Se|"+portal+"|HS";
             document.title = "Se|" + portal + "|HS";
-        } else if (currentScreen == "navigation-settings") {
+        } else if (currentScreen === "navigation-settings") {
             //document.title = "🗺️Na|"+portal+"|HS";
             document.title = "Na|" + portal + "|HS";
-        } else if (currentScreen == "blog") {
+        } else if (currentScreen === "blog") {
             //document.title = "📰Bl|"+portal+"|HS";
             document.title = "Bl|" + portal + "|HS";
-        } else if (currentScreen == "url-mappings") {
+        } else if (currentScreen === "url-mappings") {
             //document.title = "🔀UM|"+portal+"|HS";
             document.title = "UM|" + portal + "|HS";
         }
