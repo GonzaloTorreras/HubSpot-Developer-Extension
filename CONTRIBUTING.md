@@ -43,7 +43,7 @@ When in doubt assign Jon McLaren to Review.
 If you have Git related questions feel free to ask Jon McLaren.
 
 ## Versioning
-We follow the ![semantic versioning guidelines](https://semver.org/). Major.Minor.Patch
+We follow the [semantic versioning guidelines](https://semver.org/). Major.Minor.Patch
 Most contributors wont have to worry about this - mostly just the primary ones who will be submitting to the chrome web store. In order to submit to the chrome web store a version number must increment up from the previous submitted version.
 
 
