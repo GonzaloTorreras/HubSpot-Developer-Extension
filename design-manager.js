@@ -32,37 +32,37 @@ $(document).ready(function() {
 
     function setTitle(siteName) {
         var portal = siteName.replace("www.", "");
-        if (currentScreen == "design-manager") {
+        if (currentScreen === "design-manager") {
             //document.title = "🎨DM|"+portal+"|HS";
             document.title = "DM|" + portal + "|HS";
-        } else if (currentScreen == "content-staging") {
+        } else if (currentScreen === "content-staging") {
             //document.title = "🎭CS|"+portal+"|HS";
             document.title = "CS|" + portal + "|HS";
-        } else if (currentScreen == "dashboard") {
+        } else if (currentScreen === "dashboard") {
             //document.title = "📊Da|"+portal+"|HS";
             document.title = "Da|" + portal + "|HS";
-        } else if (currentScreen == "website-pages") {
+        } else if (currentScreen === "website-pages") {
             //document.title = "📑WP|"+portal+"|HS";
             document.title = "WP|" + portal + "|HS";
-        } else if (currentScreen == "landing-pages") {
+        } else if (currentScreen === "landing-pages") {
             //document.title = "📄LP|"+portal+"|HS";
             document.title = "LP|" + portal + "|HS";
-        } else if (currentScreen == "file-manager") {
+        } else if (currentScreen === "file-manager") {
             //document.title = "📁FM|"+portal+"|HS";
             document.title = "FM|" + portal + "|HS";
-        } else if (currentScreen == "hubdb") {
+        } else if (currentScreen === "hubdb") {
             //document.title = "📦DB|"+portal+"|HS";
             document.title = "DB|" + portal + "|HS";
-        } else if (currentScreen == "settings") {
+        } else if (currentScreen === "settings") {
             //document.title = "⚙️Se|"+portal+"|HS";
             document.title = "Se|" + portal + "|HS";
-        } else if (currentScreen == "navigation-settings") {
+        } else if (currentScreen === "navigation-settings") {
             //document.title = "🗺️Na|"+portal+"|HS";
             document.title = "Na|" + portal + "|HS";
-        } else if (currentScreen == "blog") {
+        } else if (currentScreen === "blog") {
             //document.title = "📰Bl|"+portal+"|HS";
             document.title = "Bl|" + portal + "|HS";
-        } else if (currentScreen == "url-mappings") {
+        } else if (currentScreen === "url-mappings") {
             //document.title = "🔀UM|"+portal+"|HS";
             document.title = "UM|" + portal + "|HS";
         }
@@ -81,12 +81,12 @@ $(document).ready(function() {
         //console.log("DevMenu:", devMenu);
         if (~tabUrl.indexOf("/design-manager/")) {
             //console.log("Old Design Manager is active");
-            currentScreen = 'design-manager';
+            currentScreen = "design-manager";
         }
         if (~tabUrl.indexOf("/beta-design-manager/")) {
             /*note this string detection will likely break once rolled out to everyone as they likely wont leave beta in the name*/
             //console.log("Design Manager V2 is active");
-            currentScreen = 'design-manager';
+            currentScreen = "design-manager";
             chrome.storage.sync.get([
                 "darktheme"
             ], function(items) {
@@ -96,10 +96,10 @@ $(document).ready(function() {
             });
         }
         if (~tabUrl.indexOf("/staging/")) {
-            currentScreen = 'content-staging';
+            currentScreen = "content-staging";
         }
         if (~tabUrl.indexOf("/reports-dashboard/")) {
-            currentScreen = 'dashboard';
+            currentScreen = "dashboard";
         }
         if (~tabUrl.indexOf("/pages/")) {
             if (~tabUrl.indexOf("/site/")) {
@@ -115,7 +115,7 @@ $(document).ready(function() {
             currentScreen = "hubdb";
         }
         if (~tabUrl.indexOf("/settings/")) {
-            currentScreen = 'settings';
+            currentScreen = "settings";
             if (~tabUrl.indexOf("/navigation")) {
                 currentScreen = "navigation-settings";
             }
@@ -150,19 +150,19 @@ $(document).ready(function() {
                 }
 
                 function generateAllMenuItems(hubId) {
-                    var html = generateDevMenuItem('Design Manager', hubId, 'https://app.hubspot.com/design-manager/_HUB_ID_');
-                    html += generateDevMenuItem('HubDB', hubId, 'https://app.hubspot.com/hubdb/_HUB_ID_');
-                    html += generateDevMenuItem('File Manager', hubId, 'https://app.hubspot.com/file-manager-beta/_HUB_ID_');
-                    html += generateDevMenuItem('Content Staging', hubId, 'https://app.hubspot.com/content/_HUB_ID_/staging/');
-                    html += generateDevMenuItem('Advanced Menus', hubId, 'https://app.hubspot.com/settings/_HUB_ID_/website/pages/all-domains/navigation');
-                    html += generateDevMenuItem('Content Settings', hubId, 'https://app.hubspot.com/settings/_HUB_ID_/website/pages/all-domains/page-templates');
-                    html += generateDevMenuItem('URL Mappings', hubId, 'https://app.hubspot.com/content/_HUB_ID_/settings/url-mappings');
-                    html += generateDevMenuItem('Marketplace', hubId, 'https://app.hubspot.com/marketplace/_HUB_ID_/products');
+                    var html = generateDevMenuItem("Design Manager", hubId, "ttps://app.hubspot.com/design-manager/_HUB_ID_");
+                    html += generateDevMenuItem("HubDB", hubId, "https://app.hubspot.com/hubdb/_HUB_ID_");
+                    html += generateDevMenuItem("File Manager", hubId, "https://app.hubspot.com/file-manager-beta/_HUB_ID_");
+                    html += generateDevMenuItem("Content Staging", hubId, "https://app.hubspot.com/content/_HUB_ID_/staging/");
+                    html += generateDevMenuItem("Advanced Menus", hubId, "https://app.hubspot.com/settings/_HUB_ID_/website/pages/all-domains/navigation");
+                    html += generateDevMenuItem("Content Settings", hubId, "https://app.hubspot.com/settings/_HUB_ID_/website/pages/all-domains/page-templates");
+                    html += generateDevMenuItem("URL Mappings", hubId, "https://app.hubspot.com/content/_HUB_ID_/settings/url-mappings");
+                    html += generateDevMenuItem("Marketplace", hubId, "https://app.hubspot.com/marketplace/_HUB_ID_/products");
                     return html;
                 }
 
                 function generateAppUrl(path) {
-                    return 'https://' + appUrl + path;
+                    return "https://" + appUrl + path;
                 }
 
                 function generateDevMenu(hubId) {
@@ -185,13 +185,13 @@ $(document).ready(function() {
 
                         //$("#ext-dev-menu").toggle();
 
-                        var isExpanded = $(this).attr('aria-expanded');
+                        var isExpanded = $(this).attr("aria-expanded");
 
-                        if (isExpanded === 'true') {
-                            $(this).attr('aria-expanded', 'false');
+                        if (isExpanded === "true") {
+                            $(this).attr("aria-expanded", "false");
                             trackClick("devMenu-Closed");
                         } else {
-                            $(this).attr('aria-expanded', 'true');
+                            $(this).attr("aria-expanded", "true");
                             trackClick("devMenu-Opened");
                         }
                         $(this).parent("li").toggleClass("active");
@@ -215,14 +215,14 @@ $(document).ready(function() {
 
                         var isExpanded = $(this).attr('aria-expanded');
 
-                        if (isExpanded === 'true') {
-                            $(this).attr('aria-expanded', 'false');
+                        if (isExpanded === "true") {
+                            $(this).attr("aria-expanded", "false");
                         } else {
-                            $(this).attr('aria-expanded', 'true');
+                            $(this).attr("aria-expanded", "true");
                         }
                         $(this).parent("li").toggleClass("active");
                     });
-                };
+                }
 
                 /*get current HubSpot ID*/
                 var hubId;
