@@ -1,6 +1,6 @@
-# Basic contribution guidelines
+# Basic contribution guide
 * If you would like to contribute through development, you can fork this repo, make your changes and submit a pull request. If you contribute regularly, you can request collaborator access from @wspiro
-* If you would like to contribute through testing - please install the beta version of the chrome extension.
+* If you would like to contribute through testing - please [install the beta version of the chrome extension](https://github.com/williamspiro/HubSpot-Developer-Extension/wiki/How-to-use-the-Beta-version-of-the-extension).
 * If you would like to contribute through taking screenshots for the web store - make sure you're using the latest version of the stable version of the extension and post issues with your screenshots. You could also be pre-emptive and submit screenshots taken from the beta version, allowing us to have up-to-date screenshots by the time that goes live.
 * [Don't be a richard, no one likes a richard, sorry Richard.](https://github.com/williamspiro/HubSpot-Developer-Extension/blob/contributors-update/CODE_OF_CONDUCT.md)
 
