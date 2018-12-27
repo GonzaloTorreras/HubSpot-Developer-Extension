@@ -12,7 +12,7 @@ If you prefer to fly by the seat of your pants with wreckless abandon, [We have 
 
 Let us know in issues if you run into any bugs, please also let us know if you're seeing the issue in the beta version.
 
-## An update to the published version was released, how long will it take to get to me?
+## An update to the stable build was released, how long will it take to get to me?
 Google Chrome updates extensions only under certain situations when running. The easiest way to get the freshest version of the extension is to close google chrome completely and re-open it. You can tell if you're running the latest version by checking the version number on the manage extensions screen and comparing with our [releases page.](https://github.com/williamspiro/HubSpot-Developer-Extension/releases)
 
 ## Is this an official HubSpot chrome extension?
