@@ -962,6 +962,18 @@ body.design-manager.ext-dark-theme .private-form__toggle-switch--on.private-form
 }
 
 
+/*copy to portal progress indicators in header*/
+
+span.private-icon-circle__outer.private-icon-circle--legacy.private-step-indicator__point.private-icon-holder__outer {
+    background-color: #48bcfa!important;
+}
+
+.private-step-indicator__section--active,
+.private-step-indicator__section--complete {
+    color: #fff;
+}
+
+
 /* 
 #33475b
 #2d3e50
