@@ -30,9 +30,9 @@ var developerTools = {
 
             trackClick(debugParam);
 
-            if (debugParam === "cacheBuster") {
+            if (debugParam === "hsCacheBuster") {
                 var randomNum = Math.floor(Math.random() * 9999) + 1;
-                params.set("cacheBuster", randomNum);
+                params.set("hsCacheBuster", randomNum);
             } else if (params.has(debugParam)) {
                 params.delete(debugParam);
             } else {
