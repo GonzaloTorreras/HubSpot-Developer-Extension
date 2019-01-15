@@ -150,7 +150,7 @@ $(document).ready(function() {
                 }
 
                 function generateAllMenuItems(hubId) {
-                    var html = generateDevMenuItem("Design Manager", hubId, "ttps://app.hubspot.com/design-manager/_HUB_ID_");
+                    var html = generateDevMenuItem("Design Manager", hubId, "https://app.hubspot.com/design-manager/_HUB_ID_");
                     html += generateDevMenuItem("HubDB", hubId, "https://app.hubspot.com/hubdb/_HUB_ID_");
                     html += generateDevMenuItem("File Manager", hubId, "https://app.hubspot.com/file-manager-beta/_HUB_ID_");
                     html += generateDevMenuItem("Content Staging", hubId, "https://app.hubspot.com/content/_HUB_ID_/staging/");
