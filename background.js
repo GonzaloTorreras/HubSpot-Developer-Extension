@@ -39,7 +39,7 @@ chrome.commands.onCommand.addListener(function(command) {
     console.log("Command:", command);
     if (command === "bust-cache") {
         console.log("Cache bustato");
-        _gaq.push(["_trackEvent", "cacheBuster", "kbShortcutUsed"]);
+        _gaq.push(["_trackEvent", "hsCacheBuster", "kbShortcutUsed"]);
 
 
 
@@ -49,7 +49,7 @@ chrome.commands.onCommand.addListener(function(command) {
             var tabUrl = new URL(tabs[0].url);
             var params = new URLSearchParams(tabUrl.search);
             var randomNum = Math.floor(Math.random() * 9999) + 1;
-            params.set("cacheBuster", randomNum);
+            params.set("hsCacheBuster", randomNum);
 
 
             chrome.tabs.update(tabs[0].id, { url: tabUrl.origin + tabUrl.pathname + '?' + params.toString() });
