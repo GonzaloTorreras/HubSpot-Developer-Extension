@@ -104,6 +104,45 @@ var developerTools = {
 
 
     },
+    loadTip:function(){
+        var tips = [
+            {
+                title:"Use VSCode?",
+                content:"Did you know about the HubL Language Extension?",
+                url:"https://marketplace.visualstudio.com/items?itemName=WilliamSpiro.hubl#overview",
+            },
+            {
+                title:"#developer-extension",
+                content:"We have a channel in the official HS Dev Slack, share feedback there or on github Issues",
+                url:"https://hubspotdev.slack.com/messages/CBBAW6Z3R",
+            },
+            {
+                title:"hubXml",
+                content:"You can turn any blog into a HubSpot importable XML file with this open source tool",
+                url:"https://github.com/williamspiro/hubXml",
+            },
+            {
+                title:'{{ resize_image_url() }}',
+                content:"You can use HubL to resize images dynamically. Saving marketers from themselves. Do it.",
+                url:"https://designers.hubspot.com/en/docs/hubl/hubl-supported-functions#resize-image-url",
+            },
+            {
+                title:'HS Discovery Kit',
+                content:"New to devloping on HubSpot? get all the best tools, docs and resources in the kit!",
+                url:"https://designers.hubspot.com/discoverykit",
+            },
+            {
+                title:'Hub-Batch',
+                content:"A library that utilizes HubSpot APIs for bulk updating COS content (Blog Posts and Site Pages)",
+                url:"https://github.com/williamspiro/hub-batch",
+            },
+        ];
+        var randomTip = [Math.floor(Math.random()*tips.length)];
+
+        $(".c-banner").attr("href",tips[randomTip].url);
+        $(".c-banner .tip__title").text(tips[randomTip].title);
+        $(".c-banner .tip__content").text(tips[randomTip].content);
+    },
     saveSettings: function() {
         // Saves settings to chrome.storage
 
@@ -174,6 +213,7 @@ var developerTools = {
 
         developerTools.setMenuContext();
         developerTools.getSettings();
+        developerTools.loadTip();
         /*document.addEventListener('DOMContentLoaded', developerTools.getSettings());
 		document.getElementById('save').addEventListener('click',
     developerTools.saveSettings());*/
