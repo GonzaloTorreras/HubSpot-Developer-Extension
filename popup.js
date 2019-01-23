@@ -151,6 +151,11 @@ var developerTools = {
                 content:"Access/edit templates, modules, and file manager assets with your favorite FTP client",
                 url:"https://designers.hubspot.com/docs/tools/hubspot-ftp",
             },
+            {
+                title:'Used to Local Development?',
+                content:"Now with HubSpot's local server + FTP, it's possible, provide your feedback on it in the Developer Slack.",
+                url:"https://designers.hubspot.com/docs/tools/using-local-hubl-server-with-ftp",
+            },
             
         ];
         var randomTip = [Math.floor(Math.random()*tips.length)];
