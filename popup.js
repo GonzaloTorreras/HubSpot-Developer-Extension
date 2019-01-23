@@ -141,6 +141,11 @@ var developerTools = {
                 content:"Help create a framework like Timber or Bootstrap, specifically tailored to HubSpot",
                 url:"https://github.com/TheWebTech/CrankShaft",
             },
+            {
+                title:'Feature Breakdown',
+                content:"This extension has a lot of features that might be obscure, let us break it down for you, it'll only take 2 minutes.",
+                url:"https://github.com/williamspiro/HubSpot-Developer-Extension/wiki/Feature-Breakdown",
+            },
         ];
         var randomTip = [Math.floor(Math.random()*tips.length)];
 
