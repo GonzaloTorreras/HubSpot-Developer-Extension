@@ -166,7 +166,11 @@ var developerTools = {
                 content:"Simply put - we don't collect personally identifiable or confidential info, just basic anonymized usage stats, learn more",
                 url:"https://github.com/williamspiro/HubSpot-Developer-Extension/wiki/Privacy-Policy",
             },
-            
+            {
+                title:'Updates',
+                content:"We post our updates to both the beta and stable build of the extension as a release on our GitHub, check it out to learn about new features.",
+                url:"https://github.com/williamspiro/HubSpot-Developer-Extension/releases",
+            },
         ];
         var randomTip = [Math.floor(Math.random()*tips.length)];
 
