@@ -136,6 +136,11 @@ var developerTools = {
                 content:"A library that utilizes HubSpot APIs for bulk updating COS content (Blog Posts and Site Pages)",
                 url:"https://github.com/williamspiro/hub-batch",
             },
+            {
+                title:'CrankShaft',
+                content:"Help create a framework like Timber or Bootstrap, specifically tailored to HubSpot",
+                url:"https://github.com/TheWebTech/CrankShaft",
+            },
         ];
         var randomTip = [Math.floor(Math.random()*tips.length)];
 
