@@ -146,6 +146,12 @@ var developerTools = {
                 content:"This extension has a lot of features that might be obscure, let us break it down for you, it'll only take 2 minutes.",
                 url:"https://github.com/williamspiro/HubSpot-Developer-Extension/wiki/Feature-Breakdown",
             },
+            {
+                title:'Did you know HubSpot supports FTP?',
+                content:"Access/edit templates, modules, and file manager assets with your favorite FTP client",
+                url:"https://designers.hubspot.com/docs/tools/hubspot-ftp",
+            },
+            
         ];
         var randomTip = [Math.floor(Math.random()*tips.length)];
 
