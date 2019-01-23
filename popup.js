@@ -171,6 +171,12 @@ var developerTools = {
                 content:"We post our updates to both the beta and stable build of the extension as a release on our GitHub, check it out to learn about new features.",
                 url:"https://github.com/williamspiro/HubSpot-Developer-Extension/releases",
             },
+            {
+                title:'The Design Cert. has been sunsetted',
+                content:"The design cert. is no longer useful. Instead a new developer certification will be coming soon. ",
+                url:"https://designers.hubspot.com/blog/were-sunsetting-the-hubspot-design-certification-heres-why",
+            },
+            
         ];
         var randomTip = [Math.floor(Math.random()*tips.length)];
 
