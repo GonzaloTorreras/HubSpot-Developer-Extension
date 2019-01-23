@@ -156,7 +156,11 @@ var developerTools = {
                 content:"Now with HubSpot's local server + FTP, it's possible, provide your feedback on it in the Developer Slack.",
                 url:"https://designers.hubspot.com/docs/tools/using-local-hubl-server-with-ftp",
             },
-            
+            {
+                title:'HubSpot Developer Slack',
+                content:"The HubSpot Developer Slack is an invaluable resource, keep up with the top HS devs, they hang out there.",
+                url:"https://designers.hubspot.com/slack",
+            },
         ];
         var randomTip = [Math.floor(Math.random()*tips.length)];
 
