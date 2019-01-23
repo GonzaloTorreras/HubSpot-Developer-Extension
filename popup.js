@@ -161,6 +161,12 @@ var developerTools = {
                 content:"The HubSpot Developer Slack is an invaluable resource, keep up with the top HS devs, they hang out there.",
                 url:"https://designers.hubspot.com/slack",
             },
+            {
+                title:'Privacy Policy',
+                content:"Simply put - we don't collect personally identifiable or confidential info, just basic anonymized usage stats, learn more",
+                url:"https://github.com/williamspiro/HubSpot-Developer-Extension/wiki/Privacy-Policy",
+            },
+            
         ];
         var randomTip = [Math.floor(Math.random()*tips.length)];
 
