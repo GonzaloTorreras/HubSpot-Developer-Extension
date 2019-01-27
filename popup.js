@@ -176,7 +176,11 @@ var developerTools = {
                 content:"The design cert. is no longer useful. Instead a new developer certification will be coming soon. ",
                 url:"https://designers.hubspot.com/blog/were-sunsetting-the-hubspot-design-certification-heres-why",
             },
-            
+            {
+                title:'Like the extension? consider rating/reviewing',
+                content:"Ratings and reviews increase visibility of the extension, more visibility means more contributors, which means faster rollout of new features.",
+                url:"https://chrome.google.com/webstore/detail/hubspot-developer-extensi/gebemkdecnlgbcanplbgdpcffpdnfdfo",
+            },
         ];
         var randomTip = [Math.floor(Math.random()*tips.length)];
 
