@@ -47,6 +47,7 @@
         "persistent": true,
         "scripts": ["hot-reload.js", "background.js"]
     },
+    "devtools_page": "devtools.html",
     "commands": {
         "bust-cache": {
             "suggested_key": {
