@@ -196,6 +196,12 @@ var developerTools = {
                 content:"Ratings and reviews increase visibility of the extension, more visibility means more contributors, which means faster rollout of new features.",
                 url:"https://chrome.google.com/webstore/detail/hubspot-developer-extensi/gebemkdecnlgbcanplbgdpcffpdnfdfo",
             },
+            {
+                tipId:"ext Kbd shortcuts",
+                title:'Keyboard Shortcuts',
+                content:"There are Keyboard Shortcuts for the cache buster and Debug functions",
+                url:"https://github.com/williamspiro/HubSpot-Developer-Extension/wiki/How-to-Use-and-set-up-Keyboard-Shortcuts",
+            },
         ];
         var randomTip = [Math.floor(Math.random()*tips.length)];
 
