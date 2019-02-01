@@ -1,0 +1,1 @@
+console.log("hsinspector js loaded!");

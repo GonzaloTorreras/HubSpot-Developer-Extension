@@ -28,7 +28,9 @@
     ],
     "optional_permissions": [
         "https://app.hubspot.com/*",
-        "https://app.hubspotqa.com/*"
+        "https://app.hubspotqa.com/*",
+        "tabs",
+        "<all_urls>"
     ],
     "web_accessible_resources": [
         "mac-text-cursor.svg",
@@ -36,7 +38,7 @@
     ],
     "content_scripts": [{
         "run_at": "document_idle",
-        "js": ["jquery-3.2.1.min.js", "design-manager.js"],
+        "js": ["jquery-3.2.1.min.js", "design-manager.js","hsInspector.js"],
         "css": ["hsDarkIde.css"],
         "document_idle": "document_start",
         "matches": ["https://app.hubspot.com/*", "https://app.hubspotqa.com/*"]
