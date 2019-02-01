@@ -34,6 +34,7 @@ chrome.runtime.onMessage.addListener(
     }
 );
 
+/*
 chrome.runtime.onConnect.addListener(function(devToolsConnection) {
     // assign the listener function to a variable so we can remove it later
     var devToolsListener = function(message, sender, sendResponse) {
@@ -49,7 +50,7 @@ chrome.runtime.onConnect.addListener(function(devToolsConnection) {
          devToolsConnection.onMessage.removeListener(devToolsListener);
     });
 });
-
+*/
 
 
 chrome.commands.onCommand.addListener(function(command) {

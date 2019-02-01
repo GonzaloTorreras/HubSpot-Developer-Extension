@@ -10,11 +10,7 @@ document.querySelector('#load').addEventListener('click', function(event) {
       if (granted) {
        console.log("Perm granted");
 
-       // Relay the tab ID to the background page
-        chrome.runtime.sendMessage({
-            tabId: chrome.devtools.inspectedWindow.tabId,
-            scriptToInject: "hsInspector.js"
-        });
+       
       } else {
         console.log("Perm denied");
       }
