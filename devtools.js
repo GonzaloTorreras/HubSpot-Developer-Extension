@@ -3,7 +3,8 @@ var Panel = chrome.devtools.panels.create(
 "icon-16.png",
 "/panel.html"
 );
-
+console.log("devtools.js ran");
+/*
 var backgroundPageConnection = chrome.runtime.connect({
 name: "devtools-page"
 });
@@ -12,7 +13,7 @@ backgroundPageConnection.onMessage.addListener(function (message) {
 // Handle responses from the background page, if any
 });
 
-console.log("devtools.js ran");
+
 
 
 
@@ -33,4 +34,4 @@ chrome.permissions.contains({
 
     }
 });
-
+*/
