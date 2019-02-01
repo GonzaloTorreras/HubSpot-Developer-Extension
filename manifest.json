@@ -38,7 +38,7 @@
     ],
     "content_scripts": [{
         "run_at": "document_idle",
-        "js": ["jquery-3.2.1.min.js", "design-manager.js","hsInspector.js"],
+        "js": ["jquery-3.2.1.min.js", "design-manager.js"],
         "css": ["hsDarkIde.css"],
         "document_idle": "document_start",
         "matches": ["https://app.hubspot.com/*", "https://app.hubspotqa.com/*"]

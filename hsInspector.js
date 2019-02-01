@@ -11,6 +11,7 @@ devInfoLinks.forEach(function(el,i){
             console.log(response.farewell);
           });
     }
+    $("#dummy").attr('src',request.devInfoURL);
    
     
 
