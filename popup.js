@@ -202,6 +202,12 @@ var developerTools = {
                 content:"There are Keyboard Shortcuts for the cache buster and Debug functions",
                 url:"https://github.com/williamspiro/HubSpot-Developer-Extension/wiki/How-to-Use-and-set-up-Keyboard-Shortcuts",
             },
+            {
+                tipId:"devtoolschtsheet post",
+                title:'Dev Tools Cheat Sheet',
+                content:"In the HS developer forum developers like you have been compiling a cheatsheet of all their best tools that they use for HubSpot development.",
+                url:"https://community.hubspot.com/t5/Share-Your-Work/Developers-Tools-Cheat-Sheet/m-p/207945/highlight/true#M258",
+            },
         ];
         var randomTip = [Math.floor(Math.random()*tips.length)];
 
