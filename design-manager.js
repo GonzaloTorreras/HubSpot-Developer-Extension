@@ -1,3 +1,46 @@
+(
+    function( $ )
+    { //https://stackoverflow.com/questions/4232557/jquery-css-write-into-the-style-tag
+      $.style={
+              insertRule:function(selector,rules,contxt)
+              {
+                var context=contxt||document,stylesheet;
+    
+                if(typeof context.styleSheets=='object')
+                {
+                  if(context.styleSheets.length)
+                  {
+                    stylesheet=context.styleSheets[context.styleSheets.length-1];
+                  }
+                  if(context.styleSheets.length)
+                  {
+                    if(context.createStyleSheet)
+                    {
+                      stylesheet=context.createStyleSheet();
+                    }
+                    else
+                    {
+                      context.getElementsByTagName('head')[0].appendChild(context.createElement('style'));
+                      stylesheet=context.styleSheets[context.styleSheets.length-1];
+                    }
+                  }
+                  if(stylesheet.addRule)
+                  {
+                    for(var i=0;i<selector.length;++i)
+                    {
+                      stylesheet.addRule(selector[i],rules);
+                    }
+                  }
+                  else
+                  {
+                    stylesheet.insertRule(selector.join(',') + '{' + rules + '}', stylesheet.cssRules.length);  
+                  }
+                }
+              }
+            };
+      }
+    )( jQuery );
+
 $(document).ready(function() {
     /*This script runs once the HubSpot Back-end loads.*/
 
@@ -48,16 +91,16 @@ $(document).ready(function() {
             //document.title = "📄LP|"+portal+"|HS";
             document.title = "LP|" + portal + "|HS";
         } else if (currentScreen === "file-manager") {
-            //document.title = "📁FM|"+portal+"|HS";
+            //document.title = "📝FM|"+portal+"|HS";
             document.title = "FM|" + portal + "|HS";
         } else if (currentScreen === "hubdb") {
             //document.title = "📦DB|"+portal+"|HS";
             document.title = "DB|" + portal + "|HS";
         } else if (currentScreen === "settings") {
-            //document.title = "⚙️Se|"+portal+"|HS";
+            //document.title = "⚙︝Se|"+portal+"|HS";
             document.title = "Se|" + portal + "|HS";
         } else if (currentScreen === "navigation-settings") {
-            //document.title = "🗺️Na|"+portal+"|HS";
+            //document.title = "🗺︝Na|"+portal+"|HS";
             document.title = "Na|" + portal + "|HS";
         } else if (currentScreen === "blog") {
             //document.title = "📰Bl|"+portal+"|HS";
@@ -231,6 +274,35 @@ $(document).ready(function() {
                     /*inject dev menu*/
                     generateDevMenu(hubId);
                 });
+
+                /* collapsible groups */
+                /* get click on group */
+                function updateStyleEl(){
+                    
+                    if (collapsedGroups==[]){
+                        console.log("collapsed groups is empty",collapsedGroups);
+                        //remove style element
+                        $("style#ext-styles").remove();
+                    }
+                    if (collapsedGroups!=[]){
+                        var styleEl = $("<style id='ext-styles'></style>");
+                        collapsedGroups.forEach(function(item , index){
+                            //add styles to style tag
+                            styleEl.style.insertRule(['#'+item+':after'], 'display:block');
+                            styleEl.style.insertRule(['#'+item+'> div:not(.widget-controls)'], 'display:none');
+                            //#module_149995188641073:after{display:block}
+                            //#module_149995188641073 > div:not(.widget-controls){display:none}
+                        
+                        });
+                        $("head").append(styleEl);
+                    }
+                }
+                var collapsedGroups=[];
+                $("").dblclick(function(){
+                    console.log("click detected");
+                });
+
+
             }
 
         });
