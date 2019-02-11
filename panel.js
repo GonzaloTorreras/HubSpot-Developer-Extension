@@ -24,6 +24,18 @@ function getLink(){
 chrome.tabs.executeScript(chrome.devtools.inspectedWindow.tabId,
     { file: "hsInspector.js" });
 
+console.log("running query");
+    jQuery.ajax({
+        type: 'POST',
+        url: 'https://login.hubspot.com/login/api-verify',
+        data: {'portalId':"86417"},
+        xhrFields: {
+            withCredentials: true
+       }
+    }).done(function(loginData) {
+        console.log("result:",loginData);
+    })
+
 chrome.runtime.onMessage.addListener(
     function(request, sender, sendResponse) {
         console.log(sender.tab ?
