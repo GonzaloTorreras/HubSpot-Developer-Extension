@@ -48,16 +48,16 @@ $(document).ready(function() {
             //document.title = "📄LP|"+portal+"|HS";
             document.title = "LP|" + portal + "|HS";
         } else if (currentScreen === "file-manager") {
-            //document.title = "📁FM|"+portal+"|HS";
+            //document.title = "📝FM|"+portal+"|HS";
             document.title = "FM|" + portal + "|HS";
         } else if (currentScreen === "hubdb") {
             //document.title = "📦DB|"+portal+"|HS";
             document.title = "DB|" + portal + "|HS";
         } else if (currentScreen === "settings") {
-            //document.title = "⚙️Se|"+portal+"|HS";
+            //document.title = "⚙︝Se|"+portal+"|HS";
             document.title = "Se|" + portal + "|HS";
         } else if (currentScreen === "navigation-settings") {
-            //document.title = "🗺️Na|"+portal+"|HS";
+            //document.title = "🗺︝Na|"+portal+"|HS";
             document.title = "Na|" + portal + "|HS";
         } else if (currentScreen === "blog") {
             //document.title = "📰Bl|"+portal+"|HS";
@@ -80,12 +80,7 @@ $(document).ready(function() {
         });
         //console.log("DevMenu:", devMenu);
         if (~tabUrl.indexOf("/design-manager/")) {
-            //console.log("Old Design Manager is active");
-            currentScreen = "design-manager";
-        }
-        if (~tabUrl.indexOf("/beta-design-manager/")) {
-            /*note this string detection will likely break once rolled out to everyone as they likely wont leave beta in the name*/
-            //console.log("Design Manager V2 is active");
+            console.log("Design Manager is active");
             currentScreen = "design-manager";
             chrome.storage.sync.get([
                 "darktheme"
