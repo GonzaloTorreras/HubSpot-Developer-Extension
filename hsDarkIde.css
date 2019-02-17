@@ -8,6 +8,17 @@
 
 /* UI Tweaks */
 
+/* page editor tweaks */
+html.ext-ui-tweaks .cmv2-edit-form {
+    position: relative!important;
+    padding-bottom: 10px!important;
+  }
+  
+html.ext-ui-tweaks .cmv2-edit-form-back-link {
+    position: absolute!important;
+    bottom: -36px!important;
+  }
+/* end page editor tweaks */
 
 /*Fixing Mac text cursor issue in the code editor by inverting the cursor for dark code editor themes.*/
 
