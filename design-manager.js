@@ -298,8 +298,12 @@ $(document).ready(function() {
                     }
                 }
                 var collapsedGroups=[];
-                $("").dblclick(function(){
-                    console.log("click detected");
+                $(".ui-grid-item-widget-wrapper .widget-controls").dblclick(function(){
+                    var groupID = $(this).parent().attr("id"); //figure out common link between groups add the id of the element 
+                    //if groupID in collapsed groups otherwise append it.
+                    collapsedGroups.append(groupID);
+                    updateStyleEl();
+                    console.log(".click detected");
                 });
 
 
