@@ -208,6 +208,12 @@ var developerTools = {
                 content:"In the HS developer forum developers like you have been compiling a cheatsheet of all their best tools that they use for HubSpot development.",
                 url:"https://community.hubspot.com/t5/Share-Your-Work/Developers-Tools-Cheat-Sheet/m-p/207945/highlight/true#M258",
             },
+            {
+                tipId:"cmsdevcert",
+                title:'HubSpot CMS for Developers Certification',
+                content:"Free HubSpot CMS course for developers. Become a certified HubSpot CMS developer to prove your expertise.",
+                url:"https://app.hubspot.com/signup/standalone-cms-developer?hubs_signup-url=academy.hubspot.com/courses/cms-for-developers&amp;intent=learningCenter&amp;track=34",
+            },
         ];
         var randomTip = [Math.floor(Math.random()*tips.length)];
 
