@@ -104,6 +104,124 @@ var developerTools = {
 
 
     },
+    loadTip:function(){
+        var tips = [
+            {
+                tipId:"VSCode Extension",
+                title:"Use VSCode?",
+                content:"Did you know about the HubL Language Extension?",
+                url:"https://marketplace.visualstudio.com/items?itemName=WilliamSpiro.hubl#overview",
+            },
+            {
+                tipId:"ext Slack Channel",
+                title:"#developer-extension",
+                content:"We have a channel in the official HS Dev Slack, share feedback there or on github Issues",
+                url:"https://hubspotdev.slack.com/messages/CBBAW6Z3R",
+            },
+            {
+                tipId:"hubXml",
+                title:"hubXml",
+                content:"You can turn any blog into a HubSpot importable XML file with this open source tool",
+                url:"https://github.com/williamspiro/hubXml",
+            },
+            {
+                tipId:"resize_image_url",
+                title:'{{ resize_image_url() }}',
+                content:"You can use HubL to resize images dynamically. Saving marketers from themselves. Do it.",
+                url:"https://designers.hubspot.com/en/docs/hubl/hubl-supported-functions#resize-image-url",
+            },
+            {
+                tipId:"Discovery Kit",
+                title:'HS Discovery Kit',
+                content:"New to devloping on HubSpot? get all the best tools, docs and resources in the kit!",
+                url:"https://designers.hubspot.com/discoverykit",
+            },
+            {
+                tipId:"Hub-Batch",
+                title:'Hub-Batch',
+                content:"A library that utilizes HubSpot APIs for bulk updating COS content (Blog Posts and Site Pages)",
+                url:"https://github.com/williamspiro/hub-batch",
+            },
+            {
+                tipId:"CrankShaft",
+                title:'CrankShaft',
+                content:"Help create a framework like Timber or Bootstrap, specifically tailored to HubSpot",
+                url:"https://github.com/TheWebTech/CrankShaft",
+            },
+            {
+                tipId:"feature breakdown",
+                title:'Feature Breakdown',
+                content:"This extension has a lot of features that might be obscure, let us break it down for you, it'll only take 2 minutes.",
+                url:"https://github.com/williamspiro/HubSpot-Developer-Extension/wiki/Feature-Breakdown",
+            },
+            {
+                tipId:"DYK FTP",
+                title:'Did you know HubSpot supports FTP?',
+                content:"Access/edit templates, modules, and file manager assets with your favorite FTP client",
+                url:"https://designers.hubspot.com/docs/tools/hubspot-ftp",
+            },
+            {
+                tipId:"local dev",
+                title:'Used to Local Development?',
+                content:"Now with HubSpot's local server + FTP, it's possible, provide your feedback on it in the Developer Slack.",
+                url:"https://designers.hubspot.com/docs/tools/using-local-hubl-server-with-ftp",
+            },
+            {
+                tipId:"HS Dev Slack",
+                title:'HubSpot Developer Slack',
+                content:"The HubSpot Developer Slack is an invaluable resource, keep up with the top HS devs, they hang out there.",
+                url:"https://designers.hubspot.com/slack",
+            },
+            {
+                tipId:"ext Privacy Policy",
+                title:'Privacy Policy',
+                content:"Simply put - we don't collect personally identifiable or confidential info, just basic anonymized usage stats, learn more",
+                url:"https://github.com/williamspiro/HubSpot-Developer-Extension/wiki/Privacy-Policy",
+            },
+            {
+                tipId:"ext Updates",
+                title:'Updates',
+                content:"We post our updates to both the beta and stable build of the extension as a release on our GitHub, check it out to learn about new features.",
+                url:"https://github.com/williamspiro/HubSpot-Developer-Extension/releases",
+            },
+            {
+                tipId:"design cert expire",
+                title:'The Design Cert. has been sunsetted',
+                content:"The design cert. is no longer useful. Instead a new developer certification will be coming soon. ",
+                url:"https://designers.hubspot.com/blog/were-sunsetting-the-hubspot-design-certification-heres-why",
+            },
+            {
+                tipId:"ext rate and review",
+                title:'Like the extension? consider rating/reviewing',
+                content:"Ratings and reviews increase visibility of the extension, more visibility means more contributors, which means faster rollout of new features.",
+                url:"https://chrome.google.com/webstore/detail/hubspot-developer-extensi/gebemkdecnlgbcanplbgdpcffpdnfdfo",
+            },
+            {
+                tipId:"ext Kbd shortcuts",
+                title:'Keyboard Shortcuts',
+                content:"There are Keyboard Shortcuts for the cache buster and Debug functions",
+                url:"https://github.com/williamspiro/HubSpot-Developer-Extension/wiki/How-to-Use-and-set-up-Keyboard-Shortcuts",
+            },
+            {
+                tipId:"devtoolschtsheet post",
+                title:'Dev Tools Cheat Sheet',
+                content:"In the HS developer forum developers like you have been compiling a cheatsheet of all their best tools that they use for HubSpot development.",
+                url:"https://community.hubspot.com/t5/Share-Your-Work/Developers-Tools-Cheat-Sheet/m-p/207945/highlight/true#M258",
+            },
+            {
+                tipId:"cmsdevcert",
+                title:'HubSpot CMS for Developers Certification',
+                content:"Free HubSpot CMS course for developers. Become a certified HubSpot CMS developer to prove your expertise.",
+                url:"https://app.hubspot.com/signup/standalone-cms-developer?hubs_signup-url=academy.hubspot.com/courses/cms-for-developers&amp;intent=learningCenter&amp;track=34",
+            },
+        ];
+        var randomTip = [Math.floor(Math.random()*tips.length)];
+
+        $(".c-banner").attr("data-tipId",tips[randomTip].tipId);
+        $(".c-banner").attr("href",tips[randomTip].url);
+        $(".c-banner .tip__title").text(tips[randomTip].title);
+        $(".c-banner .tip__content").text(tips[randomTip].content);
+    },
     saveSettings: function() {
         // Saves settings to chrome.storage
 
@@ -174,6 +292,7 @@ var developerTools = {
 
         developerTools.setMenuContext();
         developerTools.getSettings();
+        developerTools.loadTip();
         /*document.addEventListener('DOMContentLoaded', developerTools.getSettings());
 		document.getElementById('save').addEventListener('click',
     developerTools.saveSettings());*/
@@ -211,6 +330,10 @@ var developerTools = {
             $(".ui-tweaks-toggle .uiToggleSwitch").toggleClass("uiToggleSwitchOn private-form__toggle-switch--on");
         });
 
+        $("a.c-banner").click(function(e){
+            var tipId = "tip:" + $(this).data("tipid");
+            trackClick(tipId);
+        })
 
     }
 
