@@ -79,7 +79,6 @@ $(document).ready(function() {
                     sprocky: true,
                 });
             }
-            
             //Check if sprocky is enabled
             if (result.sprocky || result.sprocky == undefined) {
                 //Add in quotes for sprocky here
