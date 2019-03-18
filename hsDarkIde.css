@@ -1004,6 +1004,19 @@ div#sprocky.slide {
 	animation-delay: 2s;
 }
 
+div#sprocky div {
+	width: 100%;
+	text-align: right;
+}
+
+div#sprocky span.hide a {
+	color: #000;
+}
+
+div#sprocky span.hide a:hover {
+	text-decoration: none;
+}
+
 @-webkit-keyframes slide {
 	100% { right: 2rem; }
 }
@@ -1057,10 +1070,5 @@ div#sprocky.slide {
 	content: "";
 	position: absolute;
 	right: 6px;
-}
-
-div#sprocky div {
-	width: 100%;
-	text-align: right;
 }
 
