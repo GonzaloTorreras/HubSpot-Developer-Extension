@@ -72,10 +72,18 @@ $(document).ready(function() {
     // A fun April fools joke, shows 'Sprocky'
     function sprocky() {
         chrome.storage.sync.get(['sprocky'], function(result) {
-            if (result.sprocky) {
 
-                //Add in quote for sprocky here
-                var quotes  = ["Hi, it looks like you're looking to build a custom module. Do you need assistance", 
+            //Check if undefined(users hasn't loaded it yet), then turn it on by default
+            if (result.sprocky == undefined) {
+                chrome.storage.sync.set({
+                    sprocky: true,
+                });
+            }
+            //Check if sprocky is enabled
+            if (result.sprocky || result.sprocky == undefined) {
+                //Add in quotes for sprocky here
+                var quotes  = 
+                ["Hi, it looks like you're looking to build a custom module. Do you need assistance", 
                 "Email templates are a pain. Let me help.", 
                 "Hi, my name is Sproky, how can I help?"];
 
@@ -83,7 +91,7 @@ $(document).ready(function() {
                 var rand = quotes [Math.floor(Math.random()*quotes .length)];
 
                 //Create sprocky div
-                var $sprocky = $( '<div id="sprocky" class="slide"><span class="hide" onclick="hideSprocky()"><a href="#">x</a></span><div class="speech-bubble-ds"></span><p>' + rand + '</p> <div class="speech-bubble-ds-arrow"></div></div><div class="sprockyimg"><img src="https://cdn2.hubspot.net/hubfs/4910474/sprocky.png" ></div></div> <script>function hideSprocky() { var x = document.getElementById("sprocky"); x.style.display = "none"; }</script>' );
+                var $sprocky = $( '<div id="sprocky" class="slide"><span class="hide" onclick="hideSprocky()"><a href="#">x</a></span><div class="speech-bubble-ds"></span><p>' + rand + '</p> <div class="speech-bubble-ds-arrow"></div></div><div class="sprockyimg"><img src="https://cdn2.hubspot.net/hubfs/4910474/sprocky.png" alt="Sprocky"></div></div> <script>function hideSprocky() { var x = document.getElementById("sprocky"); x.style.display = "none"; }</script>' );
     
                 //Append to body
                 $( "body" ).append($sprocky);
