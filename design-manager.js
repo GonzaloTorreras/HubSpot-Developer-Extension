@@ -1,4 +1,5 @@
 $(document).ready(function() {
+
     /*This script runs once the HubSpot Back-end loads.*/
 
     /*trackClick sends the click event to the background js which has google analytics set up, this prevents google analytics running on the page and means the extension can only track it's own events.*/
@@ -67,6 +68,29 @@ $(document).ready(function() {
             document.title = "UM|" + portal + "|HS";
         }
     }
+
+    // A fun April fools joke, shows 'Sprocky'
+    function sprocky() {
+        chrome.storage.sync.get(['sprocky'], function(result) {
+            if (result.sprocky) {
+
+                //Add in quote for sprocky here
+                var quotes  = ["Hi, it looks like you're looking to build a custom module. Do you need assistance", 
+                "Email templates are a pain. Let me help.", 
+                "Hi, my name is Sproky, how can I help?"];
+
+                //Pick one at random
+                var rand = quotes [Math.floor(Math.random()*quotes .length)];
+
+                //Create sprocky div
+                var $sprocky = $( '<div id="sprocky" class="slide"><span class="hide" onclick="hideSprocky()"><a href="#">x</a></span><div class="speech-bubble-ds"></span><p>' + rand + '</p> <div class="speech-bubble-ds-arrow"></div></div><div class="sprockyimg"><img src="https://cdn2.hubspot.net/hubfs/4910474/sprocky.png" ></div></div> <script>function hideSprocky() { var x = document.getElementById("sprocky"); x.style.display = "none"; }</script>' );
+    
+                //Append to body
+                $( "body" ).append($sprocky);
+            }
+        });
+    }
+
     //console.log("Current URL: ",tabUrl);
     const appUrl = ~tabUrl.indexOf("app.hubspotqa.com") ? "app.hubspotqa.com" : "app.hubspot.com";
     if (~tabUrl.indexOf(appUrl)) {
@@ -89,6 +113,9 @@ $(document).ready(function() {
                     $("body").addClass("ext-dark-theme");
                 }
             });
+
+            // Show Sprocky
+            sprocky();
         }
         if (~tabUrl.indexOf("/staging/")) {
             currentScreen = "content-staging";

@@ -228,9 +228,12 @@ var developerTools = {
         console.log("settings saved");
         var darkthemeVal = $("#darktheme").prop("checked");
         var uiTweaksVal = $("#uiTweaks").prop("checked");
+        var sprockyVal = $("#sprocky").prop("checked");
 
         console.log("dark theme is ", darkthemeVal);
         console.log("UI Tweaks is ", uiTweaksVal);
+        console.log("Sprocky is ", sprockyVal);
+
         chrome.storage.sync.set({
             darktheme: darkthemeVal,
         }, function() {
@@ -244,6 +247,17 @@ var developerTools = {
 
         chrome.storage.sync.set({
             uitweaks: uiTweaksVal,
+        }, function() {
+            // Update status to let user know options were saved.
+            var status = document.getElementById("status");
+            status.textContent = "Options saved. If you have the Design manager open, you will need to refresh to see the theme.";
+            setTimeout(function() {
+                status.textContent = "";
+            }, 4000);
+        });
+
+        chrome.storage.sync.set({
+            sprocky: sprockyVal,
         }, function() {
             // Update status to let user know options were saved.
             var status = document.getElementById("status");
@@ -277,6 +291,15 @@ var developerTools = {
             console.log("dark theme:", items.uitweaks);
             if (items.uitweaks) {
                 $(".ui-tweaks-toggle .uiToggleSwitch").addClass("uiToggleSwitchOn private-form__toggle-switch--on");
+            }
+        });
+        chrome.storage.sync.get(["sprocky"], function(items) {
+            // Restores select box and checkbox state using the preferences
+            // stored in chrome.storage.
+            document.getElementById("sprocky").checked = items.sprocky;
+            console.log("sprocky:", items.sprocky);
+            if (items.sprocky) {
+                $(".sprocky-toggle .uiToggleSwitch").addClass("uiToggleSwitchOn private-form__toggle-switch--on");
             }
         });
 
@@ -328,6 +351,11 @@ var developerTools = {
 
             developerTools.saveSettings();
             $(".ui-tweaks-toggle .uiToggleSwitch").toggleClass("uiToggleSwitchOn private-form__toggle-switch--on");
+        });
+
+        $(".sprocky-toggle input").change(function() {
+            developerTools.saveSettings();
+            $(".sprocky-toggle .uiToggleSwitch").toggleClass("uiToggleSwitchOn private-form__toggle-switch--on");
         });
 
         $("a.c-banner").click(function(e){
