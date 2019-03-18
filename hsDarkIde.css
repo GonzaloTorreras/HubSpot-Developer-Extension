@@ -994,6 +994,7 @@ div#sprocky {
 	width: 350px;
 	position: absolute;
 	right: -600px;
+	z-index: 999;
 }
 
 div#sprocky.slide {
