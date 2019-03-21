@@ -24,28 +24,28 @@ html.ext-ui-tweaks .cmv2-edit-form-back-link {
 
 html.mac.ext-ui-tweaks .cm-s-hubspot-canvas-dark .CodeMirror-lines,
 html.mac .cm-s-solarized .CodeMirror-lines {
-    cursor: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAACaUlEQVRYR+1WPW8TQRCd3bVPIRcLsA0oeO37jIAcUEEZEAVVKir+AfwN/w34B1RUqSgQpIQKuADK7X3EZyLABJBzITp7d9FGGJRISCnunMZTrvZm3r15M28RnHCgSX3P87TBYFC9AAB7tdo4CALuui6ZHw4rnwGg2WyOfN/Pi8b7DwCl9Xe93jdV4FK7TTMp93WE5j72eqk6u9puN/w03SkNgH3R7ghNWFhincVszTWMG0GSvHZMZ1UgkeEcR+GncKs0AJdbrcYI40XA+BwgdDqIoqeuZd0DKX+CEF+rQmx/6PcPGCoyDmkgy7J5jPF54NxlcbzmmOYqEBIIIb7our5XqgYAQIEhjuPUEefLm1H0fMmy7khCNhhjqvccAGSRf69y/WXgT2JMKT2jYW2ZJWzdMZyVXOQbaZr+AABRdPH/AqiiqhduhS/tjn1rJEf+NAGoFjTkSF5nCXvmGM5dVEVvGGNKfKoFhcehFnjgabvGbiuO43BSyTRNeyFZ6PtQ/BI62gJEKZ0jhJgViVeCJHzkGvbDMRLrnPM4TdP90kU4YaAq8c3NJHyyZNj3R0i8mhYDipGT1QAA4FardVbDmpqCF3bHvp2L3O/3+9+nMYYHi8iyrAbi6NpkCiSRb6MomkxBeYtI2fFwONQBYDFJEr/b7T7udrsPDMPwAGC7Vqtlpa5iZUbv03SghKDUL7GsI4F21DSosyuUNks1I2XHWBOWckIhEEfAhQSCMZZEOaIo2449Suu/NK2Jx+MKJyQTQuQYY41wrotKZXwqzwelPkgK37HHTHjUDY/5WXHXZgBmDMwYmDEwY+A3VAEpMBUlNjAAAAAASUVORK5CYII=) 6 10, url("chrome-extension://__MSG_@@extension_id__/mac-text-cursor.svg"), url("chrome-extension://__MSG_@@extension_id__/mac-text-cursor.png"), text!important;
+	cursor: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAACaUlEQVRYR+1WPW8TQRCd3bVPIRcLsA0oeO37jIAcUEEZEAVVKir+AfwN/w34B1RUqSgQpIQKuADK7X3EZyLABJBzITp7d9FGGJRISCnunMZTrvZm3r15M28RnHCgSX3P87TBYFC9AAB7tdo4CALuui6ZHw4rnwGg2WyOfN/Pi8b7DwCl9Xe93jdV4FK7TTMp93WE5j72eqk6u9puN/w03SkNgH3R7ghNWFhincVszTWMG0GSvHZMZ1UgkeEcR+GncKs0AJdbrcYI40XA+BwgdDqIoqeuZd0DKX+CEF+rQmx/6PcPGCoyDmkgy7J5jPF54NxlcbzmmOYqEBIIIb7our5XqgYAQIEhjuPUEefLm1H0fMmy7khCNhhjqvccAGSRf69y/WXgT2JMKT2jYW2ZJWzdMZyVXOQbaZr+AABRdPH/AqiiqhduhS/tjn1rJEf+NAGoFjTkSF5nCXvmGM5dVEVvGGNKfKoFhcehFnjgabvGbiuO43BSyTRNeyFZ6PtQ/BI62gJEKZ0jhJgViVeCJHzkGvbDMRLrnPM4TdP90kU4YaAq8c3NJHyyZNj3R0i8mhYDipGT1QAA4FardVbDmpqCF3bHvp2L3O/3+9+nMYYHi8iyrAbi6NpkCiSRb6MomkxBeYtI2fFwONQBYDFJEr/b7T7udrsPDMPwAGC7Vqtlpa5iZUbv03SghKDUL7GsI4F21DSosyuUNks1I2XHWBOWckIhEEfAhQSCMZZEOaIo2449Suu/NK2Jx+MKJyQTQuQYY41wrotKZXwqzwelPkgK37HHTHjUDY/5WXHXZgBmDMwYmDEwY+A3VAEpMBUlNjAAAAAASUVORK5CYII=) 6 10, url("chrome-extension://__MSG_@@extension_id__/mac-text-cursor.svg"), url("chrome-extension://__MSG_@@extension_id__/mac-text-cursor.png"), text!important;
 }
 
 
 /* HubSpot's got an issue with the horizontal tab scrollbar appearing over the navigation menu the tweak below fixes that. */
 
 html.ext-ui-tweaks .HorizontalScrollContainer__ScrollBar-cSRRR {
-    z-index: 500;
+	z-index: 500;
 }
 
 
 /*background color for developer menu is slightly different to indicate it's added by ext*/
 
 li#ext-dev-menu-wrapper {
-    background: rgba(255, 255, 255, .05);
+	background: rgba(255, 255, 255, .05);
 }
 
 
 /*fix for menu labels in setting pages */
 
 body.hubspot .simple-menus-menu-tree .simple-menus-menu-item-label {
-    width: 100%;
+	width: 100%;
 }
 
 
@@ -57,34 +57,34 @@ body.hubspot .simple-menus-menu-tree .simple-menus-menu-item-label {
 **********/
 
 html.ext-ui-tweaks .HorizontalScrollContainer__ScrollBar-cSRRR {
-    height: 10px;
-    /* increased from something like 3px */
-    bottom: 10px;
-    border-radius: 7px;
-    cursor: move;
-    /* cursor state for easier idendification of active state */
-    transition: 150ms all;
+	height: 10px;
+	/* increased from something like 3px */
+	bottom: 10px;
+	border-radius: 7px;
+	cursor: move;
+	/* cursor state for easier idendification of active state */
+	transition: 150ms all;
 }
 
 html.ext-ui-tweaks .HorizontalScrollContainer__ScrollBar-cSRRR:hover,
 html.ext-ui-tweaks .HorizontalScrollContainer__ScrollBar-cSRRR:active {
-    background-color: #7e9ab5;
-    /* hover for easier idendification of active state */
+	background-color: #7e9ab5;
+	/* hover for easier idendification of active state */
 }
 
 html.ext-ui-tweaks .tabs-container,
 html.ext-ui-tweaks .file-tabs>div {
-    height: 40px;
+	height: 40px;
 }
 
 html.ext-ui-tweaks .file-tabs.private-tabs .file-tab {
-    height: auto;
-    /* removed defined height of 40px to allow for the scrollbar to live within the padding area of the tab*/
-    padding-bottom: 12px;
+	height: auto;
+	/* removed defined height of 40px to allow for the scrollbar to live within the padding area of the tab*/
+	padding-bottom: 12px;
 }
 
 html.ext-ui-tweaks .private-button--transparent.private-button--default {
-    padding: 11px !important;
+	padding: 11px !important;
 }
 
 
@@ -108,17 +108,17 @@ html.ext-ui-tweaks .private-button--transparent.private-button--default {
 */
 
 body.design-manager.ext-dark-theme {
-    --body-font-size: 15px;
-    /** force bigger size for code */
-    --body-color: #eaf0f6;
-    --body-color-hover: rgba(255, 255, 255, 0.85);
-    --body-background: linear-gradient(45deg, #33475b, #2d3e50);
-    --body-background-hover: rgba(203, 214, 226, 0.15);
-    --border-color: transparent;
-    --rgb-details-color: 63, 180, 249;
-    /** used on icons, links and several details. Use only RGB format, RGBA is used on different classes. */
-    --scroll-indicator-color: #4ba5ffa8;
-    /*android like you can scroll up/down indicator*/
+	--body-font-size: 15px;
+	/** force bigger size for code */
+	--body-color: #eaf0f6;
+	--body-color-hover: rgba(255, 255, 255, 0.85);
+	--body-background: linear-gradient(45deg, #33475b, #2d3e50);
+	--body-background-hover: rgba(203, 214, 226, 0.15);
+	--border-color: transparent;
+	--rgb-details-color: 63, 180, 249;
+	/** used on icons, links and several details. Use only RGB format, RGBA is used on different classes. */
+	--scroll-indicator-color: #4ba5ffa8;
+	/*android like you can scroll up/down indicator*/
 }
 
 
@@ -127,12 +127,12 @@ body.design-manager.ext-dark-theme {
 
 /*
 body.design-manager.ext-dark-theme button.uiButton.private-button.private-button--xs.private-button--tertiary-light.private-button-select-group__option {
-    color: rgba(255, 255, 255, 0.5) !important;
+	color: rgba(255, 255, 255, 0.5) !important;
 }
 body.design-manager.ext-dark-theme button.uiButton.private-button.private-button--xs.private-button--tertiary-light.private-button-select-group__option.private-button--active {
-    
-    color: #fff !important;
-    border-color:rgb( var(--rgb-details-color) ) !important;
+	
+	color: #fff !important;
+	border-color:rgb( var(--rgb-details-color) ) !important;
 }
 
 */
@@ -141,36 +141,36 @@ body.design-manager.ext-dark-theme button.uiButton.private-button.private-button
 /* Dark Theme Scroll Bar Coloring */
 
 body.design-manager.ext-dark-theme .HorizontalScrollContainer__ScrollBar-cSRRR {
-    height: 10px;
-    bottom: 10px;
-    /*background: rgba(var(--rgb-details-color), .8);*/
-    background: rgba(var(--rgb-details-color), .4);
-    transition: 200ms all;
+	height: 10px;
+	bottom: 10px;
+	/*background: rgba(var(--rgb-details-color), .8);*/
+	background: rgba(var(--rgb-details-color), .4);
+	transition: 200ms all;
 }
 
 body.design-manager.ext-dark-theme .HorizontalScrollContainer__ScrollBar-cSRRR:hover {
-    background: rgba(var(--rgb-details-color), .8);
-    /* hover for easier idendification of active state */
+	background: rgba(var(--rgb-details-color), .8);
+	/* hover for easier idendification of active state */
 }
 
 body.design-manager.ext-dark-theme .HorizontalScrollContainer__ScrollBar-cSRRR:active {
-    background: rgba(var(--rgb-details-color), 1);
+	background: rgba(var(--rgb-details-color), 1);
 }
 
 
 /* End of Dark Scroll Bar */
 
 body.design-manager.ext-dark-theme .welcome-container {
-    background-color: #202d3a;
+	background-color: #202d3a;
 }
 
 
 /* blue border below main HS nav*/
 
 body.design-manager.ext-dark-theme div#hs-nav-v4 {
-    box-shadow: 0px 2px 4px 0px rgba( var(--rgb-details-color), .8);
-    z-index: 600;
-    /*this prevents dropdowns from being covered by other assets as well as allows dropshadow to be seen*/
+	box-shadow: 0px 2px 4px 0px rgba( var(--rgb-details-color), .8);
+	z-index: 600;
+	/*this prevents dropdowns from being covered by other assets as well as allows dropshadow to be seen*/
 }
 
 
@@ -178,40 +178,40 @@ body.design-manager.ext-dark-theme div#hs-nav-v4 {
 
 body.design-manager.ext-dark-theme ::-webkit-scrollbar,
 body.design-manager.ext-dark-theme ::-webkit-scrollbar {
-    width: 9px;
+	width: 9px;
 }
 
 body.design-manager.ext-dark-theme ::-webkit-scrollbar-track,
 body.design-manager.ext-dark-theme ::-webkit-scrollbar-track {
-    /*-webkit-border-radius:5px;*/
-    /*border-radius:5px;*/
-    background: rgba(var(--rgb-details-color), .1);
+	/*-webkit-border-radius:5px;*/
+	/*border-radius:5px;*/
+	background: rgba(var(--rgb-details-color), .1);
 }
 
 body.design-manager.ext-dark-theme ::-webkit-scrollbar-track {
-    background: #2d3e4e;
+	background: #2d3e4e;
 }
 
 body.design-manager.ext-dark-theme ::-webkit-scrollbar-thumb,
 body.design-manager.ext-dark-theme ::-webkit-scrollbar-thumb {
-    -webkit-border-radius: 5px;
-    border-radius: 5px;
-    background: rgba(var(--rgb-details-color), .4);
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	background: rgba(var(--rgb-details-color), .4);
 }
 
 body.design-manager.ext-dark-theme ::-webkit-scrollbar-thumb:hover,
 body.design-manager.ext-dark-theme ::-webkit-scrollbar-thumb:hover {
-    background: rgba(var(--rgb-details-color), .8);
+	background: rgba(var(--rgb-details-color), .8);
 }
 
 body.design-manager.ext-dark-theme ::-webkit-scrollbar-thumb:active,
 body.design-manager.ext-dark-theme ::-webkit-scrollbar-thumb:active {
-    background: rgba(var(--rgb-details-color), 1);
+	background: rgba(var(--rgb-details-color), 1);
 }
 
 body.design-manager.ext-dark-theme ::-webkit-scrollbar-thumb:window-inactive,
 body.design-manager.ext-dark-theme ::-webkit-scrollbar-thumb:window-inactive {
-    background: rgba(var(--rgb-details-color), .2);
+	background: rgba(var(--rgb-details-color), .2);
 }
 
 
@@ -222,7 +222,7 @@ body.design-manager.ext-dark-theme .dSMuYW,
 body.design-manager.ext-dark-theme .eLZHvU,
 body.design-manager.ext-dark-theme .iffnbF,
 body.design-manager.ext-dark-theme .UIOverhang-iMLGZW:nth-child(2) {
-    background-image: linear-gradient(to top, rgba(0, 0, 0, 0), var(--scroll-indicator-color))!important;
+	background-image: linear-gradient(to top, rgba(0, 0, 0, 0), var(--scroll-indicator-color))!important;
 }
 
 body.design-manager.ext-dark-theme .cFIGxN,
@@ -238,26 +238,26 @@ body.design-manager.ext-dark-theme .dKLfpC,
 body.design-manager.ext-dark-theme .jRqEiz,
 body.design-manager.ext-dark-theme .jfoLJB,
 body.design-manager.ext-dark-theme .UIOverhang-iMLGZW:nth-child(3) {
-    background-image: linear-gradient(to bottom, rgba(234, 240, 246, 0), var(--scroll-indicator-color));
+	background-image: linear-gradient(to bottom, rgba(234, 240, 246, 0), var(--scroll-indicator-color));
 }
 
 
 /** force font size only on default value of 12, if you change in the HS dev setting it won't apply */
 
 body.design-manager.ext-dark-theme .CodeMirror.CodeMirror-overlayscroll[style*="font-size: 12px"] {
-    font-size: var(--body-font-size) !important;
+	font-size: var(--body-font-size) !important;
 }
 
 body.design-manager.ext-dark-theme .CodeMirror-overlayscroll-vertical div,
 body.design-manager.ext-dark-theme .CodeMirror-overlayscroll-horizontal div {
-    background: rgba(63, 180, 249, 0.8)!important;
-    opacity: .5 !important;
-    transition: opacity .5s;
+	background: rgba(63, 180, 249, 0.8)!important;
+	opacity: .5 !important;
+	transition: opacity .5s;
 }
 
 body.design-manager.ext-dark-theme .CodeMirror-overlayscroll-vertical:hover div,
 body.design-manager.ext-dark-theme .CodeMirror-overlayscroll-horizontal:hover div {
-    opacity: 1 !important;
+	opacity: 1 !important;
 }
 
 body.hubspot.design-manager.ext-dark-theme,
@@ -265,13 +265,13 @@ body.design-manager.ext-dark-theme .editor-toolbar,
 body.design-manager.ext-dark-theme .file-tabs.private-tabs .file-tab,
 body.design-manager.ext-dark-theme .private-popover.private-tooltip--longform,
 body.design-manager.ext-dark-theme .private-dropdown .Select-menu-outer {
-    color: var(--body-color);
-    background: var(--body-background);
-    border-color: var(--border-color);
+	color: var(--body-color);
+	background: var(--body-background);
+	border-color: var(--border-color);
 }
 
 body.design-manager.ext-dark-theme .private-nav-item {
-    color: rgba(255, 255, 255, .6) !important;
+	color: rgba(255, 255, 255, .6) !important;
 }
 
 body.design-manager.ext-dark-theme .private-nav-item:hover,
@@ -281,37 +281,37 @@ body.design-manager.ext-dark-theme .private-table,
 body.design-manager.ext-dark-theme .private-scroll__wrapper--tables,
 body.design-manager.ext-dark-theme .private-dropdown .Select-noresults,
 body.design-manager.ext-dark-theme .private-dropdown__results .Select-noresults {
-    background: var(--body-background-hover) !important;
-    color: var(--body-color-hover) !important;
+	background: var(--body-background-hover) !important;
+	color: var(--body-color-hover) !important;
 }
 
 body.design-manager.ext-dark-theme .editor-toolbar {
-    height: auto;
-    padding: .5rem;
+	height: auto;
+	padding: .5rem;
 }
 
 body.design-manager.ext-dark-theme .HorizontalScrollContainer__ScrollBar-efpkTc {
-    background: rgba(255, 255, 255, .8)!important;
-    height: .4rem;
-    bottom: .4rem;
-    cursor: e-resize;
+	background: rgba(255, 255, 255, .8)!important;
+	height: .4rem;
+	bottom: .4rem;
+	cursor: e-resize;
 }
 
 body.design-manager.ext-dark-theme .namespaced-hack-section--vertical {
-    background-size: 100% .2em;
+	background-size: 100% .2em;
 }
 
 body.design-manager.ext-dark-theme .UIExpandableSection__ExpandableHeader-gjMdOM,
 body.design-manager.ext-dark-theme .cFBEqa {
-    background: transparent;
-    border-bottom: transparent;
+	background: transparent;
+	border-bottom: transparent;
 }
 
 body.design-manager.ext-dark-theme .is--text--help,
 body.design-manager.ext-dark-theme .private-form__control,
 body.design-manager.ext-dark-theme .Select-option,
 body.design-manager.ext-dark-theme span.private-icon.private-icon__high {
-    color: rgba(255, 255, 255, .5)!important;
+	color: rgba(255, 255, 255, .5)!important;
 }
 
 body.design-manager.ext-dark-theme .private-checkbox__input[value=on]~.private-checkbox__text .private-dropdown__item__label,
@@ -319,7 +319,7 @@ body.design-manager.ext-dark-theme .private-moveable-object:hover,
 body.design-manager.ext-dark-theme .private-tab.private-tab--active .private-icon:not(.private-icon-circle__inner),
 body.design-manager.ext-dark-theme .private-moveable-object:hover .private-icon:not(.private-icon-circle__inner),
 body.design-manager.ext-dark-theme .layout-tree .widget-icon {
-    color: #d6cbcb!important;
+	color: #d6cbcb!important;
 }
 
 
@@ -330,15 +330,15 @@ body.design-manager.ext-dark-theme .private-expanding-text-input--inline.private
 body.design-manager.ext-dark-theme .private-flex.dm-tool__breadcrumbs.field-edit-breadcrumbs,
 body.design-manager.ext-dark-theme .private-form__toggle-switch--sm .private-form__toggle-switch__inner:not(.private-form__toggle-switch--on),
 body.design-manager.ext-dark-theme .private-form__toggle-switch--xs .private-form__toggle-switch__inner:not(.private-form__toggle-switch--on) {
-    background: transparent;
+	background: transparent;
 }
 
 body.design-manager.ext-dark-theme .private-expanding-text-input--inline.private-expanding-text-input--focused .private-expanding-text-input__wrapper,
 body.design-manager.ext-dark-theme .private-expanding-text-input--inline.private-expanding-text-input--hovered .private-expanding-text-input__wrapper,
 body.design-manager.ext-dark-theme .private-form__control:hover,
 body.design-manager.ext-dark-theme .private-form__control {
-    background: rgba(255, 255, 255, .1);
-    background-color: rgba(255, 255, 255, .1);
+	background: rgba(255, 255, 255, .1);
+	background-color: rgba(255, 255, 255, .1);
 }
 
 body.design-manager.ext-dark-theme .private-search-control__wrapper,
@@ -346,7 +346,7 @@ body.design-manager.ext-dark-theme .private-button.private-form__control,
 body.design-manager.ext-dark-theme .private-button.private-form__control:focus,
 body.design-manager.ext-dark-theme .private-button.private-form__control:hover,
 body.design-manager.ext-dark-theme .dm-tool__breadcrumbs {
-    background: #33475b!important;
+	background: #33475b!important;
 }
 
 body.design-manager.ext-dark-theme .private-dropdown--list .private-list__item>a,
@@ -354,7 +354,7 @@ body.design-manager.ext-dark-theme .private-dropdown--list .private-list__item>b
 body.design-manager.ext-dark-theme .private-tabs .private-tab,
 body.design-manager.ext-dark-theme .private-moveable-object,
 body.design-manager.ext-dark-theme .layout-tree .widget-icon {
-    color: rgba(255, 255, 255, .5)!important;
+	color: rgba(255, 255, 255, .5)!important;
 }
 
 body.design-manager.ext-dark-theme .private-dropdown--list .private-list__item>a:hover,
@@ -363,8 +363,8 @@ body.design-manager.ext-dark-theme .private-typeahead-results .private-typeahead
 body.design-manager.ext-dark-theme .private-typeahead-results .private-typeahead-result--disabled .private-typeahead-result-label,
 body.design-manager.ext-dark-theme .result-item.result-item--is--active,
 body.design-manager.ext-dark-theme .result-item:hover {
-    background: rgba(255, 255, 255, .1)!important;
-    color: #d6cbcb!important;
+	background: rgba(255, 255, 255, .1)!important;
+	color: #d6cbcb!important;
 }
 
 body.design-manager.ext-dark-theme .private-dropdown .Select-option,
@@ -379,37 +379,37 @@ body.design-manager.ext-dark-theme .private-button--secondary,
 body.design-manager.ext-dark-theme .context-menu,
 body.design-manager.ext-dark-theme .private-scroll__wrapper--tables,
 body.design-manager.ext-dark-theme .layout-tree .widget-width {
-    background: #33475b;
-    border-color: transparent;
+	background: #33475b;
+	border-color: transparent;
 }
 
 body.design-manager.ext-dark-theme .widget-toolbox-list-item .widget-icon__mask,
 body.design-manager.ext-dark-theme .layout-tree .widget-icon__mask {
-    background: #d6cbcb!important;
+	background: #d6cbcb!important;
 }
 
 body.design-manager.ext-dark-theme .widget-toolbox-list-item span.private-icon.private-icon__low,
 body.design-manager.ext-dark-theme .private-button--primary {
-    color: #fff!important;
+	color: #fff!important;
 }
 
 body.design-manager.ext-dark-theme .widget-toolbox-list-item .widget-object:not(.is--disabled) span.widget-icon__mask[style*="background-color: rgb(51, 71, 91)"] {
-    background-color: rgb(var(--rgb-details-color)) !important;
+	background-color: rgb(var(--rgb-details-color)) !important;
 }
 
 body.design-manager.ext-dark-theme .widget-toolbox-list-item .widget-object:not(.is--disabled) span.private-icon.private-icon__low {
-    color: rgb(var(--rgb-details-color)) !important;
+	color: rgb(var(--rgb-details-color)) !important;
 }
 
 
 /*publish button*/
 
 body.design-manager.ext-dark-theme .private-button--active.private-button--primary {
-    color: #fff!important;
+	color: #fff!important;
 }
 
 body.design-manager.ext-dark-theme .private-tabs .private-tab--active .private-tab__indicator {
-    color: rgb( var(--rgb-details-color));
+	color: rgb( var(--rgb-details-color));
 }
 
 
@@ -420,60 +420,60 @@ body.design-manager.ext-dark-theme .private-button[aria-disabled=true],
 body.design-manager.ext-dark-theme .private-button--tertiary-light,
 body.design-manager.ext-dark-theme .cm-s-hubspot-canvas-light,
 body.design-manager.ext-dark-theme .cm-s-hubspot-canvas-light .CodeMirror-gutters {
-    background: rgba(255, 255, 255, .1) !important;
-    color: #d6cbcb !important;
-    transition: .3s;
+	background: rgba(255, 255, 255, .1) !important;
+	color: #d6cbcb !important;
+	transition: .3s;
 }
 
 body.design-manager.ext-dark-theme .private-button--tertiary-light:not(.disabled).private-button--active,
 body.design-manager.ext-dark-theme .private-button--tertiary-light:not(.disabled):hover {
-    background: rgb(var(--rgb-details-color)) !important;
-    color: #fff !important;
+	background: rgb(var(--rgb-details-color)) !important;
+	color: #fff !important;
 }
 
 body.design-manager.ext-dark-theme .cm-s-hubspot-canvas-light {
-    background: transparent
+	background: transparent
 }
 
 body.design-manager.ext-dark-theme .private-button.private-button--disabled,
 body.design-manager.ext-dark-theme .private-button[aria-disabled=true] {
-    color: rgba(255, 255, 255, .25) !important;
+	color: rgba(255, 255, 255, .25) !important;
 }
 
 body.design-manager.ext-dark-theme .cm-s-hubspot-canvas-light .CodeMirror-cursor {
-    border-left-color: #d6cbcb !important;
+	border-left-color: #d6cbcb !important;
 }
 
 body.design-manager.ext-dark-theme .widget-css-selector .is--text--help,
 body.design-manager.ext-dark-theme span.private-icon.private-icon__high {
-    color: rgba( var(--rgb-details-color), .8) !important;
+	color: rgba( var(--rgb-details-color), .8) !important;
 }
 
 
 /** blue stuff **/
 
 body.design-manager.ext-dark-theme .file-tabs.private-tabs .file-tab.is--active {
-    color: rgb( var(--rgb-details-color)) !important;
-    background: #54637578;
+	color: rgb( var(--rgb-details-color)) !important;
+	background: #54637578;
 }
 
 body.design-manager.ext-dark-theme .file-tabs.private-tabs .file-tab.is--active .tab-title-label {
-    text-decoration: underline;
+	text-decoration: underline;
 }
 
 body.design-manager.ext-dark-theme .file-tabs.private-tabs .file-tab.is--active .has-buffered-changes:after {
-    text-decoration: none;
+	text-decoration: none;
 }
 
 body.design-manager.ext-dark-theme .widget-icon__mask[style*="background-color: rgb(81, 111, 144)"],
 body.design-manager.ext-dark-theme .widget-icon__mask[style*="background-color: rgb(51, 71, 91)"],
 body.design-manager.ext-dark-theme .layout-tree .widget.section_delimiter,
 body.design-manager.ext-dark-theme .private-button--primary {
-    background-color: rgba( var(--rgb-details-color), .8) !important;
+	background-color: rgba( var(--rgb-details-color), .8) !important;
 }
 
 body.design-manager.ext-dark-theme .layout-tree .widget-meta-icon {
-    color: #3fb4f9 !important;
+	color: #3fb4f9 !important;
 }
 
 body.design-manager.ext-dark-theme .private-folder-nav .private-nav .private-nav-item__icon-left,
@@ -484,7 +484,7 @@ body.design-manager.ext-dark-theme .private-link,
 body.design-manager.ext-dark-theme .cOLjXL:hover:not([aria-disabled='true']),
 body.design-manager.ext-dark-theme .private-dropdown .Select-option button,
 body.design-manager.ext-dark-theme .private-dropdown__results .Select-option button {
-    color: rgba( var(--rgb-details-color), .8) !important;
+	color: rgba( var(--rgb-details-color), .8) !important;
 }
 
 body.design-manager.ext-dark-theme .private-folder-nav .private-nav .nav-item-link:hover .private-nav-item__icon-left,
@@ -494,18 +494,18 @@ body.design-manager.ext-dark-theme .private-link .private-icon:not(.private-icon
 body.design-manager.ext-dark-theme .is--text--help,
 body.design-manager.ext-dark-theme .private-button--secondary,
 body.design-manager.ext-dark-theme .layout-tree .widget-width {
-    color: rgba( var(--rgb-details-color), 1) !important;
+	color: rgba( var(--rgb-details-color), 1) !important;
 }
 
 body.design-manager.ext-dark-theme .layout-tree .widget.is--widget-selected,
 body.design-manager.ext-dark-theme .layout-tree .widget.section_delimiter,
 body.design-manager.ext-dark-theme .private-button--primary,
 body.design-manager.ext-dark-theme .private-button--secondary {
-    border-color: rgba( var(--rgb-details-color), 1) !important;
+	border-color: rgba( var(--rgb-details-color), 1) !important;
 }
 
 body.design-manager.ext-dark-theme .fjXxQD {
-    background: transparent;
+	background: transparent;
 }
 
 
@@ -513,15 +513,15 @@ body.design-manager.ext-dark-theme .fjXxQD {
 
 body.design-manager.ext-dark-theme .layout-tree,
 body.design-manager.ext-dark-theme .layout-tree .widget {
-    background-color: #33475b;
+	background-color: #33475b;
 }
 
 
 /* flex col */
 
 body.design-manager.ext-dark-theme.layout-editor--is_active .layout-tree .widget.widget_container.is--responsive {
-    /* temporal SVG */
-    background-image: url("data:image/svg+xml,%3Csvg width='40' height='1' viewBox='0 0 40 1' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h20v1H0z' fill='%23ffffff' fill-opacity='0.02' fill-rule='evenodd'/%3E%3C/svg%3E");
+	/* temporal SVG */
+	background-image: url("data:image/svg+xml,%3Csvg width='40' height='1' viewBox='0 0 40 1' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h20v1H0z' fill='%23ffffff' fill-opacity='0.02' fill-rule='evenodd'/%3E%3C/svg%3E");
 }
 
 
@@ -529,11 +529,11 @@ body.design-manager.ext-dark-theme.layout-editor--is_active .layout-tree .widget
 
 body.design-manager.ext-dark-theme.layout-editor--is_active .layout-tree .widget.global_group,
 body.design-manager.ext-dark-theme.layout-editor--is_active .layout-tree .widget.global_group.is--widget-selected {
-    border-color: rgba(255, 122, 89, 1) !important;
+	border-color: rgba(255, 122, 89, 1) !important;
 }
 
 body.design-manager.ext-dark-theme.layout-editor--is_active .layout-tree .widget.global_group.is--widget-selected {
-    box-shadow: inset 0 0 0 1px rgba(255, 122, 89, 1);
+	box-shadow: inset 0 0 0 1px rgba(255, 122, 89, 1);
 }
 
 
@@ -542,37 +542,37 @@ body.design-manager.ext-dark-theme.layout-editor--is_active .layout-tree .widget
 }*/
 
 body.design-manager.ext-dark-theme .cm-s-hubspot-canvas-light .CodeMirror-cursor {
-    border-left-color: #fff !important;
+	border-left-color: #fff !important;
 }
 
 body.design-manager.ext-dark-theme .private-expanding-text-input--inline.private-expanding-text-input--focused .private-expanding-text-input__wrapper,
 body.design-manager.ext-dark-theme .private-expanding-text-input--inline.private-expanding-text-input--hovered .private-expanding-text-input__wrapper,
 body.design-manager.ext-dark-theme .private-form__control:hover,
 body.design-manager.ext-dark-theme .private-form__control {
-    background: rgba(255, 255, 255, .1) !important;
-    background-color: rgba(255, 255, 255, .1) !important;
+	background: rgba(255, 255, 255, .1) !important;
+	background-color: rgba(255, 255, 255, .1) !important;
 }
 
 body.design-manager.ext-dark-theme .private-modal--default,
 body.design- manager.ext-dark-theme .private-modal__footer {
-    background: linear-gradient(45deg, rgb(51, 71, 91), rgb(45, 62, 80));
+	background: linear-gradient(45deg, rgb(51, 71, 91), rgb(45, 62, 80));
 }
 
 body.design-manager.ext-dark-theme .status-bar {
-    background: #2e2e2e !important;
-    border-top: 0;
-    color: rgba(255, 255, 255, 0.5);
+	background: #2e2e2e !important;
+	border-top: 0;
+	color: rgba(255, 255, 255, 0.5);
 }
 
 body .design-manager.ext-dark-theme .status-bar__status,
 body.design-manager.ext-dark-theme .status-bar-section,
 body.design-manager.ext-dark-theme .kcUwaw,
 body.design-manager.ext-dark-theme .status-bar__status {
-    border-color: #3a3333 !important;
+	border-color: #3a3333 !important;
 }
 
 body.design-manager.ext-dark-theme .layout-tree .ui-grid-item-widget-wrapper {
-    border: 0 !important;
+	border: 0 !important;
 }
 
 
@@ -583,65 +583,65 @@ body.design-manager.ext-dark-theme .private-dropdown--list .private-list__item>.
 body.design-manager.ext-dark-theme .private-dropdown--list .private-list__item>a,
 body.design-manager.ext-dark-theme .private-dropdown--list .private-list__item>button,
 body.design-manager.ext-dark-theme ul.uiList.private-list--unstyled.private-dropdown--list {
-    background: rgb(36, 50, 64) !important;
+	background: rgb(36, 50, 64) !important;
 }
 
 
 /*accordions in sidebar.*/
 
 body.design-manager.ext-dark-theme .UIExpandableSection__ExpandableHeader-gJHpqS {
-    background-color: transparent !important;
+	background-color: transparent !important;
 }
 
 
 /* scroll bar in the head (to navigate through the different opened elements */
 
 body.design-manager.ext-dark-theme .iWgPZI {
-    background-color: rgb( var(--rgb-details-color)) !important;
+	background-color: rgb( var(--rgb-details-color)) !important;
 }
 
 
 /* success notification */
 
 body.design-manager.ext-dark-theme .private-alert--success {
-    background-color: rgba( var(--rgb-details-color), 0.9) !important;
-    border-color: transparent;
+	background-color: rgba( var(--rgb-details-color), 0.9) !important;
+	border-color: transparent;
 }
 
 body.design-manager.ext-dark-theme .private-alert__close {
-    color: #fff;
+	color: #fff;
 }
 
 
 /* error notification */
 
 body.design-manager.ext-dark-theme .private-alert--danger {
-    background-color: rgba(242, 84, 91, .7) !important;
-    color: #fff;
+	background-color: rgba(242, 84, 91, .7) !important;
+	color: #fff;
 }
 
 
 /* empty initial page */
 
 body.design-manager.ext-dark-theme .empty-state-view {
-    background: var(--body-background);
+	background: var(--body-background);
 }
 
 body.design-manager.ext-dark-theme .empty-state-view,
 body.design-manager.ext-dark-theme .empty-state-view .is--text--help,
 body.design-manager.ext-dark-theme .empty-state-view .private-table thead th {
-    color: var(--body-color);
+	color: var(--body-color);
 }
 
 
 /*when upgrading a custom module, there is a modal that states the errors the module needs corrected*/
 
 body.design-manager.ext-dark-theme .private-modal ul.uiList.m-top-2 {
-    background-color: rgb(102, 120, 138);
+	background-color: rgb(102, 120, 138);
 }
 
 body.design-manager.ext-dark-theme .private-modal ul.uiList .hubl-error-list-item {
-    color: rgb(212, 61, 68);
+	color: rgb(212, 61, 68);
 }
 
 
@@ -650,27 +650,27 @@ body.design-manager.ext-dark-theme .private-modal ul.uiList .hubl-error-list-ite
 body.design-manager.ext-dark-theme .settings-editor-app,
 body.design-manager.ext-dark-theme .private-card,
 body.design-manager.ext-dark-theme .private-panel {
-    background: var(--body-background);
+	background: var(--body-background);
 }
 
 body.design-manager.ext-dark-theme .settings-column .private-side-nav__item a {
-    color: #fff;
+	color: #fff;
 }
 
 body.design-manager.ext-dark-theme .settings-column .private-side-nav__item {
-    background: transparent;
+	background: transparent;
 }
 
 body.design-manager.ext-dark-theme .settings-column .private-side-nav__item--active a,
 body.design-manager.ext-dark-theme .settings-column .private-side-nav__item a:hover {
-    color: rgb( var(--rgb-details-color));
+	color: rgb( var(--rgb-details-color));
 }
 
 
 /** remove background from fields in groups (right sidebar CM) */
 
 body.design-manager.ext-dark-theme .custom-widget-editor-sidebar .custom-widget-fields-table .custom-widget-fields-table-row .field-row-and-children-container.is--child-field {
-    background: transparent !important;
+	background: transparent !important;
 }
 
 
@@ -678,13 +678,13 @@ body.design-manager.ext-dark-theme .custom-widget-editor-sidebar .custom-widget-
 
 body.design-manager.ext-dark-theme .result-item a,
 body.design-manager.ext-dark-theme .result-item .result-item-help .is--text--help {
-    color: #fff !important;
+	color: #fff !important;
 }
 
 body.design-manager.ext-dark-theme .result-item.result-item--is--active .result-item-title a,
 body.design-manager.ext-dark-theme .result-item:hover .result-item-title a,
 body.design-manager.ext-dark-theme .result-item:hover [class*=private-icon__] {
-    color: rgb( var(--rgb-details-color)) !important;
+	color: rgb( var(--rgb-details-color)) !important;
 }
 
 
@@ -692,19 +692,19 @@ body.design-manager.ext-dark-theme .result-item:hover [class*=private-icon__] {
 
 body.design-manager.ext-dark-theme .private-modal,
 body.design-manager.ext-dark-theme .private-modal .private-modal__footer {
-    background: var(--body-background);
-    color: #fff;
+	background: var(--body-background);
+	color: #fff;
 }
 
 body.design-manager.ext-dark-theme .private-modal.private-table thead th {
-    color: rgb( var(--rgb-details-color));
+	color: rgb( var(--rgb-details-color));
 }
 
 
 /* new file modal */
 
 body.design-manager.ext-dark-theme .private-selectable-box {
-    background: var(--body-background);
+	background: var(--body-background);
 }
 
 
@@ -712,39 +712,39 @@ body.design-manager.ext-dark-theme .private-selectable-box {
 
 body.design-manager.ext-dark-theme .finder-container .file-dependents-container,
 body.design-manager.ext-dark-theme .finder-container .file-revisions-container {
-    background: var(--body-background);
+	background: var(--body-background);
 }
 
 body.design-manager.ext-dark-theme .finder-container .result-item:hover,
 body.design-manager.ext-dark-theme .finder-container .result-item:hover {
-    background: none !important;
+	background: none !important;
 }
 
 
 /* remove white background in the new file -> folder selector popup */
 
 body.design-manager.ext-dark-theme .bqQvdP .private-tile {
-    background: transparent;
+	background: transparent;
 }
 
 
 /* right sidebar: add widget tab */
 
 body.design-manager.ext-dark-theme .widget-toolbox-list-item .widget-object.is--disabled {
-    /*background: transparent;*/
-    background: rgba(255, 255, 255, .10);
-    border-color: transparent;
+	/*background: transparent;*/
+	background: rgba(255, 255, 255, .10);
+	border-color: transparent;
 }
 
 body.design-manager.ext-dark-theme .widget-catalog-list-item .private-moveable-object:not(.is--disabled),
 body.design-manager.ext-dark-theme .widget-catalog-list-item .private-moveable-object:not(.is--disabled):hover {
-    color: rgb(var(--rgb-details-color)) !important;
-    background: transparent;
+	color: rgb(var(--rgb-details-color)) !important;
+	background: transparent;
 }
 
 body.design-manager.ext-dark-theme .widget-catalog-list-item .private-moveable-object:not(.is--disabled) .private-icon:not(.private-icon-circle__inner),
 body.design-manager.ext-dark-theme .widget-catalog-list-item .private-moveable-object:not(.is--disabled):hover .private-icon:not(.private-icon-circle__inner) {
-    color: rgb(var(--rgb-details-color)) !important;
+	color: rgb(var(--rgb-details-color)) !important;
 }
 
 
@@ -752,7 +752,7 @@ body.design-manager.ext-dark-theme .widget-catalog-list-item .private-moveable-o
 
 body.design-manager.ext-dark-theme .folder-item.is--over.can--drop>.asset-context-menu-wrapper>.nav-item-link,
 body.design-manager.ext-dark-theme .folder-item.is--over.can--drop>.nav-item-link {
-    background-color: rgba(255, 255, 255, .2);
+	background-color: rgba(255, 255, 255, .2);
 }
 
 
@@ -760,7 +760,7 @@ body.design-manager.ext-dark-theme .folder-item.is--over.can--drop>.nav-item-lin
 
 body.design-manager.ext-dark-theme .finder-container__files,
 body.design-manager.ext-dark-theme .UISection__ScrollWrapper-eQImbY {
-    background-image: linear-gradient(to bottom, rgb(45, 62, 78), rgba(45, 62, 78, 0)), linear-gradient(to top, rgb(45, 62, 78), rgba(45, 62, 78, 0)), linear-gradient(to bottom, rgb(45, 62, 78), rgba(45, 62, 78, 0)), linear-gradient(to top, rgb(45, 62, 78), rgba(45, 62, 78, 0));
+	background-image: linear-gradient(to bottom, rgb(45, 62, 78), rgba(45, 62, 78, 0)), linear-gradient(to top, rgb(45, 62, 78), rgba(45, 62, 78, 0)), linear-gradient(to bottom, rgb(45, 62, 78), rgba(45, 62, 78, 0)), linear-gradient(to top, rgb(45, 62, 78), rgba(45, 62, 78, 0));
 }
 
 
@@ -768,12 +768,12 @@ body.design-manager.ext-dark-theme .UISection__ScrollWrapper-eQImbY {
 
 body.design-manager.ext-dark-theme .widget-catalog-list-item>a,
 body.design-manager.ext-dark-theme .widget-catalog-list-item>button {
-    background-color: var(--body-background);
+	background-color: var(--body-background);
 }
 
 body.design-manager.ext-dark-theme .widget-catalog-list-item>a:hover,
 body.design-manager.ext-dark-theme .widget-catalog-list-item>button:hover {
-    background-color: rgba(255, 255, 255, .1);
+	background-color: rgba(255, 255, 255, .1);
 }
 
 
@@ -781,27 +781,27 @@ body.design-manager.ext-dark-theme .widget-catalog-list-item>button:hover {
 
 body.design-manager.ext-dark-theme .widget-toolbox-list-item .widget-object:not(.is--disabled),
 body.design-manager.ext-dark-theme .widget-toolbox-list-item .private-moveable-object.widget-object:not(.is--disabled) {
-    background: var(--body-background);
-    color: rgb(var(--rgb-details-color)) !important;
+	background: var(--body-background);
+	color: rgb(var(--rgb-details-color)) !important;
 }
 
 body.design-manager.ext-dark-theme .widget-toolbox-list-item .widget-object:not(.is--disabled):hover {
-    background: var(--body-background-hover);
+	background: var(--body-background-hover);
 }
 
 body.design-manager.ext-dark-theme .widget-toolbox-list-item .widget-object.is--disabled {
-    background: var(--body-background);
+	background: var(--body-background);
 }
 
 body.design-manager.ext-dark-theme .form-card-container {
-    background: var(--body-background);
+	background: var(--body-background);
 }
 
 
 /* fix for most of the generated selectors/menus */
 
 body.design-manager.ext-dark-theme .Select-menu-outer {
-    background: var(--body-background);
+	background: var(--body-background);
 }
 
 
@@ -811,7 +811,7 @@ body.design-manager.ext-dark-theme .Select-menu-outer {
 /* change color for code strings like in <head> */
 
 body.design-manager.ext-dark-theme .cm-s-hubspot-canvas-light .cm-string {
-    color: #fff;
+	color: #fff;
 }
 
 
@@ -819,42 +819,42 @@ body.design-manager.ext-dark-theme .cm-s-hubspot-canvas-light .cm-string {
 
 body.design-manager.ext-dark-theme .cm-s-hubspot-canvas-light .CodeMirror-matchingbracket,
 body.design-manager.ext-dark-theme .cm-s-hubspot-canvas-light .cm-tag.cm-hubl-statement {
-    color: rgb(var(--rgb-details-color)) !important;
+	color: rgb(var(--rgb-details-color)) !important;
 }
 
 
 /* HubL variable */
 
 body.design-manager.ext-dark-theme .cm-s-hubspot-canvas-light .cm-variable {
-    color: #fff;
+	color: #fff;
 }
 
 body.design-manager.ext-dark-theme .cm-s-hubspot-canvas-light .cm-variable.cm-hubl-statement {
-    color: #ffc7ac;
+	color: #ffc7ac;
 }
 
 
 /* right sidebar: rich text overlay */
 
 body.design-manager.ext-dark-theme .rich-text-preview {
-    transition: .3s;
+	transition: .3s;
 }
 
 body.design-manager.ext-dark-theme .rich-text-preview:hover {
-    background: #fff;
+	background: #fff;
 }
 
 body.design-manager.ext-dark-theme .rich-text-preview.private-hoverlay .private-hoverlay__overlay+.private-hoverlay__children,
 body.design-manager.ext-dark-theme .rich-text-preview.private-hoverlay.private-hovered .private-hoverlay__overlay {
-    background: transparent;
-    filter: blur(0);
+	background: transparent;
+	filter: blur(0);
 }
 
 body.design-manager.ext-dark-theme .rich-text-preview.private-hoverlay .private-hoverlay__overlay .private-flex>.private-flex {
-    align-items: flex-end;
-    justify-content: flex-end;
-    max-height: 87%;
-    /* I think this will work always */
+	align-items: flex-end;
+	justify-content: flex-end;
+	max-height: 87%;
+	/* I think this will work always */
 }
 
 
@@ -864,48 +864,48 @@ body.design-manager.ext-dark-theme .rich-text-preview.private-hoverlay .private-
 /* right sidebar: add group in CM */
 
 body.design-manager.ext-dark-theme .sidebar-group-controls {
-    background: var(--body-background);
+	background: var(--body-background);
 }
 
 
 /* simple menu */
 
 body.design-manager.ext-dark-theme .simple-menus-menu {
-    background: var(--body-background);
+	background: var(--body-background);
 }
 
 
 /** simple menu add submenu */
 
 body.design-manager.ext-dark-theme .simple-menus-menu .simple-menus-menu-node-divider-option-button:hover {
-    background: var(--body-background-hover);
+	background: var(--body-background-hover);
 }
 
 
 /*footer bar*/
 
 body.design-manager.ext-dark-theme .status-bar-header {
-    border-top: 1px solid #3b3333!important;
+	border-top: 1px solid #3b3333!important;
 }
 
 
 /*footer bar right */
 
 body.design-manager.ext-dark-theme button.uiButton.private-button.private-button--transparent.status-bar-header-button.private-button--non-link {
-    border-left: 1px solid #3b3333!important;
+	border-left: 1px solid #3b3333!important;
 }
 
 
 /*image picker */
 
 body.design-manager.ext-dark-theme .ReactVirtualized__Collection__innerScrollContainer .file-detail {
-    background-color: transparent;
+	background-color: transparent;
 }
 
 body.design-manager.ext-dark-theme .ReactVirtualized__Collection__innerScrollContainer .file-detail__wrapper,
 body.design-manager.ext-dark-theme .ReactVirtualized__Collection__innerScrollContainer .file-detail__arrow {
-    background: rgb(36, 50, 64) !important;
-    border-color: #1a242d;
+	background: rgb(36, 50, 64) !important;
+	border-color: #1a242d;
 }
 
 
@@ -913,14 +913,14 @@ body.design-manager.ext-dark-theme .ReactVirtualized__Collection__innerScrollCon
 
 body.design-manager.ext-dark-theme .private-editable--inline:hover .private-editable__input,
 .private-editable--inline:hover .private-editable__placeholder {
-    background-color: rgba(255, 255, 255, 0.1) !important;
+	background-color: rgba(255, 255, 255, 0.1) !important;
 }
 
 
 /*slide out panel header*/
 
 body.design-manager.ext-dark-theme .private-modal__header {
-    background: linear-gradient(-303deg, rgba( var(--rgb-details-color), 0.8) 0%, rgb(83, 200, 269) 56%, rgba( var(--rgb-details-color), 0.8) 100%);
+	background: linear-gradient(-303deg, rgba( var(--rgb-details-color), 0.8) 0%, rgb(83, 200, 269) 56%, rgba( var(--rgb-details-color), 0.8) 100%);
 }
 
 
@@ -928,25 +928,25 @@ body.design-manager.ext-dark-theme .private-modal__header {
 
 
 /*.resizable-panes .code-panes-pane.resizable-pane .code-panes .code-panes-container .code-panes-accordion-items .resizer{
-    background-color:#3b3333!important;
+	background-color:#3b3333!important;
 }*/
 
 body.design-manager.ext-dark-theme .resizeable-panes .resizer {
-    background-color: #717171!important;
+	background-color: #717171!important;
 }
 
 
 /* Move file interface*/
 
 body.design-manager.ext-dark-theme .folder-navigator-tile {
-    background: transparent;
+	background: transparent;
 }
 
 
 /*change toggle button color */
 
 body.design-manager.ext-dark-theme .private-form__toggle-switch--on.private-form__toggle-switch__inner {
-    background-color: rgba( var(--rgb-details-color), 0.8);
+	background-color: rgba( var(--rgb-details-color), 0.8);
 }
 
 
@@ -954,14 +954,14 @@ body.design-manager.ext-dark-theme .private-form__toggle-switch--on.private-form
 *  this can be removed after January 30th as the button should be going away.*/
 
 body.design-manager.ext-dark-theme .ide-opt-out .private-button--tertiary {
-    background: transparent;
-    border-left: 1px solid rgb(59, 51, 51) !important;
-    border: 0;
-    height: 26px;
+	background: transparent;
+	border-left: 1px solid rgb(59, 51, 51) !important;
+	border: 0;
+	height: 26px;
 }
 
 body.design-manager.ext-dark-theme .ide-opt-out .private-button--tertiary:hover {
-    background: #425b76;
+	background: #425b76;
 }
 
 
@@ -969,19 +969,19 @@ body.design-manager.ext-dark-theme .ide-opt-out .private-button--tertiary:hover 
 * note this may not work if fill isset in the svg itself.*/
 
 body.design-manager.ext-dark-theme .private-form__toggle-switch--on.private-form__toggle-switch__inner path.private-form__toggle-switch__icon {
-    fill: rgba( var(--rgb-details-color), 0.8)!important;
+	fill: rgba( var(--rgb-details-color), 0.8)!important;
 }
 
 
 /*copy to portal progress indicators in header*/
 
 body.design-manager.ext-dark-theme span.private-icon-circle__outer.private-icon-circle--legacy.private-step-indicator__point.private-icon-holder__outer {
-    background-color: #48bcfa!important;
+	background-color: #48bcfa!important;
 }
 
 body.design-manager.ext-dark-theme .private-step-indicator__section--active,
 body.design-manager.ext-dark-theme .private-step-indicator__section--complete {
-    color: #fff;
+	color: #fff;
 }
 
 
@@ -989,3 +989,97 @@ body.design-manager.ext-dark-theme .private-step-indicator__section--complete {
 #33475b
 #2d3e50
 */
+
+/* sprocky styles*/
+div#sprocky {
+	position: absolute;
+	bottom: 4rem;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	-webkit-box-align: start;
+	-ms-flex-align: start;
+	align-items: flex-start;
+	width: 350px;
+	position: absolute;
+	right: -600px;
+	z-index: 999;
+}
+
+div#sprocky.slide {
+	-webkit-animation: slide 0.5s forwards;
+	-webkit-animation-delay: 2s;
+	animation: slide 0.5s forwards;
+	animation-delay: 2s;
+}
+
+div#sprocky div {
+	width: 100%;
+	text-align: right;
+}
+
+div#sprocky span.hide a {
+	color: #000;
+}
+
+div#sprocky span.hide a:hover {
+	text-decoration: none;
+}
+
+@-webkit-keyframes slide {
+	100% { right: 2rem; }
+}
+
+@keyframes slide {
+	100% { right: 2rem; }
+}
+
+.speech-bubble-ds {
+	background: #fbfacf;
+	border: 1px solid #a7a7a7;
+	border-radius: 4px;
+	font-size: 1.2rem;
+	line-height: 1.3;
+	max-width: 400px;
+	padding: 15px;
+	position: relative;
+	margin-bottom: 1rem;
+	margin-right: 4rem;
+}
+
+.speech-bubble-ds p {
+	margin-bottom: 10px;
+	text-align: left;
+	color: #000;
+	font-weight: 500;
+	font-size: 1rem;
+}
+.speech-bubble-ds p:last-of-type {
+	margin-bottom: 0;
+}
+
+.speech-bubble-ds-arrow {
+	border-left: 21px solid transparent;
+	bottom: -25px;
+	position: absolute;
+	right: 15px;
+}
+.speech-bubble-ds-arrow::before {
+	border-left: 23px solid transparent;
+	border-top: 23px solid #a7a7a7;
+	bottom: 2px;
+	content: "";
+	position: absolute;
+	right: 5px;
+}
+.speech-bubble-ds-arrow::after {
+	border-left: 21px solid transparent;
+	border-top: 21px solid #fbfacf;
+	bottom: 4px;
+	content: "";
+	position: absolute;
+	right: 6px;
+}
+
