@@ -85,6 +85,7 @@ $(document).ready(function() {
                 var quotes  = 
                 ["Hi, it looks like you're looking to build a custom module. Do you need assistance",
                 "Sufficiently advanced technology is equivalent to magic. Therefore you, must be a wizard.",
+                "Grammarly says Sprocky isn't a word. I say Grammarly isn't a word.",
                 "BOO! did I scare you? I'm Sprocky. Here to help.",
                 "Hi the names' Sprocky, I'll be here all week",
                 "The names Sprocky, just wanted to tell you in the chrome extension popup there's a toggle for dark theme and a handy developer menu.",
