@@ -83,8 +83,23 @@ $(document).ready(function() {
             if (result.sprocky || result.sprocky == undefined) {
                 //Add in quotes for sprocky here
                 var quotes  = 
-                ["Hi, it looks like you're looking to build a custom module. Do you need assistance", 
+                ["Hi, it looks like you're looking to build a custom module. Do you need assistance",
+                "Sufficiently advanced technology is equivalent to magic. Therefore you, must be a wizard.",
+                "BOO! did I scare you? I'm Sprocky. Here to help.",
+                "Hi the names' Sprocky, I'll be here all week",
+                "The names Sprocky, just wanted to tell you in the chrome extension popup there's a toggle for dark theme and a handy developer menu.",
+                "The HubSpot Developer slack is where the culprits that created me lie. Find them in #developer-extension",
+                "I don't always peak at your code, but when I do...",
+                "Refactoring - ain't nobody got time for that.",
+                "One does not simply grow hair like Will Spiro's",
+                "It looks like you're frustrated with that bug, how about I turn CAPS lock for you?",
+                "Hi there, just me Sprocky, your choice in music has me concerned, would you like help?",
+                "Hi, there I see you're trying to be productive, let me introduce myself, I'm Sprocky.",
+                "Welcome to the design manager, this is where you build modules, templates, CSS and JS files.",
+                "There's a bug somewhere in your code. Made you look.",
+                "It looks like you're trying to work. Would you like a distraction instead",
                 "Email templates are a pain. Let me help.", 
+                "Sick of me? theres toggle to turn me off in the dev chrome extension.", 
                 "Hi, my name is Sprocky, how can I help?"];
 
                 //Pick one at random
