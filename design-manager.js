@@ -85,7 +85,7 @@ $(document).ready(function() {
                 var quotes  = 
                 ["Hi, it looks like you're looking to build a custom module. Do you need assistance", 
                 "Email templates are a pain. Let me help.", 
-                "Hi, my name is Sproky, how can I help?"];
+                "Hi, my name is Sprocky, how can I help?"];
 
                 //Pick one at random
                 var rand = quotes [Math.floor(Math.random()*quotes .length)];
