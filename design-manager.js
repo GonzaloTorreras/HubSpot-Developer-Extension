@@ -108,7 +108,7 @@ $(document).ready(function() {
                 "Hi, there I see youre trying to be productive, let me introduce myself, Im Sprocky.",
                 "Welcome to the design manager, this is where you build modules, templates, CSS and JS files.",
                 "Theres a bug somewhere in your code. Made you look.",
-                "It looks like youre trying to work. Would you like a distraction instead?",
+                "It looks like you&apos;re trying to work. Would you like a distraction instead?",
                 "If i annoy you, theres a toggle in the hs dev chrome extension.",
                 "Email templates are a pain. Let me help.", 
                 "Sick of me? theres toggle to turn me off in the dev chrome extension.", 
