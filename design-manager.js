@@ -122,6 +122,7 @@ $(document).ready(function() {
                 "Welcome to the design manager, this is where you build modules, templates, CSS and JS files.",
                 "There&apos;s a bug somewhere in your code. Made you look.",
                 "It looks like you&apos;re trying to work. Would you like a distraction instead?",
+                "In coded files you can click a line number or shift click line numbers to send a link to someone else and it will highlight those lines for them. Pretty spiffy.",
                 "If i annoy you, there&apos;s a toggle in the hs dev chrome extension.",
                 "Email templates are a pain. Let me help.", 
                 "Sick of me? theres&apos; toggle to turn me off in the dev chrome extension.", 
