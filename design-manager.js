@@ -116,6 +116,7 @@ $(document).ready(function() {
                 "One does not simply grow hair like Will Spiro&apos;s.",
                 "It looks like you&apos;re frustrated with that bug, how about I turn CAPS lock for you?",
                 "Remember, if your project doesn&apos;t blow people&apos;s minds, atleast it&apos;s better than Microsoft Bob.",
+                "Hi there, I&apos;m Sprocky! No, I&apos;m not clippy, he only wishes he could rock Orange like I do.",
                 "Hi there, just me Sprocky, your choice in music has me concerned, would you like help?",
                 "Hi, there I see you&apos;re trying to be productive, let me introduce myself, I&apos;m Sprocky.",
                 "Welcome to the design manager, this is where you build modules, templates, CSS and JS files.",
