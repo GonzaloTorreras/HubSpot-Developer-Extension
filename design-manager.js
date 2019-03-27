@@ -108,7 +108,7 @@ $(document).ready(function() {
                 "Inbound 2019 - first we brought you chat bots, now we bring you Sprocky",
                 "Your Clippy is in another Castle.",
                 "If at first you don&apos;t succeed; call it version 1.0",
-                "Hi the names&apos; Sprocky, I&apos;ll be here all week.",
+                "Hi the names&apos; Sprocky, I&apos;ll be here all week. If you don&apos;t like me though you can disable me in the HS dev chrome extension, if you do like me, turn me off then on again and I will stay longer",
                 "The names&apos; Sprocky, just wanted to tell you in the chrome extension popup there&apos;s a toggle for dark theme and a handy developer menu.",
                 "The HubSpot Developer slack is where the culprits that created me lie. Find them in #developer-extension",
                 "I don&apos;t always peak at your code, but when I do...",
