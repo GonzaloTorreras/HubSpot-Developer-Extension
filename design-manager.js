@@ -103,6 +103,7 @@ $(document).ready(function() {
                 "Grammarly says Sprocky isn&apos;t a word. I say Grammarly isn&apos;t a word.",
                 "BOO! did I scare you? I&apos;m Sprocky. Here to help.",
                 "Did you know you can print a unique identifier for a custom module by using {{name}} inside the module?",
+                "The HTML module still exists, the HubSpot team just hid it in the marketplace. It is free so you can still use it.",
                 "We interrupt your regularly scheduled programming to let you know, there&apos;s a typo in this code. Sprocky signing off.",
                 "If debugging is the process of removing bugs, is programming the process of creating them? Sprocky here, debating the meaning of it all",
                 "Hi I&apos;m Sprocky, you&apos;re missing a semi-colon... somewhere.",
