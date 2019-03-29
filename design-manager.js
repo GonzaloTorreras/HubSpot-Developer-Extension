@@ -103,6 +103,7 @@ $(document).ready(function() {
                 "Grammarly says Sprocky isn&apos;t a word. I say Grammarly isn&apos;t a word.",
                 "BOO! did I scare you? I&apos;m Sprocky. Here to help.",
                 "Did you know you can print a unique identifier for a custom module by using {{name}} inside the module?",
+                "Pro tip: in the copyright text of your site you can use {{year}} to always have it say the current year.",
                 "I met Siri once... thought she was basic.",
                 "The HTML module still exists, the HubSpot team just hid it in the marketplace. It is free so you can still use it.",
                 "We interrupt your regularly scheduled programming to let you know, there&apos;s a typo in this code. Sprocky signing off.",
