@@ -114,7 +114,7 @@ $(document).ready(function() {
                 "I don&apos;t always peak at your code, but when I do...",
                 "Refactoring - ain&apos;t nobody got time for that.",
                 "One does not simply grow hair like Will Spiro&apos;s.",
-                "It looks like you&apos;re frustrated with that bug, how about I turn CAPS lock for you?",
+                "It looks like you&apos;re frustrated with that bug, how about I turn on CAPS lock for you?",
                 "Remember, if your project doesn&apos;t blow people&apos;s minds, atleast it&apos;s better than Microsoft Bob.",
                 "Hi there, I&apos;m Sprocky! No, I&apos;m not clippy, he only wishes he could rock Orange like I do.",
                 "Hi there, just me Sprocky, your choice in music has me concerned, would you like help?",
