@@ -104,7 +104,7 @@ $(document).ready(function() {
                 "We interrupt your regularly scheduled programming to let you know, there&apos;s a typo in this code. Sprocky signing off.",
                 "If debugging is the process of removing bugs, is programming the process of creating them? Sprocky here, debating the meaning of it all",
                 "Hi I&apos;m Sprocky, you&apos;re missing a semi-colon... somewhere.",
-                "Inbound 2019 - first we brought you chat bots, now we bring you Sprocky",
+                "Inbound 2019 - first we brought you chat bots, now we bring you Sprocky. The Design Manager assistant.",
                 "Your Clippy is in another Castle.",
                 "If at first you don&apos;t succeed; call it version 1.0",
                 "Hi the names&apos; Sprocky, I&apos;ll be here all week. If you don&apos;t like me though you can disable me in the HS dev chrome extension, if you do like me, turn me off then on again and I will stay longer",
