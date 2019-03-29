@@ -109,6 +109,7 @@ $(document).ready(function() {
                 "The text field in custom modules now supports emojis, the marketing department said Millenials would love it. *sigh*",
                 "There is now a CMS for Developers certification. In the practicum cat gifs are obligatory.",
                 "You can customize the HubSpot IDE by clicking settings right below me. You are most welcome.",
+                "Happy April 1st from the HS Developer Chrome Extension team. I can be disabled by clicking the chrome Extension and toggling Sprocky off.",
                 "Did you know HubL supports ternary operators? *Cue &apos;Your welcome&apos; from Moana*",
                 "Sprocky here. I see what everyone is saying about me in the Developer Slack... ",
                 "This just in, HubSpot&apos;s branding team says please refrain from putting googly eyes on the Sprocket Logo.",
