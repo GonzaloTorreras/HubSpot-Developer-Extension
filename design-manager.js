@@ -107,6 +107,7 @@ $(document).ready(function() {
                 "I met Siri once... thought she was basic.",
                 "The HTML module still exists, the HubSpot team just hid it in the marketplace. It is free so you can still use it.",
                 "Expected Clippy? He was taken by the Snap. #ThanosWinsInEndGame",
+                "Did you know there is a HubL Menu function now that you can use to generate custom menu HTML?",
                 "We interrupt your regularly scheduled programming to let you know, there&apos;s a typo in this code. Sprocky signing off.",
                 "If debugging is the process of removing bugs, is programming the process of creating them? Sprocky here, debating the meaning of it all",
                 "Hi I&apos;m Sprocky, you&apos;re missing a semi-colon... somewhere.",
