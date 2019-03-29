@@ -107,6 +107,7 @@ $(document).ready(function() {
                 "I met Siri once... thought she was basic.",
                 "The HTML module still exists, the HubSpot team just hid it in the marketplace. It is free so you can still use it.",
                 "I see what everyone is saying about me in the Developer Slack... ??",
+                "This just in, HubSpot&apos;s branding team says please refrain from putting googly eyes on the Sprocket Logo.",
                 "Expected Clippy? He was taken by the Snap. #ThanosWinsInEndGame",
                 "Did you know there is a HubL Menu function now that you can use to generate custom menu HTML?",
                 "We interrupt your regularly scheduled programming to let you know, there&apos;s a typo in this code. Sprocky signing off.",
