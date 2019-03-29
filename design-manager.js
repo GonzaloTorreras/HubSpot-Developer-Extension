@@ -106,6 +106,7 @@ $(document).ready(function() {
                 "Pro tip: in the copyright text of your site you can use {{year}} to always have it say the current year.",
                 "I met Siri once... thought she was basic.",
                 "The HTML module still exists, the HubSpot team just hid it in the marketplace. It is free so you can still use it.",
+                "There is now a CMS for Developers certification. In the practicum cat gifs are obligatory.",
                 "You can customize the HubSpot IDE by clicking settings right below me. You are most welcome.",
                 "Did you know HubL supports ternary operators? *Cue &apos;Your welcome&apos; from Moana*",
                 "Sprocky here. I see what everyone is saying about me in the Developer Slack... ",
