@@ -112,6 +112,7 @@ $(document).ready(function() {
                 "Did you know HubL supports ternary operators? *Cue &apos;Your welcome&apos; from Moana*",
                 "Sprocky here. I see what everyone is saying about me in the Developer Slack... ",
                 "This just in, HubSpot&apos;s branding team says please refrain from putting googly eyes on the Sprocket Logo.",
+                "I think what this is missing is more parallax, and maybe a lens flare or two.",
                 "Expected Clippy? He was taken by the Snap. I&apos;m Sprocky. #ThanosWinsInEndGame",
                 "Did you know there is a HubL Menu function now that you can use to generate custom menu HTML?",
                 "We interrupt your regularly scheduled programming to let you know, there&apos;s a typo in this code. Sprocky signing off.",
