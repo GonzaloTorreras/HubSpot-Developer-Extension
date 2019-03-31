@@ -143,7 +143,7 @@ $(document).ready(function() {
                 "It looks like you&apos;re trying to work. Would you like a distraction instead?",
                 "In coded files you can click a line number or shift click line numbers to send a link to someone else and it will highlight those lines for them. Pretty spiffy.",
                 "If i annoy you, there&apos;s a toggle in the hs dev chrome extension.",
-                "Email templates are a pain. Let me help.", 
+                "Email templates are a pain. Let me help. Looks like you need more tables.", 
                 "Sick of me? theres&apos; toggle to turn me off in the dev chrome extension.", 
                 "Hi, my name is Sprocky, how can I help?"];
 
