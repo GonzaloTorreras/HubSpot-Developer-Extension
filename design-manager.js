@@ -101,6 +101,7 @@ $(document).ready(function() {
                 "If I were one of the Avengers I think I&apos;d be Spiderman, the original web developer.",
                 "Did you know HubL can be used in the head of drag n drop templates?",
                 "It&apos;s dangerous to go alone take $(this)",
+                "When trying to explain to a client that something is complicated, use the term &apos;algorithm&apos; and avoid specifics. It works for everyone else, why not you?",
                 "Grammarly says Sprocky isn&apos;t a word. I say Grammarly isn&apos;t a word.",
                 "BOO! did I scare you? I&apos;m Sprocky. Here to help.",
                 "Did you know you can print a unique identifier for a custom module by using {{name}} inside the module?",
