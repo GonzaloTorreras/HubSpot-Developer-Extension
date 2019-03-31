@@ -105,7 +105,7 @@ $(document).ready(function() {
                 "Did you know you can print a unique identifier for a custom module by using {{name}} inside the module?",
                 "Pro tip: in the copyright text of your site you can use {{year}} to always have it say the current year.",
                 "I met Siri once... thought she was basic.",
-                "If you enjoy my &apos;help&apos; and the HS dev chrome extension please consider leaving a rating and review, in the chrome store, the more ratings, the more visibility it gets, the more visibility, the more people contribute to it, the faster features roll out.",
+                "If you enjoy my &apos;help&apos; and the HS dev chrome extension please consider leaving a rating and review in the chrome store. The more ratings, the more visibility it gets, the more visibility, the more people contribute to it, the faster features roll out.",
                 "The HTML module still exists, the HubSpot team just hid it in the marketplace. It is free so you can still use it.",
                 "The text field in custom modules now supports emojis, the marketing department said millenials would love it. *sigh*",
                 "The HS Developer Chrome Extension is an open source project run by community developers, if there&apos;s a feature you wish it had, post an issue, submit a pull request.",
