@@ -107,7 +107,7 @@ $(document).ready(function() {
                 "I met Siri once... thought she was basic.",
                 "The HTML module still exists, the HubSpot team just hid it in the marketplace. It is free so you can still use it.",
                 "The text field in custom modules now supports emojis, the marketing department said millenials would love it. *sigh*",
-                "The HS Developer Chrome Extension is an open source project, if there&apos;s a feature you wish it had, post an issue, submit a pull request.",
+                "The HS Developer Chrome Extension is an open source project run by community developers, if there&apos;s a feature you wish it had, post an issue, submit a pull request.",
                 "Happy April first from the HubSpot Developer Chrome extension team. We hope you enjoy Sprocky, if you don&apos;t he can be disabled by clicking on the extension and toggling him off.",
                 "There is now a CMS for Developers certification. In the practicum cat gifs are obligatory.",
                 "You can customize the HubSpot IDE by clicking settings right below me. You are most welcome.",
