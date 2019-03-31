@@ -103,6 +103,7 @@ $(document).ready(function() {
                 "Grammarly says Sprocky isn&apos;t a word. I say Grammarly isn&apos;t a word.",
                 "BOO! did I scare you? I&apos;m Sprocky. Here to help.",
                 "Did you know you can print a unique identifier for a custom module by using {{name}} inside the module?",
+                "Remember, Internet Explorer isn&apos;t a web browser, it&apos;s a compatibility tool. - Chris Jackson, Microsoft&apos;s lead for cyber security",
                 "You appear to be having trouble, have you tried turning it off and on again?",
                 "Pro tip: in the copyright text of your site you can use {{year}} to always have it say the current year.",
                 "I met Siri once... thought she was basic.",
