@@ -98,6 +98,7 @@ $(document).ready(function() {
                 ["Hi, it looks like you&apos;re looking to build a custom module. Do you need assistance?",
                 "Sufficiently advanced technology is equivalent to magic. Therefore you, must be a wizard.",
                 "/*no comment on your code*/",
+                "If I were one of the Avengers I think I&apos;d be Spiderman, the original web developer.",
                 "Did you know HubL can be used in the head of drag n drop templates?",
                 "It&apos;s dangerous to go alone take $(this)",
                 "Grammarly says Sprocky isn&apos;t a word. I say Grammarly isn&apos;t a word.",
