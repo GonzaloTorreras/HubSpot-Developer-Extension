@@ -43,7 +43,11 @@ If you have any questions you can find @JonMcLaren @williamspiro and @GonzaloTor
 
 [Jim of Spin Group wrote an article talking about what the extension is and why it exists.](https://www.spingroup.com/work/2018/6/20/hubspot-developer-extension-co-creation)
 
-[Eileen Kline of NRMedia included the extension in her list of best chrome extensions ever!]
-(https://www.nrmedia.biz/blog/more-of-the-best-chrome-extensions-ever)
+[Eileen Kline of NRMedia included the extension in her list of best chrome extensions ever!](https://www.nrmedia.biz/blog/more-of-the-best-chrome-extensions-ever)
+
+### Testimonials
+>The Developer Extension is the best thing I have seen for developers on the HubSpot Platform. It saves time digging through what has otherwise become a very confusing and cumbersome menu for developers to get to the critical sections they need fast.
+
+-AJ Laporte of WSOL
 
 [Privacy Policy](https://github.com/williamspiro/HubSpot-Developer-Extension/wiki/Privacy-Policy)
