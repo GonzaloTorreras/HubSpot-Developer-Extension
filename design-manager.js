@@ -73,14 +73,8 @@ $(document).ready(function() {
     function sprocky() {
         chrome.storage.sync.get(['sprocky'], function(result) {
 
-            //Check if undefined(users hasn't loaded it yet), then turn it on by default
-            if (result.sprocky == undefined) {
-                chrome.storage.sync.set({
-                    sprocky: true,
-                });
-            }
             //Check if sprocky is enabled
-            if (result.sprocky || result.sprocky == undefined) {
+            if (result.sprocky) {
                 
                 // Inject styles for svg 
 
