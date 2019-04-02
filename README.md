@@ -4,6 +4,7 @@
 ![Hair perfection](https://avatars1.githubusercontent.com/u/5492388?s=400&v=4)
 
 # New Ownership. Same great hair!
+The ownership change of the repo, doesn't really affect much, just detaches Will's face and username from showing up when people link the repo. While we haven't seen anyone actually confused over the extension being community driven and not an official HubSpot product. We thought we're hitting a point in popularity that being more obvious with this is probably a good idea. Nothing significant is changing because of this, I had been kinda leading the charge on the extension since it hit the chrome web store. Will still has contributor status, and can make updates. This chrome extension retains it's mission of improving HubSpot's developer experience from the outside.
 
 A Chrome/Chromium extension for HubSpot Developers that adds useful shortcuts to commonly used HubSpot Query Parameters, and tools for making HubSpot Development easier and more enjoyable. For details on the many features we have a wiki page detailing them:[Feature Breakdown](https://github.com/williamspiro/HubSpot-Developer-Extension/wiki/Feature-Breakdown)
 
