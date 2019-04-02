@@ -250,18 +250,18 @@ var developerTools = {
         }, function() {
             // Update status to let user know options were saved.
             var status = document.getElementById("status");
-            status.textContent = "Options saved. If you have the Design manager open, you will need to refresh to see the theme.";
+            status.textContent = "Options saved. If you have the Design manager open, you will need to refresh to see the tweaks.";
             setTimeout(function() {
                 status.textContent = "";
             }, 4000);
         });
 
         chrome.storage.sync.set({
-            sprocky: sprockyVal,
+            sprocky2: sprockyVal,
         }, function() {
             // Update status to let user know options were saved.
             var status = document.getElementById("status");
-            status.textContent = "Options saved. If you have the Design manager open, you will need to refresh to see the theme.";
+            status.textContent = "Option saved. If you have the Design manager open, you will need to refresh to see Sprocky.";
             setTimeout(function() {
                 status.textContent = "";
             }, 4000);
@@ -286,12 +286,12 @@ var developerTools = {
                 $(".ui-tweaks-toggle .uiToggleSwitch").addClass("uiToggleSwitchOn private-form__toggle-switch--on");
             }
         });
-        chrome.storage.sync.get(["sprocky"], function(items) {
+        chrome.storage.sync.get(["sprocky2"], function(items) {
             // Restores select box and checkbox state using the preferences
             // stored in chrome.storage.
-            document.getElementById("sprocky").checked = items.sprocky;
-            console.log("sprocky:", items.sprocky);
-            if (items.sprocky) {
+            document.getElementById("sprocky").checked = items.sprocky2;
+            console.log("sprocky:", items.sprocky2);
+            if (items.sprocky2) {
                 $(".sprocky-toggle .uiToggleSwitch").addClass("uiToggleSwitchOn private-form__toggle-switch--on");
             }
         });

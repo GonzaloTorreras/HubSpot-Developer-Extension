@@ -268,7 +268,7 @@ Do not let fear of learning a new technique prevent you from contributing, other
     }
 
     .o-menu-grid--design-manager {
-        grid-template-areas: "docs docs" "community community" "darktoggle darktoggle" "uitweakstoggle uitweakstoggle";
+        grid-template-areas: "docs docs" "community community" "darktoggle darktoggle" "uitweakstoggle uitweakstoggle" "sprockyterms sprockyterms";
     }
 
     #hsDebug {
@@ -305,6 +305,11 @@ Do not let fear of learning a new technique prevent you from contributing, other
         grid-area: uitweakstoggle;
     }
 
+    .c-sprocky-terms{
+        grid-area:sprockyterms;
+        
+    }
+    .c-sprocky-terms a{color:#ff7a59;}
 
     .column_2 {
         float: left;
@@ -335,6 +340,8 @@ Do not let fear of learning a new technique prevent you from contributing, other
         height: auto;
     }
     /*Components - (namespace: c-) is a small feature that makes up a part of the website/extension. Think buttons, accordions, sliders, modal dialogs, etc. Each component is fully functional by itself and does not rely on any other components. This fact should be considered when you name the component.*/
+
+    
 
     .c-tab-slider {
         width: 100vw;
@@ -632,6 +639,7 @@ Do not let fear of learning a new technique prevent you from contributing, other
                         </div>
                         <div id="status"></div>
                     </div>
+                    <div class="c-sprocky-terms">Sprocky is the Chrome Extension team's 2019 <a href="https://github.com/TheWebTech/HubSpot-Developer-Extension/wiki/What-is-up-with-Sprocky%3F" target="_blank">April Fools joke</a>. By toggling Sprocky on you are stating you understand that Sprocky is a community creation and he is not created by, and his comments are not the views of HubSpot. Enjoy!</div> 
                     <div class="c-toggle-field" id="sprocky-toggle">
                         <div class="sprocky-toggle">
                             <label class="private-form__label private-form__label--small">

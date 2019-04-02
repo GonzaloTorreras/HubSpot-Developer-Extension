@@ -71,16 +71,10 @@ $(document).ready(function() {
 
     // A fun April fools joke, shows 'Sprocky'
     function sprocky() {
-        chrome.storage.sync.get(['sprocky'], function(result) {
+        chrome.storage.sync.get(['sprocky2'], function(result) {
 
-            //Check if undefined(users hasn't loaded it yet), then turn it on by default
-            if (result.sprocky == undefined) {
-                chrome.storage.sync.set({
-                    sprocky: true,
-                });
-            }
             //Check if sprocky is enabled
-            if (result.sprocky || result.sprocky == undefined) {
+            if (result.sprocky2) {
                 
                 // Inject styles for svg 
 
@@ -103,6 +97,9 @@ $(document).ready(function() {
                 "It&apos;s dangerous to go alone take $(this)",
                 "YouDidIt = [&apos;hip&apos;,&apos;hip&apos;]",
                 "When trying to explain to a client that something is complicated, use the term &apos;algorithm&apos; and avoid specifics. It works for everyone else, why not you?",
+                "I think your coding experience would be improved with more Daft Punk music playing in the background.",
+                "Need an HTML 5 validator? Try opening your page in Internet Explorer, did it bomb? Must be HTML 5 then.",
+                "I have come to the conclusion that a web developer is just a machine that turns coffee into code, prove me wrong.",
                 "Grammarly says Sprocky isn&apos;t a word. I say Grammarly isn&apos;t a word.",
                 "BOO! did I scare you? I&apos;m Sprocky. Here to help.",
                 "Did you know you can print a unique identifier for a custom module by using {{name}} inside the module?",
@@ -152,7 +149,7 @@ $(document).ready(function() {
                 var rand = quotes [Math.floor(Math.random()*quotes .length)];
 
                 //Create sprocky div
-                var $sprocky = $( '<div id="sprocky" class="slide"><span class="hide" onclick="hideSprocky()"><a href="#">x</a></span><div class="speech-bubble-ds"></span><p>' + rand + '</p> <div class="speech-bubble-ds-arrow"></div></div><div class="sprockyimg" title="disable sprocky permanently by clicking the HS dev Chrome Extension"></div></div> <script>function hideSprocky() { var x = document.getElementById("sprocky"); x.style.display = "none"; }</script>' );
+                var $sprocky = $( '<div id="sprocky" class="slide"><button class="hide" onclick="hideSprocky()" title="Dismiss Sprocky"><span>x</span></button><div class="speech-bubble-ds"></span><p>' + rand + '</p> <div class="speech-bubble-ds-arrow"></div></div><div class="sprockyimg" title="disable sprocky permanently by clicking the HS dev Chrome Extension"></div></div> <script>function hideSprocky() { var x = document.getElementById("sprocky"); x.style.display = "none"; }</script>' );
 
                 // create sprocky svg
                 var $sprockySVG = $('<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="sprocky-svg" width="200" class="blink" viewBox="0 0 146.5 147"> <defs> <radialGradient id="radial-gradient" cx="122.7" cy="74" r="18" gradientUnits="userSpaceOnUse"> <stop offset=".5" stop-color="#fff"/> <stop offset=".8" stop-color="#fdfdfd"/> <stop offset=".8" stop-color="#f6f6f6"/> <stop offset=".9" stop-color="#ebebeb"/> <stop offset="1" stop-color="#dadada"/> <stop offset="1" stop-color="#c4c4c4"/> </radialGradient> <radialGradient id="radial-gradient-2" cx="69.8" cy="74" r="18" xlink:href="#radial-gradient"/> </defs> <g id="sprocket_layer" data-name="sprocket layer"> <path id="sprocket" fill="#f47622" d="M127.5 69.8a37.5 37.5 0 0 0-13.6-13.4 36.5 36.5 0 0 0-13.7-4.8V33.8a13.1 13.1 0 0 0 8.1-12.3 13.5 13.5 0 1 0-27 0 13 13 0 0 0 8 12.3v17.8a39.4 39.4 0 0 0-12 3.7L29.3 19A14.8 14.8 0 0 0 30 15a15.1 15.1 0 1 0-7.3 12.8l3.2 2.4 43 31a36.3 36.3 0 0 0-6.1 7.1 33.3 33.3 0 0 0-5.6 18v1.3a37.6 37.6 0 0 0 2.4 13 34.3 34.3 0 0 0 5.6 9.7l-14.3 14.3a11.3 11.3 0 0 0-4-.8 11.6 11.6 0 1 0 11 8.2l14.8-14.8a37.7 37.7 0 0 0 6.6 3.6 38.3 38.3 0 0 0 15.3 3.2h1a36.8 36.8 0 0 0 31.3-17.4 33.9 33.9 0 0 0 5.3-18.2V88a35.8 35.8 0 0 0-4.7-18.2zm-18 31c-4 4.5-8.6 7.2-13.8 7.2h-.9a18.6 18.6 0 0 1-8.7-2.3 20.1 20.1 0 0 1-7.7-7 16.2 16.2 0 0 1-3.1-9.5v-1a19.5 19.5 0 0 1 2.2-9.4 20.5 20.5 0 0 1 7-7.8 17.5 17.5 0 0 1 10-3h.3a20 20 0 0 1 9.3 2.1 19.6 19.6 0 0 1 7.2 6.7 21 21 0 0 1 3.3 9.3v2a18.4 18.4 0 0 1-5.1 12.7z"/> </g> <g id="right_eye" data-name="right eye"> <ellipse id="right_eye_white" cx="122.7" cy="74" fill="url(#radial-gradient)" data-name="right eye white" rx="21.3" ry="14"/> <ellipse id="right_pupil" cx="122.8" cy="74.4" class="cls-3" data-name="right pupil" rx="13.5" ry="8.8"/> <path id="right_eyebrow" d="M146.4 63c.7-.6-2.3-10-10.5-14.8a16.8 16.8 0 0 0-9.4-2.6c-2 0-4.9.2-6.2 2.3a5.4 5.4 0 0 0 1.1 6.5c1.7 1.4 3.4.2 8.3.4a25 25 0 0 1 8.6 1.7c5.6 2.3 7.6 6.8 8 6.4z" class="cls-3" data-name="right eyebrow"/> </g> <g id="left_eye" data-name="left eye"> <ellipse id="left_eye_white" cx="69.8" cy="74" fill="url(#radial-gradient-2)" data-name="left eye white" rx="21.3" ry="14"/> <ellipse id="left_pupil" cx="69.7" cy="74.4" class="cls-3" data-name="left pupil" rx="13.5" ry="8.8"/> <path id="left_eyebrow" d="M43 63c-.8-.6 2.2-10 10.4-14.8a16.8 16.8 0 0 1 9.4-2.6c2 0 4.9.2 6.2 2.3a5.4 5.4 0 0 1-1.1 6.5c-1.7 1.4-3.4.2-8.3.4a25 25 0 0 0-8.6 1.7c-5.6 2.3-7.6 6.8-8 6.4z" class="cls-3" data-name="left eyebrow"/> </g> </svg>');
