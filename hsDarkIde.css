@@ -1023,13 +1023,18 @@ div#sprocky div {
 
 #sprocky .hide {
 	top: -2px;
-	left: 6px;
+	left: -1px;
 	position: absolute;
 	z-index: 999;
+	-webkit-appearance: none;
+	background: transparent;
+	border: none;
+	font-weight: bold;
 }
 div#sprocky span.hide a {
 	color: #000;
 }
+
 
 div#sprocky span.hide a:hover {
 	text-decoration: none;
