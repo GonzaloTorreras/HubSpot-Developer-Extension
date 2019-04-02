@@ -97,6 +97,7 @@ $(document).ready(function() {
                 "It&apos;s dangerous to go alone take $(this)",
                 "YouDidIt = [&apos;hip&apos;,&apos;hip&apos;]",
                 "When trying to explain to a client that something is complicated, use the term &apos;algorithm&apos; and avoid specifics. It works for everyone else, why not you?",
+                "I have come to the conclusion that a web developer is just a machine that turns coffee into code, prove me wrong.",
                 "Grammarly says Sprocky isn&apos;t a word. I say Grammarly isn&apos;t a word.",
                 "BOO! did I scare you? I&apos;m Sprocky. Here to help.",
                 "Did you know you can print a unique identifier for a custom module by using {{name}} inside the module?",
