@@ -1060,6 +1060,13 @@ div#sprocky span.hide a:hover {
 	margin-bottom: 1rem;
 	margin-right: 4rem;
 }
+.speech-bubble-ds::after {
+	content: "Sprocky - Developer Chrome Extension";
+	font-size: 10px;
+	bottom: 2px;
+	position: absolute;
+	right: 9px;
+}
 
 .speech-bubble-ds p {
 	margin-bottom: 10px;
