@@ -286,7 +286,7 @@ var developerTools = {
                 $(".ui-tweaks-toggle .uiToggleSwitch").addClass("uiToggleSwitchOn private-form__toggle-switch--on");
             }
         });
-        chrome.storage.sync.get(["sprocky"], function(items) {
+        chrome.storage.sync.get(["sprocky2"], function(items) {
             // Restores select box and checkbox state using the preferences
             // stored in chrome.storage.
             document.getElementById("sprocky").checked = items.sprocky;
