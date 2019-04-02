@@ -2,7 +2,8 @@
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/d6a1c1d220ea4ca79299b432ca44a9d8)](https://www.codacy.com/app/jonmclaren1/HubSpot-Developer-Extension?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=williamspiro/HubSpot-Developer-Extension&amp;utm_campaign=Badge_Grade)
 
 ![Hair perfection](https://avatars1.githubusercontent.com/u/5492388?s=400&v=4)
-New Ownership. Same great hair!
+
+# New Ownership. Same great hair!
 
 A Chrome/Chromium extension for HubSpot Developers that adds useful shortcuts to commonly used HubSpot Query Parameters, and tools for making HubSpot Development easier and more enjoyable. For details on the many features we have a wiki page detailing them:[Feature Breakdown](https://github.com/williamspiro/HubSpot-Developer-Extension/wiki/Feature-Breakdown)
 
