@@ -289,9 +289,9 @@ var developerTools = {
         chrome.storage.sync.get(["sprocky2"], function(items) {
             // Restores select box and checkbox state using the preferences
             // stored in chrome.storage.
-            document.getElementById("sprocky").checked = items.sprocky;
-            console.log("sprocky:", items.sprocky);
-            if (items.sprocky) {
+            document.getElementById("sprocky").checked = items.sprocky2;
+            console.log("sprocky:", items.sprocky2);
+            if (items.sprocky2) {
                 $(".sprocky-toggle .uiToggleSwitch").addClass("uiToggleSwitchOn private-form__toggle-switch--on");
             }
         });
