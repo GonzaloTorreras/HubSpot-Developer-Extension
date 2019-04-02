@@ -71,10 +71,10 @@ $(document).ready(function() {
 
     // A fun April fools joke, shows 'Sprocky'
     function sprocky() {
-        chrome.storage.sync.get(['sprocky'], function(result) {
+        chrome.storage.sync.get(['sprocky2'], function(result) {
 
             //Check if sprocky is enabled
-            if (result.sprocky) {
+            if (result.sprocky2) {
                 
                 // Inject styles for svg 
 
