@@ -103,7 +103,6 @@ $(document).ready(function() {
                 "Remember, Internet Explorer isn&apos;t a web browser, it&apos;s a compatibility tool. - Chris Jackson, Microsoft&apos;s lead for cyber security",
                 "You appear to be having trouble, have you tried turning it off and on again?",
                 "Pro tip: in the copyright text of your site you can use {{year}} to always have it say the current year.",
-                "I met Siri once... thought she was basic.",
                 "If you enjoy my &apos;help&apos; and the HS dev chrome extension please consider leaving a rating and review in the chrome store. The more ratings, the more visibility it gets, the more visibility, the more people contribute to it, the faster features roll out.",
                 "The HTML module still exists, the HubSpot team just hid it in the marketplace. It is free so you can still use it.",
                 "The text field in custom modules now supports emojis, the marketing department said millenials would love it. *sigh*",
