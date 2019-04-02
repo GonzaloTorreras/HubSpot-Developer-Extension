@@ -1008,6 +1008,7 @@ div#sprocky {
 	z-index: 999;
 }
 
+
 div#sprocky.slide {
 	-webkit-animation: slide 0.5s forwards;
 	-webkit-animation-delay: 2s;
@@ -1020,6 +1021,12 @@ div#sprocky div {
 	text-align: right;
 }
 
+#sprocky .hide {
+	top: -2px;
+	left: 6px;
+	position: absolute;
+	z-index: 999;
+}
 div#sprocky span.hide a {
 	color: #000;
 }
