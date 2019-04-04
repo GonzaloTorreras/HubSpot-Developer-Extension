@@ -259,12 +259,12 @@ Do not let fear of learning a new technique prevent you from contributing, other
         width: 100%;
         width: calc(100vw - 10px);
         grid-template-columns: 1fr 1fr;
-        grid-template-areas: "debug bustcache" "movejquery amp" "psrequest psrequest";
+        grid-template-areas: "debug bustcache" "movejquery amp" "psrequest psrequest" "designmanager designmanager";
         /*margin-right: 5px;*/
     }
 
     .o-menu-grid--debug {
-        grid-template-areas: "debug bustcache" "movejquery amp" "psrequest psrequest";
+        grid-template-areas: "debug bustcache" "movejquery amp" "psrequest psrequest" "designmanager designmanager";
     }
 
     .o-menu-grid--design-manager {
@@ -303,6 +303,9 @@ Do not let fear of learning a new technique prevent you from contributing, other
     }
     #ui-tweaks-toggle{
         grid-area: uitweakstoggle;
+    }
+    #openDesginManager{
+        grid-area: designmanager;
     }
 
     .c-sprocky-terms{
@@ -562,6 +565,13 @@ Do not let fear of learning a new technique prevent you from contributing, other
                                 <!--<img src="https://cdn2.hubspot.net/hubfs/2359872/Dev_Extension/NewCorgiDance.gif">--></div>
                         </div>
                     </button>
+                    <a href="https://app.hubspot.com/l/design-manager" target="_blank" class="c-btn face-button" id="openDesginManager">
+                        <div class="c-btn__face-primary" data-i18n="openDesignManager">Open Design Manager</div>
+                        <div class="c-btn__face-secondary" data-i18n="openDesignManager">
+                            Open Design Manager <!-- open design manager -->
+                        </div>
+                       
+                    </a>
                 </div>
             </div>
             <div class="c-tab-slider__tab" id="design-manager">
