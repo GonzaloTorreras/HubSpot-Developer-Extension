@@ -107,6 +107,78 @@ var developerTools = {
     loadTip:function(){
         var tips = [
             {
+                tipId:"thousandUsers",
+                title:"We just passed 1000 weekly users!",
+                content:"Huge thank you to everyone who has provided feedback, submitted ratings, posted issues, contributed code, and simply use the extension.",
+                url:"https://github.com/TheWebTech/HubSpot-Developer-Extension/wiki/1,000-users",
+            },
+            {
+                tipId:"thousandUsers",
+                title:"We just passed 1000 weekly users!",
+                content:"Huge thank you to everyone who has provided feedback, submitted ratings, posted issues, contributed code, and simply use the extension.",
+                url:"https://github.com/TheWebTech/HubSpot-Developer-Extension/wiki/1,000-users",
+            },
+            {
+                tipId:"thousandUsers",
+                title:"We just passed 1000 weekly users!",
+                content:"Huge thank you to everyone who has provided feedback, submitted ratings, posted issues, contributed code, and simply use the extension.",
+                url:"https://github.com/TheWebTech/HubSpot-Developer-Extension/wiki/1,000-users",
+            },
+            {
+                tipId:"thousandUsers",
+                title:"We just passed 1000 weekly users!",
+                content:"Huge thank you to everyone who has provided feedback, submitted ratings, posted issues, contributed code, and simply use the extension.",
+                url:"https://github.com/TheWebTech/HubSpot-Developer-Extension/wiki/1,000-users",
+            },
+            {
+                tipId:"thousandUsers",
+                title:"We just passed 1000 weekly users!",
+                content:"Huge thank you to everyone who has provided feedback, submitted ratings, posted issues, contributed code, and simply use the extension.",
+                url:"https://github.com/TheWebTech/HubSpot-Developer-Extension/wiki/1,000-users",
+            },
+            {
+                tipId:"thousandUsers",
+                title:"We just passed 1000 weekly users!",
+                content:"Huge thank you to everyone who has provided feedback, submitted ratings, posted issues, contributed code, and simply use the extension.",
+                url:"https://github.com/TheWebTech/HubSpot-Developer-Extension/wiki/1,000-users",
+            },
+            {
+                tipId:"thousandUsers",
+                title:"We just passed 1000 weekly users!",
+                content:"Huge thank you to everyone who has provided feedback, submitted ratings, posted issues, contributed code, and simply use the extension.",
+                url:"https://github.com/TheWebTech/HubSpot-Developer-Extension/wiki/1,000-users",
+            },
+            {
+                tipId:"thousandUsers",
+                title:"We just passed 1000 weekly users!",
+                content:"Huge thank you to everyone who has provided feedback, submitted ratings, posted issues, contributed code, and simply use the extension.",
+                url:"https://github.com/TheWebTech/HubSpot-Developer-Extension/wiki/1,000-users",
+            },
+            {
+                tipId:"thousandUsers",
+                title:"We just passed 1000 weekly users!",
+                content:"Huge thank you to everyone who has provided feedback, submitted ratings, posted issues, contributed code, and simply use the extension.",
+                url:"https://github.com/TheWebTech/HubSpot-Developer-Extension/wiki/1,000-users",
+            },
+            {
+                tipId:"thousandUsers",
+                title:"We just passed 1000 weekly users!",
+                content:"Huge thank you to everyone who has provided feedback, submitted ratings, posted issues, contributed code, and simply use the extension.",
+                url:"https://github.com/TheWebTech/HubSpot-Developer-Extension/wiki/1,000-users",
+            },
+            {
+                tipId:"thousandUsers",
+                title:"We just passed 1000 weekly users!",
+                content:"Huge thank you to everyone who has provided feedback, submitted ratings, posted issues, contributed code, and simply use the extension.",
+                url:"https://github.com/TheWebTech/HubSpot-Developer-Extension/wiki/1,000-users",
+            },
+            {
+                tipId:"thousandUsers",
+                title:"We just passed 1000 weekly users!",
+                content:"Huge thank you to everyone who has provided feedback, submitted ratings, posted issues, contributed code, and simply use the extension.",
+                url:"https://github.com/TheWebTech/HubSpot-Developer-Extension/wiki/1,000-users",
+            },
+            {
                 tipId:"VSCode Extension",
                 title:"Use VSCode?",
                 content:"Did you know about the HubL Language Extension?",
