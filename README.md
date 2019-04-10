@@ -30,6 +30,15 @@ While this is not an official HubSpot brand product, HubSpot's developers are aw
 
 We claim no legal rights to the HubSpot name/brand. We have posed the question of if it was okay to have the name HubSpot in the extension's name. It appears atleast for now HubSpot is okay with us using the name. We have no intention of misrepresenting the affiliation to HubSpot, but we also do appreciate being able to use the name, as without it - it would be harder for people to find.
 
+## Supported Browsers
+Officially currently we only support Google Chrome. That said the extension should work on:
+* Chromium and most chromium based browsers.
+* Opera (not directly, but through tools like: https://addons.opera.com/en/extensions/details/install-chrome-extensions/)
+* We plan to support Microsoft Edge once it's Chromium version becomes public.
+
+Firefox cannot run the extension. We do however want to support Firefox but need developers willing to help port it.
+[We have already gathered information on how to do it.](https://github.com/TheWebTech/HubSpot-Developer-Extension/issues/51)
+
 ## How to Contribute:
 
 1. [Read this first!](https://github.com/williamspiro/HubSpot-Developer-Extension/blob/master/CONTRIBUTING.md)
