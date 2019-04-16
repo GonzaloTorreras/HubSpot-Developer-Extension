@@ -66,7 +66,7 @@ $(document).ready(function() {
             document.title = "Bl|" + portal + "|HS";
         } else if (currentScreen === "url-redirects") {
             //document.title = "🔀UM|"+portal+"|HS";
-            document.title = "UM|" + portal + "|HS";
+            document.title = "UR|" + portal + "|HS";
         }
     }
 
@@ -215,18 +215,18 @@ $(document).ready(function() {
             currentScreen = "blog";
         }
         if (~tabUrl.indexOf("/url-redirects")) {
-            currentScreen = "url-mappings";
+            currentScreen = "url-redirects";
         }
         chrome.storage.sync.get([
             'uitweaks'
         ], function(items) {
             if (items.uitweaks) {
-                if (currentScreen == "design-manager") {
+                
 
-                    waitForEl(".account-name", function() {
-                        setTitle($(".account-name").text());
-                    });
-                }
+                waitForEl(".account-name", function() {
+                    setTitle($(".account-name").text());
+                });
+                
 
                 function generateDevMenuItem(buttonLabel, hubId, url) {
                     /*expects button label string, hubId string, url string.*/
@@ -320,4 +320,5 @@ $(document).ready(function() {
     } else {
         //console.log("This is not in the HubSpot Backend");
     }
+    console.log("currentScreen:",currentScreen);
 });
