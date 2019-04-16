@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
     "name": "__MSG_extName__",
-    "version": "1.04.3",
+    "version": "1.04.5",
     "default_locale": "en",
     "description": "__MSG_extDesc__",
     "browser_action": {
