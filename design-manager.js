@@ -241,14 +241,15 @@ $(document).ready(function() {
 
                 function generateAllMenuItems(hubId) {
                     var html = generateDevMenuItem("Design Manager", hubId, "https://app.hubspot.com/design-manager/_HUB_ID_");
+                    html += generateDevMenuItem("Content Staging", hubId, "https://app.hubspot.com/content/_HUB_ID_/staging/");
+                    html += generateDevMenuItem("Website Pages", hubId, "https://app.hubspot.com/pages/_HUB_ID_/manage/site/domain/all/listing/all");
                     html += generateDevMenuItem("HubDB", hubId, "https://app.hubspot.com/hubdb/_HUB_ID_");
                     html += generateDevMenuItem("File Manager", hubId, "https://app.hubspot.com/file-manager-beta/_HUB_ID_");
-                    html += generateDevMenuItem("Content Staging", hubId, "https://app.hubspot.com/content/_HUB_ID_/staging/");
                     html += generateDevMenuItem("Advanced Menus", hubId, "https://app.hubspot.com/settings/_HUB_ID_/website/pages/all-domains/navigation");
                     html += generateDevMenuItem("Content Settings", hubId, "https://app.hubspot.com/settings/_HUB_ID_/website/pages/all-domains/page-templates");
                     html += generateDevMenuItem("URL Mappings", hubId, "https://app.hubspot.com/content/_HUB_ID_/settings/url-mappings");
                     html += generateDevMenuItem("Marketplace", hubId, "https://app.hubspot.com/marketplace/_HUB_ID_/products");
-                    html += generateDevMenuItem("Website Pages", hubId, "https://app.hubspot.com/pages/_HUB_ID_/manage/site/domain/all/listing/all");
+                    
                     
                     return html;
                 }
