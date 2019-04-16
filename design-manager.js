@@ -4,6 +4,7 @@ $(document).ready(function() {
 
     /*trackClick sends the click event to the background js which has google analytics set up, this prevents google analytics running on the page and means the extension can only track it's own events.*/
     function trackClick(eventName) { /*Analytics*/
+        //console.log("trackClick run");
         chrome.runtime.sendMessage({ trackClick: eventName }, function(response) {
             //console.log(response.farewell);
         });
@@ -63,9 +64,9 @@ $(document).ready(function() {
         } else if (currentScreen === "blog") {
             //document.title = "📰Bl|"+portal+"|HS";
             document.title = "Bl|" + portal + "|HS";
-        } else if (currentScreen === "url-mappings") {
+        } else if (currentScreen === "url-redirects") {
             //document.title = "🔀UM|"+portal+"|HS";
-            document.title = "UM|" + portal + "|HS";
+            document.title = "UR|" + portal + "|HS";
         }
     }
 
@@ -213,19 +214,19 @@ $(document).ready(function() {
         if (~tabUrl.indexOf("/blog/")) {
             currentScreen = "blog";
         }
-        if (~tabUrl.indexOf("/url-mappings")) {
-            currentScreen = "url-mappings";
+        if (~tabUrl.indexOf("/url-redirects")) {
+            currentScreen = "url-redirects";
         }
         chrome.storage.sync.get([
             'uitweaks'
         ], function(items) {
             if (items.uitweaks) {
-                if (currentScreen == "design-manager") {
+                
 
-                    waitForEl(".account-name", function() {
-                        setTitle($(".account-name").text());
-                    });
-                }
+                waitForEl(".account-name", function() {
+                    setTitle($(".account-name").text());
+                });
+                
 
                 function generateDevMenuItem(buttonLabel, hubId, url) {
                     /*expects button label string, hubId string, url string.*/
@@ -241,13 +242,16 @@ $(document).ready(function() {
 
                 function generateAllMenuItems(hubId) {
                     var html = generateDevMenuItem("Design Manager", hubId, "https://app.hubspot.com/design-manager/_HUB_ID_");
+                    html += generateDevMenuItem("Content Staging", hubId, "https://app.hubspot.com/content/_HUB_ID_/staging/");
+                    html += generateDevMenuItem("Website Pages", hubId, "https://app.hubspot.com/pages/_HUB_ID_/manage/site/domain/all/listing/all");
                     html += generateDevMenuItem("HubDB", hubId, "https://app.hubspot.com/hubdb/_HUB_ID_");
                     html += generateDevMenuItem("File Manager", hubId, "https://app.hubspot.com/file-manager-beta/_HUB_ID_");
-                    html += generateDevMenuItem("Content Staging", hubId, "https://app.hubspot.com/content/_HUB_ID_/staging/");
                     html += generateDevMenuItem("Advanced Menus", hubId, "https://app.hubspot.com/settings/_HUB_ID_/website/navigation");
                     html += generateDevMenuItem("Content Settings", hubId, "https://app.hubspot.com/settings/_HUB_ID_/website/pages/all-domains/page-templates");
-                    html += generateDevMenuItem("URL Mappings", hubId, "https://app.hubspot.com/content/_HUB_ID_/url-redirects");
+                    html += generateDevMenuItem("URL Redirects", hubId, "https://app.hubspot.com/domains/_HUB_ID_/url-redirects");
                     html += generateDevMenuItem("Marketplace", hubId, "https://app.hubspot.com/marketplace/_HUB_ID_/products");
+                    
+                    
                     return html;
                 }
 
@@ -268,9 +272,14 @@ $(document).ready(function() {
                     html += '</div>';
                     html += '</li>';
 
+                    
+
+                    $(".nav-links ul.primary-links>li:first-child").after(html);
+
                     $("#ext-dev-menu-wrapper > a").click(function(e) {
-                        e.preventDefault();
+                        
                         //console.log("dev menu clicked!");
+                        e.preventDefault();
                         /*$("#ext-dev-menu").toggleClass("expansion");*/
 
                         //$("#ext-dev-menu").toggle();
@@ -288,29 +297,10 @@ $(document).ready(function() {
                     });
 
                     $("#ext-dev-menu .navSecondaryLink, #ext-dev-menu .devMenuLink").click(function() {
-                        console.log("track click");
-                        var linkName = "devMenu:" + $(this).data("ext-track");
-                        console.log(linkName);
+                        //console.log("track click");
+                        var linkName = "devMenu:" + $(this).text();
+                        //console.log(linkName);
                         trackClick(linkName);
-                    });
-
-                    $(".nav-links ul.primary-links>li:first-child").after(html);
-
-                    $("#ext-dev-menu-wrapper > a").click(function(e) {
-                        e.preventDefault();
-                        //console.log("dev menu clicked!");
-                        /*$("#ext-dev-menu").toggleClass("expansion");*/
-
-                        //$("#ext-dev-menu").toggle();
-
-                        var isExpanded = $(this).attr('aria-expanded');
-
-                        if (isExpanded === "true") {
-                            $(this).attr("aria-expanded", "false");
-                        } else {
-                            $(this).attr("aria-expanded", "true");
-                        }
-                        $(this).parent("li").toggleClass("active");
                     });
                 }
 
@@ -330,4 +320,5 @@ $(document).ready(function() {
     } else {
         //console.log("This is not in the HubSpot Backend");
     }
+
 });
