@@ -64,7 +64,7 @@ $(document).ready(function() {
         } else if (currentScreen === "blog") {
             //document.title = "📰Bl|"+portal+"|HS";
             document.title = "Bl|" + portal + "|HS";
-        } else if (currentScreen === "url-mappings") {
+        } else if (currentScreen === "url-redirects") {
             //document.title = "🔀UM|"+portal+"|HS";
             document.title = "UM|" + portal + "|HS";
         }
@@ -246,7 +246,7 @@ $(document).ready(function() {
                     html += generateDevMenuItem("Website Pages", hubId, "https://app.hubspot.com/pages/_HUB_ID_/manage/site/domain/all/listing/all");
                     html += generateDevMenuItem("HubDB", hubId, "https://app.hubspot.com/hubdb/_HUB_ID_");
                     html += generateDevMenuItem("File Manager", hubId, "https://app.hubspot.com/file-manager-beta/_HUB_ID_");
-                    html += generateDevMenuItem("Advanced Menus", hubId, "https://app.hubspot.com/settings/_HUB_ID_/website/pages/all-domains/navigation");
+                    html += generateDevMenuItem("Advanced Menus", hubId, "https://app.hubspot.com/settings/_HUB_ID_/website/navigation");
                     html += generateDevMenuItem("Content Settings", hubId, "https://app.hubspot.com/settings/_HUB_ID_/website/pages/all-domains/page-templates");
                     html += generateDevMenuItem("URL Redirects", hubId, "https://app.hubspot.com/domains/_HUB_ID_/url-redirects");
                     html += generateDevMenuItem("Marketplace", hubId, "https://app.hubspot.com/marketplace/_HUB_ID_/products");
