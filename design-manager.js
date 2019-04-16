@@ -214,7 +214,7 @@ $(document).ready(function() {
         if (~tabUrl.indexOf("/blog/")) {
             currentScreen = "blog";
         }
-        if (~tabUrl.indexOf("/url-mappings")) {
+        if (~tabUrl.indexOf("/url-redirects")) {
             currentScreen = "url-mappings";
         }
         chrome.storage.sync.get([
