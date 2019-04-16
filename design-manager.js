@@ -248,6 +248,8 @@ $(document).ready(function() {
                     html += generateDevMenuItem("Content Settings", hubId, "https://app.hubspot.com/settings/_HUB_ID_/website/pages/all-domains/page-templates");
                     html += generateDevMenuItem("URL Mappings", hubId, "https://app.hubspot.com/content/_HUB_ID_/settings/url-mappings");
                     html += generateDevMenuItem("Marketplace", hubId, "https://app.hubspot.com/marketplace/_HUB_ID_/products");
+                    html += generateDevMenuItem("Website Pages", hubId, "https://app.hubspot.com/pages/_HUB_ID_/manage/site/domain/all/listing/all");
+                    
                     return html;
                 }
 
