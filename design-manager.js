@@ -4,8 +4,9 @@ $(document).ready(function() {
 
     /*trackClick sends the click event to the background js which has google analytics set up, this prevents google analytics running on the page and means the extension can only track it's own events.*/
     function trackClick(eventName) { /*Analytics*/
+        console.log("trackClick run");
         chrome.runtime.sendMessage({ trackClick: eventName }, function(response) {
-            //console.log(response.farewell);
+            console.log(response.farewell);
         });
     }
     var tabUrl = window.location.protocol + "//" + window.location.host + "/" + window.location.pathname;
@@ -247,7 +248,7 @@ $(document).ready(function() {
                     html += generateDevMenuItem("File Manager", hubId, "https://app.hubspot.com/file-manager-beta/_HUB_ID_");
                     html += generateDevMenuItem("Advanced Menus", hubId, "https://app.hubspot.com/settings/_HUB_ID_/website/pages/all-domains/navigation");
                     html += generateDevMenuItem("Content Settings", hubId, "https://app.hubspot.com/settings/_HUB_ID_/website/pages/all-domains/page-templates");
-                    html += generateDevMenuItem("URL Mappings", hubId, "https://app.hubspot.com/content/_HUB_ID_/settings/url-mappings");
+                    html += generateDevMenuItem("URL Redirects", hubId, "https://app.hubspot.com/domains/_HUB_ID_/url-redirects");
                     html += generateDevMenuItem("Marketplace", hubId, "https://app.hubspot.com/marketplace/_HUB_ID_/products");
                     
                     
@@ -271,9 +272,14 @@ $(document).ready(function() {
                     html += '</div>';
                     html += '</li>';
 
+                    
+
+                    $(".nav-links ul.primary-links>li:first-child").after(html);
+
                     $("#ext-dev-menu-wrapper > a").click(function(e) {
+                        
+                        console.log("dev menu clicked!");
                         e.preventDefault();
-                        //console.log("dev menu clicked!");
                         /*$("#ext-dev-menu").toggleClass("expansion");*/
 
                         //$("#ext-dev-menu").toggle();
@@ -292,19 +298,14 @@ $(document).ready(function() {
 
                     $("#ext-dev-menu .navSecondaryLink, #ext-dev-menu .devMenuLink").click(function() {
                         console.log("track click");
-                        var linkName = "devMenu:" + $(this).data("ext-track");
+                        var linkName = "devMenu:" + $(this).text();
                         console.log(linkName);
                         trackClick(linkName);
                     });
 
-                    $(".nav-links ul.primary-links>li:first-child").after(html);
-
-                    $("#ext-dev-menu-wrapper > a").click(function(e) {
+                    /*$("#ext-dev-menu-wrapper > a").click(function(e) {
                         e.preventDefault();
-                        //console.log("dev menu clicked!");
-                        /*$("#ext-dev-menu").toggleClass("expansion");*/
-
-                        //$("#ext-dev-menu").toggle();
+                        
 
                         var isExpanded = $(this).attr('aria-expanded');
 
@@ -314,7 +315,7 @@ $(document).ready(function() {
                             $(this).attr("aria-expanded", "true");
                         }
                         $(this).parent("li").toggleClass("active");
-                    });
+                    });*/
                 }
 
                 /*get current HubSpot ID*/
