@@ -302,20 +302,6 @@ $(document).ready(function() {
                         console.log(linkName);
                         trackClick(linkName);
                     });
-
-                    /*$("#ext-dev-menu-wrapper > a").click(function(e) {
-                        e.preventDefault();
-                        
-
-                        var isExpanded = $(this).attr('aria-expanded');
-
-                        if (isExpanded === "true") {
-                            $(this).attr("aria-expanded", "false");
-                        } else {
-                            $(this).attr("aria-expanded", "true");
-                        }
-                        $(this).parent("li").toggleClass("active");
-                    });*/
                 }
 
                 /*get current HubSpot ID*/
