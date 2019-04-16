@@ -4,9 +4,9 @@ $(document).ready(function() {
 
     /*trackClick sends the click event to the background js which has google analytics set up, this prevents google analytics running on the page and means the extension can only track it's own events.*/
     function trackClick(eventName) { /*Analytics*/
-        console.log("trackClick run");
+        //console.log("trackClick run");
         chrome.runtime.sendMessage({ trackClick: eventName }, function(response) {
-            console.log(response.farewell);
+            //console.log(response.farewell);
         });
     }
     var tabUrl = window.location.protocol + "//" + window.location.host + "/" + window.location.pathname;
@@ -278,7 +278,7 @@ $(document).ready(function() {
 
                     $("#ext-dev-menu-wrapper > a").click(function(e) {
                         
-                        console.log("dev menu clicked!");
+                        //console.log("dev menu clicked!");
                         e.preventDefault();
                         /*$("#ext-dev-menu").toggleClass("expansion");*/
 
@@ -297,9 +297,9 @@ $(document).ready(function() {
                     });
 
                     $("#ext-dev-menu .navSecondaryLink, #ext-dev-menu .devMenuLink").click(function() {
-                        console.log("track click");
+                        //console.log("track click");
                         var linkName = "devMenu:" + $(this).text();
-                        console.log(linkName);
+                        //console.log(linkName);
                         trackClick(linkName);
                     });
                 }
@@ -320,5 +320,5 @@ $(document).ready(function() {
     } else {
         //console.log("This is not in the HubSpot Backend");
     }
-    console.log("currentScreen:",currentScreen);
+    //console.log("currentScreen:",currentScreen);
 });
