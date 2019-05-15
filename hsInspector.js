@@ -2,18 +2,18 @@ console.log("hsinspector js loaded!");
 
 var devInfoLinks = document.querySelectorAll(".hs-tools-menu a");
 
-devInfoLinks.forEach(function(el,i){
+devInfoLinks.forEach(function(el, i) {
     var linkURL = el.getAttribute("href");
     var linkText = el.textContent;
-    if (linkText.includes("Developer Info")){
-        console.log(linkText,linkURL);
-        chrome.runtime.sendMessage({devInfoURL: linkURL}, function(response) {
+    if (linkText.includes("Developer Info")) {
+        console.log(linkText, linkURL);
+        chrome.runtime.sendMessage({ devInfoURL: linkURL }, function(response) {
             console.log(response.farewell);
-          });
+        });
     }
-   
-   
-    
+
+
+
 
 });
 

@@ -91,6 +91,10 @@ chrome.runtime.onMessage.addListener(
             console.log("PORTAL ID:", devInfoData.portalId);
             var portalId = devInfoData.portalId;
 
+            console.log(sender.tab.url);
+            const inspectedURL = new URL(sender.tab.url);
+            console.log(inspectedURL.hostname);
+            console.log(inspectedURL.pathname);
 
             console.log("getting Token");
             jQuery.ajax({
@@ -120,10 +124,10 @@ chrome.runtime.onMessage.addListener(
                     parser = document.createElement('a'); //not sure what in the world this is for, maybe incase auto redirect fails?
                 parser.href = url;
                 var accessToken = currentToken;
-                var currentDomain = "centrisys-4299619.hs-sites.com";
+                var currentDomain = inspectedURL.hostname;
                 $.ajax({
                     //url: 'https://' + apiHost + '/content/api/v4/domains/by-domain?portalId=' + portalId + '&domain=' + parser.hostname + '&access_token=' + accessToken,
-                    url: 'https://' + currentDomain + '/__context__/?portalId=' + portalId + '&access_token=' + accessToken,
+                    url: 'https://' + currentDomain + '/__context__/' + inspectedURL.pathname + '?portalId=' + portalId + '&access_token=' + accessToken,
                     xhrFields: {
                         withCredentials: true
                     }
