@@ -120,7 +120,7 @@ chrome.runtime.onMessage.addListener(
                     xhrFields: {
                         withCredentials: true
                     }
-                }).done(function(domainData) {
+                }).done(function() {
 
                     var redir = parser.protocol + '//' + parser.hostname + '/__context__' + parser.pathname + parser.search;
                     redir += (redir.indexOf('?') !== -1) ? '&' : '?';
