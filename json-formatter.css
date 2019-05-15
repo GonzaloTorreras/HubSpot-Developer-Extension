@@ -1,0 +1,154 @@
+/* JSON pretifier */
+
+.json-formatted {
+    white-space: pre;
+    line-height: 1.3em;
+    font-size: 17px;
+    padding: 0 1rem;
+    font-size: 17px;
+    color: #eaf0f6;
+    background: linear-gradient(45deg, #33475b, #2d3e50);
+}
+
+.json-formatted .number {
+    color: #ff8080;
+}
+
+.json-formatted .boolean,
+.json-formatted .null {
+    color: #f7b361;
+}
+
+.json-formatted .string {
+    color: #68b2d2;
+}
+
+.json-formatted .separator {
+    border-left: 1px dashed rgba(255, 255, 255, .05);
+}
+
+.json-formatted .key:hover,
+.json-formatted .number:hover,
+.json-formatted .boolean:hover,
+.json-formatted .string:hover {
+    color: rgb(63, 180, 249);
+    cursor: pointer;
+    position: relative;
+}
+
+.json-formatted .key:hover:before,
+.json-formatted .number:hover:before,
+.json-formatted .boolean:hover:before,
+.json-formatted .string:hover:before {
+    content: '';
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M433.941 65.941l-51.882-51.882A48 48 0 0 0 348.118 0H176c-26.51 0-48 21.49-48 48v48H48c-26.51 0-48 21.49-48 48v320c0 26.51 21.49 48 48 48h224c26.51 0 48-21.49 48-48v-48h80c26.51 0 48-21.49 48-48V99.882a48 48 0 0 0-14.059-33.941zM266 464H54a6 6 0 0 1-6-6V150a6 6 0 0 1 6-6h74v224c0 26.51 21.49 48 48 48h96v42a6 6 0 0 1-6 6zm128-96H182a6 6 0 0 1-6-6V54a6 6 0 0 1 6-6h106v88c0 13.255 10.745 24 24 24h88v202a6 6 0 0 1-6 6zm6-256h-64V48h9.632c1.591 0 3.117.632 4.243 1.757l48.368 48.368a6 6 0 0 1 1.757 4.243V112z"/></svg>');
+    position: absolute;
+    top: 0;
+    vertical-align: middle;
+    left: -1.2em;
+    display: block;
+    width: 1em;
+    height: 1em;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.json-formatted .number:hover:before,
+.json-formatted .boolean:hover:before,
+.json-formatted .string:hover:before {
+    left: initial;
+    right: -1.5em;
+}
+
+.json-formatted .array,
+.json-formatted .list {
+    padding: 0 0 0 2.5rem;
+    margin: 0;
+    margin-top: .2em;
+    list-style: none;
+    transition: .2s;
+}
+
+
+/* fix visual gap when a list hold an array*/
+
+.json-formatted li>.separator+ul {
+    margin-top: -1em;
+}
+
+.json-formatted .array li,
+.json-formatted .list li {
+    padding: .25em 0;
+    transition: .3s;
+}
+
+
+/* ignore white space on last item (only affect visually if its end of array/list } ] */
+
+.json-formatted .array li:last-child,
+.json-formatted .list li:last-child {
+    white-space: nowrap;
+}
+
+.json-formatted .minimize-me:not(:last-child) {
+    position: absolute;
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    margin-left: -1.3em;
+    background: url('data:image/svg+xml;utf,<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" data-prefix="far" data-icon="chevron-square-down" class="svg-inline--fa fa-chevron-square-down fa-w-14" role="img" viewBox="0 0 448 512"><path fill="rgb(63, 180, 249)" d="M215.5 348.5L92.7 225.7c-4.7-4.7-4.7-12.3 0-17l22.6-22.6c4.7-4.7 12.3-4.7 17 0l91.7 91.7 91.7-91.7c4.7-4.7 12.3-4.7 17 0l22.6 22.6c4.7 4.7 4.7 12.3 0 17L232.5 348.5c-4.7 4.7-12.3 4.7-17 0zM448 80v352c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V80c0-26.5 21.5-48 48-48h352c26.5 0 48 21.5 48 48zm-48 346V86c0-3.3-2.7-6-6-6H54c-3.3 0-6 2.7-6 6v340c0 3.3 2.7 6 6 6h340c3.3 0 6-2.7 6-6z"/></svg>');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+
+/* hide other minimizers */
+
+.json-formatted .minimized ul .minimize-me {
+    display: none;
+}
+
+
+/* change bg of active minimizer */
+
+.json-formatted .minimized>.minimize-me:not(:last-child) {
+    background: url('data:image/svg+xml;utf,<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" data-prefix="far" data-icon="chevron-square-right" class="svg-inline--fa fa-chevron-square-right fa-w-14" role="img" viewBox="0 0 448 512"><path fill="rgb(63, 180, 249)" d="M316.5 264.5L193.7 387.3c-4.7 4.7-12.3 4.7-17 0l-22.6-22.6c-4.7-4.7-4.7-12.3 0-17l91.7-91.7-91.7-91.7c-4.7-4.7-4.7-12.3 0-17l22.6-22.6c4.7-4.7 12.3-4.7 17 0l122.8 122.8c4.7 4.7 4.7 12.3 0 17zM448 80v352c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V80c0-26.5 21.5-48 48-48h352c26.5 0 48 21.5 48 48zm-48 346V86c0-3.3-2.7-6-6-6H54c-3.3 0-6 2.7-6 6v340c0 3.3 2.7 6 6 6h340c3.3 0 6-2.7 6-6z"/></svg>');
+    background-repeat: no-repeat;
+}
+
+.json-formatted .minimized {
+    height: 1.2em;
+}
+
+.json-formatted .minimized li {
+    height: 0;
+    overflow: hidden;
+    padding: 0;
+}
+
+
+/* show the closer in the same line */
+
+.json-formatted .minimized>li.open-bracket,
+.json-formatted .minimized>li.close-bracket {
+    height: auto;
+    display: inline-block;
+    width: auto;
+    float: left;
+}
+
+
+/* but not if it parent is minmized */
+
+.json-formatted .minimized .minimized>li:last-child {
+    display: none;
+}
+
+.json-formatted .array li:not(.minimize-me):hover,
+.json-formatted .list li:not(.minimize-me):hover {
+    background: rgba(255, 255, 255, .015);
+}
+
+.json-formatted .active>.key {
+    background: rgba(255, 255, 255, .2);
+}
