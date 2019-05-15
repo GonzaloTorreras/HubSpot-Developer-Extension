@@ -77,7 +77,7 @@ chrome.runtime.onMessage.addListener(
             });
             //display dev info link from menu
             $("h1").text(request.devInfoURL);
-            
+
             //$("#dummy").attr('src', request.devInfoURL);
 
             console.log(getUrlVars(request.devInfoURL));
@@ -88,7 +88,7 @@ chrome.runtime.onMessage.addListener(
 
             console.log("getting Token");
             jQuery.ajax({
-                type: 'POST',
+                type: 'GET',
                 url: 'https://login.hubspot.com/login/api-verify',
                 data: {
                     'portalId': portalId
@@ -100,11 +100,12 @@ chrome.runtime.onMessage.addListener(
                 console.log("result:", loginData);
                 var currentToken = loginData.auth.access_token.token;
                 console.log("token", currentToken);
+                var accessToken = currentToken; //doing this to pass var to HS code without touching their code to reduce screwing it up
 
                 //now prep the data to make the ajax call to get the true dev info URL
 
                 var envSuffix = (window.location.hostname.indexOf('qa') !== -1) ? 'qa' : ''; // checks if HS QA site
-                console.log("envSuffix",envSuffix);
+                console.log("envSuffix", envSuffix);
                 //code below was pulled right off of HS's dev info redirection page
                 var url = devInfoData.url,
                     portalId = devInfoData.portalId,
@@ -120,12 +121,12 @@ chrome.runtime.onMessage.addListener(
                         withCredentials: true
                     }
                 }).done(function(domainData) {
-                    if (domainData.isResolving) {
-                        var redir = parser.protocol + '//' + parser.hostname + '/__context__' + parser.pathname + parser.search;
-                        redir += (redir.indexOf('?') !== -1) ? '&' : '?';
-                        redir += 'portalId=' + portalId + '&access_token=' + accessToken;
-                        window.location.href = redir;
-                    }
+
+                    var redir = parser.protocol + '//' + parser.hostname + '/__context__' + parser.pathname + parser.search;
+                    redir += (redir.indexOf('?') !== -1) ? '&' : '?';
+                    redir += 'portalId=' + portalId + '&access_token=' + accessToken;
+                    window.location.href = redir;
+
                 });
 
 
