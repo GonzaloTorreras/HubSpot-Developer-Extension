@@ -131,6 +131,12 @@ chrome.runtime.onMessage.addListener(
                     console.log(result);
                     $("body").prepend($("<div id='dev-info'>" + safe_tags(JSON.stringify(result, undefined, 2)) + "</div>"))
                     formatJSON();
+
+                    // TODO we should be able to load the css a different way in panels, we'll need to look into that
+                    $.get(chrome.extension.getURL('/json-formatter.css'), function(data) {
+                        $("body").prepend("<style id='json-formatter-css'>" + data + "</style>");
+                    });
+
                 });
 
 
