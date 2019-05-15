@@ -113,20 +113,16 @@ chrome.runtime.onMessage.addListener(
                     apiHost = 'api.hubapi' + envSuffix + '.com',
                     parser = document.createElement('a'); //not sure what in the world this is for, maybe incase auto redirect fails?
                 parser.href = url;
-
                 var accessToken = currentToken;
+                var currentDomain = "centrisys-4299619.hs-sites.com";
                 $.ajax({
-                    url: 'https://' + apiHost + '/content/api/v4/domains/by-domain?portalId=' + portalId + '&domain=' + parser.hostname + '&access_token=' + accessToken,
+                    //url: 'https://' + apiHost + '/content/api/v4/domains/by-domain?portalId=' + portalId + '&domain=' + parser.hostname + '&access_token=' + accessToken,
+                    url: 'https://' + currentDomain + '/__context__/?portalId=' + portalId + '&access_token=' + accessToken,
                     xhrFields: {
                         withCredentials: true
                     }
-                }).done(function() {
-
-                    var redir = parser.protocol + '//' + parser.hostname + '/__context__' + parser.pathname + parser.search;
-                    redir += (redir.indexOf('?') !== -1) ? '&' : '?';
-                    redir += 'portalId=' + portalId + '&access_token=' + accessToken;
-                    window.location.href = redir;
-
+                }).done(function(result) {
+                    console.log(result);
                 });
 
 
