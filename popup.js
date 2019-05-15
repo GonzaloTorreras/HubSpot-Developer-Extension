@@ -107,6 +107,78 @@ var developerTools = {
     loadTip:function(){
         var tips = [
             {
+                tipId:"thousandUsers",
+                title:"We just passed 1000 weekly users!",
+                content:"Huge thank you to everyone who has provided feedback, submitted ratings, posted issues, contributed code, and simply use the extension.",
+                url:"https://github.com/TheWebTech/HubSpot-Developer-Extension/wiki/1,000-users",
+            },
+            {
+                tipId:"thousandUsers",
+                title:"We just passed 1000 weekly users!",
+                content:"Huge thank you to everyone who has provided feedback, submitted ratings, posted issues, contributed code, and simply use the extension.",
+                url:"https://github.com/TheWebTech/HubSpot-Developer-Extension/wiki/1,000-users",
+            },
+            {
+                tipId:"thousandUsers",
+                title:"We just passed 1000 weekly users!",
+                content:"Huge thank you to everyone who has provided feedback, submitted ratings, posted issues, contributed code, and simply use the extension.",
+                url:"https://github.com/TheWebTech/HubSpot-Developer-Extension/wiki/1,000-users",
+            },
+            {
+                tipId:"thousandUsers",
+                title:"We just passed 1000 weekly users!",
+                content:"Huge thank you to everyone who has provided feedback, submitted ratings, posted issues, contributed code, and simply use the extension.",
+                url:"https://github.com/TheWebTech/HubSpot-Developer-Extension/wiki/1,000-users",
+            },
+            {
+                tipId:"thousandUsers",
+                title:"We just passed 1000 weekly users!",
+                content:"Huge thank you to everyone who has provided feedback, submitted ratings, posted issues, contributed code, and simply use the extension.",
+                url:"https://github.com/TheWebTech/HubSpot-Developer-Extension/wiki/1,000-users",
+            },
+            {
+                tipId:"thousandUsers",
+                title:"We just passed 1000 weekly users!",
+                content:"Huge thank you to everyone who has provided feedback, submitted ratings, posted issues, contributed code, and simply use the extension.",
+                url:"https://github.com/TheWebTech/HubSpot-Developer-Extension/wiki/1,000-users",
+            },
+            {
+                tipId:"thousandUsers",
+                title:"We just passed 1000 weekly users!",
+                content:"Huge thank you to everyone who has provided feedback, submitted ratings, posted issues, contributed code, and simply use the extension.",
+                url:"https://github.com/TheWebTech/HubSpot-Developer-Extension/wiki/1,000-users",
+            },
+            {
+                tipId:"thousandUsers",
+                title:"We just passed 1000 weekly users!",
+                content:"Huge thank you to everyone who has provided feedback, submitted ratings, posted issues, contributed code, and simply use the extension.",
+                url:"https://github.com/TheWebTech/HubSpot-Developer-Extension/wiki/1,000-users",
+            },
+            {
+                tipId:"thousandUsers",
+                title:"We just passed 1000 weekly users!",
+                content:"Huge thank you to everyone who has provided feedback, submitted ratings, posted issues, contributed code, and simply use the extension.",
+                url:"https://github.com/TheWebTech/HubSpot-Developer-Extension/wiki/1,000-users",
+            },
+            {
+                tipId:"thousandUsers",
+                title:"We just passed 1000 weekly users!",
+                content:"Huge thank you to everyone who has provided feedback, submitted ratings, posted issues, contributed code, and simply use the extension.",
+                url:"https://github.com/TheWebTech/HubSpot-Developer-Extension/wiki/1,000-users",
+            },
+            {
+                tipId:"thousandUsers",
+                title:"We just passed 1000 weekly users!",
+                content:"Huge thank you to everyone who has provided feedback, submitted ratings, posted issues, contributed code, and simply use the extension.",
+                url:"https://github.com/TheWebTech/HubSpot-Developer-Extension/wiki/1,000-users",
+            },
+            {
+                tipId:"thousandUsers",
+                title:"We just passed 1000 weekly users!",
+                content:"Huge thank you to everyone who has provided feedback, submitted ratings, posted issues, contributed code, and simply use the extension.",
+                url:"https://github.com/TheWebTech/HubSpot-Developer-Extension/wiki/1,000-users",
+            },
+            {
                 tipId:"VSCode Extension",
                 title:"Use VSCode?",
                 content:"Did you know about the HubL Language Extension?",
@@ -202,6 +274,18 @@ var developerTools = {
                 content:"There are Keyboard Shortcuts for the cache buster and Debug functions",
                 url:"https://github.com/williamspiro/HubSpot-Developer-Extension/wiki/How-to-Use-and-set-up-Keyboard-Shortcuts",
             },
+            {
+                tipId:"devtoolschtsheet post",
+                title:'Dev Tools Cheat Sheet',
+                content:"In the HS developer forum developers like you have been compiling a cheatsheet of all their best tools that they use for HubSpot development.",
+                url:"https://community.hubspot.com/t5/Share-Your-Work/Developers-Tools-Cheat-Sheet/m-p/207945/highlight/true#M258",
+            },
+            {
+                tipId:"cmsdevcert",
+                title:'HubSpot CMS for Developers Certification',
+                content:"Free HubSpot CMS course for developers. Become a certified HubSpot CMS developer to prove your expertise.",
+                url:"https://app.hubspot.com/signup/standalone-cms-developer?hubs_signup-url=academy.hubspot.com/courses/cms-for-developers&amp;intent=learningCenter&amp;track=34",
+            },
         ];
         var randomTip = [Math.floor(Math.random()*tips.length)];
 
@@ -216,9 +300,12 @@ var developerTools = {
         console.log("settings saved");
         var darkthemeVal = $("#darktheme").prop("checked");
         var uiTweaksVal = $("#uiTweaks").prop("checked");
+        var sprockyVal = $("#sprocky").prop("checked");
 
         console.log("dark theme is ", darkthemeVal);
         console.log("UI Tweaks is ", uiTweaksVal);
+        console.log("Sprocky is ", sprockyVal);
+
         chrome.storage.sync.set({
             darktheme: darkthemeVal,
         }, function() {
@@ -235,18 +322,22 @@ var developerTools = {
         }, function() {
             // Update status to let user know options were saved.
             var status = document.getElementById("status");
-            status.textContent = "Options saved. If you have the Design manager open, you will need to refresh to see the theme.";
+            status.textContent = "Options saved. If you have the Design manager open, you will need to refresh to see the tweaks.";
             setTimeout(function() {
                 status.textContent = "";
             }, 4000);
         });
 
-
-
-
-
-
-
+        chrome.storage.sync.set({
+            sprocky2: sprockyVal,
+        }, function() {
+            // Update status to let user know options were saved.
+            var status = document.getElementById("status");
+            status.textContent = "Option saved. If you have the Design manager open, you will need to refresh to see Sprocky.";
+            setTimeout(function() {
+                status.textContent = "";
+            }, 4000);
+        });
     },
     getSettings: function() {
         chrome.storage.sync.get(["darktheme"], function(items) {
@@ -265,6 +356,15 @@ var developerTools = {
             console.log("dark theme:", items.uitweaks);
             if (items.uitweaks) {
                 $(".ui-tweaks-toggle .uiToggleSwitch").addClass("uiToggleSwitchOn private-form__toggle-switch--on");
+            }
+        });
+        chrome.storage.sync.get(["sprocky2"], function(items) {
+            // Restores select box and checkbox state using the preferences
+            // stored in chrome.storage.
+            document.getElementById("sprocky").checked = items.sprocky2;
+            console.log("sprocky:", items.sprocky2);
+            if (items.sprocky2) {
+                $(".sprocky-toggle .uiToggleSwitch").addClass("uiToggleSwitchOn private-form__toggle-switch--on");
             }
         });
 
@@ -316,6 +416,11 @@ var developerTools = {
 
             developerTools.saveSettings();
             $(".ui-tweaks-toggle .uiToggleSwitch").toggleClass("uiToggleSwitchOn private-form__toggle-switch--on");
+        });
+
+        $(".sprocky-toggle input").change(function() {
+            developerTools.saveSettings();
+            $(".sprocky-toggle .uiToggleSwitch").toggleClass("uiToggleSwitchOn private-form__toggle-switch--on");
         });
 
         $("a.c-banner").click(function(e){
