@@ -123,7 +123,8 @@ chrome.runtime.onMessage.addListener(
                     }
                 }).done(function(result) {
                     console.log(result);
-                    $("body").prepend($("<div id='dev-info'>" + JSON.stringify(result) + "</div>"))
+                    $("body").prepend($("<div id='dev-info'>" + JSON.stringify(result, undefined, 2) + "</div>"))
+                    formatJSON();
                 });
 
 
