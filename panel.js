@@ -17,6 +17,12 @@ var test = chrome.devtools.inspectedWindow.eval(
 );
 console.log("test:",test);
 */
+
+function safe_tags(str) {
+    return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+}
+
+
 function getUrlVars(url) {
     console.log("getting vars");
     var vars = [],
@@ -123,7 +129,7 @@ chrome.runtime.onMessage.addListener(
                     }
                 }).done(function(result) {
                     console.log(result);
-                    $("body").prepend($("<div id='dev-info'>" + JSON.stringify(result, undefined, 2) + "</div>"))
+                    $("body").prepend($("<div id='dev-info'>" + safe_tags(JSON.stringify(result, undefined, 2)) + "</div>"))
                     formatJSON();
                 });
 
