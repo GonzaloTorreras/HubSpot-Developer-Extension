@@ -54,7 +54,7 @@ chrome.permissions.contains({
         chrome.tabs.executeScript(chrome.devtools.inspectedWindow.tabId, {
             file: "hsInspector.js"
         });
-
+        $(".explanation").remove();
 
     } else {
         // The extension doesn't have the permissions.
@@ -77,6 +77,7 @@ document.querySelector('#load').addEventListener('click', function(event) {
             chrome.tabs.executeScript(chrome.devtools.inspectedWindow.tabId, {
                 file: "hsInspector.js"
             });
+            $(".explanation").remove();
 
 
         } else {
