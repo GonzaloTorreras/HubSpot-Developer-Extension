@@ -2,10 +2,10 @@
 
 .json-formatted {
     white-space: pre;
-    line-height: 1.3em;
+    line-height: 1;
     font-size: 17px;
     padding: 0 1rem;
-    font-size: 17px;
+    font-size: 12px;
     color: #eaf0f6;
     background: linear-gradient(45deg, #33475b, #2d3e50);
 }
@@ -88,6 +88,13 @@
 .json-formatted .array li:last-child,
 .json-formatted .list li:last-child {
     white-space: nowrap;
+}
+
+
+/* disable ability to collapse entire json array, performance wise it's sluggish, also kinda pointless.*/
+
+ul.array>li.minimize-me {
+    display: none!important;
 }
 
 .json-formatted .minimize-me:not(:last-child) {
