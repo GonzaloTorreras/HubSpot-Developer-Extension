@@ -93,7 +93,7 @@
 
 /* disable ability to collapse entire json array, performance wise it's sluggish, also kinda pointless.*/
 
-body>ul.array {
+body.json-formatted>ul.array {
     padding-left: 0;
 }
 
