@@ -62,7 +62,7 @@
 
 .json-formatted .array,
 .json-formatted .list {
-    padding: 0 0 0 2.5rem;
+    padding: 0 0 0 0;
     margin: 0;
     margin-top: .2em;
     list-style: none;
