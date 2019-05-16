@@ -43,6 +43,23 @@ function getParameterByName(name) {
     return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 }
 
+chrome.permissions.contains({
+    permissions: ['tabs'],
+    origins: ['<all_urls>']
+}, function(result) {
+    if (result) {
+        $("#load").remove();
+        console.log("Perm granted");
+        /*inject hsinspector*/
+        chrome.tabs.executeScript(chrome.devtools.inspectedWindow.tabId, {
+            file: "hsInspector.js"
+        });
+
+
+    } else {
+        // The extension doesn't have the permissions.
+    }
+});
 
 
 
