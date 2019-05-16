@@ -62,7 +62,7 @@
 
 .json-formatted .array,
 .json-formatted .list {
-    padding: 0 0 0 0;
+    padding: 0 0 0 2.5rem;
     margin: 0;
     margin-top: .2em;
     list-style: none;
@@ -93,7 +93,11 @@
 
 /* disable ability to collapse entire json array, performance wise it's sluggish, also kinda pointless.*/
 
-ul.array>li.minimize-me {
+body>ul.array {
+    padding-left: 0;
+}
+
+body>ul.array>li.minimize-me {
     display: none!important;
 }
 
