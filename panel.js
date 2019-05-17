@@ -42,7 +42,7 @@ function getParameterByName(name) {
         results = regex.exec(location.search);
     return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 }
-
+/*
 chrome.permissions.contains({
     permissions: ['tabs'],
     origins: ['<all_urls>']
@@ -50,7 +50,7 @@ chrome.permissions.contains({
     if (result) {
         $("#load").remove();
         console.log("Perm granted");
-        /*inject hsinspector*/
+        // inject hsinspector
         chrome.tabs.executeScript(chrome.devtools.inspectedWindow.tabId, {
             file: "hsInspector.js"
         });
@@ -73,7 +73,7 @@ document.querySelector('#load').addEventListener('click', function(event) {
         // The callback argument will be true if the user granted the permissions.
         if (granted) {
             console.log("Perm granted");
-            /*inject hsinspector*/
+            //inject hsinspector
             chrome.tabs.executeScript(chrome.devtools.inspectedWindow.tabId, {
                 file: "hsInspector.js"
             });
@@ -82,7 +82,7 @@ document.querySelector('#load').addEventListener('click', function(event) {
 
         } else {
             console.log("Perm denied");
-            /*should display a message - cannot show dev info without permission */
+            //should display a message - cannot show dev info without permission 
         }
     });
 });
@@ -168,3 +168,4 @@ chrome.runtime.onMessage.addListener(
     }
 
 );
+*/
