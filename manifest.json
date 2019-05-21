@@ -28,9 +28,7 @@
     ],
     "optional_permissions": [
         "https://app.hubspot.com/*",
-        "https://app.hubspotqa.com/*",
-        "tabs",
-        "<all_urls>"
+        "https://app.hubspotqa.com/*"
     ],
     "web_accessible_resources": [
         "mac-text-cursor.svg",
