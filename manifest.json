@@ -29,7 +29,6 @@
     "optional_permissions": [
         "https://app.hubspot.com/*",
         "https://app.hubspotqa.com/*",
-       
         "tabs",
         "<all_urls>"
     ],
