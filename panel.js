@@ -56,7 +56,9 @@ chrome.permissions.contains({
         });
         $(".explanation").remove();
     
-    } else {};
+    } else {
+        console.log("Permission Denied")
+    };
 
 $("button").click(function(){
 console.log("v2")
