@@ -59,7 +59,7 @@ chrome.permissions.contains({
     } else {
         console.log("Permission Denied")
     };
-
+});
 $("button").click(function(){
 console.log("v2")
 
@@ -114,7 +114,7 @@ function(request, sender, sendResponse) {
         }).done(function(result) {
             
             
-                console.log(result);
+                console.log("JSON recieved");
                 $("body").prepend($("<div id='dev-info'>" + safe_tags(JSON.stringify(result, undefined, 2)) + "</div>"))
                 formatJSON();
 
@@ -126,11 +126,9 @@ function(request, sender, sendResponse) {
 
 
 
-        })
+        });
     }
-}
-
-);
+});
 
 /*
 chrome.permissions.contains({
