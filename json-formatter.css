@@ -7,7 +7,7 @@
     padding: 0 1rem;
     font-size: 12px;
     color: #eaf0f6;
-    background: linear-gradient(45deg, #33475b, #2d3e50);
+    /*background: linear-gradient(45deg, #33475b, #2d3e50);*/
 }
 
 .json-formatted .number {
