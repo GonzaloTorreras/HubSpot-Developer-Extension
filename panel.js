@@ -114,9 +114,11 @@ function(request, sender, sendResponse) {
         }).done(function(result) {
             
             
-                console.log("JSON recieved");
-                $("body").prepend($("<div id='dev-info'>" + safe_tags(JSON.stringify(result, undefined, 2)) + "</div>"))
+                
+                $("body").prepend($("<div id='dev-info'></div>"));
+                $("#dev-info").prepend(safe_tags(JSON.stringify(result, undefined, 2)));
                 formatJSON();
+                $(".explanation").remove();
 
                 // TODO we should be able to load the css a different way in panels, we'll need to look into that
                 $.get(chrome.extension.getURL('/json-formatter.css'), function(data) {

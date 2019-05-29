@@ -45,7 +45,7 @@ function formatJSON() {
             $(ele).addClass("json-formatted");
         }
         //final format
-        $(".json-formatted").html(syntaxHighlight(json));
+        $(".json-formatted").append(syntaxHighlight(json));
 
         //attach events
         $(".json-formatted").find(".minimize-me").click(function() {
