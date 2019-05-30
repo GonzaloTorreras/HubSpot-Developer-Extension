@@ -1,135 +1,143 @@
 console.log("paneljs loaded");
 
-var test = chrome.devtools.inspectedWindow.eval(
-"jQuery.fn.jquery",
-    function(result, isException) {
-    if (isException){
-        console.log("the page is not using jQuery");
+var test = chrome.devtools.inspectedWindow.eval("jQuery.fn.jquery", function(
+  result,
+  isException
+) {
+  if (isException) {
+    console.log("the page is not using jQuery");
     return false;
-    }
-    else{
-        console.log("The page is using jQuery v" + result);
-    
-        return true;
-        
-    }
-    }
-);
-console.log("test:",test);
+  } else {
+    console.log("The page is using jQuery v" + result);
+
+    return true;
+  }
+});
+console.log("test:", test);
 
 function safe_tags(str) {
-return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  return str
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;");
 }
-
 
 function getUrlVars(url) {
-console.log("getting vars");
-var vars = [],
+  console.log("getting vars");
+  var vars = [],
     hash;
-var hashes = url.slice(url.indexOf('?') + 1).split('&');
-for (var i = 0; i < hashes.length; i++) {
-    hash = hashes[i].split('=');
+  var hashes = url.slice(url.indexOf("?") + 1).split("&");
+  for (var i = 0; i < hashes.length; i++) {
+    hash = hashes[i].split("=");
     vars.push(hash[0]);
     vars[hash[0]] = hash[1];
-}
-return vars;
+  }
+  return vars;
 }
 
 function getParameterByName(name) {
-name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+  name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+  var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
     results = regex.exec(location.search);
-return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+  return results == null
+    ? ""
+    : decodeURIComponent(results[1].replace(/\+/g, " "));
 }
 
-
-chrome.permissions.contains({
-    permissions: ['tabs'],
-    origins: ['<all_urls>']
-    }, function(result) {
+chrome.permissions.contains(
+  {
+    permissions: ["tabs"]
+    //origins: ['<all_urls>']
+  },
+  function(result) {
     if (result) {
-        $("#load").remove();
-        console.log("Perm granted");
-        // inject hsinspector
-        chrome.tabs.executeScript(chrome.devtools.inspectedWindow.tabId, {
-            file: "hsInspector.js"
-        });
-        $(".explanation").remove();
-    
+      $("#load").remove();
+      console.log("Perm granted");
+      // inject hsinspector
+      chrome.tabs.executeScript(chrome.devtools.inspectedWindow.tabId, {
+        file: "hsInspector.js"
+      });
+      $(".explanation").remove();
     } else {
-        console.log("Permission Denied")
-    };
-});
-$("button").click(function(){
-console.log("v2")
-
-
-chrome.permissions.request({
-    origins: ['<all_urls>']
-    }, function(granted) {
-        if (granted){
-            chrome.tabs.executeScript(chrome.devtools.inspectedWindow.tabId, {
-                file: "hsInspector.js"
-            });
-        }
-    return granted;
-    });
-
-});
-
-
-
-
-chrome.runtime.onMessage.addListener(
-function(request, sender, sendResponse) {
-    console.log(sender.tab ?
-        "from a content script:" + sender.tab.url :
-        "from the extension");
-    if (request.devInfoURL) {
-        sendResponse({
-            farewell: "devInfoURL recieved."
-        });
-        //display dev info link from menu
-        $("h1").text(request.devInfoURL);
-
-        //$("#dummy").attr('src', request.devInfoURL);
-
-        console.log(getUrlVars(request.devInfoURL));
-        var devInfoData = getUrlVars(request.devInfoURL);
-        console.log("PORTAL ID:", devInfoData.portalId);
-        var portalId = devInfoData.portalId;
-
-        console.log(sender.tab.url);
-        const inspectedURL = new URL(sender.tab.url);
-        console.log(inspectedURL.hostname);
-        console.log(inspectedURL.pathname);
-
-    
-        jQuery.ajax({
-            type: 'GET',
-            url: request.devInfoURL,
-            xhrFields: {
-                withCredentials: true
-            }
-        }).done(function(result) {
-            
-            
-                
-                $("body").prepend($("<div id='dev-info'></div>"));
-                $("#dev-info").prepend(safe_tags(JSON.stringify(result, undefined, 2)));
-                formatJSON();
-                $(".explanation").remove();
-
-                // TODO we should be able to load the css a different way in panels, we'll need to look into that
-                $.get(chrome.extension.getURL('/json-formatter.css'), function(data) {
-                    $("body").prepend("<style id='json-formatter-css'>" + data + "</style>");
-                });
-
-
-
-
-        });
+      console.log("Permission Denied");
     }
+  }
+);
+
+function validURL(str) {
+  var pattern = new RegExp(
+    /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/
+  );
+
+  return !!pattern.test(str);
+}
+$("button").click(function() {
+  console.log("v2");
+  var website = $("#url").val();
+  if (validURL(website)) {
+    chrome.permissions.request(
+      {
+        origins: [website]
+      },
+      function(granted) {
+        if (granted) {
+          chrome.tabs.executeScript(chrome.devtools.inspectedWindow.tabId, {
+            file: "hsInspector.js"
+          });
+        }
+        return granted;
+      }
+    );
+  } else $(".explanation").append("<p>Uh Oh, that's not a value URL, make sure to include the protocol</p>");
+});
+
+chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
+  console.log(
+    sender.tab
+      ? "from a content script:" + sender.tab.url
+      : "from the extension"
+  );
+  if (request.devInfoURL) {
+    sendResponse({
+      farewell: "devInfoURL recieved."
+    });
+    //display dev info link from menu
+    $("h1").text(request.devInfoURL);
+
+    //$("#dummy").attr('src', request.devInfoURL);
+
+    console.log(getUrlVars(request.devInfoURL));
+    var devInfoData = getUrlVars(request.devInfoURL);
+    console.log("PORTAL ID:", devInfoData.portalId);
+    var portalId = devInfoData.portalId;
+
+    console.log(sender.tab.url);
+    const inspectedURL = new URL(sender.tab.url);
+    console.log(inspectedURL.hostname);
+    console.log(inspectedURL.pathname);
+
+    jQuery
+      .ajax({
+        type: "GET",
+        url: request.devInfoURL,
+        xhrFields: {
+          withCredentials: true
+        }
+      })
+      .done(function(result) {
+        $("body").prepend($("<div id='dev-info'></div>"));
+        $("#dev-info").prepend(safe_tags(JSON.stringify(result, undefined, 2)));
+        formatJSON();
+        $(".explanation").remove();
+
+        // TODO we should be able to load the css a different way in panels, we'll need to look into that
+        $.get(chrome.extension.getURL("/json-formatter.css"), function(data) {
+          $("body").prepend(
+            "<style id='json-formatter-css'>" + data + "</style>"
+          );
+        });
+      });
+  }
 });
 
 /*
