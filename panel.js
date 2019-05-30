@@ -1,5 +1,6 @@
 console.log("paneljs loaded");
 
+/* */
 var test = chrome.devtools.inspectedWindow.eval("jQuery.fn.jquery", function(
   result,
   isException
@@ -13,7 +14,6 @@ var test = chrome.devtools.inspectedWindow.eval("jQuery.fn.jquery", function(
     return true;
   }
 });
-console.log("test:", test);
 
 function safe_tags(str) {
   return str

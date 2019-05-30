@@ -3,6 +3,9 @@
 
 <head>
     <link href="json-formatter.css">
+    <style>
+        :invalid{border:1px solid red;}
+    </style>
 </head>
 
 <body>
@@ -10,7 +13,7 @@
         <h1>Developer Info</h1>
 
         <button id="load">Load Dev Info</button>
-      <input id="url" name="url"></input>
+      <input id="url" name="url" type="url" pattern="https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)" required>
         
        <p style="color:#fff;">This feature is in testing. This feature pulls the developer info for the current HubSpot page, formats it into human readable form, with collapsable sections and quick-copy functionality. Simply click on the key name and it will copy the HubL required to get that variable, click on the value itself to simply copy the current value.</p>
         <h2 style="color:#fff;">This feature requires a special chrome permission</h2>
