@@ -75,8 +75,11 @@ function validURL(str) {
 
   return !!pattern.test(str);
 }
-$("button").click(function() {
-  console.log("v2");
+$("#perm-request").submit(function() {
+  event.preventDefault();
+
+  console.log("submission done")
+  
   var website = $("#url").val();
   if (validURL(website)) {
     chrome.permissions.request(
