@@ -1,7 +1,9 @@
 console.log("paneljs loaded");
 
-$("#url").val();
-/* */
+/* adds support for dark theme in devtools panel */
+const theme = chrome.devtools.panels.themeName || "default";
+document.body.classList.add(theme);
+
 var test = chrome.devtools.inspectedWindow.eval("jQuery.fn.jquery", function(
   result,
   isException

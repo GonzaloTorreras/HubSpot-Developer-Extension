@@ -6,8 +6,12 @@
     font-size: 17px;
     padding: 0 1rem;
     font-size: 12px;
-    color: #eaf0f6;
+   
     /*background: linear-gradient(45deg, #33475b, #2d3e50);*/
+}
+
+body.dark .json-formatted { /*enables support for dark theme to dev tools*/
+        color: #eaf0f6;
 }
 
 .json-formatted .number {
