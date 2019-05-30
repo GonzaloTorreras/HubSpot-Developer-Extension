@@ -10,7 +10,7 @@
     /*background: linear-gradient(45deg, #33475b, #2d3e50);*/
 }
 
-body.dark.json-formatted { /*enables support for dark theme to dev tools*/
+body.dark { /*enables support for dark theme to dev tools*/
         color: #eaf0f6;
 }
 
