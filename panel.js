@@ -1,5 +1,6 @@
 console.log("paneljs loaded");
 
+$("#url").val();
 /* */
 var test = chrome.devtools.inspectedWindow.eval("jQuery.fn.jquery", function(
   result,
@@ -129,13 +130,6 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
         $("#dev-info").prepend(safe_tags(JSON.stringify(result, undefined, 2)));
         formatJSON();
         $(".explanation").remove();
-
-        // TODO we should be able to load the css a different way in panels, we'll need to look into that
-        $.get(chrome.extension.getURL("/json-formatter.css"), function(data) {
-          $("body").prepend(
-            "<style id='json-formatter-css'>" + data + "</style>"
-          );
-        });
       });
   }
 });
