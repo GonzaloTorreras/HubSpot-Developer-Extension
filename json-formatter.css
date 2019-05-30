@@ -159,8 +159,13 @@ body>ul.array>li.minimize-me {
     display: none;
 }
 
+
 .json-formatted .array li:not(.minimize-me):hover,
-.json-formatted .list li:not(.minimize-me):hover {
+ .json-formatted .list li:not(.minimize-me):hover {
+    background: rgba(0, 0, 0, .05);
+}
+body.dark .array li:not(.minimize-me):hover,
+body.dark .list li:not(.minimize-me):hover {
     background: rgba(255, 255, 255, .015);
 }
 
