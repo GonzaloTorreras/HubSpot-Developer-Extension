@@ -3,7 +3,8 @@ console.log("paneljs loaded");
 /* adds support for dark theme in devtools panel */
 const theme = chrome.devtools.panels.themeName || "default";
 document.body.classList.add(theme);
-
+/*
+* This may get used to return some data to the dev like current jquery version and if jquery migrate is used.
 var test = chrome.devtools.inspectedWindow.eval("jQuery.fn.jquery", function(
   result,
   isException
@@ -16,7 +17,7 @@ var test = chrome.devtools.inspectedWindow.eval("jQuery.fn.jquery", function(
 
     return true;
   }
-});
+});*/
 
 function safe_tags(str) {
   return str

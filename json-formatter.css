@@ -1,5 +1,7 @@
 /* JSON pretifier */
 
+input:invalid{border:1px solid red;}
+
 .json-formatted {
     white-space: pre;
     line-height: 1;
