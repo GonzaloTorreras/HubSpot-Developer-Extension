@@ -39,7 +39,7 @@ Firefox cannot run the extension. We do however want to support Firefox but need
 ## How to Contribute:
 
 1. [Read this first!](https://github.com/williamspiro/HubSpot-Developer-Extension/blob/master/CONTRIBUTING.md)
-2. [Don't be a richard, no one likes a richard. Sorry Richard.](https://github.com/williamspiro/HubSpot-Developer-Extension/blob/contributors-update/CODE_OF_CONDUCT.md)
+2. [Don't be a richard, no one likes a richard. Sorry Richard.](https://github.com/TheWebTech/HubSpot-Developer-Extension/blob/master/CODE_OF_CONDUCT.md)
 3. [We denote easy/small issues that are good for beginners. but feel free to tackle any you see in issues or add a feature you want](https://github.com/williamspiro/HubSpot-Developer-Extension/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22)
 4. Speak another language? [help add or improve translations for that language!](https://github.com/williamspiro/HubSpot-Developer-Extension/wiki/How-to-add-support-for-a-new-language-or-improve-existing-translations)
 5. Test your own branch or someone elses. [how to test](https://github.com/williamspiro/HubSpot-Developer-Extension/wiki/How-to-test-changes-you've-made-to-the-extension) 
