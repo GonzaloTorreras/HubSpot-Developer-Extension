@@ -51,16 +51,17 @@ var developerTools = {
             var gradeUrl = pageUrl.origin.replace("://", "%3A%2F%2F") + pageUrl.pathname;
             trackClick("googlePageSpeed");
             
-            $.getJSON('https://www.googleapis.com/pagespeedonline/v4/runPagespeed?url=' + gradeUrl + '&fields=id%2CruleGroups', function(data) {
+            $.getJSON('https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=' + gradeUrl + '?strategy=desktop', function(data) {
                 if (data.id) {
-                    $("#desktop_psi_placeholder").html("Desktop PSI Score<span class='c-btn__score'>" + data.ruleGroups.SPEED.score + "</span>");
+                    console.log("speed data",data)
+                    $("#desktop_psi_placeholder").html("Desktop PSI Score<span class='c-btn__score'>" + data.lighthouseResult.categories.performance.score*100 + "</span>");
                 } else {
                     console.log('hmmmmm, Googles APIs are really painful, they did not grade for some reason');
                 }
             });
-            $.getJSON("https://www.googleapis.com/pagespeedonline/v4/runPagespeed?url=" + gradeUrl + "&fields=id%2CruleGroups&strategy=mobile", function(data) {
+            $.getJSON("https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=" + gradeUrl + "?strategy=mobile", function(data) {
                 if (data.id) {
-                    $("#mobile_psi_placeholder").html("Mobile PSI Score<span class='c-btn__score'>" + data.ruleGroups.SPEED.score + "</span>");
+                    $("#mobile_psi_placeholder").html("Mobile PSI Score<span class='c-btn__score'>" + data.lighthouseResult.categories.performance.score*100 + "</span>");
                 } else {
                     console.log("hmmmmm, Googles APIs are really painful, they did not grade for some reason");
                 }
