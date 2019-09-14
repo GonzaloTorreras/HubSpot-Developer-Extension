@@ -1,10 +1,7 @@
 # HubSpot-Developer-Extension
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/d6a1c1d220ea4ca79299b432ca44a9d8)](https://www.codacy.com/app/jonmclaren1/HubSpot-Developer-Extension?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=williamspiro/HubSpot-Developer-Extension&amp;utm_campaign=Badge_Grade)
 
-![Hair perfection](https://avatars1.githubusercontent.com/u/5492388?s=400&v=4)
 
-# New Ownership. Same great hair!
-The ownership change of the repo, doesn't really affect much, just detaches Will's face and username from showing up when people link the repo. While we haven't seen anyone actually confused over the extension being community driven and not an official HubSpot product. We thought we're hitting a point in popularity that being more obvious with this is probably a good idea. Nothing significant is changing because of this, I had been kinda leading the charge on the extension since it hit the chrome web store. Will still has contributor status, and can make updates. This chrome extension retains it's mission of improving HubSpot's developer experience from the outside.
 
 A Chrome/Chromium extension for HubSpot Developers that adds useful shortcuts to commonly used HubSpot Query Parameters, and tools for making HubSpot Development easier and more enjoyable. For details on the many features we have a wiki page detailing them:[Feature Breakdown](https://github.com/williamspiro/HubSpot-Developer-Extension/wiki/Feature-Breakdown)
 
@@ -42,7 +39,7 @@ Firefox cannot run the extension. We do however want to support Firefox but need
 ## How to Contribute:
 
 1. [Read this first!](https://github.com/williamspiro/HubSpot-Developer-Extension/blob/master/CONTRIBUTING.md)
-2. [Don't be a richard, no one likes a richard. Sorry Richard.](https://github.com/williamspiro/HubSpot-Developer-Extension/blob/contributors-update/CODE_OF_CONDUCT.md)
+2. [Don't be a richard, no one likes a richard. Sorry Richard.](https://github.com/TheWebTech/HubSpot-Developer-Extension/blob/master/CODE_OF_CONDUCT.md)
 3. [We denote easy/small issues that are good for beginners. but feel free to tackle any you see in issues or add a feature you want](https://github.com/williamspiro/HubSpot-Developer-Extension/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22)
 4. Speak another language? [help add or improve translations for that language!](https://github.com/williamspiro/HubSpot-Developer-Extension/wiki/How-to-add-support-for-a-new-language-or-improve-existing-translations)
 5. Test your own branch or someone elses. [how to test](https://github.com/williamspiro/HubSpot-Developer-Extension/wiki/How-to-test-changes-you've-made-to-the-extension) 
