@@ -236,6 +236,12 @@ body.design-manager.ext-dark-theme .UISection__ScrollWrapper-zhnkqy-0.hZIoHm{
 		linear-gradient(to top, var(--scroll-indicator-color), rgba(234, 240, 246, 0))!important;
 }
 
+/* custom module editor inspector  selected value for select field */
+body.design-manager.ext-dark-theme .controlling-field-select-dropdown .controlling-field-name.is--code, body.design-manager.ext-dark-theme  .custom-widget-editor-sidebar.field-edit-sidebar .controlling-field-name.is--code{ color:rgba(255, 255, 255, 0.5)!important;}
+
+/*custom module editor inspector field rename*/
+body.design-manager.ext-dark-theme .ksrTsw,body.design-manager.ext-dark-theme .heAHRv{background: rgba(255, 255, 255, 0.1) !important;}
+
 
 /*
 body.design-manager.ext-dark-theme .llXSEF,
