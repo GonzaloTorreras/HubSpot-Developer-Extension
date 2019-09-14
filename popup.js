@@ -155,10 +155,10 @@ var developerTools = {
                 url:"https://github.com/williamspiro/HubSpot-Developer-Extension/wiki/Feature-Breakdown",
             },
             {
-                tipId:"local dev",
-                title:'Used to Local Development?',
-                content:"Now with HubSpot's local server + FTP, it's possible, provide your feedback on it in the Developer Slack.",
-                url:"https://designers.hubspot.com/docs/tools/using-local-hubl-server-with-ftp",
+                tipId:"local dev-cli",
+                title:'Local development has arrived!',
+                content:"Using the HubSpot CMS CLI you can work locally using your favorite code editor and tools.",
+                url:"https://designers.hubspot.com/docs/tools/local-development",
             },
             {
                 tipId:"HS Dev Slack",
