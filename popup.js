@@ -131,6 +131,12 @@ var developerTools = {
                 url:"https://designers.hubspot.com/en/docs/hubl/hubl-supported-functions#resize-image-url",
             },
             {
+                tipId:"do_tag",
+                title:'Need to modify lists in HubL? Use the DO tag',
+                content:"{% do list.append('stuff') %)   Just DO it.",
+                url:"https://designers.hubspot.com/docs/hubl/syntax#expression-statements",
+            },
+            {
                 tipId:"Discovery Kit",
                 title:'HS Discovery Kit',
                 content:"New to devloping on HubSpot? get all the best tools, docs and resources in the kit!",
