@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
     "name": "__MSG_extName__",
-    "version": "1.04.4",
+    "version": "1.05.03",
     "default_locale": "en",
     "description": "__MSG_extDesc__",
     "browser_action": {
@@ -39,7 +39,7 @@
         "js": ["jquery-3.2.1.min.js", "design-manager.js"],
         "css": ["hsDarkIde.css"],
         "document_idle": "document_start",
-        "matches": ["https://app.hubspot.com/*", "https://app.hubspotqa.com/*"]
+        "matches": ["https://app.hubspot.com/*", "https://app.hubspotqa.com/*","https://login.hubspot.com/*"]
     }],
     "content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'",
     "options_page": "options.html",
@@ -47,6 +47,7 @@
         "persistent": true,
         "scripts": ["hot-reload.js", "background.js"]
     },
+    "devtools_page": "devtools.html",
     "commands": {
         "bust-cache": {
             "suggested_key": {
