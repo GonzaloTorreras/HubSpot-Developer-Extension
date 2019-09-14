@@ -730,7 +730,20 @@ body.design-manager.ext-dark-theme .private-modal.private-table thead th {
 	color: rgb( var(--rgb-details-color));
 }
 
+/* embed modal tabs */
+/* active tab */
+body.design-manager.ext-dark-theme .mce-hubspot-popover .jPSLnJ{
+	background:rgba(255, 255, 255, 0.1) !important;
+	color: rgba( var(--rgb-details-color), 1) !important;
+	text-decoration:underline!important;
+	font-style:italic!important;
+	
+}
+/* inactive tab */
 
+body.design-manager.ext-dark-theme .mce-hubspot-popover .ghrJDr{
+	background:linear-gradient(45deg, #33475b, #2d3e50)!important;
+}
 /* new file modal */
 
 body.design-manager.ext-dark-theme .private-selectable-box {
