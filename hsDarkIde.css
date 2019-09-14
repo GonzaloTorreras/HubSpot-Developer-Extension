@@ -349,7 +349,10 @@ body.design-manager.ext-dark-theme .layout-tree .widget-icon {
 	color: #d6cbcb!important;
 }
 
-
+/* fixes bg behind spacer */
+body.design-manager.ext-dark-theme .layout-tree-editor-pane {
+    background-color: #33475b!important;
+}
 /*body.design-manager.ext-dark-theme .private-link:hover*/
 
 body.design-manager.ext-dark-theme .private-expanding-text-input--inline.private-expanding-text-input--focused .private-expanding-text-input__input,
