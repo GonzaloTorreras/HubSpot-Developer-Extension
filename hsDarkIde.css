@@ -218,14 +218,39 @@ body.design-manager.ext-dark-theme ::-webkit-scrollbar-thumb:window-inactive {
 
 
 /* HubSpot added an effect when scrolling, similar to android's scrolling visual. This re-colors those elements to not look like garbage.*/
+/* finder overhang top */
+body.design-manager.ext-dark-theme .UIOverhang-sc-1i201eh-0{
+	background-image: linear-gradient(to top, rgba(0, 0, 0, 0), var(--scroll-indicator-color))!important;
+}
+/* finder overhang bottom */
+body.design-manager.ext-dark-theme .UIOverhang-sc-1i201eh-0:nth-child(3){
+	background-image: linear-gradient(to top, var(--scroll-indicator-color),rgba(0, 0, 0, 0))!important;
+}
 
+
+/* custom Module editor inspector*/
+body.design-manager.ext-dark-theme .UISection__ScrollWrapper-zhnkqy-0.hZIoHm{
+	background-image:linear-gradient(var(--scroll-indicator-color), rgba(255, 255, 255, 0)),
+		linear-gradient(to top, var(--scroll-indicator-color), rgba(255, 255, 255, 0)),
+		linear-gradient(var(--scroll-indicator-color), rgba(234, 240, 246, 0)),
+		linear-gradient(to top, var(--scroll-indicator-color), rgba(234, 240, 246, 0))!important;
+}
+
+/* custom module editor inspector  selected value for select field */
+body.design-manager.ext-dark-theme .controlling-field-select-dropdown .controlling-field-name.is--code, body.design-manager.ext-dark-theme  .custom-widget-editor-sidebar.field-edit-sidebar .controlling-field-name.is--code{ color:rgba(255, 255, 255, 0.5)!important;}
+
+/*custom module editor inspector field rename*/
+body.design-manager.ext-dark-theme .ksrTsw,body.design-manager.ext-dark-theme .heAHRv{background: rgba(255, 255, 255, 0.1) !important;}
+
+
+/*
 body.design-manager.ext-dark-theme .llXSEF,
 body.design-manager.ext-dark-theme .dSMuYW,
 body.design-manager.ext-dark-theme .eLZHvU,
 body.design-manager.ext-dark-theme .iffnbF,
-body.design-manager.ext-dark-theme .UIOverhang-iMLGZW:nth-child(2) {
+body.design-manager.ext-dark-theme .UIOverhang-sc-1i201eh-0:nth-child(2) {
 	background-image: linear-gradient(to top, rgba(0, 0, 0, 0), var(--scroll-indicator-color))!important;
-}
+}*/
 
 body.design-manager.ext-dark-theme .cFIGxN,
 body.design-manager.ext-dark-theme .kzrQvy,
@@ -324,7 +349,10 @@ body.design-manager.ext-dark-theme .layout-tree .widget-icon {
 	color: #d6cbcb!important;
 }
 
-
+/* fixes bg behind spacer */
+body.design-manager.ext-dark-theme .layout-tree-editor-pane {
+    background-color: #33475b!important;
+}
 /*body.design-manager.ext-dark-theme .private-link:hover*/
 
 body.design-manager.ext-dark-theme .private-expanding-text-input--inline.private-expanding-text-input--focused .private-expanding-text-input__input,
@@ -702,7 +730,20 @@ body.design-manager.ext-dark-theme .private-modal.private-table thead th {
 	color: rgb( var(--rgb-details-color));
 }
 
+/* embed modal tabs */
+/* active tab */
+body.design-manager.ext-dark-theme .mce-hubspot-popover .jPSLnJ{
+	background:rgba(255, 255, 255, 0.1) !important;
+	color: rgba( var(--rgb-details-color), 1) !important;
+	text-decoration:underline!important;
+	font-style:italic!important;
+	
+}
+/* inactive tab */
 
+body.design-manager.ext-dark-theme .mce-hubspot-popover .ghrJDr{
+	background:linear-gradient(45deg, #33475b, #2d3e50)!important;
+}
 /* new file modal */
 
 body.design-manager.ext-dark-theme .private-selectable-box {
@@ -925,6 +966,10 @@ body.design-manager.ext-dark-theme .private-modal__header {
 	background: linear-gradient(-303deg, rgba( var(--rgb-details-color), 0.8) 0%, rgb(83, 200, 269) 56%, rgba( var(--rgb-details-color), 0.8) 100%);
 }
 
+/* Custom Module field headings */
+body.design-manager.ext-dark-theme .UIExpandableSection__ExpandableHeader-sc-1x8lpm6-2 {
+    background-color: rgb(69, 85, 102)!important;
+}
 
 /*custom module code pen accordions*/
 

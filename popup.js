@@ -107,72 +107,6 @@ var developerTools = {
     loadTip:function(){
         var tips = [
             {
-                tipId:"thousandUsers",
-                title:"We just passed 1000 weekly users!",
-                content:"Huge thank you to everyone who has provided feedback, submitted ratings, posted issues, contributed code, and simply use the extension.",
-                url:"https://github.com/TheWebTech/HubSpot-Developer-Extension/wiki/1,000-users",
-            },
-            {
-                tipId:"devday-announce",
-                title:'HS Community Developer Meetup',
-                content:"The community of HubSpot developers has come together to throw an event Sept 3rd, 9am to 6pm, at HubSpot offices presentations from community developers and HubSpotters, possibly some reveals, beer in the HS beer garden. An event by and for the community sponsored by HubSpot. If you're a developer, you are invited to attend in person or online. Want more information?",
-                url:"https://spin.d.pr/6RITrH",
-            },
-            {
-                tipId:"devday-announce",
-                title:'HS Community Developer Meetup',
-                content:"The community of HubSpot developers has come together to throw an event Sept 3rd, 9am to 6pm, at HubSpot offices presentations from community developers and HubSpotters, possibly some reveals, beer in the HS beer garden. An event by and for the community sponsored by HubSpot. If you're a developer, you are invited to attend in person or online. Want more information?",
-                url:"https://spin.d.pr/6RITrH",
-            },
-            {
-                tipId:"devday-announce",
-                title:'HS Community Developer Meetup',
-                content:"The community of HubSpot developers has come together to throw an event Sept 3rd, 9am to 6pm, at HubSpot offices presentations from community developers and HubSpotters, possibly some reveals, beer in the HS beer garden. An event by and for the community sponsored by HubSpot. If you're a developer, you are invited to attend in person or online. Want more information?",
-                url:"https://spin.d.pr/6RITrH",
-            },
-            {
-                tipId:"devday-announce",
-                title:'HS Community Developer Meetup',
-                content:"The community of HubSpot developers has come together to throw an event Sept 3rd, 9am to 6pm, at HubSpot offices presentations from community developers and HubSpotters, possibly some reveals, beer in the HS beer garden. An event by and for the community sponsored by HubSpot. If you're a developer, you are invited to attend in person or online. Want more information?",
-                url:"https://spin.d.pr/6RITrH",
-            },
-            {
-                tipId:"devday-announce",
-                title:'HS Community Developer Meetup',
-                content:"The community of HubSpot developers has come together to throw an event Sept 3rd, 9am to 6pm, at HubSpot offices presentations from community developers and HubSpotters, possibly some reveals, beer in the HS beer garden. An event by and for the community sponsored by HubSpot. If you're a developer, you are invited to attend in person or online. Want more information?",
-                url:"https://spin.d.pr/6RITrH",
-            },
-            {
-                tipId:"devday-announce",
-                title:'HS Community Developer Meetup',
-                content:"The community of HubSpot developers has come together to throw an event Sept 3rd, 9am to 6pm, at HubSpot offices presentations from community developers and HubSpotters, possibly some reveals, beer in the HS beer garden. An event by and for the community sponsored by HubSpot. If you're a developer, you are invited to attend in person or online. Want more information?",
-                url:"https://spin.d.pr/6RITrH",
-            },
-            {
-                tipId:"devday-announce",
-                title:'HS Community Developer Meetup',
-                content:"The community of HubSpot developers has come together to throw an event Sept 3rd, 9am to 6pm, at HubSpot offices presentations from community developers and HubSpotters, possibly some reveals, beer in the HS beer garden. An event by and for the community sponsored by HubSpot. If you're a developer, you are invited to attend in person or online. Want more information?",
-                url:"https://spin.d.pr/6RITrH",
-            },
-            {
-                tipId:"devday-announce",
-                title:'HS Community Developer Meetup',
-                content:"The community of HubSpot developers has come together to throw an event Sept 3rd, 9am to 6pm, at HubSpot offices presentations from community developers and HubSpotters, possibly some reveals, beer in the HS beer garden. An event by and for the community sponsored by HubSpot. If you're a developer, you are invited to attend in person or online. Want more information?",
-                url:"https://spin.d.pr/6RITrH",
-            },
-            {
-                tipId:"devday-announce",
-                title:'HS Community Developer Meetup',
-                content:"The community of HubSpot developers has come together to throw an event Sept 3rd, 9am to 6pm, at HubSpot offices presentations from community developers and HubSpotters, possibly some reveals, beer in the HS beer garden. An event by and for the community sponsored by HubSpot. If you're a developer, you are invited to attend in person or online. Want more information?",
-                url:"https://spin.d.pr/6RITrH",
-            },
-            {
-                tipId:"devday-announce",
-                title:'HS Community Developer Meetup',
-                content:"The community of HubSpot developers has come together to throw an event Sept 3rd, 9am to 6pm, at HubSpot offices presentations from community developers and HubSpotters, possibly some reveals, beer in the HS beer garden. An event by and for the community sponsored by HubSpot. If you're a developer, you are invited to attend in person or online. Want more information?",
-                url:"https://spin.d.pr/6RITrH",
-            },
-            {
                 tipId:"VSCode Extension",
                 title:"Use VSCode?",
                 content:"Did you know about the HubL Language Extension?",
@@ -195,6 +129,12 @@ var developerTools = {
                 title:'{{ resize_image_url() }}',
                 content:"You can use HubL to resize images dynamically. Saving marketers from themselves. Do it.",
                 url:"https://designers.hubspot.com/en/docs/hubl/hubl-supported-functions#resize-image-url",
+            },
+            {
+                tipId:"do_tag",
+                title:'Need to modify lists in HubL? Use the DO tag',
+                content:"{% do list.append('stuff') %)   Just DO it.",
+                url:"https://designers.hubspot.com/docs/hubl/syntax#expression-statements",
             },
             {
                 tipId:"Discovery Kit",
@@ -221,16 +161,10 @@ var developerTools = {
                 url:"https://github.com/williamspiro/HubSpot-Developer-Extension/wiki/Feature-Breakdown",
             },
             {
-                tipId:"DYK FTP",
-                title:'Did you know HubSpot supports FTP?',
-                content:"Access/edit templates, modules, and file manager assets with your favorite FTP client",
-                url:"https://designers.hubspot.com/docs/tools/hubspot-ftp",
-            },
-            {
-                tipId:"local dev",
-                title:'Used to Local Development?',
-                content:"Now with HubSpot's local server + FTP, it's possible, provide your feedback on it in the Developer Slack.",
-                url:"https://designers.hubspot.com/docs/tools/using-local-hubl-server-with-ftp",
+                tipId:"local dev-cli",
+                title:'Local development has arrived!',
+                content:"Using the HubSpot CMS CLI you can work locally using your favorite code editor and tools.",
+                url:"https://designers.hubspot.com/docs/tools/local-development",
             },
             {
                 tipId:"HS Dev Slack",
@@ -249,12 +183,6 @@ var developerTools = {
                 title:'Updates',
                 content:"We post our updates to both the beta and stable build of the extension as a release on our GitHub, check it out to learn about new features.",
                 url:"https://github.com/williamspiro/HubSpot-Developer-Extension/releases",
-            },
-            {
-                tipId:"design cert expire",
-                title:'The Design Cert. has been sunsetted',
-                content:"The design cert. is no longer useful. Instead a new developer certification will be coming soon. ",
-                url:"https://designers.hubspot.com/blog/were-sunsetting-the-hubspot-design-certification-heres-why",
             },
             {
                 tipId:"ext rate and review",
