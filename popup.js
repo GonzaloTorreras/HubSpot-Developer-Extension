@@ -307,7 +307,7 @@ var developerTools = {
 		document.getElementById('save').addEventListener('click',
     developerTools.saveSettings());*/
 
-        $(".js-click--debug,.js-click--move-jquery-to-footer,.js-click--bust-cache,.js-click--amp").click(function() {
+        $(".js-click--debug,.js-click--move-jquery-to-footer,.js-click--bust-cache,.js-click--amp,.js-click--kill-jquery").click(function() {
             developerTools.debugReload($(this).attr("id"));
         });
 
