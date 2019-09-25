@@ -259,12 +259,12 @@ Do not let fear of learning a new technique prevent you from contributing, other
         width: 100%;
         width: calc(100vw - 10px);
         grid-template-columns: 1fr 1fr;
-        grid-template-areas: "debug bustcache" "movejquery amp" "psrequest psrequest" "designmanager designmanager";
+        grid-template-areas: "debug bustcache" "movejquery amp" "psrequest psrequest" "designmanager designmanager" "nojquery nojquery";
         /*margin-right: 5px;*/
     }
 
     .o-menu-grid--debug {
-        grid-template-areas: "debug bustcache" "movejquery amp" "psrequest psrequest" "designmanager designmanager";
+        grid-template-areas: "debug bustcache" "movejquery amp" "psrequest psrequest" "designmanager designmanager" "nojquery nojquery";
     }
 
     .o-menu-grid--design-manager {
@@ -307,7 +307,9 @@ Do not let fear of learning a new technique prevent you from contributing, other
     #openDesginManager{
         grid-area: designmanager;
     }
-
+    #hsNoJQuery{
+        grid-area: nojquery;
+    }
     .c-sprocky-terms{
         grid-area:sprockyterms;
         
