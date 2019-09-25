@@ -362,6 +362,7 @@ Do not let fear of learning a new technique prevent you from contributing, other
         text-transform: uppercase;
         font-weight: bold;
         border-bottom: 5px transparent solid;
+        cursor:pointer;
     }
     .c-tab-slider__tab-selector:hover,.c-tab-slider__tab-selector:focus{
         background:rgba(250,250,250,.9);
@@ -543,7 +544,7 @@ Do not let fear of learning a new technique prevent you from contributing, other
             <div class="c-tab-slider__tab" id="debug-tools">
                 <!--This tab will be focused when the user is not in the design manager -->
                 <div class="o-menu-grid o-menu-grid--debug">
-                    <button class="c-btn face-button js-click--debug" id="hsDebug">
+                    <button class="c-btn face-button js-click--debug" id="hsDebug" title="Toggle debug mode - displays debug information in html comment and prevents combining of files">
                         <div class="c-btn__face-primary" data-i18n="debugButton"><!--Debug Mode--></div>
                         <div class="c-btn__face-secondary">hsDebug=True</div>
                     </button>
