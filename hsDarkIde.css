@@ -32,21 +32,21 @@ html.mac .cm-s-solarized .CodeMirror-lines {
 
 /* HubSpot's got an issue with the horizontal tab scrollbar appearing over the navigation menu the tweak below fixes that. */
 
-html.ext-ui-tweaks .HorizontalScrollContainer__ScrollBar-cSRRR {
+html.ext-ui-tweaks body.design-manager .HorizontalScrollContainer__ScrollBar-cSRRR {
 	z-index: 500;
 }
 
 
 /*background color for developer menu is slightly different to indicate it's added by ext*/
 
-li#ext-dev-menu-wrapper {
+body.design-manager li#ext-dev-menu-wrapper {
 	background: rgba(255, 255, 255, .05);
 }
 
 
 /*fix for menu labels in setting pages */
 
-body.hubspot .simple-menus-menu-tree .simple-menus-menu-item-label {
+body.hubspot.design-manager .simple-menus-menu-tree .simple-menus-menu-item-label {
 	width: 100%;
 }
 
@@ -58,7 +58,7 @@ body.hubspot .simple-menus-menu-tree .simple-menus-menu-item-label {
 * Possibly will need to address this post-hoc.
 **********/
 
-html.ext-ui-tweaks .HorizontalScrollContainer__ScrollBar-cSRRR {
+html.ext-ui-tweaks body.design-manager .HorizontalScrollContainer__ScrollBar-cSRRR {
 	height: 10px;
 	/* increased from something like 3px */
 	bottom: 10px;
@@ -74,18 +74,18 @@ html.ext-ui-tweaks .HorizontalScrollContainer__ScrollBar-cSRRR:active {
 	/* hover for easier idendification of active state */
 }
 
-html.ext-ui-tweaks .tabs-container,
-html.ext-ui-tweaks .file-tabs>div {
+html.ext-ui-tweaks body.design-manager .tabs-container,
+html.ext-ui-tweaks body.design-manager .file-tabs>div {
 	height: 40px;
 }
 
-html.ext-ui-tweaks .file-tabs.private-tabs .file-tab {
+html.ext-ui-tweaks body.design-manager .file-tabs.private-tabs .file-tab {
 	height: auto;
 	/* removed defined height of 40px to allow for the scrollbar to live within the padding area of the tab*/
 	padding-bottom: 12px;
 }
 
-html.ext-ui-tweaks .private-button--transparent.private-button--default {
+html.ext-ui-tweaks body.design-manager .private-button--transparent.private-button--default {
 	padding: 11px !important;
 }
 
@@ -955,7 +955,7 @@ body.design-manager.ext-dark-theme .ReactVirtualized__Collection__innerScrollCon
 /* rename fields */
 
 body.design-manager.ext-dark-theme .private-editable--inline:hover .private-editable__input,
-.private-editable--inline:hover .private-editable__placeholder {
+body.design-manager.ext-dark-theme .private-editable--inline:hover .private-editable__placeholder {
 	background-color: rgba(255, 255, 255, 0.1) !important;
 }
 
