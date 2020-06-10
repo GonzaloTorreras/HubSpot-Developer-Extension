@@ -10,7 +10,6 @@ $(document).ready(function() {
         });
     }
     var tabUrl = window.location.protocol + "//" + window.location.host + "/" + window.location.pathname;
-    /*getSelected might be deprecated need to review*/
     var currentScreen = "";
     var devMenu = false;
 

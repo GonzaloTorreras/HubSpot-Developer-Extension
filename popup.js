@@ -70,9 +70,8 @@ var developerTools = {
     setMenuContext: function() {
         console.log("Set Menu Context run");
 
-        chrome.tabs.getSelected(null, function(tab) {
-            /*getSelected might be deprecated need to review*/
-            var tabUrl = tab.url;
+        chrome.tabs.query({ active: true, lastFocusedWindow: true }, function (tab) {
+            var tabUrl = tab[0].url;
             console.log("Current URL: ", tabUrl);
             const appUrl = ~tabUrl.indexOf("app.hubspotqa.com") ? "app.hubspotqa.com" : "app.hubspot.com";
             if (~tabUrl.indexOf(appUrl)) {
