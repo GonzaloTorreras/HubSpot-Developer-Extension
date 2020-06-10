@@ -63,5 +63,11 @@
             },
             "description": "toggle ?hsDebug=True in the URL"
         }
+    },
+    "browser_specific_settings": {
+        "gecko": {
+            "id": "addon@superpeak.dev",
+            "strict_min_version": "42.0"
+        }
     }
 }
