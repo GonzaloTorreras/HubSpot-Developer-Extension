@@ -19,11 +19,11 @@ Let us know in issues if you run into any bugs, please also let us know if you'r
 Google Chrome updates extensions only under certain situations when running. The easiest way to get the freshest version of the extension is to close google chrome completely and re-open it. You can tell if you're running the latest version by checking the version number on the manage extensions screen and comparing with our [releases page.](https://github.com/williamspiro/HubSpot-Developer-Extension/releases)
 
 ## Is this an official HubSpot chrome extension?
-Not officially, but officially we do have a couple contributors who work for HubSpot.
+No.
 
 The extension was built by a group of developers who build sites, custom modules, landing pages, etc. on HubSpot. We built it for people like us and hope that you get some good use out of it.
 
-While this is not an official HubSpot brand product, HubSpot's developers are aware of it's existence and generally seem to approve of it. In-fact we've been told many HubSpotters use the extension themselves.
+This is not an official HubSpot brand product.
 
 We claim no legal rights to the HubSpot name/brand. We have posed the question of if it was okay to have the name HubSpot in the extension's name. It appears atleast for now HubSpot is okay with us using the name. We have no intention of misrepresenting the affiliation to HubSpot, but we also do appreciate being able to use the name, as without it - it would be harder for people to find.
 
@@ -39,7 +39,7 @@ Firefox cannot run the extension. We do however want to support Firefox but need
 ## How to Contribute:
 
 1. [Read this first!](https://github.com/williamspiro/HubSpot-Developer-Extension/blob/master/CONTRIBUTING.md)
-2. [Don't be a richard, no one likes a richard. Sorry Richard.](https://github.com/TheWebTech/HubSpot-Developer-Extension/blob/master/CODE_OF_CONDUCT.md)
+2. [Don't be a jerk](https://github.com/TheWebTech/HubSpot-Developer-Extension/blob/master/CODE_OF_CONDUCT.md)
 3. [We denote easy/small issues that are good for beginners. but feel free to tackle any you see in issues or add a feature you want](https://github.com/williamspiro/HubSpot-Developer-Extension/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22)
 4. Speak another language? [help add or improve translations for that language!](https://github.com/williamspiro/HubSpot-Developer-Extension/wiki/How-to-add-support-for-a-new-language-or-improve-existing-translations)
 5. Test your own branch or someone elses. [how to test](https://github.com/williamspiro/HubSpot-Developer-Extension/wiki/How-to-test-changes-you've-made-to-the-extension) 
