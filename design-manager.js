@@ -77,7 +77,7 @@ $(document).ready(function() {
             //Check if sprocky is enabled
             if (result.sprocky2) {
 
-                // Inject styles for svg 
+                // Inject styles for svg
 
                 var css =
                     "#sprocky-svg{-webkit-transform-origin:50% 50%;transform-origin:50% 50%;-webkit-perspective:1000px;perspective:1000px;-webkit-animation:lookaround 20s infinite;animation:lookaround 20s infinite}#sprocky-svg *{-webkit-transform-origin:50% 50%;transform-origin:50% 50%}#sprocky-svg.blink #left_eye_white,#sprocky-svg.blink #left_pupil,#sprocky-svg.blink #right_eye_white,#sprocky-svg.blink #right_pupil{-webkit-animation:blink 8s infinite;animation:blink 8s infinite}#sprocky-svg.brow-bounce #left_eyebrow,#sprocky-svg.brow-bounce #right_eyebrow{-webkit-animation:brow-bounce 1.4s 1;animation:brow-bounce 1.4s 1}#sprocky-svg.eyebrow-raise #right_eyebrow{--x:0;--y:0;-webkit-transform:rotateZ(20deg);transform:rotateZ(20deg);position:relative;-webkit-transform-origin:var(--x) var(--y);transform-origin:var(--x) var(--y)}#sprocky-svg .cls-1{fill:#f47622}#sprocky-svg .cls-2{fill:url(#radial-gradient)}#sprocky-svg .cls-3{fill:#231f20}#sprocky-svg .cls-4{fill:url(#radial-gradient-2)}@-#sprocky-svg{-webkit-transform-origin:50% 50%;transform-origin:50% 50%;-webkit-perspective:1000px;perspective:1000px;-webkit-animation:lookaround 15s infinite;animation:lookaround 15s infinite}#sprocky-svg *{-webkit-transform-origin:50% 50%;transform-origin:50% 50%}#sprocky-svg.blink #left_eye_white,#sprocky-svg.blink #left_pupil,#sprocky-svg.blink #right_eye_white,#sprocky-svg.blink #right_pupil{-webkit-animation:blink 8s infinite;animation:blink 8s infinite}#sprocky-svg.brow-bounce #left_eyebrow,#sprocky-svg.brow-bounce #right_eyebrow{-webkit-animation:brow-bounce 1.4s 1;animation:brow-bounce 1.4s 1}#sprocky-svg.eyebrow-raise #right_eyebrow{--x:0;--y:0;-webkit-transform:rotateZ(20deg);transform:rotateZ(20deg);position:relative;-webkit-transform-origin:var(--x) var(--y);transform-origin:var(--x) var(--y)}#sprocky-svg .cls-1{fill:#f47622}#sprocky-svg .cls-2{fill:url(#radial-gradient)}#sprocky-svg .cls-3{fill:#231f20}#sprocky-svg .cls-4{fill:url(#radial-gradient-2)}@-webkit-keyframes lookaround{0%{-webkit-transform:rotate3d(-1,1,0,35deg);transform:rotate3d(-1,1,0,35deg)}5%{-webkit-transform:rotate3d(0,0,0,0);transform:rotate3d(0,0,0,0)}85%{-webkit-transform:rotate3d(0,0,0,0);transform:rotate3d(0,0,0,0)}100%{-webkit-transform:rotate3d(-1,1,0,35deg);transform:rotate3d(-1,1,0,35deg)}}@keyframes lookaround{0%{-webkit-transform:rotate3d(-1,1,0,35deg);transform:rotate3d(-1,1,0,35deg)}5%{-webkit-transform:rotate3d(0,0,0,0);transform:rotate3d(0,0,0,0)}85%{-webkit-transform:rotate3d(0,0,0,0);transform:rotate3d(0,0,0,0)}100%{-webkit-transform:rotate3d(-1,1,0,35deg);transform:rotate3d(-1,1,0,35deg)}}@-webkit-keyframes blink{0%{-webkit-transform:scaleY(1);transform:scaleY(1)}48%{-webkit-transform:scaleY(1);transform:scaleY(1)}50%{-webkit-transform:scaleY(.01);transform:scaleY(.01)}52%{-webkit-transform:scaleY(1);transform:scaleY(1)}100%{-webkit-transform:scaleY(1);transform:scaleY(1)}}@keyframes blink{0%{-webkit-transform:scaleY(1);transform:scaleY(1)}48%{-webkit-transform:scaleY(1);transform:scaleY(1)}50%{-webkit-transform:scaleY(.01);transform:scaleY(.01)}52%{-webkit-transform:scaleY(1);transform:scaleY(1)}100%{-webkit-transform:scaleY(1);transform:scaleY(1)}}@-webkit-keyframes brow-bounce{0%{-webkit-transform:translateY(0);transform:translateY(0)}20%{-webkit-transform:translateY(0);transform:translateY(0)}40%{-webkit-transform:translateY(-5%);transform:translateY(-5%)}50%{-webkit-transform:translateY(0);transform:translateY(0)}70%{-webkit-transform:translateY(-5%);transform:translateY(-5%)}90%{-webkit-transform:translateY(0);transform:translateY(0)}100%{-webkit-transform:translateY(0);transform:translateY(0)}}@keyframes brow-bounce{0%{-webkit-transform:translateY(0);transform:translateY(0)}20%{-webkit-transform:translateY(0);transform:translateY(0)}40%{-webkit-transform:translateY(-5%);transform:translateY(-5%)}50%{-webkit-transform:translateY(0);transform:translateY(0)}70%{-webkit-transform:translateY(-5%);transform:translateY(-5%)}90%{-webkit-transform:translateY(0);transform:translateY(0)}100%{-webkit-transform:translateY(0);transform:translateY(0)}}webkit-keyframes lookaround{0%{-webkit-transform:rotate3d(-1,1,0,35deg);transform:rotate3d(-1,1,0,35deg)}5%{-webkit-transform:rotate3d(0,0,0,0);transform:rotate3d(0,0,0,0)}85%{-webkit-transform:rotate3d(0,0,0,0);transform:rotate3d(0,0,0,0)}100%{-webkit-transform:rotate3d(-1,1,0,35deg);transform:rotate3d(-1,1,0,35deg)}}@keyframes lookaround{0%{-webkit-transform:rotate3d(-1,1,0,35deg);transform:rotate3d(-1,1,0,35deg)}5%{-webkit-transform:rotate3d(0,0,0,0);transform:rotate3d(0,0,0,0)}85%{-webkit-transform:rotate3d(0,0,0,0);transform:rotate3d(0,0,0,0)}100%{-webkit-transform:rotate3d(-1,1,0,35deg);transform:rotate3d(-1,1,0,35deg)}}@-webkit-keyframes blink{0%{-webkit-transform:scaleY(1);transform:scaleY(1)}48%{-webkit-transform:scaleY(1);transform:scaleY(1)}50%{-webkit-transform:scaleY(.01);transform:scaleY(.01)}52%{-webkit-transform:scaleY(1);transform:scaleY(1)}100%{-webkit-transform:scaleY(1);transform:scaleY(1)}}@keyframes blink{0%{-webkit-transform:scaleY(1);transform:scaleY(1)}48%{-webkit-transform:scaleY(1);transform:scaleY(1)}50%{-webkit-transform:scaleY(.01);transform:scaleY(.01)}52%{-webkit-transform:scaleY(1);transform:scaleY(1)}100%{-webkit-transform:scaleY(1);transform:scaleY(1)}}@-webkit-keyframes brow-bounce{0%{-webkit-transform:translateY(0);transform:translateY(0)}20%{-webkit-transform:translateY(0);transform:translateY(0)}40%{-webkit-transform:translateY(-5%);transform:translateY(-5%)}50%{-webkit-transform:translateY(0);transform:translateY(0)}70%{-webkit-transform:translateY(-5%);transform:translateY(-5%)}90%{-webkit-transform:translateY(0);transform:translateY(0)}100%{-webkit-transform:translateY(0);transform:translateY(0)}}@keyframes brow-bounce{0%{-webkit-transform:translateY(0);transform:translateY(0)}20%{-webkit-transform:translateY(0);transform:translateY(0)}40%{-webkit-transform:translateY(-5%);transform:translateY(-5%)}50%{-webkit-transform:translateY(0);transform:translateY(0)}70%{-webkit-transform:translateY(-5%);transform:translateY(-5%)}90%{-webkit-transform:translateY(0);transform:translateY(0)}100%{-webkit-transform:translateY(0);transform:translateY(0)}}",
@@ -160,8 +160,16 @@ $(document).ready(function() {
         });
     }
 
-    //console.log("Current URL: ",tabUrl);
-    const appUrl = ~tabUrl.indexOf("app.hubspotqa.com") ? "app.hubspotqa.com" : "app.hubspot.com";
+    // console.log("Current URL: ",tabUrl);
+    let appUrl;
+    if(~tabUrl.indexOf("local.hubspot")) {
+        appUrl = ~tabUrl.indexOf("local.hubspotqa") ? 'local.hubspotqa.com' : 'local.hubspot.com'
+    }
+    else {
+        appUrl = ~tabUrl.indexOf("app.hubspotqa.com") ? "app.hubspotqa.com" : "app.hubspot.com";
+    }
+    // console.log(appUrl)
+
     if (~tabUrl.indexOf(appUrl)) {
         //console.log("This is the hubspot backend.");
         chrome.storage.sync.get([
@@ -221,12 +229,12 @@ $(document).ready(function() {
             'uitweaks'
         ], function(items) {
             if (items.uitweaks) {
-                
+
 
                 waitForEl(".account-name", function() {
                     setTitle($(".account-name").text());
                 });
-                
+
 
                 function generateDevMenuItem(buttonLabel, hubId, url) {
                     /*expects button label string, hubId string, url string.*/
@@ -236,22 +244,23 @@ $(document).ready(function() {
                     html += buttonLabel;
                     html += "</a>";
                     html += "</li>";
+
                     return html;
-                    //console.log("Nav Item Generated: ", buttonLabel);
                 }
 
                 function generateAllMenuItems(hubId) {
-                    var html = generateDevMenuItem("Design Manager", hubId, "https://app.hubspot.com/design-manager/_HUB_ID_");
-                    html += generateDevMenuItem("Content Staging", hubId, "https://app.hubspot.com/content/_HUB_ID_/staging/");
-                    html += generateDevMenuItem("Website Pages", hubId, "https://app.hubspot.com/pages/_HUB_ID_/manage/site/domain/all/listing/all");
-                    html += generateDevMenuItem("HubDB", hubId, "https://app.hubspot.com/hubdb/_HUB_ID_");
-                    html += generateDevMenuItem("File Manager", hubId, "https://app.hubspot.com/file-manager-beta/_HUB_ID_");
-                    html += generateDevMenuItem("Advanced Menus", hubId, "https://app.hubspot.com/settings/_HUB_ID_/website/navigation");
-                    html += generateDevMenuItem("Content Settings", hubId, "https://app.hubspot.com/settings/_HUB_ID_/website/pages/all-domains/page-templates");
-                    html += generateDevMenuItem("URL Redirects", hubId, "https://app.hubspot.com/domains/_HUB_ID_/url-redirects");
-                    html += generateDevMenuItem("Marketplace", hubId, "https://app.hubspot.com/marketplace/_HUB_ID_/products");
-                    
-                    
+                    var prefix = "https://" + appUrl + "/";
+                    var html = generateDevMenuItem("Design Manager", hubId, prefix + "design-manager/_HUB_ID_");
+                    html += generateDevMenuItem("Content Staging", hubId, prefix + "content/_HUB_ID_/staging/");
+                    html += generateDevMenuItem("Website Pages", hubId, prefix + "pages/_HUB_ID_/manage/site/domain/all/listing/all");
+                    html += generateDevMenuItem("HubDB", hubId, prefix + "hubdb/_HUB_ID_");
+                    html += generateDevMenuItem("File Manager", hubId, prefix + "file-manager-beta/_HUB_ID_");
+                    html += generateDevMenuItem("Advanced Menus", hubId, prefix + "settings/_HUB_ID_/website/navigation");
+                    html += generateDevMenuItem("Content Settings", hubId, prefix + "settings/_HUB_ID_/website/pages/all-domains/page-templates");
+                    html += generateDevMenuItem("URL Redirects", hubId, prefix + "domains/_HUB_ID_/url-redirects");
+                    html += generateDevMenuItem("Marketplace", hubId, prefix + "marketplace/_HUB_ID_/products");
+
+
                     return html;
                 }
 
@@ -272,12 +281,12 @@ $(document).ready(function() {
                     html += '</div>';
                     html += '</li>';
 
-                    
+
 
                     $(".nav-links ul.primary-links>li:first-child").after(html);
 
                     $("#ext-dev-menu-wrapper > a").click(function(e) {
-                        
+
                         //console.log("dev menu clicked!");
                         e.preventDefault();
                         /*$("#ext-dev-menu").toggleClass("expansion");*/
@@ -307,7 +316,13 @@ $(document).ready(function() {
                 /*get current HubSpot ID*/
                 var hubId;
                 waitForEl("#nav-primary-home", function() {
-                    hubId = $("#nav-primary-home").attr("href").replace(generateAppUrl("/reports-dashboard/"), "").replace("/home", "");
+                    var href=  $("#nav-primary-home").attr("href");
+                    if(~appUrl.indexOf('local.hubspot')) {
+                        href = href.replace('https://app.hubspot', 'https://local.hubspot')
+                    }
+
+                    hubId = href.replace(generateAppUrl("/reports-dashboard/"), "").replace("/home", "");
+
                     /*inject dev menu*/
                     generateDevMenu(hubId);
                 });
