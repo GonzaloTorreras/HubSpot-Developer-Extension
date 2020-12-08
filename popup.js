@@ -74,7 +74,15 @@ var developerTools = {
             /*getSelected might be deprecated need to review*/
             var tabUrl = tab.url;
             console.log("Current URL: ", tabUrl);
-            const appUrl = ~tabUrl.indexOf("hubspotqa.com") ? (~tabUrl.indexOf("app") ? "app.hubspotqa.com" : "local.hubspotqa.com") : "app.hubspot.com";
+            let appUrl;
+            if(~tabUrl.indexOf("local.hubspot")) {
+                appUrl = ~tabUrl.indexOf("local.hubspotqa") ? 'local.hubspotqa.com' : 'local.hubspot.com'
+            }
+            else {
+                appUrl = ~tabUrl.indexOf("app.hubspotqa.com") ? "app.hubspotqa.com" : "app.hubspot.com";
+            }
+
+            console.log(appUrl)
             if (~tabUrl.indexOf(appUrl)) {
                 console.log("This is the hubspot backend.");
                 $("body").addClass("is-backend"); //indicates user is seeing HS backend
