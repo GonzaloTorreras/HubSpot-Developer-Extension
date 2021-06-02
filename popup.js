@@ -50,7 +50,7 @@ var developerTools = {
             var pageUrl = new URL(tabs[0].url);
             var gradeUrl = pageUrl.origin.replace("://", "%3A%2F%2F") + pageUrl.pathname;
             trackClick("googlePageSpeed");
-            
+
             $.getJSON('https://www.googleapis.com/pagespeedonline/v4/runPagespeed?url=' + gradeUrl + '&fields=id%2CruleGroups', function(data) {
                 if (data.id) {
                     $("#desktop_psi_placeholder").html("Desktop PSI Score<span class='c-btn__score'>" + data.ruleGroups.SPEED.score + "</span>");
@@ -74,7 +74,15 @@ var developerTools = {
             /*getSelected might be deprecated need to review*/
             var tabUrl = tab.url;
             console.log("Current URL: ", tabUrl);
-            const appUrl = ~tabUrl.indexOf("app.hubspotqa.com") ? "app.hubspotqa.com" : "app.hubspot.com";
+            let appUrl;
+            if(~tabUrl.indexOf("local.hubspot")) {
+                appUrl = ~tabUrl.indexOf("local.hubspotqa") ? 'local.hubspotqa.com' : 'local.hubspot.com'
+            }
+            else {
+                appUrl = ~tabUrl.indexOf("app.hubspotqa.com") ? "app.hubspotqa.com" : "app.hubspot.com";
+            }
+
+            console.log(appUrl)
             if (~tabUrl.indexOf(appUrl)) {
                 console.log("This is the hubspot backend.");
                 $("body").addClass("is-backend"); //indicates user is seeing HS backend
