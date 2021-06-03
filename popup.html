@@ -257,7 +257,7 @@ Do not let fear of learning a new technique prevent you from contributing, other
         display: grid;
         grid-gap: 5px;
         width: 100%;
-        width: calc(100vw - 10px);
+        /*width: calc(100vw - 10px); */
         grid-template-columns: 1fr 1fr;
         grid-template-areas: "debug bustcache" "movejquery amp" "psrequest psrequest" "designmanager designmanager";
         /*margin-right: 5px;*/
@@ -330,8 +330,13 @@ Do not let fear of learning a new technique prevent you from contributing, other
         box-sizing: border-box;
     }
 
-    body {
+    html, body {
+        max-height: none;
+        height: auto;
         width: 391px;
+        min-width: 391px;
+    }
+    body {
         color: cornflowerblue;
         background-color: #33475b;
         background: linear-gradient(45deg, #33475b, #2d3e50);
@@ -347,7 +352,7 @@ Do not let fear of learning a new technique prevent you from contributing, other
     
 
     .c-tab-slider {
-        width: 100vw;
+        width: 100%;
     }
 
 
@@ -368,7 +373,7 @@ Do not let fear of learning a new technique prevent you from contributing, other
 
     .c-tab-slider__tab {
         display: block;
-        width: 100vw;
+        width: 100%;
         padding: 5px;
     }
 
@@ -376,8 +381,9 @@ Do not let fear of learning a new technique prevent you from contributing, other
         display: flex;
         flex-flow: row;
         position: relative;
-       
-        visibility:hidden;
+        width: 200%;
+        max-width: 200%;
+        visibility: hidden;
     }
     
     .c-tab-slider--state-design-manager .c-tab-slider__track {
