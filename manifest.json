@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
     "name": "__MSG_extName__",
-    "version": "1.05.05",
+    "version": "1.5.5",
     "default_locale": "en",
     "description": "__MSG_extDesc__",
     "browser_action": {
@@ -64,6 +64,12 @@
                 "mac": "Ctrl+Shift+2"
             },
             "description": "toggle ?hsDebug=True in the URL"
+        }
+    },
+    "browser_specific_settings": {
+        "gecko": {
+            "id": "addon@superpeak.dev",
+            "strict_min_version": "42.0"
         }
     }
 }
