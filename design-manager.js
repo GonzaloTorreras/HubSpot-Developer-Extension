@@ -249,7 +249,7 @@ $(document).ready(function() {
                 }
 
                 function generateAllMenuItems(hubId) {
-                    var prefix = "https://" + appUrl + "/";
+                    var prefix = "/";
                     var html = generateDevMenuItem("Design Manager", hubId, prefix + "design-manager/_HUB_ID_");
                     html += generateDevMenuItem("Content Staging", hubId, prefix + "content/_HUB_ID_/staging/");
                     html += generateDevMenuItem("Website Pages", hubId, prefix + "pages/_HUB_ID_/manage/site/domain/all/listing/all");
@@ -315,14 +315,8 @@ $(document).ready(function() {
 
                 /*get current HubSpot ID*/
                 var hubId;
-                waitForEl("#nav-primary-home", function() {
-                    var href=  $("#nav-primary-home").attr("href");
-                    if(~appUrl.indexOf('local.hubspot')) {
-                        href = href.replace('https://app.hubspot', 'https://local.hubspot')
-                    }
-
-                    hubId = href.replace(generateAppUrl("/reports-dashboard/"), "").replace("/home", "");
-
+                waitForEl(".navtools", function () {
+                    hubId = $(".navtools .settings > a").attr("href").split("/user-preferences/")[1].split("?")[0];
                     /*inject dev menu*/
                     generateDevMenu(hubId);
                 });
