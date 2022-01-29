@@ -308,6 +308,9 @@ var developerTools = {
         }, 100);
         /* end temporary bug fix */
 
+        if (! (window.location.href.indexOf("content/") && window.location.href.indexOf("edit/"))){
+            document.getElementById("developerMode").style.display = "none";
+        }
         developerTools.setMenuContext();
         developerTools.getSettings();
         developerTools.loadTip();
