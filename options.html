@@ -1,7 +1,55 @@
 <!DOCTYPE html>
-<html>
-<head><title>Options page</title></head>
+<html lang="en">
+<head><title>Options page</title>
+<style>
+html {
+  box-sizing: border-box;
+  font-size: 18px;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+body{
+	background-color: #f1f1f1;
+	color: #010101;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items:center;
+	min-height: 100vh;
+}
+main {
+	width: 90ch;
+	max-width: 100%;
+	margin: 2rem auto;
+}
+p {
+	margin-bottom: 1rem;
+}
+a {
+	color: #ff7a59
+}
+</style>
+</head>
 <body>
+<main>
 	<p>We apologize for the blandness of this screen, but if you'd like to help make it look better, you can help!</p>
 	
 	<p><a href="https://github.com/williamspiro/HubSpot-Developer-Extension/">View on GitHub</a></p>
@@ -12,19 +60,15 @@
 		<!--Do you know multiple languages?-->
 	</p>
 	<br>
-	<p>This Extension is not directly affiliated with HubSpot, we claim no rights to any of the HubSpot Trademarks.</p>
+	<p>This Extension is <b>not</b> directly affiliated with HubSpot, we claim no rights to any of the HubSpot Trademarks.</p>
 	<p>Developed by:
 		<ul>
-			<li><a target="_blank" href="https://www.linkedin.com/in/william-spiro-40a43a58/">William Spiro</a> - <a target="_blank" href="https://www.hubspot.com/" title="if you really don't know what HubSpot is, you're using this plugin wrong.">HubSpot</a> - Developer Product Expert</li>
-			<li><a target="_blank" href="https://www.linkedin.com/in/mclarenjon/">Jon McLaren</a> - <a target="_blank" href="https://www.spingroup.com/">Spin Group</a> - HubSpot Certified Front End Developer</li>
-			<li>
-
-				<a target="_blank" href="https://www.linkedin.com/in/gonzalotorreras/">Gonzalo Torreras</a> -  <a target="_blank" href="http://leadstreet.co.uk/">Leadstreet UK</a> - HubSpot Partner and Lead Developer
-
-			</li>
+			<li><a target="_blank" href="https://www.linkedin.com/in/william-spiro-40a43a58/"><svg style="fill: #f1f1f1;width: 1em;vertical-align: bottom;margin-right: .5rem;color: #010101;" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="linkedin-in" class="svg-inline--fa fa-linkedin-in fa-w-14" role="img" viewBox="0 0 448 512"><path fill="currentColor" d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/></svg>William Spiro</a> - <a target="_blank" href="https://www.hubspot.com/" title="if you really don't know what HubSpot is, you're using this plugin wrong.">HubSpot</a> - Developer Product Expert</li>
+			<li><a target="_blank" href="https://www.linkedin.com/in/mclarenjon/"><svg style="fill: #f1f1f1;width: 1em;vertical-align: bottom;margin-right: .5rem;color: #010101;" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="linkedin-in" class="svg-inline--fa fa-linkedin-in fa-w-14" role="img" viewBox="0 0 448 512"><path fill="currentColor" d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/></svg>Jon McLaren</a> - <a target="_blank" href="https://www.hubspot.com/" title="if you really don't know what HubSpot is, you're using this plugin wrong.">Hubspot</a> -  CMS Developer Advocate</li>
+			<li><a target="_blank" href="https://www.linkedin.com/in/gonzalotorreras/"><svg style="fill: #f1f1f1;width: 1em;vertical-align: bottom;margin-right: .5rem;color: #010101;" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="linkedin-in" class="svg-inline--fa fa-linkedin-in fa-w-14" role="img" viewBox="0 0 448 512"><path fill="currentColor" d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/></svg>Gonzalo Torreras</a> -  <a target="_blank" href="http://gonzalotorreras.com/" title="Check my website!">gonzalotorreras.com</a> - HubSpot freelance developer</li>
 		</ul>
 	</p>
-
+</main>
 <script src="options.js"></script>
 <script src="easy-translate.js"></script>
 </body>

@@ -36,7 +36,7 @@ var developerTools = {
             } else if (params.has(debugParam)) {
                 params.delete(debugParam);
             } else {
-                params.append(debugParam, "True");
+                params.append(debugParam, "true");
             }
 
             chrome.tabs.update(tabs[0].id, { url: tabUrl.origin + tabUrl.pathname + '?' + params.toString() });
@@ -308,6 +308,9 @@ var developerTools = {
         }, 100);
         /* end temporary bug fix */
 
+        if (! (window.location.href.indexOf("content/") && window.location.href.indexOf("edit/"))){
+            document.getElementById("developerMode").style.display = "none";
+        }
         developerTools.setMenuContext();
         developerTools.getSettings();
         developerTools.loadTip();
@@ -315,7 +318,7 @@ var developerTools = {
 		document.getElementById('save').addEventListener('click',
     developerTools.saveSettings());*/
 
-        $(".js-click--debug,.js-click--move-jquery-to-footer,.js-click--bust-cache,.js-click--amp").click(function() {
+        $(".js-click--debug,.js-click--move-jquery-to-footer,.js-click--bust-cache,.js-click--amp,.js-click--developerMode").click(function() {
             developerTools.debugReload($(this).attr("id"));
         });
 
