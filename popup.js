@@ -75,8 +75,7 @@ var developerTools = {
         chrome.tabs.query({
             active: true,
             lastFocusedWindow: true
-        }, function(tabs) {
-            // and use that tab to fill in out title and url
+        }, function (tabs) {
             var tab = tabs[0];
             var tabUrl = tab.url;
             console.log("Current URL: ", tabUrl);
@@ -306,7 +305,8 @@ var developerTools = {
 
     },
     onLoad: function() {
-        /* Temporary fix to the height bug in the popup. This should get removed soon. */
+        /* Temporary fix to the height bug in the popup. This should get removed soon. 
+        Seems to be fixed?
         window.setTimeout(() => {
             $("html, body").css({
                 height: $(".c-tab-slider").outerHeight()
