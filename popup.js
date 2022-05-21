@@ -1,5 +1,6 @@
 
 /*Google Analytics*/
+/*
 var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-122315369-1']);
 _gaq.push(['_trackPageview']);
@@ -28,7 +29,7 @@ var developerTools = {
             var tabUrl = new URL(tabs[0].url);
             var params = new URLSearchParams(tabUrl.search);
 
-            trackClick(debugParam);
+            //trackClick(debugParam);
 
             if (debugParam === "hsCacheBuster") {
                 var randomNum = Math.floor(Math.random() * 9999) + 1;
@@ -49,7 +50,7 @@ var developerTools = {
         chrome.tabs.query({ 'active': true, 'lastFocusedWindow': true }, function(tabs) {
             var pageUrl = new URL(tabs[0].url);
             var gradeUrl = pageUrl.origin.replace("://", "%3A%2F%2F") + pageUrl.pathname;
-            trackClick("googlePageSpeed");
+            //trackClick("googlePageSpeed");
 
             $.getJSON('https://www.googleapis.com/pagespeedonline/v4/runPagespeed?url=' + gradeUrl + '&fields=id%2CruleGroups', function(data) {
                 if (data.id) {
@@ -70,8 +71,13 @@ var developerTools = {
     setMenuContext: function() {
         console.log("Set Menu Context run");
 
-        chrome.tabs.getSelected(null, function(tab) {
-            /*getSelected might be deprecated need to review*/
+        // Get the current active tab in the lastly focused window
+        chrome.tabs.query({
+            active: true,
+            lastFocusedWindow: true
+        }, function(tabs) {
+            // and use that tab to fill in out title and url
+            var tab = tabs[0];
             var tabUrl = tab.url;
             console.log("Current URL: ", tabUrl);
             let appUrl;
@@ -358,7 +364,7 @@ var developerTools = {
 
         $("a.c-banner").click(function(e){
             var tipId = "tip:" + $(this).data("tipid");
-            trackClick(tipId);
+            //trackClick(tipId);
         })
 
     }
