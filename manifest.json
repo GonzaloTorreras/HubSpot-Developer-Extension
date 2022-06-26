@@ -48,6 +48,15 @@
                 "https://app.hubspotqa.com/*",
                 "https://login.hubspot.com/*"
             ]
+        },
+        {
+            "run_at": "document_idle",
+            "js": ["jquery-3.2.1.min.js", "clipboard.min.js", "json-formatter.js"],
+            "css": ["json-formatter.css"],
+            "document_idle": "document_start",
+            "matches": [
+                "https://*/___context___*"
+            ]
         }
     ],
     /* temporary kill GA because https://stackoverflow.com/questions/68740371/issue-in-content-security-policy-in-chrome-extension-manifest-version-3

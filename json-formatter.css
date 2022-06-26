@@ -3,11 +3,11 @@
 .json-formatted {
     white-space: pre;
     line-height: 1;
-    font-size: 17px;
+    font-size: 1.1rem;
     padding: 0 1rem;
-    font-size: 12px;
     color: #eaf0f6;
     background: linear-gradient(45deg, #33475b, #2d3e50);
+    font-family: system-ui;
 }
 
 .json-formatted .number {
@@ -129,6 +129,12 @@ body>ul.array>li.minimize-me {
 
 .json-formatted .minimized {
     height: 1.2em;
+}
+/* TEST to improve performance */
+/* hide children after open-bracket but not close-bracket */
+.json-formatted .minimized > .open-bracket ~ li:not(.close-bracket) {
+    display: none;
+    transition: none;
 }
 
 .json-formatted .minimized li {

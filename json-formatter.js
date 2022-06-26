@@ -1,17 +1,20 @@
-$(document).ready(function() {
 
-    //formatJSON();
-
+chrome.storage.sync.get([
+    "json"
+], function(items) {
+    if (items.json) {
+        formatJSON();
+    }
 });
 
 function formatJSON() {
     console.log("okay formatting now");
     console.log($("body"));
-    if ($("#dev-info").length > 0) {
+    if ($("body > pre")) {
 
         // test if content is json
-        if (jsonChecker($("#dev-info").text())) {
-            init("#dev-info");
+        if (jsonChecker($("body > pre").text())) {
+            init("body > pre");
         }
     }
 
@@ -30,10 +33,10 @@ function formatJSON() {
 
         //get the original and re-parse as JSON
         //var json = $.parseJSON($(ele).text());
-        var json = $.parseJSON($(ele).text());
+        var json = JSON.parse($(ele).text());
 
         //re enconded as string with 4 spaces TAB.
-        $(ele).text(JSON.stringify(json, undefined, 4));
+        $(ele).text(JSON.stringify(json, undefined, 2));
 
         json = $(ele).text(); //update json var to parse in case its in a pre element(it will be removed).
 
@@ -188,19 +191,3 @@ function formatJSON() {
     }
 }
 
-
-// Set up context menu at install time.
-/*
-chrome.runtime.onInstalled.addListener(function() {
-  console.log("listener added.");
-  var context = "page";
-  var title = "Format JSON";
-  var id = chrome.contextMenus.create({"title": title, "contexts":[context],
-                                       "id": "context" + context,
-                                       "onclick": formatJSON()
-                                     });  
-});
-*/
-// add click event
-//console.log("adding click event listener");
-//chrome.contextMenus.onClicked.addListener(formatJSON());

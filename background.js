@@ -23,6 +23,7 @@ function trackPageView() {
     _gaq.push(["_trackPageview"]);
 };
 */
+console.log("background.js loaded");
 /*listen for clicks*/
 chrome.runtime.onMessage.addListener(
     function(request, sender, sendResponse) {

@@ -291,13 +291,17 @@ body.hubspot.design-manager.ext-dark-theme,
 body.design-manager.ext-dark-theme .editor-toolbar,
 body.design-manager.ext-dark-theme .file-tabs.private-tabs .file-tab,
 body.design-manager.ext-dark-theme .private-popover.private-tooltip--longform,
-body.design-manager.ext-dark-theme .private-dropdown .Select-menu-outer {
+body.design-manager.ext-dark-theme .private-dropdown .Select-menu-outer,
+body.design-manager.ext-dark-theme.sidebar-input.is--code,
+body.design-manager.ext-dark-theme .sidebar-input .is--code {
 	color: var(--body-color);
 	background: var(--body-background);
 	border-color: var(--border-color);
 }
 
-body.design-manager.ext-dark-theme .private-nav-item {
+body.design-manager.ext-dark-theme .private-nav-item,
+body.design-manager.ext-dark-theme .private-popover.private-popover--default [style="color: rgb(51, 71, 91);"],
+body.design-manager.ext-dark-theme .jIRPyL [style="color: rgb(51, 71, 91);"]{
 	color: rgba(255, 255, 255, .6) !important;
 }
 
@@ -375,7 +379,11 @@ body.design-manager.ext-dark-theme .private-search-control__wrapper,
 body.design-manager.ext-dark-theme .private-button.private-form__control,
 body.design-manager.ext-dark-theme .private-button.private-form__control:focus,
 body.design-manager.ext-dark-theme .private-button.private-form__control:hover,
-body.design-manager.ext-dark-theme .dm-tool__breadcrumbs {
+body.design-manager.ext-dark-theme .dm-tool__breadcrumbs,
+body.design-manager.ext-dark-theme .juKgJL,
+body.design-manager.ext-dark-theme .HXjDs.HXjDs,
+body.design-manager.ext-dark-theme.sidebar-input.is--code,
+body.design-manager.ext-dark-theme .sidebar-input .is--code {
 	background: #33475b!important;
 }
 
@@ -383,7 +391,8 @@ body.design-manager.ext-dark-theme .private-dropdown--list .private-list__item>a
 body.design-manager.ext-dark-theme .private-dropdown--list .private-list__item>button,
 body.design-manager.ext-dark-theme .private-tabs .private-tab,
 body.design-manager.ext-dark-theme .private-moveable-object,
-body.design-manager.ext-dark-theme .layout-tree .widget-icon {
+body.design-manager.ext-dark-theme .layout-tree .widget-icon,
+body.design-manager.ext-dark-theme .HXjDs.HXjDs {
 	color: rgba(255, 255, 255, .5)!important;
 }
 

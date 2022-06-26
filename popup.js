@@ -236,10 +236,12 @@ var developerTools = {
         var darkthemeVal = $("#darktheme").prop("checked");
         var uiTweaksVal = $("#uiTweaks").prop("checked");
         var sprockyVal = $("#sprocky").prop("checked");
+        var jsonVal = $("#json").prop("checked");
 
         console.log("dark theme is ", darkthemeVal);
         console.log("UI Tweaks is ", uiTweaksVal);
         console.log("Sprocky is ", sprockyVal);
+        console.log("JSON is ", jsonVal);
 
         chrome.storage.sync.set({
             darktheme: darkthemeVal,
@@ -273,6 +275,17 @@ var developerTools = {
                 status.textContent = "";
             }, 4000);
         });
+
+        chrome.storage.sync.set({
+            json: jsonVal,
+        }, function() {
+            // Update status to let user know options were saved.
+            var status = document.getElementById("status");
+            status.textContent = "Options saved. If you have dev info page open, you will need to refresh to see the theme.";
+            setTimeout(function() {
+                status.textContent = "";
+            }, 4000);
+        });
     },
     getSettings: function() {
         chrome.storage.sync.get(["darktheme"], function(items) {
@@ -300,6 +313,16 @@ var developerTools = {
             console.log("sprocky:", items.sprocky2);
             if (items.sprocky2) {
                 $(".sprocky-toggle .uiToggleSwitch").addClass("uiToggleSwitchOn private-form__toggle-switch--on");
+            }
+        });
+        chrome.storage.sync.get(["json"], function (items) {
+            // Restores select box and checkbox state using the preferences
+            // stored in chrome.storage.
+            console.log(items);
+            document.getElementById("json").checked = items.json;
+            console.log("json:", items.json);
+            if (items.json) {
+                $(".json-toggle .uiToggleSwitch").addClass("uiToggleSwitchOn private-form__toggle-switch--on");
             }
         });
 
@@ -360,6 +383,10 @@ var developerTools = {
         $(".sprocky-toggle input").change(function() {
             developerTools.saveSettings();
             $(".sprocky-toggle .uiToggleSwitch").toggleClass("uiToggleSwitchOn private-form__toggle-switch--on");
+        });
+        $(".json-toggle input").change(function() {
+            developerTools.saveSettings();
+            $(".json-toggle .uiToggleSwitch").toggleClass("uiToggleSwitchOn private-form__toggle-switch--on");
         });
 
         $("a.c-banner").click(function(e){
