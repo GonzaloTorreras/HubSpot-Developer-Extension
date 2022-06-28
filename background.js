@@ -35,8 +35,11 @@ chrome.runtime.onMessage.addListener(
             trackClick(request.trackClick);
             sendResponse({ farewell: "Tracked!" });
         } else if (request.devInfoURL) { 
-            sendResponse({farewell: "devInfoURL recieved."});
-            
+            if (request.devInfoURL) {
+                sendResponse({ farewell: "devInfoURL recieved." });
+            } else { 
+                sendResponse({ farewell: "no devInfoURL found, gotcha" });
+            }
         } else { 
             sendResponse({ farewell: "undefined" });
         }
@@ -51,8 +54,6 @@ chrome.commands.onCommand.addListener(function(command) {
     if (command === "bust-cache") {
         console.log("Cache bustato");
         _gaq.push(["_trackEvent", "hsCacheBuster", "kbShortcutUsed"]);
-
-
 
 
 
@@ -83,9 +84,7 @@ chrome.commands.onCommand.addListener(function(command) {
             }
             chrome.tabs.update(tabs[0].id, { url: tabUrl.origin + tabUrl.pathname + '?' + params.toString() });
 
-
         });
-
     }
 });
 
