@@ -1,5 +1,8 @@
 /* JSON pretifier */
-
+.hs-json-formatted,
+.hs-json-formatted body{
+    margin: 0;
+}
 .json-formatted {
     white-space: pre;
     line-height: 1;

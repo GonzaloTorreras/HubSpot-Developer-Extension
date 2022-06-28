@@ -1,4 +1,11 @@
 console.log("paneljs loaded");
+
+// inject hsinspector
+chrome.scripting.executeScript({
+    target: {tabId: chrome.devtools.inspectedWindow.tabId},
+    files: ['hsInspector.js']
+});
+    
 /*
 var test = chrome.devtools.inspectedWindow.eval(
     "jQuery.fn.jquery",
@@ -86,22 +93,52 @@ document.querySelector('#load').addEventListener('click', function(event) {
         }
     });
 });
-
-
-
+*/
 
 chrome.runtime.onMessage.addListener(
     function(request, sender, sendResponse) {
-        console.log(sender.tab ?
+        /*console.log(sender.tab ?
             "from a content script:" + sender.tab.url :
             "from the extension");
+        */
         if (request.devInfoURL) {
             sendResponse({
                 farewell: "devInfoURL recieved."
             });
             //display dev info link from menu
-            $("h1").text(request.devInfoURL);
+            document.querySelector("h1").innerText = "Reading dev info...";
 
+            const devInfo = fetch(request.devInfoURL)
+                .then(function (response) {
+                    const r = response.text()
+                    //console.log(r);
+                    return r;
+                })
+                .then(function (text) {
+                    //console.log(text);
+                    document.querySelector("h1").innerText = "Dev Info:";
+                    //append HTML string to page
+                    document.querySelector("#result").innerText = text;
+                    
+                    formatJSON();
+                    document.querySelector("h1").style = "display:none";
+
+
+                    return true;
+                })
+                .catch(function (err) {
+                    console.log(err);
+                    document.querySelector("h1").innerText = "X_X <br> Wops! Something happened";
+                    return false;
+                });
+            
+            console.log(devInfo);
+            if (devInfo) {
+                
+            }
+            
+
+/*
             //$("#dummy").attr('src', request.devInfoURL);
 
             console.log(getUrlVars(request.devInfoURL));
@@ -164,8 +201,8 @@ chrome.runtime.onMessage.addListener(
 
 
             })
+            */
         }
     }
 
 );
-*/

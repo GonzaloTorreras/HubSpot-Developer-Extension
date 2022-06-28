@@ -8,14 +8,25 @@ chrome.storage.sync.get([
 });
 
 function formatJSON() {
-    console.log("okay formatting now");
-    console.log($("body"));
-    if ($("body > pre")) {
-
-        // test if content is json
-        if (jsonChecker($("body > pre").text())) {
-            init("body > pre");
+    const pre = document.querySelector("body > pre");
+    if (pre) {
+        
+        // test if content looks like json
+        var content = pre.innerText;
+        if (content[0] == "{") {
+            //now double check
+            if (jsonChecker(content)) {
+                console.log("okay formatting now");
+                // hide original
+                pre.style.display = "none";
+                const r = init("body > pre");
+                if (!r) {
+                    //display back the original
+                    pre.style.display = "block";
+                }
+            }
         }
+        
     }
 
     //check if string is valid json
@@ -33,29 +44,54 @@ function formatJSON() {
 
         //get the original and re-parse as JSON
         //var json = $.parseJSON($(ele).text());
-        var json = JSON.parse($(ele).text());
-
-        //re enconded as string with 4 spaces TAB.
-        $(ele).text(JSON.stringify(json, undefined, 2));
-
-        json = $(ele).text(); //update json var to parse in case its in a pre element(it will be removed).
-
-        //if it's in a pre element swap for a div
-        if ("pre".indexOf(ele)) {
-            $("body").addClass("json-formatted");
-            $(ele).remove();
-        } else {
-            $(ele).addClass("json-formatted");
+        try {
+            var json = JSON.parse(document.querySelector("body > pre").innerText);
+            // save it on window to make it available
+            window.json = json;
+            console.log("You can access the json object from window.json");
         }
-        //final format
-        $(".json-formatted").html(syntaxHighlight(json));
+        catch (e) {
+            console.log("error parsing json, false positive?"); /* it may happen when you are in the dev info page, but checking the HubSpot devTool page tab */
+            console.log(e);
+            return false;
+        }
+        //re enconded as string with 4 spaces TAB.
+        json = JSON.stringify(json, undefined, 4);
 
-        //attach events
-        $(".json-formatted").find(".minimize-me").click(function() {
-            $(this).parent("ul").toggleClass("minimized");
-        });
+        document.querySelector("html").classList.add("hs-json-formatted");
 
+        // create highlight and append to body
+        let highlight = document.createElement("div");
+        highlight.classList.add("json-formatted");
+        try {
+            highlight.innerHTML = syntaxHighlight(json);    
+        }
+        catch (e) {
+            console.log("error creating highlight");
+            console.log(e);
+            return false;
+        }
+        document.querySelector("body").appendChild(highlight);
+
+        //if original it's in a pre element (as expected), hide it
+        if ("pre".indexOf(ele)) {
+            $(ele).hide();
+        }
+        
+        //attach events .json-formmated wrapper for each .minimize-me vanilla JS
+        const minimizeMe = document.querySelectorAll(".minimize-me");
+        for (let i = 0; i < minimizeMe.length; i++) {
+            minimizeMe[i].addEventListener("click", function () {
+                this.closest("ul").classList.toggle("minimized");
+            });
+        }
+        /*
+            $(".json-formatted").find(".minimize-me").click(function() {
+                $(this).parent("ul").toggleClass("minimized");
+            });
+        */
         copySnippetInit(".json-formatted");
+        return true;
     }
 
     function copySnippetInit(ele) {

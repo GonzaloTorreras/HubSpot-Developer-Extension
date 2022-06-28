@@ -259,12 +259,12 @@
             width: 100%;
             /*width: calc(100vw - 10px); */
             grid-template-columns: 1fr 1fr;
-            grid-template-areas: "debug bustcache" "movejquery amp" "psrequest psrequest" "designmanager designmanager";
+            grid-template-areas: "debug bustcache" "movejquery amp" "psrequest psrequest" "designmanager designmanager" "json json";
             /*margin-right: 5px;*/
         }
 
         .o-menu-grid--debug {
-            grid-template-areas: "debug bustcache" "movejquery amp" "psrequest psrequest" "designmanager designmanager";
+            grid-template-areas: "debug bustcache" "movejquery amp" "psrequest psrequest" "designmanager designmanager" "json json";
         }
 
         .o-menu-grid--design-manager {
@@ -292,6 +292,9 @@
         }
         #developerMode {
             grid-area: developermode;
+        }
+        #json-toggle{
+            grid-area: json;
         }
         #docs {
             grid-area: docs;
@@ -408,6 +411,15 @@
 
         .c-tab-slider--state-debug .c-tab-slider__track {
             left: 0;
+        }
+
+        .c-toggle-field > div {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: flex-end;
+            gap: 1rem;
+            align-items: center;
+            margin-block: 0.1rem;
         }
 
         .c-btn {
