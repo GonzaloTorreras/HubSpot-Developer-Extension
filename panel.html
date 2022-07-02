@@ -2,12 +2,19 @@
 <html>
     <head>
         <link rel="stylesheet" href="json-formatter.css">
+        
     </head>
     <body>
         <div class="explanation">
             <h1>Developer Info</h1>
         </div>
+        <div class="ask-permissions-wrapper" style="display:none">
+            <h1>We need your permission</h1>
+            <p>To use this feature you need to grant the permission to execute JavaScript in your browser.</p>
+            <button id="ask-permissions">Activate permissions</button>
+            </div>
         <pre id="result"></pre>
+
 
         <script src="/jquery-3.2.1.min.js"></script>
         <script src="panel.js"></script>

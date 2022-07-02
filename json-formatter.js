@@ -41,11 +41,12 @@ function formatJSON() {
     }
 
     function init(ele) {
+        $ele = document.querySelector(ele);
 
         //get the original and re-parse as JSON
         //var json = $.parseJSON($(ele).text());
         try {
-            var json = JSON.parse(document.querySelector("body > pre").innerText);
+            var json = JSON.parse($ele.innerText);
             // save it on window to make it available
             window.json = json;
             console.log("You can access the json object from window.json");
@@ -75,7 +76,7 @@ function formatJSON() {
 
         //if original it's in a pre element (as expected), hide it
         if ("pre".indexOf(ele)) {
-            $(ele).hide();
+            $ele.style.display = "none";
         }
         
         //attach events .json-formmated wrapper for each .minimize-me vanilla JS
@@ -130,11 +131,9 @@ function formatJSON() {
     function generateSnippet(ele) {
         var snippet = "{{ ";
         var separator = "";
-
         var option = "for";
 
-
-        $(ele + " .active").each(function(index, value) {
+        document.querySelector(ele + " .active").each(function(index, value) {
             //index == number of iterations
 
             //ul parent
