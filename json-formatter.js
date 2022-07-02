@@ -41,12 +41,11 @@ function formatJSON() {
     }
 
     function init(ele) {
-        $ele = document.querySelector(ele);
 
         //get the original and re-parse as JSON
         //var json = $.parseJSON($(ele).text());
         try {
-            var json = JSON.parse($ele.innerText);
+            var json = JSON.parse(document.querySelector(ele).innerText);
             // save it on window to make it available
             window.json = json;
             console.log("You can access the json object from window.json");
@@ -74,10 +73,9 @@ function formatJSON() {
         }
         document.querySelector("body").appendChild(highlight);
 
-        //if original it's in a pre element (as expected), hide it
-        if ("pre".indexOf(ele)) {
-            $ele.style.display = "none";
-        }
+        //hide original ele
+        document.querySelector(ele).style.display = "none";
+        
         
         //attach events .json-formmated wrapper for each .minimize-me vanilla JS
         const minimizeMe = document.querySelectorAll(".minimize-me");

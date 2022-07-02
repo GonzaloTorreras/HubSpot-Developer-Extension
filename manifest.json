@@ -29,7 +29,8 @@
         "https://app.hubspotqa.com/*",
         "https://local.hubspot.com/*",
         "https://local.hubspotqa.com/*",
-        "https://*/*"
+        "https://*/*",
+        "http://*/*"
     ],
     /* not sure why doesn't work
     "web_accessible_resources": [{

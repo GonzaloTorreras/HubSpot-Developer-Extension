@@ -22,7 +22,6 @@ function trackClick(eventName){
 
 var developerTools = {
 
-
     debugReload: function(debugParam) {
 
         chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
