@@ -94,7 +94,36 @@ function formatJSON() {
     }
 
     function copySnippetInit(ele) {
-        //attach event
+        //attach event to all .key, then reset .active nodes and add .active to all the parent li nodes.
+        const keys = document.querySelectorAll(ele + " .key");
+        for (let i = 0; i < keys.length; i++) {
+            keys[i].addEventListener("click", function () {
+                const actives = document.querySelectorAll(ele + " .active");
+                for (let j = 0; j < actives.length; j++) {
+                    actives[j].classList.remove("active");
+                }
+                
+                //find all parents "li" elements and add .active
+                var parents = [];
+                var parent = this.closest("li")
+                while (parent) {
+                    parents.push(parent);
+                    parent.classList.add("active");
+                    parent = parent.parentElement.closest("li");
+                }
+
+                var snippet = this.getAttribute("data-clipboard-text");
+                if (!snippet) {
+                    //snippet = generateSnippet(keys[i]);
+                    snippet = generateSnippet2(parents.reverse());
+                    if (snippet)
+                        this.setAttribute("data-clipboard-text", snippet);
+                }
+                if (snippet)
+                    copy(snippet);
+            });
+        }
+/*
         $(ele + " .key").click(function() {
             //reset active nodes
             $(ele + " .active").removeClass("active");
@@ -108,7 +137,7 @@ function formatJSON() {
             copy(snippet);
 
         });
-
+*/
         //copy value
         $(ele + " .number," + ele + " .string").click(function() {
             //console.log($(this).text() );
@@ -126,12 +155,37 @@ function formatJSON() {
         });
     }
 
+    function generateSnippet2(eles) { 
+        var snippet = [];
+        var separator = "";
+
+        for (let i = 0; i < eles.length; i++) {
+            console.log("eles[" + i + "]:\n"+ eles[i] );
+        
+            const ele = eles[i].closest("ul").querySelector(".active > .key");
+            console.log("ele:\n"+ ele );
+            if (ele) {
+                const key = ele.innerText.replaceAll(":","").replaceAll('"','');
+                snippet.push(separator + key);
+            } else { 
+                console.log("error, no key found");
+                console.log(eles[i]);
+                console.log(ele);
+            }
+
+            separator = "."; //after first iteration, separator is "."
+        }
+
+        return "{{ " + snippet.join("") + " }}";
+    }
+
+    // TODO, remove this, but finish first the generateSnippet2, add array fors etc.
     function generateSnippet(ele) {
         var snippet = "{{ ";
         var separator = "";
         var option = "for";
 
-        document.querySelector(ele + " .active").each(function(index, value) {
+        ele.querySelectorAll(".active").forEach(function(index, value) {
             //index == number of iterations
 
             //ul parent
@@ -154,8 +208,10 @@ function formatJSON() {
         snippet = snippet.replace(/"/g, "").replace(/:/g, "");
 
         //console.log(snippet);
-
-        return snippet;
+        if (snippet != "{{ }}") 
+            return snippet;
+        else
+            return false
     }
 
     function syntaxHighlight(json) {
