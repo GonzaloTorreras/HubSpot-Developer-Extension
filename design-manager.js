@@ -316,7 +316,7 @@ $(document).ready(function() {
                 /*get current HubSpot ID*/
                 var hubId;
                 waitForEl(".navtools", function () {
-                    hubId = $(".navtools .settings > #navSetting").attr("href").split("/user-preferences/")[1].split("?")[0];
+                    hubId = document.getElementsByClassName("navAccount-portalId")[0].textContent;
                     /*inject dev menu*/
                     generateDevMenu(hubId);
                 });
