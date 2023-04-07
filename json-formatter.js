@@ -104,15 +104,15 @@ function formatJSON() {
                 }
                 
                 //find all parents "li" elements and add .active
-                var parents = [];
-                var parent = this.closest("li")
+                let parents = [];
+                let parent = this.closest("li")
                 while (parent) {
                     parents.push(parent);
                     parent.classList.add("active");
                     parent = parent.parentElement.closest("li");
                 }
 
-                var snippet = this.getAttribute("data-clipboard-text");
+                let snippet = this.getAttribute("data-clipboard-text");
                 if (!snippet) {
                     //snippet = generateSnippet(keys[i]);
                     snippet = generateSnippet2(parents.reverse());
@@ -138,13 +138,21 @@ function formatJSON() {
 
         });
 */
-        //copy value
+        //copy value on click of ele + .number or ele + .string
+        document.querySelectorAll(ele + " .number," + ele + " .string").forEach(function (item) {
+            item.addEventListener("click", function () {
+                console.log(this.innerText);
+                copy(String(this.innerText));
+            });
+        });
+        /*
         $(ele + " .number," + ele + " .string").click(function() {
-            //console.log($(this).text() );
+            console.log($(this).text() );
             copy(String($(this).text()));
 
             $(this).attr("data-clipboard-text", $(this).text());
         });
+        */
     }
 
     function copy(string) {
@@ -156,27 +164,33 @@ function formatJSON() {
     }
 
     function generateSnippet2(eles) { 
-        var snippet = [];
-        var separator = "";
+        let snippet = [];
+        console.log("Total elements: " + eles.length + "\n");
 
         for (let i = 0; i < eles.length; i++) {
-            console.log("eles[" + i + "]:\n"+ eles[i] );
-        
-            const ele = eles[i].closest("ul").querySelector(".active > .key");
-            console.log("ele:\n"+ ele );
-            if (ele) {
-                const key = ele.innerText.replaceAll(":","").replaceAll('"','');
-                snippet.push(separator + key);
-            } else { 
-                console.log("error, no key found");
-                console.log(eles[i]);
-                console.log(ele);
+            console.log("ele[" + i + "]:\n");
+            const ulParent = eles[i].closest("ul");
+            if (ulParent.classList.contains("list")) {
+                const key = "[X]" // find X
+                snippet.push(key);
+            } else {
+
+                const ele = eles[i].closest("ul").querySelector(".active > .key");
+                console.log("ele:\n" + ele);
+                if (ele) {
+                    const key = ele.innerText.replaceAll(":", "").replaceAll('"', '');
+                    console.log("key:\n" + key)
+                    snippet.push(key);
+                } else {
+                    console.log("error, no key found");
+                    console.log(eles[i]);
+                    console.log(ele);
+                }
             }
 
-            separator = "."; //after first iteration, separator is "."
         }
 
-        return "{{ " + snippet.join("") + " }}";
+        return "{{ " + snippet.join(".") + " }}";
     }
 
     // TODO, remove this, but finish first the generateSnippet2, add array fors etc.

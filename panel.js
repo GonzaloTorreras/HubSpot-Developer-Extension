@@ -82,7 +82,7 @@ function granted() {
                         document.querySelector("#result").innerText = text;
                         
                         //formatJSON();
-                        formatJSON();
+                        formatJSONinit();
                         document.querySelector("h1").innerText = "DONE!";
                         document.querySelector(".explanation").style = "display:none";
                         return true;
