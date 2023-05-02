@@ -1,4 +1,14 @@
 
+/*// TODO: implemet json_tabs option to define spaces for each tab
+let TAB_SIZE = 4;
+chrome.storage.sync.get([
+    "json", "json_tabs"
+], function(items) {
+    if (items.json) {
+        TAB_SIZE = items.json_tabs;
+        formatJSON();
+        
+*/
 chrome.storage.sync.get([
     "json"
 ], function(items) {

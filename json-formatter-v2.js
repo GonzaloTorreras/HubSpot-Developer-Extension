@@ -29,12 +29,15 @@ function formatJSONinit() {
     pre.setAttribute("id", "raw");
 
     //console.log(raw)
-    Promise.resolve(formatJSON(raw)).then((json) => {
+    const hsJSON = Promise.resolve(formatJSON(raw)).then((json) => {
         //console.log(json)
         // TODO: json is not globally available and it breaks the panel
         //window.json = json;
         //console.log("JSON is now available in the console as window.json");
+        return json;
     });
+    window.json = hsJSON;
+
     return true;
 }
 
@@ -71,6 +74,14 @@ async function formatJSON(raw) {
         --list-bg-hover: rgba(200,200,200,.05);
         --list-border: rgba(200,200,200,.2);
         --list-border-hover: rgba(200,200,200,1);
+        --snippet-bg: rgba(0,0,0,1);
+        --snippet-color: #fff;
+        --color-string: blue;
+        --color-number: red;
+        --color-boolean: green;
+        --scrollbar-bg: rgba(241,241,241,.15);
+        --scrollbar-thumb: #888;
+        --scrollbar-thumb-hover: #555;
     }
     body{
         font-family: monospace;
@@ -125,17 +136,30 @@ async function formatJSON(raw) {
         content: "]";
     }
     [data-type="string"] {
-        color: blue;
+        color: var(--color-string);
     }
     [data-type="number"] {
-        color: red;
+        color: var(--color-number);
     }
     [data-type="boolean"] {
-        color: green;
+        color: var(--color-boolean);
     }
     pre,code{
         white-space: nowrap;
         overflow: auto;
+    }
+    code::-webkit-scrollbar {
+        width: 5px;
+        height: 5px;
+    }
+    code::-webkit-scrollbar-track {
+        background: var(--scrollbar-bg); 
+    }
+    code::-webkit-scrollbar-thumb {
+        background: var(--scrollbar-thumb); 
+    }
+    code::-webkit-scrollbar-thumb:hover {
+        background: var(--scrollbar-thumb-hover); 
     }
     [data-wrapper="string"],
     [data-wrapper="null"],
@@ -152,12 +176,12 @@ async function formatJSON(raw) {
         content: attr(data-snippet);
         position: fixed;
         opacity: 0;
-        background-color: rgba(0,0,0,1);
-        color: white;
+        background-color: var(--snippet-bg);
+        color: var(--snippet-color);
         top: 1rem;
         left: 1rem;
         transition: opacity .4s;
-        
+        z-index: 1;
     }
 
     [data-snippet]:hover:before {
