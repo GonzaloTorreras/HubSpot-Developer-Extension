@@ -275,7 +275,7 @@ $(document).ready(function() {
                 function generateDevMenu(hubId) {
                     var html = '<li id="ext-dev-menu-wrapper" role="none" class="expandable ">';
                     html += '<a href="#" id="nav-primary-dev-branch" aria-haspopup="true" aria-expanded="false" class="primary-link" data-tracking="click hover" role-menu="menuitem">';
-                    html += 'Developer ';
+                    html += 'Developer Extension ';
                     html += '<svg style="max-height:4px;max-width:10px;" class="nav-icon arrow-down-icon" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 13"><g><g><path d="M21.47,0.41L12,9.43l-9.47-9A1.5,1.5,0,1,0,.47,2.59l10.5,10,0,0a1.51,1.51,0,0,0,.44.28h0a1.43,1.43,0,0,0,1,0h0A1.52,1.52,0,0,0,13,12.61l0,0,10.5-10A1.5,1.5,0,1,0,21.47.41" transform="translate(0 0)"></path></g></g></svg>';
                     html += '</a>';
                     html += '<div id="ext-dev-menu" aria-label="Developer" role="menu" class="secondary-nav expansion" style="min-height: 0px">';
@@ -320,7 +320,7 @@ $(document).ready(function() {
                 /*get current HubSpot ID*/
                 var hubId;
                 waitForEl(".navtools", function () {
-                    hubId = $(".navtools .settings > #navSetting").attr("href").split("/user-preferences/")[1].split("?")[0];
+                    hubId = $(".navtools #navSetting").attr("href").split("/user-preferences/")[1].split("?")[0];
                     /*inject dev menu*/
                     generateDevMenu(hubId);
                 });
