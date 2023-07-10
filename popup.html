@@ -239,8 +239,8 @@
             color: #fff;
         }
         /*To keep CSS organized and easy to understand this css is following this method https://css-tricks.com/combining-the-powers-of-sem-and-bio-for-improving-css/
-    Do not let fear of learning a new technique prevent you from contributing, others can help convert your css to fit this flow. so pull request even if it doesn't fit this way of doing things. The important thing is that it works, keeping organized and understandable is second. If everyone finds they hate writing CSS this way we can work out another way to do it.
-    */
+        Do not let fear of learning a new technique prevent you from contributing, others can help convert your css to fit this flow. so pull request even if it doesn't fit this way of doing things. The important thing is that it works, keeping organized and understandable is second. If everyone finds they hate writing CSS this way we can work out another way to do it.
+        */
 
         /*Settings - variables that do not generate visual styles on their own*/
 
@@ -259,12 +259,12 @@
             width: 100%;
             /*width: calc(100vw - 10px); */
             grid-template-columns: 1fr 1fr;
-            grid-template-areas: "debug bustcache" "movejquery amp" "psrequest psrequest" "designmanager designmanager";
+            grid-template-areas: "debug bustcache" "movejquery amp" "psrequest psrequest" "designmanager designmanager" "json json";
             /*margin-right: 5px;*/
         }
 
         .o-menu-grid--debug {
-            grid-template-areas: "debug bustcache" "movejquery amp" "psrequest psrequest" "designmanager designmanager";
+            grid-template-areas: "debug bustcache" "movejquery amp" "psrequest psrequest" "designmanager designmanager" "json json";
         }
 
         .o-menu-grid--design-manager {
@@ -292,6 +292,9 @@
         }
         #developerMode {
             grid-area: developermode;
+        }
+        #json-toggle{
+            grid-area: json;
         }
         #docs {
             grid-area: docs;
@@ -410,6 +413,15 @@
             left: 0;
         }
 
+        .c-toggle-field > div {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: flex-end;
+            gap: 1rem;
+            align-items: center;
+            margin-block: 0.1rem;
+        }
+
         .c-btn {
             padding: 0;
             height: 44px;
@@ -472,7 +484,7 @@
         /*Scopes - The purpose of the scope (namespace: s-) is to give us the highest specificity so we can overwrite any styles for a specific purpose.
 
 
-    */
+        */
 
         .c-btn--graded {
             /*update js to update the class it adds*/
@@ -509,7 +521,7 @@
         }
         /*Utility - Sometimes you may want to make changes only for a certain style in a specific place. In that case, utility (namespace: u-) classes can help us update it without changing the whole CSS structure.*/
         /*state and JS namespaces
-    * is-: this indicates the state of the block or element. Most commonly used class is .is-active, like the active link in navigation. */
+        * is-: this indicates the state of the block or element. Most commonly used class is .is-active, like the active link in navigation. */
         /*hide Debug mode button, bust cache button, footer jquery, google page speed, when viewing site backend*/
 
         .u-text-orange {
@@ -560,6 +572,7 @@
                         <div class="c-btn__face-primary">AMP</div>
                         <div class="c-btn__face-secondary">hs_amp=true</div>
                     </button>
+                    <code hidden>
                     <button class="c-btn face-button js-click--psi-score-request" id="psiScoreRequest">
                         <div class="c-btn__face-primary">Google Page Speed Insights</div>
                         <div class="c-btn__face-secondary" data-i18n="gpsiHover"><!--Score Me!-->
@@ -571,6 +584,7 @@
                                 <!--<img src="https://cdn2.hubspot.net/hubfs/2359872/Dev_Extension/NewCorgiDance.gif">--></div>
                         </div>
                     </button>
+                    </code>
                     <a href="https://app.hubspot.com/l/design-manager" target="_blank" class="c-btn face-button" id="openDesginManager">
                         <div class="c-btn__face-primary" data-i18n="openDesignManager">Open Design Manager</div>
                         <div class="c-btn__face-secondary" data-i18n="openDesignManager">
@@ -578,6 +592,32 @@
                         </div>
                        
                     </a>
+                    <div class="c-toggle-field" id="json-toggle">
+                        <div class="json-toggle">
+                            <label class="private-form__label private-form__label--small">
+                                <i18n-string data-locale-at-render="en" data-key="DesignEditorsUI.customWidgetEditor.sidebar.fieldEdit.editorOptions.requiredLabel">
+                                    <span class="u-text-orange">Json formatter</span> - <span data-i18n="json"> Auto format the JSON when visiting the dev info page.</span>
+                                </i18n-string>
+                            </label>
+                            <label class="uiToggle private-form__toggle-switch private-form__toggle-switch--xs ">
+                                <input type="checkbox" id="json" class="private-form__toggle-input sr-only">
+                                <span class="uiToggleSwitch private-form__toggle-switch__inner" role="presentation">
+                            
+                            <span class="uiToggleSwitchLabel private-form__toggle-switch__label private-form__toggle-switch__label--checked" data-i18n="toggleOn">
+                              <!--on-->
+                            </span>
+                                <span class="private-form__toggle-switch__handle">
+                              <svg role="presentation" viewBox="0 0 15 15.343" xmlns="http://www.w3.org/2000/svg"><title data-i18n="toggleCheckmark"></title><path fill="#00a4bd" stroke="#ffffff" stroke-width="2" class="private-form__toggle-switch__icon" d="M1.013 8.11c0-.223.078-.412.234-.568l1.14-1.14c.155-.155.345-.233.568-.233s.413.077.57.233l2.46 2.47 5.492-5.5c.156-.156.346-.234.568-.234.224 0 .413.077.57.233l1.138 1.14c.156.155.234.345.234.568 0 .224-.078.414-.234.57l-6.06 6.06-1.14 1.14c-.155.155-.345.233-.568.233s-.413-.078-.57-.234l-1.138-1.14-3.03-3.03c-.156-.156-.234-.346-.234-.57z"></path></svg>
+                              
+                            </span>
+                                <span class="uiToggleSwitchLabel private-form__toggle-switch__label private-form__toggle-switch__label--unchecked" data-i18n="toggleOff">
+                              <!--off-->
+                            </span>
+                                </span>
+                            </label>
+                        </div>
+                        <div id="status"></div>
+                    </div>
                 </div>
             </div>
             <div class="c-tab-slider__tab" id="design-manager">

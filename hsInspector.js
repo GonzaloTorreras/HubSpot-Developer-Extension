@@ -1,27 +1,14 @@
 console.log("hsinspector js loaded!");
 
-var devInfoLinks = document.querySelectorAll(".hs-tools-menu a");
-
-devInfoLinks.forEach(function(el, i) {
-    var linkURL = el.getAttribute("href");
-    var linkText = el.textContent;
-    if (linkText.includes("Developer Info")) {
-        console.log(linkText, linkURL);
-        chrome.runtime.sendMessage({ devInfoURL: linkURL }, function(response) {
-            console.log(response.farewell);
-        });
-    }
-
-
-
-
-});
-
-/*
-function ready(fn) {
-    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading"){
-      fn();
-    } else {
-      document.addEventListener('DOMContentLoaded', fn);
-    }
-  }*/
+var devInfoLink = document.querySelector(".hs-tools-menu a[href*='/___context___/']")
+if (devInfoLink) {
+    chrome.runtime.sendMessage({ devInfoURL: devInfoLink.href }, function (response) {
+        console.table(response)
+        console.log(response.farewell);
+    });
+} else {
+    //console.log("no devInfoLink found");
+    chrome.runtime.sendMessage({ devInfoURL: false }, function (response) { 
+        //console.log(response.farewell);
+    });
+}

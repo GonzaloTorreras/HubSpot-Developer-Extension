@@ -1,5 +1,6 @@
 
 /*Google Analytics*/
+/*
 var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-122315369-1']);
 _gaq.push(['_trackPageview']);
@@ -21,14 +22,13 @@ function trackClick(eventName){
 
 var developerTools = {
 
-
     debugReload: function(debugParam) {
 
         chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
             var tabUrl = new URL(tabs[0].url);
             var params = new URLSearchParams(tabUrl.search);
 
-            trackClick(debugParam);
+            //trackClick(debugParam);
 
             if (debugParam === "hsCacheBuster") {
                 var randomNum = Math.floor(Math.random() * 9999) + 1;
@@ -49,7 +49,7 @@ var developerTools = {
         chrome.tabs.query({ 'active': true, 'lastFocusedWindow': true }, function(tabs) {
             var pageUrl = new URL(tabs[0].url);
             var gradeUrl = pageUrl.origin.replace("://", "%3A%2F%2F") + pageUrl.pathname;
-            trackClick("googlePageSpeed");
+            //trackClick("googlePageSpeed");
 
             $.getJSON('https://www.googleapis.com/pagespeedonline/v4/runPagespeed?url=' + gradeUrl + '&fields=id%2CruleGroups', function(data) {
                 if (data.id) {
@@ -70,8 +70,12 @@ var developerTools = {
     setMenuContext: function() {
         console.log("Set Menu Context run");
 
-        chrome.tabs.getSelected(null, function(tab) {
-            /*getSelected might be deprecated need to review*/
+        // Get the current active tab in the lastly focused window
+        chrome.tabs.query({
+            active: true,
+            lastFocusedWindow: true
+        }, function (tabs) {
+            var tab = tabs[0];
             var tabUrl = tab.url;
             console.log("Current URL: ", tabUrl);
             let appUrl;
@@ -231,10 +235,12 @@ var developerTools = {
         var darkthemeVal = $("#darktheme").prop("checked");
         var uiTweaksVal = $("#uiTweaks").prop("checked");
         var sprockyVal = $("#sprocky").prop("checked");
+        var jsonVal = $("#json").prop("checked");
 
         console.log("dark theme is ", darkthemeVal);
         console.log("UI Tweaks is ", uiTweaksVal);
         console.log("Sprocky is ", sprockyVal);
+        console.log("JSON is ", jsonVal);
 
         chrome.storage.sync.set({
             darktheme: darkthemeVal,
@@ -268,6 +274,17 @@ var developerTools = {
                 status.textContent = "";
             }, 4000);
         });
+
+        chrome.storage.sync.set({
+            json: jsonVal,
+        }, function() {
+            // Update status to let user know options were saved.
+            var status = document.getElementById("status");
+            status.textContent = "Options saved. If you have dev info page open, you will need to refresh to see the theme.";
+            setTimeout(function() {
+                status.textContent = "";
+            }, 4000);
+        });
     },
     getSettings: function() {
         chrome.storage.sync.get(["darktheme"], function(items) {
@@ -297,10 +314,21 @@ var developerTools = {
                 $(".sprocky-toggle .uiToggleSwitch").addClass("uiToggleSwitchOn private-form__toggle-switch--on");
             }
         });
+        chrome.storage.sync.get(["json"], function (items) {
+            // Restores select box and checkbox state using the preferences
+            // stored in chrome.storage.
+            console.log(items);
+            document.getElementById("json").checked = items.json;
+            console.log("json:", items.json);
+            if (items.json) {
+                $(".json-toggle .uiToggleSwitch").addClass("uiToggleSwitchOn private-form__toggle-switch--on");
+            }
+        });
 
     },
     onLoad: function() {
-        /* Temporary fix to the height bug in the popup. This should get removed soon. */
+        /* Temporary fix to the height bug in the popup. This should get removed soon. 
+        Seems to be fixed?
         window.setTimeout(() => {
             $("html, body").css({
                 height: $(".c-tab-slider").outerHeight()
@@ -355,10 +383,14 @@ var developerTools = {
             developerTools.saveSettings();
             $(".sprocky-toggle .uiToggleSwitch").toggleClass("uiToggleSwitchOn private-form__toggle-switch--on");
         });
+        $(".json-toggle input").change(function() {
+            developerTools.saveSettings();
+            $(".json-toggle .uiToggleSwitch").toggleClass("uiToggleSwitchOn private-form__toggle-switch--on");
+        });
 
         $("a.c-banner").click(function(e){
             var tipId = "tip:" + $(this).data("tipid");
-            trackClick(tipId);
+            //trackClick(tipId);
         })
 
     }

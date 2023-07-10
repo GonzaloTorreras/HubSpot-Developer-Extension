@@ -1,18 +1,42 @@
-$(document).ready(function() {
 
-    //formatJSON();
-
+/*// TODO: implemet json_tabs option to define spaces for each tab
+let TAB_SIZE = 4;
+chrome.storage.sync.get([
+    "json", "json_tabs"
+], function(items) {
+    if (items.json) {
+        TAB_SIZE = items.json_tabs;
+        formatJSON();
+        
+*/
+chrome.storage.sync.get([
+    "json"
+], function(items) {
+    if (items.json) {
+        formatJSON();
+    }
 });
 
 function formatJSON() {
-    console.log("okay formatting now");
-    console.log($("body"));
-    if ($("#dev-info").length > 0) {
-
-        // test if content is json
-        if (jsonChecker($("#dev-info").text())) {
-            init("#dev-info");
+    const pre = document.querySelector("body > pre");
+    if (pre) {
+        
+        // test if content looks like json
+        var content = pre.innerText;
+        if (content[0] == "{") {
+            //now double check
+            if (jsonChecker(content)) {
+                console.log("okay formatting now");
+                // hide original
+                pre.style.display = "none";
+                const r = init("body > pre");
+                if (!r) {
+                    //display back the original
+                    pre.style.display = "block";
+                }
+            }
         }
+        
     }
 
     //check if string is valid json
@@ -30,33 +54,86 @@ function formatJSON() {
 
         //get the original and re-parse as JSON
         //var json = $.parseJSON($(ele).text());
-        var json = $.parseJSON($(ele).text());
-
-        //re enconded as string with 4 spaces TAB.
-        $(ele).text(JSON.stringify(json, undefined, 4));
-
-        json = $(ele).text(); //update json var to parse in case its in a pre element(it will be removed).
-
-        //if it's in a pre element swap for a div
-        if ("pre".indexOf(ele)) {
-            $("body").addClass("json-formatted");
-            $(ele).remove();
-        } else {
-            $(ele).addClass("json-formatted");
+        try {
+            var json = JSON.parse(document.querySelector(ele).innerText);
+            // save it on window to make it available
+            window.json = json;
+            console.log("You can access the json object from window.json");
         }
-        //final format
-        $(".json-formatted").html(syntaxHighlight(json));
+        catch (e) {
+            console.log("error parsing json, false positive?"); /* it may happen when you are in the dev info page, but checking the HubSpot devTool page tab */
+            console.log(e);
+            return false;
+        }
+        //re enconded as string with 4 spaces TAB.
+        json = JSON.stringify(json, undefined, 4);
 
-        //attach events
-        $(".json-formatted").find(".minimize-me").click(function() {
-            $(this).parent("ul").toggleClass("minimized");
-        });
+        document.querySelector("html").classList.add("hs-json-formatted");
 
+        // create highlight and append to body
+        let highlight = document.createElement("div");
+        highlight.classList.add("json-formatted");
+        try {
+            highlight.innerHTML = syntaxHighlight(json);    
+        }
+        catch (e) {
+            console.log("error creating highlight");
+            console.log(e);
+            return false;
+        }
+        document.querySelector("body").appendChild(highlight);
+
+        //hide original ele
+        document.querySelector(ele).style.display = "none";
+        
+        
+        //attach events .json-formmated wrapper for each .minimize-me vanilla JS
+        const minimizeMe = document.querySelectorAll(".minimize-me");
+        for (let i = 0; i < minimizeMe.length; i++) {
+            minimizeMe[i].addEventListener("click", function () {
+                this.closest("ul").classList.toggle("minimized");
+            });
+        }
+        /*
+            $(".json-formatted").find(".minimize-me").click(function() {
+                $(this).parent("ul").toggleClass("minimized");
+            });
+        */
         copySnippetInit(".json-formatted");
+        return true;
     }
 
     function copySnippetInit(ele) {
-        //attach event
+        //attach event to all .key, then reset .active nodes and add .active to all the parent li nodes.
+        const keys = document.querySelectorAll(ele + " .key");
+        for (let i = 0; i < keys.length; i++) {
+            keys[i].addEventListener("click", function () {
+                const actives = document.querySelectorAll(ele + " .active");
+                for (let j = 0; j < actives.length; j++) {
+                    actives[j].classList.remove("active");
+                }
+                
+                //find all parents "li" elements and add .active
+                let parents = [];
+                let parent = this.closest("li")
+                while (parent) {
+                    parents.push(parent);
+                    parent.classList.add("active");
+                    parent = parent.parentElement.closest("li");
+                }
+
+                let snippet = this.getAttribute("data-clipboard-text");
+                if (!snippet) {
+                    //snippet = generateSnippet(keys[i]);
+                    snippet = generateSnippet2(parents.reverse());
+                    if (snippet)
+                        this.setAttribute("data-clipboard-text", snippet);
+                }
+                if (snippet)
+                    copy(snippet);
+            });
+        }
+/*
         $(ele + " .key").click(function() {
             //reset active nodes
             $(ele + " .active").removeClass("active");
@@ -70,14 +147,22 @@ function formatJSON() {
             copy(snippet);
 
         });
-
-        //copy value
+*/
+        //copy value on click of ele + .number or ele + .string
+        document.querySelectorAll(ele + " .number," + ele + " .string").forEach(function (item) {
+            item.addEventListener("click", function () {
+                console.log(this.innerText);
+                copy(String(this.innerText));
+            });
+        });
+        /*
         $(ele + " .number," + ele + " .string").click(function() {
-            //console.log($(this).text() );
+            console.log($(this).text() );
             copy(String($(this).text()));
 
             $(this).attr("data-clipboard-text", $(this).text());
         });
+        */
     }
 
     function copy(string) {
@@ -88,14 +173,43 @@ function formatJSON() {
         });
     }
 
+    function generateSnippet2(eles) { 
+        let snippet = [];
+        console.log("Total elements: " + eles.length + "\n");
+
+        for (let i = 0; i < eles.length; i++) {
+            console.log("ele[" + i + "]:\n");
+            const ulParent = eles[i].closest("ul");
+            if (ulParent.classList.contains("list")) {
+                const key = "[X]" // find X
+                snippet.push(key);
+            } else {
+
+                const ele = eles[i].closest("ul").querySelector(".active > .key");
+                console.log("ele:\n" + ele);
+                if (ele) {
+                    const key = ele.innerText.replaceAll(":", "").replaceAll('"', '');
+                    console.log("key:\n" + key)
+                    snippet.push(key);
+                } else {
+                    console.log("error, no key found");
+                    console.log(eles[i]);
+                    console.log(ele);
+                }
+            }
+
+        }
+
+        return "{{ " + snippet.join(".") + " }}";
+    }
+
+    // TODO, remove this, but finish first the generateSnippet2, add array fors etc.
     function generateSnippet(ele) {
         var snippet = "{{ ";
         var separator = "";
-
         var option = "for";
 
-
-        $(ele + " .active").each(function(index, value) {
+        ele.querySelectorAll(".active").forEach(function(index, value) {
             //index == number of iterations
 
             //ul parent
@@ -118,8 +232,10 @@ function formatJSON() {
         snippet = snippet.replace(/"/g, "").replace(/:/g, "");
 
         //console.log(snippet);
-
-        return snippet;
+        if (snippet != "{{ }}") 
+            return snippet;
+        else
+            return false
     }
 
     function syntaxHighlight(json) {
@@ -188,19 +304,3 @@ function formatJSON() {
     }
 }
 
-
-// Set up context menu at install time.
-/*
-chrome.runtime.onInstalled.addListener(function() {
-  console.log("listener added.");
-  var context = "page";
-  var title = "Format JSON";
-  var id = chrome.contextMenus.create({"title": title, "contexts":[context],
-                                       "id": "context" + context,
-                                       "onclick": formatJSON()
-                                     });  
-});
-*/
-// add click event
-//console.log("adding click event listener");
-//chrome.contextMenus.onClicked.addListener(formatJSON());

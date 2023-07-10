@@ -1,4 +1,5 @@
 /*Google Analytics*/
+/* temporary kill GA
 var _gaq = _gaq || [];
 _gaq.push(["_setAccount", "UA-122315369-1"]);
 
@@ -10,7 +11,9 @@ _gaq.push(["_setAccount", "UA-122315369-1"]);
     var s = document.getElementsByTagName("script")[0];
     s.parentNode.insertBefore(ga, s);
 })();
+*/
 /*end google analytics*/
+/*
 function trackClick(eventName) {
     console.log("track:" + eventName);
     _gaq.push(["_trackEvent", eventName, "clicked"]);
@@ -19,7 +22,8 @@ function trackClick(eventName) {
 function trackPageView() {
     _gaq.push(["_trackPageview"]);
 };
-
+*/
+console.log("background.js loaded");
 /*listen for clicks*/
 chrome.runtime.onMessage.addListener(
     function(request, sender, sendResponse) {
@@ -30,27 +34,19 @@ chrome.runtime.onMessage.addListener(
         if (request.trackClick) {
             trackClick(request.trackClick);
             sendResponse({ farewell: "Tracked!" });
+        } else if (request.devInfoURL) { 
+            if (request.devInfoURL) {
+                sendResponse({ farewell: "devInfoURL recieved." });
+            } else { 
+                sendResponse({ farewell: "no devInfoURL found, gotcha" });
+            }
+        } else { 
+            sendResponse({ farewell: "undefined" });
         }
+        //console.table(request)
     }
 );
 
-/*
-chrome.runtime.onConnect.addListener(function(devToolsConnection) {
-    // assign the listener function to a variable so we can remove it later
-    var devToolsListener = function(message, sender, sendResponse) {
-        // Inject a content script into the identified tab
-        console.log("script:",message.scriptToInject);
-        chrome.tabs.executeScript(message.tabId,
-            { file: message.scriptToInject });
-    }
-    // add the listener
-    devToolsConnection.onMessage.addListener(devToolsListener);
-
-    devToolsConnection.onDisconnect.addListener(function() {
-         devToolsConnection.onMessage.removeListener(devToolsListener);
-    });
-});
-*/
 
 
 chrome.commands.onCommand.addListener(function(command) {
@@ -58,8 +54,6 @@ chrome.commands.onCommand.addListener(function(command) {
     if (command === "bust-cache") {
         console.log("Cache bustato");
         _gaq.push(["_trackEvent", "hsCacheBuster", "kbShortcutUsed"]);
-
-
 
 
 
@@ -90,8 +84,11 @@ chrome.commands.onCommand.addListener(function(command) {
             }
             chrome.tabs.update(tabs[0].id, { url: tabUrl.origin + tabUrl.pathname + '?' + params.toString() });
 
-
         });
-
     }
+});
+
+chrome.runtime.onSuspend.addListener(() => {
+  console.log("Unloading.");
+  chrome.browserAction.setBadgeText({text: ""});
 });

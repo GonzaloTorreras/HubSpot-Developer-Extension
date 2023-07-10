@@ -1,11 +1,13 @@
-$(document).ready(function() {
+const { getScript } = require("jquery");
+
+document.addEventListener("DOMContentLoaded", function () {
 
     /*This script runs once the HubSpot Back-end loads.*/
 
     /*trackClick sends the click event to the background js which has google analytics set up, this prevents google analytics running on the page and means the extension can only track it's own events.*/
     function trackClick(eventName) { /*Analytics*/
         //console.log("trackClick run");
-        chrome.runtime.sendMessage({ trackClick: eventName }, function(response) {
+        chrome.runtime.sendMessage({ trackClick: eventName }, function (response) {
             //console.log(response.farewell);
         });
     }
@@ -14,7 +16,7 @@ $(document).ready(function() {
     var currentScreen = "";
     var devMenu = false;
 
-    var waitForEl = function(selector, callback) {
+    var waitForEl = function (selector, callback) {
         /*Will poll for element only 10 times before stopping*/
         var timesPolled = 0;
         (function waiting() {
@@ -22,7 +24,7 @@ $(document).ready(function() {
                 if ($(selector).text().length) {
                     callback();
                 } else {
-                    setTimeout(function() {
+                    setTimeout(function () {
                         timesPolled++;
                         waiting(selector, callback);
                     }, 100);
@@ -33,46 +35,41 @@ $(document).ready(function() {
     };
 
     function setTitle(siteName) {
+        const titlesIcons = {
+            "design-manager": "🎨DM",
+            "content-staging": "🎭CS",
+            "dashboard": "📊Da",
+            "website-pages": "📑WP",
+            "landing-pages": "📄LP",
+            "file-manager": "📝FM",
+            "hubdb": "📦DB",
+            "settings": "⚙︝Se",
+            "navigation-settings": "🗺︝Na",
+            "blog": "📰Bl",
+            "url-redirects": "🔀UR"
+        };
+
+        const titles = {
+            "design-manager": "DM| ",
+            "content-staging": "CS| ",
+            "dashboard": "Da| ",
+            "website-pages": "WP| ",
+            "landing-pages": "LP| ",
+            "file-manager": "FM| ",
+            "hubdb": "DB| ",
+            "settings": "Se| ",
+            "navigation-settings": "Na| ",
+            "blog": "Bl| ",
+            "url-redirects": "UR| "
+        };
         var portal = siteName.replace("www.", "");
-        if (currentScreen === "design-manager") {
-            //document.title = "🎨DM|"+portal+"|HS";
-            document.title = "DM|" + portal + "|HS";
-        } else if (currentScreen === "content-staging") {
-            //document.title = "🎭CS|"+portal+"|HS";
-            document.title = "CS|" + portal + "|HS";
-        } else if (currentScreen === "dashboard") {
-            //document.title = "📊Da|"+portal+"|HS";
-            document.title = "Da|" + portal + "|HS";
-        } else if (currentScreen === "website-pages") {
-            //document.title = "📑WP|"+portal+"|HS";
-            document.title = "WP|" + portal + "|HS";
-        } else if (currentScreen === "landing-pages") {
-            //document.title = "📄LP|"+portal+"|HS";
-            document.title = "LP|" + portal + "|HS";
-        } else if (currentScreen === "file-manager") {
-            //document.title = "📝FM|"+portal+"|HS";
-            document.title = "FM|" + portal + "|HS";
-        } else if (currentScreen === "hubdb") {
-            //document.title = "📦DB|"+portal+"|HS";
-            document.title = "DB|" + portal + "|HS";
-        } else if (currentScreen === "settings") {
-            //document.title = "⚙︝Se|"+portal+"|HS";
-            document.title = "Se|" + portal + "|HS";
-        } else if (currentScreen === "navigation-settings") {
-            //document.title = "🗺︝Na|"+portal+"|HS";
-            document.title = "Na|" + portal + "|HS";
-        } else if (currentScreen === "blog") {
-            //document.title = "📰Bl|"+portal+"|HS";
-            document.title = "Bl|" + portal + "|HS";
-        } else if (currentScreen === "url-redirects") {
-            //document.title = "🔀UM|"+portal+"|HS";
-            document.title = "UR|" + portal + "|HS";
-        }
+        document.title = titlesIcons[currentScreen] + portal + "|HS";
+        document.title = titles[currentScreen] + portal + "|HS";
     }
 
-    // A fun April fools joke, shows 'Sprocky'
+    /* TODO: Remove jQuery from sprocky */
     function sprocky() {
-        chrome.storage.sync.get(['sprocky2'], function(result) {
+        chrome.storage.sync.get(['sprocky2'], function (result) {
 
             //Check if sprocky is enabled
             if (result.sprocky2) {
@@ -83,7 +80,7 @@ $(document).ready(function() {
                     "#sprocky-svg{-webkit-transform-origin:50% 50%;transform-origin:50% 50%;-webkit-perspective:1000px;perspective:1000px;-webkit-animation:lookaround 20s infinite;animation:lookaround 20s infinite}#sprocky-svg *{-webkit-transform-origin:50% 50%;transform-origin:50% 50%}#sprocky-svg.blink #left_eye_white,#sprocky-svg.blink #left_pupil,#sprocky-svg.blink #right_eye_white,#sprocky-svg.blink #right_pupil{-webkit-animation:blink 8s infinite;animation:blink 8s infinite}#sprocky-svg.brow-bounce #left_eyebrow,#sprocky-svg.brow-bounce #right_eyebrow{-webkit-animation:brow-bounce 1.4s 1;animation:brow-bounce 1.4s 1}#sprocky-svg.eyebrow-raise #right_eyebrow{--x:0;--y:0;-webkit-transform:rotateZ(20deg);transform:rotateZ(20deg);position:relative;-webkit-transform-origin:var(--x) var(--y);transform-origin:var(--x) var(--y)}#sprocky-svg .cls-1{fill:#f47622}#sprocky-svg .cls-2{fill:url(#radial-gradient)}#sprocky-svg .cls-3{fill:#231f20}#sprocky-svg .cls-4{fill:url(#radial-gradient-2)}@-#sprocky-svg{-webkit-transform-origin:50% 50%;transform-origin:50% 50%;-webkit-perspective:1000px;perspective:1000px;-webkit-animation:lookaround 15s infinite;animation:lookaround 15s infinite}#sprocky-svg *{-webkit-transform-origin:50% 50%;transform-origin:50% 50%}#sprocky-svg.blink #left_eye_white,#sprocky-svg.blink #left_pupil,#sprocky-svg.blink #right_eye_white,#sprocky-svg.blink #right_pupil{-webkit-animation:blink 8s infinite;animation:blink 8s infinite}#sprocky-svg.brow-bounce #left_eyebrow,#sprocky-svg.brow-bounce #right_eyebrow{-webkit-animation:brow-bounce 1.4s 1;animation:brow-bounce 1.4s 1}#sprocky-svg.eyebrow-raise #right_eyebrow{--x:0;--y:0;-webkit-transform:rotateZ(20deg);transform:rotateZ(20deg);position:relative;-webkit-transform-origin:var(--x) var(--y);transform-origin:var(--x) var(--y)}#sprocky-svg .cls-1{fill:#f47622}#sprocky-svg .cls-2{fill:url(#radial-gradient)}#sprocky-svg .cls-3{fill:#231f20}#sprocky-svg .cls-4{fill:url(#radial-gradient-2)}@-webkit-keyframes lookaround{0%{-webkit-transform:rotate3d(-1,1,0,35deg);transform:rotate3d(-1,1,0,35deg)}5%{-webkit-transform:rotate3d(0,0,0,0);transform:rotate3d(0,0,0,0)}85%{-webkit-transform:rotate3d(0,0,0,0);transform:rotate3d(0,0,0,0)}100%{-webkit-transform:rotate3d(-1,1,0,35deg);transform:rotate3d(-1,1,0,35deg)}}@keyframes lookaround{0%{-webkit-transform:rotate3d(-1,1,0,35deg);transform:rotate3d(-1,1,0,35deg)}5%{-webkit-transform:rotate3d(0,0,0,0);transform:rotate3d(0,0,0,0)}85%{-webkit-transform:rotate3d(0,0,0,0);transform:rotate3d(0,0,0,0)}100%{-webkit-transform:rotate3d(-1,1,0,35deg);transform:rotate3d(-1,1,0,35deg)}}@-webkit-keyframes blink{0%{-webkit-transform:scaleY(1);transform:scaleY(1)}48%{-webkit-transform:scaleY(1);transform:scaleY(1)}50%{-webkit-transform:scaleY(.01);transform:scaleY(.01)}52%{-webkit-transform:scaleY(1);transform:scaleY(1)}100%{-webkit-transform:scaleY(1);transform:scaleY(1)}}@keyframes blink{0%{-webkit-transform:scaleY(1);transform:scaleY(1)}48%{-webkit-transform:scaleY(1);transform:scaleY(1)}50%{-webkit-transform:scaleY(.01);transform:scaleY(.01)}52%{-webkit-transform:scaleY(1);transform:scaleY(1)}100%{-webkit-transform:scaleY(1);transform:scaleY(1)}}@-webkit-keyframes brow-bounce{0%{-webkit-transform:translateY(0);transform:translateY(0)}20%{-webkit-transform:translateY(0);transform:translateY(0)}40%{-webkit-transform:translateY(-5%);transform:translateY(-5%)}50%{-webkit-transform:translateY(0);transform:translateY(0)}70%{-webkit-transform:translateY(-5%);transform:translateY(-5%)}90%{-webkit-transform:translateY(0);transform:translateY(0)}100%{-webkit-transform:translateY(0);transform:translateY(0)}}@keyframes brow-bounce{0%{-webkit-transform:translateY(0);transform:translateY(0)}20%{-webkit-transform:translateY(0);transform:translateY(0)}40%{-webkit-transform:translateY(-5%);transform:translateY(-5%)}50%{-webkit-transform:translateY(0);transform:translateY(0)}70%{-webkit-transform:translateY(-5%);transform:translateY(-5%)}90%{-webkit-transform:translateY(0);transform:translateY(0)}100%{-webkit-transform:translateY(0);transform:translateY(0)}}webkit-keyframes lookaround{0%{-webkit-transform:rotate3d(-1,1,0,35deg);transform:rotate3d(-1,1,0,35deg)}5%{-webkit-transform:rotate3d(0,0,0,0);transform:rotate3d(0,0,0,0)}85%{-webkit-transform:rotate3d(0,0,0,0);transform:rotate3d(0,0,0,0)}100%{-webkit-transform:rotate3d(-1,1,0,35deg);transform:rotate3d(-1,1,0,35deg)}}@keyframes lookaround{0%{-webkit-transform:rotate3d(-1,1,0,35deg);transform:rotate3d(-1,1,0,35deg)}5%{-webkit-transform:rotate3d(0,0,0,0);transform:rotate3d(0,0,0,0)}85%{-webkit-transform:rotate3d(0,0,0,0);transform:rotate3d(0,0,0,0)}100%{-webkit-transform:rotate3d(-1,1,0,35deg);transform:rotate3d(-1,1,0,35deg)}}@-webkit-keyframes blink{0%{-webkit-transform:scaleY(1);transform:scaleY(1)}48%{-webkit-transform:scaleY(1);transform:scaleY(1)}50%{-webkit-transform:scaleY(.01);transform:scaleY(.01)}52%{-webkit-transform:scaleY(1);transform:scaleY(1)}100%{-webkit-transform:scaleY(1);transform:scaleY(1)}}@keyframes blink{0%{-webkit-transform:scaleY(1);transform:scaleY(1)}48%{-webkit-transform:scaleY(1);transform:scaleY(1)}50%{-webkit-transform:scaleY(.01);transform:scaleY(.01)}52%{-webkit-transform:scaleY(1);transform:scaleY(1)}100%{-webkit-transform:scaleY(1);transform:scaleY(1)}}@-webkit-keyframes brow-bounce{0%{-webkit-transform:translateY(0);transform:translateY(0)}20%{-webkit-transform:translateY(0);transform:translateY(0)}40%{-webkit-transform:translateY(-5%);transform:translateY(-5%)}50%{-webkit-transform:translateY(0);transform:translateY(0)}70%{-webkit-transform:translateY(-5%);transform:translateY(-5%)}90%{-webkit-transform:translateY(0);transform:translateY(0)}100%{-webkit-transform:translateY(0);transform:translateY(0)}}@keyframes brow-bounce{0%{-webkit-transform:translateY(0);transform:translateY(0)}20%{-webkit-transform:translateY(0);transform:translateY(0)}40%{-webkit-transform:translateY(-5%);transform:translateY(-5%)}50%{-webkit-transform:translateY(0);transform:translateY(0)}70%{-webkit-transform:translateY(-5%);transform:translateY(-5%)}90%{-webkit-transform:translateY(0);transform:translateY(0)}100%{-webkit-transform:translateY(0);transform:translateY(0)}}",
                     head = document.head || document.getElementsByTagName("head")[0],
                     style = document.createElement("style");
-                    style.id ="sprocky-styles";
+                style.id = "sprocky-styles";
                 head.appendChild(style);
                 style.type = "text/css";
                 style.appendChild(document.createTextNode(css));
@@ -158,15 +155,16 @@ $(document).ready(function() {
 
                 $("body").append($sprocky);
                 $(".sprockyimg").append($sprockySVG);
-                
-                
+
+
             }
         });
     }
 
+
     // console.log("Current URL: ",tabUrl);
     let appUrl;
-    if(~tabUrl.indexOf("local.hubspot")) {
+    if (~tabUrl.indexOf("local.hubspot")) {
         appUrl = ~tabUrl.indexOf("local.hubspotqa") ? 'local.hubspotqa.com' : 'local.hubspot.com'
     }
     else {
@@ -178,160 +176,52 @@ $(document).ready(function() {
         //console.log("This is the hubspot backend.");
         chrome.storage.sync.get([
             'uitweaks'
-        ], function(items) {
+        ], function (items) {
             if (items.uitweaks) {
-                $("html").addClass("ext-ui-tweaks");
+                document.querySelector("html").classList.add("ext-ui-tweaks");
             }
         });
-        //console.log("DevMenu:", devMenu);
-        if (~tabUrl.indexOf("/design-manager/")) {
-            console.log("Design Manager is active");
-            currentScreen = "design-manager";
-            chrome.storage.sync.get([
-                "darktheme"
-            ], function(items) {
-                if (items.darktheme) {
-                    $("body").addClass("ext-dark-theme");
-                }
-            });
 
-            // Show Sprocky
-            sprocky();
-        }
-        if (~tabUrl.indexOf("/staging/")) {
-            currentScreen = "content-staging";
-        }
-        if (~tabUrl.indexOf("/reports-dashboard/")) {
-            currentScreen = "dashboard";
-        }
-        if (~tabUrl.indexOf("/pages/")) {
-            if (~tabUrl.indexOf("/site/")) {
-                currentScreen = "website-pages";
-            } else if (~tabUrl.indexOf("/landing/")) {
-                currentScreen = "landing-pages";
-            }
-        }
-        if (~tabUrl.indexOf("/file-manager-beta/")) {
-            currentScreen = "file-manager";
-        }
-        if (~tabUrl.indexOf("/hubdb/")) {
-            currentScreen = "hubdb";
-        }
-        if (~tabUrl.indexOf("/settings/")) {
-            currentScreen = "settings";
-            if (~tabUrl.indexOf("/navigation")) {
-                currentScreen = "navigation-settings";
-            }
-        }
-        if (~tabUrl.indexOf("/blog/")) {
-            currentScreen = "blog";
-        }
-        if (~tabUrl.indexOf("/url-redirects")) {
-            currentScreen = "url-redirects";
-        }
-        chrome.storage.sync.get([
-            'uitweaks'
-        ], function(items) {
-            if (items.uitweaks) {
-
-
-                waitForEl(".account-name", function() {
-                    setTitle($(".account-name").text());
-                });
-
-
-                function generateDevMenuItem(buttonLabel, hubId, url) {
-                    /*expects button label string, hubId string, url string.*/
-                    var link = url.replace("_HUB_ID_", hubId);
-                    var html = "<li role='none'>";
-                    html += "<a role='menuitem' data-tracking='click hover' id='nav-secondary-design-tools-beta' class='navSecondaryLink' href='" + link + "' >";
-                    html += buttonLabel;
-                    html += "</a>";
-                    html += "</li>";
-
-                    return html;
-                }
-
-                function generateAllMenuItems(hubId) {
-                    var prefix = "/";
-                    var html = generateDevMenuItem("Design Manager", hubId, prefix + "design-manager/_HUB_ID_");
-                    html += generateDevMenuItem("Content Staging", hubId, prefix + "content/_HUB_ID_/staging/");
-                    html += generateDevMenuItem("Website Pages", hubId, prefix + "pages/_HUB_ID_/manage/site/domain/all/listing/all");
-                    html += generateDevMenuItem("HubDB", hubId, prefix + "hubdb/_HUB_ID_");
-                    html += generateDevMenuItem("File Manager", hubId, prefix + "file-manager-beta/_HUB_ID_");
-                    html += generateDevMenuItem("Advanced Menus", hubId, prefix + "settings/_HUB_ID_/website/navigation");
-                    html += generateDevMenuItem("Content Settings", hubId, prefix + "settings/_HUB_ID_/website/pages/all-domains/page-templates");
-                    html += generateDevMenuItem("URL Redirects", hubId, prefix + "domains/_HUB_ID_/url-redirects");
-                    html += generateDevMenuItem("Marketplace", hubId, prefix + "marketplace/_HUB_ID_/products");
-
-
-                    return html;
-                }
-
-                function generateAppUrl(path) {
-                    return "https://" + appUrl + path;
-                }
-
-                function generateDevMenu(hubId) {
-                    var html = '<li id="ext-dev-menu-wrapper" role="none" class="expandable ">';
-                    html += '<a href="#" id="nav-primary-dev-branch" aria-haspopup="true" aria-expanded="false" class="primary-link" data-tracking="click hover" role-menu="menuitem">';
-                    html += 'Developer Extension ';
-                    html += '<svg style="max-height:4px;max-width:10px;" class="nav-icon arrow-down-icon" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 13"><g><g><path d="M21.47,0.41L12,9.43l-9.47-9A1.5,1.5,0,1,0,.47,2.59l10.5,10,0,0a1.51,1.51,0,0,0,.44.28h0a1.43,1.43,0,0,0,1,0h0A1.52,1.52,0,0,0,13,12.61l0,0,10.5-10A1.5,1.5,0,1,0,21.47.41" transform="translate(0 0)"></path></g></g></svg>';
-                    html += '</a>';
-                    html += '<div id="ext-dev-menu" aria-label="Developer" role="menu" class="secondary-nav expansion" style="min-height: 0px">';
-                    html += '<ul role="none">';
-                    html += generateAllMenuItems(hubId);
-                    html += '</ul>';
-                    html += '</div>';
-                    html += '</li>';
-
-
-
-                    $(".nav-links ul.primary-links>li:first-child").after(html);
-
-                    $("#ext-dev-menu-wrapper > a").click(function(e) {
-
-                        //console.log("dev menu clicked!");
-                        e.preventDefault();
-                        /*$("#ext-dev-menu").toggleClass("expansion");*/
-
-                        //$("#ext-dev-menu").toggle();
-
-                        var isExpanded = $(this).attr("aria-expanded");
-
-                        if (isExpanded === "true") {
-                            $(this).attr("aria-expanded", "false");
-                            trackClick("devMenu-Closed");
-                        } else {
-                            $(this).attr("aria-expanded", "true");
-                            trackClick("devMenu-Opened");
-                        }
-                        $(this).parent("li").toggleClass("active");
-                    });
-
-                    $("#ext-dev-menu .navSecondaryLink, #ext-dev-menu .devMenuLink").click(function() {
-                        //console.log("track click");
-                        var linkName = "devMenu:" + $(this).text();
-                        //console.log(linkName);
-                        trackClick(linkName);
-                    });
-                }
-
-                /*get current HubSpot ID*/
-                var hubId;
-                waitForEl(".navtools", function () {
-                    hubId = $(".navtools #navSetting").attr("href").split("/user-preferences/")[1].split("?")[0];
-                    /*inject dev menu*/
-                    generateDevMenu(hubId);
-                });
-            }
-
-        });
-    } else if (~tabUrl.indexOf("designers.hubspot.com/docs/")) {
-        //console.log("Viewing HubSpot Documentation");
-        currentScreen = "docs";
-    } else {
-        //console.log("This is not in the HubSpot Backend");
+        function getScreen(~tabUrl) {
+            switch (true) {
+                case ~tabUrl.indexOf("/design-manager/"):
+                    return "design-manager";
+                
+                case ~tabUrl.indexOf("/staging/"):
+                    return "staging";
+                
+                case ~tabUrl.indexOf("/reports-dashboard/"):
+                    return "reports-dashboard";
+                
+                case ~tabUrl.indexOf("/pages/"):
+                    if (~tabUrl.indexOf("/site/")) {
+                        return "website-pages";
+                    } else if (~tabUrl.indexOf("/landing/")) {
+                        return "landing-pages";
+                    }
+                    return "pages";
+                case ~tabUrl.indexOf("/file-manager-beta/" || "/file-manager/"):
+                    return "file-manager";
+                
+                case ~tabUrl.indexOf("/hubdb/"):
+                    return "hubdb";
+                
+                case ~tabUrl.indexOf("/settings/"):
+                    if (~tabUrl.indexOf("/navigation")) {
+                        return "navigation";
+                    }
+                    return "settings";
+                
+                case ~tabUrl.indexOf("/blog/"):
+                    return "blog";
+                
+                case ~tabUrl.indexOf("/url-redirects"):
+                    return "url-redirects";
     }
+    
+}
+        
+        const currentScreen = getScreen(~tabUrl);
 
-});
+
+

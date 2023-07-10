@@ -1,10 +1,10 @@
 {
-    "manifest_version": 2,
+    "manifest_version": 3,
     "name": "__MSG_extName__",
-    "version": "1.05.09",
+    "version": "1.06.01",
     "default_locale": "en",
     "description": "__MSG_extDesc__",
-    "browser_action": {
+    "action": {
         "default_popup": "popup.html",
         "default_title": "HubSpot Dev Tools",
         "default_icon": {
@@ -22,32 +22,56 @@
         "48": "icon-48.png",
         "128": "icon-128.png"
     },
-    "permissions": [
-        "storage",
-        "activeTab"
-    ],
-    "optional_permissions": [
+    "permissions": ["storage", "activeTab", "scripting"],
+    "optional_permissions": [],
+    "host_permissions": [
         "https://app.hubspot.com/*",
         "https://app.hubspotqa.com/*",
         "https://local.hubspot.com/*",
-        "https://local.hubspotqa.com/*"
+        "https://local.hubspotqa.com/*",
+        "https://*/*",
+        "http://*/*"
     ],
-    "web_accessible_resources": [
-        "mac-text-cursor.svg",
-        "mac-text-cursor.png"
-    ],
-    "content_scripts": [{
-        "run_at": "document_idle",
-        "js": ["jquery-3.2.1.min.js", "design-manager.js"],
-        "css": ["hsDarkIde.css"],
-        "document_idle": "document_start",
-        "matches": ["https://local.hubspot.com/*", "https://local.hubspotqa.com/*","https://app.hubspot.com/*", "https://app.hubspotqa.com/*","https://login.hubspot.com/*"]
+    /* not sure why doesn't work
+    "web_accessible_resources": [{
+        "resources": ["mac-text-cursor.svg", "mac-text-cursor.png"]
     }],
-    "content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'",
+    */
+    "content_scripts": [
+        {
+            "run_at": "document_idle",
+            "js": ["jquery-3.2.1.min.js", "design-manager.js"],
+            "css": ["hsDarkIde.css"],
+            "document_idle": "document_start",
+            "matches": [
+                "https://local.hubspot.com/*",
+                "https://local.hubspotqa.com/*",
+                "https://app.hubspot.com/*",
+                "https://app.hubspotqa.com/*",
+                "https://login.hubspot.com/*"
+            ]
+        },
+        {
+            "run_at": "document_idle",
+            "js": [
+                "jquery-3.2.1.min.js",
+                "clipboard.min.js",
+                //"json-formatter.js",
+                "json-formatter-v2.js"
+            ],
+            "css": ["json-formatter.css"],
+            "document_idle": "document_start",
+            "matches": ["https://*/___context___*"]
+        }
+    ],
+    /* temporary kill GA because https://stackoverflow.com/questions/68740371/issue-in-content-security-policy-in-chrome-extension-manifest-version-3
+    "content_security_policy": {
+        "extension_pages": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'"
+    },
+    */
     "options_page": "options.html",
     "background": {
-        "persistent": true,
-        "scripts": ["hot-reload.js", "background.js"]
+        "service_worker": "background.js"
     },
     "devtools_page": "devtools.html",
     "commands": {

@@ -1,31 +1,24 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <link rel="stylesheet" href="json-formatter.css">
+        
+    </head>
+    <body>
+        <div class="explanation">
+            <h1>Loading...</h1>
+        </div>
+        <div class="ask-permissions-wrapper" style="display:none">
+            <h2>We need your permission</h2>
+            <p>To use this feature you need to grant the permission to execute injected JavaScript in this domain(or you can activate globally).</p>
+            <button id="ask-permissions">Activate permissions</button>
+        </div>
 
-<head>
-    <link href="json-formatter.css">
-</head>
-
-<body>
-    <div class="explanation" style="color:#fff;">
-        <h1>Developer Info</h1>
-        <p>Stay Tuned! We are working with HubSpot to find a way to securely pull in the developer info, a change on HubSpot's end disables our ability to pull it.</p>
-        <p>If/when we get this feature working we will be able to explore doing a lot more powerful things for you as developers. Some possible examples of interesting things might be:</p>
-        <ul>
-            <li>Displaying modules that are in flex columns with quick access to their field data.</li>
-            <li>Highlighting field data being outputted in modules</li>
-            <li>Have a nice UI that lets you get at the specific developer info you want, in a more friendly format than a gigantic json array.</li>
-        </ul>
-        <!--<p style="color:#fff;">This feature is in testing, and in-fact is expected to stop working around May 23rd due to a HubSpot change. This feature pulls the developer info for the current HubSpot page, formats it into human readable form, with collapsable sections and
-            quick-copy functionality. Simply click on the key name and it will copy the HubL required to get that variable, click on the value itself to simply copy the current value.</p>
-        <h2 style="color:#fff;">This feature requires a special chrome permission</h2>
-        <p style="color:#fff;">Currently this feature requires the a chrome permission that gives the extension access to your basic tab information. No data of yours is stored nor transmitted anywhere. <a target="_blank" href="https://github.com/TheWebTech/HubSpot-Developer-Extension/wiki/Privacy-Policy">Our Privacy Policy</a>            explains in detail how data is handled.</p>-->
-    </div>
-    <!--<button id="load">Load Dev Info</button>-->
-
-    <script src="/jquery-3.2.1.min.js"></script>
-    <script src="panel.js"></script>
-    <script src="clipboard.min.js"></script>
-    <script src="json-formatter.js"></script>
-</body>
-
+        <pre id="result"></pre>
+        <script src="/jquery-3.2.1.min.js"></script>
+        <script src="panel.js"></script>
+        <script src="clipboard.min.js"></script>
+        <script defer src="json-formatter-v2.js"></script>
+        <style>.json-formatted{overflow: auto;}</style>
+    </body>
 </html>
