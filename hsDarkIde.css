@@ -14,7 +14,7 @@ html.ext-ui-tweaks .cmv2-edit-form {
     position: relative!important;
     padding-bottom: 10px!important;
   }
-  
+
 html.ext-ui-tweaks .cmv2-edit-form-back-link {
     position: absolute!important;
     bottom: -36px!important;
@@ -51,10 +51,10 @@ body.hubspot.design-manager .simple-menus-menu-tree .simple-menus-menu-item-labe
 }
 
 
-/* ******* 
-* Horizontal Tab Scrollbar -- Height Modification 
+/* *******
+* Horizontal Tab Scrollbar -- Height Modification
 * Kind of a convoluted height modification to the base elements surrounding the scroll.
-* Also looks like some injected styles might be impacting this. 
+* Also looks like some injected styles might be impacting this.
 * Possibly will need to address this post-hoc.
 **********/
 
@@ -90,6 +90,7 @@ html.ext-ui-tweaks body.design-manager .private-button--transparent.private-butt
 }
 
 
+
 /* End of Horizontal Tab Scrollbar -- Height Modification */
 
 
@@ -100,9 +101,9 @@ html.ext-ui-tweaks body.design-manager .private-button--transparent.private-butt
 
 
 /*
- The idea behind is offer it as a base to be easily editable 
- -so anyone can do a new theme EZ. Or even do it 
- fully configurable inside the extension opt. page. 
+ The idea behind is offer it as a base to be easily editable
+ -so anyone can do a new theme EZ. Or even do it
+ fully configurable inside the extension opt. page.
 
  For now hover,focus or active use the same -hover variable,
  for a more rich theme we can consider in the future upgrade and split
@@ -132,7 +133,7 @@ body.design-manager.ext-dark-theme button.uiButton.private-button.private-button
 	color: rgba(255, 255, 255, 0.5) !important;
 }
 body.design-manager.ext-dark-theme button.uiButton.private-button.private-button--xs.private-button--tertiary-light.private-button-select-group__option.private-button--active {
-	
+
 	color: #fff !important;
 	border-color:rgb( var(--rgb-details-color) ) !important;
 }
@@ -568,7 +569,7 @@ body.design-manager.ext-dark-theme.layout-editor--is_active .layout-tree .widget
 
 
 /*body.design-manager.ext-dark-theme .layout-tree .widget.is--widget-selected{
-	
+
 }*/
 
 body.design-manager.ext-dark-theme .cm-s-hubspot-canvas-light .CodeMirror-cursor {
@@ -621,6 +622,10 @@ body.design-manager.ext-dark-theme ul.uiList.private-list--unstyled.private-drop
 
 body.design-manager.ext-dark-theme .UIExpandableSection__ExpandableHeader-gJHpqS {
 	background-color: transparent !important;
+}
+
+body.design-manager.ext-dark-theme div[class*="ExpandableHeader"] {
+    background-color: #253342;
 }
 
 
@@ -737,7 +742,7 @@ body.design-manager.ext-dark-theme .mce-hubspot-popover .jPSLnJ{
 	color: rgba( var(--rgb-details-color), 1) !important;
 	text-decoration:underline!important;
 	font-style:italic!important;
-	
+
 }
 /* inactive tab */
 
@@ -1032,7 +1037,7 @@ body.design-manager.ext-dark-theme .private-step-indicator__section--complete {
 }
 
 
-/* 
+/*
 #33475b
 #2d3e50
 */
@@ -1148,4 +1153,3 @@ div#sprocky span.hide a:hover {
 	position: absolute;
 	right: 6px;
 }
-

@@ -1,0 +1,61 @@
+[
+	{
+		"name": "debugTab",
+		"label": "Debug",
+		"buttons": [
+			{ "id": "hsCacheBust", "label": "Bust Cache" },
+			{ "id": "hsDebug", "label": "Debug Mode" },
+			{ "id": "hsMoveJQueryToFooter", "label": "Footer jQuery" },
+			{ "id": "hsAmp", "label": "AMP" }
+		]
+	},
+	{
+		"name": "developerTab",
+		"label": "Developer",
+		"buttons": [{ "id": "developerMode", "label": "Developer Mode" }],
+		"toggles": [
+			{ "id": "uitweaks", "label": "Dev Menu" },
+			{ "id": "darktheme", "label": "Dark Theme" }
+		],
+		"links": [
+			{
+				"label": "Documentation",
+				"children": [
+					{
+						"label": "Functions",
+						"url": "https://developers.hubspot.com/docs/cms/hubl/functions"
+					},
+					{
+						"label": "Variables",
+						"url": "https://developers.hubspot.com/docs/cms/hubl/variables"
+					},
+					{
+						"label": "Filters",
+						"url": "https://developers.hubspot.com/docs/cms/hubl/filters"
+					},
+					{
+						"label": "HubDB",
+						"url": "https://developers.hubspot.com/docs/cms/data/hubdb"
+					}
+				]
+			},
+			{
+				"label": "Community",
+				"children": [
+					{
+						"label": "Slack",
+						"url": "https://developers.hubspot.com/docs/cms/hubl/functions"
+					},
+					{
+						"label": "Forum",
+						"url": "https://community.hubspot.com/"
+					},
+					{
+						"label": "Ideas",
+						"url": "https://community.hubspot.com/t5/HubSpot-Ideas/idb-p/HubSpot_Ideas"
+					}
+				]
+			}
+		]
+	}
+]
