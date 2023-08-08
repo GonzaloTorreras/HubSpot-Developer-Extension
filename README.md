@@ -1,4 +1,13 @@
 # HubSpot-Developer-Extension
+
+# Firefox (WIP)
+## How to install
+1. Navigate to about:debugging#/runtime/this-firefox
+2. Select "Load Temporary Add-on..."
+3. Select the firefox.zip file
+
+Note: Fow now this will only work until you close the browser. You will need to repeat these steps every time you open the browser.
+
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/d6a1c1d220ea4ca79299b432ca44a9d8)](https://www.codacy.com/app/jonmclaren1/HubSpot-Developer-Extension?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=williamspiro/HubSpot-Developer-Extension&amp;utm_campaign=Badge_Grade)
 
 
@@ -42,7 +51,7 @@ Firefox cannot run the extension. We do however want to support Firefox but need
 2. [Don't be a jerk](https://github.com/TheWebTech/HubSpot-Developer-Extension/blob/master/CODE_OF_CONDUCT.md)
 3. [We denote easy/small issues that are good for beginners. but feel free to tackle any you see in issues or add a feature you want](https://github.com/williamspiro/HubSpot-Developer-Extension/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22)
 4. Speak another language? [help add or improve translations for that language!](https://github.com/williamspiro/HubSpot-Developer-Extension/wiki/How-to-add-support-for-a-new-language-or-improve-existing-translations)
-5. Test your own branch or someone elses. [how to test](https://github.com/williamspiro/HubSpot-Developer-Extension/wiki/How-to-test-changes-you've-made-to-the-extension) 
+5. Test your own branch or someone elses. [how to test](https://github.com/williamspiro/HubSpot-Developer-Extension/wiki/How-to-test-changes-you've-made-to-the-extension)
 6. [Use the Beta Build of the Extension and report bugs and provide feedback](https://github.com/williamspiro/HubSpot-Developer-Extension/wiki/How-to-use-the-Beta-version-of-the-extension)
 7. Tell others about the Extension, Rate and review the extension, the more people know of it the more people who will want to get involved, the more and faster updates will come. If you blog about the extension let us know!
 

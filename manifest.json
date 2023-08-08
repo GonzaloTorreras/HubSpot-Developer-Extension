@@ -1,41 +1,41 @@
 {
-	"manifest_version": 3,
+	"manifest_version": 2,
+	"applications": {
+		"gecko": {
+			"id": "your-extension-id@firefox"
+		}
+	},
 	"name": "HubSpot-Developer-Extension",
 	"version": "2.0.0",
-	"default_locale": "en",
 	"description": "HubSpot-Developer-Extension",
 	"icons": {
 		"16": "icon-16.png",
-		"19": "icon-19.png",
-		"38": "icon-38.png",
 		"48": "icon-48.png",
 		"128": "icon-128.png"
 	},
-	"content_security_policy": {
-		"extension_pages": "script-src 'self'; object-src 'self';",
-		"sandbox": "sandbox allow-scripts allow-forms allow-popups allow-modals; script-src 'self' 'unsafe-inline' 'unsafe-eval'; child-src 'self';"
+	"options_ui": {
+		"page": "options.html",
+		"browser_style": true
 	},
-	"options_page": "options.html",
 	"permissions": ["storage", "tabs"],
 	"background": {
-		"service_worker": "background.js"
+		"scripts": ["background.js"]
 	},
-	"action": {
+	"browser_action": {
 		"default_popup": "popup.html"
 	},
 	"content_scripts": [
 		{
 			"js": ["design-manager.js"],
-			"css": ["hsDarkIde.css"],
-			"run_at": "document_idle",
-			"document_idle": "document_start",
 			"matches": [
-				"https://local.hubspot.com/*",
-				"https://local.hubspotqa.com/*",
-				"https://app.hubspot.com/*",
-				"https://app.hubspotqa.com/*",
-				"https://login.hubspot.com/*"
-			]
+				"*://local.hubspot.com/*",
+				"*://local.hubspotqa.com/*",
+				"*://app.hubspot.com/*",
+				"*://app.hubspotqa.com/*",
+				"*://login.hubspot.com/*"
+			],
+			"run_at": "document_idle",
+			"match_about_blank": true
 		}
 	],
 	"devtools_page": "devtools.html",
@@ -52,7 +52,7 @@
 				"default": "Ctrl+Shift+2",
 				"mac": "Ctrl+Shift+2"
 			},
-			"description": "toggle ?hsDebug=True in the URL"
+			"description": "Toggle ?hsDebug=True in the URL"
 		}
 	}
 }

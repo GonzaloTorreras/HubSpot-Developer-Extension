@@ -81,8 +81,6 @@ if (~tabUrl.indexOf(appUrl)) {
 		});
 
 		if (tabUrl.includes('/design-manager/')) {
-			console.log('Design Manager is active');
-			currentScreen = 'design-manager';
 			const api = typeof browser !== 'undefined' ? browser : chrome;
 			api.storage.local.get(['darktheme'], function (result) {
 				const darkthemeVaule = result.darktheme;
@@ -187,10 +185,6 @@ if (~tabUrl.indexOf(appUrl)) {
 	}
 
 	const api = typeof browser !== 'undefined' ? browser : chrome;
-	api.storage.local.get(function (result) {
-		console.log('Stored value:', result);
-	});
-
 	api.storage.local.get(['uitweaks'], function (result) {
 		const uitweaksValue = result.uitweaks;
 		console.log('uitweaks:', uitweaksValue);

@@ -66,7 +66,6 @@ function openTab(tabName) {
 
 	activeTab.style.display = 'flex';
 	activeButton.classList.add('active');
-	console.log('Tab opened:', tabName);
   }
 
 
@@ -128,7 +127,6 @@ function setTitle(siteName) {
 }
 
 waitForEl('.account-name', function () {
-	console.log('Account name loaded');
 	setTitle(document.querySelector('.account-name').textContent);
 });
 
