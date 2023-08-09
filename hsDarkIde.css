@@ -298,7 +298,8 @@ body.design-manager.ext-dark-theme .private-dropdown .Select-menu-outer {
 	border-color: var(--border-color);
 }
 
-body.design-manager.ext-dark-theme .private-nav-item {
+body.design-manager.ext-dark-theme .private-nav-item,
+body.design-manager.ext-dark-theme .private-nav-item span span {
 	color: rgba(255, 255, 255, .6) !important;
 }
 

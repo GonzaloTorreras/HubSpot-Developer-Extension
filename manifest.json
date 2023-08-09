@@ -1,56 +1,71 @@
 {
 	"manifest_version": 2,
-	"applications": {
+	"browser_specific_settings": {
 		"gecko": {
 			"id": "your-extension-id@firefox"
 		}
 	},
-	"name": "HubSpot-Developer-Extension",
-	"version": "2.0.0",
-	"description": "HubSpot-Developer-Extension",
+	"name": "HS Developer Extension",
+	"version": "2.0.1",
+	"description": "HS Developer Extension",
 	"icons": {
 		"16": "icon-16.png",
 		"48": "icon-48.png",
 		"128": "icon-128.png"
 	},
-	"options_ui": {
-		"page": "options.html",
-		"browser_style": true
-	},
-	"permissions": ["storage", "tabs"],
 	"background": {
-		"scripts": ["background.js"]
+		"scripts": ["background.js"],
+		"persistent": false
 	},
+	"permissions": [
+		"storage",
+		"tabs",
+		"activeTab",
+		"scripting",
+		"devtools",
+		"https://app.hubspot.com/*",
+		"https://app.hubspotqa.com/*",
+		"https://local.hubspot.com/*",
+		"https://local.hubspotqa.com/*",
+		"https://*/*",
+		"http://*/*"
+	],
+
 	"browser_action": {
 		"default_popup": "popup.html"
 	},
 	"content_scripts": [
 		{
-			"js": ["design-manager.js"],
-			"matches": [
-				"*://local.hubspot.com/*",
-				"*://local.hubspotqa.com/*",
-				"*://app.hubspot.com/*",
-				"*://app.hubspotqa.com/*",
-				"*://login.hubspot.com/*"
-			],
 			"run_at": "document_idle",
-			"match_about_blank": true
+			"js": ["design-manager.js"],
+			"css": ["hsDarkIde.css"],
+			"matches": [
+				"https://local.hubspot.com/*",
+				"https://local.hubspotqa.com/*",
+				"https://app.hubspot.com/*",
+				"https://app.hubspotqa.com/*",
+				"https://login.hubspot.com/*"
+			]
+		},
+		{
+			"run_at": "document_idle",
+			"css": ["json-formatter.css"],
+			"matches": ["https://*/___context___*"]
 		}
 	],
 	"devtools_page": "devtools.html",
 	"commands": {
 		"bust-cache": {
 			"suggested_key": {
-				"default": "Ctrl+Shift+1",
-				"mac": "Ctrl+Shift+1"
+				"default": "Alt+Shift+1",
+				"mac": "Alt+Shift+1"
 			},
 			"description": "Run Cache Buster"
 		},
 		"hs-debug": {
 			"suggested_key": {
-				"default": "Ctrl+Shift+2",
-				"mac": "Ctrl+Shift+2"
+				"default": "Alt+Shift+2",
+				"mac": "Alt+Shift+2"
 			},
 			"description": "Toggle ?hsDebug=True in the URL"
 		}

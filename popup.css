@@ -1,0 +1,91 @@
+:root {
+    --bg: #eaf0f6;
+    --color: #33475b;
+    --buttonColor: #ff7a59;
+    --buttonColorHover: #ff8f73;
+    --buttonTextColor: #fff;
+    --tabBg: #2e3f50;
+    --tabBgHover: #253342;
+    --tabColor: #fff;
+    --linkColor: #0091ae;
+}
+html,
+body {
+    max-height: none;
+    height: auto;
+    width: 391px;
+    min-width: 391px;
+    margin: 0;
+    background: var(--bg);
+    color: var(--color);
+    font-size: 16px;
+    font-family: system-ui, sans-serif;
+}
+div#tabsContainer {
+    display: flex;
+    justify-content: center;
+}
+.tab {
+    display: none;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    padding: 10px;
+}
+.tabs > button {
+    background: var(--tabBg);
+    color: var(--tabColor);
+    width: 100%;
+    padding: 15px;
+    border: 1px solid rgb(81, 111, 144);
+}
+.tabs > button:hover,
+.tabs > button.active {
+    background: var(--tabBgHover);
+    cursor: pointer;
+}
+#tabContentContainer button {
+    padding: 0;
+    height: 44px;
+    display: block;
+    width: 100%;
+    border: 3px solid var(--buttonColor);
+    background-color: var(--buttonColor);
+    color: var(--buttonTextColor);
+    font-weight: 500;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
+    -webkit-appearance: none;
+}
+#tabContentContainer button:hover {
+    background-color: var(--buttonColorHover);
+}
+#tabContentContainer button[data-width="100"],
+#tabContentContainer div,
+#tabContentContainer ul {
+    grid-column: 1 / -1;
+}
+.tab > ul {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.tab ul {
+    list-style: none;
+    padding: 0;
+}
+.tab ul ul {
+    display: flex;
+    justify-content: start;
+    width: 100%;
+    gap: 16px;
+}
+.tab a[href] {
+    color: var(--linkColor);
+    text-decoration: none;
+}
+.tab a[href]:hover {
+    text-decoration: underline;
+}

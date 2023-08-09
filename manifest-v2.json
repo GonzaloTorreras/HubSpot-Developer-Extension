@@ -1,5 +1,10 @@
 {
-	"manifest_version": 3,
+	"manifest_version": 2,
+	"browser_specific_settings": {
+		"gecko": {
+			"id": "your-extension-id@firefox"
+		}
+	},
 	"name": "HS Developer Extension",
 	"version": "2.0.1",
 	"description": "HS Developer Extension",
@@ -8,20 +13,16 @@
 		"48": "icon-48.png",
 		"128": "icon-128.png"
 	},
-	"action": {
-		"default_popup": "popup.html",
-		"default_icon": {
-			"16": "icon-16.png",
-			"48": "icon-48.png",
-			"128": "icon-128.png"
-		}
-	},
 	"background": {
-		"service_worker": "background.js"
+		"scripts": ["background.js"],
+		"persistent": false
 	},
-	"permissions": ["storage", "tabs", "scripting"],
-
-	"host_permissions": [
+	"permissions": [
+		"storage",
+		"tabs",
+		"activeTab",
+		"scripting",
+		"devtools",
 		"https://app.hubspot.com/*",
 		"https://app.hubspotqa.com/*",
 		"https://local.hubspot.com/*",
@@ -29,22 +30,28 @@
 		"https://*/*",
 		"http://*/*"
 	],
+
+	"browser_action": {
+		"default_popup": "popup.html"
+	},
 	"content_scripts": [
 		{
+			"run_at": "document_idle",
+			"js": ["design-manager.js"],
+			"css": ["hsDarkIde.css"],
 			"matches": [
 				"https://local.hubspot.com/*",
 				"https://local.hubspotqa.com/*",
 				"https://app.hubspot.com/*",
 				"https://app.hubspotqa.com/*",
 				"https://login.hubspot.com/*"
-			],
-			"js": ["design-manager.js"],
-			"css": ["hsDarkIde.css"]
+			]
 		},
 		{
-			"matches": ["https://*/___context___*"],
+			"run_at": "document_idle",
 			"js": ["json-formatter.js"],
-			"css": ["json-formatter.css"]
+			"css": ["json-formatter.css"],
+			"matches": ["https://*/___context___*"]
 		}
 	],
 	"devtools_page": "devtools.html",
@@ -63,12 +70,5 @@
 			},
 			"description": "Toggle ?hsDebug=True in the URL"
 		}
-	},
-	"web_accessible_resources": [
-		{
-			"resources": ["popup.html"],
-			"matches": ["*://*/*"]
-		}
-	],
-	"optional_permissions": ["activeTab"]
+	}
 }

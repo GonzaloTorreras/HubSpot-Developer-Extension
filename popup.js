@@ -15,6 +15,10 @@ function toggleQueryParam(paramName) {
 	});
 }
 
+function openLink(url) {
+	(typeof browser !== 'undefined' ? browser.tabs.create : chrome.tabs.create)({ url: url });
+}
+
 function hsDebug() {
 	toggleQueryParam('hsDebug');
 }
@@ -31,9 +35,42 @@ function developerMode() {
 	toggleQueryParam('developerMode');
 }
 
-function hsCacheBust() {
+function hsOpenDesignManager(button) {
+	openLink(button.dataset.url);
+}
+
+function getCurrentURL(callback) {
+	if (typeof browser !== 'undefined') {
+		browser.tabs
+			.query({ active: true, currentWindow: true })
+			.then((tabs) => {
+				const currentUrl = tabs[0].url;
+				callback(currentUrl);
+			})
+			.catch((error) => {
+				console.error('Error getting current URL:', error);
+				callback(null);
+			});
+	} else if (typeof chrome !== 'undefined') {
+		chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+			const currentUrl = tabs[0].url;
+			callback(currentUrl);
+		});
+	} else {
+		console.error('Unsupported browser API');
+		callback(null);
+	}
+}
+
+function pageSpeed() {
+	getCurrentURL(function (currentUrl) {
+		openLink('https://developers.google.com/speed/pagespeed/insights/?url=' + currentUrl);
+	});
+}
+
+function hsCacheBuster() {
 	var api = typeof browser !== 'undefined' ? browser : chrome;
-	var paramName = 'hsCacheBust';
+	var paramName = 'hsCacheBuster';
 
 	api.tabs.query({ active: true, currentWindow: true }).then(function (tabs) {
 		var currentTab = tabs[0];
@@ -53,21 +90,20 @@ function openTab(tabName) {
 	const tabs = document.getElementsByClassName('tab');
 	const tabButtons = document.querySelectorAll('#tabsContainer button');
 
-	Array.from(tabs).forEach(tab => {
-	  tab.style.display = 'none';
+	Array.from(tabs).forEach((tab) => {
+		tab.style.display = 'none';
 	});
 
-	Array.from(tabButtons).forEach(button => {
-	  button.classList.remove('active');
+	Array.from(tabButtons).forEach((button) => {
+		button.classList.remove('active');
 	});
 
 	const activeTab = document.getElementById(tabName);
 	const activeButton = document.getElementById(tabName + 'Btn');
 
-	activeTab.style.display = 'flex';
+	activeTab.style.display = 'grid';
 	activeButton.classList.add('active');
-  }
-
+}
 
 function getRandomNumber() {
 	return (Math.floor(Math.random() * 9000) + 1000).toString();
@@ -177,12 +213,15 @@ function createButton(buttonData) {
 	} else {
 		button = document.createElement('button');
 		button.id = buttonData.id;
+		if (buttonData.width) button.dataset.width = buttonData.width;
+		if (buttonData.url) button.dataset.url = buttonData.url;
+
 		button.textContent = buttonData.label;
 
 		button.addEventListener('click', function () {
 			const functionName = buttonData.id;
 			if (typeof window[functionName] === 'function') {
-				window[functionName]();
+				window[functionName](button);
 			} else {
 				console.log('Function not found: ' + functionName);
 			}
@@ -193,34 +232,33 @@ function createButton(buttonData) {
 }
 
 function createLink(link) {
-    const li = document.createElement('li');
-    const linkText = document.createElement('a');
-    linkText.textContent = link.label;
+	const li = document.createElement('li');
+	const linkText = document.createElement('a');
+	linkText.textContent = link.label;
 
-    if (link.url) {
-      linkText.href = link.url;
-      linkText.addEventListener('click', function(event) {
-        event.preventDefault();
-        chrome.tabs.create({ url: link.url });
-      });
-    }
+	if (link.url) {
+		linkText.href = link.url;
+		linkText.addEventListener('click', function (event) {
+			event.preventDefault();
+			chrome.tabs.create({ url: link.url });
+		});
+	}
 
-    li.appendChild(linkText);
+	li.appendChild(linkText);
 
-    if (link.children && link.children.length) {
-      const ul = document.createElement('ul');
+	if (link.children && link.children.length) {
+		const ul = document.createElement('ul');
 
-      link.children.forEach(function (childLink) {
-        const childLi = createLink(childLink);
-        ul.appendChild(childLi);
-      });
+		link.children.forEach(function (childLink) {
+			const childLi = createLink(childLink);
+			ul.appendChild(childLi);
+		});
 
-      li.appendChild(ul);
-    }
+		li.appendChild(ul);
+	}
 
-    return li;
-  }
-
+	return li;
+}
 
 function createTabContent(tab) {
 	const div = document.createElement('div');
@@ -240,12 +278,12 @@ function createTabContent(tab) {
 	}
 
 	if (tab.links) {
-        const ul = document.createElement('ul');
+		const ul = document.createElement('ul');
 		tab.links.forEach(function (linkData) {
 			const li = createLink(linkData);
 			ul.appendChild(li);
 		});
-        div.appendChild(ul);
+		div.appendChild(ul);
 	}
 
 	return div;
@@ -261,14 +299,13 @@ document.addEventListener('DOMContentLoaded', function () {
 			var tabContentContainer = document.getElementById('tabContentContainer');
 
 			// Create tab buttons and content dynamically based on JSON data
-			tabData.forEach(function (tab) {
+			tabData.tabs.forEach(function (tab) {
 				var button = document.createElement('button');
 				button.id = tab.name + 'Btn';
 				button.textContent = tab.label;
 				button.addEventListener('click', function () {
 					openTab(tab.name);
 				});
-
 				var content = createTabContent(tab);
 
 				tabsContainer.appendChild(button);
