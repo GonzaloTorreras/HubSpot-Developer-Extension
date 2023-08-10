@@ -9,9 +9,9 @@
 	"version": "2.0.1",
 	"description": "HS Developer Extension",
 	"icons": {
-		"16": "images/icon-16.png",
-		"48": "images/icon-48.png",
-		"128": "images/icon-128.png"
+		"16": "_images/icon-16.png",
+		"48": "_images/icon-48.png",
+		"128": "_images/icon-128.png"
 	},
 	"background": {
 		"scripts": ["background.js"],
