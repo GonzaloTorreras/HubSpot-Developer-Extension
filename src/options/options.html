@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Options Page</title>
+		<script src="options.js"></script>
+		<link rel="stylesheet" href="options.css" />
+	</head>
+	<body>
+		<div class="wrapper">
+			<h1>Developer Menu</h1>
+			<small
+				><strong>_HUB_ID_</strong> will be replace with your curernt portal's Hub ID
+			</small>
+			<div class="inputs">
+				<div>
+					<label for="link-label">Label:</label>
+					<input type="text" id="link-label" />
+				</div>
+				<div>
+					<label for="link-url">URL:</label>
+					<input type="text" id="link-url" />
+				</div>
+				<button id="add-link">Add</button>
+			</div>
+
+			<ul id="link-list"></ul>
+			<button id="reset-default">Reset to Default</button>
+		</div>
+	</body>
+</html>

@@ -229,10 +229,11 @@ if (~tabUrl.indexOf(appUrl)) {
 	}
 
 	const api = typeof browser !== 'undefined' ? browser : chrome;
-	api.storage.local.get(['uitweaks'], function (result) {
-		const uitweaksValue = result.uitweaks;
-		console.log('uitweaks:', uitweaksValue);
-		if (uitweaksValue) {
+	api.storage.local.get(['devMenu'], function (result) {
+		const devMenuValue = result.devMenu;
+		console.log('devMenu:', devMenuValue);
+		if (devMenuValue) {
+			console.log('Generating the developer menu');
 			let hubId;
 			waitForEl('.navAccount-portalId', function () {
 				hubId = document.querySelector('.navAccount-portalId').textContent;

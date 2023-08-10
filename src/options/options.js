@@ -1,25 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-	// Get all tab buttons
-	const tabButtons = document.querySelectorAll('.tab-button');
 
-	// Get all tab contents
-	const tabContents = document.querySelectorAll('.tab-content');
-
-	// Add event listeners to each tab button
-	tabButtons.forEach((button) => {
-		button.addEventListener('click', () => {
-			// Get the value of the data-tab attribute
-			const tabId = button.getAttribute('data-tab');
-
-			// Remove 'active' class from all tab contents
-			tabContents.forEach((content) => {
-				content.classList.remove('active');
-			});
-
-			// Add 'active' class to the selected tab content
-			document.getElementById(tabId).classList.add('active');
-		});
-	});
 
 	//Dev menu
 	var linkList = document.getElementById('link-list');
