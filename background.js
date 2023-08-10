@@ -1,21 +1,20 @@
 // Listen for messages from the extension components
 chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
-	if (message.action === "openOptionsPage") {
-	  openOptionsPage();
+	if (message.action === 'openOptionsPage') {
+		openOptionsPage();
 	}
-  });
+});
 
-  // Open the options page
-  function openOptionsPage() {
+// Open the options page
+function openOptionsPage() {
 	if (chrome.runtime.openOptionsPage) {
-	  // Chrome
-	  chrome.runtime.openOptionsPage();
+		// Chrome
+		chrome.runtime.openOptionsPage();
 	} else {
-	  // Firefox
-	  browser.runtime.openOptionsPage();
+		// Firefox
+		browser.runtime.openOptionsPage();
 	}
-  }
-
+}
 
 function updateTabUrl(url, params, tabId) {
 	let updatedUrl = url;

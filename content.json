@@ -7,7 +7,7 @@
 				{ "id": "hsCacheBuster", "label": "Bust Cache", "width": "50" },
 				{ "id": "hsDebug", "label": "Debug Mode", "width": "50" },
 				{ "id": "hsMoveJQueryToFooter", "label": "Footer jQuery", "width": "50" },
-				{ "id": "hsAmp", "label": "Open IDE", "width": "50" },
+				{ "id": "hsAmp", "label": "AMP", "width": "50" },
 				{
 					"id": "pageSpeed",
 					"label": "Google Page Speed",
