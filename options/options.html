@@ -1,27 +1,205 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Options Page</title>
-  <script src="options.js"></script>
-  <style>
-.link-list span {
-color:red
-}
-  </style>
-</head>
-<body>
-  <h1>Options Page</h1>
+	<head>
+		<title>Options Page</title>
+		<script src="options.js"></script>
+		<link rel="stylesheet" href="options.css" />
+	</head>
+	<body>
+		<div class="tab-container">
+			<div class="tab-buttons">
+				<button class="tab-button" data-tab="tab1">Tab 1</button>
+				<button class="tab-button" data-tab="tab2">Developer Menu</button>
+				<button class="tab-button" data-tab="tab3">Tab 3</button>
+				<button class="tab-button" data-tab="tab4">Credits</button>
+			</div>
 
-  <h2>Add Link</h2>
-  <label for="link-label">Label:</label>
-  <input type="text" id="link-label">
-  <label for="link-url">URL:</label>
-  <input type="text" id="link-url">
-  <button id="add-link">Add</button>
+			<div id="tab1" class="tab-content active">Content for Tab 1</div>
+			<div id="tab2" class="tab-content">
+				<div class="wrapper">
+					<h1>Developer Menu</h1>
+					<small
+						><strong>_HUB_ID_</strong> will be replace with your curernt portal's Hub ID
+					</small>
+					<div class="inputs">
+						<div>
+							<label for="link-label">Label:</label>
+							<input type="text" id="link-label" />
+						</div>
+						<div>
+							<label for="link-url">URL:</label>
+							<input type="text" id="link-url" />
+						</div>
+						<button id="add-link">Add</button>
+					</div>
 
-  <h2>Links</h2>
-  <ul id="link-list"></ul>
+					<ul id="link-list"></ul>
+					<button id="reset-default">Reset to Default</button>
+				</div>
+			</div>
+			<div id="tab3" class="tab-content">Content for Tab 3</div>
+			<div id="tab4" class="tab-content">
+				<main>
+					<p>
+						We apologize for the blandness of this screen, but if you'd like to help
+						make it look better, you can help!
+					</p>
 
-  <button id="reset-default">Reset to Default</button>
-</body>
+					<p>
+						<a href="https://github.com/williamspiro/HubSpot-Developer-Extension/"
+							>View on GitHub</a
+						>
+					</p>
+					<p>
+						<a
+							href="https://github.com/williamspiro/HubSpot-Developer-Extension/releases"
+							>View Change Log</a
+						>
+					</p>
+					<p>
+						If you like the extension
+						<a
+							href="https://chrome.google.com/webstore/detail/hubspot-developer-extensi/gebemkdecnlgbcanplbgdpcffpdnfdfo/reviews"
+							>please rate</a
+						>
+						so others can find it! If there's an area where we could do better, let us
+						know in the
+						<a href="https://github.com/williamspiro/HubSpot-Developer-Extension/issues"
+							>github issues</a
+						>
+						or using the
+						<a
+							href="https://chrome.google.com/webstore/detail/hubspot-developer-extensi/gebemkdecnlgbcanplbgdpcffpdnfdfo/support"
+							>support/feedback feature</a
+						>
+						on the chrome web store(don't use reviews for that).
+					</p>
+					<p>
+						<a
+							href="https://github.com/williamspiro/HubSpot-Developer-Extension/wiki/Feature-Breakdown"
+							>Run-down on all of the extension's features</a
+						>
+					</p>
+					<p>
+						<!--Do you know multiple languages?-->
+						Do you know English and another language? We need your help to translate the
+						extension, please go to our GitHub.
+					</p>
+					<br />
+					<p>
+						This Extension is <b>not</b> directly affiliated with HubSpot, we claim no
+						rights to any of the HubSpot Trademarks.
+					</p>
+					<p>Developed by:</p>
+					<ul>
+						<li>
+							<a
+								target="_blank"
+								href="https://www.linkedin.com/in/william-spiro-40a43a58/"
+								><svg
+									style="
+										fill: #f1f1f1;
+										width: 1em;
+										vertical-align: bottom;
+										margin-right: 0.5rem;
+										color: #010101;
+									"
+									xmlns="http://www.w3.org/2000/svg"
+									aria-hidden="true"
+									focusable="false"
+									data-prefix="fab"
+									data-icon="linkedin-in"
+									class="svg-inline--fa fa-linkedin-in fa-w-14"
+									role="img"
+									viewBox="0 0 448 512"
+								>
+									<path
+										fill="currentColor"
+										d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"
+									></path></svg
+								>William Spiro</a
+							>
+							-
+							<a
+								target="_blank"
+								href="https://www.hubspot.com/"
+								title="if you really don't know what HubSpot is, you're using this plugin wrong."
+								>HubSpot</a
+							>
+							- Developer Product Expert
+						</li>
+						<li>
+							<a target="_blank" href="https://www.linkedin.com/in/mclarenjon/"
+								><svg
+									style="
+										fill: #f1f1f1;
+										width: 1em;
+										vertical-align: bottom;
+										margin-right: 0.5rem;
+										color: #010101;
+									"
+									xmlns="http://www.w3.org/2000/svg"
+									aria-hidden="true"
+									focusable="false"
+									data-prefix="fab"
+									data-icon="linkedin-in"
+									class="svg-inline--fa fa-linkedin-in fa-w-14"
+									role="img"
+									viewBox="0 0 448 512"
+								>
+									<path
+										fill="currentColor"
+										d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"
+									></path></svg
+								>Jon McLaren</a
+							>
+							-
+							<a
+								target="_blank"
+								href="https://www.hubspot.com/"
+								title="if you really don't know what HubSpot is, you're using this plugin wrong."
+								>Hubspot</a
+							>
+							- CMS Developer Advocate
+						</li>
+						<li>
+							<a target="_blank" href="https://www.linkedin.com/in/gonzalotorreras/"
+								><svg
+									style="
+										fill: #f1f1f1;
+										width: 1em;
+										vertical-align: bottom;
+										margin-right: 0.5rem;
+										color: #010101;
+									"
+									xmlns="http://www.w3.org/2000/svg"
+									aria-hidden="true"
+									focusable="false"
+									data-prefix="fab"
+									data-icon="linkedin-in"
+									class="svg-inline--fa fa-linkedin-in fa-w-14"
+									role="img"
+									viewBox="0 0 448 512"
+								>
+									<path
+										fill="currentColor"
+										d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"
+									></path></svg
+								>Gonzalo Torreras</a
+							>
+							-
+							<a
+								target="_blank"
+								href="http://gonzalotorreras.com/"
+								title="Check my website!"
+								>gonzalotorreras.com</a
+							>
+							- HubSpot freelance developer
+						</li>
+					</ul>
+					<p></p>
+				</main>
+			</div>
+		</div>
+	</body>
 </html>

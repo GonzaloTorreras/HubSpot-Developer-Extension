@@ -1,4 +1,30 @@
 document.addEventListener('DOMContentLoaded', function() {
+
+// Get all tab buttons
+const tabButtons = document.querySelectorAll('.tab-button');
+
+// Get all tab contents
+const tabContents = document.querySelectorAll('.tab-content');
+
+// Add event listeners to each tab button
+tabButtons.forEach((button) => {
+  button.addEventListener('click', () => {
+    // Get the value of the data-tab attribute
+    const tabId = button.getAttribute('data-tab');
+
+    // Remove 'active' class from all tab contents
+    tabContents.forEach((content) => {
+      content.classList.remove('active');
+    });
+
+    // Add 'active' class to the selected tab content
+    document.getElementById(tabId).classList.add('active');
+  });
+});
+
+
+
+//Dev menu
   var linkList = document.getElementById('link-list');
   var addButton = document.getElementById('add-link');
   var resetButton = document.getElementById('reset-default');
@@ -34,6 +60,7 @@ document.addEventListener('DOMContentLoaded', function() {
           }
         });
     }
+    makeListItemsDraggable();
   });
 
   // Handle add button click event
@@ -44,11 +71,13 @@ document.addEventListener('DOMContentLoaded', function() {
     if (label && url) {
       if (isEditing) {
         updateLinkInList(label, url, editIndex);
+        addButton.textContent = 'Add';
       } else {
         addLinkToList(label, url);
       }
       resetFields();
       saveLinksToStorage();
+      makeListItemsDraggable();
     }
   });
 
@@ -71,10 +100,12 @@ document.addEventListener('DOMContentLoaded', function() {
             links.forEach(function(link) {
               addLinkToList(link.label, link.url);
             });
+            makeListItemsDraggable();
           });
         } else {
           chrome.storage.sync.remove('links', function() {
             linkList.innerHTML = '';
+            makeListItemsDraggable();
           });
         }
       });
@@ -85,15 +116,21 @@ document.addEventListener('DOMContentLoaded', function() {
     var listItem = document.createElement('li');
     listItem.dataset.index = index;
 
+    var linkDiv = document.createElement('div');
+    linkDiv.classList.add('link-container');
+
     var linkText = document.createElement('span');
     linkText.textContent = label;
-    listItem.appendChild(linkText);
-
-    listItem.appendChild(document.createTextNode(' - '));
+    linkDiv.appendChild(linkText);
 
     var urlText = document.createElement('span');
     urlText.textContent = url;
-    listItem.appendChild(urlText);
+    linkDiv.appendChild(urlText);
+
+    listItem.appendChild(linkDiv);
+
+    var buttonDiv = document.createElement('div');
+    buttonDiv.classList.add('button-container');
 
     var editButton = document.createElement('button');
     editButton.textContent = 'Edit';
@@ -102,8 +139,9 @@ document.addEventListener('DOMContentLoaded', function() {
       urlInput.value = url;
       isEditing = true;
       editIndex = index;
+      addButton.textContent = 'Update';
     });
-    listItem.appendChild(editButton);
+    buttonDiv.appendChild(editButton);
 
     var deleteButton = document.createElement('button');
     deleteButton.textContent = 'Delete';
@@ -111,7 +149,9 @@ document.addEventListener('DOMContentLoaded', function() {
       linkList.removeChild(listItem);
       saveLinksToStorage();
     });
-    listItem.appendChild(deleteButton);
+    buttonDiv.appendChild(deleteButton);
+
+    listItem.appendChild(buttonDiv);
 
     linkList.appendChild(listItem);
   }
@@ -130,11 +170,69 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
 
+  // Make list items draggable
+  function makeListItemsDraggable() {
+    var listItems = linkList.getElementsByTagName('li');
+    Array.from(listItems).forEach(function(item) {
+      item.draggable = true;
+      item.addEventListener('dragstart', dragStart);
+      item.addEventListener('dragover', dragOver);
+      item.addEventListener('dragend', dragEnd);
+    });
+  }
+
+  // Drag start event handler
+  function dragStart(event) {
+    event.dataTransfer.setData('text/plain', event.target.dataset.index);
+    event.target.classList.add('dragging');
+  }
+
+  // Drag over event handler
+  function dragOver(event) {
+    event.preventDefault();
+    var draggingItem = document.querySelector('.dragging');
+    var currIndex = parseInt(draggingItem.dataset.index);
+    var overIndex = parseInt(event.target.dataset.index);
+    var direction = currIndex > overIndex ? 'up' : 'down';
+    if (draggingItem !== event.target && event.target.nodeName === 'LI') {
+      if (direction === 'up') {
+        event.target.parentNode.insertBefore(draggingItem, event.target);
+      } else {
+        event.target.parentNode.insertBefore(draggingItem, event.target.nextSibling);
+      }
+      updateLinkOrder();
+    }
+  }
+
+  // Drag end event handler
+  function dragEnd(event) {
+    event.target.classList.remove('dragging');
+  }
+
+  // Update link order in storage
+  function updateLinkOrder() {
+    var links = [];
+    var listItems = linkList.getElementsByTagName('li');
+    Array.from(listItems).forEach(function(item, index) {
+      item.dataset.index = index;
+      var linkDiv = item.querySelector('.link-container');
+      var linkText = linkDiv.getElementsByTagName('span')[0];
+      var urlText = linkDiv.getElementsByTagName('span')[1];
+      var link = {
+        label: linkText.textContent,
+        url: urlText.textContent
+      };
+      links.push(link);
+    });
+    chrome.storage.sync.set({ links: links });
+  }
+
   // Save the links to storage
   function saveLinksToStorage() {
     var links = Array.from(linkList.getElementsByTagName('li')).map(function(listItem) {
-      var linkText = listItem.getElementsByTagName('span')[0];
-      var urlText = listItem.getElementsByTagName('span')[1];
+      var linkDiv = listItem.querySelector('.link-container');
+      var linkText = linkDiv.getElementsByTagName('span')[0];
+      var urlText = linkDiv.getElementsByTagName('span')[1];
 
       return {
         label: linkText.textContent,
@@ -151,5 +249,6 @@ document.addEventListener('DOMContentLoaded', function() {
     urlInput.value = '';
     isEditing = false;
     editIndex = -1;
+    addButton.textContent = 'Add';
   }
 });

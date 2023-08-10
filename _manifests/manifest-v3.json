@@ -1,28 +1,27 @@
 {
-	"manifest_version": 2,
-	"browser_specific_settings": {
-		"gecko": {
-			"id": "your-extension-id@firefox"
-		}
-	},
+	"manifest_version": 3,
 	"name": "HS Developer Extension",
 	"version": "2.0.1",
 	"description": "HS Developer Extension",
 	"icons": {
-		"16": "icon-16.png",
-		"48": "icon-48.png",
-		"128": "icon-128.png"
+		"16": "images/icon-16.png",
+		"48": "images/icon-48.png",
+		"128": "images/icon-128.png"
+	},
+	"action": {
+		"default_popup": "popup/popup.html",
+		"default_icon": {
+			"16": "images/icon-16.png",
+			"48": "images/icon-48.png",
+			"128": "images/icon-128.png"
+		}
 	},
 	"background": {
-		"scripts": ["background.js"],
-		"persistent": false
+		"service_worker": "background.js"
 	},
-	"permissions": [
-		"storage",
-		"tabs",
-		"activeTab",
-		"scripting",
-		"devtools",
+	"permissions": ["storage", "tabs", "scripting"],
+
+	"host_permissions": [
 		"https://app.hubspot.com/*",
 		"https://app.hubspotqa.com/*",
 		"https://local.hubspot.com/*",
@@ -30,31 +29,25 @@
 		"https://*/*",
 		"http://*/*"
 	],
-
-	"browser_action": {
-		"default_popup": "popup.html"
-	},
 	"content_scripts": [
 		{
-			"run_at": "document_idle",
-			"js": ["design-manager.js"],
-			"css": ["hsDarkIde.css"],
 			"matches": [
 				"https://local.hubspot.com/*",
 				"https://local.hubspotqa.com/*",
 				"https://app.hubspot.com/*",
 				"https://app.hubspotqa.com/*",
 				"https://login.hubspot.com/*"
-			]
+			],
+			"js": ["popup/design-manager.js"],
+			"css": ["popup/hsDarkIde.css"]
 		},
 		{
-			"run_at": "document_idle",
-			"js": ["json-formatter.js"],
-			"css": ["json-formatter.css"],
-			"matches": ["https://*/___context___*"]
+			"matches": ["https://*/___context___*"],
+			"css": ["devtools/json-formatter.css"]
 		}
 	],
-	"devtools_page": "devtools.html",
+	"devtools_page": "devtools/devtools.html",
+	"options_page": "options/options.html",
 	"commands": {
 		"bust-cache": {
 			"suggested_key": {
@@ -70,5 +63,12 @@
 			},
 			"description": "Toggle ?hsDebug=True in the URL"
 		}
-	}
+	},
+	"web_accessible_resources": [
+		{
+			"resources": ["popup/popup.html"],
+			"matches": ["*://*/*"]
+		}
+	],
+	"optional_permissions": ["activeTab"]
 }

@@ -303,7 +303,7 @@ function createTabContent(tab) {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-	fetch('content.json')
+	fetch('../content.json')
 		.then(function (response) {
 			return response.json();
 		})

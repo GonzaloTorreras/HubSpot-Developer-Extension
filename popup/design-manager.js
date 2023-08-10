@@ -122,12 +122,36 @@ if (~tabUrl.indexOf(appUrl)) {
 	// Function to generate all menu items
 	async function generateAllMenuItems(hubId) {
 		const prefix = '/';
-		const contentJsonUrl = browser.runtime.getURL('content.json');
-		const response = await fetch(contentJsonUrl);
-		const data = await response.json();
+		let links = [];
+
+		const getLinksFromStorage = new Promise((resolve) => {
+			chrome.storage.sync.get('links', function (result) {
+				if (result.links) {
+					links = result.links;
+				}
+				resolve();
+			});
+		});
+
+		await getLinksFromStorage;
+
+		if (links.length === 0) {
+			const contentJsonUrl = browser.runtime.getURL('content.json');
+			const response = await fetch(contentJsonUrl);
+			const data = await response.json();
+
+			if (data.devMenu) {
+				links = data.devMenu.map((item) => ({
+					label: item.label,
+					url: prefix + item.url,
+				}));
+				chrome.storage.sync.set({ links: links });
+			}
+		}
+
 		let menuItems = '';
-		data.devMenu.forEach((item) => {
-			menuItems += generateDevMenuItem(item.label, hubId, prefix + item.url);
+		links.forEach((link) => {
+			menuItems += generateDevMenuItem(link.label, hubId, prefix + link.url);
 		});
 
 		return menuItems;
