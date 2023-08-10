@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Options Page</title>
+  <script src="options.js"></script>
+  <style>
+.link-list span {
+color:red
+}
+  </style>
+</head>
+<body>
+  <h1>Options Page</h1>
+
+  <h2>Add Link</h2>
+  <label for="link-label">Label:</label>
+  <input type="text" id="link-label">
+  <label for="link-url">URL:</label>
+  <input type="text" id="link-url">
+  <button id="add-link">Add</button>
+
+  <h2>Links</h2>
+  <ul id="link-list"></ul>
+
+  <button id="reset-default">Reset to Default</button>
+</body>
+</html>

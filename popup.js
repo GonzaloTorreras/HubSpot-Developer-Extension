@@ -1,3 +1,16 @@
+// Send a message to the background script to open the options page
+document.addEventListener('DOMContentLoaded', function() {
+	// Find the button element
+	var openOptionsButton = document.getElementById('open-options-button');
+
+	// Add a click event listener
+	openOptionsButton.addEventListener('click', function() {
+	  // Send a message to the background script to open the options page
+	  chrome.runtime.sendMessage({ action: "openOptionsPage" });
+	});
+  });
+
+
 function toggleQueryParam(paramName) {
 	var api = typeof browser !== 'undefined' ? browser : chrome;
 

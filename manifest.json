@@ -54,6 +54,10 @@
 		}
 	],
 	"devtools_page": "devtools.html",
+	"options_ui": {
+		"page": "options/options.html",
+		"open_in_tab": true
+	},
 	"commands": {
 		"bust-cache": {
 			"suggested_key": {
