@@ -1,6 +1,4 @@
 document.addEventListener('DOMContentLoaded', function () {
-
-
 	//Dev menu
 	var linkList = document.getElementById('link-list');
 	var addButton = document.getElementById('add-link');
@@ -14,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	chrome.storage.sync.get('links', function (result) {
 		if (result.links) {
 			result.links.forEach(function (link, index) {
-				addLinkToList(link.label, link.url, index);
+				addLinkToList(link.label, link.url.trim(), index);
 			});
 		} else {
 			// Load links from devMenu if storage is empty
@@ -90,48 +88,44 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	// Add link to the list
 	function addLinkToList(label, url, index) {
-		var listItem = document.createElement('li');
+		const listItem = document.createElement('li');
+		listItem.className = 'flex items-center justify-between gap-x-6 py-5';
 		listItem.dataset.index = index;
 
-		var linkDiv = document.createElement('div');
-		linkDiv.classList.add('link-container');
+		listItem.innerHTML = `
+		  <div class="min-w-0">
+			<div class="flex items-start gap-x-3 link-container">
+			  <p class="text-sm font-semibold leading-6 text-gray-900">${label}</p>
+			  <p class="rounded-md whitespace-nowrap mt-0.5 px-1.5 py-0.5 text-xs font-medium ring-1 ring-inset text-gray-600 bg-gray-50 ring-gray-500/10">${url}</p>
+			</div>
+		  </div>
+		  <div class="isolate inline-flex rounded-md shadow-sm">
+			<button data-action="edit" type="button" class="relative inline-flex items-center rounded-l-md bg-white px-2 py-1 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-10">
+			  Edit
+			</button>
+			<button data-action="delete" type="button" class="relative -ml-px inline-flex items-center rounded-r-md bg-white px-2 py-1 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-10">
+			  Delete
+			</button>
+		  </div>`;
 
-		var linkText = document.createElement('span');
-		linkText.textContent = label;
-		linkDiv.appendChild(linkText);
-
-		var urlText = document.createElement('span');
-		urlText.textContent = url;
-		linkDiv.appendChild(urlText);
-
-		listItem.appendChild(linkDiv);
-
-		var buttonDiv = document.createElement('div');
-		buttonDiv.classList.add('button-container');
-
-		var editButton = document.createElement('button');
-		editButton.textContent = 'Edit';
+		const editButton = listItem.querySelector('button[data-action="edit"]');
 		editButton.addEventListener('click', function () {
-			labelInput.value = label;
-			urlInput.value = url;
-			isEditing = true;
-			editIndex = index;
-			addButton.textContent = 'Update';
+		  labelInput.value = label;
+		  urlInput.value = url;
+		  isEditing = true;
+		  editIndex = index;
+		  addButton.textContent = 'Update';
 		});
-		buttonDiv.appendChild(editButton);
 
-		var deleteButton = document.createElement('button');
-		deleteButton.textContent = 'Delete';
+		const deleteButton = listItem.querySelector('button[data-action="delete"]');
 		deleteButton.addEventListener('click', function () {
-			linkList.removeChild(listItem);
-			saveLinksToStorage();
+		  linkList.removeChild(listItem);
+		  saveLinksToStorage();
 		});
-		buttonDiv.appendChild(deleteButton);
-
-		listItem.appendChild(buttonDiv);
 
 		linkList.appendChild(listItem);
-	}
+	  }
+
 
 	// Update link in the list
 	function updateLinkInList(label, url, index) {
@@ -140,8 +134,8 @@ document.addEventListener('DOMContentLoaded', function () {
 		});
 
 		if (listItem) {
-			var linkText = listItem.getElementsByTagName('span')[0];
-			var urlText = listItem.getElementsByTagName('span')[1];
+			var linkText = listItem.getElementsByTagName('p')[0];
+			var urlText = listItem.getElementsByTagName('p')[1];
 			linkText.textContent = label;
 			urlText.textContent = url;
 		}
@@ -193,8 +187,8 @@ document.addEventListener('DOMContentLoaded', function () {
 		Array.from(listItems).forEach(function (item, index) {
 			item.dataset.index = index;
 			var linkDiv = item.querySelector('.link-container');
-			var linkText = linkDiv.getElementsByTagName('span')[0];
-			var urlText = linkDiv.getElementsByTagName('span')[1];
+			var linkText = linkDiv.getElementsByTagName('p')[0];
+			var urlText = linkDiv.getElementsByTagName('p')[1];
 			var link = {
 				label: linkText.textContent,
 				url: urlText.textContent,
@@ -208,8 +202,8 @@ document.addEventListener('DOMContentLoaded', function () {
 	function saveLinksToStorage() {
 		var links = Array.from(linkList.getElementsByTagName('li')).map(function (listItem) {
 			var linkDiv = listItem.querySelector('.link-container');
-			var linkText = linkDiv.getElementsByTagName('span')[0];
-			var urlText = linkDiv.getElementsByTagName('span')[1];
+			var linkText = linkDiv.getElementsByTagName('p')[0];
+			var urlText = linkDiv.getElementsByTagName('p')[1];
 
 			return {
 				label: linkText.textContent,
@@ -228,4 +222,34 @@ document.addEventListener('DOMContentLoaded', function () {
 		editIndex = -1;
 		addButton.textContent = 'Add';
 	}
+
+	// Get all tab links
+	const tabLinks = document.querySelectorAll('nav a');
+
+	// Get all tab contents
+	const tabContents = document.getElementsByClassName('tab-content');
+
+	// Add click event listener to each tab link
+	tabLinks.forEach((link) => {
+		link.addEventListener('click', (event) => {
+			event.preventDefault();
+
+			// Remove active class from all tab links
+			tabLinks.forEach((link) => {
+				link.classList.remove('tab-active');
+			});
+
+			// Hide all tab contents
+			for (let i = 0; i < tabContents.length; i++) {
+				tabContents[i].classList.add('hidden');
+			}
+
+			// Show the selected tab content based on the data attribute
+			const tabId = link.dataset.tab;
+			document.getElementById(tabId).classList.remove('hidden');
+
+			// Add active class to the current tab link
+			link.classList.add('tab-active');
+		});
+	});
 });

@@ -4,7 +4,9 @@
 @layer base {
     body {
         width: 600px;
-        @apply p-10
+    }
+    .dragging {
+        opacity: 0.5;
     }
 }
 @layer components {
