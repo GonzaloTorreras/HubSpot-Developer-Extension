@@ -1,7 +1,7 @@
 var panel = chrome.devtools.panels.create(
 	'HubSpot',
-	'../_images/icon-16.png',
-	'panel.html',
+	'/src/images/icon-16.png',
+	'/src/devtools/panel.html',
 	function (panel) {
 		// Handle the initialization of the panel
 		panel.onShown.addListener(function (window) {

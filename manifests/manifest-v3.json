@@ -4,50 +4,29 @@
 	"version": "2.0.1",
 	"description": "HS Developer Extension",
 	"icons": {
-		"16": "_images/icon-16.png",
-		"48": "_images/icon-48.png",
-		"128": "_images/icon-128.png"
+		"16": "src/images/icon-16.png",
+		"48": "src/images/icon-48.png",
+		"128": "src/images/icon-128.png"
 	},
 	"action": {
-		"default_popup": "popup/popup.html",
-		"default_icon": {
-			"16": "_images/icon-16.png",
-			"48": "_images/icon-48.png",
-			"128": "_images/icon-128.png"
-		}
+		"default_popup": "src/popup/popup.html",
+		"default_icon": "src/images/icon-48.png"
 	},
 	"background": {
-		"service_worker": "background.js"
+		"service_worker": "src/background.js"
 	},
-	"permissions": ["storage", "tabs", "scripting"],
-
-	"host_permissions": [
-		"https://app.hubspot.com/*",
-		"https://app.hubspotqa.com/*",
-		"https://local.hubspot.com/*",
-		"https://local.hubspotqa.com/*",
-		"https://*/*",
-		"http://*/*"
-	],
+	"permissions": ["storage", "activeTab", "scripting"],
+	"optional_permissions": [],
+	"host_permissions": ["https://app.hubspot.com/*", "https://app.hubspotqa.com/*", "https://local.hubspot.com/*", "https://local.hubspotqa.com/*", "https://*/*", "http://*/*"],
 	"content_scripts": [
 		{
-			"matches": [
-				"https://local.hubspot.com/*",
-				"https://local.hubspotqa.com/*",
-				"https://app.hubspot.com/*",
-				"https://app.hubspotqa.com/*",
-				"https://login.hubspot.com/*"
-			],
-			"js": ["popup/design-manager.js"],
-			"css": ["popup/hsDarkIde.css"]
-		},
-		{
-			"matches": ["https://*/___context___*"],
-			"css": ["devtools/json-formatter.css"]
+			"matches": ["*://local.hubspot.com/*", "*://local.hubspotqa.com/*", "*://app.hubspot.com/*", "*://app.hubspotqa.com/*", "*://login.hubspot.com/*"],
+			"js": ["src/popup/design-manager.js"],
+			"css": ["src/popup/hsDarkIde.css"]
 		}
 	],
-	"devtools_page": "devtools/devtools.html",
-	"options_page": "options/options.html",
+	"devtools_page": "src/devtools/devtools.html",
+	"options_page": "src/options/options.html",
 	"commands": {
 		"bust-cache": {
 			"suggested_key": {
@@ -66,9 +45,8 @@
 	},
 	"web_accessible_resources": [
 		{
-			"resources": ["popup/popup.html"],
+			"resources": ["src/popup/popup.html"],
 			"matches": ["*://*/*"]
 		}
-	],
-	"optional_permissions": ["activeTab"]
+	]
 }

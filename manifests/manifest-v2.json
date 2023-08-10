@@ -9,53 +9,35 @@
 	"version": "2.0.1",
 	"description": "HS Developer Extension",
 	"icons": {
-		"16": "_images/icon-16.png",
-		"48": "_images/icon-48.png",
-		"128": "_images/icon-128.png"
+		"16": "src/images/icon-16.png",
+		"48": "src/images/icon-48.png",
+		"128": "src/images/icon-128.png"
 	},
 	"background": {
-		"scripts": ["background.js"],
+		"scripts": ["src/background.js"],
 		"persistent": false
 	},
-	"permissions": [
-		"storage",
-		"tabs",
-		"activeTab",
-		"scripting",
-		"devtools",
-		"https://app.hubspot.com/*",
-		"https://app.hubspotqa.com/*",
-		"https://local.hubspot.com/*",
-		"https://local.hubspotqa.com/*",
-		"https://*/*",
-		"http://*/*"
-	],
+	"permissions": ["storage", "tabs", "activeTab", "scripting", "devtools", "https://app.hubspot.com/*", "https://app.hubspotqa.com/*", "https://local.hubspot.com/*", "https://local.hubspotqa.com/*", "https://*/*", "http://*/*"],
 
 	"browser_action": {
-		"default_popup": "popup.html"
+		"default_popup": "src/popup/popup.html"
 	},
 	"content_scripts": [
 		{
 			"run_at": "document_idle",
-			"js": ["design-manager.js"],
-			"css": ["hsDarkIde.css"],
-			"matches": [
-				"https://local.hubspot.com/*",
-				"https://local.hubspotqa.com/*",
-				"https://app.hubspot.com/*",
-				"https://app.hubspotqa.com/*",
-				"https://login.hubspot.com/*"
-			]
+			"js": ["src/popup/design-manager.js"],
+			"css": ["src/popup/hsDarkIde.css"],
+			"matches": ["https://local.hubspot.com/*", "https://local.hubspotqa.com/*", "https://app.hubspot.com/*", "https://app.hubspotqa.com/*", "https://login.hubspot.com/*"]
 		},
 		{
 			"run_at": "document_idle",
-			"css": ["json-formatter.css"],
+			"css": ["src/devtools/json-formatter.css"],
 			"matches": ["https://*/___context___*"]
 		}
 	],
-	"devtools_page": "devtools.html",
+	"devtools_page": "src/devtools/devtools.html",
 	"options_ui": {
-		"page": "options/options.html",
+		"page": "src/options/options.html",
 		"open_in_tab": true
 	},
 	"commands": {
