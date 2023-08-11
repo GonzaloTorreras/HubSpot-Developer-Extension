@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
 			});
 		} else {
 			// Load links from devMenu if storage is empty
-			fetch('../content.json')
+			fetch('../devMenuLinks.json')
 				.then(function (response) {
 					return response.json();
 				})
@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	// Handle reset button click event
 	resetButton.addEventListener('click', function () {
-		fetch('../content.json')
+		fetch('../devMenuLinks.json')
 			.then(function (response) {
 				return response.json();
 			})

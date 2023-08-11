@@ -7,7 +7,13 @@ document.addEventListener('DOMContentLoaded', function () {
 	openOptionsButton.addEventListener('click', function () {
 		// Send a message to the background script to open the options page
 		chrome.runtime.sendMessage({ action: 'openOptionsPage' });
+		closePopup();
 	});
+
+	let links = document.getElementsByTagName('a');
+	for (let i = 0; i < links.length; i++) {
+		links[i].addEventListener('click', closePopup);
+	}
 });
 
 function toggleQueryParam(paramName) {
@@ -25,6 +31,49 @@ function toggleQueryParam(paramName) {
 
 		api.tabs.update(currentTab.id, { url: url.toString() });
 	});
+}
+
+// Reload the page with a delay
+function reloadPage() {
+	// Check the browser
+	if (typeof chrome !== 'undefined' && chrome.tabs) {
+		console.log('Reloading page...');
+		// Chrome browser
+		chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+			console.log(tabs[0].id);
+			chrome.tabs.reload(tabs[0].id);
+		});
+	} else if (typeof browser !== 'undefined' && browser.tabs) {
+		// Firefox browser
+		browser.tabs.query({ active: true, currentWindow: true }).then(function (tabs) {
+			browser.tabs.reload(tabs[0].id);
+		});
+	} else {
+		// Other browsers
+		location.reload();
+	}
+}
+
+// Close the popup with a delay
+function closePopup() {
+	setTimeout(function () {
+		// Check if the current context is a Firefox extension
+		if (typeof chrome !== 'undefined' && typeof chrome.extension !== 'undefined' && typeof chrome.extension.getViews !== 'undefined') {
+			// Close the popup by getting its views
+			var views = chrome.extension.getViews({ type: 'popup' });
+			if (views && views.length > 0) {
+				views[0].close();
+			}
+		}
+		// Check if the current context is a Chrome extension
+		else if (typeof browser !== 'undefined' && typeof browser.extension !== 'undefined' && typeof browser.extension.getViews !== 'undefined') {
+			// Close the popup by getting its views
+			var views = browser.extension.getViews({ type: 'popup' });
+			if (views && views.length > 0) {
+				views[0].close();
+			}
+		}
+	}, 100);
 }
 
 function openLink(url) {
@@ -156,6 +205,7 @@ buttons.forEach((button) => {
 		const functionName = button.id;
 		if (typeof window[functionName] === 'function') {
 			window[functionName](button);
+			closePopup();
 		} else {
 			console.log('Function not found: ' + functionName);
 		}
@@ -175,6 +225,8 @@ function toggleItemStorage(storageId, checked) {
 		if (chrome.runtime.lastError) {
 			console.error(chrome.runtime.lastError);
 		} else {
+			closePopup();
+			reloadPage();
 			console.log('Item stored successfully');
 		}
 	});
@@ -213,7 +265,7 @@ toggleButtons.forEach((button) => {
 });
 
 // Get all tab links
-const tabLinks = document.querySelectorAll('nav a');
+const tabLinks = document.querySelectorAll('nav button');
 
 // Get all tab contents
 const tabContents = document.getElementsByClassName('tab-content');

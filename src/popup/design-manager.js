@@ -134,9 +134,8 @@ if (~tabUrl.indexOf(appUrl)) {
 		});
 
 		await getLinksFromStorage;
-
 		if (links.length === 0) {
-			const contentJsonUrl = browser.runtime.getURL('content.json');
+			const contentJsonUrl = browser.runtime.getURL('devMenuLinks.json');
 			const response = await fetch(contentJsonUrl);
 			const data = await response.json();
 
