@@ -9,6 +9,7 @@
 	--tabColor: #fff;
 	--linkColor: #0091ae;
 }
+
 html,
 body {
 	max-height: none;
@@ -21,28 +22,33 @@ body {
 	font-size: 16px;
 	font-family: system-ui, sans-serif;
 }
+
 div#tabsContainer {
 	display: flex;
 	justify-content: center;
 }
+
 .tab {
 	display: none;
 	grid-template-columns: 1fr 1fr;
 	gap: 10px;
 	padding: 10px;
 }
-.tabs > button {
+
+.tabs>button {
 	background: var(--tabBg);
 	color: var(--tabColor);
 	width: 100%;
 	padding: 15px;
 	border: 1px solid rgb(81, 111, 144);
 }
-.tabs > button:hover,
-.tabs > button.active {
+
+.tabs>button:hover,
+.tabs>button.active {
 	background: var(--tabBgHover);
 	cursor: pointer;
 }
+
 #tabContentContainer button {
 	padding: 0;
 	height: 44px;
@@ -59,33 +65,40 @@ div#tabsContainer {
 	cursor: pointer;
 	-webkit-appearance: none;
 }
+
 #tabContentContainer button:hover {
 	background-color: var(--buttonColorHover);
 }
+
 #tabContentContainer button[data-width='100'],
 #tabContentContainer div,
 #tabContentContainer ul {
 	grid-column: 1 / -1;
 }
-.tab > ul {
+
+.tab>ul {
 	display: flex;
 	flex-direction: column;
 	gap: 16px;
 }
+
 .tab ul {
 	list-style: none;
 	padding: 0;
 }
+
 .tab ul ul {
 	display: flex;
 	justify-content: start;
 	width: 100%;
 	gap: 16px;
 }
+
 .tab a[href] {
 	color: var(--linkColor);
 	text-decoration: none;
 }
+
 .tab a[href]:hover {
 	text-decoration: underline;
 }

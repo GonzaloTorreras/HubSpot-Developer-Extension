@@ -1,5 +1,4 @@
-var tabUrl =
-	window.location.protocol + '//' + window.location.host + '/' + window.location.pathname;
+var tabUrl = window.location.protocol + '//' + window.location.host + '/' + window.location.pathname;
 var currentScreen = '';
 
 // Function to set the title based on the current screen

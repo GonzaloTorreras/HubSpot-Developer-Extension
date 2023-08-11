@@ -1,0 +1,99 @@
+{
+  "extName": {
+    "message": "HubSpot Entwicklererweiterung",
+    "description": "The Extension's name"
+  },
+  "extDesc": {
+    "message": "Ein Muss für HubSpot-Entwickler. Ein schneller Zugegriff zu häufig verwendete Abfrageparameter welche eine einfache Funktion zu HubSpot bringt.",
+    "description": "Description for extension, displays in chrome extensions listing"
+  },
+  "debugTab": {
+  	"message": "Debuggen",
+  	"description": "Debug Tab Label"
+  },
+  "developTab": {
+  	"message": "Entwickeln",
+  	"description": "Develop Tab Label"
+  },
+  "debugButton": {
+  	"message": "Debugmodus",
+  	"description": "HSDebug button label"
+  },
+  "cacheBustButton": {
+  	"message": "Cache leeren",
+  	"description": "cachebuster Button label"
+  },
+  "footerJqueryButton": {
+  	"message": "Fußzeile jQuery",
+  	"description": "footer jQuery Button label"
+  },
+  "gpsiHover":{
+    "message": "Bewerte mich!",
+    "description": "'score me!' text that appears in hover of google page speed button"
+  },
+  "gpsiTestingDesktop":{
+    "message": "Desktop Version bewerten...",
+    "description": "'grading desktop' text that appears after click of google page speed button"
+  },
+  "gpsiTestingMobile":{
+    "message": "Handy Version bewerten...",
+    "description": "'grading mobile' text that appears after click of google page speed button"
+  },
+  "documentationButton": {
+  	"message": "Dokumentation",
+  	"description": "Documentation Button label"
+  },
+  "docLinkFunctions": {
+  	"message": "Funktionen",
+  	"description": "Documentation Button link for Functions"
+  },
+  "docLinkVariables": {
+  	"message": "Variablen",
+  	"description": "Documentation Button link for Variables"
+  },
+  "docLinkFilters": {
+  	"message": "Filter",
+  	"description": "Documentation Button link for Filters"
+  },
+  "communityButton": {
+    "message": "Gemeinschaft",
+    "description": "Community Button label"
+  },
+  "comLinkDesign": {
+    "message": "Designforum",
+    "description": "Community Button link for Design Forum"
+  },
+  "comLinkDeveloper": {
+    "message": "Entwicklerforum",
+    "description": "Community Button link for Developer/api Forum"
+  },
+  "comLinkIdeas": {
+    "message": "Ideen",
+    "description": "Community Button link for Ideas"
+  },
+    "darkTheme":{
+    "message": "Dunkles Thema",
+    "description": "Dark theme toggle label"
+  },
+    "uiTweaksToggleLabel":{
+    "message": "Benutzeroberflächeneinstellungen/Dev-Menü",
+    "description": "Toggle Label for UI Tweaks and Dev Menu toggle label"
+  },
+  "toggleOn":{
+    "message": "einschalten",
+    "description": "accessibility text for on state of toggle switches"
+  },
+   "toggleOff":{
+    "message": "ausschalten",
+    "description": "accessibility text for off state of toggle switches"
+  },
+  "toggleCheckmark":{
+    "message": "Häkchen",
+    "description": "accessibility text for checkmark of toggle switches"
+  },
+  "helpTranslate": {
+  	"message": "Sprichst du Englisch und eine andere Sprache? Wir benötigen deine Hilfe, unsere Erweiterung zu übersetzen. Bitte besuche unser GitHub.",
+  	"description": "options page request for help translating."
+  }
+ 
+}

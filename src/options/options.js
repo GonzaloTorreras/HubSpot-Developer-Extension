@@ -110,22 +110,21 @@ document.addEventListener('DOMContentLoaded', function () {
 
 		const editButton = listItem.querySelector('button[data-action="edit"]');
 		editButton.addEventListener('click', function () {
-		  labelInput.value = label;
-		  urlInput.value = url;
-		  isEditing = true;
-		  editIndex = index;
-		  addButton.textContent = 'Update';
+			labelInput.value = label;
+			urlInput.value = url;
+			isEditing = true;
+			editIndex = index;
+			addButton.textContent = 'Update';
 		});
 
 		const deleteButton = listItem.querySelector('button[data-action="delete"]');
 		deleteButton.addEventListener('click', function () {
-		  linkList.removeChild(listItem);
-		  saveLinksToStorage();
+			linkList.removeChild(listItem);
+			saveLinksToStorage();
 		});
 
 		linkList.appendChild(listItem);
-	  }
-
+	}
 
 	// Update link in the list
 	function updateLinkInList(label, url, index) {

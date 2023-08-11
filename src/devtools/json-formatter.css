@@ -3,6 +3,7 @@
 .hs-json-formatted body {
 	margin: 0;
 }
+
 .json-formatted {
 	min-height: 100vh;
 	margin: 0;
@@ -77,7 +78,7 @@
 
 /* fix visual gap when a list hold an array*/
 
-.json-formatted li > .separator + ul {
+.json-formatted li>.separator+ul {
 	margin-top: -1em;
 }
 
@@ -96,11 +97,11 @@
 
 /* disable ability to collapse entire json array, performance wise it's sluggish, also kinda pointless.*/
 
-body.json-formatted > ul.array {
+body.json-formatted>ul.array {
 	padding-left: 0;
 }
 
-body > ul.array > li.minimize-me {
+body>ul.array>li.minimize-me {
 	display: none !important;
 }
 
@@ -128,16 +129,17 @@ body > ul.array > li.minimize-me {
 
 /* change bg of active minimizer */
 
-.json-formatted .minimized > .minimize-me:not(:last-child) {
+.json-formatted .minimized>.minimize-me:not(:last-child) {
 	background-image: url('data:image/svg+xml;utf,<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" data-prefix="far" data-icon="chevron-square-right" class="svg-inline--fa fa-chevron-square-right fa-w-14" role="img" viewBox="0 0 448 512"><path fill="rgb(63, 180, 249)" d="M316.5 264.5L193.7 387.3c-4.7 4.7-12.3 4.7-17 0l-22.6-22.6c-4.7-4.7-4.7-12.3 0-17l91.7-91.7-91.7-91.7c-4.7-4.7-4.7-12.3 0-17l22.6-22.6c4.7-4.7 12.3-4.7 17 0l122.8 122.8c4.7 4.7 4.7 12.3 0 17zM448 80v352c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V80c0-26.5 21.5-48 48-48h352c26.5 0 48 21.5 48 48zm-48 346V86c0-3.3-2.7-6-6-6H54c-3.3 0-6 2.7-6 6v340c0 3.3 2.7 6 6 6h340c3.3 0 6-2.7 6-6z"/></svg>');
 }
 
 .json-formatted .minimized {
 	height: 1.2em;
 }
+
 /* TEST to improve performance */
 /* hide children after open-bracket but not close-bracket */
-.json-formatted .minimized > .open-bracket ~ li:not(.close-bracket) {
+.json-formatted .minimized>.open-bracket~li:not(.close-bracket) {
 	display: none;
 	transition: none;
 }
@@ -153,8 +155,8 @@ body > ul.array > li.minimize-me {
 
 /* show the closer in the same line */
 
-.json-formatted .minimized > li.open-bracket,
-.json-formatted .minimized > li.close-bracket {
+.json-formatted .minimized>li.open-bracket,
+.json-formatted .minimized>li.close-bracket {
 	height: auto;
 	display: inline-block;
 	width: auto;
@@ -164,7 +166,7 @@ body > ul.array > li.minimize-me {
 
 /* but not if it parent is minmized */
 
-.json-formatted .minimized .minimized > li:last-child {
+.json-formatted .minimized .minimized>li:last-child {
 	display: none;
 }
 
@@ -173,6 +175,6 @@ body > ul.array > li.minimize-me {
 	background: rgba(255, 255, 255, 0.015);
 }
 
-.json-formatted .active > .key {
+.json-formatted .active>.key {
 	background: rgba(255, 255, 255, 0.2);
 }
