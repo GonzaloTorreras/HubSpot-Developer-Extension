@@ -1,5 +1,6 @@
 {
 	"manifest_version": 2,
+	"default_locale": "en",
 	"browser_specific_settings": {
 		"gecko": {
 			"id": "your-extension-id@firefox"
@@ -14,52 +15,24 @@
 		"128": "src/images/icon-128.png"
 	},
 	"background": {
-		"scripts": [
-			"src/background.js"
-		],
+		"scripts": ["src/background.js"],
 		"persistent": false
 	},
-	"permissions": [
-		"storage",
-		"tabs",
-		"activeTab",
-		"scripting",
-		"devtools",
-		"https://app.hubspot.com/*",
-		"https://app.hubspotqa.com/*",
-		"https://local.hubspot.com/*",
-		"https://local.hubspotqa.com/*",
-		"https://*/*",
-		"http://*/*"
-	],
+	"permissions": ["storage", "tabs", "activeTab", "scripting", "devtools", "https://app.hubspot.com/*", "https://app.hubspotqa.com/*", "https://local.hubspot.com/*", "https://local.hubspotqa.com/*", "https://*/*", "http://*/*"],
 	"browser_action": {
 		"default_popup": "src/popup/popup.html"
 	},
 	"content_scripts": [
 		{
 			"run_at": "document_idle",
-			"js": [
-				"src/popup/design-manager.js"
-			],
-			"css": [
-				"src/popup/hsDarkIde.css"
-			],
-			"matches": [
-				"https://local.hubspot.com/*",
-				"https://local.hubspotqa.com/*",
-				"https://app.hubspot.com/*",
-				"https://app.hubspotqa.com/*",
-				"https://login.hubspot.com/*"
-			]
+			"js": ["src/popup/design-manager.js"],
+			"css": ["src/popup/hsDarkIde.css"],
+			"matches": ["https://local.hubspot.com/*", "https://local.hubspotqa.com/*", "https://app.hubspot.com/*", "https://app.hubspotqa.com/*", "https://login.hubspot.com/*"]
 		},
 		{
 			"run_at": "document_idle",
-			"css": [
-				"src/devtools/json-formatter.css"
-			],
-			"matches": [
-				"https://*/___context___*"
-			]
+			"css": ["src/devtools/json-formatter.css"],
+			"matches": ["https://*/___context___*"]
 		}
 	],
 	"devtools_page": "src/devtools/devtools.html",

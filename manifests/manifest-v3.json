@@ -1,5 +1,6 @@
 {
 	"manifest_version": 3,
+	"default_locale": "en",
 	"name": "HS Developer Extension",
 	"version": "2.0.1",
 	"description": "HS Developer Extension",
