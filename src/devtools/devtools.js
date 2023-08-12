@@ -5,13 +5,17 @@ var panel = chrome.devtools.panels.create('HubSpot', '/src/images/icon-16.png', 
 		chrome.devtools.inspectedWindow.eval("document.querySelector('.hs-tools-menu a[href*=\"/___context___/\"]').getAttribute('href')", function (elementResult) {
 			const href = elementResult;
 
+			if (!href) {
+				window.document.querySelector('h1').innerText = 'No HubSpot Developer Info found';
+				window.document.querySelector('#content').innerHTML = '<p>Reasons this may be happening:<ul><li>This is not a HubSpot page</li><li>You are not logged in</li><li>Adblocker blocked HubSpot scripts</li></ul>If both are true, please report back :)</p>';
+			}
+
 			// Fetch the URL and display its content in #content element
 			fetch(href)
 				.then(function (response) {
 					return response.text();
 				})
 				.then(function (text) {
-					window.document.querySelector('h1').innerText = 'Formatting dev Info...';
 					window.document.querySelector('#content').innerText = text;
 
 					//json-formatter.js

@@ -2,9 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 @layer base {
-	body {
-		width: 600px;
-	}
 	.dragging {
 		opacity: 0.5;
 	}
