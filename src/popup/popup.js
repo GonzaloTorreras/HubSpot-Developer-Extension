@@ -1,3 +1,15 @@
+// Send a message to background.js to check if the user is logged in
+chrome.runtime.sendMessage({ action: 'checkedLoggedIn' }, function (response) {
+	if (response.loggedIn) {
+		// User is logged in, remove the disabled attribute from all buttons with the class 'hsButton'
+		const buttons = document.querySelectorAll('.hsButton');
+		// Iterate over each button element
+		buttons.forEach((button) => {
+			button.removeAttribute('disabled');
+		});
+	}
+});
+
 // Send a message to the background script to open the options page
 document.addEventListener('DOMContentLoaded', function () {
 	// Find the button element
@@ -78,6 +90,7 @@ function closePopup() {
 
 function openLink(url) {
 	(typeof browser !== 'undefined' ? browser.tabs.create : chrome.tabs.create)({ url: url });
+	closePopup();
 }
 
 function hsDebug() {
@@ -96,8 +109,18 @@ function developerMode() {
 	toggleQueryParam('developerMode');
 }
 
-function hsOpenDesignManager(button) {
-	openLink(button.dataset.url);
+function hsOpenDesignManager() {
+	chrome.runtime.sendMessage({ action: 'hsOpenDesignManager' });
+	closePopup();
+}
+
+function openModule() {
+	chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+		chrome.tabs.sendMessage(tabs[0].id, { action: 'toggleEventListeners' }, function (response) {
+			console.log('Event listeners toggled');
+		});
+	});
+	closePopup();
 }
 
 function getCurrentURL(callback) {
@@ -205,7 +228,6 @@ buttons.forEach((button) => {
 		const functionName = button.id;
 		if (typeof window[functionName] === 'function') {
 			window[functionName](button);
-			closePopup();
 		} else {
 			console.log('Function not found: ' + functionName);
 		}
@@ -243,7 +265,7 @@ toggleButtons.forEach((button) => {
 		const itemStored = result[storageToggle];
 		if (itemStored) {
 			button.setAttribute('aria-checked', 'true');
-			button.classList.add('bg-indigo-600');
+			button.classList.add('bg-slate-800');
 			toggleIcon.classList.add('translate-x-5');
 		}
 	});
@@ -258,7 +280,7 @@ toggleButtons.forEach((button) => {
 		toggleItemStorage(storageToggle, !isChecked);
 
 		button.classList.toggle('bg-gray-200');
-		button.classList.toggle('bg-indigo-600');
+		button.classList.toggle('bg-slate-800');
 		toggleIcon.classList.toggle('translate-x-0');
 		toggleIcon.classList.toggle('translate-x-5');
 	});

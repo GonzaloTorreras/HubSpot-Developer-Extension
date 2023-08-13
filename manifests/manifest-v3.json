@@ -16,14 +16,52 @@
 	"background": {
 		"service_worker": "src/background.js"
 	},
-	"permissions": ["storage", "activeTab", "scripting"],
+	"permissions": [
+		"storage",
+		"activeTab",
+		"scripting"
+	],
 	"optional_permissions": [],
-	"host_permissions": ["https://app.hubspot.com/*", "https://app.hubspotqa.com/*", "https://local.hubspot.com/*", "https://local.hubspotqa.com/*", "https://*/*", "http://*/*"],
+	"host_permissions": [
+		"https://app.hubspot.com/*",
+		"https://app.hubspotqa.com/*",
+		"https://local.hubspot.com/*",
+		"https://local.hubspotqa.com/*",
+		"https://*/*",
+		"http://*/*"
+	],
 	"content_scripts": [
 		{
-			"matches": ["*://local.hubspot.com/*", "*://local.hubspotqa.com/*", "*://app.hubspot.com/*", "*://app.hubspotqa.com/*", "*://login.hubspot.com/*"],
-			"js": ["src/popup/design-manager.js"],
-			"css": ["src/popup/hsDarkIde.css"]
+			"matches": [
+				"*://local.hubspot.com/*",
+				"*://local.hubspotqa.com/*",
+				"*://app.hubspot.com/*",
+				"*://app.hubspotqa.com/*",
+				"*://login.hubspot.com/*"
+			],
+			"js": [
+				"src/popup/design-manager.js"
+			],
+			"css": [
+				"src/popup/hsDarkIde.css"
+			]
+		},
+		{
+			"run_at": "document_idle",
+			"css": [
+				"src/devtools/json-formatter.css"
+			],
+			"matches": [
+				"https://*/___context___*"
+			]
+		},
+		{
+			"matches": [
+				"<all_urls>"
+			],
+			"js": [
+				"src/hsDevTools.js"
+			]
 		}
 	],
 	"devtools_page": "src/devtools/devtools.html",
@@ -46,8 +84,12 @@
 	},
 	"web_accessible_resources": [
 		{
-			"resources": ["src/popup/popup.html"],
-			"matches": ["*://*/*"]
+			"resources": [
+				"src/popup/popup.html"
+			],
+			"matches": [
+				"*://*/*"
+			]
 		}
 	]
 }

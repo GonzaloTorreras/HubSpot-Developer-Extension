@@ -21,6 +21,7 @@
 		@apply bg-transparent;
 	}
 	.tab-active span.absolute {
-		@apply bg-indigo-500;
+		@apply bg-slate-800;
 	}
+
 }
