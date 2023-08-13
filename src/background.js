@@ -26,17 +26,6 @@ function openLink(url) {
 	(typeof browser !== 'undefined' ? browser.tabs.create : chrome.tabs.create)({ url: url });
 }
 
-// Open the options page
-function openOptionsPage() {
-	if (chrome.runtime.openOptionsPage) {
-		// Chrome
-		chrome.runtime.openOptionsPage();
-	} else {
-		// Firefox
-		browser.runtime.openOptionsPage();
-	}
-}
-
 // Function to update the URL of a tab with the specified parameters
 function updateTabUrl(url, params, tabId) {
 	let updatedUrl = url;
@@ -118,6 +107,12 @@ chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
 			.catch((error) => {
 				console.error('Error: ', error);
 			});
+	} else if (message.action === 'openOptionsPage') {
+		if (chrome.runtime.openOptionsPage) {
+			chrome.runtime.openOptionsPage();
+		} else {
+			browser.runtime.openOptionsPage();
+		}
 	}
 });
 

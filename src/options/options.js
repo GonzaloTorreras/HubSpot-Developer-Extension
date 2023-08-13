@@ -89,13 +89,13 @@ document.addEventListener('DOMContentLoaded', function () {
 	// Add link to the list
 	function addLinkToList(label, url, index) {
 		const listItem = document.createElement('li');
-		listItem.className = 'flex items-center justify-between gap-x-6 py-5';
+		listItem.className = 'flex items-center justify-between gap-x-6 py-2';
 		listItem.dataset.index = index;
 
 		listItem.innerHTML = `
 		  <div class="min-w-0">
 			<div class="flex items-start gap-x-3 link-container">
-			  <p class="text-sm font-semibold leading-6 text-gray-900">${label}</p>
+			  <p class="text-xs font-semibold leading-6 text-gray-900">${label}</p>
 			  <p class="rounded-md whitespace-nowrap mt-0.5 px-1.5 py-0.5 text-xs font-medium ring-1 ring-inset text-gray-600 bg-gray-50 ring-gray-500/10">${url}</p>
 			</div>
 		  </div>

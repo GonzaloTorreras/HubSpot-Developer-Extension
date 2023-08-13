@@ -10,23 +10,10 @@ chrome.runtime.sendMessage({ action: 'checkedLoggedIn' }, function (response) {
 	}
 });
 
-// Send a message to the background script to open the options page
-document.addEventListener('DOMContentLoaded', function () {
-	// Find the button element
-	var openOptionsButton = document.getElementById('open-options-button');
-
-	// Add a click event listener
-	openOptionsButton.addEventListener('click', function () {
-		// Send a message to the background script to open the options page
-		chrome.runtime.sendMessage({ action: 'openOptionsPage' });
-		closePopup();
-	});
-
-	let links = document.getElementsByTagName('a');
-	for (let i = 0; i < links.length; i++) {
-		links[i].addEventListener('click', closePopup);
-	}
-});
+let links = document.getElementsByTagName('a');
+for (let i = 0; i < links.length; i++) {
+	links[i].addEventListener('click', closePopup);
+}
 
 function toggleQueryParam(paramName) {
 	var api = typeof browser !== 'undefined' ? browser : chrome;
@@ -49,10 +36,8 @@ function toggleQueryParam(paramName) {
 function reloadPage() {
 	// Check the browser
 	if (typeof chrome !== 'undefined' && chrome.tabs) {
-		console.log('Reloading page...');
 		// Chrome browser
 		chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-			console.log(tabs[0].id);
 			chrome.tabs.reload(tabs[0].id);
 		});
 	} else if (typeof browser !== 'undefined' && browser.tabs) {
@@ -109,6 +94,11 @@ function developerMode() {
 	toggleQueryParam('developerMode');
 }
 
+function options() {
+	chrome.runtime.sendMessage({ action: 'openOptionsPage' });
+	closePopup();
+}
+
 function hsOpenDesignManager() {
 	chrome.runtime.sendMessage({ action: 'hsOpenDesignManager' });
 	closePopup();
@@ -116,9 +106,7 @@ function hsOpenDesignManager() {
 
 function openModule() {
 	chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-		chrome.tabs.sendMessage(tabs[0].id, { action: 'toggleEventListeners' }, function (response) {
-			console.log('Event listeners toggled');
-		});
+		chrome.tabs.sendMessage(tabs[0].id, { action: 'toggleEventListeners' });
 	});
 	closePopup();
 }
@@ -249,7 +237,6 @@ function toggleItemStorage(storageId, checked) {
 		} else {
 			closePopup();
 			reloadPage();
-			console.log('Item stored successfully');
 		}
 	});
 }
