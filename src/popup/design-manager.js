@@ -137,12 +137,17 @@ if (~tabUrl.indexOf(appUrl)) {
 
 		await getLinksFromStorage;
 		if (links.length === 0) {
-			const contentJsonUrl = browser.runtime.getURL('devMenuLinks.json');
-			const response = await fetch(contentJsonUrl);
-			const data = await response.json();
+			let devMenu;
+			try {
+				const response = await fetch(api.runtime.getURL('src/content.json'));
+				const data = await response.json();
+				devMenu = data.devMenu;
+			} catch (error) {
+				console.log('Error fetching or parsing JSON:', error);
+			}
 
-			if (data.devMenu) {
-				links = data.devMenu.map((item) => ({
+			if (devMenu) {
+				links = devMenu.map((item) => ({
 					label: item.label,
 					url: prefix + item.url,
 				}));
@@ -245,72 +250,30 @@ if (~tabUrl.indexOf(appUrl)) {
 }
 
 // A fun April fools joke, shows 'Sprocky'
-// A fun April fools joke, shows 'Sprocky'
 function sprocky() {
 	console.log('Sprocky is enabled');
 	const api = typeof browser !== 'undefined' ? browser : chrome;
-	api.storage.local.get(['sprocky'], function (result) {
+
+	api.storage.local.get(['sprocky'], async function (result) {
 		console.log('sprocky:', result.sprocky);
+
 		// Check if sprocky is enabled
 		if (result.sprocky) {
-			var quotes = [
-				'Hi, it looks like you&apos;re looking to build a custom module. Do you need assistance?',
-				'Sufficiently advanced technology is equivalent to magic. Therefore you, must be a wizard.',
-				'/*no comment on your code*/',
-				'If I were one of the Avengers I think I&apos;d be Spiderman, the original web developer.',
-				'Did you know HubL can be used in the head of drag n drop templates?',
-				'It&apos;s dangerous to go alone take $(this)',
-				'YouDidIt = [&apos;hip&apos;,&apos;hip&apos;]',
-				'When trying to explain to a client that something is complicated, use the term &apos;algorithm&apos; and avoid specifics. It works for everyone else, why not you?',
-				'I think your coding experience would be improved with more Daft Punk music playing in the background.',
-				'Need an HTML 5 validator? Try opening your page in Internet Explorer, did it bomb? Must be HTML 5 then.',
-				'I have come to the conclusion that a web developer is just a machine that turns coffee into code, prove me wrong.',
-				'Grammarly says Sprocky isn&apos;t a word. I say Grammarly isn&apos;t a word.',
-				'BOO! did I scare you? I&apos;m Sprocky. Here to help.',
-				'Did you know you can print a unique identifier for a custom module by using {{name}} inside the module?',
-				'Remember, Internet Explorer isn&apos;t a web browser, it&apos;s a compatibility tool. - Chris Jackson, Microsoft&apos;s lead for cyber security',
-				'You appear to be having trouble, have you tried turning it off and on again?',
-				'Pro tip: in the copyright text of your site you can use {{year}} to always have it say the current year.',
-				'If you enjoy my &apos;help&apos; and the HS dev chrome extension please consider leaving a rating and review in the chrome store. The more ratings, the more visibility it gets, the more visibility, the more people contribute to it, the faster features roll out.',
-				'The HTML module still exists, the HubSpot team just hid it in the marketplace. It is free so you can still use it.',
-				'The text field in custom modules now supports emojis, the marketing department said millenials would love it. *sigh*',
-				'The Developer Chrome Extension is an open source project run by community developers, if there&apos;s a feature you wish it had, post an issue, submit a pull request.',
-				'Happy April first from the HubSpot Developer Chrome extension team. We hope you enjoy Sprocky, if you don&apos;t he can be disabled by clicking on the extension and toggling him off.',
-				'There is now a CMS for Developers certification. In the practicum cat gifs are obligatory.',
-				'You can customize the HubSpot IDE by clicking settings right below me. You are most welcome.',
-				'Happy April 1st from the HS Developer Chrome Extension team. I can be disabled by clicking the chrome Extension and toggling Sprocky off.',
-				'Hi my name is Sprocky,  I&apos;m your design manager assistant courtesy of the Dev chrome extension. Happy April Fools.',
-				'Did you know HubL supports ternary operators? *Cue &apos;Your welcome&apos; from Moana*',
-				'This just in, HubSpot&apos;s branding team says please refrain from putting googly eyes on the sprocket logo.',
-				'I think what this is missing is more parallax, and maybe a lens flare or two.',
-				'Expected Clippy? He was taken by the Snap. I&apos;m Sprocky. #ThanosWinsInEndGame',
-				'Did you know there is a HubL Menu function now that you can use to generate custom menu HTML?',
-				'We interrupt your regularly scheduled programming to let you know, there&apos;s a typo in this code. Sprocky signing off.',
-				'If debugging is the process of removing bugs, is programming the process of creating them? Sprocky here, debating the meaning of it all',
-				'Hi I&apos;m Sprocky, you&apos;re missing a semi-colon... somewhere.',
-				'Your Clippy is in another Castle.',
-				'If at first you don&apos;t succeed; call it version 1.0',
-				'If anyone asks - it&apos;s not a bug, it&apos; a feature!',
-				'The names&apos; Sprocky, just wanted to tell you in the chrome extension popup there&apos;s a toggle for dark theme and a handy developer menu.',
-				'The HubSpot Developer slack is where the culprits that created me lie. Find them in #developer-extension',
-				'I don&apos;t always peak at your code, but when I do...',
-				'Refactoring - ain&apos;t nobody got time for that.',
-				'One does not simply grow hair like Will Spiro&apos;s.',
-				'It looks like you&apos;re frustrated with that bug, how about I turn on CAPS lock for you? just kidding.',
-				'Remember, if your project doesn&apos;t blow people&apos;s minds, atleast it&apos;s better than Microsoft Bob.',
-				'Hi there, I&apos;m Sprocky! No, I&apos;m not Clippy, he only wishes he could rock orange like I do.',
-				'Hi, there I see you&apos;re trying to be productive, let me introduce myself, I&apos;m Sprocky.',
-				'Welcome to the design manager, this is where you build modules, templates, CSS and JS files. I&apos;m sprocky, here courtesy of the dev chrome extension',
-				'There&apos;s a bug somewhere in your code. Made you look.',
-				'It looks like you&apos;re trying to work. Would you like a distraction instead?',
-				'In coded files you can click a line number or shift click line numbers to send a link to someone else and it will highlight those lines for them. Pretty spiffy.',
-				'If i annoy you, there&apos;s a toggle in the hs dev chrome extension.',
-				'Email templates are a pain. Let me help. Looks like you need more tables.',
-				'Sick of me? theres&apos; toggle to turn me off in the dev chrome extension.',
-				'Hi, my name is Sprocky, how can I help?',
-			];
+			let sprockyQuotes;
 
-			const rand = quotes[Math.floor(Math.random() * quotes.length)];
+			try {
+				const response = await fetch(api.runtime.getURL('src/content.json'));
+				const data = await response.json();
+				sprockyQuotes = data.sprocky;
+			} catch (error) {
+				console.log('Error fetching or parsing JSON:', error);
+			}
+
+			let randomQuote = "There was an error loading Sprocky's quotes.";
+			if (sprockyQuotes) {
+				randomQuote = sprockyQuotes[Math.floor(Math.random() * sprockyQuotes.length)];
+			}
+
 
 			const sprockyDiv = document.createElement('div');
 			sprockyDiv.id = 'sprocky';
@@ -320,7 +283,7 @@ function sprocky() {
 				<span>x</span>
 			</button>
 			<div class="speech-bubble-ds">
-				<p>${rand}</p>
+				<p>${randomQuote}</p>
 				<div class="speech-bubble-ds-arrow"></div>
 			</div>`;
 

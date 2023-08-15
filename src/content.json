@@ -1,0 +1,212 @@
+{
+	"devMenu": [
+		{
+			"label": "Design Manager",
+			"url": "design-manager/_HUB_ID_"
+		},
+		{
+			"label": "Content Staging",
+			"url": "content/_HUB_ID_/staging/"
+		},
+		{
+			"label": "Website Pages",
+			"url": "website/_HUB_ID_/pages/site/all"
+		},
+		{
+			"label": "Landing Pages",
+			"url": "website/_HUB_ID_/pages/landing/all"
+		},
+		{
+			"label": "Blogs",
+			"url": "website/_HUB_ID_/blog/posts"
+		},
+		{
+			"label": "HubDB",
+			"url": "hubdb/_HUB_ID_"
+		},
+		{
+			"label": "File Manager",
+			"url": "files/_HUB_ID_"
+		},
+		{
+			"label": "Advanced Menus",
+			"url": "settings/_HUB_ID_/website/navigation"
+		},
+		{
+			"label": "Content Settings",
+			"url": "settings/_HUB_ID_/website/pages/all-domains/page-templates"
+		},
+		{
+			"label": "URL Redirects",
+			"url": "settings/_HUB_ID_/domains/url-redirects"
+		},
+		{
+			"label": "Marketplace",
+			"url": "ecosystem/_HUB_ID_/marketplace/templates?source=topNav"
+		},
+		{
+			"label": "GraphiQL",
+			"url": "graphiql/_HUB_ID_"
+		}
+	],
+	"tips": [
+		{
+			"tipId": "VSCode Extension",
+			"title": "Use VSCode?",
+			"content": "Did you know about the HubL Language Extension?",
+			"url": "https://marketplace.visualstudio.com/items?itemName=WilliamSpiro.hubl#overview"
+		},
+		{
+			"tipId": "ext Slack Channel",
+			"title": "#developer-extension",
+			"content": "We have a channel in the official HS Dev Slack, share feedback there or on github Issues",
+			"url": "https://hubspotdev.slack.com/messages/CBBAW6Z3R"
+		},
+		{
+			"tipId": "hubXml",
+			"title": "hubXml",
+			"content": "You can turn any blog into a HubSpot importable XML file with this open source tool",
+			"url": "https://github.com/williamspiro/hubXml"
+		},
+		{
+			"tipId": "resize_image_url",
+			"title": "{{ resize_image_url() }}",
+			"content": "You can use HubL to resize images dynamically. Saving marketers from themselves. Do it.",
+			"url": "https://designers.hubspot.com/en/docs/hubl/hubl-supported-functions#resize-image-url"
+		},
+		{
+			"tipId": "do_tag",
+			"title": "Need to modify lists in HubL? Use the DO tag",
+			"content": "{% do list.append('stuff') %)   Just DO it.",
+			"url": "https://designers.hubspot.com/docs/hubl/syntax#expression-statements"
+		},
+		{
+			"tipId": "Discovery Kit",
+			"title": "HS Discovery Kit",
+			"content": "New to devloping on HubSpot? get all the best tools, docs and resources in the kit!",
+			"url": "https://designers.hubspot.com/discoverykit"
+		},
+		{
+			"tipId": "Hub-Batch",
+			"title": "Hub-Batch",
+			"content": "A library that utilizes HubSpot APIs for bulk updating COS content (Blog Posts and Site Pages)",
+			"url": "https://github.com/williamspiro/hub-batch"
+		},
+		{
+			"tipId": "CrankShaft",
+			"title": "CrankShaft",
+			"content": "Help create a framework like Timber or Bootstrap, specifically tailored to HubSpot",
+			"url": "https://github.com/TheWebTech/CrankShaft"
+		},
+		{
+			"tipId": "feature breakdown",
+			"title": "Feature Breakdown",
+			"content": "This extension has a lot of features that might be obscure, let us break it down for you, it'll only take 2 minutes.",
+			"url": "https://github.com/williamspiro/HubSpot-Developer-Extension/wiki/Feature-Breakdown"
+		},
+		{
+			"tipId": "local dev-cli",
+			"title": "Local development has arrived!",
+			"content": "Using the HubSpot CMS CLI you can work locally using your favorite code editor and tools.",
+			"url": "https://designers.hubspot.com/docs/tools/local-development"
+		},
+		{
+			"tipId": "HS Dev Slack",
+			"title": "HubSpot Developer Slack",
+			"content": "The HubSpot Developer Slack is an invaluable resource, keep up with the top HS devs, they hang out there.",
+			"url": "https://designers.hubspot.com/slack"
+		},
+		{
+			"tipId": "ext Privacy Policy",
+			"title": "Privacy Policy",
+			"content": "Simply put - we don't collect personally identifiable or confidential info, just basic anonymized usage stats, learn more",
+			"url": "https://github.com/williamspiro/HubSpot-Developer-Extension/wiki/Privacy-Policy"
+		},
+		{
+			"tipId": "ext Updates",
+			"title": "Updates",
+			"content": "We post our updates to both the beta and stable build of the extension as a release on our GitHub, check it out to learn about new features.",
+			"url": "https://github.com/williamspiro/HubSpot-Developer-Extension/releases"
+		},
+		{
+			"tipId": "ext rate and review",
+			"title": "Like the extension? consider rating/reviewing",
+			"content": "Ratings and reviews increase visibility of the extension, more visibility means more contributors, which means faster rollout of new features.",
+			"url": "https://chrome.google.com/webstore/detail/hubspot-developer-extensi/gebemkdecnlgbcanplbgdpcffpdnfdfo"
+		},
+		{
+			"tipId": "ext Kbd shortcuts",
+			"title": "Keyboard Shortcuts",
+			"content": "There are Keyboard Shortcuts for the cache buster and Debug functions",
+			"url": "https://github.com/williamspiro/HubSpot-Developer-Extension/wiki/How-to-Use-and-set-up-Keyboard-Shortcuts"
+		},
+		{
+			"tipId": "devtoolschtsheet post",
+			"title": "Dev Tools Cheat Sheet",
+			"content": "In the HS developer forum developers like you have been compiling a cheatsheet of all their best tools that they use for HubSpot development.",
+			"url": "https://community.hubspot.com/t5/Share-Your-Work/Developers-Tools-Cheat-Sheet/m-p/207945/highlight/true#M258"
+		},
+		{
+			"tipId": "cmsdevcert",
+			"title": "HubSpot CMS for Developers Certification",
+			"content": "Free HubSpot CMS course for developers. Become a certified HubSpot CMS developer to prove your expertise.",
+			"url": "https://app.hubspot.com/signup/standalone-cms-developer?hubs_signup-url=academy.hubspot.com/courses/cms-for-developers&amp;intent=learningCenter&amp;track=34"
+		}
+	],
+	"sprocky": [
+		"Hi, it looks like you're looking to build a custom module. Do you need assistance?",
+		"Sufficiently advanced technology is equivalent to magic. Therefore you, must be a wizard.",
+		"/*no comment on your code*/",
+		"If I were one of the Avengers I think I'd be Spiderman, the original web developer.",
+		"Did you know HubL can be used in the head of drag n drop templates?",
+		"It's dangerous to go alone take $(this)",
+		"YouDidIt = ['hip','hip']",
+		"When trying to explain to a client that something is complicated, use the term 'algorithm' and avoid specifics. It works for everyone else, why not you?",
+		"I think your coding experience would be improved with more Daft Punk music playing in the background.",
+		"Need an HTML 5 validator? Try opening your page in Internet Explorer, did it bomb? Must be HTML 5 then.",
+		"I have come to the conclusion that a web developer is just a machine that turns coffee into code, prove me wrong.",
+		"Grammarly says Sprocky isn't a word. I say Grammarly isn't a word.",
+		"BOO! did I scare you? I'm Sprocky. Here to help.",
+		"Did you know you can print a unique identifier for a custom module by using {{name}} inside the module?",
+		"Remember, Internet Explorer isn't a web browser, it's a compatibility tool. - Chris Jackson, Microsoft's lead for cyber security",
+		"You appear to be having trouble, have you tried turning it off and on again?",
+		"Pro tip: in the copyright text of your site you can use {{year}} to always have it say the current year.",
+		"If you enjoy my 'help' and the HS dev chrome extension please consider leaving a rating and review in the chrome store. The more ratings, the more visibility it gets, the more visibility, the more people contribute to it, the faster features roll out.",
+		"The HTML module still exists, the HubSpot team just hid it in the marketplace. It is free so you can still use it.",
+		"The text field in custom modules now supports emojis, the marketing department said millennials would love it. *sigh*",
+		"The Developer Chrome Extension is an open source project run by community developers, if there's a feature you wish it had, post an issue, submit a pull request.",
+		"Happy April first from the HubSpot Developer Chrome extension team. We hope you enjoy Sprocky, if you don't he can be disabled by clicking on the extension and toggling him off.",
+		"There is now a CMS for Developers certification. In the practicum cat gifs are obligatory.",
+		"You can customize the HubSpot IDE by clicking settings right below me. You are most welcome.",
+		"Happy April 1st from the HS Developer Chrome Extension team. I can be disabled by clicking the chrome Extension and toggling Sprocky off.",
+		"Hi my name is Sprocky,  I'm your design manager assistant courtesy of the Dev chrome extension. Happy April Fools.",
+		"Did you know HubL supports ternary operators? *Cue 'Your welcome' from Moana*",
+		"This just in, HubSpot's branding team says please refrain from putting googly eyes on the sprocket logo.",
+		"I think what this is missing is more parallax, and maybe a lens flare or two.",
+		"Expected Clippy? He was taken by the Snap. I'm Sprocky. #ThanosWinsInEndGame",
+		"Did you know there is a HubL Menu function now that you can use to generate custom menu HTML?",
+		"We interrupt your regularly scheduled programming to let you know, there's a typo in this code. Sprocky signing off.",
+		"If debugging is the process of removing bugs, is programming the process of creating them? Sprocky here, debating the meaning of it all",
+		"Hi I'm Sprocky, you're missing a semi-colon... somewhere.",
+		"Your Clippy is in another Castle.",
+		"If at first you don't succeed; call it version 1.0",
+		"If anyone asks - it's not a bug, it' a feature!",
+		"The names' Sprocky, just wanted to tell you in the chrome extension popup there's a toggle for dark theme and a handy developer menu.",
+		"The HubSpot Developer slack is where the culprits that created me lie. Find them in #developer-extension",
+		"I don't always peak at your code, but when I do...",
+		"Refactoring - ain't nobody got time for that.",
+		"One does not simply grow hair like Will Spiro's.",
+		"It looks like you're frustrated with that bug, how about I turn on CAPS lock for you? just kidding.",
+		"Remember, if your project doesn't blow people's minds, at least it's better than Microsoft Bob.",
+		"Hi there, I'm Sprocky! No, I'm not Clippy, he only wishes he could rock orange like I do.",
+		"Hi, there I see you're trying to be productive, let me introduce myself, I'm Sprocky.",
+		"Welcome to the design manager, this is where you build modules, templates, CSS and JS files. I'm sprocky, here courtesy of the dev chrome extension",
+		"There's a bug somewhere in your code. Made you look.",
+		"It looks like you're trying to work. Would you like a distraction instead?",
+		"In coded files you can click a line number or shift click line numbers to send a link to someone else and it will highlight those lines for them. Pretty spiffy.",
+		"If i annoy you, there's a toggle in the hs dev chrome extension.",
+		"Email templates are a pain. Let me help. Looks like you need more tables.",
+		"Sick of me? theres' toggle to turn me off in the dev chrome extension.",
+		"Hi, my name is Sprocky, how can I help?"
+	]
+}

@@ -16,6 +16,7 @@ for (let i = 0; i < links.length; i++) {
 }
 
 function toggleQueryParam(paramName) {
+	closePopup();
 	var api = typeof browser !== 'undefined' ? browser : chrome;
 
 	api.tabs.query({ active: true, currentWindow: true }).then(function (tabs) {
@@ -29,6 +30,7 @@ function toggleQueryParam(paramName) {
 		}
 
 		api.tabs.update(currentTab.id, { url: url.toString() });
+
 	});
 }
 
@@ -302,3 +304,22 @@ tabLinks.forEach((link) => {
 		link.classList.add('tab-active');
 	});
 });
+
+(async function () {
+	try {
+		const api = typeof browser !== 'undefined' ? browser : chrome;
+		const response = await fetch(api.runtime.getURL('src/content.json'));
+		const data = await response.json();
+		const tips = data.tips;
+
+		const banner = document.querySelector('.tips');
+		const tip = tips[Math.floor(Math.random() * tips.length)];
+
+		banner.dataset.tipId = tip.tipId;
+		banner.href = tip.url;
+		banner.querySelector('.tip__title').textContent = tip.title;
+		banner.querySelector('.tip__content').textContent = tip.content;
+	} catch (error) {
+		console.log('Error fetching or parsing JSON:', error);
+	}
+})();

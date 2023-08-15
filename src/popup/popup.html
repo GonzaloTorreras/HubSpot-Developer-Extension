@@ -24,168 +24,176 @@
 				</div>
 			</div>
 		</div>
-		<div>
-			<nav class="isolate flex divide-x divide-gray-200 rounded-lg shadow" aria-label="Tabs">
-				<button class="tab-resting tab-active" data-tab="tab1">
-					<span>Debugging</span>
-					<span aria-hidden="true" class="absolute inset-x-0 bottom-0 h-0.5"></span>
-				</button>
-				<button class="tab-resting" data-tab="tab2">
-					<span>Devloper</span>
-					<span aria-hidden="true" class="absolute inset-x-0 bottom-0 h-0.5"></span>
-				</button>
-				<button class="tab-resting" data-tab="tab3">
-					<span>Links</span>
-					<span aria-hidden="true" class="bg-transparent absolute inset-x-0 bottom-0 h-0.5"></span>
-				</button>
-			</nav>
+		<nav class="isolate flex divide-x divide-gray-200 rounded-lg shadow" aria-label="Tabs">
+			<button class="tab-resting tab-active" data-tab="tab1">
+				<span>Debugging</span>
+				<span aria-hidden="true" class="absolute inset-x-0 bottom-0 h-0.5"></span>
+			</button>
+			<button class="tab-resting" data-tab="tab2">
+				<span>Devloper</span>
+				<span aria-hidden="true" class="absolute inset-x-0 bottom-0 h-0.5"></span>
+			</button>
+			<button class="tab-resting" data-tab="tab3">
+				<span>Links</span>
+				<span aria-hidden="true" class="bg-transparent absolute inset-x-0 bottom-0 h-0.5"></span>
+			</button>
+		</nav>
 
-			<div id="tab1" class="tab-content">
-				<div class="grid-cols-2 grid gap-3 p-4">
-					<button id="hsCacheBuster" type="button" class="hsButton flex flex-col justify-center rounded-md bg-slate-800 px-5 py-3.5 text-lg text-left font-semibold text-white shadow-sm hover:bg-slate-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-800">
-						<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12 mb-3 -ml-2">
-							<path stroke-linecap="round" stroke-linejoin="round" d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125" />
-						</svg>
-						<span>Bust Cache</span>
-					</button>
+		<div id="tab1" class="tab-content">
+			<div class="grid-cols-2 grid gap-3 p-4">
+				<button id="hsCacheBuster" type="button" class="hsButton flex flex-col justify-center rounded-md bg-slate-800 px-5 py-3.5 text-lg text-left font-semibold text-white shadow-sm hover:bg-slate-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-800">
+					<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12 mb-3 -ml-2">
+						<path stroke-linecap="round" stroke-linejoin="round" d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125" />
+					</svg>
+					<span>Bust Cache</span>
+				</button>
 
-					<button id="hsDebug" type="button" class="hsButton flex flex-col justify-center rounded-md bg-slate-800 px-5 py-3.5 text-lg text-left font-semibold text-white shadow-sm hover:bg-slate-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-800">
-						<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12 mb-3 -ml-2">
-							<path
-								stroke-linecap="round"
-								stroke-linejoin="round"
-								d="M12 12.75c1.148 0 2.278.08 3.383.237 1.037.146 1.866.966 1.866 2.013 0 3.728-2.35 6.75-5.25 6.75S6.75 18.728 6.75 15c0-1.046.83-1.867 1.866-2.013A24.204 24.204 0 0112 12.75zm0 0c2.883 0 5.647.508 8.207 1.44a23.91 23.91 0 01-1.152 6.06M12 12.75c-2.883 0-5.647.508-8.208 1.44.125 2.104.52 4.136 1.153 6.06M12 12.75a2.25 2.25 0 002.248-2.354M12 12.75a2.25 2.25 0 01-2.248-2.354M12 8.25c.995 0 1.971-.08 2.922-.236.403-.066.74-.358.795-.762a3.778 3.778 0 00-.399-2.25M12 8.25c-.995 0-1.97-.08-2.922-.236-.402-.066-.74-.358-.795-.762a3.734 3.734 0 01.4-2.253M12 8.25a2.25 2.25 0 00-2.248 2.146M12 8.25a2.25 2.25 0 012.248 2.146M8.683 5a6.032 6.032 0 01-1.155-1.002c.07-.63.27-1.222.574-1.747m.581 2.749A3.75 3.75 0 0115.318 5m0 0c.427-.283.815-.62 1.155-.999a4.471 4.471 0 00-.575-1.752M4.921 6a24.048 24.048 0 00-.392 3.314c1.668.546 3.416.914 5.223 1.082M19.08 6c.205 1.08.337 2.187.392 3.314a23.882 23.882 0 01-5.223 1.082"
-							/>
-						</svg>
-						<span>Debug Mode</span>
-					</button>
+				<button id="hsDebug" type="button" class="hsButton flex flex-col justify-center rounded-md bg-slate-800 px-5 py-3.5 text-lg text-left font-semibold text-white shadow-sm hover:bg-slate-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-800">
+					<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12 mb-3 -ml-2">
+						<path
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							d="M12 12.75c1.148 0 2.278.08 3.383.237 1.037.146 1.866.966 1.866 2.013 0 3.728-2.35 6.75-5.25 6.75S6.75 18.728 6.75 15c0-1.046.83-1.867 1.866-2.013A24.204 24.204 0 0112 12.75zm0 0c2.883 0 5.647.508 8.207 1.44a23.91 23.91 0 01-1.152 6.06M12 12.75c-2.883 0-5.647.508-8.208 1.44.125 2.104.52 4.136 1.153 6.06M12 12.75a2.25 2.25 0 002.248-2.354M12 12.75a2.25 2.25 0 01-2.248-2.354M12 8.25c.995 0 1.971-.08 2.922-.236.403-.066.74-.358.795-.762a3.778 3.778 0 00-.399-2.25M12 8.25c-.995 0-1.97-.08-2.922-.236-.402-.066-.74-.358-.795-.762a3.734 3.734 0 01.4-2.253M12 8.25a2.25 2.25 0 00-2.248 2.146M12 8.25a2.25 2.25 0 012.248 2.146M8.683 5a6.032 6.032 0 01-1.155-1.002c.07-.63.27-1.222.574-1.747m.581 2.749A3.75 3.75 0 0115.318 5m0 0c.427-.283.815-.62 1.155-.999a4.471 4.471 0 00-.575-1.752M4.921 6a24.048 24.048 0 00-.392 3.314c1.668.546 3.416.914 5.223 1.082M19.08 6c.205 1.08.337 2.187.392 3.314a23.882 23.882 0 01-5.223 1.082"
+						/>
+					</svg>
+					<span>Debug Mode</span>
+				</button>
 
-					<button id="hsMoveJQueryToFooter" type="button" class="hsButton col-span-2 inline-flex justify-between items-center gap-x-2 rounded-md bg-slate-800 px-5 py-3.5 text-sm font-semibold text-white shadow-sm hover:bg-slate-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-800">
-						Move jQuery to Footer
+				<button id="hsMoveJQueryToFooter" type="button" class="hsButton col-span-2 inline-flex justify-between items-center gap-x-2 rounded-md bg-slate-800 px-5 py-3.5 text-sm font-semibold text-white shadow-sm hover:bg-slate-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-800">
+					Move jQuery to Footer
+					<svg xmlns="http://www.w3.org/2000/svg" class="-mr-0.5 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+						<path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" />
+					</svg>
+				</button>
+
+				<button id="hsAmp" type="button" class="hsButton col-span-2 inline-flex justify-between items-center gap-x-2 rounded-md bg-slate-800 px-5 py-3.5 text-sm font-semibold text-white shadow-sm hover:bg-slate-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-800">
+					Google AMP
+					<svg xmlns="http://www.w3.org/2000/svg" class="-mr-0.5 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+						<path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" />
+					</svg>
+				</button>
+
+				<button id="pageSpeed" type="button" class="hsButton col-span-2 inline-flex justify-between items-center gap-x-2 rounded-md bg-slate-800 px-5 py-3.5 text-sm font-semibold text-white shadow-sm hover:bg-slate-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-800">
+					Open Page Speed Insights
+					<svg xmlns="http://www.w3.org/2000/svg" class="-mr-0.5 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+						<path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5m.75-9l3-3 2.148 2.148A12.061 12.061 0 0116.5 7.605" />
+					</svg>
+				</button>
+			</div>
+		</div>
+		<div id="tab2" class="tab-content hidden">
+			<div class="p-4">
+				<div class="grid-cols-2 grid gap-3">
+					<button id="developerMode" type="button" class="hsButton col-span-2 inline-flex justify-between items-center gap-x-2 rounded-md bg-slate-800 px-5 py-3.5 text-sm font-semibold text-white shadow-sm hover:bg-slate-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-800">
+						Developer Mode
 						<svg xmlns="http://www.w3.org/2000/svg" class="-mr-0.5 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
 							<path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" />
 						</svg>
 					</button>
 
-					<button id="hsAmp" type="button" class="hsButton col-span-2 inline-flex justify-between items-center gap-x-2 rounded-md bg-slate-800 px-5 py-3.5 text-sm font-semibold text-white shadow-sm hover:bg-slate-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-800">
-						Google AMP
+					<button id="hsOpenDesignManager" type="button" disabled class="hsButton disabled:opacity-50 col-span-2 inline-flex justify-between items-center gap-x-2 rounded-md bg-slate-800 px-5 py-3.5 text-sm font-semibold text-white shadow-sm hover:bg-slate-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-800">
+						Open Design Manager
 						<svg xmlns="http://www.w3.org/2000/svg" class="-mr-0.5 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-							<path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" />
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 004.486-6.336l-3.276 3.277a3.004 3.004 0 01-2.25-2.25l3.276-3.276a4.5 4.5 0 00-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437l1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008z"
+							/>
 						</svg>
 					</button>
 
-					<button id="pageSpeed" type="button" class="hsButton col-span-2 inline-flex justify-between items-center gap-x-2 rounded-md bg-slate-800 px-5 py-3.5 text-sm font-semibold text-white shadow-sm hover:bg-slate-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-800">
-						Open Page Speed Insights
+					<button id="openModule" type="button" disabled class="hsButton disabled:opacity-50 col-span-2 inline-flex justify-between items-center gap-x-2 rounded-md bg-slate-800 px-5 py-3.5 text-sm font-semibold text-white shadow-sm hover:bg-slate-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-800">
+						Edit Module in Design Manager
 						<svg xmlns="http://www.w3.org/2000/svg" class="-mr-0.5 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-							<path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5m.75-9l3-3 2.148 2.148A12.061 12.061 0 0116.5 7.605" />
+							<path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
 						</svg>
 					</button>
 				</div>
-			</div>
-			<div id="tab2" class="tab-content hidden">
-				<div class="p-4">
-					<div class="grid-cols-2 grid gap-3">
-						<button id="developerMode" type="button" class="hsButton col-span-2 inline-flex justify-between items-center gap-x-2 rounded-md bg-slate-800 px-5 py-3.5 text-sm font-semibold text-white shadow-sm hover:bg-slate-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-800">
-							Developer Mode
-							<svg xmlns="http://www.w3.org/2000/svg" class="-mr-0.5 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-								<path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" />
-							</svg>
-						</button>
 
-						<button id="hsOpenDesignManager" type="button" disabled class="hsButton disabled:opacity-50 col-span-2 inline-flex justify-between items-center gap-x-2 rounded-md bg-slate-800 px-5 py-3.5 text-sm font-semibold text-white shadow-sm hover:bg-slate-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-800">
-							Open Design Manager
-							<svg xmlns="http://www.w3.org/2000/svg" class="-mr-0.5 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-								<path
-									stroke-linecap="round"
-									stroke-linejoin="round"
-									d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 004.486-6.336l-3.276 3.277a3.004 3.004 0 01-2.25-2.25l3.276-3.276a4.5 4.5 0 00-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437l1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008z"
-								/>
-							</svg>
-						</button>
-
-						<button id="openModule" type="button" disabled class="hsButton disabled:opacity-50 col-span-2 inline-flex justify-between items-center gap-x-2 rounded-md bg-slate-800 px-5 py-3.5 text-sm font-semibold text-white shadow-sm hover:bg-slate-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-800">
-							Edit Module in Design Manager
-							<svg xmlns="http://www.w3.org/2000/svg" class="-mr-0.5 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-								<path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
-							</svg>
-						</button>
-					</div>
-
-					<div class="flex items-start justify-between gap-3 mt-4">
-						<span class="flex flex-grow flex-col">
-							<span class="text-sm font-medium leading-6 text-gray-900" id="devMenu-label"> Developer Menu </span>
-							<span class="text-xs text-gray-500" id="devMenu-description">Adds developer menu to the HubSpot menu</span>
-						</span>
-						<!-- Enabled: "bg-slate-800", Not Enabled: "bg-gray-200" -->
-						<button data-storage="devMenu" type="button" class="hsToggle bg-gray-200 relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-slate-800 focus:ring-offset-2" role="switch" aria-checked="false" aria-labelledby="devMenu-label" aria-describedby="devMenu-description">
-							<!-- Enabled: "translate-x-5", Not Enabled: "translate-x-0" -->
-							<span aria-hidden="true" class="translate-x-0 pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out"></span>
-						</button>
-					</div>
-
-					<div class="flex items-start justify-between gap-3 mt-4">
-						<span class="flex flex-grow flex-col">
-							<span class="text-sm font-medium leading-6 text-gray-900" id="darktheme-label">IDE Dark Theme</span>
-							<span class="text-xs text-gray-500" id="darktheme-description">Enable dark theme in the HubSpot IDE</span>
-						</span>
-						<!-- Enabled: "bg-slate-800", Not Enabled: "bg-gray-200" -->
-						<button data-storage="darktheme" type="button" class="hsToggle bg-gray-200 relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-slate-800 focus:ring-offset-2" role="switch" aria-checked="false" aria-labelledby="darktheme-label" aria-describedby="darktheme-description">
-							<!-- Enabled: "translate-x-5", Not Enabled: "translate-x-0" -->
-							<span aria-hidden="true" class="translate-x-0 pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out"></span>
-						</button>
-					</div>
-
-					<div class="flex items-start justify-between gap-3 mt-4">
-						<span class="flex flex-grow flex-col">
-							<span class="text-sm font-medium leading-6 text-gray-900" id="darktheme-label">Sprocky</span>
-							<span class="text-xs text-gray-500" id="darktheme-description">
-								<div class="c-sprocky-terms">Sprocky is the Chrome Extension team's 2019 <a class="text-slate-900 underline" href="https://github.com/GonzaloTorreras/HubSpot-Developer-Extension/wiki/What-is-up-with-Sprocky%3F" target="_blank">April Fools joke</a>. By toggling Sprocky on you are stating you understand that Sprocky is a community creation and he is not created by, and his comments are not the views of HubSpot. Enjoy!</div>
-							</span>
-						</span>
-						<!-- Enabled: "bg-slate-800", Not Enabled: "bg-gray-200" -->
-						<button data-storage="sprocky" type="button" class="hsToggle bg-gray-200 relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-slate-800 focus:ring-offset-2" role="switch" aria-checked="false" aria-labelledby="darktheme-label" aria-describedby="darktheme-description">
-							<!-- Enabled: "translate-x-5", Not Enabled: "translate-x-0" -->
-							<span aria-hidden="true" class="translate-x-0 pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out"></span>
-						</button>
-					</div>
+				<div class="flex items-start justify-between gap-3 mt-4">
+					<span class="flex flex-grow flex-col">
+						<span class="text-sm font-medium leading-6 text-gray-900" id="devMenu-label"> Developer Menu </span>
+						<span class="text-xs text-gray-500" id="devMenu-description">Adds developer menu to the HubSpot menu</span>
+					</span>
+					<!-- Enabled: "bg-slate-800", Not Enabled: "bg-gray-200" -->
+					<button data-storage="devMenu" type="button" class="hsToggle bg-gray-200 relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-slate-800 focus:ring-offset-2" role="switch" aria-checked="false" aria-labelledby="devMenu-label" aria-describedby="devMenu-description">
+						<!-- Enabled: "translate-x-5", Not Enabled: "translate-x-0" -->
+						<span aria-hidden="true" class="translate-x-0 pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out"></span>
+					</button>
 				</div>
-			</div>
-			<div id="tab3" class="tab-content hidden prose">
-				<div class="p-4">
-					<ul>
-						<li>
-							<span>Documentation</span>
-							<ul>
-								<li>
-									<a href="https://developers.hubspot.com/docs/cms/hubl/functions">Functions</a>
-								</li>
-								<li>
-									<a href="https://developers.hubspot.com/docs/cms/hubl/variables">Variables</a>
-								</li>
-								<li>
-									<a href="https://developers.hubspot.com/docs/cms/hubl/filters">Filters</a>
-								</li>
-								<li>
-									<a href="https://developers.hubspot.com/docs/cms/data/hubdb">HubDB</a>
-								</li>
-							</ul>
-						</li>
-						<li>
-							<span>Community</span>
-							<ul>
-								<li>
-									<a href="https://developers.hubspot.com/docs/cms/hubl/functions">Slack</a>
-								</li>
-								<li><a href="https://community.hubspot.com/">Forum</a></li>
-								<li>
-									<a href="https://community.hubspot.com/t5/HubSpot-Ideas/idb-p/HubSpot_Ideas">Ideas</a>
-								</li>
-							</ul>
-						</li>
-					</ul>
+
+				<div class="flex items-start justify-between gap-3 mt-4">
+					<span class="flex flex-grow flex-col">
+						<span class="text-sm font-medium leading-6 text-gray-900" id="darktheme-label">IDE Dark Theme</span>
+						<span class="text-xs text-gray-500" id="darktheme-description">Enable dark theme in the HubSpot IDE</span>
+					</span>
+					<!-- Enabled: "bg-slate-800", Not Enabled: "bg-gray-200" -->
+					<button data-storage="darktheme" type="button" class="hsToggle bg-gray-200 relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-slate-800 focus:ring-offset-2" role="switch" aria-checked="false" aria-labelledby="darktheme-label" aria-describedby="darktheme-description">
+						<!-- Enabled: "translate-x-5", Not Enabled: "translate-x-0" -->
+						<span aria-hidden="true" class="translate-x-0 pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out"></span>
+					</button>
+				</div>
+
+				<div class="flex items-start justify-between gap-3 mt-4">
+					<span class="flex flex-grow flex-col">
+						<span class="text-sm font-medium leading-6 text-gray-900" id="darktheme-label">Sprocky</span>
+						<span class="text-xs text-gray-500" id="darktheme-description">
+							<div class="c-sprocky-terms">Sprocky is the Chrome Extension team's 2019 <a class="text-slate-900 underline" href="https://github.com/GonzaloTorreras/HubSpot-Developer-Extension/wiki/What-is-up-with-Sprocky%3F" target="_blank">April Fools joke</a>. By toggling Sprocky on you are stating you understand that Sprocky is a community creation and he is not created by, and his comments are not the views of HubSpot. Enjoy!</div>
+						</span>
+					</span>
+					<!-- Enabled: "bg-slate-800", Not Enabled: "bg-gray-200" -->
+					<button data-storage="sprocky" type="button" class="hsToggle bg-gray-200 relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-slate-800 focus:ring-offset-2" role="switch" aria-checked="false" aria-labelledby="darktheme-label" aria-describedby="darktheme-description">
+						<!-- Enabled: "translate-x-5", Not Enabled: "translate-x-0" -->
+						<span aria-hidden="true" class="translate-x-0 pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out"></span>
+					</button>
 				</div>
 			</div>
 		</div>
+		<div id="tab3" class="tab-content hidden prose">
+			<div class="p-4">
+				<ul>
+					<li>
+						<span>Documentation</span>
+						<ul>
+							<li>
+								<a href="https://developers.hubspot.com/docs/cms/hubl/functions">Functions</a>
+							</li>
+							<li>
+								<a href="https://developers.hubspot.com/docs/cms/hubl/variables">Variables</a>
+							</li>
+							<li>
+								<a href="https://developers.hubspot.com/docs/cms/hubl/filters">Filters</a>
+							</li>
+							<li>
+								<a href="https://developers.hubspot.com/docs/cms/data/hubdb">HubDB</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<span>Community</span>
+						<ul>
+							<li>
+								<a href="https://developers.hubspot.com/docs/cms/hubl/functions">Slack</a>
+							</li>
+							<li><a href="https://community.hubspot.com/">Forum</a></li>
+							<li>
+								<a href="https://community.hubspot.com/t5/HubSpot-Ideas/idb-p/HubSpot_Ideas">Ideas</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<footer class="border-t-2 p-2">
+			<div class="p-4 text-center ">
+				<a class="tips" href="" target="_blank" data-tipid="">
+					<div class="tip__title"></div>
+					<div class="tip__content text-sm"></div>
+				</a>
+			</div>
+
+		</footer>
 
 		<script src="popup.js"></script>
 	</body>

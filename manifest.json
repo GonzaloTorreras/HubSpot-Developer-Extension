@@ -71,6 +71,9 @@
 			]
 		}
 	],
+	"web_accessible_resources": [
+		"src/content.json"
+	],
 	"devtools_page": "src/devtools/devtools.html",
 	"options_ui": {
 		"page": "src/options/options.html",
