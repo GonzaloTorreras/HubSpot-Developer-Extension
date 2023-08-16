@@ -251,4 +251,27 @@ document.addEventListener('DOMContentLoaded', function () {
 			link.classList.add('tab-active');
 		});
 	});
+
+	fetch('https://api.github.com/repositories/127780604/releases')
+		.then((response) => response.json())
+		.then((data) => {
+			var items = [];
+			Object.entries(data).forEach(([key, val]) => {
+				items.push(`
+				  <li class='py-4 border-b-2' id='${key}'>
+					<a target="_blank" class="block" href='${val.html_url}'>
+					  <span class="font-bold text-2xl">${val.name}</span>
+					  <span class="rounded-md whitespace-nowrap mt-0.5 px-1.5 py-0.5 text-xs font-medium ring-1 ring-inset text-gray-200 bg-stone-600 ring-gray-500/10"">
+					  	${val.tag_name}
+					  </span>
+					  <span class="prose block max-w-none">${val.body}</span>
+					</a>
+				  </li>
+				`);
+			  });
+
+			var ul = document.createElement('ul');
+			ul.innerHTML = items.join('');
+			document.querySelector('.releases').appendChild(ul);
+		});
 });
