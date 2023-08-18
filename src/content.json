@@ -2,51 +2,35 @@
 	"devMenu": [
 		{
 			"label": "Design Manager",
-			"url": "design-manager/_HUB_ID_"
+			"url": "https://app.hubspot.com/design-manager/HUB_ID"
 		},
 		{
 			"label": "Content Staging",
-			"url": "content/_HUB_ID_/staging/"
-		},
-		{
-			"label": "Website Pages",
-			"url": "website/_HUB_ID_/pages/site/all"
-		},
-		{
-			"label": "Landing Pages",
-			"url": "website/_HUB_ID_/pages/landing/all"
-		},
-		{
-			"label": "Blogs",
-			"url": "website/_HUB_ID_/blog/posts"
+			"url": "https://app.hubspot.com/content/HUB_ID/staging"
 		},
 		{
 			"label": "HubDB",
-			"url": "hubdb/_HUB_ID_"
+			"url": "https://app.hubspot.com/hubdb/HUB_ID"
 		},
 		{
 			"label": "File Manager",
-			"url": "files/_HUB_ID_"
+			"url": "https://app.hubspot.com/files/HUB_ID"
 		},
 		{
 			"label": "Advanced Menus",
-			"url": "settings/_HUB_ID_/website/navigation"
+			"url": "https://app.hubspot.com/menus/HUB_ID/edit"
 		},
 		{
-			"label": "Content Settings",
-			"url": "settings/_HUB_ID_/website/pages/all-domains/page-templates"
+			"label": "Page Settings",
+			"url": "https://app.hubspot.com/settings/HUB_ID/website/pages/all-domains/page-templates"
 		},
 		{
 			"label": "URL Redirects",
-			"url": "settings/_HUB_ID_/domains/url-redirects"
-		},
-		{
-			"label": "Marketplace",
-			"url": "ecosystem/_HUB_ID_/marketplace/templates?source=topNav"
+			"url": "https://app.hubspot.com/settings/HUB_ID/domains/url-redirects"
 		},
 		{
 			"label": "GraphiQL",
-			"url": "graphiql/_HUB_ID_"
+			"url": "https://app.hubspot.com/graphiql/HUB_ID"
 		}
 	],
 	"tips": [

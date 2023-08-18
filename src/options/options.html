@@ -5,8 +5,8 @@
 		<script src="options.js"></script>
 		<link href="../css/output.css" rel="stylesheet" />
 	</head>
-	<body class="max-w-5xl mx-auto p-4">
-		<div class="wrapper">
+	<body class="max-w-2xl mx-auto p-8 bg-slate-300">
+		<div class="wrapper bg-white">
 			<div>
 				<nav class="isolate flex divide-x divide-gray-200 rounded-lg shadow" aria-label="Tabs">
 					<a class="tab-resting tab-active" data-tab="tab1">
@@ -14,7 +14,7 @@
 						<span aria-hidden="true" class="absolute inset-x-0 bottom-0 h-0.5"></span>
 					</a>
 					<a class="tab-resting" data-tab="tab2">
-						<span>Devloper Menu</span>
+						<span>Dev Menu</span>
 						<span aria-hidden="true" class="absolute inset-x-0 bottom-0 h-0.5"></span>
 					</a>
 					<a class="tab-resting" data-tab="tab3">
@@ -31,12 +31,72 @@
 					</a>
 				</nav>
 
-				<div id="tab1" class="tab-content">
-					<div class="prose p-4 max-w-none">
-						<h1 id="hubspot-developer-extension">HubSpot-Developer-Extension</h1>
-						<p>
-							<a target="_blank" href="https://www.codacy.com/app/jonmclaren1/HubSpot-Developer-Extension?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=williamspiro/HubSpot-Developer-Extension&amp;utm_campaign=Badge_Grade"><img src="https://api.codacy.com/project/badge/Grade/d6a1c1d220ea4ca79299b432ca44a9d8" alt="Codacy Badge" /></a>
-						</p>
+				<div id="tab1" class="tab-content p-4">
+					<div>
+						<div class="flex items-start justify-between gap-3 first:mt-0 mt-4">
+							<span class="flex flex-grow flex-col">
+								<span class="text-sm font-medium leading-6 text-gray-900" id="devMenu-label"> Developer Menu </span>
+								<span class="text-xs text-gray-500" id="devMenu-description">Adds developer menu to the HubSpot menu</span>
+							</span>
+							<!-- Enabled: "bg-slate-800", Not Enabled: "bg-gray-200" -->
+							<button data-storage="devMenu" type="button" class="hsToggle bg-gray-200 relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-slate-800 focus:ring-offset-2" role="switch" aria-checked="false" aria-labelledby="devMenu-label" aria-describedby="devMenu-description">
+								<!-- Enabled: "translate-x-5", Not Enabled: "translate-x-0" -->
+								<span aria-hidden="true" class="translate-x-0 pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out"></span>
+							</button>
+						</div>
+
+						<div class="flex items-start justify-between gap-3 mt-4">
+							<span class="flex flex-grow flex-col">
+								<span class="text-sm font-medium leading-6 text-gray-900" id="darktheme-label">IDE Dark Theme</span>
+								<span class="text-xs text-gray-500" id="darktheme-description">Enable dark theme in the HubSpot IDE</span>
+							</span>
+							<!-- Enabled: "bg-slate-800", Not Enabled: "bg-gray-200" -->
+							<button data-storage="darktheme" type="button" class="hsToggle bg-gray-200 relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-slate-800 focus:ring-offset-2" role="switch" aria-checked="false" aria-labelledby="darktheme-label" aria-describedby="darktheme-description">
+								<!-- Enabled: "translate-x-5", Not Enabled: "translate-x-0" -->
+								<span aria-hidden="true" class="translate-x-0 pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out"></span>
+							</button>
+						</div>
+
+						<div class="flex items-start justify-between gap-3 mt-4">
+							<span class="flex flex-grow flex-col">
+								<span class="text-sm font-medium leading-6 text-gray-900" id="darktheme-label">Sprocky</span>
+								<span class="text-xs text-gray-500" id="darktheme-description">
+									<div class="c-sprocky-terms">Sprocky is the Chrome Extension team's 2019 <a class="text-slate-900 underline" href="https://github.com/GonzaloTorreras/HubSpot-Developer-Extension/wiki/What-is-up-with-Sprocky%3F" target="_blank">April Fools joke</a>. By toggling Sprocky on you are stating you understand that Sprocky is a community creation and he is not created by, and his comments are not the views of HubSpot. Enjoy!</div>
+								</span>
+							</span>
+							<!-- Enabled: "bg-slate-800", Not Enabled: "bg-gray-200" -->
+							<button data-storage="sprocky" type="button" class="hsToggle bg-gray-200 relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-slate-800 focus:ring-offset-2" role="switch" aria-checked="false" aria-labelledby="darktheme-label" aria-describedby="darktheme-description">
+								<!-- Enabled: "translate-x-5", Not Enabled: "translate-x-0" -->
+								<span aria-hidden="true" class="translate-x-0 pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out"></span>
+							</button>
+						</div>
+					</div>
+
+				</div>
+
+				<div id="tab2" class="tab-content p-4 hidden">
+					<div class="">
+						<p><strong>HUB_ID</strong> will be replace with your current portal's Hub ID</p>
+						<div class="inputs my-4">
+							<div class="isolate -space-y-px rounded-md shadow-sm">
+								<div class="relative rounded-md rounded-b-none px-3 pb-1.5 pt-2.5 ring-1 ring-inset ring-gray-300 focus-within:z-10 focus-within:ring-2 focus-within:ring-slate-800">
+									<label for="link-label" class="block text-xs font-medium text-gray-900">Label</label>
+									<input type="text" name="link-label" id="link-label" class="block w-full border-0 p-0 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6" placeholder="Settings" />
+								</div>
+								<div class="relative rounded-md rounded-t-none px-3 pb-1.5 pt-2.5 ring-1 ring-inset ring-gray-300 focus-within:z-10 focus-within:ring-2 focus-within:ring-slate-800">
+									<label for="link-url" class="block text-xs font-medium text-gray-900">URL</label>
+									<input type="text" name="link-url" id="link-url" class="block w-full border-0 p-0 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6" placeholder="_HUB_ID_/rest-of-link" />
+								</div>
+							</div>
+							<button class="btn" id="add-link">Add</button>
+						</div>
+						<ul id="link-list" role="list" class="divide-y divide-gray-200 text-sm"></ul>
+						<button class="btn mt-4" id="reset-default">Reset to Default</button>
+					</div>
+				</div>
+
+				<div id="tab3" class="tab-content p-4 hidden">
+					<div class="prose max-w-none">
 						<p>A Chrome/Chromium extension for HubSpot Developers that adds useful shortcuts to commonly used HubSpot Query Parameters, and tools for making HubSpot Development easier and more enjoyable. For details on the many features we have a wiki page detailing them:<a target="_blank" href="https://github.com/williamspiro/HubSpot-Developer-Extension/wiki/Feature-Breakdown">Feature Breakdown</a></p>
 						<p>If you like the extension, please <a target="_blank" href="https://chrome.google.com/webstore/detail/hubspot-developer-extensi/gebemkdecnlgbcanplbgdpcffpdnfdfo/reviews">rate and review it</a> to help it get visibility in the chrome store. The more eyes on it, the more likely more contributors, and more high quality updates!</p>
 						<p><a target="_blank" href="https://chrome.google.com/webstore/detail/hubspot-developer-extensi/gebemkdecnlgbcanplbgdpcffpdnfdfo">We&#39;re in the Chrome Store!</a> The Chrome store version is the stable build, and will get updates over time.</p>
@@ -81,30 +141,9 @@
 						<p><a target="_blank" href="https://github.com/williamspiro/HubSpot-Developer-Extension/wiki/Privacy-Policy">Privacy Policy</a></p>
 					</div>
 				</div>
-				<div id="tab2" class="tab-content hidden">
-					<div class="p-4">
-						<h1 class="text-xl mb-2">Developer Menu</h1>
-						<p><strong>_HUB_ID_</strong> will be replace with your curernt portal's Hub ID</p>
-						<div class="inputs my-4">
-							<div class="isolate -space-y-px rounded-md shadow-sm">
-								<div class="relative rounded-md rounded-b-none px-3 pb-1.5 pt-2.5 ring-1 ring-inset ring-gray-300 focus-within:z-10 focus-within:ring-2 focus-within:ring-slate-800">
-									<label for="link-label" class="block text-xs font-medium text-gray-900">Label</label>
-									<input type="text" name="link-label" id="link-label" class="block w-full border-0 p-0 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6" placeholder="Settings" />
-								</div>
-								<div class="relative rounded-md rounded-t-none px-3 pb-1.5 pt-2.5 ring-1 ring-inset ring-gray-300 focus-within:z-10 focus-within:ring-2 focus-within:ring-slate-800">
-									<label for="link-url" class="block text-xs font-medium text-gray-900">URL</label>
-									<input type="text" name="link-url" id="link-url" class="block w-full border-0 p-0 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6" placeholder="_HUB_ID_/rest-of-link" />
-								</div>
-							</div>
-							<button class="btn" id="add-link">Add</button>
-						</div>
-						<ul id="link-list" role="list" class="divide-y divide-gray-200 text-sm"></ul>
-						<button class="btn" id="reset-default">Reset to Default</button>
-					</div>
-				</div>
-				<div id="tab3" class="tab-content hidden"></div>
-				<div id="tab4" class="tab-content hidden">
-					<div class="p-4 prose max-w-none">
+
+				<div id="tab4" class="tab-content p-4 hidden">
+					<div class="prose max-w-none">
 						<p>We apologize for the blandness of this screen, but if you'd like to help make it look better, you can help!</p>
 						<p>
 							<a target="_blank" href="https://github.com/williamspiro/HubSpot-Developer-Extension/">View on GitHub</a>
@@ -167,9 +206,10 @@
 						</ul>
 					</div>
 				</div>
-				<div id="tab5" class="tab-content hidden">
-					<div class="releases divide-gray-200 mx-auto p-4">
-						<h2 class="text-4xl mb-4">Releases</h2>
+
+				<div id="tab5" class="tab-content p-4 hidden">
+					<div class="releases divide-gray-200 mx-auto">
+
 					</div>
 				</div>
 			</div>

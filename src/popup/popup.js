@@ -224,57 +224,6 @@ buttons.forEach((button) => {
 	});
 });
 
-// Get all buttons with the class "hsToggle"
-const toggleButtons = document.querySelectorAll('.hsToggle');
-
-// Function to toggle item in extension storage
-function toggleItemStorage(storageId, checked) {
-	const api = typeof browser !== 'undefined' ? browser : chrome;
-
-	const storageItem = { [storageId]: checked };
-
-	api.storage.local.set(storageItem, function () {
-		if (chrome.runtime.lastError) {
-			console.error(chrome.runtime.lastError);
-		} else {
-			closePopup();
-			reloadPage();
-		}
-	});
-}
-
-toggleButtons.forEach((button) => {
-	const toggleIcon = button.querySelector('span[aria-hidden="true"]');
-	const storageToggle = button.getAttribute('data-storage');
-
-	// Check if the item is already stored
-	const api = typeof browser !== 'undefined' ? browser : chrome;
-
-	api.storage.local.get(storageToggle, function (result) {
-		const itemStored = result[storageToggle];
-		if (itemStored) {
-			button.setAttribute('aria-checked', 'true');
-			button.classList.add('bg-slate-800');
-			toggleIcon.classList.add('translate-x-5');
-		}
-	});
-
-	button.addEventListener('click', function () {
-		const isChecked = button.getAttribute('aria-checked') === 'true';
-
-		// Toggle the state
-		button.setAttribute('aria-checked', !isChecked);
-
-		// Toggle the item in storage
-		toggleItemStorage(storageToggle, !isChecked);
-
-		button.classList.toggle('bg-gray-200');
-		button.classList.toggle('bg-slate-800');
-		toggleIcon.classList.toggle('translate-x-0');
-		toggleIcon.classList.toggle('translate-x-5');
-	});
-});
-
 // Get all tab links
 const tabLinks = document.querySelectorAll('nav button');
 

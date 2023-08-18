@@ -38,6 +38,57 @@ document.addEventListener('DOMContentLoaded', function () {
 		makeListItemsDraggable();
 	});
 
+	// Get all buttons with the class "hsToggle"
+	const toggleButtons = document.querySelectorAll('.hsToggle');
+
+	// Function to toggle item in extension storage
+	function toggleItemStorage(storageId, checked) {
+		const api = typeof browser !== 'undefined' ? browser : chrome;
+
+		const storageItem = { [storageId]: checked };
+
+		api.storage.local.set(storageItem, function () {
+			if (chrome.runtime.lastError) {
+				console.error(chrome.runtime.lastError);
+			} else {
+				closePopup();
+				reloadPage();
+			}
+		});
+	}
+
+	toggleButtons.forEach((button) => {
+		const toggleIcon = button.querySelector('span[aria-hidden="true"]');
+		const storageToggle = button.getAttribute('data-storage');
+
+		// Check if the item is already stored
+		const api = typeof browser !== 'undefined' ? browser : chrome;
+
+		api.storage.local.get(storageToggle, function (result) {
+			const itemStored = result[storageToggle];
+			if (itemStored) {
+				button.setAttribute('aria-checked', 'true');
+				button.classList.add('bg-slate-800');
+				toggleIcon.classList.add('translate-x-5');
+			}
+		});
+
+		button.addEventListener('click', function () {
+			const isChecked = button.getAttribute('aria-checked') === 'true';
+
+			// Toggle the state
+			button.setAttribute('aria-checked', !isChecked);
+
+			// Toggle the item in storage
+			toggleItemStorage(storageToggle, !isChecked);
+
+			button.classList.toggle('bg-gray-200');
+			button.classList.toggle('bg-slate-800');
+			toggleIcon.classList.toggle('translate-x-0');
+			toggleIcon.classList.toggle('translate-x-5');
+		});
+	});
+
 	// Handle add button click event
 	addButton.addEventListener('click', function () {
 		var label = labelInput.value;
@@ -89,14 +140,14 @@ document.addEventListener('DOMContentLoaded', function () {
 	// Add link to the list
 	function addLinkToList(label, url, index) {
 		const listItem = document.createElement('li');
-		listItem.className = 'flex items-center justify-between gap-x-6 py-2';
+		listItem.className = 'hover:cursor-move flex items-center justify-between gap-x-6 py-2';
 		listItem.dataset.index = index;
 
 		listItem.innerHTML = `
 		  <div class="min-w-0">
-			<div class="flex items-start gap-x-3 link-container">
+			<div class="link-container">
 			  <p class="text-xs font-semibold leading-6 text-gray-900">${label}</p>
-			  <p class="rounded-md whitespace-nowrap mt-0.5 px-1.5 py-0.5 text-xs font-medium ring-1 ring-inset text-gray-600 bg-gray-50 ring-gray-500/10">${url}</p>
+			  <p class="rounded-md whitespace-nowrap leading-6 mt-0.5 px-1.5 py-0.5 text-xs font-medium ring-1 ring-inset text-gray-600 bg-gray-50 ring-gray-500/10">${url}</p>
 			</div>
 		  </div>
 		  <div class="isolate inline-flex rounded-md shadow-sm">
@@ -268,7 +319,7 @@ document.addEventListener('DOMContentLoaded', function () {
 					</a>
 				  </li>
 				`);
-			  });
+			});
 
 			var ul = document.createElement('ul');
 			ul.innerHTML = items.join('');

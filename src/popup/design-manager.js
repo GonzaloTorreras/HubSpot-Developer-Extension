@@ -112,7 +112,7 @@ if (~tabUrl.indexOf(appUrl)) {
 
 	// Function to generate a menu item HTML
 	function generateDevMenuItem(buttonLabel, hubId, url) {
-		const link = url.replace('_HUB_ID_', hubId);
+		const link = url.replace('HUB_ID', hubId).replace('hub_id', hubId);
 		return `
       <li role="none">
         <a role="menuitem" data-tracking="click hover" id="nav-secondary-design-tools-beta" class="navSecondaryLink" href="${link}">
@@ -123,7 +123,6 @@ if (~tabUrl.indexOf(appUrl)) {
 
 	// Function to generate all menu items
 	async function generateAllMenuItems(hubId) {
-		const prefix = '/';
 		let links = [];
 
 		const getLinksFromStorage = new Promise((resolve) => {
@@ -149,7 +148,7 @@ if (~tabUrl.indexOf(appUrl)) {
 			if (devMenu) {
 				links = devMenu.map((item) => ({
 					label: item.label,
-					url: prefix + item.url,
+					url: item.url,
 				}));
 				chrome.storage.sync.set({ links: links });
 			}
@@ -157,7 +156,7 @@ if (~tabUrl.indexOf(appUrl)) {
 
 		let menuItems = '';
 		links.forEach((link) => {
-			menuItems += generateDevMenuItem(link.label, hubId, prefix + link.url);
+			menuItems += generateDevMenuItem(link.label, hubId, link.url);
 		});
 
 		return menuItems;
