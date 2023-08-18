@@ -108,11 +108,7 @@ chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
 				console.error('Error: ', error);
 			});
 	} else if (message.action === 'openOptionsPage') {
-		if (chrome.runtime.openOptionsPage) {
-			chrome.runtime.openOptionsPage();
-		} else {
-			browser.runtime.openOptionsPage();
-		}
+		browser.runtime.openOptionsPage();
 	}
 });
 
