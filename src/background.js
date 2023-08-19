@@ -74,7 +74,6 @@ chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
 	} else if (message.action === 'devInfoLink') {
 		// Update devInfoLink and clear devInfo
 		devInfoLink = message.data;
-		console.log('devInfoLink: ', devInfoLink);
 		devInfo = null;
 	} else if (message.action === 'hsOpenDesignManager') {
 		fetch(devInfoLink)

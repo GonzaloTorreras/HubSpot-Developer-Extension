@@ -50,9 +50,6 @@ document.addEventListener('DOMContentLoaded', function () {
 		api.storage.local.set(storageItem, function () {
 			if (chrome.runtime.lastError) {
 				console.error(chrome.runtime.lastError);
-			} else {
-				closePopup();
-				reloadPage();
 			}
 		});
 	}
