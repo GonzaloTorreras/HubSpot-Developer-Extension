@@ -5,7 +5,7 @@
 ### Chrome
 Download the chrome.zip and unzipped, then load as a unpacked extions
 
-###
+### Firefox
 Download the firefox.xpi file and open with firefox
 
 Note: Fow now this will only work until you close the browser. You will need to repeat these steps every time you open the browser.
