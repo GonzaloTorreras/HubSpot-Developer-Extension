@@ -5,10 +5,10 @@
 ### Chrome
 Download the chrome.zip and unzipped, then load as a unpacked extions
 
-###
+### Firefox
 Download the firefox.xpi file and open with firefox
 
-Note: Fow now this will only work until you close the browser. You will need to repeat these steps every time you open the browser.
+-----
 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/d6a1c1d220ea4ca79299b432ca44a9d8)](https://www.codacy.com/app/jonmclaren1/HubSpot-Developer-Extension?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=williamspiro/HubSpot-Developer-Extension&amp;utm_campaign=Badge_Grade)
 
