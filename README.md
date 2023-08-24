@@ -1,10 +1,12 @@
 # HubSpot-Developer-Extension
 
-# Firefox (WIP)
+
 ## How to install
-1. Navigate to about:debugging#/runtime/this-firefox
-2. Select "Load Temporary Add-on..."
-3. Select the firefox.zip file
+### Chrome
+Download the chrome.zip and unzipped, then load as a unpacked extions
+
+###
+Download the firefox.xpi file and open with firefox
 
 Note: Fow now this will only work until you close the browser. You will need to repeat these steps every time you open the browser.
 
