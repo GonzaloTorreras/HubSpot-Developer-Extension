@@ -22,12 +22,12 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo) => {
 });
 
 // Function to open a new tab with the provided URL
-function openLink(url) {
+function openLink (url) {
 	(typeof browser !== 'undefined' ? browser.tabs.create : chrome.tabs.create)({ url: url });
 }
 
 // Function to update the URL of a tab with the specified parameters
-function updateTabUrl(url, params, tabId) {
+function updateTabUrl (url, params, tabId) {
 	let updatedUrl = url;
 
 	for (const [key, value] of params.entries()) {
@@ -40,12 +40,12 @@ function updateTabUrl(url, params, tabId) {
 }
 
 // Function to generate a random number as a string
-function getRandomNumber() {
+function getRandomNumber () {
 	return String(Math.floor(Math.random() * 9999) + 1);
 }
 
 // Recursive function to find a record with the desired ID in an object
-function findRecord(object, desiredId) {
+function findRecord (object, desiredId) {
 	if (object.id === desiredId || object.name === desiredId) {
 		// Check if current record has the desired ID
 		return object;
@@ -107,7 +107,15 @@ chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
 				console.error('Error: ', error);
 			});
 	} else if (message.action === 'openOptionsPage') {
-		browser.runtime.openOptionsPage();
+		if (typeof chrome !== 'undefined' && typeof chrome.runtime !== 'undefined') {
+			// The browser is Chrome, execute Chrome-specific code
+			chrome.runtime.openOptionsPage();
+		}
+		// Check if the browser is Firefox
+		else if (typeof browser !== 'undefined' && typeof browser.runtime !== 'undefined') {
+			// The browser is Firefox, execute Firefox-specific code
+			browser.runtime.openOptionsPage();
+		}
 	}
 });
 
