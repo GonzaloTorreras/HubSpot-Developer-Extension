@@ -55,7 +55,7 @@ if (/local\.hubspot/i.test(tabUrl)) {
 // Check if the URL is from HubSpot Backend
 if (~tabUrl.indexOf(appUrl)) {
 	if (/hubspot\.com/i.test(tabUrl)) {
-		console.log('This is the HubSpot backend.');
+		//console.log('This is the HubSpot backend.');
 
 		const hubspotPages = {
 			'design-manager': /design-manager/i.test(tabUrl),
@@ -74,7 +74,7 @@ if (~tabUrl.indexOf(appUrl)) {
 		// Find the current active screen
 		Object.entries(hubspotPages).forEach(([page, isMatched]) => {
 			if (isMatched) {
-				console.log(`${page.charAt(0).toUpperCase() + page.slice(1)} is active`);
+				// console.log(`${page.charAt(0).toUpperCase() + page.slice(1)} is active`);
 				currentScreen = page;
 			}
 		});
@@ -106,8 +106,6 @@ if (~tabUrl.indexOf(appUrl)) {
 		}
 	} else if (/designers\.hubspot\.com\/docs/i.test(tabUrl)) {
 		currentScreen = 'docs';
-	} else {
-		console.log('This is not in the HubSpot Backend');
 	}
 
 	// Function to generate a menu item HTML
@@ -183,7 +181,7 @@ if (~tabUrl.indexOf(appUrl)) {
 
 		const sanitizedContent = sanitizeHTML(html);
 
-		const navLinks = document.querySelector('.nav-links ul.primary-links');
+		const navLinks = document.querySelector('.primary-links');
 		const firstChild = navLinks.firstElementChild;
 
 		while (sanitizedContent.firstChild) {
@@ -238,11 +236,12 @@ if (~tabUrl.indexOf(appUrl)) {
 		const devMenuValue = result.devMenu;
 		console.log('devMenu:', devMenuValue);
 		if (devMenuValue) {
-			console.log('Generating the developer menu');
 			let hubId;
-			waitForEl('.navAccount-portalId', function () {
-				hubId = document.querySelector('.navAccount-portalId').textContent;
-				generateDevMenu(hubId);
+			waitForEl('[href*="app.hubspot.com/design-manager"]', function () {
+
+				console.log('Generating the developer menu');
+				hubId = document.querySelector('[href*="app.hubspot.com/design-manager"]').href.split('/');
+				generateDevMenu(hubId.pop());
 			});
 		}
 	});
@@ -250,7 +249,6 @@ if (~tabUrl.indexOf(appUrl)) {
 
 // A fun April fools joke, shows 'Sprocky'
 function sprocky() {
-	console.log('Sprocky is enabled');
 	const api = typeof browser !== 'undefined' ? browser : chrome;
 
 	api.storage.local.get(['sprocky'], async function (result) {
