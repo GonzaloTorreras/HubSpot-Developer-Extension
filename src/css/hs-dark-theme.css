@@ -1,0 +1,170 @@
+:root {
+    /* set of variables for a site dark theme */
+    --primary-text: rgb(118, 131, 144);
+    --secondary-text: rgb(173, 186, 199);
+    --link-text: rgb(83, 155, 245);
+
+    --primary-bg: rgb(34, 39, 46);
+    --secondary-bg: rgb(28, 33, 40);
+    --tertiary-bg: rgb(45, 51, 59);
+
+
+}
+
+body.ext-dark-app .gxfQSK {
+    --horizontally-scrollable-tabs-inactive-bg-color: var(--tertiary-bg);
+    --horizontally-scrollable-tabs-border-color: var(--primary-text);
+    --horizontally-scrollable-tabs-border-color-unset: var(--primary-text);
+    --horizontally-scrollable-tabs-active-bg-color: var(--secondary-bg);
+}
+
+body.ext-dark-app,
+body.ext-dark-app [class*="StyledPage"],
+body.ext-dark-app [class*="AbstractPage"],
+body.ext-dark-app [style*="background-color: rgb(245, 248, 250)"],
+body.ext-dark-app [class*="DashboardCardWrapper"] {
+    background: var(--primary-bg) !important;
+    color: var(--primary-text);
+}
+
+body.ext-dark-app .private-button--transparent,
+body.ext-dark-app .private-button__link,
+body.ext-dark-app a {
+    color: var(--link-text);
+    font-weight: 300;
+}
+
+
+body.ext-dark-app .private-button--primary,
+body.ext-dark-app .private-paginator__button--active,
+body.ext-dark-app .private-paginator__button:hover {
+    background-color: var(--secondary-bg);
+    border-color: var(--tertiary-bg);
+    color: var(--secondary-text);
+}
+
+body.ext-dark-app .private-button--secondary,
+body.ext-dark-app [class*="UITab__StyledLink"] {
+    background-color: var(--tertiary-bg);
+    border-color: var(--secondary-bg);
+    color: var(--primary-text);
+}
+
+body.ext-dark-app .private-button--tertiary-light {
+    background-color: var(--tertiary-bg);
+    border-color: var(--secondary-text);
+    color: var(--secondary-text);
+}
+
+body.ext-dark-app .private-button--tertiary-extra-light {
+    background-color: var(--tertiary-bg);
+    border-color: var(--primary-text);
+    color: var(--secondary-text);
+}
+
+body.ext-dark-app .private-button--transparent {
+    background-color: var(--tertiary-bg);
+    color: var(--secondary-text);
+}
+
+
+body.ext-dark-app [class*="HeaderWithBottomBorder"] {
+    border-color: var(--primary-text);
+}
+
+body.ext-dark-app [class*="TableTopBar"] {
+    background: var(--secondary-bg);
+    border-color: var(--primary-text);;
+}
+
+body.ext-dark-app [class*="TableBox"],
+body.ext-dark-app [class*="UITable__Table"],
+body.ext-dark-app [class*="UITable__Table"] * {
+    border-color: var(--primary-text);
+    box-shadow: none;
+}
+
+body.ext-dark-app [class*="UITable"] thead th {
+    background: var(--tertiary-bg);
+    border-color: var(--primary-text);
+    color: var(--primary-text);
+}
+
+body.ext-dark-app [class*="UITable"] tbody td {
+    background: var(--primary-bg);
+    border-color: var(--primary-text);
+    color: var(--primary-text);
+}
+
+body.ext-dark-app [class*="UIOverhang"] {
+    display: none;
+}
+
+body.ext-dark-app .private-paginator__button {
+    color: var(--primary-text);
+}
+
+
+
+body.ext-dark-app #hs-nav-v4 nav,
+body.ext-dark-app #hs-nav-v4 span,
+body.ext-dark-app #hs-nav-v4 ul,
+body.ext-dark-app #hs-nav-v4 div,
+body.ext-dark-app #hs-nav-v4 li,
+body.ext-dark-app #hs-nav-v4 a,
+body.ext-dark-app #hs-nav-v4 svg,
+body.ext-dark-app #hs-nav-v4 img,
+body.ext-dark-app #hs-nav-v4 title,
+body.ext-dark-app #hs-nav-v4 input,
+body.ext-dark-app #hs-global-toolbar,
+body.ext-dark-app #hs-nav-v4 .expansion a.navSecondaryLink {
+    background: var(--secondary-bg);
+}
+
+body.ext-dark-app #hs-nav-v4 .primary-links>li.active>a,
+body.ext-dark-app #hs-nav-v4 .primary-links>li.currentPage>a,
+body.ext-dark-app #hs-nav-v4 .secondary-nav>ul>li.active>a,
+body.ext-dark-app #hs-nav-v4 .secondary-nav>ul>li:not(.expandable)>a:hover,
+body.ext-dark-app #hs-nav-v4 #hs-global-toolbar a:hover *,
+body.ext-dark-app #hs-nav-v4 #navbar a:hover * {
+
+    background: var(--tertiary-bg);
+}
+
+body.ext-dark-app #hs-nav-v4 #hs-global-toolbar a,
+body.ext-dark-app #hs-nav-v4 #navbar a {
+    color: var(--primary-text);
+}
+
+body.ext-dark-app #hs-nav-v4 #navbar .navSearch-v2.open .navSearch-inputWrapper .navSearch-input,
+body.ext-dark-app .private-form__control,
+body.ext-dark-app [class*="UICheckbox"] {
+    background: var(--primary-bg);
+    color: var(--primary-text);
+    border-color: var(--primary-text);
+}
+
+body.ext-dark-app [class*="UITabs__StyledList"],
+body.ext-dark-app .private-tag {
+    border: none
+}
+
+body.ext-dark-app [class*="ViewTabs"],
+body.ext-dark-app [class*="UISection__ScrollWrapper"],
+body.ext-dark-app .simple-menus-menu-item {
+    border-color: var(--primary-text);
+}
+
+body.ext-dark-app [class*="UICheckbox__PrivateCheckboxInput"]:checked + span [class*="UICheckbox__PrivateCheckboxIcon"] {
+    fill: var(--primary-text);
+}
+
+body.ext-dark-app [class*="UICheckbox__PrivateCheckboxInput"]:checked + [class*="UICheckbox__PrivateCheckboxIndicator"] {
+    border-color: var(--primary-text);
+}
+
+body.ext-dark-app  .private-alert--warning {
+    background: var(--tertiary-bg);
+    color: var(--primary-text);
+    border-color: var(--primary-text);
+}
