@@ -3,7 +3,7 @@
 
 ## How to install
 ### Chrome
-Download the files and unzipped, then load as an then load as an <a href="https://developer.chrome.com/docs/extensions/get-started/tutorial/hello-world#load-unpacked" target="_blank">unpacked extension</a>
+Above the list of files, click **Code** then click **Download ZIP**. Unzipped the files, then load as an <a href="https://developer.chrome.com/docs/extensions/get-started/tutorial/hello-world#load-unpacked" target="_blank">unpacked extension</a>
 
 ### Firefox
 Download the firefox.xpi file and open with firefox
