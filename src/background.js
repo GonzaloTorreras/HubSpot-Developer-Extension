@@ -4,22 +4,57 @@ let devInfoLink;
 let devInfo;
 let hubID;
 
-// Function to check the dev info link and send a message to the active tab
-const checkDevInfoLink = () => {
-	chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
-		chrome.tabs.sendMessage(tabs[0].id, { action: 'checkDevInfoLink' });
-	});
-};
+let contentScriptReadyTabs = new Set();
+
+// Listen for readiness signal from content scripts
+chrome.runtime.onMessage.addListener((message, sender) => {
+  if (message.action === 'contentScriptReady' && sender.tab) {
+    contentScriptReadyTabs.add(sender.tab.id);
+
+    // Optionally, immediately perform actions for the ready tab
+    checkDevInfoLink(sender.tab.id);
+  }
+});
+
+// Function to check the dev info link and send a message to the specified tab
+const checkDevInfoLink = (tabId = null) => {
+	if (tabId === null) {
+	  // If no tabId is provided, find the active tab in the current window
+	  chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+		if (tabs.length > 0 && contentScriptReadyTabs.has(tabs[0].id)) {
+		  chrome.tabs.sendMessage(tabs[0].id, { action: 'checkDevInfoLink' });
+		}
+	  });
+	} else {
+	  // If a tabId is provided, directly send a message if the content script is ready
+	  if (contentScriptReadyTabs.has(tabId)) {
+		chrome.tabs.sendMessage(tabId, { action: 'checkDevInfoLink' });
+	  }
+	}
+  };
 
 // Listen for tab activation changes and call checkDevInfoLink
-chrome.tabs.onActivated.addListener(checkDevInfoLink);
+chrome.tabs.onActivated.addListener(({ tabId }) => checkDevInfoLink(tabId));
 
 // Listen for tab updates and call checkDevInfoLink after the tab is completely loaded
 chrome.tabs.onUpdated.addListener((tabId, changeInfo) => {
-	if (changeInfo.status === 'complete') {
-		checkDevInfoLink();
-	}
+  if (changeInfo.status === 'complete') {
+    // Check if this tab has previously signaled readiness
+    if (contentScriptReadyTabs.has(tabId)) {
+      checkDevInfoLink(tabId);
+    }
+  }
 });
+
+// Optional: Clean up when tabs are closed or replaced
+chrome.tabs.onRemoved.addListener((tabId) => {
+  contentScriptReadyTabs.delete(tabId);
+});
+chrome.tabs.onReplaced.addListener((addedTabId, removedTabId) => {
+  contentScriptReadyTabs.delete(removedTabId);
+  contentScriptReadyTabs.add(addedTabId);
+});
+
 
 // Function to open a new tab with the provided URL
 function openLink (url) {

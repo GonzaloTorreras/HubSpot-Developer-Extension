@@ -112,8 +112,16 @@ if (~tabUrl.indexOf(appUrl)) {
 	}
 
 	// Function to generate a menu item HTML
-	function generateDevMenuItem(buttonLabel, hubId, url) {
+	function generateDevMenuItem(buttonLabel, hubId, url, beta) {
 		const link = url.replace('HUB_ID', hubId).replace('hub_id', hubId);
+		if(beta) {
+			return `
+			<li role="none" class="VerticalNavSecondaryMenuItem__StyledLi-sc-198obj7-0 fsWvWc">
+				<a href="${link}" role="menuitem" data-menu-item-level="secondary">
+					${buttonLabel}
+				</a>
+			</li>`;
+		}
 		return `
       <li role="none">
         <a role="menuitem" data-tracking="click hover" id="nav-secondary-design-tools-beta" class="navSecondaryLink" href="${link}">
@@ -123,7 +131,7 @@ if (~tabUrl.indexOf(appUrl)) {
 	}
 
 	// Function to generate all menu items
-	async function generateAllMenuItems(hubId) {
+	async function generateAllMenuItems(hubId, beta) {
 		let links = [];
 
 		const getLinksFromStorage = new Promise((resolve) => {
@@ -157,7 +165,7 @@ if (~tabUrl.indexOf(appUrl)) {
 
 		let menuItems = '';
 		links.forEach((link) => {
-			menuItems += generateDevMenuItem(link.label, hubId, link.url);
+			menuItems += generateDevMenuItem(link.label, hubId, link.url, beta);
 		});
 
 		return menuItems;
@@ -223,6 +231,72 @@ if (~tabUrl.indexOf(appUrl)) {
 		}
 	}
 
+	// Generate the developer's menu
+	async function generateDevMenuBeta(hubId) {
+
+		function sanitizeHTML(html) {
+			const template = document.createElement('template');
+			template.innerHTML = html;
+			return template.content;
+		}
+
+		const html = `<li id="ext-dev-menu-wrapper" role="none" class="VerticalNavMenuItem__StyledLi-oft1jq-0 exxAFl">
+			<button id="dev-branch-toggle" data-test-id="dev-branch-toggle" aria-expanded="false" aria-controls="dev-branch-content" role="menuitem" aria-haspopup="true" data-menu-item-level="primary" data-menu-item-group="dev-branch">
+				<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M24.5932 11.1532C24.8161 11.1532 25.0286 11.1954 25.2115 11.2686L25.2103 11.2674L25.2218 11.272C25.8389 11.528 26.2732 12.136 26.2732 12.8457V21.9989C26.2732 22.9452 25.5052 23.7132 24.5589 23.7132H7.40234C6.45606 23.7132 5.68806 22.9452 5.68806 21.9989C5.68806 21.616 5.81377 21.2629 6.02291 20.9817L9.88577 16.4103L9.8892 16.4057C10.1527 16.0525 10.5528 15.8076 11.0199 15.7485C11.0228 15.7481 11.0257 15.7478 11.0286 15.7474L11.0199 15.7485C11.0198 15.7485 11.0201 15.7485 11.0199 15.7485C11.1055 15.7348 11.1934 15.728 11.2823 15.728C11.6801 15.728 12.0458 15.8652 12.3315 16.0903L15.7601 19.8617L15.7566 19.8606C15.8355 19.9006 15.9246 19.9234 16.0195 19.9234C16.1932 19.9234 16.3498 19.8469 16.4572 19.7257L23.3143 11.7257L23.3155 11.7246C23.6298 11.3737 24.0858 11.1532 24.5932 11.1532Z" fill="#ffffff"></path>
+					<path d="M7.98863 12.2972C9.25149 12.2972 10.2743 11.2743 10.2743 10.0114C10.2743 8.74858 9.25149 7.72573 7.98863 7.72573C6.72577 7.72573 5.70291 8.74858 5.70291 10.0114C5.70291 11.2743 6.72577 12.2972 7.98863 12.2972Z" fill="#ffffff"></path>
+					<path fill-rule="evenodd" clip-rule="evenodd" d="M5.15429 2H26.8697C29.7017 2.01257 31.9931 4.30971 32 7.14286V24.3223C31.9737 27.1474 29.6766 29.4286 26.8457 29.4286H5.13029C2.29829 29.416 0.00685714 27.12 0 24.2857V7.14171C0.00685714 4.30171 2.312 2 5.15429 2ZM26.8571 26.0343C27.8034 26.0343 28.5714 25.2663 28.5714 24.32V7.14286C28.5714 6.19657 27.8034 5.42857 26.8571 5.42857H5.13029C4.18971 5.43543 3.42857 6.2 3.42857 7.14286V24.32C3.42857 25.2663 4.19657 26.0343 5.14286 26.0343H26.8571Z" fill="#ffffff"></path>
+				</svg>
+				<span>Dev</span>
+			</button>
+			<div data-onboarding-hook="secondary-menu" class="VerticalNavSecondaryMenu__StyledDiv-sc-165k8ct-0 kxVDBO">
+				<ul role="menu" id="partner-branch-content" data-test-id="partner-branch-content" aria-hidden="false" aria-labelledby="partner-branch-toggle">
+
+				</ul>
+			</div>
+		</li>`;
+
+		const sanitizedContent = sanitizeHTML(html);
+
+		const navLinks = document.querySelector('#hs-vertical-nav ul');
+		const firstChild = navLinks.lastElementChild;
+
+		while (sanitizedContent.firstChild) {
+			firstChild.insertAdjacentElement('afterend', sanitizedContent.firstChild);
+		}
+
+		// Add event listener for toggling the menu
+		const devMenuWrapper = document.querySelector('#ext-dev-menu-wrapper');
+		const devMenuLink = document.querySelector('#dev-branch-toggle');
+
+		devMenuLink.addEventListener('click', function (e) {
+			e.preventDefault();
+			const isExpanded = devMenuLink.getAttribute('aria-expanded');
+
+			if (isExpanded === 'true') {
+				devMenuLink.setAttribute('aria-expanded', 'false');
+			} else {
+				devMenuLink.setAttribute('aria-expanded', 'true');
+			}
+
+			devMenuWrapper.classList.toggle('active');
+		});
+
+		// Generate and insert menu items
+		const menuItems = await generateAllMenuItems(hubId, true);
+
+		const devMenuUL = document.querySelector('#ext-dev-menu-wrapper ul');
+
+		// Create a temporary element to safely parse the HTML
+		const tempContainer = document.createElement('div');
+		tempContainer.innerHTML = menuItems;
+
+		// Append each child element individually to the devMenuUL
+		while (tempContainer.firstChild) {
+			devMenuUL.appendChild(tempContainer.firstChild);
+		}
+	}
+
 	// Wait for the navigation elements
 	function waitForEl(selector, callback) {
 		if (document.querySelector(selector)) {
@@ -240,11 +314,15 @@ if (~tabUrl.indexOf(appUrl)) {
 		console.log('devMenu:', devMenuValue);
 		if (devMenuValue) {
 			let hubId;
-			waitForEl('[href*="app.hubspot.com/design-manager"]', function () {
-
+			waitForEl('.primary-links .navTertiaryLink[href*="app.hubspot.com/design-manager"]', function () {
 				console.log('Generating the developer menu');
 				hubId = document.querySelector('[href*="app.hubspot.com/design-manager"]').href.split('/');
 				generateDevMenu(hubId.pop());
+			});
+			waitForEl('#hs-vertical-nav', function () {
+				console.log('Generating the developer menu');
+				hubId = document.querySelector('[href*="/user-preferences/"]').href.split('/');
+				generateDevMenuBeta(hubId.pop().split('?')[0]);
 			});
 		}
 	});
