@@ -249,11 +249,9 @@ if (~tabUrl.indexOf(appUrl)) {
 				</svg>
 				<span>Dev</span>
 			</button>
-			<div data-onboarding-hook="secondary-menu" class="VerticalNavSecondaryMenu__StyledDiv-sc-165k8ct-0 kxVDBO">
-				<ul role="menu" id="partner-branch-content" data-test-id="partner-branch-content" aria-hidden="false" aria-labelledby="partner-branch-toggle">
+			<ul role="menu" id="dev-branch-content" aria-hidden="false" aria-labelledby="dev-branch-toggle">
 
 				</ul>
-			</div>
 		</li>`;
 
 		const sanitizedContent = sanitizeHTML(html);
@@ -295,6 +293,48 @@ if (~tabUrl.indexOf(appUrl)) {
 		while (tempContainer.firstChild) {
 			devMenuUL.appendChild(tempContainer.firstChild);
 		}
+
+		//add styles tag to sanitizedContent
+		const style = document.createElement('style');
+		style.textContent = `
+		#dev-branch-content {
+			background: red
+		}
+		#dev-branch-content {
+			position: absolute;
+			left: 236px;
+			top: 0px;
+			background: rgb(66, 91, 118);
+			list-style-type: none;
+			margin: 0px;
+			min-width: 240px;
+			box-shadow: rgb(203, 214, 226) 1px 0px 3px 0px;
+			padding: 18px;
+			clip-path: inset(0px -3px 0px 0px);
+			height: 100%;
+			overflow: hidden auto;
+		}
+		#ext-dev-menu-wrapper:not(.active) #dev-branch-content {
+			display: none;
+		}
+		#dev-branch-content a,
+		#dev-branch-content button {
+			display: flex;
+			justify-content: normal;
+			padding: 12px 10px;
+			color: rgb(255, 255, 255);
+			font-size: 14px;
+			font-weight: 400;
+			line-height: 18px;
+			-webkit-font-smoothing: auto;
+			background: transparent;
+			width: 100%;
+			text-align: left;
+			margin: 0px;
+			border: 0px;
+			border-radius: 3px;
+		}`
+		devMenuUL.appendChild(style);
 	}
 
 	// Wait for the navigation elements
