@@ -8,8 +8,6 @@ Above the list of files, click **Code** then click **Download ZIP**. Unzipped th
 ### Firefox
 Download the firefox.xpi file and open with firefox
 
------
-
 A Chrome/Chromium extension for HubSpot Developers that adds useful shortcuts to commonly used HubSpot Query Parameters, and tools for making HubSpot Development easier and more enjoyable. For details on the many features we have a wiki page detailing them:[Feature Breakdown](https://github.com/williamspiro/HubSpot-Developer-Extension/wiki/Feature-Breakdown)
 
 If you like the extension, please [rate and review it](https://chrome.google.com/webstore/detail/hubspot-developer-extensi/gebemkdecnlgbcanplbgdpcffpdnfdfo/reviews) to help it get visibility in the chrome store. The more eyes on it, the more likely more contributors, and more high quality updates!
