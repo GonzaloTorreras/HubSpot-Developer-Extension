@@ -1,31 +1,29 @@
 {
-	"manifest_version": 2,
+	"manifest_version": 3,
 	"default_locale": "en",
-	"browser_specific_settings": {
-		"gecko": {
-			"id": "your-extension-id@firefox"
-		}
-	},
 	"name": "HS Developer Extension",
-	"version": "2.0.4",
+	"version": "2.0.5",
 	"description": "HS Developer Extension",
 	"icons": {
 		"16": "src/images/icon-16.png",
 		"48": "src/images/icon-48.png",
 		"128": "src/images/icon-128.png"
 	},
+	"action": {
+		"default_popup": "src/popup/popup.html",
+		"default_icon": "src/images/icon-48.png"
+	},
 	"background": {
-		"scripts": [
-			"src/background.js"
-		],
-		"persistent": false
+		"service_worker": "src/background.js"
 	},
 	"permissions": [
-		"storage",
 		"tabs",
+		"storage",
 		"activeTab",
-		"scripting",
-		"devtools",
+		"scripting"
+	],
+	"optional_permissions": [],
+	"host_permissions": [
 		"https://app.hubspot.com/*",
 		"https://app.hubspotqa.com/*",
 		"https://local.hubspot.com/*",
@@ -33,30 +31,27 @@
 		"https://*/*",
 		"http://*/*"
 	],
-	"browser_action": {
-		"default_popup": "src/popup/popup.html"
-	},
 	"content_scripts": [
 		{
-			"run_at": "document_idle",
+			"matches": [
+				"*://local.hubspot.com/*",
+				"*://local.hubspotqa.com/*",
+				"*://app.hubspot.com/*",
+				"*://app.hubspotqa.com/*",
+				"*://login.hubspot.com/*"
+			],
 			"js": [
-				"src/popup/design-manager.js"
+				"src/design-manager.js"
 			],
 			"css": [
-				"src/popup/hsDarkIde.css"
-			],
-			"matches": [
-				"https://local.hubspot.com/*",
-				"https://local.hubspotqa.com/*",
-				"https://app.hubspot.com/*",
-				"https://app.hubspotqa.com/*",
-				"https://login.hubspot.com/*"
+				"src/css/hs-dark-ide.css",
+				"src/css/hs-dark-theme.css"
 			]
 		},
 		{
 			"run_at": "document_idle",
 			"css": [
-				"src/devtools/json-formatter.css"
+				"src/css/json-formatter.css"
 			],
 			"matches": [
 				"https://*/___context___*"
@@ -67,18 +62,12 @@
 				"<all_urls>"
 			],
 			"js": [
-				"src/hsDevTools.js"
+				"src/hs-dev-tools.js"
 			]
 		}
 	],
-	"web_accessible_resources": [
-		"src/content.json"
-	],
 	"devtools_page": "src/devtools/devtools.html",
-	"options_ui": {
-		"page": "src/options/options.html",
-		"open_in_tab": true
-	},
+	"options_page": "src/options/options.html",
 	"commands": {
 		"bust-cache": {
 			"suggested_key": {
@@ -94,5 +83,15 @@
 			},
 			"description": "Toggle ?hsDebug=True in the URL"
 		}
-	}
+	},
+	"web_accessible_resources": [
+		{
+			"resources": [
+				"src/content.json"
+			],
+			"matches": [
+				"*://*/*"
+			]
+		}
+	]
 }

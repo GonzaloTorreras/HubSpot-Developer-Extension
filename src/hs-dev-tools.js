@@ -8,6 +8,7 @@ const observer = new MutationObserver(function (mutationsList, observer) {
 			// Find the targetElement using a query selector
 			const targetElement = document.querySelector('.hs-tools-menu a[href*="/___context___/"]');
 			if (targetElement) {
+				console.log('Dev Info link found:', targetElement.href);
 				// Send a message to the runtime with the devInfoLink action and the target element's href as data
 				chrome.runtime.sendMessage({ action: 'devInfoLink', data: targetElement.href });
 				// Stop observing once the target element is found
@@ -137,14 +138,17 @@ function hideFloatingButton() {
 	}
 }
 
+chrome.runtime.sendMessage({ action: 'contentScriptReady' });
 // Listen for messages from popup.js
 chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
 	if (message.action === 'toggleEventListeners') {
 		toggleEventListeners();
 	} else if (message.action === 'checkDevInfoLink') {
+
 		const targetElement = document.querySelector('.hs-tools-menu a[href*="/___context___/"]');
 		if (targetElement) {
 			// Send a message to the runtime with the devInfoLink action and the target element's href as data
+			console.log('Dev Info link found:', targetElement.href);
 			chrome.runtime.sendMessage({ action: 'devInfoLink', data: targetElement.href });
 		} else {
 			chrome.runtime.sendMessage({ action: 'devInfoLink', data: null });

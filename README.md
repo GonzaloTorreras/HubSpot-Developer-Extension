@@ -3,16 +3,10 @@
 
 ## How to install
 ### Chrome
-Download the chrome.zip and unzipped, then load as a unpacked extions
+Above the list of files, click **Code** then click **Download ZIP**. Unzipped the files, then load as an <a href="https://developer.chrome.com/docs/extensions/get-started/tutorial/hello-world#load-unpacked" target="_blank">unpacked extension</a>
 
 ### Firefox
 Download the firefox.xpi file and open with firefox
-
------
-
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/d6a1c1d220ea4ca79299b432ca44a9d8)](https://www.codacy.com/app/jonmclaren1/HubSpot-Developer-Extension?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=williamspiro/HubSpot-Developer-Extension&amp;utm_campaign=Badge_Grade)
-
-
 
 A Chrome/Chromium extension for HubSpot Developers that adds useful shortcuts to commonly used HubSpot Query Parameters, and tools for making HubSpot Development easier and more enjoyable. For details on the many features we have a wiki page detailing them:[Feature Breakdown](https://github.com/williamspiro/HubSpot-Developer-Extension/wiki/Feature-Breakdown)
 
