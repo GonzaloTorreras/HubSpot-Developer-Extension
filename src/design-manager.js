@@ -242,21 +242,18 @@ if (~tabUrl.indexOf(appUrl)) {
 
 		const html = `<li id="ext-dev-menu-wrapper" role="none" class="VerticalNavMenuItem__StyledLi-oft1jq-0 exxAFl">
 			<button id="dev-branch-toggle" data-test-id="dev-branch-toggle" aria-expanded="false" aria-controls="dev-branch-content" role="menuitem" aria-haspopup="true" data-menu-item-level="primary" data-menu-item-group="dev-branch">
-				<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-					<path d="M24.5932 11.1532C24.8161 11.1532 25.0286 11.1954 25.2115 11.2686L25.2103 11.2674L25.2218 11.272C25.8389 11.528 26.2732 12.136 26.2732 12.8457V21.9989C26.2732 22.9452 25.5052 23.7132 24.5589 23.7132H7.40234C6.45606 23.7132 5.68806 22.9452 5.68806 21.9989C5.68806 21.616 5.81377 21.2629 6.02291 20.9817L9.88577 16.4103L9.8892 16.4057C10.1527 16.0525 10.5528 15.8076 11.0199 15.7485C11.0228 15.7481 11.0257 15.7478 11.0286 15.7474L11.0199 15.7485C11.0198 15.7485 11.0201 15.7485 11.0199 15.7485C11.1055 15.7348 11.1934 15.728 11.2823 15.728C11.6801 15.728 12.0458 15.8652 12.3315 16.0903L15.7601 19.8617L15.7566 19.8606C15.8355 19.9006 15.9246 19.9234 16.0195 19.9234C16.1932 19.9234 16.3498 19.8469 16.4572 19.7257L23.3143 11.7257L23.3155 11.7246C23.6298 11.3737 24.0858 11.1532 24.5932 11.1532Z" fill="#ffffff"></path>
-					<path d="M7.98863 12.2972C9.25149 12.2972 10.2743 11.2743 10.2743 10.0114C10.2743 8.74858 9.25149 7.72573 7.98863 7.72573C6.72577 7.72573 5.70291 8.74858 5.70291 10.0114C5.70291 11.2743 6.72577 12.2972 7.98863 12.2972Z" fill="#ffffff"></path>
-					<path fill-rule="evenodd" clip-rule="evenodd" d="M5.15429 2H26.8697C29.7017 2.01257 31.9931 4.30971 32 7.14286V24.3223C31.9737 27.1474 29.6766 29.4286 26.8457 29.4286H5.13029C2.29829 29.416 0.00685714 27.12 0 24.2857V7.14171C0.00685714 4.30171 2.312 2 5.15429 2ZM26.8571 26.0343C27.8034 26.0343 28.5714 25.2663 28.5714 24.32V7.14286C28.5714 6.19657 27.8034 5.42857 26.8571 5.42857H5.13029C4.18971 5.43543 3.42857 6.2 3.42857 7.14286V24.32C3.42857 25.2663 4.19657 26.0343 5.14286 26.0343H26.8571Z" fill="#ffffff"></path>
-				</svg>
-				<span>Dev</span>
+				<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#ffffff" x="0" y="0" viewBox="0 0 32 32" xml:space="preserve" width="18px" height="18px"><title>Settings</title><path d="M27.16,11.53h-2.4c-.2-.74-.46-1.38-.79-1.99l.02,.05,1.69-1.69c.38-.36,.61-.87,.61-1.43s-.23-1.07-.61-1.43l-.69-.72c-.36-.37-.87-.61-1.43-.61s-1.07,.23-1.43,.61l-1.72,1.69c-.54-.3-1.16-.56-1.81-.75l-.06-.02V2.83c0-1.1-.9-2-2-2h-1c-1.11,0-2,.9-2,2v2.4c-.74,.2-1.39,.46-2,.79l.05-.02-1.69-1.69c-.36-.38-.88-.62-1.45-.62s-1.09,.24-1.45,.62h0s-.69,.69-.69,.69c-.38,.36-.61,.87-.61,1.43s.23,1.07,.61,1.43l1.69,1.72c-.3,.54-.56,1.16-.75,1.81l-.02,.06h-2.39c-1.1,0-2,.9-2,2v1.07c0,1.11,.89,2,2,2h0s2.4,0,2.4,0c.2,.71,.46,1.33,.78,1.92l-.02-.05-1.69,1.69c-.38,.36-.61,.87-.61,1.43s.23,1.07,.61,1.43l.72,.72c.36,.38,.87,.61,1.43,.61s1.07-.23,1.43-.61l1.69-1.68c.53,.3,1.16,.56,1.81,.75l.06,.02v2.4c0,1.1,.9,2,2,2h1c1.1,0,2-.9,2-2v-2.4c.74-.2,1.39-.46,2-.79l-.05,.02,1.69,1.69c.36,.38,.87,.61,1.43,.61s1.07-.23,1.43-.61l.72-.72c.38-.36,.61-.87,.61-1.44s-.23-1.07-.61-1.43l-1.69-1.7c.3-.54,.56-1.16,.75-1.81l.02-.06h2.4c1.1,0,2-.9,2-2v-1c0-1.11-.9-2-2-2Zm-5.09,2.98c-.05,.58-.18,1.12-.36,1.62-.05,.14-.11,.27-.17,.41-.62,1.33-1.67,2.38-2.96,2.98l-.04,.02-.42,.17c-.47,.18-1.02,.31-1.59,.36h-.02s-1.02,0-1.02,0c-.58-.05-1.12-.18-1.62-.36l-.41-.17c-1.33-.62-2.38-1.67-2.98-2.96l-.02-.04c-.06-.14-.12-.28-.17-.42-.18-.47-.31-1.02-.36-1.59v-.02s0-.51,0-.51v-.51c.03-.37,.09-.71,.17-1.04,.06-.24,.13-.43,.2-.62v.04c.04-.14,.1-.28,.16-.42,.62-1.33,1.67-2.38,2.96-2.98l.04-.02,.42-.17c.47-.18,1.02-.31,1.59-.36h.02s1.02,0,1.02,0c.58,.05,1.12,.18,1.62,.36l.41,.17c1.33,.62,2.38,1.67,2.98,2.96l.02,.04c.06,.14,.12,.28,.17,.42,.18,.47,.31,1.02,.36,1.59v.02s0,1.02,0,1.02Z"></path><path d="M16,10.07c-2.17,0-3.93,1.76-3.93,3.93s1.76,3.93,3.93,3.93,3.93-1.76,3.93-3.93-1.76-3.93-3.93-3.93Z"></path></svg>
+				<span>Developer Extension</span>
 			</button>
 			<ul role="menu" id="dev-branch-content" aria-hidden="false" aria-labelledby="dev-branch-toggle">
 
-				</ul>
+			</ul>
 		</li>`;
 
 		const sanitizedContent = sanitizeHTML(html);
 
-		const navLinks = document.querySelector('#hs-vertical-nav ul');
+		const vnm = document.querySelector('#hs-vertical-nav');
+		const navLinks = vnm.querySelector('ul');
 		const firstChild = navLinks.lastElementChild;
 
 		while (sanitizedContent.firstChild) {
@@ -264,10 +261,13 @@ if (~tabUrl.indexOf(appUrl)) {
 		}
 
 		// Add event listener for toggling the menu
-		const devMenuWrapper = document.querySelector('#ext-dev-menu-wrapper');
-		const devMenuLink = document.querySelector('#dev-branch-toggle');
+		const devMenuWrapper = vnm.querySelector('#ext-dev-menu-wrapper');
+		const devMenuLink = vnm.querySelector('#dev-branch-toggle');
+
+		const isHighlighted = vnm.querySelectorAll('isHighlighted');
 
 		devMenuLink.addEventListener('click', function (e) {
+
 			e.preventDefault();
 			const isExpanded = devMenuLink.getAttribute('aria-expanded');
 
@@ -278,6 +278,17 @@ if (~tabUrl.indexOf(appUrl)) {
 			}
 
 			devMenuWrapper.classList.toggle('active');
+			vnm.addEventListener('focusout', function (e) {
+
+				setTimeout(() => {
+					devMenuLink.setAttribute('aria-expanded', 'false');
+					devMenuWrapper.classList.remove('active');
+				}, 100);
+			});
+			isHighlighted.forEach(element => {
+				element.classList.remove('isHighlighted');
+			});
+
 		});
 
 		// Generate and insert menu items
@@ -333,6 +344,11 @@ if (~tabUrl.indexOf(appUrl)) {
 			margin: 0px;
 			border: 0px;
 			border-radius: 3px;
+		}
+		#dev-branch-content a:hover {
+			text-decoration: none;
+			color: rgb(255, 255, 255);
+			background: rgb(81, 111, 144) !important;
 		}`
 		devMenuUL.appendChild(style);
 	}
@@ -360,9 +376,20 @@ if (~tabUrl.indexOf(appUrl)) {
 				generateDevMenu(hubId.pop());
 			});
 			waitForEl('#hs-vertical-nav', function () {
-				console.log('Generating the developer menu');
-				hubId = document.querySelector('[href*="/user-preferences/"]').href.split('/');
-				generateDevMenuBeta(hubId.pop().split('?')[0]);
+
+				const navLinks = document.querySelectorAll('#hs-vertical-nav a');
+				for (const link of navLinks) {
+					const urlSegments = link.href.split('/');
+					const targetIndex = urlSegments.findIndex(segment => segment === 'developer-home' || segment === 'marketplace-providers');
+					if (targetIndex !== -1 && targetIndex + 1 < urlSegments.length) {
+						const entryAfterTarget = urlSegments[targetIndex + 1];
+						if (!isNaN(parseInt(entryAfterTarget, 10))) {
+							hubId = entryAfterTarget;
+							break; // Stop the loop if entryAfterTarget is found and it is an INT
+						}
+					}
+				}
+				generateDevMenuBeta(hubId);
 			});
 		}
 	});

@@ -7,7 +7,7 @@
 		}
 	},
 	"name": "HS Developer Extension",
-	"version": "2.0.3",
+	"version": "2.0.4",
 	"description": "HS Developer Extension",
 	"icons": {
 		"16": "src/images/icon-16.png",
@@ -38,25 +38,25 @@
 	},
 	"content_scripts": [
 		{
-			"run_at": "document_idle",
+			"matches": [
+				"*://local.hubspot.com/*",
+				"*://local.hubspotqa.com/*",
+				"*://app.hubspot.com/*",
+				"*://app.hubspotqa.com/*",
+				"*://login.hubspot.com/*"
+			],
 			"js": [
-				"src/popup/design-manager.js"
+				"src/design-manager.js"
 			],
 			"css": [
-				"src/popup/hsDarkIde.css"
-			],
-			"matches": [
-				"https://local.hubspot.com/*",
-				"https://local.hubspotqa.com/*",
-				"https://app.hubspot.com/*",
-				"https://app.hubspotqa.com/*",
-				"https://login.hubspot.com/*"
+				"src/css/hs-dark-ide.css",
+				"src/css/hs-dark-theme.css"
 			]
 		},
 		{
 			"run_at": "document_idle",
 			"css": [
-				"src/devtools/json-formatter.css"
+				"src/css/json-formatter.css"
 			],
 			"matches": [
 				"https://*/___context___*"
@@ -67,7 +67,7 @@
 				"<all_urls>"
 			],
 			"js": [
-				"src/hsDevTools.js"
+				"src/hs-dev-tools.js"
 			]
 		}
 	],
